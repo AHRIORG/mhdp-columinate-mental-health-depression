@@ -206,7 +206,7 @@ Results</bold>
   </body>
   <back>
 </back>
-  <sub-article article-type="notebook" id="nb-2-nb-article">
+  <sub-article article-type="notebook" id="nb-4-nb-article">
     <front-stub>
       <title-group>
         <article-title>Establishing Comparability between the Shona Symptom
@@ -264,7 +264,7 @@ require(here)</code>
           <preformat>Loading required package: here</preformat>
         </boxed-text>
         <boxed-text>
-          <preformat>here() starts at /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03_Psychometric</preformat>
+          <preformat>here() starts at /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03-Psychometric</preformat>
         </boxed-text>
         <code language="r script">### Load Helper Functions------------
 source(here("../../pipelines_and_functions/data_processing_and_description_funcs.R"))
@@ -457,7 +457,7 @@ main_results &lt;- run_psychometric_pipeline(
             <preformat>    Loading existing file (non-interactive mode).</preformat>
           </boxed-text>
           <boxed-text>
-            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03_Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_SSQ-14_(Original)_results.rds</preformat>
+            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03-Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_SSQ-14_(Original)_results.rds</preformat>
           </boxed-text>
           <boxed-text>
             <preformat>
@@ -470,7 +470,7 @@ main_results &lt;- run_psychometric_pipeline(
             <preformat>    Loading existing file (non-interactive mode).</preformat>
           </boxed-text>
           <boxed-text>
-            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03_Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_SSQ-10_(Theoretical_Depressive_Symptoms)_results.rds</preformat>
+            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03-Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_SSQ-10_(Theoretical_Depressive_Symptoms)_results.rds</preformat>
           </boxed-text>
           <boxed-text>
             <preformat>
@@ -483,7 +483,7 @@ main_results &lt;- run_psychometric_pipeline(
             <preformat>    Loading existing file (non-interactive mode).</preformat>
           </boxed-text>
           <boxed-text>
-            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03_Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_SSQ-08_(Dixon_Chibanda_et.al)_results.rds</preformat>
+            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03-Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_SSQ-08_(Dixon_Chibanda_et.al)_results.rds</preformat>
           </boxed-text>
           <boxed-text>
             <preformat>
@@ -496,7 +496,7 @@ main_results &lt;- run_psychometric_pipeline(
             <preformat>    Loading existing file (non-interactive mode).</preformat>
           </boxed-text>
           <boxed-text>
-            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03_Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_PHQ-09_(Original)_results.rds</preformat>
+            <preformat>    Loaded results from: /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ03-Psychometric/statistical_analysis/output/objects/boot_1000_Isisikelo_Sempilo_PHQ-09_(Original)_results.rds</preformat>
           </boxed-text>
           <code language="r script">output_dir &lt;- here("statistical_analysis/output/objects")
 if (!dir.exists(output_dir)) {
