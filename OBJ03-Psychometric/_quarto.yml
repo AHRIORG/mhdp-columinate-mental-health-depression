@@ -1,0 +1,30 @@
+project:
+  type: manuscript
+
+manuscript:
+  article: Psychometric-Analysis.qmd
+
+format:
+  html:
+    grid:
+      sidebar-width: 300px
+      body-width: 1200px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    theme:
+      - sandstone
+    comments:
+      hypothesis: true
+    code-fold: true
+    
+  docx: default
+  jats: default
+
+  # (other formats)
+  # pdf: default
+
+execute:
+  freeze: false
+
+editor: visual
+

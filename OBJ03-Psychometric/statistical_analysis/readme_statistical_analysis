@@ -1,0 +1,33 @@
+Statistical Analysis folder includes the following folder structure
+
+statistical_analysis/
+├── data/
+│   ├── adam/
+│   ├── metadata/
+│   └── raw/
+├── models/
+├── output/
+│   ├── figures/
+│   ├── listing/
+│   ├── objects/
+│   └── table/
+├── programs/
+│   ├── analysis/
+│   ├── utils/
+│       ├── Psych Split & EFA Helpers.R
+│          - generate_ec_splits()
+│          - check_efa_suitability() (with PHQ max 3 factors, loadings + eigenvalues logic)
+│       ├── Psych Evaluate All Splits R
+│          - evaluate_all_splits() (sequential + parallel, with list-cols for loadings and eigenvalues)
+│       ├── Psych Retention Loadings Eigen R
+│          - analyze_factor_retention()
+│          - extract_loadings_long()
+│          - extract_eigen_scree()
+│       ├── Psych Cooccurrence Consensus R
+│          - calculate_cooccurrence_matrix()
+│          - get_sorted_items_by_stability()
+│          - plot_item_factor_stability()
+│          - plot_cooccurrence_heatmap()
+│          - identify_consensus_model()
+│       ├── Psych Run Pipeline R
+          - run_psychometric_pipeline() (calls all the helpers and stores raw_data, cooccurrence, etc.)
