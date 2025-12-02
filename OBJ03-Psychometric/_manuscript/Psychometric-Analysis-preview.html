@@ -180,7 +180,7 @@
       <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
       <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
 
-            <a href="./Psychometric-Analysis.qmd" class="btn btn-primary quarto-download-embed" download="Psychometric-Analysis.qmd">Download Source</a>
+            <a href="Psychometric-Analysis.qmd" class="btn btn-primary quarto-download-embed" download="Psychometric-Analysis.qmd">Download Source</a>
           </div>
 
      <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
@@ -272,7 +272,7 @@
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"here"</span>, <span class="st">"conflicted"</span>, </span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"here"</span>, <span class="st">"conflicted"</span>, <span class="st">"parallel"</span>,<span class="st">"doParallel"</span>,<span class="st">"foreach"</span>,</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">"tidyverse"</span>, <span class="st">"labelled"</span>, <span class="st">"reshape2"</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"gtsummary"</span>, <span class="st">"gt"</span>, <span class="st">"gtreg"</span>, <span class="st">"BiocManager"</span>, <span class="st">"htmltools"</span>,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"ComplexUpset"</span>,<span class="st">"ggstatsplot"</span>,</span>
@@ -285,6 +285,18 @@
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: conflicted</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: parallel</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: doParallel</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: foreach</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: iterators</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Loading required package: tidyverse</code></pre>
@@ -336,79 +348,79 @@ Type 'citation("pROC")' for a citation.</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>- The lockfile is already up to date.</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflict_prefer_all</span>(<span class="st">"dplyr"</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflict_prefer_all</span>(<span class="st">"dplyr"</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This chunk sets global options for figures and tables</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This chunk sets global options for figures and tables</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Setting theme "Compact"</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_journal</span>(<span class="at">journal =</span> <span class="st">"jama"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_journal</span>(<span class="at">journal =</span> <span class="st">"jama"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Setting theme "JAMA"</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load datasets</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/adam/dt_psychometric.RData"</span>))</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/adam/dt_disposition.RData"</span>))</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/adam/dt_concordance.RData"</span>))</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/adam/dt_to_score.RData"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Load datasets</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/co-luminate/adam/dt_psychometric.RData"</span>))</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/co-luminate/adam/dt_disposition.RData"</span>))</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/co-luminate/adam/dt_concordance.RData"</span>))</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file=</span><span class="fu">here</span>(<span class="st">"../../data_management/data/co-luminate/adam/dt_to_score.RData"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [4]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directory for statistical analysis</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the root directory name</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>root_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"statistical_analysis"</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the full list of directories to create</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use file.path for OS-independent path construction</span></span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>dirs_to_create <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"metadata"</span>),</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"adam"</span>),</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/analysis"</span>),</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/utils"</span>),</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"models"</span>),</span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"table"</span>),</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"figures"</span>),</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"listing"</span>),</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"objects"</span>)</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create all directories recursively</span></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'showWarnings = FALSE' argument prevents warnings if the directories already exist</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">sapply</span>(dirs_to_create, dir.create, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directory for statistical analysis</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the root directory name</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>root_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"statistical_analysis"</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the full list of directories to create</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use file.path for OS-independent path construction</span></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>dirs_to_create <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"metadata"</span>),</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"adam"</span>),</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/analysis"</span>),</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/utils"</span>),</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"models"</span>),</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"table"</span>),</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"figures"</span>),</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"listing"</span>),</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"objects"</span>)</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create all directories recursively</span></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'showWarnings = FALSE' argument prevents warnings if the directories already exist</span></span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">sapply</span>(dirs_to_create, dir.create, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [5]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Source the Helper functions for Psychometric Bootstrap EFA Pipeline</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"statistical_analysis/programs/utils/Psych Run Pipeline.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Source the Helper functions for Psychometric Bootstrap EFA Pipeline</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"statistical_analysis/programs/utils/Psych Run Pipeline.R"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 <section id="preliminary-analysis" class="level2">
@@ -418,34 +430,34 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [6]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------------------------------------</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Run Psychometric Bootstrap EFA Pipeline with Parallelization</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------------------------------------</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>data_name <span class="ot">&lt;-</span> <span class="st">"analysis_ready_data"</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>dt_main   <span class="ot">&lt;-</span> <span class="fu">get</span>(data_name)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>n_boot_iterations <span class="ot">&lt;-</span> <span class="dv">1000</span>   <span class="co"># Consider testing with smaller first</span></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>n_pa_iterations   <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>cutoff_value      <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>item_sets_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SSQ-14 (Original)"</span>                         <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"SSQ"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">14</span>)),</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"SSQ"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">14</span>))),</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>           <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"SSQ"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">14</span>))),</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PHQ-09 (Original)"</span>                        <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"PHQ9"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>))</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>main_results <span class="ot">&lt;-</span> <span class="fu">run_psychometric_pipeline</span>(</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">df_data       =</span> dt_main,</span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">dataset_label =</span> <span class="st">"Isisikelo Sempilo"</span>,</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">item_sets_list =</span> item_sets_list,</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_boot        =</span> n_boot_iterations,</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_pa          =</span> n_pa_iterations,</span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">loading_cutoff =</span> cutoff_value,</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">use_parallel   =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_cores        =</span> <span class="fu">min</span>(<span class="dv">6</span>,parallel<span class="sc">::</span><span class="fu">detectCores</span>() <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------------------------------------</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Run Psychometric Bootstrap EFA Pipeline with Parallelization</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------------------------------------</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>data_name <span class="ot">&lt;-</span> <span class="st">"analysis_ready_data"</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>dt_main   <span class="ot">&lt;-</span> <span class="fu">get</span>(data_name)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>n_boot_iterations <span class="ot">&lt;-</span> <span class="dv">1000</span>   <span class="co"># Consider testing with smaller first</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>n_pa_iterations   <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>cutoff_value      <span class="ot">&lt;-</span> <span class="fl">0.4</span></span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>item_sets_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SSQ-14 (Original)"</span>                         <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"SSQ"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">14</span>)),</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span> <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"SSQ"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">14</span>))),</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>           <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"SSQ"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span><span class="sc">:</span><span class="dv">14</span>))),</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"PHQ-09 (Original)"</span>                        <span class="ot">=</span> <span class="fu">paste0</span>(<span class="st">"PHQ9"</span>, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>))</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>main_results <span class="ot">&lt;-</span> <span class="fu">run_psychometric_pipeline</span>(</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">df_data       =</span> dt_main,</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">dataset_label =</span> <span class="st">"Isisikelo Sempilo"</span>,</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">item_sets_list =</span> item_sets_list,</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_boot        =</span> n_boot_iterations,</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_pa          =</span> n_pa_iterations,</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">loading_cutoff =</span> cutoff_value,</span>
+<span id="cb27-26"><a href="#cb27-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">use_parallel   =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb27-27"><a href="#cb27-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">n_cores        =</span> <span class="fu">min</span>(<span class="dv">10</span>,parallel<span class="sc">::</span><span class="fu">detectCores</span>() <span class="sc">-</span> <span class="dv">4</span>)</span>
+<span id="cb27-28"><a href="#cb27-28" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>
@@ -514,21 +526,21 @@ Type 'citation("pROC")' for a citation.</code></pre>
 </div>
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>output_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"statistical_analysis/output/objects"</span>)</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(output_dir)) {</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(output_dir, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(main_results,<span class="at">file=</span><span class="fu">file.path</span>(output_dir,</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">paste0</span>(<span class="st">"main_results_boot_"</span>,</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>                                           n_boot_iterations,</span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"_Isisikelo_Sempilo.rds"</span>))</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>        )</span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>main_results<span class="ot">&lt;-</span><span class="fu">readRDS</span>(<span class="at">file=</span><span class="fu">file.path</span>(output_dir,</span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">paste0</span>(<span class="st">"main_results_boot_"</span>,</span>
-<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>                                           n_boot_iterations,</span>
-<span id="cb44-14"><a href="#cb44-14" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"_Isisikelo_Sempilo.rds"</span>))</span>
-<span id="cb44-15"><a href="#cb44-15" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>output_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"statistical_analysis/output/objects"</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">dir.exists</span>(output_dir)) {</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(output_dir, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(main_results,<span class="at">file=</span><span class="fu">file.path</span>(output_dir,</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">paste0</span>(<span class="st">"main_results_boot_"</span>,</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>                                           n_boot_iterations,</span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"_Isisikelo_Sempilo.rds"</span>))</span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>main_results<span class="ot">&lt;-</span><span class="fu">readRDS</span>(<span class="at">file=</span><span class="fu">file.path</span>(output_dir,</span>
+<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>                                    <span class="fu">paste0</span>(<span class="st">"main_results_boot_"</span>,</span>
+<span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>                                           n_boot_iterations,</span>
+<span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>                                           <span class="st">"_Isisikelo_Sempilo.rds"</span>))</span>
+<span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 <section id="factor-retention-analysis-determining-the-stable-structure" class="level3">
@@ -537,33 +549,33 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [7]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>retention_p1<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>retention_p2<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>retention_p3<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
-<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>(</span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  (retention_p1</span>
-<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>   )<span class="sc">+</span></span>
-<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  (retention_p2</span>
-<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>   )<span class="sc">+</span></span>
-<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>  (retention_p3</span>
-<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>   )</span>
-<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
-<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">"collect"</span>,</span>
-<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>                         <span class="at">axes =</span> <span class="st">"collect_y"</span>) <span class="sc">+</span></span>
-<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Factor Retention Probabilities and Counts"</span>,</span>
-<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
-<span id="cb45-17"><a href="#cb45-17" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
-<span id="cb45-18"><a href="#cb45-18" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb45-19"><a href="#cb45-19" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>,</span>
-<span id="cb45-20"><a href="#cb45-20" aria-hidden="true" tabindex="-1"></a>                         <span class="at">base_family =</span> <span class="st">"Arial"</span>) <span class="sc">&amp;</span> </span>
-<span id="cb45-21"><a href="#cb45-21" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>() <span class="sc">&amp;</span> </span>
-<span id="cb45-22"><a href="#cb45-22" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
-<span id="cb45-23"><a href="#cb45-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
-<span id="cb45-24"><a href="#cb45-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">family =</span> <span class="st">"Arial"</span>),</span>
-<span id="cb45-25"><a href="#cb45-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb45-26"><a href="#cb45-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>()</span>
-<span id="cb45-27"><a href="#cb45-27" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>retention_p1<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>retention_p2<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>retention_p3<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  (retention_p1</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>   )<span class="sc">+</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>  (retention_p2</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>   )<span class="sc">+</span></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>  (retention_p3</span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>   )</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> </span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>(<span class="at">guides =</span> <span class="st">"collect"</span>,</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>                         <span class="at">axes =</span> <span class="st">"collect_y"</span>) <span class="sc">+</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Factor Retention Probabilities and Counts"</span>,</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>,</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a>                         <span class="at">base_family =</span> <span class="st">"Arial"</span>) <span class="sc">&amp;</span> </span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>() <span class="sc">&amp;</span> </span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(</span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
+<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.caption =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">family =</span> <span class="st">"Arial"</span>),</span>
+<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor.x =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="">
@@ -588,18 +600,18 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [8]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Kaiser"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Kaiser"</span>]][[<span class="st">"plot_stability"</span>]]</span>
-<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
-<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
-<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
-<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
-<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
-<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
-<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
-<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Kaiser"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Kaiser"</span>]][[<span class="st">"plot_stability"</span>]]</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="">
@@ -612,8 +624,8 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [9]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>loadings_kaiser <span class="ot">&lt;-</span> <span class="fu">extract_loadings_long</span>(main_results, <span class="st">"SSQ-14 (Original)"</span>, <span class="at">method =</span> <span class="st">"Kaiser"</span>,<span class="at">factor_filter=</span><span class="dv">2</span>)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>eigen_scree     <span class="ot">&lt;-</span> <span class="fu">extract_eigen_scree</span>(main_results, <span class="st">"SSQ-14 (Original)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>loadings_kaiser <span class="ot">&lt;-</span> <span class="fu">extract_loadings_long</span>(main_results, <span class="st">"SSQ-14 (Original)"</span>, <span class="at">method =</span> <span class="st">"Kaiser"</span>,<span class="at">factor_filter=</span><span class="dv">2</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>eigen_scree     <span class="ot">&lt;-</span> <span class="fu">extract_eigen_scree</span>(main_results, <span class="st">"SSQ-14 (Original)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div></div>
 </section>
@@ -623,18 +635,18 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [10]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
-<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
-<span id="cb48-12"><a href="#cb48-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-14 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="">
@@ -655,18 +667,18 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [11]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-10 (Theoretical Depressive Symptoms)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="">
@@ -687,18 +699,18 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [12]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
-<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
-<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
-<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
-<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
-<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
-<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
-<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
-<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"SSQ-08 (Dixon Chibanda et.al)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>((cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="">
@@ -718,19 +730,19 @@ Type 'citation("pROC")' for a citation.</code></pre>
 <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [13]:</pre></div><div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>retention_p<span class="ot">&lt;-</span>main_results[[<span class="st">"PHQ-09 (Original)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"PHQ-09 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"PHQ-09 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>((retention_p)<span class="sc">+</span>(cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Factor Retention and Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
-<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
-<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
-<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
-<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
-<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>retention_p<span class="ot">&lt;-</span>main_results[[<span class="st">"PHQ-09 (Original)"</span>]][[<span class="st">"retention_analysis"</span>]][[<span class="st">"plot"</span>]]</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>cooccurrence_p<span class="ot">&lt;-</span>main_results[[<span class="st">"PHQ-09 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_heatmap"</span>]]</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>stability_p<span class="ot">&lt;-</span>main_results[[<span class="st">"PHQ-09 (Original)"</span>]][[<span class="st">"cooccurrence"</span>]][[<span class="st">"Parallel"</span>]][[<span class="st">"plot_stability"</span>]]</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>((retention_p)<span class="sc">+</span>(cooccurrence_p)<span class="sc">+</span>(stability_p)) <span class="sc">+</span> </span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_layout</span>() <span class="sc">+</span></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>  patchwork<span class="sc">::</span><span class="fu">plot_annotation</span>(<span class="at">title=</span><span class="st">"Factor Retention and Item co-occurrence for the winning factor count and item stability sorted by Winning Model"</span>,</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">tag_level=</span><span class="st">"A"</span></span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>                  ) <span class="sc">&amp;</span></span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">16</span>) <span class="sc">&amp;</span> </span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'bottom'</span>,</span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>                 <span class="at">axis.text.x  =</span> ggplot2<span class="sc">::</span><span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>,<span class="at">vjust=</span>.<span class="dv">85</span>,<span class="at">hjust=</span><span class="dv">1</span>),</span>
+<span id="cb55-13"><a href="#cb55-13" aria-hidden="true" tabindex="-1"></a>                 )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="">

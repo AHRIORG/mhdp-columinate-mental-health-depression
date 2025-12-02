@@ -19,9 +19,7 @@ format:
     
   docx: default
   jats: default
-
-  # (other formats)
-  # pdf: default
+  #pdf: default
 
 execute:
   freeze: false

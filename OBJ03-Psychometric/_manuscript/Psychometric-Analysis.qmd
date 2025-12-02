@@ -26,7 +26,7 @@ require(here)
 source(here("../../pipelines_and_functions/data_processing_and_description_funcs.R"))
 
 renv::snapshot()
-packages <- c("here", "conflicted", 
+packages <- c("here", "conflicted", "parallel","doParallel","foreach",
               "tidyverse", "labelled", "reshape2",
               "gtsummary", "gt", "gtreg", "BiocManager", "htmltools",
               "ComplexUpset","ggstatsplot",
@@ -52,10 +52,10 @@ options(scipen=999)
 ```{r load-data}
 #| echo: false
 ## Load datasets
-load(file=here("../../data_management/data/adam/dt_psychometric.RData"))
-load(file=here("../../data_management/data/adam/dt_disposition.RData"))
-load(file=here("../../data_management/data/adam/dt_concordance.RData"))
-load(file=here("../../data_management/data/adam/dt_to_score.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_psychometric.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_disposition.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_concordance.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_to_score.RData"))
 ```
 
 ```{r}
@@ -121,7 +121,7 @@ main_results <- run_psychometric_pipeline(
   n_pa          = n_pa_iterations,
   loading_cutoff = cutoff_value,
   use_parallel   = TRUE,
-  n_cores        = min(6,parallel::detectCores() - 1)
+  n_cores        = min(10,parallel::detectCores() - 4)
 )
 
 output_dir <- here("statistical_analysis/output/objects")
