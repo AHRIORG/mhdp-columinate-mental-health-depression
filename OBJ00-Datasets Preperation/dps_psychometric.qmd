@@ -44,6 +44,7 @@ library(labelled) # For handling variable labels
 library(haven) # For reading Stata files
 library(gtsummary)
 library(gtreg)
+library(conflicted)
 conflicts_prefer(haven::as_factor)
 ```
 
@@ -69,9 +70,9 @@ The following stage involves the ingestion of the raw dataset from its source fo
 ```{r load-data}
 #| echo: true
 
-isisekelo_semp <- read_dta(here("data_management", "raw_data", "isisekelo semp.dta")) |> 
+isisekelo_semp <- read_dta(here("../../data_management/data","co-luminate", "raw_data", "isisekelo semp.dta")) |> 
   as_factor()
-load(here("statistical_analysis/data/adam/dt_multistudies.RData"))
+load(here("../../data_management/data/co-luminate","adam/dt_multistudies.RData"))
 
 # Create a data dictionary using the sourced function
 dictionary <- func_dictionary(isisekelo_semp)
@@ -174,8 +175,8 @@ dt_analysis_screening <- dt_analysis_screening. |>
   set_variable_labels(.labels = var_labels, .strict = FALSE)
 
 # Save the intermediate, cleaned data
-dir.create(here("data_management", "transformed_data"), recursive = TRUE, showWarnings = FALSE)
-save(dt_analysis_screening, file = here("data_management", "transformed_data", "dt_analysis_screening.RData"))
+dir.create(here("../../data_management/data/co-luminate", "transformed_data"), recursive = TRUE, showWarnings = FALSE)
+save(dt_analysis_screening, file = here("../../data_management/data/co-luminate", "transformed_data", "dt_analysis_screening.RData"))
 ```
 
 This code block performs a comprehensive standardization of the dataset. It begins by renaming variables to a more descriptive, CDISC-like format. Feature engineering is then executed to create meaningful composite variables. Specifically, `VIOLENCE`, `CURRCONTRA` (current contraceptive use), and `CONTRMTH` (contraceptive methods) are derived by synthesizing information from multiple source columns into single, analyzable indicators. A logical imputation is applied to `EVERSEX`, where a report of ever being pregnant implies a history of sexual activity, ensuring data consistency. Finally, numerous categorical variables are explicitly converted to factors with predefined levels. This crucial step enforces data integrity and ensures the variables are treated correctly in statistical models and descriptive summaries. The resulting cleaned and standardized dataset is then saved.
@@ -250,8 +251,8 @@ The disposition data is then isolated and saved as a separate artifact for audit
 dt_disposition <- dt_disposition_ |>
   select(USUBJID, VISITDT, STUDYDY, contains("EXC"))
 
-# dir.create(here("statistical_analysis", "data", "adam"), recursive = TRUE, showWarnings = FALSE)
-# save(dt_disposition, file = here("statistical_analysis", "data", "adam", "dt_disposition.RData"))
+dir.create(here("../../data_management/data/co-luminate", "adam"), recursive = TRUE, showWarnings = FALSE)
+save(dt_disposition, file = here("../../data_management/data/co-luminate", "adam", "dt_disposition.RData"))
 ```
 
 ## 4. Scoring and Imputation
@@ -385,16 +386,16 @@ full_ready_data<-full_ready_data. |>
   relocate(any_of(ssq_phq_vars),.after=last_col())
 
 
-analysis_ready_data <- full_ready_data |>
+dt_psychometric <- full_ready_data |>
   filter(!EXCLUDE) |> 
   select(-EXCLUDE)
 
 full_ready_data <- full_ready_data |>
   select(-EXCLUDE)
 
-save(full_ready_data, file = here("statistical_analysis", "data", "adam", "full_ready_data.RData"))
-save(analysis_ready_data, file = here("statistical_analysis", "data", "adam", "analysis_ready_data.RData"))
-write.csv(analysis_ready_data, here("statistical_analysis", "data", "adam", "analysis_ready_data.csv"), row.names = FALSE)
+save(full_ready_data, file = here("../../data_management/data/co-luminate", "adam", "full_ready_data.RData"))
+save(dt_psychometric, file = here("../../data_management/data/co-luminate", "adam", "dt_psychometric.RData"))
+write.csv(dt_psychometric, here("../../data_management/data/co-luminate", "adam", "dt_psychometric.csv"), row.names = FALSE)
 ```
 
 This final code chunk constructs the definitive dataset for analysis. It first applies the `EXCLUDE` flag to retain only eligible participants, then selects a parsimonious set of variables for analysis. For descriptive purposes, the numeric item-level variables (used for scoring) are converted back into factors with their original labels. This allows the final dataset to contain both the categorical items for descriptive tables and the continuous total scores for modeling. The temporary 'N' suffix is then removed from the item names. Finally, variable labels are reapplied to ensure metadata is preserved, and the dataset is exported to both RData and CSV formats to support reproducibility.
@@ -404,7 +405,7 @@ This final code chunk constructs the definitive dataset for analysis. It first a
 ```{r}
 ssq_items<-paste0("SSQ", sprintf("%02d", 1:14))
 phq_items<-paste0("PHQ9", sprintf("%02d", 1:9))
-dt_concordance <- analysis_ready_data |>
+dt_concordance <- dt_psychometric |>
   mutate(across(all_of(ssq_items),~as.numeric(as.numeric(.x)-1>0))) |> 
   mutate(across(all_of(phq_items),~as.numeric(as.numeric(.x)-1>0))) |> 
   mutate(
@@ -458,7 +459,7 @@ dt_concordance <- analysis_ready_data |>
     concordant_across_atleast_1="Concordant on at least 1 item"
   )
 
-save(dt_concordance, file = here("statistical_analysis", "data", "adam", "dt_concordance.RData"))
+save(dt_concordance, file = here("../../data_management/data/co-luminate", "adam", "dt_concordance.RData"))
 ```
 
 ### Final Data Structure and Preview
@@ -468,7 +469,7 @@ A final verification step involves inspecting the structure and contents of the 
 ```{r final-preview}
 #| echo: false
 
-DICT<-analysis_ready_data |> 
+DICT<-dt_psychometric |> 
   func_dictionary()
 
 names(DICT)<-as.vector(unlist(var_label(DICT))) 
@@ -481,7 +482,7 @@ The data dictionary listing above confirms the variable names, types, and labels
 ```{r final-preview-head}
 #| echo: false
 
-head(analysis_ready_data,10) |> 
+head(dt_psychometric,10) |> 
   knitr::kable(caption = "Preview of Dataset")
 ```
 
@@ -513,7 +514,7 @@ dt_concordance |>
 
 ```{r load-data}
 #| echo: true
-dreams_raw <- read_dta(here("data_management", "raw_data", "_cleaner_Dreams.dta")) |> 
+dreams_raw <- read_dta(here("../../data_management/data/co-luminate", "raw_data", "_cleaner_Dreams.dta")) |> 
   as_factor()
 dt_dreams<-dreams_raw |> 
   mutate(AGE=floor(as.numeric(difftime(ca_visitdate, DateOfBirth, units = "days")) / 365.25),
@@ -534,7 +535,7 @@ names(dt_dreams)
 ```
 
 ```{r load-data}
-multilevel_raw <- read_dta(here("data_management", "raw_data", "_clean_Multilevel.dta")) |> 
+multilevel_raw <- read_dta(here("../../data_management/data/co-luminate", "raw_data", "_clean_Multilevel.dta")) |> 
   as_factor()
 dt_multilevel<-multilevel_raw |> 
   mutate(AGE=floor(as.numeric(difftime(ca_visitdate, DateOfBirth, units = "days")) / 365.25),
@@ -553,8 +554,8 @@ names(dt_multilevel)
 ```
 
 ```{r}
-var_labels_01<-var_label(analysis_ready_data)
-var_labels_02<-var_label(analysis_ready_data)
+var_labels_01<-var_label(dt_psychometric)
+var_labels_02<-var_label(dt_psychometric)
 dt_to_score.<-dt_multilevel |> 
   bind_rows(dt_dreams) |>
   ungroup() 
@@ -570,10 +571,11 @@ dt_to_score<-dt_to_score. |>
     across(starts_with("SSQ"), ~ factor(.x, levels=c(0,1), labels=c("No","Yes")))
   ) |>
   relocate(contains("SSQ"),.after=AGE) |> 
-  set_variable_labels(.labels = var_labels_01, .strict = FALSE)
-save(dt_to_score, file = here("statistical_analysis", "data", "adam", "dt_to_score.RData"))
+  set_variable_labels(.labels = var_labels_01, .strict = FALSE) |> 
+  select(USUBJID:SSQ14)
+save(dt_to_score, file = here("../../data_management/data/co-luminate", "adam", "dt_to_score.RData"))
 ```
+
 ```{r}
 #---end of code---
 ```
-

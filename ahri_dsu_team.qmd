@@ -1,0 +1,22 @@
+---
+title: "Statistical Consideration and Analysis Report (SCAR)"
+
+authors:
+  - name: Marothi Peter Letsoalo
+    orcid: https://orcid.org/0000-0003-2170-6312
+    affiliation: Africa Health Research Institute (AHRI)
+    roles: Statistician Analyst
+    corresponding: true
+    
+  - name: Nondumiso Thandiwe Mthiyani
+    orcid: https://orcid.org/0000-0002-9881-7267
+    affiliation: Africa Health Research Institute (AHRI)
+    roles: Statistical
+    corresponding: true
+    
+  - name: Kathy Baisley
+    orcid: https://orcid.org/0000-0003-1849-6625
+    affiliation: Africa Health Research Institute (AHRI)
+    roles: Lead Statistical
+    corresponding: true
+---

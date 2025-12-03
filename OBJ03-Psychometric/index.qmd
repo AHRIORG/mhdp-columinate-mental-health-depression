@@ -1,22 +1,35 @@
 ---
 title: Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa
-subtitle: "**Statistical Consideration and Analysis Results**"
+subtitle: "**Statistical Consideration and Analysis Report (SCAR)**"
 
 authors:
-  - name: Marothi Peter Letsoalo
-    orcid: https://orcid.org/0000-0003-2170-6312
+  - name: CO-LUMINATE Research Team
     affiliation: Africa Health Research Institute (AHRI)
-    roles: Statistician Analyst
-    corresponding: true
-    
-  - name: Nondumiso Thandiwe Mthiyani
-    orcid: https://orcid.org/0000-0002-9881-7267
-    affiliation: Africa Health Research Institute (AHRI)
-    roles: Statistical Analysis
-    corresponding: true
+    city: Durban & Somokhele
+    country: South Africa
     
 bibliography: references.bib
 ---
+
+Word Count:
+
+Impact Statement: Harmonising mental health data from African adolescents enables the robust longitudinal analysis required to inform policy, yet fragmentation between indigenous and global measures impedes this progress. This research provides a methodological roadmap for linking the Shona Symptom Questionnaire and the Patient Health Questionnaire, unlocking the potential of existing datasets to address the youth mental health crisis in Southern Africa.
+
+Abstract
+Fragmented measurement strategies in mental health research significantly reduce the utility of pooled datasets, particularly in the Global South where data scarcity is acute. This paper addresses the methodological challenge of establishing comparability between an emic, indigenous measure of distress, the Shona Symptom Questionnaire (SSQ-14), and a global etic standard, the Patient Health Questionnaire (PHQ-9). We review the imperatives for harmonisation, emphasising the statistical power required to study low-prevalence outcomes and the causal inference benefits of longitudinal designs. We critique the current measurement landscape in South Africa, which is characterised by "measurement silos" that prevent the integration of valuable cohort data. Special attention is given to the pitfalls of traditional Receiver Operating Characteristic (ROC) analysis and binary cut-off scores, arguing instead for methods that preserve continuous variation. Utilising the Maelstrom Research Guidelines, we delineate a framework for retrospective harmonisation that addresses structural divergences such as differing recall periods and response formats. We argue that Item Response Theory (IRT) provides the most robust solution for linking the binary items of the SSQ-14 with the ordinal items of the PHQ-9 on a common latent trait of general distress. This approach, supported by recent validation studies in Zanzibar, offers a pathway to support data sovereignty and advance equitable mental health science in Africa.
+
+Keywords: Data Harmonisation, Mental Health, SSQ-14, PHQ-9, South Africa, Psychometrics
+
+## Strategic Implications for African Mental Health Science
+### Advancing Causal Inference in Longitudinal Models
+Once harmonised, SSQ-14 and PHQ-9 scores can be treated as a single continuous variable in longitudinal models. This allows for the use of fixed-effects regression and growth-curve modeling to track distress trajectories from adolescence to young adulthood, even if the cohort switched from the SSQ-14 to the PHQ-9 over time. The harmonisation bridge allows the slope of the curve to be estimated without a discontinuity artifact at the point of instrument switch.
+
+### Supporting Data Sovereignty
+By establishing these harmonisation algorithms locally using African validation studies, we empower African researchers to lead the analysis of their own data. Tools like DataSHIELD can be deployed with these harmonisation scripts embedded, allowing for federated analysis of mental health across the continent without the data ever leaving African servers [@gaye2014]. This fulfills the vision of initiatives like the H3Africa Consortium for equitable, high-quality, and locally governed science [@mulder2021].
+
+## Conclusion
+
+The harmonisation of the SSQ-14 and PHQ-9 is a challenging but technically feasible endeavor that is essential for the future of mental health research in South Africa. While the instruments emerge from different paradigms—one emic and binary, the other etic and polytomous—they share a substantial core of somatic and affective content that serves as a bridge for comparability. The recommended pathway involves a rigorous adherence to the Maelstrom Guidelines: precise construct definition, careful content mapping to identify anchor items, and the application of Item Response Theory to create a sample-independent cross-walk. By bridging these measures, we do more than fix a statistical problem; we unite two traditions of understanding mental illness. This harmonization will unlock the power of existing longitudinal datasets, enabling the robust causal modeling required to identify the determinants of mental health for Africa's youth and to design interventions that are both evidence-based and culturally resonant.
 
 ```{r setup, include=FALSE}
 #| echo: false
@@ -26,12 +39,15 @@ require(here)
 source(here("../../pipelines_and_functions/data_processing_and_description_funcs.R"))
 
 renv::snapshot()
-packages <- c("here", "conflicted", "parallel","doParallel","foreach",
+packages <- c("here", "conflicted", 
               "tidyverse", "labelled", "reshape2",
-              "gtsummary", "gt", "gtreg", "BiocManager", "htmltools",
-              "ComplexUpset","ggstatsplot",
+              "gtsummary", "gt", "gtreg", 
               "scales", "ggsci", "patchwork",
-              "psych", "lavaan", "semTools", "pROC"
+              
+              "BiocManager", "htmltools",
+              "ComplexUpset","ggstatsplot",
+              "psych", "lavaan", "semTools", "pROC",
+              "parallel","doParallel","foreach"
               )
 
 ## Loop through the packages
@@ -47,15 +63,6 @@ rm(packages)
 theme_gtsummary_compact()
 theme_gtsummary_journal(journal = "jama")
 options(scipen=999)
-```
-
-```{r load-data}
-#| echo: false
-## Load datasets
-load(file=here("../../data_management/data/co-luminate/adam/dt_psychometric.RData"))
-load(file=here("../../data_management/data/co-luminate/adam/dt_disposition.RData"))
-load(file=here("../../data_management/data/co-luminate/adam/dt_concordance.RData"))
-load(file=here("../../data_management/data/co-luminate/adam/dt_to_score.RData"))
 ```
 
 ```{r}
@@ -83,6 +90,15 @@ invisible(sapply(dirs_to_create, dir.create, recursive = TRUE, showWarnings = FA
 
 ```
 
+```{r load-data}
+#| echo: false
+## Load datasets
+load(file=here("../../data_management/data/co-luminate/adam/dt_psychometric.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_disposition.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_concordance.RData"))
+load(file=here("../../data_management/data/co-luminate/adam/dt_to_score.RData"))
+```
+
 ```{r, load-psychometric-efa-pipeline}
 # Source the Helper functions for Psychometric Bootstrap EFA Pipeline
 source(here("statistical_analysis/programs/utils/Psych Run Pipeline.R"))
@@ -99,7 +115,7 @@ Using a bootstrap resampling framework with 1,000 iterations, we sought to ident
 # 7. Run Psychometric Bootstrap EFA Pipeline with Parallelization
 # -----------------------------------------------------------------------------
 
-data_name <- "analysis_ready_data"
+data_name <- "dt_psychometric"
 dt_main   <- get(data_name)
 
 n_boot_iterations <- 1000   # Consider testing with smaller first
@@ -297,3 +313,26 @@ stability_p<-main_results[["PHQ-09 (Original)"]][["cooccurrence"]][["Parallel"]]
                  axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
                  )
 ```
+
+
+Domain,PHQ-9 Item (Concept),SSQ-14 Item (Concept),Harmonisation Potential
+Dysphoria,"Feeling down, depressed, hopeless",Tearfulness; Wishing to be dead,High (Direct conceptual link)
+Suicidality,Thoughts of hurting self/better off dead,Wishing to be dead,High (Critical anchor)
+Sleep,"Trouble falling/staying asleep, sleeping too much",Fail to sleep,High (Somatic anchor)
+Fatigue,Feeling tired or having little energy,Tiredness,High (Somatic anchor)
+Cognition,Trouble concentrating,Thinking too much (Kufungisisa),Moderate (Kufungisisa is broader)
+Appetite,Poor appetite or overeating,Stomach ache / Loss of appetite,Moderate (SSQ focuses on pain/gut)
+Anxiety,None (PHQ is depression only),Heart beating fast; Frightened,Low (Unique to SSQ)
+Somatic,General (implicitly covered),Heat in body; Heaviness,Low (Unique to SSQ)
+Anhedonia,Little interest or pleasure,No direct equivalent,Low (Information loss in SSQ)
+
+\newpage
+
+## Acknowledgements
+[Insert Acknowledgements here]
+
+## Financial Support
+[Insert Funding Information here]
+
+## Conflict of Interest
+Data Availability

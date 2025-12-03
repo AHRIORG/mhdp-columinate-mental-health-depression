@@ -1,8 +1,9 @@
 project:
   type: manuscript
+  output-dir: _SCAR [Statistical Consideration and Analysis Report]
 
 manuscript:
-  article: Psychometric-Analysis.qmd
+  article: index.qmd
 
 format:
   html:
@@ -18,8 +19,8 @@ format:
     code-fold: true
     
   docx: default
+  
   jats: default
-  #pdf: default
 
 execute:
   freeze: false
