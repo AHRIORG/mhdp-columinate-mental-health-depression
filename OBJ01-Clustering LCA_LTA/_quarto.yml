@@ -1,0 +1,29 @@
+project:
+  type: manuscript
+  output-dir: _SCAR [Statistical Consideration and Analysis Report]
+
+manuscript:
+  article: index.qmd
+
+format:
+  html:
+    grid:
+      sidebar-width: 300px
+      body-width: 1200px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    theme:
+      - sandstone
+    comments:
+      hypothesis: true
+    code-fold: true
+    
+  docx: default
+  
+  jats: default
+
+execute:
+  freeze: false
+
+editor: visual
+
