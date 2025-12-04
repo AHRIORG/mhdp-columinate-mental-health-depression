@@ -34,9 +34,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fa21e341c0fed3fab66f33cd05d8cc9a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -44,38 +41,9 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <meta name="citation_title" content="Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa">
-<meta name="citation_author" content="CO-LUMINATE DSU Team">
+<meta name="citation_author" content="CO-LUMINATE Research Team">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Validation of the patient health questionnaire-9 (PHQ-9) in a representative sample of adolescents in south africa;,citation_author=A. Bhardwaj;,citation_author=others;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.3389/fpsyt.2022.986531;,citation_volume=13;,citation_journal_title=Frontiers in Psychiatry;">
 <meta name="citation_reference" content="citation_title=Comparing estimates of psychological distress using 7-day and 30-day recall periods: A randomized controlled trial;,citation_author=M. R. Chilver;,citation_author=R. A. Burns;,citation_author=F. Botha;,citation_author=P. Butterworth;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=12;,citation_doi=10.1371/journal.pone.0295535;,citation_volume=18;,citation_journal_title=PLOS ONE;">
@@ -131,7 +99,7 @@ window.Quarto = {
           <div class="quarto-title-meta-heading">Affiliation</div>
           
                 <div class="quarto-title-meta-contents">
-            <p class="author">CO-LUMINATE DSU Team </p>
+            <p class="author">CO-LUMINATE Research Team </p>
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
@@ -157,20 +125,7 @@ window.Quarto = {
     </div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preliminary-analysis" id="toc-preliminary-analysis" class="nav-link active" data-scroll-target="#preliminary-analysis">Preliminary Analysis</a>
-  <ul class="collapse">
-  <li><a href="#factor-retention-analysis-determining-the-stable-structure" id="toc-factor-retention-analysis-determining-the-stable-structure" class="nav-link" data-scroll-target="#factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</a></li>
-  <li><a href="#structural-stability-and-item-co-occurrence" id="toc-structural-stability-and-item-co-occurrence" class="nav-link" data-scroll-target="#structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</a></li>
-  </ul></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  <li><a href="#financial-support" id="toc-financial-support" class="nav-link" data-scroll-target="#financial-support">Financial Support</a></li>
-  <li><a href="#conflict-of-interest" id="toc-conflict-of-interest" class="nav-link" data-scroll-target="#conflict-of-interest">Conflict of Interest</a></li>
-  </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+  
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -181,259 +136,7 @@ window.Quarto = {
   
 
 
-<p>This preliminary analysis evaluates the structural validity and stability of the Shona Symptom Questionnaire (SSQ-14) and two theoretically derived subsets: the SSQ-10 and the SSQ-08. This step serves as a critical foundation for subsequent work, specifically the derivation of an optimal cut-off score for the SSQ-10, referred to as the Theoretically Derived Depressive Symptoms scale, benchmarked against the PHQ-9.</p>
-<p>Using a bootstrap resampling framework with 1,000 iterations, we sought to identify a stable factor structure that remains consistent across differing extraction criteria. Rather than viewing the traditional Kaiser Criterion and Parallel Analysis (PA) as competitors, this analysis interprets their results as complementary bounds. The Kaiser Criterion typically favors parsimony, potentially under-extracting, while PA is sensitive to distinct, latent dimensions, potentially extracting minor factors.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>F1 =~ SSQ09 + SSQ10 + SSQ11 + SSQ12 + SSQ13 + SSQ14 + SSQ08
-F2 =~ SSQ01 + SSQ02 + SSQ03</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |                                                                      |   0%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==                                                                    |   2%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |====                                                                  |   5%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=====                                                                 |   8%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=======                                                               |  10%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=========                                                             |  12%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==========                                                            |  15%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |============                                                          |  18%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==============                                                        |  20%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |================                                                      |  22%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |===================                                                   |  28%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=====================                                                 |  30%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=======================                                               |  32%
-  |                                                                            
-  |========================                                              |  35%
-  |                                                                            
-  |==========================                                            |  38%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |============================                                          |  40%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==============================                                        |  42%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |================================                                      |  45%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=================================                                     |  48%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |===================================                                   |  50%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=====================================                                 |  52%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |======================================                                |  55%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |========================================                              |  58%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==========================================                            |  60%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |============================================                          |  62%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==============================================                        |  65%</code></pre>
-</div>
-<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
-<section id="preliminary-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="preliminary-analysis">Preliminary Analysis</h2>
-<section id="factor-retention-analysis-determining-the-stable-structure" class="level3">
-<h3 class="anchored" data-anchor-id="factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</h3>
-<p>The probability of retaining <span class="math inline">\(k\)</span> factors was calculated across 1,000 bootstrap iterations. We determined the most stable structure for each configuration by analyzing where the probabilities converged or presented a dominant model.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="1920"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p>For the full scale, the Kaiser Criterion strongly favored a 2-factor solution with approximately 89.2% probability. Conversely, Parallel Analysis favored a 3-factor solution with 90.9% probability. These results indicate that the scale is robustly multidimensional. The 2-factor solution represents the most stable base structure, separating somatic from emotional symptoms, while the 3-factor solution represents a stable refinement of the emotional domain.</p>
-<p>For the theoretical subset, the Kaiser Criterion overwhelmingly suggested a 1-factor solution in 81.7% of iterations. Parallel Analysis was more variable, favoring three factors in 62.2% of iterations but with significant support for two factors in 35.1% of cases. Given the known sensitivity of PA to minor factors and the strong consensus for one factor under the Kaiser Criterion, the 1-factor structure appears to be the most practical and stable configuration for this subset. The additional factors suggested by PA likely reflect minor correlations rather than substantive clinical dimensions.</p>
-<p>For the SSQ-08 subset, the Kaiser Criterion universally suggested a 1-factor solution (100% probability). Parallel Analysis was ambiguous, splitting roughly evenly between 2-factor (37.9%) and 3-factor (37.2%) solutions, with a notable minority (24.4%) supporting a 1-factor solution. Based on these data, this subset is determined to be robustly uni-dimensional. The PA results likely reflect item doublets, or pairs of highly correlated items, rather than distinct latent constructs.</p>
-</section>
-<section id="structural-stability-and-item-co-occurrence" class="level3">
-<h3 class="anchored" data-anchor-id="structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</h3>
-<p>To validate these determinations, we examined the stability of item memberships within the winning models for each method.</p>
-<section id="ssq-14-origina" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-14-origina">SSQ-14 (Origina)</h4>
-<section id="kaiser-criterion-2-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="kaiser-criterion-2-factor-solution">Kaiser Criterion (2-Factor Solution)</h5>
-<p>Under the Kaiser criterion, the scale splits cleanly into two distinct clusters. The high probabilities in the stability plot indicate very little cross-loading across iterations. The first factor, labeled General/Somatic, comprises items SSQ09 through SSQ14, which include hallucinations, suicide, and somatic complaints. The second factor, labeled Depressive/Anxious, includes items SSQ01 through SSQ08, encompassing symptoms such as thinking too much, sleep difficulties, and tearfulness. This confirms the scale measures two distinct but related constructs: general distress or somatic symptoms and core depression or anxiety.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="parallel-analysis-3-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution">Parallel Analysis (3-Factor Solution)</h5>
-<p>Parallel Analysis consistently splits the Depressive factor further. The first factor remains the Somatic/Severe dimension, comprising items SSQ07 and SSQ09 through SSQ14. A second factor, labeled Core Depression, includes items SSQ01 through SSQ03. A third factor, labeled Cognitive/Anxiety, includes items SSQ04 through SSQ06 and SSQ08. While stable, this granularity may offer less clinical utility than the 2-factor solution depending on the intended use.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="ssq-10-theoretical-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-10-theoretical-subset">SSQ-10 (Theoretical Subset)</h4>
-<p>This subset excludes items SSQ04 through SSQ07 to focus on depressive symptoms. Although the Kaiser Criterion supports a 1-factor model, examining the Parallel Analysis 3-factor solution reveals why a 1-factor model might be superior for this subset.</p>
-<section id="parallel-analysis-3-factor-solution-1" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-1">Parallel Analysis (3-Factor Solution)</h5>
-<p>The structure under PA reveals three factors. The first factor includes items SSQ09 through SSQ14, representing severe symptoms. The second factor includes items SSQ01 through SSQ03, representing core emotional symptoms. The third factor consists solely of item SSQ08, representing fatigue or work lag. The emergence of SSQ08 as a singleton or weakly associated factor in the 3-factor solution suggests structural fragmentation. This supports the decision to treat the SSQ-10 as a uni-dimensional scale, as suggested by the Kaiser Criterion, for the purpose of establishing a depression cut-off, as dividing it further creates unstable, item-specific factors.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="ssq-08-dixon-chibanda-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-08-dixon-chibanda-subset">SSQ-08 (Dixon-Chibanda Subset)</h4>
-<p>Similarly, while the Kaiser Criterion identifies one factor, the Parallel Analysis 2-factor solution demonstrates instability.</p>
-<section id="parallel-analysis-2-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-2-factor-solution">Parallel Analysis (2-Factor Solution)</h5>
-<p>The structure under the PA 2-factor model splits the items into two groups. Factor 1 contains items SSQ11 through SSQ14. Factor 2 contains items SSQ01, SSQ08, SSQ09, and SSQ10. The co-occurrence heatmap shows fuzziness for Factor 2 items, indicating they do not cluster together as reliably as Factor 1 items. This lack of cohesion under the PA 2-factor model reinforces the conclusion that the 1-factor model identified by the Kaiser Criterion is the most accurate representation of the SSQ-08 structure.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="phq-09-original" class="level4">
-<h4 class="anchored" data-anchor-id="phq-09-original">PHQ-09 (Original)</h4>
-<section id="parallel-analysis-3-factor-solution-2" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-2">Parallel Analysis (3-Factor Solution)</h5>
-<p>Although Kaiser strongly supports a 1-factor model, the PA 3-factor solution (Frequency: 209/374 valid runs) reveals a coherent tripartite substructure. Factor 1 (Cognitive/Severe) includes PHQ906–909 (Guilt, Concentration, Motor, Suicide). Factor 2 (Somatic) includes PHQ903–905 (Sleep, Energy, Appetite). Factor 3 (Core Affective) includes PHQ901–902 (Anhedonia, Mood). While this substructure is theoretically interpretable, the low overall stability and high rate of model non-convergence in bootstrapping support using the robust 1-factor structure for the primary clinical objective.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Domain,PHQ-9 Item (Concept),SSQ-14 Item (Concept),Harmonisation Potential Dysphoria,“Feeling down, depressed, hopeless”,Tearfulness; Wishing to be dead,High (Direct conceptual link) Suicidality,Thoughts of hurting self/better off dead,Wishing to be dead,High (Critical anchor) Sleep,“Trouble falling/staying asleep, sleeping too much”,Fail to sleep,High (Somatic anchor) Fatigue,Feeling tired or having little energy,Tiredness,High (Somatic anchor) Cognition,Trouble concentrating,Thinking too much (Kufungisisa),Moderate (Kufungisisa is broader) Appetite,Poor appetite or overeating,Stomach ache / Loss of appetite,Moderate (SSQ focuses on pain/gut) Anxiety,None (PHQ is depression only),Heart beating fast; Frightened,Low (Unique to SSQ) Somatic,General (implicitly covered),Heat in body; Heaviness,Low (Unique to SSQ) Anhedonia,Little interest or pleasure,No direct equivalent,Low (Information loss in SSQ)</p>
-<div style="page-break-after: always;"></div>
-</section>
-</section>
-</section>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>[Insert Acknowledgements here]</p>
-</section>
-<section id="financial-support" class="level2">
-<h2 class="anchored" data-anchor-id="financial-support">Financial Support</h2>
-<p>[Insert Funding Information here]</p>
-</section>
-<section id="conflict-of-interest" class="level2">
-<h2 class="anchored" data-anchor-id="conflict-of-interest">Conflict of Interest</h2>
-<p>Data Availability</p>
-</section>
+
 
 </main>
 <!-- /main column -->
@@ -837,38 +540,6 @@ F2 =~ SSQ01 + SSQ02 + SSQ03</code></pre>
   });
   </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

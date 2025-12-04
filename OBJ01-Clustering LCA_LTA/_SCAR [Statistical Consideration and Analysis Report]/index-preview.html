@@ -1,28 +1,152 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.7.32">
 
-<meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa</title>
-<style>
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
-div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
+    <title>Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      html { -webkit-text-size-adjust: 100%; }
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -34,48 +158,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-fa21e341c0fed3fab66f33cd05d8cc9a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script async="" src="https://hypothes.is/embed.js"></script>
+     <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<meta name="citation_title" content="Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa">
-<meta name="citation_author" content="CO-LUMINATE DSU Team">
+</script>  
+      <meta name="citation_title" content="Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa">
+<meta name="citation_author" content="CO-LUMINATE Research Team">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=Validation of the patient health questionnaire-9 (PHQ-9) in a representative sample of adolescents in south africa;,citation_author=A. Bhardwaj;,citation_author=others;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.3389/fpsyt.2022.986531;,citation_volume=13;,citation_journal_title=Frontiers in Psychiatry;">
 <meta name="citation_reference" content="citation_title=Comparing estimates of psychological distress using 7-day and 30-day recall periods: A randomized controlled trial;,citation_author=M. R. Chilver;,citation_author=R. A. Burns;,citation_author=F. Botha;,citation_author=P. Butterworth;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=12;,citation_doi=10.1371/journal.pone.0295535;,citation_volume=18;,citation_journal_title=PLOS ONE;">
@@ -114,9 +204,16 @@ window.Quarto = {
 <meta name="citation_reference" content="citation_title=Outcome-wide longitudinal designs for causal inference: A new template for empirical studies in public health;,citation_author=T. J. VanderWeele;,citation_author=Y. Li;,citation_author=A. C. Tsai;,citation_author=I. Kawachi;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=6;,citation_doi=10.1214/16-STS581;,citation_volume=31;,citation_journal_title=Statistical Science;">
 </head>
 
-<body class="quarto-light">
+  <body class="quarto-notebook quarto-light">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
 
-<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+            <a href="./index.qmd" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa</h1>
@@ -131,7 +228,7 @@ window.Quarto = {
           <div class="quarto-title-meta-heading">Affiliation</div>
           
                 <div class="quarto-title-meta-contents">
-            <p class="author">CO-LUMINATE DSU Team </p>
+            <p class="author">CO-LUMINATE Research Team </p>
           </div>
                 <div class="quarto-title-meta-contents">
                     <p class="affiliation">
@@ -148,7 +245,7 @@ window.Quarto = {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+      </div>
     </div>
 
 
@@ -157,287 +254,174 @@ window.Quarto = {
     </div>  </div>
 </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preliminary-analysis" id="toc-preliminary-analysis" class="nav-link active" data-scroll-target="#preliminary-analysis">Preliminary Analysis</a>
-  <ul class="collapse">
-  <li><a href="#factor-retention-analysis-determining-the-stable-structure" id="toc-factor-retention-analysis-determining-the-stable-structure" class="nav-link" data-scroll-target="#factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</a></li>
-  <li><a href="#structural-stability-and-item-co-occurrence" id="toc-structural-stability-and-item-co-occurrence" class="nav-link" data-scroll-target="#structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</a></li>
-  </ul></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
-  <li><a href="#financial-support" id="toc-financial-support" class="nav-link" data-scroll-target="#financial-support">Financial Support</a></li>
-  <li><a href="#conflict-of-interest" id="toc-conflict-of-interest" class="nav-link" data-scroll-target="#conflict-of-interest">Conflict of Interest</a></li>
-  </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+  
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
 
+     <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This chunk handles all package installations and loading for the factor analysis.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: here</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ01-Clustering LCA_LTA</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Load Helper Functions------------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"../../pipelines_and_functions/data_processing_and_description_funcs.R"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>The following package(s) will be updated in the lockfile:
 
+# CRAN -----------------------------------------------------------------------
+- codetools      [0.2-20 -&gt; *]
+- cpp11          [0.5.2 -&gt; *]
+- doParallel     [1.0.17 -&gt; *]
+- dplyr          [1.1.4 -&gt; *]
+- farver         [2.1.2 -&gt; *]
+- foreach        [1.5.2 -&gt; *]
+- generics       [0.1.4 -&gt; *]
+- ggplot2        [4.0.0 -&gt; *]
+- GPArotation    [2025.3-1 -&gt; *]
+- gtable         [0.3.6 -&gt; *]
+- isoband        [0.2.7 -&gt; *]
+- iterators      [1.0.14 -&gt; *]
+- labeling       [0.4.3 -&gt; *]
+- lattice        [0.22-7 -&gt; *]
+- magrittr       [2.0.4 -&gt; *]
+- mnormt         [2.1.1 -&gt; *]
+- nlme           [3.1-168 -&gt; *]
+- patchwork      [1.3.2 -&gt; *]
+- pillar         [1.11.1 -&gt; *]
+- pkgconfig      [2.0.3 -&gt; *]
+- psych          [2.5.6 -&gt; *]
+- purrr          [1.1.0 -&gt; *]
+- RColorBrewer   [1.1-3 -&gt; *]
+- S7             [0.2.0 -&gt; *]
+- scales         [1.4.0 -&gt; *]
+- stringi        [1.8.7 -&gt; *]
+- stringr        [1.5.2 -&gt; *]
+- tibble         [3.3.0 -&gt; *]
+- tidyr          [1.3.1 -&gt; *]
+- tidyselect     [1.2.1 -&gt; *]
+- utf8           [1.2.6 -&gt; *]
+- vctrs          [0.6.5 -&gt; *]
+- viridisLite    [0.4.2 -&gt; *]
+- withr          [3.0.2 -&gt; *]
 
-  
+- Lockfile written to "~/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ01-Clustering LCA_LTA/renv.lock".</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"here"</span>, <span class="st">"conflicted"</span>, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">"tidyverse"</span>, <span class="st">"labelled"</span>, <span class="st">"reshape2"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"gtsummary"</span>, <span class="st">"gt"</span>, <span class="st">"gtreg"</span>, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"scales"</span>, <span class="st">"ggsci"</span>, <span class="st">"patchwork"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Loop through the packages</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">func_install_and_load</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: conflicted</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: tidyverse</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+Loading required package: labelled
 
+Loading required package: reshape2
 
-<p>This preliminary analysis evaluates the structural validity and stability of the Shona Symptom Questionnaire (SSQ-14) and two theoretically derived subsets: the SSQ-10 and the SSQ-08. This step serves as a critical foundation for subsequent work, specifically the derivation of an optimal cut-off score for the SSQ-10, referred to as the Theoretically Derived Depressive Symptoms scale, benchmarked against the PHQ-9.</p>
-<p>Using a bootstrap resampling framework with 1,000 iterations, we sought to identify a stable factor structure that remains consistent across differing extraction criteria. Rather than viewing the traditional Kaiser Criterion and Parallel Analysis (PA) as competitors, this analysis interprets their results as complementary bounds. The Kaiser Criterion typically favors parsimony, potentially under-extracting, while PA is sensitive to distinct, latent dimensions, potentially extracting minor factors.</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>F1 =~ SSQ09 + SSQ10 + SSQ11 + SSQ12 + SSQ13 + SSQ14 + SSQ08
-F2 =~ SSQ01 + SSQ02 + SSQ03</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |                                                                      |   0%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==                                                                    |   2%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |====                                                                  |   5%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=====                                                                 |   8%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=======                                                               |  10%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=========                                                             |  12%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==========                                                            |  15%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |============                                                          |  18%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==============                                                        |  20%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |================                                                      |  22%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==================                                                    |  25%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |===================                                                   |  28%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=====================                                                 |  30%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=======================                                               |  32%
-  |                                                                            
-  |========================                                              |  35%
-  |                                                                            
-  |==========================                                            |  38%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |============================                                          |  40%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==============================                                        |  42%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |================================                                      |  45%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=================================                                     |  48%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |===================================                                   |  50%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |=====================================                                 |  52%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |======================================                                |  55%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |========================================                              |  58%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==========================================                            |  60%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |============================================                          |  62%</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  |                                                                            
-  |==============================================                        |  65%</code></pre>
-</div>
-<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
-<section id="preliminary-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="preliminary-analysis">Preliminary Analysis</h2>
-<section id="factor-retention-analysis-determining-the-stable-structure" class="level3">
-<h3 class="anchored" data-anchor-id="factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</h3>
-<p>The probability of retaining <span class="math inline">\(k\)</span> factors was calculated across 1,000 bootstrap iterations. We determined the most stable structure for each configuration by analyzing where the probabilities converged or presented a dominant model.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="1920"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p>For the full scale, the Kaiser Criterion strongly favored a 2-factor solution with approximately 89.2% probability. Conversely, Parallel Analysis favored a 3-factor solution with 90.9% probability. These results indicate that the scale is robustly multidimensional. The 2-factor solution represents the most stable base structure, separating somatic from emotional symptoms, while the 3-factor solution represents a stable refinement of the emotional domain.</p>
-<p>For the theoretical subset, the Kaiser Criterion overwhelmingly suggested a 1-factor solution in 81.7% of iterations. Parallel Analysis was more variable, favoring three factors in 62.2% of iterations but with significant support for two factors in 35.1% of cases. Given the known sensitivity of PA to minor factors and the strong consensus for one factor under the Kaiser Criterion, the 1-factor structure appears to be the most practical and stable configuration for this subset. The additional factors suggested by PA likely reflect minor correlations rather than substantive clinical dimensions.</p>
-<p>For the SSQ-08 subset, the Kaiser Criterion universally suggested a 1-factor solution (100% probability). Parallel Analysis was ambiguous, splitting roughly evenly between 2-factor (37.9%) and 3-factor (37.2%) solutions, with a notable minority (24.4%) supporting a 1-factor solution. Based on these data, this subset is determined to be robustly uni-dimensional. The PA results likely reflect item doublets, or pairs of highly correlated items, rather than distinct latent constructs.</p>
-</section>
-<section id="structural-stability-and-item-co-occurrence" class="level3">
-<h3 class="anchored" data-anchor-id="structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</h3>
-<p>To validate these determinations, we examined the stability of item memberships within the winning models for each method.</p>
-<section id="ssq-14-origina" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-14-origina">SSQ-14 (Origina)</h4>
-<section id="kaiser-criterion-2-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="kaiser-criterion-2-factor-solution">Kaiser Criterion (2-Factor Solution)</h5>
-<p>Under the Kaiser criterion, the scale splits cleanly into two distinct clusters. The high probabilities in the stability plot indicate very little cross-loading across iterations. The first factor, labeled General/Somatic, comprises items SSQ09 through SSQ14, which include hallucinations, suicide, and somatic complaints. The second factor, labeled Depressive/Anxious, includes items SSQ01 through SSQ08, encompassing symptoms such as thinking too much, sleep difficulties, and tearfulness. This confirms the scale measures two distinct but related constructs: general distress or somatic symptoms and core depression or anxiety.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-3-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="parallel-analysis-3-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution">Parallel Analysis (3-Factor Solution)</h5>
-<p>Parallel Analysis consistently splits the Depressive factor further. The first factor remains the Somatic/Severe dimension, comprising items SSQ07 and SSQ09 through SSQ14. A second factor, labeled Core Depression, includes items SSQ01 through SSQ03. A third factor, labeled Cognitive/Anxiety, includes items SSQ04 through SSQ06 and SSQ08. While stable, this granularity may offer less clinical utility than the 2-factor solution depending on the intended use.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="ssq-10-theoretical-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-10-theoretical-subset">SSQ-10 (Theoretical Subset)</h4>
-<p>This subset excludes items SSQ04 through SSQ07 to focus on depressive symptoms. Although the Kaiser Criterion supports a 1-factor model, examining the Parallel Analysis 3-factor solution reveals why a 1-factor model might be superior for this subset.</p>
-<section id="parallel-analysis-3-factor-solution-1" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-1">Parallel Analysis (3-Factor Solution)</h5>
-<p>The structure under PA reveals three factors. The first factor includes items SSQ09 through SSQ14, representing severe symptoms. The second factor includes items SSQ01 through SSQ03, representing core emotional symptoms. The third factor consists solely of item SSQ08, representing fatigue or work lag. The emergence of SSQ08 as a singleton or weakly associated factor in the 3-factor solution suggests structural fragmentation. This supports the decision to treat the SSQ-10 as a uni-dimensional scale, as suggested by the Kaiser Criterion, for the purpose of establishing a depression cut-off, as dividing it further creates unstable, item-specific factors.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="ssq-08-dixon-chibanda-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-08-dixon-chibanda-subset">SSQ-08 (Dixon-Chibanda Subset)</h4>
-<p>Similarly, while the Kaiser Criterion identifies one factor, the Parallel Analysis 2-factor solution demonstrates instability.</p>
-<section id="parallel-analysis-2-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-2-factor-solution">Parallel Analysis (2-Factor Solution)</h5>
-<p>The structure under the PA 2-factor model splits the items into two groups. Factor 1 contains items SSQ11 through SSQ14. Factor 2 contains items SSQ01, SSQ08, SSQ09, and SSQ10. The co-occurrence heatmap shows fuzziness for Factor 2 items, indicating they do not cluster together as reliably as Factor 1 items. This lack of cohesion under the PA 2-factor model reinforces the conclusion that the 1-factor model identified by the Kaiser Criterion is the most accurate representation of the SSQ-08 structure.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="phq-09-original" class="level4">
-<h4 class="anchored" data-anchor-id="phq-09-original">PHQ-09 (Original)</h4>
-<section id="parallel-analysis-3-factor-solution-2" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-2">Parallel Analysis (3-Factor Solution)</h5>
-<p>Although Kaiser strongly supports a 1-factor model, the PA 3-factor solution (Frequency: 209/374 valid runs) reveals a coherent tripartite substructure. Factor 1 (Cognitive/Severe) includes PHQ906–909 (Guilt, Concentration, Motor, Suicide). Factor 2 (Somatic) includes PHQ903–905 (Sleep, Energy, Appetite). Factor 3 (Core Affective) includes PHQ901–902 (Anhedonia, Mood). While this substructure is theoretically interpretable, the low overall stability and high rate of model non-convergence in bootstrapping support using the robust 1-factor structure for the primary clinical objective.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Domain,PHQ-9 Item (Concept),SSQ-14 Item (Concept),Harmonisation Potential Dysphoria,“Feeling down, depressed, hopeless”,Tearfulness; Wishing to be dead,High (Direct conceptual link) Suicidality,Thoughts of hurting self/better off dead,Wishing to be dead,High (Critical anchor) Sleep,“Trouble falling/staying asleep, sleeping too much”,Fail to sleep,High (Somatic anchor) Fatigue,Feeling tired or having little energy,Tiredness,High (Somatic anchor) Cognition,Trouble concentrating,Thinking too much (Kufungisisa),Moderate (Kufungisisa is broader) Appetite,Poor appetite or overeating,Stomach ache / Loss of appetite,Moderate (SSQ focuses on pain/gut) Anxiety,None (PHQ is depression only),Heart beating fast; Frightened,Low (Unique to SSQ) Somatic,General (implicitly covered),Heat in body; Heaviness,Low (Unique to SSQ) Anhedonia,Little interest or pleasure,No direct equivalent,Low (Information loss in SSQ)</p>
-<div style="page-break-after: always;"></div>
-</section>
-</section>
-</section>
-</section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>[Insert Acknowledgements here]</p>
-</section>
-<section id="financial-support" class="level2">
-<h2 class="anchored" data-anchor-id="financial-support">Financial Support</h2>
-<p>[Insert Funding Information here]</p>
-</section>
-<section id="conflict-of-interest" class="level2">
-<h2 class="anchored" data-anchor-id="conflict-of-interest">Conflict of Interest</h2>
-<p>Data Availability</p>
-</section>
+Loading required package: gtsummary
 
-</main>
-<!-- /main column -->
-<script id="quarto-html-after-body" type="application/javascript">
+Loading required package: gt
+
+Loading required package: gtreg
+
+Loading required package: scales
+
+Loading required package: ggsci
+
+Loading required package: patchwork</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>- The lockfile is already up to date.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflict_prefer_all</span>(<span class="st">"dplyr"</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></div>
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This chunk sets global options for figures and tables</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting theme "Compact"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_journal</span>(<span class="at">journal =</span> <span class="st">"jama"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting theme "JAMA"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></div>
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directory for statistical analysis</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the root directory name</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>root_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"statistical_analysis"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the full list of directories to create</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use file.path for OS-independent path construction</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>dirs_to_create <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"metadata"</span>),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"adam"</span>),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/analysis"</span>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/utils"</span>),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"models"</span>),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"table"</span>),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"figures"</span>),</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"listing"</span>),</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"objects"</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create all directories recursively</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'showWarnings = FALSE' argument prevents warnings if the directories already exist</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">sapply</span>(dirs_to_create, dir.create, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></div>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -835,42 +819,6 @@ F2 =~ SSQ01 + SSQ02 + SSQ03</code></pre>
       }
     }
   });
-  </script>
-</div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
+  </script>  </div> <!-- /content --> 
   
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
-
-
-
-
 </body></html>
