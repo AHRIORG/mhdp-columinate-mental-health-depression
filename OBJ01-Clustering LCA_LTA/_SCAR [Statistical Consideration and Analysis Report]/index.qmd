@@ -1,9 +1,9 @@
 ---
-title: Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa
+title: Mapping the Landscape of Adversity - Patterns of SES, Food Insecurity, and Caregiver Instability among Rural South African Youth
 subtitle: "**Statistical Consideration and Analysis Report (SCAR)**"
 
 authors:
-  - name: CO-LUMINATE Research Team
+  - name: CO-LUMINATE DSU Team
     affiliation: Africa Health Research Institute (AHRI)
     city: Durban & Somokhele
     country: South Africa
