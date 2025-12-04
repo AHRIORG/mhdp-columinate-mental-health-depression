@@ -1,5 +1,5 @@
 ---
-title: Mapping the Landscape of Adversity - Patterns of SES, Food Insecurity, and Caregiver Instability among Rural South African Youth
+title: Pathways to Pathology - Assessing the Longitudinal Impact of Household Instability and Food Insecurity on Youth Mental Health
 subtitle: "**Statistical Consideration and Analysis Report (SCAR)**"
 
 authors:
