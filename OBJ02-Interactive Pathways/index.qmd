@@ -1,5 +1,5 @@
 ---
-title: Mapping the Landscape of Adversity - Patterns of SES, Food Insecurity, and Caregiver Instability among Rural South African Youth
+title: Mechanisms of Vulnerability - Behavioral Mediators in the Relationship Between Structural Adversity and Youth Mental Health
 subtitle: "**Statistical Consideration and Analysis Report (SCAR)**"
 
 authors:
