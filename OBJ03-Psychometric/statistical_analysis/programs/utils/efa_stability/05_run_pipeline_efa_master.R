@@ -1,21 +1,4 @@
-# Psychometric Bootstrap EFA – Pipeline Wrapper
-
-# Dependencies:
-# library(psych)
-# library(dplyr)
-# library(tidyr)
-# library(ggplot2)
-# library(here)
-# library(scales)
-# library(parallel)
-# library(doParallel)
-# library(foreach)
-#
-# Source helper dependance functions:
-source("statistical_analysis/programs/utils/Psych Split & EFA Helpers.R")
-source("statistical_analysis/programs/utils/Psych Evaluate All Splits.R")
-source("statistical_analysis/programs/utils/Psych Retention Loadings Eigen.R")
-source("statistical_analysis/programs/utils/Psych Cooccurrence Consensus.R")
+# Psychometric Monte Carlo EFA – Pipeline Wrapper
 
 # ------------------------------------------------------------------------------
 # 1. Pipeline Wrapper

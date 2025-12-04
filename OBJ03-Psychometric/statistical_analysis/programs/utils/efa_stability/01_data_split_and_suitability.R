@@ -1,13 +1,7 @@
 # Psychometric Bootstrap EFA – Splitting & EFA Suitability Helpers
 
 # ------------------------------------------------------------------------------
-# 0. Dependencies (assumed loaded elsewhere)
-# ------------------------------------------------------------------------------
-# library(psych)
-# library(here)
-
-# ------------------------------------------------------------------------------
-# 1. Generate Exploratory/Confirmatory Split Indices
+# Generate Exploratory/Confirmatory Split Indices
 # ------------------------------------------------------------------------------
 
 #' Generate Exploratory/Confirmatory Split Indices
@@ -55,7 +49,7 @@ generate_ec_splits <- function(DATA, NBOOT, seed = 123) {
 }
 
 # ------------------------------------------------------------------------------
-# 2. Check EFA Suitability & Extract Factor Assignments / Loadings
+# Check EFA Suitability & Extract Factor Assignments / Loadings
 # ------------------------------------------------------------------------------
 
 #' Assess Data Suitability and Determine Factors for EFA

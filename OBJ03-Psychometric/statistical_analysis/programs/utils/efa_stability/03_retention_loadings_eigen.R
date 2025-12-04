@@ -1,4 +1,4 @@
-# Psychometric Bootstrap EFA – Retention, Loadings & Eigenvalue Helpers
+# Psychometric EFA – Retention, Loadings & Eigenvalue Helpers
 
 # Dependencies: dplyr, tidyr, ggplot2, scales
 

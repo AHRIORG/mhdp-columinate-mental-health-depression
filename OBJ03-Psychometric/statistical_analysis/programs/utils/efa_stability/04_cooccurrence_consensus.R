@@ -1,4 +1,4 @@
-# Psychometric Bootstrap EFA – Co-occurrence & Consensus Model Helpers
+# Psychometric EFA – Co-occurrence & Consensus Model Helpers
 
 # Dependencies: dplyr, tidyr, ggplot2, scales, grid
 

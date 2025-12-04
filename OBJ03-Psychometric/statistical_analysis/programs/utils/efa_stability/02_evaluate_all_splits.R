@@ -1,4 +1,4 @@
-# Psychometric Bootstrap EFA – Bootstrap Evaluation (Sequential & Parallel)
+# Psychometric EFA – Evaluation (Sequential & Parallel)
 
 # ------------------------------------------------------------------------------
 # Dependencies assumed:
