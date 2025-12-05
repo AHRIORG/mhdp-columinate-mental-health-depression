@@ -1,0 +1,419 @@
+---
+title: CO-LUMINATE Data Documentation & Codebook
+subtitle: "**Data Linkage for Longitudinal Dataset**"
+
+authors:
+  - name: CO-LUMINATE DSU Team
+    affiliation: Africa Health Research Institute (AHRI)
+    city: Durban & Somokhele
+    country: South Africa
+    
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+## This chunk handles all package installations and loading for the factor analysis.
+require(here)
+### Load Helper Functions------------
+source(here("../../pipelines_and_functions/data_processing_and_description_funcs.R"))
+
+renv::snapshot()
+packages <- c("here", "conflicted", 
+              "tidyverse", "labelled", "reshape2",
+              "gtsummary", "gt", "gtreg", 
+              "scales", "ggsci", "patchwork",
+              
+              "ggsankey"
+              )
+
+## Loop through the packages
+func_install_and_load(packages)
+renv::snapshot()
+conflict_prefer_all("dplyr",quiet=TRUE)
+rm(packages)
+```
+
+```{r figure-table-setup}
+#| echo: false
+## This chunk sets global options for figures and tables
+theme_gtsummary_compact()
+theme_gtsummary_journal(journal = "jama")
+options(scipen=999)
+```
+
+```{r}
+# Create directory for statistical analysis
+# Define the root directory name
+root_dir <- here("data_management")
+
+# Define the full list of directories to create
+# Use file.path for OS-independent path construction
+dirs_to_create <- c(
+  file.path(root_dir, "data", "adam"),
+  file.path(root_dir, "documentation"),
+  file.path(root_dir, "programs/analysis"),
+  file.path(root_dir, "programs/utils"),
+  file.path(root_dir, "models"),
+  file.path(root_dir, "output", "table"),
+  file.path(root_dir, "output", "figures"),
+  file.path(root_dir, "output", "listing"),
+  file.path(root_dir, "output", "objects")
+)
+
+# Create all directories recursively
+# The 'showWarnings = FALSE' argument prevents warnings if the directories already exist
+invisible(sapply(dirs_to_create, dir.create, recursive = TRUE, showWarnings = FALSE))
+
+```
+
+# Project Overview & Study Design
+
+The CO-LUMINATE dataset links individual-level mental health outcomes from specific clinical cohorts to longitudinal household data from the AHRI Health and Demographic Surveillance System (HDSS).
+
+## Core Design
+
+### Exposure Window (Developmental Origins)
+
+- **Early Childhood:** Ages 0–5 years  
+- **Middle Childhood:** Ages 6–10 years  
+- **Source:** AHRI HDSS (annual panels used to derive latent trajectory classes)
+
+### Outcome Window (Adolescence/Young Adulthood)
+
+- **Observation Period:** Ages 13–24 years  
+- **Source:** 5 nested clinical studies (Depression & Behavior)
+
+## The "Hub-and-Spoke" Linkage
+
+The dataset relies on linking the **USUBJID** from the clinical visits (Spokes) to the historical residency timeline (Hub) in the HDSS.
+
+## Data Sources (The 5 Cohorts)
+
+The outcome data is derived from five distinct studies. The `STUDY` variable is coded as a factor with the following fixed order:
+
+| Factor Level | Study Name        | N (Approx) | Primary MH Tool | Role in Analysis                   |
+|--------------|-------------------|-----------:|-----------------|------------------------------------|
+| 1            | Dreams            | [N]        | SSQ-14          | Outcome (Needs Calibration)        |
+| 2            | Isisekelo Sempilo | [N]        | PHQ-9 & SSQ-14  | Calibration Bridge / Gold Standard |
+| 3            | Multilevel        | [N]        | SSQ-14          | Outcome (Needs Calibration)        |
+| 4            | TasP              | [N]        | PHQ-9           | Outcome (Gold Standard)            |
+| 5            | Thetha Nami       | [N]        | PHQ-9           | Outcome (Gold Standard)            |
+
+# CO-LUMINATE Secondary Data Analysis
+
+The data-driven aspect of this project entails the creation of the CO-LUMINATE longitudinal linked dataset.
+This dataset will allow us to understand the longitudinal relationships between socioeconomic status (SES), food security (captured through HDSS-based household indicators), caregiver residency and co-residency, and depressed mood (measured at multiple time points), among rural South African young people aged 13–24.
+These findings will be used to generate and test hypotheses regarding the mechanisms underpinning young people’s depression in low- and middle-income countries (LMICs).
+
+The CO-LUMINATE longitudinal dataset will link existing data from 5,279 young people aged 13–24 years, for whom we have rigorous measures of depressed mood at one or more time points from AHRI’s past research studies, with their households’ HDSS data.
+Through this process, each young person’s depression data is linked with an extensive longitudinal database containing information on their household’s SES and food security–related conditions, as well as household composition.
+The HDSS also allows us to link young people to their caregivers, so that we can examine patterns of co-residence between a young person’s caregivers, and between them and their caregivers.
+
+The novel contribution of this project, and our ability to do this innovative work, arises from three facts:
+
+1. AHRI’s HDSS, like most, does not include rigorous individual-level measurement of young people's mental health outcomes, but offers an opportunity to examine social exposures longitudinally.
+2. Over the past decade, AHRI has conducted cohort studies among young people which included rigorous measurement of depressed mood (SSQ-14 and PHQ-9) at one or more time points, providing a unique data resource.
+3. By bringing these two types of data together, we are able to examine – in a sample of 5,279 – patterns of exposure to social determinants and trajectories of young people’s mental health (with a focus on depression).
+
+The cohort studies used for this project – DREAMS, Multilevel, Isisekelo Sempilo, Treatment as Prevention (TasP), and Thetha Nami – were nested within the HDSS.
+This allows us to link young people’s individual-level depression data gathered in these studies with their household’s HDSS data.
+This linkage creates an unprecedented longitudinal dataset of household social exposures and depression in young people.
+
+The basis for this project has already begun.
+In partnership with Aga Khan University, KEMRI, and the University of Michigan Center for Global Health Equity, co-applicant NM integrated data from the nested studies into a harmonised individual-level mental health dataset for pooled analyses.
+The harmonised individual-level mental health dataset can now be linked to the study participants’ household HDSS data.
+This allows longitudinal measures of young people’s social and environmental exposures at the household level to be explored in relation to their depression symptoms.
+
+# Study Setting and Design
+
+## Study Setting
+
+AHRI is a transdisciplinary scientific research institute in KwaZulu-Natal, South Africa.
+AHRI’s Somkhele campus is located in an under-resourced rural area centred in a Health and Demographic Surveillance System (HDSS).
+The HDSS conducts tri-annual surveys of approximately 22,000 households and annual surveys of roughly 150,000 individuals in an area of 845 km².
+The area typifies the challenges that face young people in LMICs: poverty, food insecurity, high HIV prevalence, migration, and substance abuse, all increasing vulnerability to depression.
+
+# Project Directory & Data Access
+
+The project follows a reproducible R-project structure, with clear separation between raw, staging, and analytic layers.
+
+## Data Access Policy
+
+::: {.callout-warning}
+## Important
+
+To ensure compliance with the Protection of Personal Information Act (POPIA) and AHRI's Data Sharing Policy and Standard Operating Procedures (SOP), this repository does **not** contain full raw, staging, or analytic datasets.
+
+The `data_examples/` directory contains only 10-line snippets (`head()`) of the files to allow code testing and validation of variable types. Researchers requiring access to the full longitudinal datasets must submit a formal request via the AHRI Data Science Unit (DSU).
+:::
+
+## File Architecture
+
+```text
+OBJ00-Datasets Preperation/
+├── data_examples/              # Snippets (First 10 lines) for code testing ONLY
+│   ├── 0_raw_snippets/         # Examples of source structures
+│   │   ├── dt_childhood_exposure_head.csv  # Annual exposure panel (0-10y)
+│   │   ├── dt_psychometric_head.csv        # Bridge dataset (Isisekelo)
+│   │   └── dt_dreams_multi_ssq_head.csv    # Target dataset (Dreams/Multi)
+│   ├── 1_staging_snippets/     # Examples of intermediate structures
+│   │   ├── mh_harmonized_head.csv          # (Output of harmonization script)
+│   │   └── derived_models/     # Saved GMM/LCA model objects (.rds)
+│   └── 2_final_snippets/       
+│       └── dt_Multistudies_head.csv        # The Analytic Master
+├── scripts/
+│   ├── 00_setup.R              # Packages & Global settings (Factor orders)
+│   ├── 01_cleaning/
+│   │   ├── 01a_clean_hdss.R    # Age-splitter algorithm
+│   │   └── 01b_clean_clinical.R # Standardization of MH items
+│   ├── 02_harmonization/       # [PENDING] Manuscript Deliverables (Available upon finalization)
+│   │   ├── 02a_roc_calibration.R # Traditional ROC (Method 1)
+│   │   ├── 02b_irt_model.R       # IRT Model & Scoring (Method 2)
+│   │   └── 02c_sensitivity.R     # Agreement checks (Kappa)
+│   ├── 03_variable_derivation/ # [PENDING] Manuscript Deliverables (Available upon finalization)
+│   │   ├── 03a_derive_global.R # Derive 'Global_Adversity_Class' (0-10y)
+│   │   └── 03b_derive_periods.R# Derive 'Early_' & 'Mid_Adversity_Class'
+│   └── 04_merge_master.R       # Final linkage of Exposures to Outcomes
+├── diagnostics/                # Data Quality Checks (QC)
+│   ├── missingness_maps/       # Visualizations of structural missingness
+│   ├── irt_plots/              # [PENDING] Manuscript Figures (Available upon finalization)
+│   ├── roc_plots/              # [PENDING] Manuscript Figures (Available upon finalization)
+│   └── consort_flow/           # Inclusion/Exclusion diagrams
+└── docs/
+    ├── dictionaries/           # CSV Variable lookup tables
+    └── CO-LUMINATE_Data_Documentation.md
+```
+
+# Dataset Dictionaries
+
+This section details the variable structure for the four specific data frames used in the pipeline, filtered to include only scientifically relevant variables.
+
+## `dt_childhood_exposure` (Exposure 0–10 Years)
+
+**Description:** Longitudinal panel of annual exposure indicators derived from HDSS. Used to generate the latent trajectories.
+
+| Variable Label                          | Variable Name | Variable Type | Value Labels / Units                                |
+|-----------------------------------------|---------------|---------------|-----------------------------------------------------|
+| Unique Individual Identifier            | USUBJID       | numeric       |                                                     |
+| Unique Household Identifier             | HHID          | numeric       |                                                     |
+| Participant's Sex                       | SEX           | factor        | Male; Female                                        |
+| Exposure Age                            | EXPAGE        | numeric       | 0, 1, …, 10                                         |
+| Lived Without Mother                    | LIVEDWOM      | factor        | No; Yes                                             |
+| Lived Without Father                    | LIVEDWOF      | factor        | No; Yes                                             |
+| Mother's Level of Education             | EDUCMOTH      | factor        | None; Primary; Secondary; Completed Matric          |
+| Father's Level of Education             | EDUCFATH      | factor        | None; Primary; Secondary; Completed Matric          |
+| Number of Children Aged 0–4y in Household | HHCHLD4     | numeric       | Count                                               |
+| Household Socioeconomic Status          | HHSES         | factor        | Poorest; Poor; Medium; Rich; Richest                |
+
+## `dt_psychometric` (The Bridge Dataset)
+
+**Description:** Subset of Isisekelo Sempilo participants with concurrent measurements. Used to train the IRT and ROC models.
+
+| Variable Label            | Variable Name | Variable Type | Value Labels / Units |
+|---------------------------|---------------|---------------|----------------------|
+| Unique Subject Identifier | USUBJID       | numeric       |                      |
+| Age (Years)               | AGE           | numeric       |                      |
+| Sex                       | SEX           | factor        | Male; Female         |
+| SSQ-14 Total Score        | SSQSCR        | numeric       | 0–14                 |
+| SSQ-14 Items (1–14)       | SSQ01...14    | factor        | No; Yes              |
+| PHQ-9 Total Score         | PHQSCR        | numeric       | 0–27                 |
+| PHQ-9 Items (1–9)         | PHQ901...09   | factor        | Likert (0–3)         |
+
+## `dt_dreams_multi_ssq` (Target for Scoring)
+
+**Description:** Participants from Dreams and Multilevel studies who only have SSQ-14 data. These scores are transformed using the parameters derived from `dt_psychometric`.
+
+| Variable Label         | Variable Name       | Variable Type | Value Labels / Units          |
+|------------------------|---------------------|---------------|-------------------------------|
+| Unique Subject Identifier | USUBJID          | numeric       |                               |
+| Study Name             | STUDY              | character     | Dreams; Multilevel           |
+| Visit Date             | VISITDT            | Date          |                               |
+| Sex                    | SEX                | factor        | Male; Female                  |
+| Age (Years)            | AGE                | numeric       |                               |
+| SSQ-14 Items (1–14)    | SSQ01...14         | factor        | No; Yes                       |
+| Derived IRT Score      | Harmonized_Theta   | numeric       | Z-score                       |
+| Derived Binary         | Depression_Bin_ROC | factor        | 0 = No; 1 = Yes               |
+
+## `dt_Multistudies` (The Analytic Master)
+
+**Description:** Final merged dataset containing all 5 studies with harmonized outcomes linked to the derived exposure trajectories. Includes only relevant determinants, mediators, and outcomes.
+
+| Variable Label                      | Variable Name       | Variable Type | Value Labels / Units                                                  |
+|-------------------------------------|---------------------|---------------|------------------------------------------------------------------------|
+| Unique Subject Identifier           | USUBJID             | numeric       |                                                                        |
+| Study Name                          | STUDY               | factor        | Dreams; Isisekelo Sempilo; Multilevel; TasP; Thetha Nami              |
+| Visit Date                          | VISITDT             | Date          |                                                                        |
+| Sex                                 | SEX                 | factor        | Male; Female                                                           |
+| Age (Years)                         | AGE                 | numeric       |                                                                        |
+| Household Urbanicity Category       | URBANCAT            | factor        | Rural; Peri-Urban; Urban                                               |
+| Migration Status (Baseline)         | MIGRCAT             | factor        | Never; Within PIPSA; External migration                                |
+| Father Status (Baseline)            | FATHSTAT            | factor        | Father Alive; Father Deceased                                         |
+| Mother Status (Baseline)            | MOTHSTAT            | factor        | Mother Alive; Mother Deceased                                         |
+| Orphanhood Status (Baseline)        | ORPHSTAT            | factor        | Both Parents Alive; One Parent Deceased; Both Parents Deceased         |
+| Currently in School                 | SCHOOL              | factor        | Not inschool; Inschool                                                 |
+| Current Employment                  | EMPLOY              | factor        | Not employed; Employed                                                 |
+| Receives Government Grant           | GOVTGRNT            | factor        | No; Yes                                                                |
+| Ever Had Sex                        | EVRSEXCAT           | factor        | No; Yes                                                                |
+| HIV Test Result                     | HIVSTRESC           | factor        | Negative; Positive                                                     |
+| Ever Experienced Violence           | VIOLENCE            | factor        | No; Yes                                                                |
+| Food Insecurity                     | FOODSEC             | factor        | No; Yes                                                                |
+| Ever Been Pregnant                  | EVRPREGCAT          | factor        | No; Yes                                                                |
+| Sexual Behavior Category            | SEXBHV              | factor        | NeverHadSex; EverHadSex; EverPregnant                                  |
+| Ever Drank Alcohol                  | DRNKALC             | factor        | No; Yes                                                                |
+| PHQ-9 Total Score                   | PHQSCR              | numeric       |                                                                        |
+| PHQ-9 ≥ 10                          | PHQBIN              | factor        | No; Yes                                                                |
+| Derived Latent Score                | Harmonized_Theta    | numeric       | Standardized IRT Score                                                 |
+| Derived Binary Outcome              | Depression_Bin_IRT  | factor        | Derived from Theta threshold                                           |
+| Derived Exposure (0–10)             | Global_Adv_Class    | factor        | Latent Class Membership                                                |
+| Derived Exposure (0–5)              | Early_Adv_Class     | factor        | Latent Class Membership                                                |
+| Derived Exposure (6–10)             | Mid_Adv_Class       | factor        | Latent Class Membership                                                |
+
+# Methodological Algorithms
+
+## The "Age-Splitter" Algorithm (Data Preparation)
+
+To prepare the input data for trajectory modelling:
+
+### Episode Expansion
+
+AHRI residency episodes are intersected with the participant's specific "Age 0–10" timeline.
+
+
+### Annualization
+
+Continuous residency episodes are sliced into 1-year intervals (Age 0, Age 1, etc.).
+
+
+### Time-Weighting
+
+Annual exposure values are calculated based on the household state where the child spent the majority of that specific age-year.
+
+
+## Trajectory & Mixture Modelling (Derivation)
+
+Exposure classes are derived using Multi-Trajectory Modeling (MTM) or Joint Latent Class Analysis to identify subgroups of individuals following similar patterns across all base variables simultaneously.
+
+### Continuous Exposures (Child Count)
+
+Growth Mixture Modelling (GMM) is used to identify latent classes with distinct intercepts and slopes.
+
+
+### Categorical/Ordinal Exposures (SES, Parental Absence, Education)
+
+Latent Class Analysis (LCA) or Latent Transition Analysis (LTA) is used to identify subgroups based on patterns of endorsement across the 10 time points.
+
+
+### Strategy 1: Global (0–10 Years)
+
+Models are fitted using the full 11-year sequence of all base variables. This creates a single **Childhood Profile** (`Global_Adversity_Class`) for every participant.
+
+### Strategy 2: Sensitive Periods (Split)
+
+Models are fitted separately for:
+
+- **0–5 subset:** `Early_Adversity_Class`  
+- **6–10 subset:** `Mid_Adversity_Class`  
+
+This creates two distinct exposure variables to test sensitive period hypotheses.
+
+# Psychometric Harmonization (Triangulation Strategy)
+
+To ensure robustness, the project maintains two parallel definitions of "Depression" derived from the Isisekelo Sempilo bridge sample.
+
+## Method 1: Traditional Binary (ROC-Based)
+
+- **Variable:** `Depression_Bin_ROC`  
+- **Approach:** Standard clinical epidemiology.  
+- **Process:**  
+  - Identify the optimal integer cut-off on the raw SSQ-14 scale (e.g., ≥ 8) that maximizes sensitivity and specificity relative to the PHQ-9.  
+- **Use Case:**  
+  - Comparison with previous literature and simpler prevalence reporting.
+
+## Method 2: Latent Harmonization (IRT-Based)
+
+- **Variables:** `Harmonized_Theta` (Continuous) & `Depression_Bin_IRT` (Binary).  
+- **Approach:** Psychometric measurement invariance.  
+- **Process:**
+  - Fit a Graded Response Model to estimate a common latent trait ($\theta$).  
+  - Identify the $\theta$ value corresponding to PHQ-9 = 10.  
+  - Classify all participants based on this latent threshold.
+- **Use Case:**  
+  - Primary analytical models (Regression/Mediation) where measurement precision and invariance are critical.
+
+# Quality Control & Missingness Codes
+
+## Missing Data Flags
+
+The following codes are standardized across data frames:
+
+- `NA`: System missing / Not applicable (e.g., PHQ-9 score for a Dreams participant).  
+- `-99`: Refused to answer.  
+- `-88`: Don't know.  
+- `-77`: Not located / Lost to follow-up.
+
+## Exclusion Criteria (Consort Flow)
+
+Participants are excluded if:
+
+- They do not have a valid `USUBJID` linking to the HDSS Masterfile.  
+- They have < 180 days of residency observation during the Exposure Window (0–10 years).  
+- They have missing or invalid Date of Birth.
+
+# Cohort Profile & QC Reporting (Table 1 Shell)
+
+To validate the linkage quality, all analysis scripts must output baseline characteristics matching the structure below. This confirms that the selection bias across the 5 studies is documented.
+
+| Characteristic                         | Total (N=5,279) | Dreams | Isisekelo Sempilo | Multilevel | TasP | Thetha Nami |
+|----------------------------------------|----------------:|:------:|:-----------------:|:----------:|:----:|:-----------:|
+| **Demographics**                       |                 |        |                   |            |      |             |
+| Age at Visit, Mean (SD)               | .               | .      | .                 | .          | .    | .           |
+| Female, N (%)                         | .               | .      | .                 | .          | .    | .           |
+| **HDSS Linkage Quality**              |                 |        |                   |            |      |             |
+| Linked to 0–5y History (%)            | .               | .      | .                 | .          | .    | .           |
+| Linked to 6–10y History (%)           | .               | .      | .                 | .          | .    | .           |
+| **Mental Health Data**                |                 |        |                   |            |      |             |
+| Valid PHQ-9 Score (%)                 | .               | 0%     | 100%              | 0%         | 100% | 100%        |
+| Valid SSQ-14 Score (%)                | .               | 100%   | 100%              | 100%       | 0%   | 0%          |
+| **Exposure Class (Example)**          |                 |        |                   |            |      |             |
+| Global Adversity Class 1 (%)          | .               | .      | .                 | .          | .    | .           |
+| Global Adversity Class 2 (%)          | .               | .      | .                 | .          | .    | .           |
+
+
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_childhood_exposure) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_childhood_exposure (Exposure 0–10 Years)" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_psychometric |>  -->
+<!--                   relocate(contains("SSQ"),.after = SSQSCR) |>  -->
+<!--                   relocate(contains("PHQ9"),.after = PHQSCR) -->
+<!--                 ) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_psychometric (The Bridge Dataset)" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_to_score) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_dreams_multi_ssq (Target for Scoring)" -->
+<!--   ) -->
+<!-- ``` -->
+
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_multistudies |>  -->
+<!--                   rename(PHQSCR=PHQ9, -->
+<!--                          PHQBIN=PHQ9FL -->
+<!--                          ) |>  -->
+<!--                   relocate(CLINDATA,.after=last_col()) -->
+<!--                 ) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_Multistudies (The Analytic Master)" -->
+<!--   ) -->
+<!-- ``` -->
+
+

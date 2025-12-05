@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.7.32">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+    <title>CO-LUMINATE Data Documentation &amp; Codebook</title>
+    <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: min(4vw, 1.5em);}
+      div.column{flex: auto; overflow-x: auto;}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      /* CSS for syntax highlighting */
+      html { -webkit-text-size-adjust: 100%; }
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      .sourceCode { overflow: visible; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+        }
+      pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+      div.sourceCode
+        {   }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      const titleBannerEl = window.document.querySelector("body > #title-block-header");
+      if (titleBannerEl) {
+        titleBannerEl.style.paddingTop = header.clientHeight + "px";
+      }
+      const contentEl = window.document.getElementById('quarto-content');
+      for (const child of contentEl.children) {
+        child.style.paddingTop = header.clientHeight + "px";
+        child.style.marginTop = "1em";
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "index.html";
+            }
+        }, 100);
+      }
+
+      const headroom = new window.Headroom(header, {
+        tolerance: 5,
+        onPin: function () {
+        },
+        onUnpin: function () {
+        },
+      });
+      headroom.init();
+    });
+    </script>
+
+    
+<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-fa21e341c0fed3fab66f33cd05d8cc9a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+     <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script> 
+      <meta name="citation_title" content="CO-LUMINATE Data Documentation &amp;amp; Codebook">
+<meta name="citation_author" content="CO-LUMINATE DSU Team">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Validation of the patient health questionnaire-9 (PHQ-9) in a representative sample of adolescents in south africa;,citation_author=A. Bhardwaj;,citation_author=others;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.3389/fpsyt.2022.986531;,citation_volume=13;,citation_journal_title=Frontiers in Psychiatry;">
+<meta name="citation_reference" content="citation_title=Comparing estimates of psychological distress using 7-day and 30-day recall periods: A randomized controlled trial;,citation_author=M. R. Chilver;,citation_author=R. A. Burns;,citation_author=F. Botha;,citation_author=P. Butterworth;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=12;,citation_doi=10.1371/journal.pone.0295535;,citation_volume=18;,citation_journal_title=PLOS ONE;">
+<meta name="citation_reference" content="citation_title=Establishing a common metric for depressive symptoms: Linking the BDI-II, CES-d, and PHQ-9 to PROMIS depression;,citation_author=S. W. Choi;,citation_author=B. D. Schalet;,citation_author=K. F. Cook;,citation_author=D. Cella;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=2;,citation_doi=10.1037/a0035768;,citation_volume=26;,citation_journal_title=Psychological Assessment;">
+<meta name="citation_reference" content="citation_title=Validation of shona symptom questionnaire (SSQ-14), patient health questionnaire (PHQ-9) and generalised anxiety disorder scale (GAD-7) in unguja island, zanzibar;,citation_author=J. M. Dambi;,citation_author=H. Fatawi;,citation_author=D. Chibanda;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_doi=10.1136/bmjopen-2023-079842;,citation_volume=14;,citation_journal_title=BMJ Open;">
+<meta name="citation_reference" content="citation_title=Maelstrom research guidelines for rigorous retrospective data harmonization;,citation_author=I. Fortier;,citation_author=P. Raina;,citation_author=E. R. Van den Heuvel;,citation_author=others;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=1;,citation_doi=10.1093/ije/dyw075;,citation_volume=46;,citation_journal_title=International Journal of Epidemiology;">
+<meta name="citation_reference" content="citation_title=DataSHIELD: Taking the analysis to the data, not the data to the analysis;,citation_author=A. Gaye;,citation_author=Y. Marcon;,citation_author=J. Isaeva;,citation_author=others;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=6;,citation_doi=10.1093/ije/dyu188;,citation_volume=43;,citation_journal_title=International Journal of Epidemiology;">
+<meta name="citation_reference" content="citation_title=One size does not fit all: Psychometric properties of the shona symptom questionnaire (SSQ) among adolescents and young adults in zimbabwe;,citation_author=E. Haney;,citation_author=K. Singh;,citation_author=C. Nyamukapa;,citation_author=others;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1016/j.jad.2014.06.015;,citation_volume=167;,citation_journal_title=Journal of Affective Disorders;">
+<meta name="citation_reference" content="citation_title=The PHQ-9: Validity of a brief depression severity measure;,citation_author=K. Kroenke;,citation_author=R. L. Spitzer;,citation_author=J. B. Williams;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_issue=9;,citation_doi=10.1046/j.1525-1497.2001.016009606.x;,citation_volume=16;,citation_journal_title=Journal of General Internal Medicine;">
+<meta name="citation_reference" content="citation_title=Poverty and mental disorders: Breaking the cycle in low-income and middle-income countries;,citation_author=C. Lund;,citation_author=M. De Silva;,citation_author=S. Plagerson;,citation_author=others;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=9801;,citation_doi=10.1016/S0140-6736(11)60754-X;,citation_volume=378;,citation_journal_title=The Lancet;">
+<meta name="citation_reference" content="citation_title=COSMIN risk of bias checklist for systematic reviews of patient-reported outcome measures;,citation_author=L. B. Mokkink;,citation_author=H. C. W. Vet;,citation_author=C. A. C. Prinsen;,citation_author=others;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=5;,citation_doi=10.1007/s11136-017-1765-4;,citation_volume=27;,citation_journal_title=Quality of Life Research;">
+<meta name="citation_reference" content="citation_title=Common mental disorders and HIV status in the context of DREAMS among adolescent girls and young women in rural KwaZulu-natal, south africa;,citation_author=N. T. Mthiyane;,citation_author=K. Baisley;,citation_author=I. Birdthistle;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1080/09540121.2021.1897775;,citation_journal_title=AIDS Care;">
+<meta name="citation_reference" content="citation_title=African global representation in biomedical sciences;,citation_author=N. Mulder;,citation_author=L. Zass;,citation_author=Y. Hamdi;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1146/annurev-biodatasci-102920-112550;,citation_volume=4;,citation_journal_title=Annual Review of Biomedical Data Science;">
+<meta name="citation_reference" content="citation_title=The shona symptom questionnaire: The development of an indigenous measure of common mental disorders in harare;,citation_author=V. Patel;,citation_author=E. Simunyu;,citation_author=F. Gwanzura;,citation_author=G. Lewis;,citation_author=A. Mann;,citation_publication_date=1997;,citation_cover_date=1997;,citation_year=1997;,citation_issue=6;,citation_doi=10.1111/j.1600-0447.1997.tb10134.x;,citation_volume=95;,citation_journal_title=Acta Psychiatrica Scandinavica;">
+<meta name="citation_reference" content="citation_title=The INDEPTH network: Filling some of the gaps in global epidemiology;,citation_author=O. Sankoh;,citation_author=P. Byass;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=3;,citation_doi=10.1093/ije/dys049;,citation_volume=41;,citation_journal_title=International Journal of Epidemiology;">
+<meta name="citation_reference" content="citation_title=Linking scores with patient-reported health outcome instruments: A validation study and comparison of three linking methods;,citation_author=B. D. Schalet;,citation_author=S. Lim;,citation_author=D. Cella;,citation_author=S. W. Choi;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1007/s11336-021-09772-2;,citation_volume=86;,citation_journal_title=Psychometrika;">
+<meta name="citation_reference" content="citation_title=A review and synthesis of the measurement invariance literature: Suggestions, practices, and recommendations for organizational research;,citation_author=R. J. Vandenberg;,citation_author=C. E. Lance;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_issue=1;,citation_doi=10.1177/109442810031002;,citation_volume=3;,citation_journal_title=Organizational Research Methods;">
+<meta name="citation_reference" content="citation_title=Outcome-wide longitudinal designs for causal inference: A new template for empirical studies in public health;,citation_author=T. J. VanderWeele;,citation_author=Y. Li;,citation_author=A. C. Tsai;,citation_author=I. Kawachi;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=6;,citation_doi=10.1214/16-STS581;,citation_volume=31;,citation_journal_title=Statistical Science;">
+<meta name="citation_reference" content="citation_title=The COMET (core outcome measures in effectiveness trials) initiative: Its role in improving cochrane reviews;,citation_author=P. R. Williamson;,citation_author=D. G. Altman;,citation_author=J. M. Blazeby;,citation_author=others;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_doi=10.1002/14651858.ED000041;,citation_volume=4;,citation_journal_title=Cochrane Database of Systematic Reviews;">
+<meta name="citation_reference" content="citation_title=Validation of the patient health questionnaire-9 (PHQ-9) in a representative sample of adolescents in south africa;,citation_author=A. Bhardwaj;,citation_author=undefined al.;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_doi=10.3389/fpsyt.2022.986531;,citation_volume=13;,citation_journal_title=Frontiers in Psychiatry;">
+<meta name="citation_reference" content="citation_title=Comparing estimates of psychological distress using 7-day and 30-day recall periods: A randomized controlled trial;,citation_author=M. R. Chilver;,citation_author=R. A. Burns;,citation_author=F. Botha;,citation_author=P. Butterworth;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=12;,citation_doi=10.1371/journal.pone.0295535;,citation_volume=18;,citation_journal_title=PLOS ONE;">
+<meta name="citation_reference" content="citation_title=Establishing a common metric for depressive symptoms: Linking the BDI-II, CES-d, and PHQ-9 to PROMIS depression;,citation_author=S. W. Choi;,citation_author=B. D. Schalet;,citation_author=K. F. Cook;,citation_author=D. Cella;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=2;,citation_doi=10.1037/a0035768;,citation_volume=26;,citation_journal_title=Psychological Assessment;">
+<meta name="citation_reference" content="citation_title=Validation of shona symptom questionnaire (SSQ-14), patient health questionnaire (PHQ-9) and generalised anxiety disorder scale (GAD-7) in unguja island, zanzibar;,citation_author=J. M. Dambi;,citation_author=H. Fatawi;,citation_author=D. Chibanda;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_doi=10.1136/bmjopen-2023-079842;,citation_volume=14;,citation_journal_title=BMJ Open;">
+<meta name="citation_reference" content="citation_title=Maelstrom research guidelines for rigorous retrospective data harmonization;,citation_author=I. Fortier;,citation_author=P. Raina;,citation_author=E. R. Van den Heuvel;,citation_author=L. E. Griffith;,citation_author=C. Craig;,citation_author=M. Saliba;,citation_author=D. Doiron;,citation_author=C. Wolfson;,citation_author=P. G. Conaghan;,citation_author=A. Gonzalez;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=1;,citation_doi=10.1093/ije/dyw075;,citation_volume=46;,citation_journal_title=International Journal of Epidemiology;">
+<meta name="citation_reference" content="citation_title=DataSHIELD: Taking the analysis to the data, not the data to the analysis;,citation_author=A. Gaye;,citation_author=Y. Marcon;,citation_author=J. Isaeva;,citation_author=P. Laflamme;,citation_author=A. Turner;,citation_author=E. M. Jones;,citation_author=J. Minion;,citation_author=A. W. Boyd;,citation_author=C. J. Newby;,citation_author=M. L. Nuotio;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=6;,citation_doi=10.1093/ije/dyu188;,citation_volume=43;,citation_journal_title=International Journal of Epidemiology;">
+<meta name="citation_reference" content="citation_title=One size does not fit all: Psychometric properties of the shona symptom questionnaire (SSQ) among adolescents and young adults in zimbabwe;,citation_author=E. Haney;,citation_author=K. Singh;,citation_author=C. Nyamukapa;,citation_author=S. Gregson;,citation_author=L. Robertson;,citation_author=L. Sherr;,citation_author=C. T. Halpern;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1016/j.jad.2014.06.015;,citation_volume=167;,citation_journal_title=Journal of Affective Disorders;">
+<meta name="citation_reference" content="citation_title=PROsetta: An r package for linking patient-reported outcome measures;,citation_author=A. J. Kaat;,citation_author=B. D. Schalet;,citation_author=J. Rutsohn;,citation_author=R. E. Jensen;,citation_author=D. Cella;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=2;,citation_volume=20;,citation_journal_title=Journal of Applied Measurement;">
+<meta name="citation_reference" content="citation_title=The PHQ-9: Validity of a brief depression severity measure;,citation_author=K. Kroenke;,citation_author=R. L. Spitzer;,citation_author=J. B. Williams;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_issue=9;,citation_doi=10.1046/j.1525-1497.2001.016009606.x;,citation_volume=16;,citation_journal_title=Journal of General Internal Medicine;">
+<meta name="citation_reference" content="citation_title=Poverty and mental disorders: Breaking the cycle in low-income and middle-income countries;,citation_author=C. Lund;,citation_author=M. De Silva;,citation_author=S. Plagerson;,citation_author=S. Cooper;,citation_author=D. Chisholm;,citation_author=J. Das;,citation_author=M. Knapp;,citation_author=V. Patel;,citation_publication_date=2011;,citation_cover_date=2011;,citation_year=2011;,citation_issue=9801;,citation_doi=10.1016/S0140-6736(11)60754-X;,citation_volume=378;,citation_journal_title=The Lancet;">
+<meta name="citation_reference" content="citation_title=COSMIN risk of bias checklist for systematic reviews of patient-reported outcome measures;,citation_author=L. B. Mokkink;,citation_author=H. C. W. Vet;,citation_author=C. A. C. Prinsen;,citation_author=D. L. Patrick;,citation_author=J. Alonso;,citation_author=L. M. Bouter;,citation_author=C. B. Terwee;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=5;,citation_doi=10.1007/s11136-017-1765-4;,citation_volume=27;,citation_journal_title=Quality of Life Research;">
+<meta name="citation_reference" content="citation_title=Common mental disorders and HIV status in the context of DREAMS among adolescent girls and young women in rural KwaZulu-natal, south africa;,citation_author=N. T. Mthiyane;,citation_author=K. Baisley;,citation_author=I. Birdthistle;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1080/09540121.2021.1897775;,citation_journal_title=AIDS Care;">
+<meta name="citation_reference" content="citation_title=African global representation in biomedical sciences;,citation_author=N. Mulder;,citation_author=L. Zass;,citation_author=Y. Hamdi;,citation_author=H. Othman;,citation_author=S. Panji;,citation_author=I. Allali;,citation_author=Y. J. Fakim;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1146/annurev-biodatasci-102920-112550;,citation_volume=4;,citation_journal_title=Annual Review of Biomedical Data Science;">
+<meta name="citation_reference" content="citation_title=The shona symptom questionnaire: The development of an indigenous measure of common mental disorders in harare;,citation_author=V. Patel;,citation_author=E. Simunyu;,citation_author=F. Gwanzura;,citation_author=G. Lewis;,citation_author=A. Mann;,citation_publication_date=1997;,citation_cover_date=1997;,citation_year=1997;,citation_issue=6;,citation_doi=10.1111/j.1600-0447.1997.tb10134.x;,citation_volume=95;,citation_journal_title=Acta Psychiatrica Scandinavica;">
+<meta name="citation_reference" content="citation_title=The INDEPTH network: Filling some of the gaps in global epidemiology;,citation_author=O. Sankoh;,citation_author=P. Byass;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=3;,citation_doi=10.1093/ije/dys049;,citation_volume=41;,citation_journal_title=International Journal of Epidemiology;">
+<meta name="citation_reference" content="citation_title=A review and synthesis of the measurement invariance literature: Suggestions, practices, and recommendations for organizational research;,citation_author=R. J. Vandenberg;,citation_author=C. E. Lance;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_issue=1;,citation_doi=10.1177/109442810031002;,citation_volume=3;,citation_journal_title=Organizational Research Methods;">
+<meta name="citation_reference" content="citation_title=Outcome-wide longitudinal designs for causal inference: A new template for empirical studies in public health;,citation_author=T. J. VanderWeele;,citation_author=Y. Li;,citation_author=A. C. Tsai;,citation_author=I. Kawachi;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=6;,citation_doi=10.1214/16-STS581;,citation_volume=31;,citation_journal_title=Statistical Science;">
+</head>
+
+  <body class="quarto-notebook quarto-light">
+    <div id="quarto-embed-header" class="headroom fixed-top bg-primary">
+      
+      <a onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link" href=""><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6><i class="bi bi-journal-code"></i> Article Notebook</h6>
+
+            <a href="./index.qmd" class="btn btn-primary quarto-download-embed" download="index.qmd">Download Source</a>
+          </div>
+
+     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">CO-LUMINATE Data Documentation &amp; Codebook</h1>
+            <p class="subtitle lead"><strong>Data Linkage for Longitudinal Dataset</strong></p>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Author</div>
+          <div class="quarto-title-meta-heading">Affiliation</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">CO-LUMINATE DSU Team </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Africa Health Research Institute (AHRI)
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      </div>
+    </div>
+
+
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#project-overview-study-design" id="toc-project-overview-study-design" class="nav-link active" data-scroll-target="#project-overview-study-design">Project Overview &amp; Study Design</a>
+  <ul class="collapse">
+  <li><a href="#core-design" id="toc-core-design" class="nav-link" data-scroll-target="#core-design">Core Design</a>
+  <ul class="collapse">
+  <li><a href="#exposure-window-developmental-origins" id="toc-exposure-window-developmental-origins" class="nav-link" data-scroll-target="#exposure-window-developmental-origins">Exposure Window (Developmental Origins)</a></li>
+  <li><a href="#outcome-window-adolescenceyoung-adulthood" id="toc-outcome-window-adolescenceyoung-adulthood" class="nav-link" data-scroll-target="#outcome-window-adolescenceyoung-adulthood">Outcome Window (Adolescence/Young Adulthood)</a></li>
+  </ul></li>
+  <li><a href="#the-hub-and-spoke-linkage" id="toc-the-hub-and-spoke-linkage" class="nav-link" data-scroll-target="#the-hub-and-spoke-linkage">The “Hub-and-Spoke” Linkage</a></li>
+  <li><a href="#data-sources-the-5-cohorts" id="toc-data-sources-the-5-cohorts" class="nav-link" data-scroll-target="#data-sources-the-5-cohorts">Data Sources (The 5 Cohorts)</a></li>
+  </ul></li>
+  <li><a href="#co-luminate-secondary-data-analysis" id="toc-co-luminate-secondary-data-analysis" class="nav-link" data-scroll-target="#co-luminate-secondary-data-analysis">CO-LUMINATE Secondary Data Analysis</a></li>
+  <li><a href="#study-setting-and-design" id="toc-study-setting-and-design" class="nav-link" data-scroll-target="#study-setting-and-design">Study Setting and Design</a>
+  <ul class="collapse">
+  <li><a href="#study-setting" id="toc-study-setting" class="nav-link" data-scroll-target="#study-setting">Study Setting</a></li>
+  </ul></li>
+  <li><a href="#project-directory-data-access" id="toc-project-directory-data-access" class="nav-link" data-scroll-target="#project-directory-data-access">Project Directory &amp; Data Access</a>
+  <ul class="collapse">
+  <li><a href="#data-access-policy" id="toc-data-access-policy" class="nav-link" data-scroll-target="#data-access-policy">Data Access Policy</a></li>
+  <li><a href="#file-architecture" id="toc-file-architecture" class="nav-link" data-scroll-target="#file-architecture">File Architecture</a></li>
+  </ul></li>
+  <li><a href="#dataset-dictionaries" id="toc-dataset-dictionaries" class="nav-link" data-scroll-target="#dataset-dictionaries">Dataset Dictionaries</a>
+  <ul class="collapse">
+  <li><a href="#dt_childhood_exposure-exposure-010-years" id="toc-dt_childhood_exposure-exposure-010-years" class="nav-link" data-scroll-target="#dt_childhood_exposure-exposure-010-years"><code>dt_childhood_exposure</code> (Exposure 0–10 Years)</a></li>
+  <li><a href="#dt_psychometric-the-bridge-dataset" id="toc-dt_psychometric-the-bridge-dataset" class="nav-link" data-scroll-target="#dt_psychometric-the-bridge-dataset"><code>dt_psychometric</code> (The Bridge Dataset)</a></li>
+  <li><a href="#dt_dreams_multi_ssq-target-for-scoring" id="toc-dt_dreams_multi_ssq-target-for-scoring" class="nav-link" data-scroll-target="#dt_dreams_multi_ssq-target-for-scoring"><code>dt_dreams_multi_ssq</code> (Target for Scoring)</a></li>
+  <li><a href="#dt_multistudies-the-analytic-master" id="toc-dt_multistudies-the-analytic-master" class="nav-link" data-scroll-target="#dt_multistudies-the-analytic-master"><code>dt_Multistudies</code> (The Analytic Master)</a></li>
+  </ul></li>
+  <li><a href="#methodological-algorithms" id="toc-methodological-algorithms" class="nav-link" data-scroll-target="#methodological-algorithms">Methodological Algorithms</a>
+  <ul class="collapse">
+  <li><a href="#the-age-splitter-algorithm-data-preparation" id="toc-the-age-splitter-algorithm-data-preparation" class="nav-link" data-scroll-target="#the-age-splitter-algorithm-data-preparation">The “Age-Splitter” Algorithm (Data Preparation)</a>
+  <ul class="collapse">
+  <li><a href="#episode-expansion" id="toc-episode-expansion" class="nav-link" data-scroll-target="#episode-expansion">Episode Expansion</a></li>
+  <li><a href="#annualization" id="toc-annualization" class="nav-link" data-scroll-target="#annualization">Annualization</a></li>
+  <li><a href="#time-weighting" id="toc-time-weighting" class="nav-link" data-scroll-target="#time-weighting">Time-Weighting</a></li>
+  </ul></li>
+  <li><a href="#trajectory-mixture-modelling-derivation" id="toc-trajectory-mixture-modelling-derivation" class="nav-link" data-scroll-target="#trajectory-mixture-modelling-derivation">Trajectory &amp; Mixture Modelling (Derivation)</a>
+  <ul class="collapse">
+  <li><a href="#continuous-exposures-child-count" id="toc-continuous-exposures-child-count" class="nav-link" data-scroll-target="#continuous-exposures-child-count">Continuous Exposures (Child Count)</a></li>
+  <li><a href="#categoricalordinal-exposures-ses-parental-absence-education" id="toc-categoricalordinal-exposures-ses-parental-absence-education" class="nav-link" data-scroll-target="#categoricalordinal-exposures-ses-parental-absence-education">Categorical/Ordinal Exposures (SES, Parental Absence, Education)</a></li>
+  <li><a href="#strategy-1-global-010-years" id="toc-strategy-1-global-010-years" class="nav-link" data-scroll-target="#strategy-1-global-010-years">Strategy 1: Global (0–10 Years)</a></li>
+  <li><a href="#strategy-2-sensitive-periods-split" id="toc-strategy-2-sensitive-periods-split" class="nav-link" data-scroll-target="#strategy-2-sensitive-periods-split">Strategy 2: Sensitive Periods (Split)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#psychometric-harmonization-triangulation-strategy" id="toc-psychometric-harmonization-triangulation-strategy" class="nav-link" data-scroll-target="#psychometric-harmonization-triangulation-strategy">Psychometric Harmonization (Triangulation Strategy)</a>
+  <ul class="collapse">
+  <li><a href="#method-1-traditional-binary-roc-based" id="toc-method-1-traditional-binary-roc-based" class="nav-link" data-scroll-target="#method-1-traditional-binary-roc-based">Method 1: Traditional Binary (ROC-Based)</a></li>
+  <li><a href="#method-2-latent-harmonization-irt-based" id="toc-method-2-latent-harmonization-irt-based" class="nav-link" data-scroll-target="#method-2-latent-harmonization-irt-based">Method 2: Latent Harmonization (IRT-Based)</a></li>
+  </ul></li>
+  <li><a href="#quality-control-missingness-codes" id="toc-quality-control-missingness-codes" class="nav-link" data-scroll-target="#quality-control-missingness-codes">Quality Control &amp; Missingness Codes</a>
+  <ul class="collapse">
+  <li><a href="#missing-data-flags" id="toc-missing-data-flags" class="nav-link" data-scroll-target="#missing-data-flags">Missing Data Flags</a></li>
+  <li><a href="#exclusion-criteria-consort-flow" id="toc-exclusion-criteria-consort-flow" class="nav-link" data-scroll-target="#exclusion-criteria-consort-flow">Exclusion Criteria (Consort Flow)</a></li>
+  </ul></li>
+  <li><a href="#cohort-profile-qc-reporting-table-1-shell" id="toc-cohort-profile-qc-reporting-table-1-shell" class="nav-link" data-scroll-target="#cohort-profile-qc-reporting-table-1-shell">Cohort Profile &amp; QC Reporting (Table 1 Shell)</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">      
+
+       <div class="cell-container code-fold"><div class="cell-decorator"><pre>In [1]:</pre></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This chunk handles all package installations and loading for the factor analysis.</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: here</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/team_members/Marothi/projects/CO-LUMINATE/OBJ00-Datasets Preperation</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Load Helper Functions------------</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">here</span>(<span class="st">"../../pipelines_and_functions/data_processing_and_description_funcs.R"</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>- The lockfile is already up to date.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"here"</span>, <span class="st">"conflicted"</span>, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">"tidyverse"</span>, <span class="st">"labelled"</span>, <span class="st">"reshape2"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"gtsummary"</span>, <span class="st">"gt"</span>, <span class="st">"gtreg"</span>, </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"scales"</span>, <span class="st">"ggsci"</span>, <span class="st">"patchwork"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>              </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"ggsankey"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>              )</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Loop through the packages</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="fu">func_install_and_load</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: conflicted</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: tidyverse</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.1     ✔ stringr   1.5.2
+✔ ggplot2   4.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+Loading required package: labelled
+
+Loading required package: reshape2
+
+Loading required package: gtsummary
+
+Loading required package: gt
+
+Loading required package: gtreg
+
+Loading required package: scales
+
+Loading required package: ggsci
+
+Loading required package: patchwork
+
+Loading required package: ggsankey</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>- The lockfile is already up to date.</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conflict_prefer_all</span>(<span class="st">"dplyr"</span>,<span class="at">quiet=</span><span class="cn">TRUE</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></div>
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [2]:</pre></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">## This chunk sets global options for figures and tables</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_compact</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting theme "Compact"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_gtsummary_journal</span>(<span class="at">journal =</span> <span class="st">"jama"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Setting theme "JAMA"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></div>
+<div class="cell-container code-fold"><div class="cell-decorator"><pre>In [3]:</pre></div><div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create directory for statistical analysis</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the root directory name</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>root_dir <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">"data_management"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the full list of directories to create</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Use file.path for OS-independent path construction</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>dirs_to_create <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"data"</span>, <span class="st">"adam"</span>),</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"documentation"</span>),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/analysis"</span>),</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"programs/utils"</span>),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"models"</span>),</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"table"</span>),</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"figures"</span>),</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"listing"</span>),</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">file.path</span>(root_dir, <span class="st">"output"</span>, <span class="st">"objects"</span>)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Create all directories recursively</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a><span class="co"># The 'showWarnings = FALSE' argument prevents warnings if the directories already exist</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a><span class="fu">invisible</span>(<span class="fu">sapply</span>(dirs_to_create, dir.create, <span class="at">recursive =</span> <span class="cn">TRUE</span>, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div></div>
+<section id="project-overview-study-design" class="level1">
+<h1>Project Overview &amp; Study Design</h1>
+<p>The CO-LUMINATE dataset links individual-level mental health outcomes from specific clinical cohorts to longitudinal household data from the AHRI Health and Demographic Surveillance System (HDSS).</p>
+<section id="core-design" class="level2">
+<h2 class="anchored" data-anchor-id="core-design">Core Design</h2>
+<section id="exposure-window-developmental-origins" class="level3">
+<h3 class="anchored" data-anchor-id="exposure-window-developmental-origins">Exposure Window (Developmental Origins)</h3>
+<ul>
+<li><strong>Early Childhood:</strong> Ages 0–5 years<br>
+</li>
+<li><strong>Middle Childhood:</strong> Ages 6–10 years<br>
+</li>
+<li><strong>Source:</strong> AHRI HDSS (annual panels used to derive latent trajectory classes)</li>
+</ul>
+</section>
+<section id="outcome-window-adolescenceyoung-adulthood" class="level3">
+<h3 class="anchored" data-anchor-id="outcome-window-adolescenceyoung-adulthood">Outcome Window (Adolescence/Young Adulthood)</h3>
+<ul>
+<li><strong>Observation Period:</strong> Ages 13–24 years<br>
+</li>
+<li><strong>Source:</strong> 5 nested clinical studies (Depression &amp; Behavior)</li>
+</ul>
+</section>
+</section>
+<section id="the-hub-and-spoke-linkage" class="level2">
+<h2 class="anchored" data-anchor-id="the-hub-and-spoke-linkage">The “Hub-and-Spoke” Linkage</h2>
+<p>The dataset relies on linking the <strong>USUBJID</strong> from the clinical visits (Spokes) to the historical residency timeline (Hub) in the HDSS.</p>
+</section>
+<section id="data-sources-the-5-cohorts" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources-the-5-cohorts">Data Sources (The 5 Cohorts)</h2>
+<p>The outcome data is derived from five distinct studies. The <code>STUDY</code> variable is coded as a factor with the following fixed order:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 12%">
+<col style="width: 17%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Factor Level</th>
+<th>Study Name</th>
+<th style="text-align: right;">N (Approx)</th>
+<th>Primary MH Tool</th>
+<th>Role in Analysis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Dreams</td>
+<td style="text-align: right;">[N]</td>
+<td>SSQ-14</td>
+<td>Outcome (Needs Calibration)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Isisekelo Sempilo</td>
+<td style="text-align: right;">[N]</td>
+<td>PHQ-9 &amp; SSQ-14</td>
+<td>Calibration Bridge / Gold Standard</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Multilevel</td>
+<td style="text-align: right;">[N]</td>
+<td>SSQ-14</td>
+<td>Outcome (Needs Calibration)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>TasP</td>
+<td style="text-align: right;">[N]</td>
+<td>PHQ-9</td>
+<td>Outcome (Gold Standard)</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Thetha Nami</td>
+<td style="text-align: right;">[N]</td>
+<td>PHQ-9</td>
+<td>Outcome (Gold Standard)</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="co-luminate-secondary-data-analysis" class="level1">
+<h1>CO-LUMINATE Secondary Data Analysis</h1>
+<p>The data-driven aspect of this project entails the creation of the CO-LUMINATE longitudinal linked dataset. This dataset will allow us to understand the longitudinal relationships between socioeconomic status (SES), food security (captured through HDSS-based household indicators), caregiver residency and co-residency, and depressed mood (measured at multiple time points), among rural South African young people aged 13–24. These findings will be used to generate and test hypotheses regarding the mechanisms underpinning young people’s depression in low- and middle-income countries (LMICs).</p>
+<p>The CO-LUMINATE longitudinal dataset will link existing data from 5,279 young people aged 13–24 years, for whom we have rigorous measures of depressed mood at one or more time points from AHRI’s past research studies, with their households’ HDSS data. Through this process, each young person’s depression data is linked with an extensive longitudinal database containing information on their household’s SES and food security–related conditions, as well as household composition. The HDSS also allows us to link young people to their caregivers, so that we can examine patterns of co-residence between a young person’s caregivers, and between them and their caregivers.</p>
+<p>The novel contribution of this project, and our ability to do this innovative work, arises from three facts:</p>
+<ol type="1">
+<li>AHRI’s HDSS, like most, does not include rigorous individual-level measurement of young people’s mental health outcomes, but offers an opportunity to examine social exposures longitudinally.</li>
+<li>Over the past decade, AHRI has conducted cohort studies among young people which included rigorous measurement of depressed mood (SSQ-14 and PHQ-9) at one or more time points, providing a unique data resource.</li>
+<li>By bringing these two types of data together, we are able to examine – in a sample of 5,279 – patterns of exposure to social determinants and trajectories of young people’s mental health (with a focus on depression).</li>
+</ol>
+<p>The cohort studies used for this project – DREAMS, Multilevel, Isisekelo Sempilo, Treatment as Prevention (TasP), and Thetha Nami – were nested within the HDSS. This allows us to link young people’s individual-level depression data gathered in these studies with their household’s HDSS data. This linkage creates an unprecedented longitudinal dataset of household social exposures and depression in young people.</p>
+<p>The basis for this project has already begun. In partnership with Aga Khan University, KEMRI, and the University of Michigan Center for Global Health Equity, co-applicant NM integrated data from the nested studies into a harmonised individual-level mental health dataset for pooled analyses. The harmonised individual-level mental health dataset can now be linked to the study participants’ household HDSS data. This allows longitudinal measures of young people’s social and environmental exposures at the household level to be explored in relation to their depression symptoms.</p>
+</section>
+<section id="study-setting-and-design" class="level1">
+<h1>Study Setting and Design</h1>
+<section id="study-setting" class="level2">
+<h2 class="anchored" data-anchor-id="study-setting">Study Setting</h2>
+<p>AHRI is a transdisciplinary scientific research institute in KwaZulu-Natal, South Africa. AHRI’s Somkhele campus is located in an under-resourced rural area centred in a Health and Demographic Surveillance System (HDSS). The HDSS conducts tri-annual surveys of approximately 22,000 households and annual surveys of roughly 150,000 individuals in an area of 845 km². The area typifies the challenges that face young people in LMICs: poverty, food insecurity, high HIV prevalence, migration, and substance abuse, all increasing vulnerability to depression.</p>
+</section>
+</section>
+<section id="project-directory-data-access" class="level1">
+<h1>Project Directory &amp; Data Access</h1>
+<p>The project follows a reproducible R-project structure, with clear separation between raw, staging, and analytic layers.</p>
+<section id="data-access-policy" class="level2">
+<h2 class="anchored" data-anchor-id="data-access-policy">Data Access Policy</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To ensure compliance with the Protection of Personal Information Act (POPIA) and AHRI’s Data Sharing Policy and Standard Operating Procedures (SOP), this repository does <strong>not</strong> contain full raw, staging, or analytic datasets.</p>
+<p>The <code>data_examples/</code> directory contains only 10-line snippets (<code>head()</code>) of the files to allow code testing and validation of variable types. Researchers requiring access to the full longitudinal datasets must submit a formal request via the AHRI Data Science Unit (DSU).</p>
+</div>
+</div>
+</section>
+<section id="file-architecture" class="level2">
+<h2 class="anchored" data-anchor-id="file-architecture">File Architecture</h2>
+<pre class="text"><code>OBJ00-Datasets Preperation/
+├── data_examples/              # Snippets (First 10 lines) for code testing ONLY
+│   ├── 0_raw_snippets/         # Examples of source structures
+│   │   ├── dt_childhood_exposure_head.csv  # Annual exposure panel (0-10y)
+│   │   ├── dt_psychometric_head.csv        # Bridge dataset (Isisekelo)
+│   │   └── dt_dreams_multi_ssq_head.csv    # Target dataset (Dreams/Multi)
+│   ├── 1_staging_snippets/     # Examples of intermediate structures
+│   │   ├── mh_harmonized_head.csv          # (Output of harmonization script)
+│   │   └── derived_models/     # Saved GMM/LCA model objects (.rds)
+│   └── 2_final_snippets/       
+│       └── dt_Multistudies_head.csv        # The Analytic Master
+├── scripts/
+│   ├── 00_setup.R              # Packages &amp; Global settings (Factor orders)
+│   ├── 01_cleaning/
+│   │   ├── 01a_clean_hdss.R    # Age-splitter algorithm
+│   │   └── 01b_clean_clinical.R # Standardization of MH items
+│   ├── 02_harmonization/       # [PENDING] Manuscript Deliverables (Available upon finalization)
+│   │   ├── 02a_roc_calibration.R # Traditional ROC (Method 1)
+│   │   ├── 02b_irt_model.R       # IRT Model &amp; Scoring (Method 2)
+│   │   └── 02c_sensitivity.R     # Agreement checks (Kappa)
+│   ├── 03_variable_derivation/ # [PENDING] Manuscript Deliverables (Available upon finalization)
+│   │   ├── 03a_derive_global.R # Derive 'Global_Adversity_Class' (0-10y)
+│   │   └── 03b_derive_periods.R# Derive 'Early_' &amp; 'Mid_Adversity_Class'
+│   └── 04_merge_master.R       # Final linkage of Exposures to Outcomes
+├── diagnostics/                # Data Quality Checks (QC)
+│   ├── missingness_maps/       # Visualizations of structural missingness
+│   ├── irt_plots/              # [PENDING] Manuscript Figures (Available upon finalization)
+│   ├── roc_plots/              # [PENDING] Manuscript Figures (Available upon finalization)
+│   └── consort_flow/           # Inclusion/Exclusion diagrams
+└── docs/
+    ├── dictionaries/           # CSV Variable lookup tables
+    └── CO-LUMINATE_Data_Documentation.md</code></pre>
+</section>
+</section>
+<section id="dataset-dictionaries" class="level1">
+<h1>Dataset Dictionaries</h1>
+<p>This section details the variable structure for the four specific data frames used in the pipeline, filtered to include only scientifically relevant variables.</p>
+<section id="dt_childhood_exposure-exposure-010-years" class="level2">
+<h2 class="anchored" data-anchor-id="dt_childhood_exposure-exposure-010-years"><code>dt_childhood_exposure</code> (Exposure 0–10 Years)</h2>
+<p><strong>Description:</strong> Longitudinal panel of annual exposure indicators derived from HDSS. Used to generate the latent trajectories.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 12%">
+<col style="width: 12%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Label</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Value Labels / Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unique Individual Identifier</td>
+<td>USUBJID</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Unique Household Identifier</td>
+<td>HHID</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Participant’s Sex</td>
+<td>SEX</td>
+<td>factor</td>
+<td>Male; Female</td>
+</tr>
+<tr class="even">
+<td>Exposure Age</td>
+<td>EXPAGE</td>
+<td>numeric</td>
+<td>0, 1, …, 10</td>
+</tr>
+<tr class="odd">
+<td>Lived Without Mother</td>
+<td>LIVEDWOM</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="even">
+<td>Lived Without Father</td>
+<td>LIVEDWOF</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>Mother’s Level of Education</td>
+<td>EDUCMOTH</td>
+<td>factor</td>
+<td>None; Primary; Secondary; Completed Matric</td>
+</tr>
+<tr class="even">
+<td>Father’s Level of Education</td>
+<td>EDUCFATH</td>
+<td>factor</td>
+<td>None; Primary; Secondary; Completed Matric</td>
+</tr>
+<tr class="odd">
+<td>Number of Children Aged 0–4y in Household</td>
+<td>HHCHLD4</td>
+<td>numeric</td>
+<td>Count</td>
+</tr>
+<tr class="even">
+<td>Household Socioeconomic Status</td>
+<td>HHSES</td>
+<td>factor</td>
+<td>Poorest; Poor; Medium; Rich; Richest</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dt_psychometric-the-bridge-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="dt_psychometric-the-bridge-dataset"><code>dt_psychometric</code> (The Bridge Dataset)</h2>
+<p><strong>Description:</strong> Subset of Isisekelo Sempilo participants with concurrent measurements. Used to train the IRT and ROC models.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Label</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Value Labels / Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unique Subject Identifier</td>
+<td>USUBJID</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Age (Years)</td>
+<td>AGE</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Sex</td>
+<td>SEX</td>
+<td>factor</td>
+<td>Male; Female</td>
+</tr>
+<tr class="even">
+<td>SSQ-14 Total Score</td>
+<td>SSQSCR</td>
+<td>numeric</td>
+<td>0–14</td>
+</tr>
+<tr class="odd">
+<td>SSQ-14 Items (1–14)</td>
+<td>SSQ01…14</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="even">
+<td>PHQ-9 Total Score</td>
+<td>PHQSCR</td>
+<td>numeric</td>
+<td>0–27</td>
+</tr>
+<tr class="odd">
+<td>PHQ-9 Items (1–9)</td>
+<td>PHQ901…09</td>
+<td>factor</td>
+<td>Likert (0–3)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dt_dreams_multi_ssq-target-for-scoring" class="level2">
+<h2 class="anchored" data-anchor-id="dt_dreams_multi_ssq-target-for-scoring"><code>dt_dreams_multi_ssq</code> (Target for Scoring)</h2>
+<p><strong>Description:</strong> Participants from Dreams and Multilevel studies who only have SSQ-14 data. These scores are transformed using the parameters derived from <code>dt_psychometric</code>.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 23%">
+<col style="width: 16%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Label</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Value Labels / Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unique Subject Identifier</td>
+<td>USUBJID</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Study Name</td>
+<td>STUDY</td>
+<td>character</td>
+<td>Dreams; Multilevel</td>
+</tr>
+<tr class="odd">
+<td>Visit Date</td>
+<td>VISITDT</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sex</td>
+<td>SEX</td>
+<td>factor</td>
+<td>Male; Female</td>
+</tr>
+<tr class="odd">
+<td>Age (Years)</td>
+<td>AGE</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>SSQ-14 Items (1–14)</td>
+<td>SSQ01…14</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>Derived IRT Score</td>
+<td>Harmonized_Theta</td>
+<td>numeric</td>
+<td>Z-score</td>
+</tr>
+<tr class="even">
+<td>Derived Binary</td>
+<td>Depression_Bin_ROC</td>
+<td>factor</td>
+<td>0 = No; 1 = Yes</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dt_multistudies-the-analytic-master" class="level2">
+<h2 class="anchored" data-anchor-id="dt_multistudies-the-analytic-master"><code>dt_Multistudies</code> (The Analytic Master)</h2>
+<p><strong>Description:</strong> Final merged dataset containing all 5 studies with harmonized outcomes linked to the derived exposure trajectories. Includes only relevant determinants, mediators, and outcomes.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 14%">
+<col style="width: 10%">
+<col style="width: 49%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variable Label</th>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Value Labels / Units</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Unique Subject Identifier</td>
+<td>USUBJID</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Study Name</td>
+<td>STUDY</td>
+<td>factor</td>
+<td>Dreams; Isisekelo Sempilo; Multilevel; TasP; Thetha Nami</td>
+</tr>
+<tr class="odd">
+<td>Visit Date</td>
+<td>VISITDT</td>
+<td>Date</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Sex</td>
+<td>SEX</td>
+<td>factor</td>
+<td>Male; Female</td>
+</tr>
+<tr class="odd">
+<td>Age (Years)</td>
+<td>AGE</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Household Urbanicity Category</td>
+<td>URBANCAT</td>
+<td>factor</td>
+<td>Rural; Peri-Urban; Urban</td>
+</tr>
+<tr class="odd">
+<td>Migration Status (Baseline)</td>
+<td>MIGRCAT</td>
+<td>factor</td>
+<td>Never; Within PIPSA; External migration</td>
+</tr>
+<tr class="even">
+<td>Father Status (Baseline)</td>
+<td>FATHSTAT</td>
+<td>factor</td>
+<td>Father Alive; Father Deceased</td>
+</tr>
+<tr class="odd">
+<td>Mother Status (Baseline)</td>
+<td>MOTHSTAT</td>
+<td>factor</td>
+<td>Mother Alive; Mother Deceased</td>
+</tr>
+<tr class="even">
+<td>Orphanhood Status (Baseline)</td>
+<td>ORPHSTAT</td>
+<td>factor</td>
+<td>Both Parents Alive; One Parent Deceased; Both Parents Deceased</td>
+</tr>
+<tr class="odd">
+<td>Currently in School</td>
+<td>SCHOOL</td>
+<td>factor</td>
+<td>Not inschool; Inschool</td>
+</tr>
+<tr class="even">
+<td>Current Employment</td>
+<td>EMPLOY</td>
+<td>factor</td>
+<td>Not employed; Employed</td>
+</tr>
+<tr class="odd">
+<td>Receives Government Grant</td>
+<td>GOVTGRNT</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="even">
+<td>Ever Had Sex</td>
+<td>EVRSEXCAT</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>HIV Test Result</td>
+<td>HIVSTRESC</td>
+<td>factor</td>
+<td>Negative; Positive</td>
+</tr>
+<tr class="even">
+<td>Ever Experienced Violence</td>
+<td>VIOLENCE</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>Food Insecurity</td>
+<td>FOODSEC</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="even">
+<td>Ever Been Pregnant</td>
+<td>EVRPREGCAT</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>Sexual Behavior Category</td>
+<td>SEXBHV</td>
+<td>factor</td>
+<td>NeverHadSex; EverHadSex; EverPregnant</td>
+</tr>
+<tr class="even">
+<td>Ever Drank Alcohol</td>
+<td>DRNKALC</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>PHQ-9 Total Score</td>
+<td>PHQSCR</td>
+<td>numeric</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>PHQ-9 ≥ 10</td>
+<td>PHQBIN</td>
+<td>factor</td>
+<td>No; Yes</td>
+</tr>
+<tr class="odd">
+<td>Derived Latent Score</td>
+<td>Harmonized_Theta</td>
+<td>numeric</td>
+<td>Standardized IRT Score</td>
+</tr>
+<tr class="even">
+<td>Derived Binary Outcome</td>
+<td>Depression_Bin_IRT</td>
+<td>factor</td>
+<td>Derived from Theta threshold</td>
+</tr>
+<tr class="odd">
+<td>Derived Exposure (0–10)</td>
+<td>Global_Adv_Class</td>
+<td>factor</td>
+<td>Latent Class Membership</td>
+</tr>
+<tr class="even">
+<td>Derived Exposure (0–5)</td>
+<td>Early_Adv_Class</td>
+<td>factor</td>
+<td>Latent Class Membership</td>
+</tr>
+<tr class="odd">
+<td>Derived Exposure (6–10)</td>
+<td>Mid_Adv_Class</td>
+<td>factor</td>
+<td>Latent Class Membership</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="methodological-algorithms" class="level1">
+<h1>Methodological Algorithms</h1>
+<section id="the-age-splitter-algorithm-data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="the-age-splitter-algorithm-data-preparation">The “Age-Splitter” Algorithm (Data Preparation)</h2>
+<p>To prepare the input data for trajectory modelling:</p>
+<section id="episode-expansion" class="level3">
+<h3 class="anchored" data-anchor-id="episode-expansion">Episode Expansion</h3>
+<p>AHRI residency episodes are intersected with the participant’s specific “Age 0–10” timeline.</p>
+</section>
+<section id="annualization" class="level3">
+<h3 class="anchored" data-anchor-id="annualization">Annualization</h3>
+<p>Continuous residency episodes are sliced into 1-year intervals (Age 0, Age 1, etc.).</p>
+</section>
+<section id="time-weighting" class="level3">
+<h3 class="anchored" data-anchor-id="time-weighting">Time-Weighting</h3>
+<p>Annual exposure values are calculated based on the household state where the child spent the majority of that specific age-year.</p>
+</section>
+</section>
+<section id="trajectory-mixture-modelling-derivation" class="level2">
+<h2 class="anchored" data-anchor-id="trajectory-mixture-modelling-derivation">Trajectory &amp; Mixture Modelling (Derivation)</h2>
+<p>Exposure classes are derived using Multi-Trajectory Modeling (MTM) or Joint Latent Class Analysis to identify subgroups of individuals following similar patterns across all base variables simultaneously.</p>
+<section id="continuous-exposures-child-count" class="level3">
+<h3 class="anchored" data-anchor-id="continuous-exposures-child-count">Continuous Exposures (Child Count)</h3>
+<p>Growth Mixture Modelling (GMM) is used to identify latent classes with distinct intercepts and slopes.</p>
+</section>
+<section id="categoricalordinal-exposures-ses-parental-absence-education" class="level3">
+<h3 class="anchored" data-anchor-id="categoricalordinal-exposures-ses-parental-absence-education">Categorical/Ordinal Exposures (SES, Parental Absence, Education)</h3>
+<p>Latent Class Analysis (LCA) or Latent Transition Analysis (LTA) is used to identify subgroups based on patterns of endorsement across the 10 time points.</p>
+</section>
+<section id="strategy-1-global-010-years" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-1-global-010-years">Strategy 1: Global (0–10 Years)</h3>
+<p>Models are fitted using the full 11-year sequence of all base variables. This creates a single <strong>Childhood Profile</strong> (<code>Global_Adversity_Class</code>) for every participant.</p>
+</section>
+<section id="strategy-2-sensitive-periods-split" class="level3">
+<h3 class="anchored" data-anchor-id="strategy-2-sensitive-periods-split">Strategy 2: Sensitive Periods (Split)</h3>
+<p>Models are fitted separately for:</p>
+<ul>
+<li><strong>0–5 subset:</strong> <code>Early_Adversity_Class</code><br>
+</li>
+<li><strong>6–10 subset:</strong> <code>Mid_Adversity_Class</code></li>
+</ul>
+<p>This creates two distinct exposure variables to test sensitive period hypotheses.</p>
+</section>
+</section>
+</section>
+<section id="psychometric-harmonization-triangulation-strategy" class="level1">
+<h1>Psychometric Harmonization (Triangulation Strategy)</h1>
+<p>To ensure robustness, the project maintains two parallel definitions of “Depression” derived from the Isisekelo Sempilo bridge sample.</p>
+<section id="method-1-traditional-binary-roc-based" class="level2">
+<h2 class="anchored" data-anchor-id="method-1-traditional-binary-roc-based">Method 1: Traditional Binary (ROC-Based)</h2>
+<ul>
+<li><strong>Variable:</strong> <code>Depression_Bin_ROC</code><br>
+</li>
+<li><strong>Approach:</strong> Standard clinical epidemiology.<br>
+</li>
+<li><strong>Process:</strong>
+<ul>
+<li>Identify the optimal integer cut-off on the raw SSQ-14 scale (e.g., ≥ 8) that maximizes sensitivity and specificity relative to the PHQ-9.<br>
+</li>
+</ul></li>
+<li><strong>Use Case:</strong>
+<ul>
+<li>Comparison with previous literature and simpler prevalence reporting.</li>
+</ul></li>
+</ul>
+</section>
+<section id="method-2-latent-harmonization-irt-based" class="level2">
+<h2 class="anchored" data-anchor-id="method-2-latent-harmonization-irt-based">Method 2: Latent Harmonization (IRT-Based)</h2>
+<ul>
+<li><strong>Variables:</strong> <code>Harmonized_Theta</code> (Continuous) &amp; <code>Depression_Bin_IRT</code> (Binary).<br>
+</li>
+<li><strong>Approach:</strong> Psychometric measurement invariance.<br>
+</li>
+<li><strong>Process:</strong>
+<ul>
+<li>Fit a Graded Response Model to estimate a common latent trait (<span class="math inline">\(\theta\)</span>).<br>
+</li>
+<li>Identify the <span class="math inline">\(\theta\)</span> value corresponding to PHQ-9 = 10.<br>
+</li>
+<li>Classify all participants based on this latent threshold.</li>
+</ul></li>
+<li><strong>Use Case:</strong>
+<ul>
+<li>Primary analytical models (Regression/Mediation) where measurement precision and invariance are critical.</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="quality-control-missingness-codes" class="level1">
+<h1>Quality Control &amp; Missingness Codes</h1>
+<section id="missing-data-flags" class="level2">
+<h2 class="anchored" data-anchor-id="missing-data-flags">Missing Data Flags</h2>
+<p>The following codes are standardized across data frames:</p>
+<ul>
+<li><code>NA</code>: System missing / Not applicable (e.g., PHQ-9 score for a Dreams participant).<br>
+</li>
+<li><code>-99</code>: Refused to answer.<br>
+</li>
+<li><code>-88</code>: Don’t know.<br>
+</li>
+<li><code>-77</code>: Not located / Lost to follow-up.</li>
+</ul>
+</section>
+<section id="exclusion-criteria-consort-flow" class="level2">
+<h2 class="anchored" data-anchor-id="exclusion-criteria-consort-flow">Exclusion Criteria (Consort Flow)</h2>
+<p>Participants are excluded if:</p>
+<ul>
+<li>They do not have a valid <code>USUBJID</code> linking to the HDSS Masterfile.<br>
+</li>
+<li>They have &lt; 180 days of residency observation during the Exposure Window (0–10 years).<br>
+</li>
+<li>They have missing or invalid Date of Birth.</li>
+</ul>
+</section>
+</section>
+<section id="cohort-profile-qc-reporting-table-1-shell" class="level1">
+<h1>Cohort Profile &amp; QC Reporting (Table 1 Shell)</h1>
+<p>To validate the linkage quality, all analysis scripts must output baseline characteristics matching the structure below. This confirms that the selection bias across the 5 studies is documented.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 14%">
+<col style="width: 6%">
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 5%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Characteristic</th>
+<th style="text-align: right;">Total (N=5,279)</th>
+<th style="text-align: center;">Dreams</th>
+<th style="text-align: center;">Isisekelo Sempilo</th>
+<th style="text-align: center;">Multilevel</th>
+<th style="text-align: center;">TasP</th>
+<th style="text-align: center;">Thetha Nami</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Demographics</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Age at Visit, Mean (SD)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="odd">
+<td>Female, N (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="even">
+<td><strong>HDSS Linkage Quality</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Linked to 0–5y History (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="even">
+<td>Linked to 6–10y History (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="odd">
+<td><strong>Mental Health Data</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td>Valid PHQ-9 Score (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">0%</td>
+<td style="text-align: center;">100%</td>
+<td style="text-align: center;">0%</td>
+<td style="text-align: center;">100%</td>
+<td style="text-align: center;">100%</td>
+</tr>
+<tr class="odd">
+<td>Valid SSQ-14 Score (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">100%</td>
+<td style="text-align: center;">100%</td>
+<td style="text-align: center;">100%</td>
+<td style="text-align: center;">0%</td>
+<td style="text-align: center;">0%</td>
+</tr>
+<tr class="even">
+<td><strong>Exposure Class (Example)</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td>Global Adversity Class 1 (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+</tr>
+<tr class="even">
+<td>Global Adversity Class 2 (%)</td>
+<td style="text-align: right;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+<td style="text-align: center;">.</td>
+</tr>
+</tbody>
+</table>
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_childhood_exposure) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_childhood_exposure (Exposure 0–10 Years)" -->
+<!--   ) -->
+<!-- ``` -->
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_psychometric |>  -->
+<!--                   relocate(contains("SSQ"),.after = SSQSCR) |>  -->
+<!--                   relocate(contains("PHQ9"),.after = PHQSCR) -->
+<!--                 ) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_psychometric (The Bridge Dataset)" -->
+<!--   ) -->
+<!-- ``` -->
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_to_score) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_dreams_multi_ssq (Target for Scoring)" -->
+<!--   ) -->
+<!-- ``` -->
+<!-- ```{r, data-dictionaries} -->
+<!-- func_dictionary(dt_multistudies |>  -->
+<!--                   rename(PHQSCR=PHQ9, -->
+<!--                          PHQBIN=PHQ9FL -->
+<!--                          ) |>  -->
+<!--                   relocate(CLINDATA,.after=last_col()) -->
+<!--                 ) |>  -->
+<!--   gt( -->
+<!--     caption = "dt_Multistudies (The Analytic Master)" -->
+<!--   ) -->
+<!-- ``` -->
+</section>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>  </div> <!-- /content --> 
+  
+</body></html>
