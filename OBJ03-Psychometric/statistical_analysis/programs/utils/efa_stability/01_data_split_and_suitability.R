@@ -143,10 +143,10 @@ check_efa_suitability <- function(data_subset,
     capture.output(
       res <- suppressMessages(suppressWarnings(
         psych::fa.parallel(
-          dt_items,
+          cor_mat, 
+          n.obs = nrow(dt_items),
           fm          = "pa",
           fa          = "fa",
-          cor         = cor_method,
           n.iter      = n_iter,
           plot        = FALSE,
           show.legend = FALSE
@@ -162,11 +162,11 @@ check_efa_suitability <- function(data_subset,
   eigenvalues_actual    <- eigen_values
   eigenvalues_simulated <- if (!is.null(pa_res) && !is.null(pa_res$fa.sim)) pa_res$fa.sim else NULL
   
-  is_phq_set <- all(grepl("^PHQ", items))
-  if (is_phq_set) {
-    if (!is.na(n_kaiser))   n_kaiser   <- min(n_kaiser, 3L)
-    if (!is.na(n_parallel)) n_parallel <- min(n_parallel, 3L)
-  }
+  # is_phq_set <- all(grepl("^PHQ", items))
+  # if (is_phq_set) {
+  #   if (!is.na(n_kaiser))   n_kaiser   <- min(n_kaiser, 3L)
+  #   if (!is.na(n_parallel)) n_parallel <- min(n_parallel, 3L)
+  # }
   
   get_factor_solution <- function(n_factors, r_mat, n_obs, cutoff) {
     if (is.na(n_factors) || n_factors < 1L || is.null(r_mat)) {

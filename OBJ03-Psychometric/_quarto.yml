@@ -9,7 +9,7 @@ format:
   html:
     grid:
       sidebar-width: 300px
-      body-width: 1200px
+      body-width: 1000px
       margin-width: 300px
       gutter-width: 1.5rem
     theme:
@@ -26,3 +26,4 @@ execute:
   freeze: false
 
 editor: visual
+

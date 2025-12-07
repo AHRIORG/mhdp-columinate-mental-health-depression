@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="keywords" content="Shona Symptom Questionnaire, Psychometrics, Depression Screening, Item Response Theory, Measurement Invariance, Monte Carlo Simulation">
+
+<title>Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-0f23a944eb66e61e0f87b8fd573aebd5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta name="citation_title" content="Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa">
+<meta name="citation_keywords" content="Shona Symptom Questionnaire,Psychometrics,Depression Screening,Item Response Theory,Measurement Invariance,Monte Carlo Simulation">
+<meta name="citation_author" content="CO-LUMINATE DSU Team">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=Diagnostic accuracy of the PHQ-9 and PHQ-2 in primary care: A systematic review and meta-analysis;,citation_author=Emily C Baron;,citation_author=Thandi Davies;,citation_author=Crick Lund;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1017/gmh.2020.26;,citation_volume=8;,citation_journal_title=Global Mental Health;">
+<meta name="citation_reference" content="citation_title=Tests of significance in factor analysis;,citation_author=Maurice S Bartlett;,citation_publication_date=1950;,citation_cover_date=1950;,citation_year=1950;,citation_issue=2;,citation_doi=10.1111/j.2044-8317.1950.tb00285.x;,citation_volume=3;,citation_journal_title=British Journal of Psychology;">
+<meta name="citation_reference" content="citation_title=Performance of maximum likelihood versus means and variance adjusted weighted least squares estimation in CFA;,citation_author=André Beauducel;,citation_author=Philipp Yorck Herzberg;,citation_publication_date=2006;,citation_cover_date=2006;,citation_year=2006;,citation_issue=2;,citation_doi=10.1207/s15328007sem1302_3;,citation_volume=13;,citation_journal_title=Structural Equation Modeling;">
+<meta name="citation_reference" content="citation_title=Mirt: A multidimensional item response theory package for the r environment;,citation_author=R Philip Chalmers;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=6;,citation_doi=10.18637/jss.v048.i06;,citation_volume=48;,citation_journal_title=Journal of Statistical Software;">
+<meta name="citation_reference" content="citation_title=Sensitivity of goodness of fit indexes to lack of measurement invariance;,citation_author=F. F. Chen;,citation_publication_date=2007;,citation_cover_date=2007;,citation_year=2007;,citation_issue=3;,citation_doi=10.1080/10705510701301834;,citation_volume=14;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=Validation of the 8-item shona symptom questionnaire (SSQ-8) in zimbabwe;,citation_author=Dixon Chibanda;,citation_author=others;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_fulltext_html_url=https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA;,citation_conference_title=AIDSImpact 2019 conference;">
+<meta name="citation_reference" content="citation_title=Effect of a primary care-based psychological intervention on symptoms of common mental disorders in zimbabwe: A randomized clinical trial;,citation_author=Dixon Chibanda;,citation_author=Helen A Weiss;,citation_author=Ruth Verhey;,citation_author=Victoria Simms;,citation_author=Ronald Munjoma;,citation_author=Simbarashe Rusakaniko;,citation_author=Vikram Patel;,citation_author=Ricardo Araya;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_issue=24;,citation_doi=10.1001/jama.2016.19102;,citation_volume=316;,citation_journal_title=JAMA;">
+<meta name="citation_reference" content="citation_title=Isisekelo sempilo study protocol for the effectiveness of HIV prevention embedded in sexual health with or without peer navigator support (thetha nami) to reduce prevalence of transmissible HIV amongst adolescents and young adults in rural KwaZulu-natal: A 2$\times$ 2 factorial randomised controlled trial;,citation_author=Glory Chidumwa;,citation_author=Natsayi Chimbindi;,citation_author=Carina Herbst;,citation_author=Nonhlanhla Okeselo;,citation_author=Jaco Dreyer;,citation_author=Thembelihle Zuma;,citation_author=Theresa Smith;,citation_author=Jean-Michel Molina;,citation_author=Thandeka Khoza;,citation_author=Nuala McGrath;,citation_author=others;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=1;,citation_doi=10.1186/s12889-022-12798-y;,citation_volume=22;,citation_journal_title=BMC Public Health;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=Coefficient alpha and the internal structure of tests;,citation_author=Lee J Cronbach;,citation_publication_date=1951;,citation_cover_date=1951;,citation_year=1951;,citation_issue=3;,citation_doi=10.1007/BF02310555;,citation_volume=16;,citation_journal_title=psychometrika;">
+<meta name="citation_reference" content="citation_title=An introduction to the bootstrap;,citation_author=Bradley Efron;,citation_author=Robert J Tibshirani;,citation_publication_date=1994;,citation_cover_date=1994;,citation_year=1994;,citation_doi=10.1201/9780429246593;">
+<meta name="citation_reference" content="citation_title=Item response theory for psychologists;,citation_author=Susan E Embretson;,citation_author=Steven P Reise;,citation_publication_date=2000;,citation_cover_date=2000;,citation_year=2000;,citation_isbn=9780805828199;">
+<meta name="citation_reference" content="citation_title=Bootstrapping exploratory factor analysis;,citation_author=Russell Epstein;,citation_author=Rachel Kardon;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=3;,citation_doi=10.1037/met0000146;,citation_volume=23;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Ordinal alpha and omega: Estimating reliability for ordinal data;,citation_author=Anne M Gadermann;,citation_author=Martin Guhn;,citation_author=Bruno D Zumbo;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=1;,citation_doi=10.7275/jcr0-a929;,citation_volume=17;,citation_journal_title=Practical Assessment, Research, and Evaluation;">
+<meta name="citation_reference" content="citation_title=The disadvantages of dichotomization;,citation_author=Sarah L Halligan;,citation_author=Adrian Wells;,citation_author=Lynne Murray;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_issue=5;,citation_doi=10.1093/jpepsy/jsv021;,citation_volume=40;,citation_journal_title=Journal of Pediatric Psychology;">
+<meta name="citation_reference" content="citation_title=Classification of common mental disorders in primary care: A comparison of the shona symptom questionnaire and the self reporting questionnaire;,citation_author=Charlotte Hanlon;,citation_author=Girmay Medhin;,citation_author=Atalay Alem;,citation_author=Fikru Tesfaye;,citation_author=Zelalem Lakew;,citation_author=Bogale Worku;,citation_author=Michael Dewey;,citation_author=Ricardo Araya;,citation_author=Martin Prince;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1007/s00127-014-0899-7;,citation_volume=49;,citation_journal_title=Social Psychiatry and Psychiatric Epidemiology;">
+<meta name="citation_reference" content="citation_title=One size does not fit all: Psychometric properties of the shona symptom questionnaire (SSQ) among adolescents and young adults in zimbabwe;,citation_author=E. Haney;,citation_author=K. Singh;,citation_author=C. Nyamukapa;,citation_author=others;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1016/j.jad.2014.06.015;,citation_volume=167;,citation_journal_title=Journal of Affective Disorders;">
+<meta name="citation_reference" content="citation_title=Factor retention decisions in exploratory factor analysis: A tutorial on parallel analysis;,citation_author=James C Hayton;,citation_author=David G Allen;,citation_author=Vida Scarpello;,citation_publication_date=2004;,citation_cover_date=2004;,citation_year=2004;,citation_issue=2;,citation_doi=10.1177/1094428104263675;,citation_volume=7;,citation_journal_title=Organizational Research Methods;">
+<meta name="citation_reference" content="citation_title=Polychoric versus pearson correlations in exploratory and confirmatory factor analysis of ordinal variables;,citation_author=Francisco Pablo Holgado–Tello;,citation_author=Salvador Chac’on–Moscoso;,citation_author=Isabel Barbero–Garc’ ia;,citation_author=Enrique Vila–Abad;,citation_publication_date=2010;,citation_cover_date=2010;,citation_year=2010;,citation_doi=10.1007/s11135-008-9190-y;,citation_volume=44;,citation_journal_title=Quality &amp;amp;amp; Quantity;">
+<meta name="citation_reference" content="citation_title=A rationale and test for the number of factors in factor analysis;,citation_author=John L Horn;,citation_publication_date=1965;,citation_cover_date=1965;,citation_year=1965;,citation_issue=2;,citation_doi=10.1007/BF02289447;,citation_volume=30;,citation_journal_title=Psychometrika;">
+<meta name="citation_reference" content="citation_title=Cutoff criteria for fit indexes in covariance structure analysis: Conventional criteria versus new alternatives;,citation_author=Li-tze Hu;,citation_author=Peter M Bentler;,citation_publication_date=1999;,citation_cover_date=1999;,citation_year=1999;,citation_issue=1;,citation_doi=10.1080/10705519909540118;,citation_volume=6;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=An index of factorial simplicity;,citation_author=Henry F Kaiser;,citation_publication_date=1974;,citation_cover_date=1974;,citation_year=1974;,citation_issue=1;,citation_doi=10.1007/BF02291575;,citation_volume=39;,citation_journal_title=Psychometrika;">
+<meta name="citation_reference" content="citation_title=Principles and practice of structural equation modeling;,citation_author=Rex B Kline;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_isbn=9781462523344;">
+<meta name="citation_reference" content="citation_title=Test equating, scaling, and linking: Methods and practices;,citation_author=Michael J Kolen;,citation_author=Robert L Brennan;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_doi=10.1007/978-1-4939-0317-7;">
+<meta name="citation_reference" content="citation_title=The PHQ-9: Validity of a brief depression severity measure;,citation_author=K. Kroenke;,citation_author=R. L. Spitzer;,citation_author=J. B. Williams;,citation_publication_date=2001;,citation_cover_date=2001;,citation_year=2001;,citation_issue=9;,citation_doi=10.1046/j.1525-1497.2001.016009606.x;,citation_volume=16;,citation_journal_title=Journal of General Internal Medicine;">
+<meta name="citation_reference" content="citation_title=On the chance of making a type i error in CFA of binary data: The advantages of tetrachoric correlations over pearson correlations;,citation_author=Klaus D Kubinger;,citation_publication_date=2003;,citation_cover_date=2003;,citation_year=2003;,citation_issue=4;,citation_doi=10.1207/S15328007SEM1004_7;,citation_volume=10;,citation_journal_title=Structural Equation Modeling;">
+<meta name="citation_reference" content="citation_title=Determining the number of factors using parallel analysis and its recent variants;,citation_author=S Lim;,citation_author=S Jahng;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=4;,citation_doi=10.1037/met0000230;,citation_volume=24;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Testing measurement invariance of ordered categorical data;,citation_author=Yu Liu;,citation_author=Roger E Millsap;,citation_author=Stephen G West;,citation_author=Jenn-Yun Tein;,citation_author=Rika Tanaka;,citation_author=Kevin J Grimm;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=3;,citation_doi=10.1037/met0000077;,citation_volume=22;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=On the practice of dichotomization of quantitative variables;,citation_author=Robert C MacCallum;,citation_author=Shaobo Zhang;,citation_author=Kristopher J Preacher;,citation_author=Derek D Rucker;,citation_publication_date=2002;,citation_cover_date=2002;,citation_year=2002;,citation_issue=1;,citation_doi=10.1037/1082-989X.7.1.19;,citation_volume=7;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Test theory: A unified treatment;,citation_author=Roderick P McDonald;,citation_publication_date=1999;,citation_cover_date=1999;,citation_year=1999;,citation_isbn=9780805830147;">
+<meta name="citation_reference" content="citation_title=Thanks coefficient alpha, but we’ll take it from here;,citation_author=Daniel McNeish;,citation_publication_date=2018;,citation_cover_date=2018;,citation_year=2018;,citation_issue=3;,citation_doi=10.1037/met0000144;,citation_volume=23;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Assessing factorial invariance in ordered-categorical measures;,citation_author=Roger E Millsap;,citation_author=J Yun-Tein;,citation_publication_date=2004;,citation_cover_date=2004;,citation_year=2004;,citation_issue=4;,citation_doi=10.1037/1082-989X.9.4.479;,citation_volume=9;,citation_journal_title=Psychological Methods;">
+<meta name="citation_reference" content="citation_title=Common mental disorders and HIV status in the context of DREAMS among adolescent girls and young women in rural KwaZulu-natal, south africa;,citation_author=N. T. Mthiyane;,citation_author=K. Baisley;,citation_author=I. Birdthistle;,citation_author=others;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_doi=10.1080/09540121.2021.1897775;,citation_journal_title=AIDS Care;">
+<meta name="citation_reference" content="citation_title=Here: A simpler way to find your files;,citation_author=Kirill M&amp;amp;amp;quot;uller;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_journal_title=R package version 1.0.1;">
+<meta name="citation_reference" content="citation_title=Best practices in exploratory factor analysis;,citation_author=Jason W Osborne;,citation_author=B Fitzpatrick;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;">
+<meta name="citation_reference" content="citation_title=The shona symptom questionnaire: The development of an indigenous measure of common mental disorders in harare;,citation_author=V. Patel;,citation_author=E. Simunyu;,citation_author=F. Gwanzura;,citation_author=G. Lewis;,citation_author=A. Mann;,citation_publication_date=1997;,citation_cover_date=1997;,citation_year=1997;,citation_issue=6;,citation_doi=10.1111/j.1600-0447.1997.tb10134.x;,citation_volume=95;,citation_journal_title=Acta Psychiatrica Scandinavica;">
+<meta name="citation_reference" content="citation_title=The shona symptom questionnaire: The development of an indigenous measure of common mental disorders in harare;,citation_author=Vikram Patel;,citation_author=E Simunyu;,citation_author=F Gwanzura;,citation_author=G Lewis;,citation_author=A Mann;,citation_publication_date=1997;,citation_cover_date=1997;,citation_year=1997;,citation_issue=6;,citation_doi=10.1111/j.1600-0447.1997.tb10134.x;,citation_volume=95;,citation_journal_title=Acta Psychiatrica Scandinavica;">
+<meta name="citation_reference" content="citation_title=Measurement invariance conventions and reporting: The state of the art and future directions for psychological research;,citation_author=Diane L Putnick;,citation_author=Marc H Bornstein;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_doi=10.1016/j.dr.2016.06.004;,citation_volume=41;,citation_journal_title=Developmental Review;">
+<meta name="citation_reference" content="citation_title=R: A language and environment for statistical computing;,citation_author=R Core Team;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;">
+<meta name="citation_reference" content="citation_title=Psych: Procedures for psychological, psychometric, and personality research;,citation_author=William Revelle;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;">
+<meta name="citation_reference" content="citation_title=Lavaan: An r package for structural equation modeling;,citation_author=Yves Rosseel;,citation_publication_date=2012;,citation_cover_date=2012;,citation_year=2012;,citation_issue=2;,citation_doi=10.18637/jss.v048.i02;,citation_volume=48;,citation_journal_title=Journal of Statistical Software;">
+<meta name="citation_reference" content="citation_title=Estimation of latent ability using a response pattern of graded scores;,citation_author=Fumiko Samejima;,citation_publication_date=1969;,citation_cover_date=1969;,citation_year=1969;,citation_issue=4;,citation_doi=10.1007/BF02290599;,citation_volume=17;,citation_journal_title=Psychometrika Monograph Supplement;">
+<meta name="citation_reference" content="citation_title=Measurement invariance within and across samples: When to analyze and when to report;,citation_author=Daniel A Sass;,citation_author=Thomas A Schmitt;,citation_author=Herbert W Marsh;,citation_publication_date=2014;,citation_cover_date=2014;,citation_year=2014;,citation_issue=1;,citation_doi=10.1080/10705511.2014.856697;,citation_volume=21;,citation_journal_title=Structural Equation Modeling: A Multidisciplinary Journal;">
+<meta name="citation_reference" content="citation_title=Applied multivariate statistics for the social sciences;,citation_author=James P Stevens;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_doi=10.4324/9780203843130;">
+<meta name="citation_reference" content="citation_title=Breaking up is hard to do: The heartbreak of dichotomizing continuous data;,citation_author=David L Streiner;,citation_publication_date=2002;,citation_cover_date=2002;,citation_year=2002;,citation_issue=3;,citation_doi=10.1177/070674370204700307;,citation_volume=47;,citation_journal_title=Canadian Journal of Psychiatry;">
+<meta name="citation_reference" content="citation_title=Using multivariate statistics;,citation_author=Barbara G Tabachnick;,citation_author=Linda S Fidell;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;">
+<meta name="citation_reference" content="citation_title=ggplot2: Elegant graphics for data analysis;,citation_author=Hadley Wickham;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;">
+<meta name="citation_reference" content="citation_title=Empirical histograms in item response theory with differential item functioning;,citation_author=Carol M Woods;,citation_publication_date=2009;,citation_cover_date=2009;,citation_year=2009;,citation_issue=1;,citation_doi=10.1177/0013164408318760;,citation_volume=69;,citation_journal_title=Educational and Psychological Measurement;">
+<meta name="citation_reference" content="citation_title=Identification of confirmatory factor analysis models of different levels of invariance for ordered categorical outcomes;,citation_author=Hao Wu;,citation_author=Ryne Estabrook;,citation_publication_date=2016;,citation_cover_date=2016;,citation_year=2016;,citation_doi=10.1007/s11336-016-9506-0;,citation_volume=81;,citation_journal_title=Psychometrika;">
+<meta name="citation_reference" content="citation_title=Bootstrap confidence intervals for factor loadings;,citation_author=G Zhang;,citation_author=K J Preacher;,citation_author=R I Jennrich;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=2;,citation_doi=10.1111/bmsp.12151;,citation_volume=72;,citation_journal_title=British Journal of Mathematical and Statistical Psychology;">
+</head>
+
+<body class="quarto-light">
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Establishing Comparability between the Shona Symptom Questionnaire (SSQ-14) and the Patient Health Questionnaire (PHQ-9) as Depression Outcome Measures among Adolescents and Young Adults in South Africa</h1>
+            <p class="subtitle lead"><strong>Statistical Consideration and Analysis Report (SCAR)</strong></p>
+          </div>
+
+    
+    <div class="quarto-title-meta-container">
+      <div class="quarto-title-meta-column-start">
+            <div class="quarto-title-meta-author">
+          <div class="quarto-title-meta-heading">Author</div>
+          <div class="quarto-title-meta-heading">Affiliation</div>
+          
+                <div class="quarto-title-meta-contents">
+            <p class="author">CO-LUMINATE DSU Team </p>
+          </div>
+                <div class="quarto-title-meta-contents">
+                    <p class="affiliation">
+                        Africa Health Research Institute (AHRI)
+                      </p>
+                  </div>
+                    </div>
+        
+        <div class="quarto-title-meta">
+
+                      
+          
+                
+              </div>
+      </div>
+      <div class="quarto-title-meta-column-end quarto-other-formats-target">
+      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+    </div>
+
+
+    <div>
+      <div class="keywords">
+        <div class="block-title">Keywords</div>
+        <p>Shona Symptom Questionnaire, Psychometrics, Depression Screening, Item Response Theory, Measurement Invariance, Monte Carlo Simulation</p>
+      </div>
+    </div>
+
+    <div class="quarto-other-links-text-target">
+    </div>  </div>
+</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#setting" id="toc-setting" class="nav-link" data-scroll-target="#setting">Setting</a></li>
+  <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants">Participants</a></li>
+  <li><a href="#measures" id="toc-measures" class="nav-link" data-scroll-target="#measures">Measures</a></li>
+  <li><a href="#procedures" id="toc-procedures" class="nav-link" data-scroll-target="#procedures">Procedures</a></li>
+  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
+  <ul class="collapse">
+  <li><a href="#participant-characteristics" id="toc-participant-characteristics" class="nav-link" data-scroll-target="#participant-characteristics">Participant Characteristics</a></li>
+  <li><a href="#structural-validity-and-stability" id="toc-structural-validity-and-stability" class="nav-link" data-scroll-target="#structural-validity-and-stability">Structural Validity and Stability</a></li>
+  </ul></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables">Tables</a></li>
+  <li><a href="#figure-captions" id="toc-figure-captions" class="nav-link" data-scroll-target="#figure-captions">Figure Captions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#supplementary" id="toc-supplementary" class="nav-link" data-scroll-target="#supplementary">Supplementary</a></li>
+  <li><a href="#preliminary-analysis" id="toc-preliminary-analysis" class="nav-link" data-scroll-target="#preliminary-analysis">Preliminary Analysis</a>
+  <ul class="collapse">
+  <li><a href="#factor-retention-analysis-determining-the-stable-structure" id="toc-factor-retention-analysis-determining-the-stable-structure" class="nav-link" data-scroll-target="#factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</a></li>
+  <li><a href="#structural-stability-and-item-co-occurrence" id="toc-structural-stability-and-item-co-occurrence" class="nav-link" data-scroll-target="#structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+  
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The primary aim of this study is to establish a rigorous, evidence-based diagnostic cut-off score for the Shona Symptom Questionnaire (SSQ), specifically the theoretically derived 10-item subset (SSQ-10), using the Patient Health Questionnaire-9 (PHQ-9) as a reference standard for probable depression. To achieve this, the study first evaluates the structural validity and stability of the SSQ by comparing the original 14-item scale against the theoretical SSQ-10 and the existing 8-item Dixon-Chibanda subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span> to identify the optimal configuration for clinical use. Subsequently, the analysis validates measurement invariance to confirm that the SSQ-10 functions consistently across depression status, biological sex, and age groups, ensuring the derived cut-off is universally applicable without bias <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Finally, the study derives a harmonised diagnostic threshold to facilitate accurate depression screening and comparability between the SSQ-10 and the PHQ-9 among adolescents and young adults.</p>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="setting" class="level3">
+<h3 class="anchored" data-anchor-id="setting">Setting</h3>
+<p>This study is embedded within the Isisekelo Sempilo (“Foundation of Life”) trial, a <span class="math inline">\(2 \times 2\)</span> factorial randomized controlled trial conducted by the Africa Health Research Institute (AHRI) in the uMkhanyakude district of rural KwaZulu-Natal, South Africa <span class="citation" data-cites="chidumwa2022isisekelo">(<a href="#ref-chidumwa2022isisekelo" role="doc-biblioref">Chidumwa et al. 2022</a>)</span>. The trial aimed to evaluate interventions integrating HIV prevention and care within sexual and reproductive health services for young people. The study setting is predominantly rural and characterised by high levels of poverty and unemployment, with over 85% of young adults aged 20–24 reported as unemployed. The region also experiences a high prevalence of HIV. The AHRI demographic surveillance area covers a population of approximately 140,000, including over 20,000 individuals aged 16–29 years. Clinical attendance data were captured electronically via the ClinicLink system across 11 clinics within the surveillance area.</p>
+</section>
+<section id="participants" class="level3">
+<h3 class="anchored" data-anchor-id="participants">Participants</h3>
+<p>The Isisekelo Sempilo trial utilised the AHRI demographic surveillance system as a sampling frame to randomly select 3,000 men and women aged 16–29 years, stratified by sex. Eligibility criteria for the main trial included residence within the surveillance area, willingness to provide informed consent, and willingness to participate in follow-up assessments including HIV testing via dried blood spot. For the present psychometric analysis, a subsample of participants was selected based on age (16–24 years) and the availability of concurrent baseline measurements for both the SSQ-14 and the PHQ-9. This subset ensures that the validation and harmonisation analyses are conducted on a directly comparable cohort relevant to adolescent and young adult mental health.</p>
+</section>
+<section id="measures" class="level3">
+<h3 class="anchored" data-anchor-id="measures">Measures</h3>
+<section id="the-patient-health-questionnaire-phq-9" class="level4">
+<h4 class="anchored" data-anchor-id="the-patient-health-questionnaire-phq-9">The Patient Health Questionnaire (PHQ-9)</h4>
+<p>The PHQ-9 is the depression module of the PRIME-MD diagnostic instrument, designed to align strictly with the criteria for Major Depressive Disorder (MDD) in the DSM-IV <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>. It consists of 9 items scored on a 4-point Likert scale ranging from “Not at all” (0) to “Nearly every day” (3). It measures the severity of MDD symptoms over the past 2 weeks, covering domains such as anhedonia, depressed mood, sleep disturbance, fatigue, and suicidal ideation. In South Africa, the PHQ-9 has been validated across various languages, including isiXhosa, showing high sensitivity and specificity among adolescents. However, its etic approach may miss non-DSM manifestations of distress common in African contexts, and its factor structure can be inconsistent in some local populations.</p>
+</section>
+<section id="the-shona-symptom-questionnaire-ssq-14" class="level4">
+<h4 class="anchored" data-anchor-id="the-shona-symptom-questionnaire-ssq-14">The Shona Symptom Questionnaire (SSQ-14)</h4>
+<p>The SSQ-14 represents an emic alternative. Developed in Zimbabwe, it was derived from ethnographic research into how Shona speakers articulate mental distress <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>. It consists of 14 items with a binary (Yes/No) response format and measures Common Mental Disorders (CMD)—a blend of depression and anxiety—over the past 7 days. It includes universal symptoms but also indigenous idioms such as kufungisisa (“thinking too much”) and somatic sensations. While it captures a culturally resonant experience of distress, its binary format and mixing of anxiety and depression items present specific challenges for harmonisation with the polytomous, depression-specific PHQ-9 <span class="citation" data-cites="Haney2014">(<a href="#ref-Haney2014" role="doc-biblioref">Haney et al. 2014</a>)</span>.</p>
+</section>
+<section id="ssq-10-item-configuration-theoretical-subset" class="level4">
+<h4 class="anchored" data-anchor-id="ssq-10-item-configuration-theoretical-subset">SSQ-10 Item Configuration (Theoretical Subset)</h4>
+<p>To enhance the specificity of the SSQ for depression screening, a theoretically derived subset, denoted as SSQ-10, was configured by retaining items that conceptually align with DSM-5 and ICD-11 criteria for a depressive episode while excluding non-specific distress items. Ten items were retained: thinking too much (cognitive distress/rumination), difficulty concentrating (cognitive), irritability (affective-arousal), poor sleep (somatic-affective), crying (affective), feeling tired (somatic-affective), suicidal thoughts (cognitive-affective), general unhappiness (affective-cognitive), work lagging behind (functional/cognitive), and difficulty deciding (cognitive). Irritability was retained as it is recognized as an alternative mood expression for youth depression in DSM-5.</p>
+<p>Four items were excluded based on theoretical distinctions. Nightmares (SSQ04) were removed as they overlap with sleep disturbance but align more closely with anxiety or trauma. Seeing or hearing things (SSQ05) was excluded as it represents perceptual disturbances associated with severe or psychotic depression rather than core depressive criteria. Stomach ache (SSQ06), while a common somatic idiom of distress, was excluded to reduce confounding with general somatic complaints. Frightened by trivial things (SSQ07) was removed as it serves as a marker for anxiety or hyperarousal rather than depression.</p>
+</section>
+</section>
+<section id="procedures" class="level3">
+<h3 class="anchored" data-anchor-id="procedures">Procedures</h3>
+<p>Participants were identified using the AHRI demographic surveillance system as a sampling frame. A random sample of individuals aged 16–29 years was selected, stratified by sex, and invited to participate via home visits conducted by trained fieldworkers. Upon contact, the study purpose was explained, and written informed consent was obtained. For participants aged 16–17 years, assent was obtained in conjunction with parental or guardian consent, in accordance with South African ethical guidelines for research with minors.</p>
+<p>Following consent, participants completed a structured baseline questionnaire administered electronically by fieldworkers using secure tablets. This questionnaire included sociodemographic details, health care utilization history, and the full SSQ-14 and PHQ-9 instruments. To minimize social desirability bias and ensure comprehension, interviews were conducted in the local language, isiZulu, in private settings within the participant’s household or a preferred community location. Data were captured offline and synchronized daily with the AHRI central data repository for quality control and storage.</p>
+</section>
+<section id="statistical-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h3>
+<p><em>Structural Validity and Stability Analysis</em>: To determine the most robust version of the SSQ for screening purposes, three item configurations were evaluated: the original 14-item scale (SSQ-14), a theoretically derived 10-item subset focusing on core depressive symptoms (SSQ-10), and the 8-item Dixon-Chibanda subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. A Monte Carlo split-sample resampling approach was employed to rigorously test the stability of these structures. The dataset was randomly partitioned into exploratory and confirmatory halves for 10,000 iterations. In each iteration, Exploratory Factor Analysis (EFA) was conducted to identify the most likely factor structure using established criteria appropriate for categorical data, specifically the Kaiser Criterion and Parallel Analysis <span class="citation" data-cites="holgado2010polychoric">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>)</span>. The Consensus Model was then identified as the specific grouping of items that appeared most frequently across these replications, serving as the definitive structure for each scale version.</p>
+<p><em>Confirmatory Validation and Measurement Invariance</em>: Following the exploratory phase, the stability of the Consensus Model for the SSQ-10 was tested using Confirmatory Factor Analysis (CFA) on the hold-out data samples. To ensure the scale performs fairly across different populations, measurement invariance was assessed. This procedure evaluated whether the SSQ-10 measures depression consistently regardless of a participant’s biological sex, age group, or depression severity status <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Internal consistency reliability was calculated using both Cronbach’s Alpha and McDonald’s Omega Total to provide a comprehensive assessment of the scale’s precision.</p>
+<p><em>Derivation of Diagnostic Cut-offs and Harmonisation</em>: An optimal screening cut-off for the SSQ-10 was established using the PHQ-9 as the clinical reference standard. Two complementary methods were applied. First, Receiver Operating Characteristic (ROC) analysis was used to identify the score threshold that maximised the balance between sensitivity and specificity. Second, Item Response Theory (IRT) was employed to overcome the limitations of simple binary cut-offs by linking the SSQ-10 and PHQ-9 onto a common latent metric of depression severity <span class="citation" data-cites="samejima1969estimation">(<a href="#ref-samejima1969estimation" role="doc-biblioref">Samejima 1969</a>)</span>. This allowed for the identification of the precise level of underlying depression corresponding to the PHQ-9 threshold and mapping it directly to the SSQ-10, creating a harmonised standard for classification <span class="citation" data-cites="kolen2014test">(<a href="#ref-kolen2014test" role="doc-biblioref">Kolen and Brennan 2014</a>)</span>. All analyses were conducted using R Statistical Software <span class="citation" data-cites="rcoreteam2023">(<a href="#ref-rcoreteam2023" role="doc-biblioref">R Core Team 2023</a>)</span>.</p>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="participant-characteristics" class="level3">
+<h3 class="anchored" data-anchor-id="participant-characteristics">Participant Characteristics</h3>
+<div style="page-break-after: always;"></div>
+<p>The demographic and clinical characteristics of the study sample (<span class="math inline">\(N=843\)</span>) are summarized in <a href="#tbl-table1" class="quarto-xref">Table&nbsp;1</a>. The cohort included a balanced distribution of biological sex, with 51% males and 49% females. The age distribution was skewed slightly towards young adults, with 57% of participants aged 20–24 years and 43% aged 17–19 years. The majority of participants resided in rural households (68%), and nearly half (44%) were currently enrolled in school. Based on the PHQ-9 reference standard, the prevalence of probable depression (score <span class="math inline">\(\ge\)</span> 10) in the sample was 4.0% (<span class="math inline">\(n=34\)</span>).</p>
+<div class="cell">
+<div id="tbl-table1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: <strong>Participant Characteristics</strong>
+</figcaption>
+<div aria-describedby="tbl-table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="eznntgitul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eznntgitul table {
+  font-family: Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#eznntgitul thead, #eznntgitul tbody, #eznntgitul tfoot, #eznntgitul tr, #eznntgitul td, #eznntgitul th {
+  border-style: none;
+}
+
+#eznntgitul p {
+  margin: 0;
+  padding: 0;
+}
+
+#eznntgitul .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#eznntgitul .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#eznntgitul .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#eznntgitul .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#eznntgitul .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eznntgitul .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eznntgitul .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#eznntgitul .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#eznntgitul .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#eznntgitul .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#eznntgitul .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#eznntgitul .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#eznntgitul .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#eznntgitul .gt_group_heading {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#eznntgitul .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#eznntgitul .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#eznntgitul .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#eznntgitul .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#eznntgitul .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eznntgitul .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#eznntgitul .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#eznntgitul .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#eznntgitul .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eznntgitul .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#eznntgitul .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#eznntgitul .gt_last_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eznntgitul .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eznntgitul .gt_first_grand_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#eznntgitul .gt_last_grand_summary_row_top {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eznntgitul .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#eznntgitul .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#eznntgitul .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eznntgitul .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eznntgitul .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#eznntgitul .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#eznntgitul .gt_left {
+  text-align: left;
+}
+
+#eznntgitul .gt_center {
+  text-align: center;
+}
+
+#eznntgitul .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#eznntgitul .gt_font_normal {
+  font-weight: normal;
+}
+
+#eznntgitul .gt_font_bold {
+  font-weight: bold;
+}
+
+#eznntgitul .gt_font_italic {
+  font-style: italic;
+}
+
+#eznntgitul .gt_super {
+  font-size: 65%;
+}
+
+#eznntgitul .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#eznntgitul .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#eznntgitul .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#eznntgitul .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#eznntgitul .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#eznntgitul .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#eznntgitul .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#eznntgitul .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#eznntgitul div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption><strong>Participant Characteristics</strong></caption>
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Overall</strong><br>
+N = 843<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="stat_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Non-Depressed (&lt; 10)</strong><br>
+N = 809<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="stat_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Depressed (PHQ-9 &gt;= 10)</strong><br>
+N = 34<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="Demographics" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Demographics</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Demographics  label">Age Group (Years)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;17-19</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">360 (43%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">346 (43%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">14 (41%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;20-24</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">483 (57%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">463 (57%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">20 (59%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Demographics  label">Biological Sex</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">430 (51%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">414 (51%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">16 (47%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">413 (49%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">395 (49%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">18 (53%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Demographics  label">Household Location</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Peri-Urban</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">238 (28%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">231 (29%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">7 (21%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Rural</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">572 (68%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">546 (68%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">26 (76%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Urban</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">26 (3·1%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">25 (3·1%)</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">1 (2·9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Demographics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Demographics  stat_0">7</td>
+<td class="gt_row gt_center" headers="Demographics  stat_1">7</td>
+<td class="gt_row gt_center" headers="Demographics  stat_2">0</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="Socio-economics" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Socio-economics</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Socio-economics  label">Currently in School</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Inschool</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">368 (44%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">352 (44%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">16 (47%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Not inschool</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">472 (56%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">454 (56%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">18 (53%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">3</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">3</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Socio-economics  label">Employment Status</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Employed (full-time)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">33 (3·9%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">32 (4·0%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">1 (2·9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Not employed</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">370 (44%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">356 (44%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">14 (41%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Status Unknown</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">245 (29%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">236 (29%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">9 (26%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Student (Not Applicable)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">195 (23%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">185 (23%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">10 (29%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Socio-economics  label">Food Insecurity</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">229 (27%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">220 (27%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">9 (26%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">3</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">3</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Socio-economics  label">Receives Government Grant</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">172 (21%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">163 (20%)</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">9 (26%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Socio-economics  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_0">13</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_1">13</td>
+<td class="gt_row gt_center" headers="Socio-economics  stat_2">0</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="Family/Vulnerability" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Family/Vulnerability</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Family/Vulnerability  label">Orphanhood Status</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Family/Vulnerability  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Both Parents Alive</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_0">657 (78%)</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_1">630 (78%)</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_2">27 (79%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Family/Vulnerability  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;One Parent Deceased</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_0">161 (19%)</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_1">155 (19%)</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_2">6 (18%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Family/Vulnerability  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Both Parents Deceased</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_0">22 (2·6%)</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_1">21 (2·6%)</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_2">1 (2·9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Family/Vulnerability  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_0">3</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_1">3</td>
+<td class="gt_row gt_center" headers="Family/Vulnerability  stat_2">0</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<td colspan="4" id="Health &amp;amp; Risk" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Health &amp; Risk</td>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label">HIV Status</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0"><br>
+</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1"><br>
+</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Negative</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">656 (78%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">626 (78%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">30 (88%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Positive</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">94 (11%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">91 (11%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">3 (8·8%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Status Unknown</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">90 (11%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">89 (11%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">1 (2·9%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">3</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">3</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label">Experienced Violence</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">170 (20%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">156 (19%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">14 (41%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">3</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">3</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label">Ever Drank Alcohol</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">433 (52%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">413 (51%)</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">20 (59%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Health &amp; Risk  label" style="font-style: italic">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_0">3</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_1">3</td>
+<td class="gt_row gt_center" headers="Health &amp; Risk  stat_2">0</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
+</tr>
+<tr class="gt_sourcenotes even">
+<td colspan="4" class="gt_sourcenote">Note: Unemployment is defined as being willing/available to work but jobless. Participants currently in school are classified as 'Student (Not Applicable)' to align with labour force participation definitions.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+<a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
+<div style="page-break-after: always;"></div>
+<p>Item-level analysis of the SSQ-14 revealed significant variability in symptom endorsement between depressed and non-depressed groups (<a href="#tbl-table2" class="quarto-xref">Table&nbsp;2</a>), with point-biserial correlations confirming strong associations between individual SSQ items and the continuous PHQ-9 total score (<span class="math inline">\(r_{pb}\)</span> range: 0.26–0.41, all <span class="math inline">\(p &lt; 0.001\)</span>). Notably, items excluded from the theoretical SSQ-10 subset, such as hallucinations (SSQ05) and stomach ache (SSQ06), showed weaker correlations with the depression benchmark compared to core affective items like general unhappiness (SSQ12) and thinking too much (SSQ01).</p>
+<div class="cell">
+<div id="tbl-table2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-table2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2
+</figcaption>
+<div aria-describedby="tbl-table2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="dvblicsbxd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dvblicsbxd table {
+  font-family: Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#dvblicsbxd thead, #dvblicsbxd tbody, #dvblicsbxd tfoot, #dvblicsbxd tr, #dvblicsbxd td, #dvblicsbxd th {
+  border-style: none;
+}
+
+#dvblicsbxd p {
+  margin: 0;
+  padding: 0;
+}
+
+#dvblicsbxd .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#dvblicsbxd .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#dvblicsbxd .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#dvblicsbxd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#dvblicsbxd .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#dvblicsbxd .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#dvblicsbxd .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#dvblicsbxd .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#dvblicsbxd .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#dvblicsbxd .gt_group_heading {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#dvblicsbxd .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#dvblicsbxd .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#dvblicsbxd .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#dvblicsbxd .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#dvblicsbxd .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dvblicsbxd .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#dvblicsbxd .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#dvblicsbxd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#dvblicsbxd .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dvblicsbxd .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#dvblicsbxd .gt_last_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dvblicsbxd .gt_first_grand_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_last_grand_summary_row_top {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#dvblicsbxd .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dvblicsbxd .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#dvblicsbxd .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#dvblicsbxd .gt_left {
+  text-align: left;
+}
+
+#dvblicsbxd .gt_center {
+  text-align: center;
+}
+
+#dvblicsbxd .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#dvblicsbxd .gt_font_normal {
+  font-weight: normal;
+}
+
+#dvblicsbxd .gt_font_bold {
+  font-weight: bold;
+}
+
+#dvblicsbxd .gt_font_italic {
+  font-style: italic;
+}
+
+#dvblicsbxd .gt_super {
+  font-size: 65%;
+}
+
+#dvblicsbxd .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#dvblicsbxd .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#dvblicsbxd .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#dvblicsbxd .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#dvblicsbxd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#dvblicsbxd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#dvblicsbxd .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#dvblicsbxd .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#dvblicsbxd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Distribution of SSQ-14 Items by Depression Status and Correlations</strong></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>SSQ-14 Item</strong></th>
+<th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Total Sample</strong> (N = 843)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="stat_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Non-Depressed</strong> (PHQ &lt; 10) (N = 809)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="stat_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Depressed</strong> (PHQ &gt;= 10) (N = 34)<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="Corr_PHQ_Label" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Correlation</strong> (with PHQ-9)</th>
+<th id="Corr_SSQ_Label" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Correlation</strong> (with SSQ-14)</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ01: Thinking too much</td>
+<td class="gt_row gt_center" headers="stat_0">237 (28%)</td>
+<td class="gt_row gt_center" headers="stat_1">212 (26%)</td>
+<td class="gt_row gt_center" headers="stat_2">25 (74%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.405 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.727 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ02: Difficulty concentrating</td>
+<td class="gt_row gt_center" headers="stat_0">187 (22%)</td>
+<td class="gt_row gt_center" headers="stat_1">164 (20%)</td>
+<td class="gt_row gt_center" headers="stat_2">23 (68%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.400 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.727 (p&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ03: Irritability</td>
+<td class="gt_row gt_center" headers="stat_0">152 (18%)</td>
+<td class="gt_row gt_center" headers="stat_1">133 (16%)</td>
+<td class="gt_row gt_center" headers="stat_2">19 (56%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.303 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.667 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold; font-style: italic; background-color: #F9E3E3">SSQ04: Nightmares</td>
+<td class="gt_row gt_center" headers="stat_0" style="background-color: #F9E3E3; font-style: italic">173 (21%)</td>
+<td class="gt_row gt_center" headers="stat_1" style="background-color: #F9E3E3; font-style: italic">155 (19%)</td>
+<td class="gt_row gt_center" headers="stat_2" style="background-color: #F9E3E3; font-style: italic">18 (53%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label" style="background-color: #F9E3E3; font-style: italic">0.293 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label" style="background-color: #F9E3E3; font-style: italic">0.646 (p&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold; font-style: italic; background-color: #F9E3E3">SSQ05: Hallucinations</td>
+<td class="gt_row gt_center" headers="stat_0" style="background-color: #F9E3E3; font-style: italic">69 (8·2%)</td>
+<td class="gt_row gt_center" headers="stat_1" style="background-color: #F9E3E3; font-style: italic">59 (7·3%)</td>
+<td class="gt_row gt_center" headers="stat_2" style="background-color: #F9E3E3; font-style: italic">10 (29%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label" style="background-color: #F9E3E3; font-style: italic">0.258 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label" style="background-color: #F9E3E3; font-style: italic">0.597 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold; font-style: italic; background-color: #F9E3E3">SSQ06: Stomach ache</td>
+<td class="gt_row gt_center" headers="stat_0" style="background-color: #F9E3E3; font-style: italic">134 (16%)</td>
+<td class="gt_row gt_center" headers="stat_1" style="background-color: #F9E3E3; font-style: italic">123 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2" style="background-color: #F9E3E3; font-style: italic">11 (32%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label" style="background-color: #F9E3E3; font-style: italic">0.190 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label" style="background-color: #F9E3E3; font-style: italic">0.527 (p&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold; font-style: italic; background-color: #F9E3E3">SSQ07: Frightened easily</td>
+<td class="gt_row gt_center" headers="stat_0" style="background-color: #F9E3E3; font-style: italic">173 (21%)</td>
+<td class="gt_row gt_center" headers="stat_1" style="background-color: #F9E3E3; font-style: italic">155 (19%)</td>
+<td class="gt_row gt_center" headers="stat_2" style="background-color: #F9E3E3; font-style: italic">18 (53%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label" style="background-color: #F9E3E3; font-style: italic">0.356 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label" style="background-color: #F9E3E3; font-style: italic">0.766 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ08: Poor sleep</td>
+<td class="gt_row gt_center" headers="stat_0">179 (21%)</td>
+<td class="gt_row gt_center" headers="stat_1">160 (20%)</td>
+<td class="gt_row gt_center" headers="stat_2">19 (56%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.363 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.715 (p&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ09: Crying</td>
+<td class="gt_row gt_center" headers="stat_0">143 (17%)</td>
+<td class="gt_row gt_center" headers="stat_1">125 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2">18 (53%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.387 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.773 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ10: Feeling tired</td>
+<td class="gt_row gt_center" headers="stat_0">141 (17%)</td>
+<td class="gt_row gt_center" headers="stat_1">122 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2">19 (56%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.380 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.761 (p&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ11: Suicidal thoughts</td>
+<td class="gt_row gt_center" headers="stat_0">51 (6·0%)</td>
+<td class="gt_row gt_center" headers="stat_1">39 (4·8%)</td>
+<td class="gt_row gt_center" headers="stat_2">12 (35%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.273 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.554 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ12: Generally unhappy</td>
+<td class="gt_row gt_center" headers="stat_0">112 (13%)</td>
+<td class="gt_row gt_center" headers="stat_1">92 (11%)</td>
+<td class="gt_row gt_center" headers="stat_2">20 (59%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.405 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.752 (p&lt;0.001)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ13: Work or School Lagging Behind</td>
+<td class="gt_row gt_center" headers="stat_0">102 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1">90 (11%)</td>
+<td class="gt_row gt_center" headers="stat_2">12 (35%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.301 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.669 (p&lt;0.001)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">SSQ14: Difficulty deciding</td>
+<td class="gt_row gt_center" headers="stat_0">122 (14%)</td>
+<td class="gt_row gt_center" headers="stat_1">104 (13%)</td>
+<td class="gt_row gt_center" headers="stat_2">18 (53%)</td>
+<td class="gt_row gt_center" headers="Corr_PHQ_Label">0.398 (p&lt;0.001)</td>
+<td class="gt_row gt_center" headers="Corr_SSQ_Label">0.737 (p&lt;0.001)</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
+<td colspan="6" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> n (%)</td>
+</tr>
+<tr class="gt_sourcenotes even">
+<td colspan="6" class="gt_sourcenote">Note: Data presented as n (%). Correlations are point-biserial coefficients between binary items and continuous total scores. Items highlighted in red (SSQ04-07) are those excluded from the theoretical SSQ-10 subset.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="structural-validity-and-stability" class="level3">
+<h3 class="anchored" data-anchor-id="structural-validity-and-stability">Structural Validity and Stability</h3>
+<p>The Monte Carlo split-sample analysis revealed distinct structural patterns across the three item configurations, identifying the optimal factor structure for each version while highlighting the limitations of the full scale and the existing subset (<a href="#fig-figure1_ssq_10_14_08_factor_retention" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<div id="cell-fig-figure1_ssq_10_14_08_factor_retention" class="cell">
+<div class="cell-output-display">
+<div id="fig-figure1_ssq_10_14_08_factor_retention" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure1_ssq_10_14_08_factor_retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/fig-figure1_ssq_10_14_08_factor_retention-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Factor Retention Probabilities and Counts"><img src="index_files/figure-html/fig-figure1_ssq_10_14_08_factor_retention-1.png" class="img-fluid figure-img" width="1536"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1_ssq_10_14_08_factor_retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Factor Retention Probabilities and Counts
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The SSQ-14 full scale consistently exhibited a multidimensional structure. The Kaiser criterion strongly favored a two-factor solution (89.2% probability), while Parallel Analysis favored a three-factor solution (90.9% probability). Stability analysis of these solutions (Supplementary <a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>) indicated a robust split between a General or Somatic factor and a Core or Depressive factor. The 2-factor Kaiser solution (<a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel A &amp; B) consistently grouped items SSQ09–14 (crying, fatigue, suicide, unhappiness, work lag, difficulty deciding) into a stable “Somatic/Severe” cluster, while items SSQ01–08 (thinking too much, concentration, irritability, nightmares, hallucinations, stomach ache, fear, sleep) formed a “General Distress/Anxiety” cluster. The 3-factor Parallel Analysis solution (<a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel C &amp; D) further fragmented this second cluster, separating core depression items (thinking too much, concentration, irritability) from non-specific anxiety items (nightmares, hallucinations, stomach ache, fear). This persistent multidimensionality suggests that a single summary score for the SSQ-14 conflates distinct symptom clusters—specifically anxiety and somatic idioms with core depression—supporting the theoretical decision to refine the scale.</p>
+<p><strong>Theoretical Subset SSQ-10</strong></p>
+<p>For the theoretically derived SSQ-10 subset, a significant divergence in factor retention criteria emerged (<a href="#fig-figure1_ssq_10_14_08_factor_retention" class="quarto-xref">Figure&nbsp;1</a>, Panel B). The Kaiser criterion overwhelmingly suggested a one-factor solution (81.7% probability), supporting the theoretical intent of a unitary depression scale. In contrast, Parallel Analysis suggested a three-factor solution in 62.2% of iterations, with notable support for a two-factor solution (35.1%).</p>
+<p>To resolve this divergence, the structure of the Parallel Analysis three-factor solution was interrogated (Figure 2). The analysis revealed that the third factor was a statistical artifact: a “singleton” factor defined solely by item SSQ08 (trouble sleeping). Such single-item factors are methodologically unsound for subscale scoring. However, when examining the two-factor solutions produced by Parallel Analysis, a stable consensus structure emerged where SSQ08 merged into the larger Somatic/Severe factor.</p>
+<div id="cell-fig-figure1_ssq_10__14_08_factor_retention_stability" class="cell">
+<div class="cell-output-display">
+<div id="fig-figure1_ssq_10__14_08_factor_retention_stability" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure1_ssq_10__14_08_factor_retention_stability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/fig-figure1_ssq_10__14_08_factor_retention_stability-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Factor Retention Probabilities and Counts"><img src="index_files/figure-html/fig-figure1_ssq_10__14_08_factor_retention_stability-1.png" class="img-fluid figure-img" width="1536"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1_ssq_10__14_08_factor_retention_stability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Factor Retention Probabilities and Counts
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Consequently, the SSQ-10 is best conceptualized as having a latent two-factor structure comprising a “Somatic/Severe” dimension (SSQ08–14) and a “Core/Cognitive” dimension (SSQ01–03), as visualized in Figure 3.</p>
+<p>Similar to the SSQ-10, the SSQ-08 subset demonstrated a robust uni-dimensional structure under the Kaiser criterion and with 100% probability, as shown in <a href="#fig-figure1_ssq_10_14_08_factor_retention" class="quarto-xref">Figure&nbsp;1</a> (Panel B). However, Parallel Analysis results were ambiguous and unstable, splitting between two factors (37.9%) and three factors (37.2%). While statistically parsimonious, this subset achieves stability by excluding critical core affective items found in the SSQ-14 and SSQ-10 (such as difficulty concentrating and irritability), potentially limiting its content validity as a comprehensive depression screener for this study.</p>
+</section>
+</section>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>[Discussion will be inserted here]</p>
+</section>
+<section id="conclusions" class="level2">
+<h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
+<p>[Conclusions will be inserted here]</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="tables" class="level2">
+<h2 class="anchored" data-anchor-id="tables">Tables</h2>
+<p>[Tables will be inserted here]</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="figure-captions" class="level2">
+<h2 class="anchored" data-anchor-id="figure-captions">Figure Captions</h2>
+<p>[Figure captions will be inserted here]</p>
+<p><strong>Acknowledgements: </strong></p>
+<p>[Insert Acknowledgements here]</p>
+<p><strong>Financial Support</strong></p>
+<p>[Insert Funding Information here]</p>
+<p><strong>Conflict of Interest</strong></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Availability Statement
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To ensure compliance with the Protection of Personal Information Act (POPIA) and AHRI’s Data Sharing Policy and Standard Operating Procedures (SOP), researchers requiring access to the datasets must submit a formal request via the AHRI Data Science Unit (DSU).</p>
+</div>
+</div>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chibanda2019ssq8" class="csl-entry" role="listitem">
+Chibanda, Dixon et al. 2019. <span>“Validation of the 8-Item Shona Symptom Questionnaire (SSQ-8) in Zimbabwe.”</span> In <em>AIDSImpact 2019 Conference</em>. <a href="https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA">https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA</a>.
+</div>
+<div id="ref-chidumwa2022isisekelo" class="csl-entry" role="listitem">
+Chidumwa, Glory, Natsayi Chimbindi, Carina Herbst, Nonhlanhla Okeselo, Jaco Dreyer, Thembelihle Zuma, Theresa Smith, et al. 2022. <span>“Isisekelo Sempilo Study Protocol for the Effectiveness of HIV Prevention Embedded in Sexual Health with or Without Peer Navigator Support (Thetha Nami) to Reduce Prevalence of Transmissible HIV Amongst Adolescents and Young Adults in Rural KwaZulu-Natal: A 2<span class="math inline">\(\times\)</span> 2 Factorial Randomised Controlled Trial.”</span> <em>BMC Public Health</em> 22 (1): 454. <a href="https://doi.org/10.1186/s12889-022-12798-y">https://doi.org/10.1186/s12889-022-12798-y</a>.
+</div>
+<div id="ref-Haney2014" class="csl-entry" role="listitem">
+Haney, E., K. Singh, C. Nyamukapa, et al. 2014. <span>“One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.”</span> <em>Journal of Affective Disorders</em> 167: 358–67. <a href="https://doi.org/10.1016/j.jad.2014.06.015">https://doi.org/10.1016/j.jad.2014.06.015</a>.
+</div>
+<div id="ref-holgado2010polychoric" class="csl-entry" role="listitem">
+Holgado–Tello, Francisco Pablo, Salvador Chac’on–Moscoso, Isabel Barbero–Garc’ ia, and Enrique Vila–Abad. 2010. <span>“Polychoric Versus Pearson Correlations in Exploratory and Confirmatory Factor Analysis of Ordinal Variables.”</span> <em>Quality &amp; Quantity</em> 44: 153–66. <a href="https://doi.org/10.1007/s11135-008-9190-y">https://doi.org/10.1007/s11135-008-9190-y</a>.
+</div>
+<div id="ref-kolen2014test" class="csl-entry" role="listitem">
+Kolen, Michael J, and Robert L Brennan. 2014. <em>Test Equating, Scaling, and Linking: Methods and Practices</em>. 3rd ed. Springer. <a href="https://doi.org/10.1007/978-1-4939-0317-7">https://doi.org/10.1007/978-1-4939-0317-7</a>.
+</div>
+<div id="ref-Kroenke2001" class="csl-entry" role="listitem">
+Kroenke, K., R. L. Spitzer, and J. B. Williams. 2001. <span>“The PHQ-9: Validity of a Brief Depression Severity Measure.”</span> <em>Journal of General Internal Medicine</em> 16 (9): 606–13. <a href="https://doi.org/10.1046/j.1525-1497.2001.016009606.x">https://doi.org/10.1046/j.1525-1497.2001.016009606.x</a>.
+</div>
+<div id="ref-Patel1997" class="csl-entry" role="listitem">
+Patel, V., E. Simunyu, F. Gwanzura, G. Lewis, and A. Mann. 1997. <span>“The Shona Symptom Questionnaire: The Development of an Indigenous Measure of Common Mental Disorders in Harare.”</span> <em>Acta Psychiatrica Scandinavica</em> 95 (6): 469–75. <a href="https://doi.org/10.1111/j.1600-0447.1997.tb10134.x">https://doi.org/10.1111/j.1600-0447.1997.tb10134.x</a>.
+</div>
+<div id="ref-putnick2016measurement" class="csl-entry" role="listitem">
+Putnick, Diane L, and Marc H Bornstein. 2016. <span>“Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research.”</span> <em>Developmental Review</em> 41: 71–90. <a href="https://doi.org/10.1016/j.dr.2016.06.004">https://doi.org/10.1016/j.dr.2016.06.004</a>.
+</div>
+<div id="ref-rcoreteam2023" class="csl-entry" role="listitem">
+R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing.
+</div>
+<div id="ref-samejima1969estimation" class="csl-entry" role="listitem">
+Samejima, Fumiko. 1969. <span>“Estimation of Latent Ability Using a Response Pattern of Graded Scores.”</span> <em>Psychometrika Monograph Supplement</em> 17 (4): 1–100. <a href="https://doi.org/10.1007/BF02290599">https://doi.org/10.1007/BF02290599</a>.
+</div>
+</div>
+</section>
+<section id="supplementary" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary">Supplementary</h2>
+<div id="cell-fig-figure1_supplementary" class="cell">
+<div class="cell-output-display">
+<div id="fig-figure1_supplementary" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure1_supplementary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/fig-figure1_supplementary-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Item co-occurrence for the winning factor count and item stability sorted by Winning Model"><img src="index_files/figure-html/fig-figure1_supplementary-1.png" class="img-fluid figure-img" width="2016"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1_supplementary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Item co-occurrence for the winning factor count and item stability sorted by Winning Model
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="preliminary-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="preliminary-analysis">Preliminary Analysis</h2>
+<section id="factor-retention-analysis-determining-the-stable-structure" class="level3">
+<h3 class="anchored" data-anchor-id="factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</h3>
+<p>The probability of retaining <span class="math inline">\(k\)</span> factors was calculated across 1,000 bootstrap iterations. We determined the most stable structure for each configuration by analysing where the probabilities converged or presented a dominant model.</p>
+<p>For the full scale, the Kaiser Criterion strongly favored a 2-factor solution with approximately 89.2% probability. Conversely, Parallel Analysis favored a 3-factor solution with 90.9% probability. These results indicate that the scale is robustly multidimensional. The 2-factor solution represents the most stable base structure, separating somatic from emotional symptoms, while the 3-factor solution represents a stable refinement of the emotional domain.</p>
+<p>For the theoretical subset, the Kaiser Criterion overwhelmingly suggested a 1-factor solution in 81.7% of iterations. Parallel Analysis was more variable, favoring three factors in 62.2% of iterations but with significant support for two factors in 35.1% of cases. Given the known sensitivity of PA to minor factors and the strong consensus for one factor under the Kaiser Criterion, the 1-factor structure appears to be the most practical and stable configuration for this subset. The additional factors suggested by PA likely reflect minor correlations rather than substantive clinical dimensions.</p>
+<p>For the SSQ-08 subset, the Kaiser Criterion universally suggested a 1-factor solution (100% probability). Parallel Analysis was ambiguous, splitting roughly evenly between 2-factor (37.9%) and 3-factor (37.2%) solutions, with a notable minority (24.4%) supporting a 1-factor solution. Based on these data, this subset is determined to be robustly uni-dimensional. The PA results likely reflect item doublets, or pairs of highly correlated items, rather than distinct latent constructs.</p>
+</section>
+<section id="structural-stability-and-item-co-occurrence" class="level3">
+<h3 class="anchored" data-anchor-id="structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</h3>
+<p>To validate these determinations, we examined the stability of item memberships within the winning models for each method.</p>
+<section id="ssq-14-origina" class="level4">
+<h4 class="anchored" data-anchor-id="ssq-14-origina">SSQ-14 (Origina)</h4>
+<section id="kaiser-criterion-2-factor-solution" class="level5">
+<h5 class="anchored" data-anchor-id="kaiser-criterion-2-factor-solution">Kaiser Criterion (2-Factor Solution)</h5>
+<p>Under the Kaiser criterion, the scale splits cleanly into two distinct clusters. The high probabilities in the stability plot indicate very little cross-loading across iterations. The first factor, labeled General/Somatic, comprises items SSQ09 through SSQ14, which include hallucinations, suicide, and somatic complaints. The second factor, labeled Depressive/Anxious, includes items SSQ01 through SSQ08, encompassing symptoms such as thinking too much, sleep difficulties, and tearfulness. This confirms the scale measures two distinct but related constructs: general distress or somatic symptoms and core depression or anxiety.</p>
+</section>
+<section id="parallel-analysis-3-factor-solution" class="level5">
+<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution">Parallel Analysis (3-Factor Solution)</h5>
+<p>Parallel Analysis consistently splits the Depressive factor further. The first factor remains the Somatic/Severe dimension, comprising items SSQ07 and SSQ09 through SSQ14. A second factor, labeled Core Depression, includes items SSQ01 through SSQ03. A third factor, labeled Cognitive/Anxiety, includes items SSQ04 through SSQ06 and SSQ08. While stable, this granularity may offer less clinical utility than the 2-factor solution depending on the intended use.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1536"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ssq-10-theoretical-subset" class="level4">
+<h4 class="anchored" data-anchor-id="ssq-10-theoretical-subset">SSQ-10 (Theoretical Subset)</h4>
+<p>This subset excludes items SSQ04 through SSQ07 to focus on depressive symptoms. Although the Kaiser Criterion supports a 1-factor model, examining the Parallel Analysis 3-factor solution reveals why a 1-factor model might be superior for this subset.</p>
+<section id="parallel-analysis-3-factor-solution-1" class="level5">
+<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-1">Parallel Analysis (3-Factor Solution)</h5>
+<p>The structure under PA reveals three factors. The first factor includes items SSQ09 through SSQ14, representing severe symptoms. The second factor includes items SSQ01 through SSQ03, representing core emotional symptoms. The third factor consists solely of item SSQ08, representing fatigue or work lag. The emergence of SSQ08 as a singleton or weakly associated factor in the 3-factor solution suggests structural fragmentation. This supports the decision to treat the SSQ-10 as a uni-dimensional scale, as suggested by the Kaiser Criterion, for the purpose of establishing a depression cut-off, as dividing it further creates unstable, item-specific factors.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1536"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ssq-08-dixon-chibanda-subset" class="level4">
+<h4 class="anchored" data-anchor-id="ssq-08-dixon-chibanda-subset">SSQ-08 (Dixon-Chibanda Subset)</h4>
+<p>Similarly, while the Kaiser Criterion identifies one factor, the Parallel Analysis 2-factor solution demonstrates instability.</p>
+<section id="parallel-analysis-2-factor-solution" class="level5">
+<h5 class="anchored" data-anchor-id="parallel-analysis-2-factor-solution">Parallel Analysis (2-Factor Solution)</h5>
+<p>The structure under the PA 2-factor model splits the items into two groups. Factor 1 contains items SSQ11 through SSQ14. Factor 2 contains items SSQ01, SSQ08, SSQ09, and SSQ10. The co-occurrence heatmap shows fuzziness for Factor 2 items, indicating they do not cluster together as reliably as Factor 1 items. This lack of cohesion under the PA 2-factor model reinforces the conclusion that the 1-factor model identified by the Kaiser Criterion is the most accurate representation of the SSQ-08 structure.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1536"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="phq-09-original" class="level4">
+<h4 class="anchored" data-anchor-id="phq-09-original">PHQ-09 (Original)</h4>
+<section id="parallel-analysis-3-factor-solution-2" class="level5">
+<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-2">Parallel Analysis (3-Factor Solution)</h5>
+<p>Although Kaiser strongly supports a 1-factor model, the PA 3-factor solution (Frequency: 209/374 valid runs) reveals a coherent tripartite substructure. Factor 1 (Cognitive/Severe) includes PHQ906–909 (Guilt, Concentration, Motor, Suicide). Factor 2 (Somatic) includes PHQ903–905 (Sleep, Energy, Appetite). Factor 3 (Core Affective) includes PHQ901–902 (Anhedonia, Mood). While this substructure is theoretically interpretable, the low overall stability and high rate of model non-convergence in bootstrapping support using the robust 1-factor structure for the primary clinical objective.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1536"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Domain,PHQ-9 Item (Concept),SSQ-14 Item (Concept),Harmonisation Potential Dysphoria,“Feeling down, depressed, hopeless”,Tearfulness; Wishing to be dead,High (Direct conceptual link) Suicidality,Thoughts of hurting self/better off dead,Wishing to be dead,High (Critical anchor) Sleep,“Trouble falling/staying asleep, sleeping too much”,Fail to sleep,High (Somatic anchor) Fatigue,Feeling tired or having little energy,Tiredness,High (Somatic anchor) Cognition,Trouble concentrating,Thinking too much (Kufungisisa),Moderate (Kufungisisa is broader) Appetite,Poor appetite or overeating,Stomach ache / Loss of appetite,Moderate (SSQ focuses on pain/gut) Anxiety,None (PHQ is depression only),Heart beating fast; Frightened,Low (Unique to SSQ) Somatic,General (implicitly covered),Heat in body; Heaviness,Low (Unique to SSQ) Anhedonia,Little interest or pleasure,No direct equivalent,Low (Information loss in SSQ)</p>
+</section>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

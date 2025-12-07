@@ -50,7 +50,7 @@ rm(packages)
 #| echo: false
 ## This chunk sets global options for figures and tables
 theme_gtsummary_compact()
-theme_gtsummary_journal(journal = "jama")
+theme_gtsummary_journal(journal = "lancet")
 options(scipen=999)
 ```
 
@@ -203,43 +203,142 @@ invisible(
 
 ## Introduction
 
-The primary aim of this study is to establish a rigorous, evidence-based diagnostic cut-off score for the Shona Symptom Questionnaire (SSQ), specifically the theoretically derived 10-item subset (SSQ-10), using the Patient Health Questionnaire-9 (PHQ-9) as a reference standard for probable depression. To achieve this, the study first evaluates the structural validity and stability of the SSQ by comparing the original 14-item scale against the theoretical SSQ-10 and the existing 8-item Dixon-Chibanda subset [@chibanda2019ssq8] to identify the optimal configuration for clinical use. Subsequently, the analysis validates measurement invariance to confirm that the SSQ-10 functions consistently across depression status, biological sex, and age groups, ensuring the derived cut-off is universally applicable without bias [@putnick2016measurement]. Finally, the study derives a harmonized diagnostic threshold to facilitate accurate depression screening and comparability between the SSQ-10 and the PHQ-9 among adolescents and young adults.
+The primary aim of this study is to establish a rigorous, evidence-based diagnostic cut-off score for the Shona Symptom Questionnaire (SSQ), specifically the theoretically derived 10-item subset (SSQ-10), using the Patient Health Questionnaire-9 (PHQ-9) as a reference standard for probable depression. To achieve this, the study first evaluates the structural validity and stability of the SSQ by comparing the original 14-item scale against the theoretical SSQ-10 and the existing 8-item Dixon-Chibanda subset [@chibanda2019ssq8] to identify the optimal configuration for clinical use. Subsequently, the analysis validates measurement invariance to confirm that the SSQ-10 functions consistently across depression status, biological sex, and age groups, ensuring the derived cut-off is universally applicable without bias [@putnick2016measurement]. Finally, the study derives a harmonised diagnostic threshold to facilitate accurate depression screening and comparability between the SSQ-10 and the PHQ-9 among adolescents and young adults.
 
 ## Methods
 
 ### Setting
 
-This study is embedded within the Isisekelo Sempilo ("Foundation of Life") trial, a $2 \times 2$ factorial randomized controlled trial conducted by the Africa Health Research Institute (AHRI) in the uMkhanyakude district of rural KwaZulu-Natal, South Africa. The trial aimed to evaluate interventions integrating HIV prevention and care within sexual and reproductive health services for young people. The study setting is predominantly rural and characterized by high levels of poverty and unemployment, with over 85% of young adults aged 20–24 reported as unemployed. The region also experiences a high prevalence of HIV. The AHRI demographic surveillance area covers a population of approximately 140,000, including over 20,000 individuals aged 16–29 years. Clinical attendance data were captured electronically via the ClinicLink system across 11 clinics within the surveillance area.
+This study is embedded within the Isisekelo Sempilo ("Foundation of Life") trial, a $2 \times 2$ factorial randomized controlled trial conducted by the Africa Health Research Institute (AHRI) in the uMkhanyakude district of rural KwaZulu-Natal, South Africa [@chidumwa2022isisekelo]. The trial aimed to evaluate interventions integrating HIV prevention and care within sexual and reproductive health services for young people. The study setting is predominantly rural and characterised by high levels of poverty and unemployment, with over 85% of young adults aged 20–24 reported as unemployed. The region also experiences a high prevalence of HIV. The AHRI demographic surveillance area covers a population of approximately 140,000, including over 20,000 individuals aged 16–29 years. Clinical attendance data were captured electronically via the ClinicLink system across 11 clinics within the surveillance area.
 
 ### Participants
 
-The Isisekelo Sempilo trial utilized the AHRI demographic surveillance system as a sampling frame to randomly select 3,000 men and women aged 16–29 years, stratified by sex. Eligibility criteria for the main trial included residence within the surveillance area, willingness to provide informed consent, and willingness to participate in follow-up assessments including HIV testing via dried blood spot. For the present psychometric analysis, a subsample of participants was selected based on age (16–24 years) and the availability of concurrent baseline measurements for both the SSQ-14 and the PHQ-9. This subset ensures that the validation and harmonization analyses are conducted on a directly comparable cohort relevant to adolescent and young adult mental health.
+The Isisekelo Sempilo trial utilised the AHRI demographic surveillance system as a sampling frame to randomly select 3,000 men and women aged 16–29 years, stratified by sex. Eligibility criteria for the main trial included residence within the surveillance area, willingness to provide informed consent, and willingness to participate in follow-up assessments including HIV testing via dried blood spot. For the present psychometric analysis, a subsample of participants was selected based on age (16–24 years) and the availability of concurrent baseline measurements for both the SSQ-14 and the PHQ-9. This subset ensures that the validation and harmonisation analyses are conducted on a directly comparable cohort relevant to adolescent and young adult mental health.
 
 ### Measures
 
-<!-- Describe the measures (SSQ, PHQ-9, etc.) here -->
+#### The Patient Health Questionnaire (PHQ-9)
+
+The PHQ-9 is the depression module of the PRIME-MD diagnostic instrument, designed to align strictly with the criteria for Major Depressive Disorder (MDD) in the DSM-IV [@Kroenke2001]. It consists of 9 items scored on a 4-point Likert scale ranging from "Not at all" (0) to "Nearly every day" (3). It measures the severity of MDD symptoms over the past 2 weeks, covering domains such as anhedonia, depressed mood, sleep disturbance, fatigue, and suicidal ideation. In South Africa, the PHQ-9 has been validated across various languages, including isiXhosa, showing high sensitivity and specificity among adolescents. However, its etic approach may miss non-DSM manifestations of distress common in African contexts, and its factor structure can be inconsistent in some local populations.
+
+#### The Shona Symptom Questionnaire (SSQ-14)
+
+The SSQ-14 represents an emic alternative. Developed in Zimbabwe, it was derived from ethnographic research into how Shona speakers articulate mental distress [@Patel1997]. It consists of 14 items with a binary (Yes/No) response format and measures Common Mental Disorders (CMD)—a blend of depression and anxiety—over the past 7 days. It includes universal symptoms but also indigenous idioms such as kufungisisa ("thinking too much") and somatic sensations. While it captures a culturally resonant experience of distress, its binary format and mixing of anxiety and depression items present specific challenges for harmonisation with the polytomous, depression-specific PHQ-9 [@Haney2014].
+
+#### SSQ-10 Item Configuration (Theoretical Subset)
+
+To enhance the specificity of the SSQ for depression screening, a theoretically derived subset, denoted as SSQ-10, was configured by retaining items that conceptually align with DSM-5 and ICD-11 criteria for a depressive episode while excluding non-specific distress items. Ten items were retained: thinking too much (cognitive distress/rumination), difficulty concentrating (cognitive), irritability (affective-arousal), poor sleep (somatic-affective), crying (affective), feeling tired (somatic-affective), suicidal thoughts (cognitive-affective), general unhappiness (affective-cognitive), work lagging behind (functional/cognitive), and difficulty deciding (cognitive). Irritability was retained as it is recognized as an alternative mood expression for youth depression in DSM-5.
+
+Four items were excluded based on theoretical distinctions. Nightmares (SSQ04) were removed as they overlap with sleep disturbance but align more closely with anxiety or trauma. Seeing or hearing things (SSQ05) was excluded as it represents perceptual disturbances associated with severe or psychotic depression rather than core depressive criteria. Stomach ache (SSQ06), while a common somatic idiom of distress, was excluded to reduce confounding with general somatic complaints. Frightened by trivial things (SSQ07) was removed as it serves as a marker for anxiety or hyperarousal rather than depression.
 
 ### Procedures
 
-<!-- Describe the data collection procedures here -->
+Participants were identified using the AHRI demographic surveillance system as a sampling frame. A random sample of individuals aged 16–29 years was selected, stratified by sex, and invited to participate via home visits conducted by trained fieldworkers. Upon contact, the study purpose was explained, and written informed consent was obtained. For participants aged 16–17 years, assent was obtained in conjunction with parental or guardian consent, in accordance with South African ethical guidelines for research with minors.
+
+Following consent, participants completed a structured baseline questionnaire administered electronically by fieldworkers using secure tablets. This questionnaire included sociodemographic details, health care utilization history, and the full SSQ-14 and PHQ-9 instruments. To minimize social desirability bias and ensure comprehension, interviews were conducted in the local language, isiZulu, in private settings within the participant's household or a preferred community location. Data were captured offline and synchronized daily with the AHRI central data repository for quality control and storage.
 
 ### Statistical Analysis
 
-#### Structural Validity and Stability Analysis
+*Structural Validity and Stability Analysis*: To determine the most robust version of the SSQ for screening purposes, three item configurations were evaluated: the original 14-item scale (SSQ-14), a theoretically derived 10-item subset focusing on core depressive symptoms (SSQ-10), and the 8-item Dixon-Chibanda subset [@chibanda2019ssq8]. A Monte Carlo split-sample resampling approach was employed to rigorously test the stability of these structures. The dataset was randomly partitioned into exploratory and confirmatory halves for 10,000 iterations. In each iteration, Exploratory Factor Analysis (EFA) was conducted to identify the most likely factor structure using established criteria appropriate for categorical data, specifically the Kaiser Criterion and Parallel Analysis [@holgado2010polychoric]. The Consensus Model was then identified as the specific grouping of items that appeared most frequently across these replications, serving as the definitive structure for each scale version.
 
-To determine the most robust version of the SSQ for screening purposes, three item configurations were evaluated: the original 14-item scale (SSQ-14), a theoretically derived 10-item subset focusing on core depressive symptoms (SSQ-10), and the 8-item Dixon-Chibanda subset [@chibanda2019ssq8]. A Monte Carlo split-sample resampling approach was employed to rigorously test the stability of these structures. The dataset was randomly partitioned into exploratory and confirmatory halves for 1,000 iterations. In each iteration, Exploratory Factor Analysis (EFA) was conducted to identify the most likely factor structure using established criteria appropriate for categorical data, specifically the Kaiser Criterion and Parallel Analysis [@holgado2010polychoric]. The Consensus Model was then identified as the specific grouping of items that appeared most frequently across these replications, serving as the definitive structure for each scale version.
+*Confirmatory Validation and Measurement Invariance*: Following the exploratory phase, the stability of the Consensus Model for the SSQ-10 was tested using Confirmatory Factor Analysis (CFA) on the hold-out data samples. To ensure the scale performs fairly across different populations, measurement invariance was assessed. This procedure evaluated whether the SSQ-10 measures depression consistently regardless of a participant's biological sex, age group, or depression severity status [@putnick2016measurement]. Internal consistency reliability was calculated using both Cronbach's Alpha and McDonald's Omega Total to provide a comprehensive assessment of the scale's precision.
 
-#### Confirmatory Validation and Measurement Invariance
-
-Following the exploratory phase, the stability of the Consensus Model for the SSQ-10 was tested using Confirmatory Factor Analysis (CFA) on the hold-out data samples. To ensure the scale performs fairly across different populations, measurement invariance was assessed. This procedure evaluated whether the SSQ-10 measures depression consistently regardless of a participant's biological sex, age group, or depression severity status [@putnick2016measurement]. Internal consistency reliability was calculated using both Cronbach's Alpha and McDonald's Omega Total to provide a comprehensive assessment of the scale's precision.
-
-#### Derivation of Diagnostic Cut-offs and Harmonization
-
-An optimal screening cut-off for the SSQ-10 was established using the PHQ-9 as the clinical reference standard. Two complementary methods were applied. First, Receiver Operating Characteristic (ROC) analysis was used to identify the score threshold that maximized the balance between sensitivity and specificity. Second, Item Response Theory (IRT) was employed to overcome the limitations of simple binary cut-offs by linking the SSQ-10 and PHQ-9 onto a common latent metric of depression severity [@samejima1969estimation]. This allowed for the identification of the precise level of underlying depression corresponding to the PHQ-9 threshold and mapping it directly to the SSQ-10, creating a harmonized standard for classification [@kolen2014test]. All analyses were conducted using R Statistical Software [@rcoreteam2023].
+*Derivation of Diagnostic Cut-offs and Harmonisation*: An optimal screening cut-off for the SSQ-10 was established using the PHQ-9 as the clinical reference standard. Two complementary methods were applied. First, Receiver Operating Characteristic (ROC) analysis was used to identify the score threshold that maximised the balance between sensitivity and specificity. Second, Item Response Theory (IRT) was employed to overcome the limitations of simple binary cut-offs by linking the SSQ-10 and PHQ-9 onto a common latent metric of depression severity [@samejima1969estimation]. This allowed for the identification of the precise level of underlying depression corresponding to the PHQ-9 threshold and mapping it directly to the SSQ-10, creating a harmonised standard for classification [@kolen2014test]. All analyses were conducted using R Statistical Software [@rcoreteam2023].
 
 ## Results
 
-\[Results will be inserted here\]
+### Participant Characteristics
+```{r}
+#| include: false
+source(here("statistical_analysis/programs/utils/descriptive/democraphics_and_item_analysis.R"))
+
+tables_1_2<-readRDS(list(table1 = table1, table2 = table2_final), 
+        file = file.path(output_dir, "04_Demographic_Tables.rds"))
+
+```
+
+\newpage
+The demographic and clinical characteristics of the study sample ($N=843$) are summarized in @tbl-table1. The cohort included a balanced distribution of biological sex, with 51% males and 49% females. The age distribution was skewed slightly towards young adults, with 57% of participants aged 20–24 years and 43% aged 17–19 years. The majority of participants resided in rural households (68%), and nearly half (44%) were currently enrolled in school. Based on the PHQ-9 reference standard, the prevalence of probable depression (score $\ge$ 10) in the sample was 4.0% ($n=34$).
+
+```{r}
+#| label: tbl-table1
+tables_1_2$table1
+```
+
+\newpage
+Item-level analysis of the SSQ-14 revealed significant variability in symptom endorsement between depressed and non-depressed groups (@tbl-table2), with point-biserial correlations confirming strong associations between individual SSQ items and the continuous PHQ-9 total score ($r_{pb}$ range: 0.26–0.41, all $p < 0.001$). Notably, items excluded from the theoretical SSQ-10 subset, such as hallucinations (SSQ05) and stomach ache (SSQ06), showed weaker correlations with the depression benchmark compared to core affective items like general unhappiness (SSQ12) and thinking too much (SSQ01).
+
+```{r}
+#| label: tbl-table2
+tables_1_2$table2
+```
+
+### Structural Validity and Stability
+
+The Monte Carlo split-sample analysis revealed distinct structural patterns across the three item configurations, identifying the optimal factor structure for each version while highlighting the limitations of the full scale and the existing subset (@fig-figure1_ssq_10_14_08_factor_retention).
+
+```{r, fig.height=6, fig.width=16}
+#| label: fig-figure1_ssq_10_14_08_factor_retention
+#| fig-cap: "Factor Retention Probabilities and Counts"
+
+retention_p1<-mc_efa_results[["SSQ-14 (Original)"]][["retention_analysis"]][["plot"]]
+retention_p2<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["retention_analysis"]][["plot"]]
+retention_p2<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_analysis"]][["plot"]]
+
+(
+  (retention_p1
+   )+
+  (retention_p2
+   )+
+  (retention_p2
+   )
+  ) + 
+  patchwork::plot_layout(guides = "collect",
+                         axes = "collect_y") +
+  patchwork::plot_annotation(title=NULL,
+                         tag_level="A"
+                  ) &
+  
+  ggplot2::theme_minimal(base_size = 16,
+                         base_family = "Arial") & 
+  ggplot2::labs() & 
+  ggsci::scale_fill_jama() &
+  ggplot2::theme(
+    legend.position = 'bottom',
+    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+```
+
+The SSQ-14 full scale consistently exhibited a multidimensional structure. The Kaiser criterion strongly favored a two-factor solution (89.2% probability), while Parallel Analysis favored a three-factor solution (90.9% probability). Stability analysis of these solutions (Supplementary @fig-figure1_supplementary) indicated a robust split between a General or Somatic factor and a Core or Depressive factor. The 2-factor Kaiser solution (@fig-figure1_supplementary, Panel A & B) consistently grouped items SSQ09–14 (crying, fatigue, suicide, unhappiness, work lag, difficulty deciding) into a stable "Somatic/Severe" cluster, while items SSQ01–08 (thinking too much, concentration, irritability, nightmares, hallucinations, stomach ache, fear, sleep) formed a "General Distress/Anxiety" cluster. The 3-factor Parallel Analysis solution (@fig-figure1_supplementary, Panel C & D) further fragmented this second cluster, separating core depression items (thinking too much, concentration, irritability) from non-specific anxiety items (nightmares, hallucinations, stomach ache, fear). This persistent multidimensionality suggests that a single summary score for the SSQ-14 conflates distinct symptom clusters—specifically anxiety and somatic idioms with core depression—supporting the theoretical decision to refine the scale.
+
+**Theoretical Subset SSQ-10**
+
+For the theoretically derived SSQ-10 subset, a significant divergence in factor retention criteria emerged (@fig-figure1_ssq_10_14_08_factor_retention, Panel B). The Kaiser criterion overwhelmingly suggested a one-factor solution (81.7% probability), supporting the theoretical intent of a unitary depression scale. In contrast, Parallel Analysis suggested a three-factor solution in 62.2% of iterations, with notable support for a two-factor solution (35.1%).
+
+To resolve this divergence, the structure of the Parallel Analysis three-factor solution was interrogated (Figure 2). The analysis revealed that the third factor was a statistical artifact: a "singleton" factor defined solely by item SSQ08 (trouble sleeping). Such single-item factors are methodologically unsound for subscale scoring. However, when examining the two-factor solutions produced by Parallel Analysis, a stable consensus structure emerged where SSQ08 merged into the larger Somatic/Severe factor. 
+
+```{r, fig.height=10, fig.width=16}
+#| label: fig-figure1_ssq_10__14_08_factor_retention_stability
+#| fig-cap: "Factor Retention Probabilities and Counts"
+cooccurrence_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
+stability_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
+
+((cooccurrence_p)+(stability_p&ggsci::scale_fill_jama())) + 
+  patchwork::plot_layout() +
+  patchwork::plot_annotation(title=NULL,
+                         tag_level="A"
+                  ) &
+  ggplot2::theme_minimal(base_size = 16) & 
+  ggplot2::theme(legend.position = 'bottom',
+                 axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
+                 )
+```
+Consequently, the SSQ-10 is best conceptualized as having a latent two-factor structure comprising a "Somatic/Severe" dimension (SSQ08–14) and a "Core/Cognitive" dimension (SSQ01–03), as visualized in Figure 3.
+
+Similar to the SSQ-10, the SSQ-08 subset demonstrated a robust uni-dimensional structure under the Kaiser criterion and with 100% probability, as shown in @fig-figure1_ssq_10_14_08_factor_retention (Panel B). However, Parallel Analysis results were ambiguous and unstable, splitting between two factors (37.9%) and three factors (37.2%). While statistically parsimonious, this subset achieves stability by excluding critical core affective items found in the SSQ-14 and SSQ-10 (such as difficulty concentrating and irritability), potentially limiting its content validity as a comprehensive depression screener for this study.
+
 
 ## Discussion
 
@@ -283,33 +382,39 @@ To ensure compliance with the Protection of Personal Information Act (POPIA) and
 ::: {#refs}
 :::
 
-## Preliminary Analysis
-### Factor Retention Analysis: Determining the Stable Structure
 
-The probability of retaining $k$ factors was calculated across 1,000 bootstrap iterations. We determined the most stable structure for each configuration by analyzing where the probabilities converged or presented a dominant model.
+## Supplementary
 
-```{r, fig.height=8, fig.width=20}
-retention_p1<-mc_efa_results[["SSQ-14 (Original)"]][["retention_analysis"]][["plot"]]
-retention_p2<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["retention_analysis"]][["plot"]]
-retention_p3<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_analysis"]][["plot"]]
 
-(
-  (retention_p1
-   )+
-  (retention_p2
-   )+
-  (retention_p3
-   )
-  ) + 
+```{r, fig.height=20, fig.width=21}
+#| label: fig-figure1_supplementary
+#| fig-cap: "Item co-occurrence for the winning factor count and item stability sorted by Winning Model"
+
+cooccurrence_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_heatmap"]]
+stability_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_stability"]]
+
+p1_kaiser<-((cooccurrence_p)+(stability_p&ggsci::scale_fill_jama())) + 
+  patchwork::plot_layout() +
+  patchwork::plot_annotation(subtitle = "A") &
+  ggplot2::theme_minimal(base_size = 16) & 
+  ggplot2::theme(legend.position = 'bottom',
+                 axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
+                 )
+cooccurrence_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
+stability_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
+
+p1_parralel<-((cooccurrence_p)+(stability_p&ggsci::scale_fill_jama())) + 
+  patchwork::plot_layout() +
+  patchwork::plot_annotation(subtitle="B") &
+  ggplot2::theme_minimal(base_size = 16) & 
+  ggplot2::theme(legend.position = 'bottom',
+                 axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
+                 )
+
+(p1_kaiser/p1_parralel) + 
   patchwork::plot_layout(guides = "collect",
                          axes = "collect_y") +
-  patchwork::plot_annotation(title="Factor Retention Probabilities and Counts",
-                         tag_level="A"
-                  ) &
-  
-  ggplot2::theme_minimal(base_size = 16,
-                         base_family = "Arial") & 
-  ggplot2::labs() & 
+  patchwork::plot_annotation(title=NULL)  & 
   ggplot2::theme(
     legend.position = 'bottom',
     plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
@@ -318,46 +423,75 @@ retention_p3<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_anal
     )
 ```
 
-For the full scale, the Kaiser Criterion strongly favored a 2-factor solution with approximately 89.2% probability. Conversely, Parallel Analysis favored a 3-factor solution with 90.9% probability. These results indicate that the scale is robustly multidimensional. The 2-factor solution represents the most stable base structure, separating somatic from emotional symptoms, while the 3-factor solution represents a stable refinement of the emotional domain.
+```{r, fig.height=8, fig.width=12}
+retention_p1<-mc_efa_results[["SSQ-14 (Original)"]][["retention_analysis"]][["plot"]]
+retention_p2<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["retention_analysis"]][["plot"]]
+retention_p2<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_analysis"]][["plot"]]
 
-For the theoretical subset, the Kaiser Criterion overwhelmingly suggested a 1-factor solution in 81.7% of iterations. Parallel Analysis was more variable, favoring three factors in 62.2% of iterations but with significant support for two factors in 35.1% of cases. Given the known sensitivity of PA to minor factors and the strong consensus for one factor under the Kaiser Criterion, the 1-factor structure appears to be the most practical and stable configuration for this subset. The additional factors suggested by PA likely reflect minor correlations rather than substantive clinical dimensions.
-
-For the SSQ-08 subset, the Kaiser Criterion universally suggested a 1-factor solution (100% probability). Parallel Analysis was ambiguous, splitting roughly evenly between 2-factor (37.9%) and 3-factor (37.2%) solutions, with a notable minority (24.4%) supporting a 1-factor solution. Based on these data, this subset is determined to be robustly uni-dimensional. The PA results likely reflect item doublets, or pairs of highly correlated items, rather than distinct latent constructs.
-
-### Structural Stability and Item Co-occurrence
-
-To validate these determinations, we examined the stability of item memberships within the winning models for each method.
-
-#### SSQ-14 (Origina)
-
-##### Kaiser Criterion (2-Factor Solution)
-
-Under the Kaiser criterion, the scale splits cleanly into two distinct clusters. The high probabilities in the stability plot indicate very little cross-loading across iterations. The first factor, labeled General/Somatic, comprises items SSQ09 through SSQ14, which include hallucinations, suicide, and somatic complaints. The second factor, labeled Depressive/Anxious, includes items SSQ01 through SSQ08, encompassing symptoms such as thinking too much, sleep difficulties, and tearfulness. This confirms the scale measures two distinct but related constructs: general distress or somatic symptoms and core depression or anxiety.
-
-```{r, fig.height=10, fig.width=16}
-cooccurrence_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_heatmap"]]
-stability_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_stability"]]
-
-((cooccurrence_p)+(stability_p)) + 
-  patchwork::plot_layout() +
-  patchwork::plot_annotation(title="Item co-occurrence for the winning factor count and item stability sorted by Winning Model",
-                         tag_level="A"
-                  ) &
-  ggplot2::theme_minimal(base_size = 16) & 
-  ggplot2::theme(legend.position = 'bottom',
-                 axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
-                 )
+eigen_scree     <- 
+  extract_eigen_scree(mc_efa_results, "SSQ-14 (Original)")[['data']] |> 
+  bind_rows(extract_eigen_scree(mc_efa_results, "SSQ-10 (Theoretical Depressive Symptoms)")[['data']]) |> 
+  bind_rows(extract_eigen_scree(mc_efa_results, "SSQ-08 (Dixon Chibanda et.al)")[['data']])
+if (!require("ggdist")) install.packages("ggdist")
+require(ggdist)
+eigen_scree |> 
+  ggplot(aes(x = Component, y = Value, group = interaction(Iteration,Type), color=Type)) +
+  facet_wrap(~Set) +
+  geom_line()+
+  ggplot2::theme_minimal(base_size = 16)+
+  ggplot2::theme(
+    legend.position = 'bottom',
+    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+    )
+  
 ```
+
+
+```{r}
+ci_alpha <- 1 - 0.95
+dt.<-eigen_scree |> spread(Type,Value) |> filter(Actual<=Simulated) |> View()
+  dplyr::group_by(Set,Type, Component) %>%
+    dplyr::summarise(
+      n          = dplyr::n(),
+      mean_value = mean(Value, na.rm = TRUE),
+      sd_value   = sd(Value, na.rm = TRUE),
+      se_value   = sd_value / sqrt(n),
+      ci_lower   = mean_value + stats::qnorm(ci_alpha / 2) * se_value,
+      ci_upper   = mean_value + stats::qnorm(1 - ci_alpha / 2) * se_value,
+      .groups    = "drop"
+    )
+
+ggplot(dt., aes(x = Component, y = mean_value,group=Type)) +
+  facet_wrap(~Set)+
+  # Add the confidence interval ribbon
+  geom_ribbon(aes(ymin = ci_lower, ymax = ci_upper ), fill = "grey70", alpha = 0.5) +
+  # Add the main line
+  geom_line(color = "darkblue", size = 1) +
+  # Optional: Add points for clarity
+  # geom_point(color = "darkblue", size = 1.5) +
+  # Add labels and theme
+  labs(title = "Bootstrap Line Plot with 95% CI",
+       x = "X Variable",
+       y = "Mean Value") +
+  theme_minimal()
+```
+
+
+
+
+
+
+
+
+
+## Preliminary Analysis
 
 ```{r}
 loadings_kaiser <- extract_loadings_long(mc_efa_results, "SSQ-14 (Original)", 
-                                         method = "Kaiser",factor_filter=2)
-eigen_scree     <- extract_eigen_scree(mc_efa_results, "SSQ-14 (Original)")
+                                         method = "Kaiser")
 ```
-
-##### Parallel Analysis (3-Factor Solution)
-
-Parallel Analysis consistently splits the Depressive factor further. The first factor remains the Somatic/Severe dimension, comprising items SSQ07 and SSQ09 through SSQ14. A second factor, labeled Core Depression, includes items SSQ01 through SSQ03. A third factor, labeled Cognitive/Anxiety, includes items SSQ04 through SSQ06 and SSQ08. While stable, this granularity may offer less clinical utility than the 2-factor solution depending on the intended use.
 
 ```{r, fig.height=10, fig.width=16}
 cooccurrence_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
@@ -374,14 +508,6 @@ stability_p<-mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Parallel"
                  )
 ```
 
-#### SSQ-10 (Theoretical Subset)
-
-This subset excludes items SSQ04 through SSQ07 to focus on depressive symptoms. Although the Kaiser Criterion supports a 1-factor model, examining the Parallel Analysis 3-factor solution reveals why a 1-factor model might be superior for this subset.
-
-##### Parallel Analysis (3-Factor Solution)
-
-The structure under PA reveals three factors. The first factor includes items SSQ09 through SSQ14, representing severe symptoms. The second factor includes items SSQ01 through SSQ03, representing core emotional symptoms. The third factor consists solely of item SSQ08, representing fatigue or work lag. The emergence of SSQ08 as a singleton or weakly associated factor in the 3-factor solution suggests structural fragmentation. This supports the decision to treat the SSQ-10 as a uni-dimensional scale, as suggested by the Kaiser Criterion, for the purpose of establishing a depression cut-off, as dividing it further creates unstable, item-specific factors.
-
 ```{r, fig.height=10, fig.width=16}
 cooccurrence_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
 stability_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
@@ -396,14 +522,6 @@ stability_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooc
                  axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
                  )
 ```
-
-#### SSQ-08 (Dixon-Chibanda Subset)
-
-Similarly, while the Kaiser Criterion identifies one factor, the Parallel Analysis 2-factor solution demonstrates instability.
-
-##### Parallel Analysis (2-Factor Solution)
-
-The structure under the PA 2-factor model splits the items into two groups. Factor 1 contains items SSQ11 through SSQ14. Factor 2 contains items SSQ01, SSQ08, SSQ09, and SSQ10. The co-occurrence heatmap shows fuzziness for Factor 2 items, indicating they do not cluster together as reliably as Factor 1 items. This lack of cohesion under the PA 2-factor model reinforces the conclusion that the 1-factor model identified by the Kaiser Criterion is the most accurate representation of the SSQ-08 structure.
 
 ```{r, fig.height=10, fig.width=16}
 cooccurrence_p<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
