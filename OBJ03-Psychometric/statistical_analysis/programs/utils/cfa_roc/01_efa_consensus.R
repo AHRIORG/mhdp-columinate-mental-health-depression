@@ -40,11 +40,11 @@ calculate_cooccurrence_matrix <- function(subset_df, method_prefix, all_items) {
   mat / n_iter
 }
 
-load_bootstrap_results <- function(dataset_label, target_set_name) {
+load_bootstrap_results <- function(dataset_label, target_set_name, iterations=n_boot_iterations) {
   safe_set_name <- gsub("[\n ]+", "_", target_set_name)
   safe_ds_label <- gsub("[\n ]+", "_", dataset_label)
-  boot_file <- paste0("boot_1000_", safe_ds_label, "_", safe_set_name, "_results.rds")
-  boot_path <- here("statistical_analysis/output/objects", boot_file)
+  boot_file <- paste0("mc_",iterations, "_", safe_ds_label, "_", safe_set_name, "_results.rds")
+  boot_path <- here("statistical_analysis/output/objects/mc_efa", boot_file)
   
   if (!file.exists(boot_path)) {
     stop(paste("EFA Bootstrap results not found at:", boot_path))

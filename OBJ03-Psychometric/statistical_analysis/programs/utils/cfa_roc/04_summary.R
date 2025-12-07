@@ -206,7 +206,7 @@ save_mc_results <- function(res_fit, res_loadings, res_invariance,
       roc        = res_roc,
       roc_curves = res_roc_curves
     ),
-    file = here("statistical_analysis/output/objects", output_file)
+    file = here("statistical_analysis/output/objects/mc_cfa", output_file)
   )
   message(paste("\nFull Monte Carlo results saved to:", output_file))
 }

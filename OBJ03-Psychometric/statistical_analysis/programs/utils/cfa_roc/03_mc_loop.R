@@ -11,17 +11,20 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
   res_roc        <- data.frame()
   res_roc_curves <- data.frame()
   
+  # Diagnostics log for each seed
+  diagnostics <- data.frame(
+    Seed   = integer(),
+    Status = character(),
+    stringsAsFactors = FALSE
+  )
+  
   valid_counter <- 0
-  message(sprintf(
-    "\nAttempting to collect %d valid CFA runs (from up to %d seeds)...",
-    n_mc_samples, length(run_seeds)
-  ))
-  pb <- txtProgressBar(min = 0, max = length(run_seeds), style = 3)
   
   for (i in seq_along(run_seeds)) {
     if (valid_counter >= n_mc_samples) break
     
     curr_seed <- run_seeds[i]
+    status <- "initial"
     
     set.seed(curr_seed)
     n_rows <- nrow(dt_main)
@@ -44,16 +47,26 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
     fit <- tryCatch({
       cfa(cfa_model_syntax, data = dt_cfa_num,
           estimator = "WLSMV", ordered = target_items)
-    }, error = function(e) NULL)
+    }, error = function(e) {
+      status <<- "fit_error"
+      NULL
+    })
     
     is_valid_model <- FALSE
     if (!is.null(fit)) {
-      if (inspect(fit, "converged") && lavInspect(fit, "post.check")) {
+      if (!inspect(fit, "converged")) {
+        status <- "no_convergence"
+      } else if (!lavInspect(fit, "post.check")) {
+        status <- "failed_post_check"
+      } else {
         is_valid_model <- TRUE
       }
+    } else if (status == "initial") {
+      status <- "fit_null"
     }
     
     if (is_valid_model) {
+      status <- "valid"
       valid_counter <- valid_counter + 1
       
       fits <- fitMeasures(fit, c("cfi", "tli", "rmsea", "srmr", "chisq", "df"))
@@ -87,10 +100,30 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
           roc_dat$AGEGRP <- ifelse(roc_dat$AGE < 20, "17-19", "20-24")
         }
         
+        # Secondary restricted ROC: exclude cases with all target items = 0 AND PHQSCR = 0
+        item_numeric <- roc_dat[, target_items, drop = FALSE]
+        item_numeric[] <- lapply(item_numeric, function(x) {
+          if (is.factor(x)) as.numeric(x) - 1 else x
+        })
+        sum_items <- rowSums(item_numeric, na.rm = TRUE)
+        zero_items <- sum_items == 0
+        zero_phq   <- roc_dat$PHQSCR == 0
+        keep_restricted <- !(zero_items & zero_phq)
+        roc_dat_restricted <- roc_dat[keep_restricted, , drop = FALSE]
+        
+        # Primary ROC on full sample
         res_roc <- rbind(res_roc,
                          get_roc_metrics(roc_dat, curr_seed, "Overall", target_items))
         res_roc_curves <- rbind(res_roc_curves,
                                 get_roc_curve_data(roc_dat, curr_seed, "Overall", target_items))
+        
+        # Secondary ROC: restricted sample (exclude 0-0)
+        res_roc <- rbind(res_roc,
+                         get_roc_metrics(roc_dat_restricted, curr_seed,
+                                         "Overall (Excl. 0-0)", target_items))
+        res_roc_curves <- rbind(res_roc_curves,
+                                get_roc_curve_data(roc_dat_restricted, curr_seed,
+                                                   "Overall (Excl. 0-0)", target_items))
         
         if ("SEX" %in% names(roc_dat)) {
           for (g in unique(na.omit(roc_dat$SEX))) {
@@ -99,6 +132,15 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
                              get_roc_metrics(sub_dat, curr_seed, paste0("Sex: ", g), target_items))
             res_roc_curves <- rbind(res_roc_curves,
                                     get_roc_curve_data(sub_dat, curr_seed, paste0("Sex: ", g), target_items))
+            
+            # Restricted (exclude 0-0)
+            sub_dat_restricted <- roc_dat_restricted[roc_dat_restricted$SEX == g, , drop = FALSE]
+            res_roc <- rbind(res_roc,
+                             get_roc_metrics(sub_dat_restricted, curr_seed,
+                                             paste0("Sex: ", g, " (Excl. 0-0)"), target_items))
+            res_roc_curves <- rbind(res_roc_curves,
+                                    get_roc_curve_data(sub_dat_restricted, curr_seed,
+                                                       paste0("Sex: ", g, " (Excl. 0-0)"), target_items))
           }
         }
         
@@ -109,23 +151,36 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
                              get_roc_metrics(sub_dat, curr_seed, paste0("Age: ", g), target_items))
             res_roc_curves <- rbind(res_roc_curves,
                                     get_roc_curve_data(sub_dat, curr_seed, paste0("Age: ", g), target_items))
+            
+            # Restricted (exclude 0-0)
+            sub_dat_restricted <- roc_dat_restricted[roc_dat_restricted$AGEGRP == g, , drop = FALSE]
+            res_roc <- rbind(res_roc,
+                             get_roc_metrics(sub_dat_restricted, curr_seed,
+                                             paste0("Age: ", g, " (Excl. 0-0)"), target_items))
+            res_roc_curves <- rbind(res_roc_curves,
+                                    get_roc_curve_data(sub_dat_restricted, curr_seed,
+                                                       paste0("Age: ", g, " (Excl. 0-0)"), target_items))
           }
         }
       }
     }
     
-    setTxtProgressBar(pb, i)
+    diagnostics <- rbind(
+      diagnostics,
+      data.frame(Seed = curr_seed, Status = status, stringsAsFactors = FALSE)
+    )
+    
   }
   
-  close(pb)
-  message(sprintf("Collected %d valid CFA runs (out of %d seeds tried).",
-                  valid_counter, length(run_seeds)))
   
   list(
     res_fit        = res_fit,
     res_loadings   = res_loadings,
     res_invariance = res_invariance,
     res_roc        = res_roc,
-    res_roc_curves = res_roc_curves
+    res_roc_curves = res_roc_curves,
+    diagnostics    = diagnostics,
+    n_valid        = valid_counter,
+    n_tried        = length(run_seeds)
   )
 }

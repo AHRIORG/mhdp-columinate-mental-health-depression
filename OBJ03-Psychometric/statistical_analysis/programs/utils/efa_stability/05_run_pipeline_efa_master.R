@@ -34,7 +34,7 @@ run_psychometric_pipeline <- function(df_data,
     return(NULL)
   }
   
-  output_dir <- here::here("statistical_analysis/output/objects")
+  output_dir <- here::here("statistical_analysis/output/objects/mc_efa")
   if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
   
   for (set_name in names(item_sets_list)) {
@@ -44,7 +44,7 @@ run_psychometric_pipeline <- function(df_data,
     safe_set_name <- gsub("[\n ]+", "_", set_name)
     safe_ds_label <- gsub("[\n ]+", "_", dataset_label)
     file_name     <- paste0(
-      "boot_", n_boot, "_", safe_ds_label, "_", safe_set_name, "_results.rds"
+      "mc_", n_boot, "_", safe_ds_label, "_", safe_set_name, "_results.rds"
     )
     file_path <- file.path(output_dir, file_name)
     
