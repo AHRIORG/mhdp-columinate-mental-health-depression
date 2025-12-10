@@ -5,11 +5,12 @@
 
 run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
                                 target_set_name, run_seeds, n_mc_samples) {
-  res_fit        <- data.frame()
-  res_loadings   <- data.frame()
-  res_invariance <- data.frame()
-  res_roc        <- data.frame()
-  res_roc_curves <- data.frame()
+  res_fit         <- data.frame()
+  res_loadings    <- data.frame()
+  res_invariance  <- data.frame()
+  res_roc         <- data.frame()
+  res_roc_curves  <- data.frame()
+  res_factor_corr <- data.frame()
   
   # Diagnostics log for each seed
   diagnostics <- data.frame(
@@ -77,6 +78,27 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
         select(lhs, rhs, est.std, se, pvalue) %>%
         mutate(Seed = curr_seed)
       res_loadings <- rbind(res_loadings, est)
+      
+      # Latent factor correlations (only if 2+ latent variables)
+      lv_names <- lavNames(fit, type = "lv")
+      if (length(lv_names) >= 2) {
+        phi <- lavInspect(fit, "cor.lv")
+        phi_df <- as.data.frame(phi)
+        # Store rownames in a separate column that does not clash with latent names
+        phi_df$LV1 <- rownames(phi_df)
+        
+        phi_long <- phi_df %>%
+          pivot_longer(
+            cols      = all_of(lv_names),
+            names_to  = "LV2",
+            values_to = "Corr"
+          ) %>%
+          rename(F1 = LV1, F2 = LV2) %>%
+          filter(F1 < F2) %>%
+          mutate(Seed = curr_seed)
+        
+        res_factor_corr <- rbind(res_factor_corr, phi_long)
+      }
       
       if ("PHQBIN" %in% names(dt_cfa_num)) {
         inv_phq <- get_invariance_deltas(dt_cfa_num, cfa_model_syntax, "PHQBIN", target_items)
@@ -174,13 +196,14 @@ run_monte_carlo_cfa <- function(dt_main, cfa_model_syntax, target_items,
   
   
   list(
-    res_fit        = res_fit,
-    res_loadings   = res_loadings,
-    res_invariance = res_invariance,
-    res_roc        = res_roc,
-    res_roc_curves = res_roc_curves,
-    diagnostics    = diagnostics,
-    n_valid        = valid_counter,
-    n_tried        = length(run_seeds)
+    res_fit         = res_fit,
+    res_loadings    = res_loadings,
+    res_invariance  = res_invariance,
+    res_roc         = res_roc,
+    res_roc_curves  = res_roc_curves,
+    res_factor_corr = res_factor_corr,
+    diagnostics     = diagnostics,
+    n_valid         = valid_counter,
+    n_tried         = length(run_seeds)
   )
 }

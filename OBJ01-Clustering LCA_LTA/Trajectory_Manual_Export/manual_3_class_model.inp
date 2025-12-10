@@ -1,0 +1,26 @@
+TITLE: Manual 3-Class LCGA Trajectory Analysis;
+
+DATA: FILE = columinate_lcga_data.dat;
+
+VARIABLE: 
+  NAMES = USUBJID no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+  IDVARIABLE = USUBJID;
+  CLASSES = c(3);
+  
+  USEVARIABLES = USUBJID no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+  CATEGORICAL = no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+
+ANALYSIS:
+  TYPE = MIXTURE;
+  ESTIMATOR = MLR;
+  PROCESSORS = 4;
+  STARTS = 500 100;
+
+MODEL:
+  %OVERALL%
+  ! Estimate class probabilities for classes 1 and 2
+  [c#1-c#2];
+
+OUTPUT: TECH11 TECH14 SAMPSTAT;
+
+PLOT: TYPE = PLOT3; SERIES = no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;

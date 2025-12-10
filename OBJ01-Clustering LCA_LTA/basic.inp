@@ -1,0 +1,11 @@
+TITLE:
+practice TYPE - basic
+DATA:
+FILE = "/Users/Marothi.Letsoalo/Library/CloudStorage/
+OneDrive-SharedLibraries-AHRI/Data Science Unit - Biostatistics/
+team_members/Marothi/projects/CO-LUMINATE/OBJ01-Clustering LCA_LTA//
+basic.dat"; 
+VARIABLE:
+usevar = SSQ01 SSQ02 SSQ03 SSQ04;
+ANALYSIS:
+type =basic;

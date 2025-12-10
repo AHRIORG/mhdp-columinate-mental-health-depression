@@ -206,16 +206,19 @@ window.Quarto = {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
   <ul class="collapse">
-  <li><a href="#setting" id="toc-setting" class="nav-link" data-scroll-target="#setting">Setting</a></li>
-  <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants">Participants</a></li>
+  <li><a href="#setting-and-study-design" id="toc-setting-and-study-design" class="nav-link" data-scroll-target="#setting-and-study-design">Setting and Study Design</a></li>
+  <li><a href="#participants-and-sampling" id="toc-participants-and-sampling" class="nav-link" data-scroll-target="#participants-and-sampling">Participants and Sampling</a></li>
+  <li><a href="#data-collection-procedures" id="toc-data-collection-procedures" class="nav-link" data-scroll-target="#data-collection-procedures">Data Collection Procedures</a></li>
   <li><a href="#measures" id="toc-measures" class="nav-link" data-scroll-target="#measures">Measures</a></li>
-  <li><a href="#procedures" id="toc-procedures" class="nav-link" data-scroll-target="#procedures">Procedures</a></li>
-  <li><a href="#statistical-analysis" id="toc-statistical-analysis" class="nav-link" data-scroll-target="#statistical-analysis">Statistical Analysis</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data Analysis</a></li>
   </ul></li>
   <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a>
   <ul class="collapse">
   <li><a href="#participant-characteristics" id="toc-participant-characteristics" class="nav-link" data-scroll-target="#participant-characteristics">Participant Characteristics</a></li>
   <li><a href="#structural-validity-and-stability" id="toc-structural-validity-and-stability" class="nav-link" data-scroll-target="#structural-validity-and-stability">Structural Validity and Stability</a></li>
+  <li><a href="#the-existing-structure-ssq-14-and-ssq-08" id="toc-the-existing-structure-ssq-14-and-ssq-08" class="nav-link" data-scroll-target="#the-existing-structure-ssq-14-and-ssq-08">The Existing Structure (SSQ-14 and SSQ-08)</a></li>
+  <li><a href="#the-theoretical-subset-divergence-ssq-10" id="toc-the-theoretical-subset-divergence-ssq-10" class="nav-link" data-scroll-target="#the-theoretical-subset-divergence-ssq-10">The Theoretical Subset Divergence (SSQ-10)</a></li>
+  <li><a href="#artifact-investigation-and-resolution" id="toc-artifact-investigation-and-resolution" class="nav-link" data-scroll-target="#artifact-investigation-and-resolution">Artifact Investigation and Resolution</a></li>
   </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
   <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions">Conclusions</a></li>
@@ -223,11 +226,6 @@ window.Quarto = {
   <li><a href="#figure-captions" id="toc-figure-captions" class="nav-link" data-scroll-target="#figure-captions">Figure Captions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   <li><a href="#supplementary" id="toc-supplementary" class="nav-link" data-scroll-target="#supplementary">Supplementary</a></li>
-  <li><a href="#preliminary-analysis" id="toc-preliminary-analysis" class="nav-link" data-scroll-target="#preliminary-analysis">Preliminary Analysis</a>
-  <ul class="collapse">
-  <li><a href="#factor-retention-analysis-determining-the-stable-structure" id="toc-factor-retention-analysis-determining-the-stable-structure" class="nav-link" data-scroll-target="#factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</a></li>
-  <li><a href="#structural-stability-and-item-co-occurrence" id="toc-structural-stability-and-item-co-occurrence" class="nav-link" data-scroll-target="#structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</a></li>
-  </ul></li>
   </ul>
 <div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
 </div>
@@ -242,77 +240,85 @@ window.Quarto = {
 
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>The primary aim of this study is to establish a rigorous, evidence-based diagnostic cut-off score for the Shona Symptom Questionnaire (SSQ), specifically the theoretically derived 10-item subset (SSQ-10), using the Patient Health Questionnaire-9 (PHQ-9) as a reference standard for probable depression. To achieve this, the study first evaluates the structural validity and stability of the SSQ by comparing the original 14-item scale against the theoretical SSQ-10 and the existing 8-item Dixon-Chibanda subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span> to identify the optimal configuration for clinical use. Subsequently, the analysis validates measurement invariance to confirm that the SSQ-10 functions consistently across depression status, biological sex, and age groups, ensuring the derived cut-off is universally applicable without bias <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Finally, the study derives a harmonised diagnostic threshold to facilitate accurate depression screening and comparability between the SSQ-10 and the PHQ-9 among adolescents and young adults.</p>
+<p>The primary aim of this study is to establish a rigorous, evidence-based diagnostic cut-off score for the Shona Symptom Questionnaire (SSQ), specifically the theoretically derived 10-item subset (SSQ-10), using the Patient Health Questionnaire-9 (PHQ-9) as a reference standard for probable depression. To achieve this aim, the study first evaluates the structural validity and stability of the SSQ by comparing the original 14-item scale against the theoretical SSQ-10 and the existing 8-item Dixon-Chibanda subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span> to identify the optimal configuration for clinical use. Subsequently, the analysis validates measurement invariance to confirm that the SSQ-10 functions consistently across depression status, biological sex, and age groups, ensuring the derived cut-off is universally applicable without bias <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Finally, the study derives a harmonized diagnostic threshold to facilitate accurate depression screening and comparability between the SSQ-10 and the PHQ-9 among adolescents and young adults.</p>
 </section>
 <section id="methods" class="level2">
 <h2 class="anchored" data-anchor-id="methods">Methods</h2>
-<section id="setting" class="level3">
-<h3 class="anchored" data-anchor-id="setting">Setting</h3>
-<p>This study is embedded within the Isisekelo Sempilo (“Foundation of Life”) trial, a <span class="math inline">\(2 \times 2\)</span> factorial randomized controlled trial conducted by the Africa Health Research Institute (AHRI) in the uMkhanyakude district of rural KwaZulu-Natal, South Africa <span class="citation" data-cites="chidumwa2022isisekelo">(<a href="#ref-chidumwa2022isisekelo" role="doc-biblioref">Chidumwa et al. 2022</a>)</span>. The trial aimed to evaluate interventions integrating HIV prevention and care within sexual and reproductive health services for young people. The study setting is predominantly rural and characterised by high levels of poverty and unemployment, with over 85% of young adults aged 20–24 reported as unemployed. The region also experiences a high prevalence of HIV. The AHRI demographic surveillance area covers a population of approximately 140,000, including over 20,000 individuals aged 16–29 years. Clinical attendance data were captured electronically via the ClinicLink system across 11 clinics within the surveillance area.</p>
+<section id="setting-and-study-design" class="level3">
+<h3 class="anchored" data-anchor-id="setting-and-study-design">Setting and Study Design</h3>
+<p>This study is embedded within the Isisekelo Sempilo (“Foundation of Life”) trial, a <span class="math inline">\(2 \times 2\)</span> factorial randomized controlled trial conducted by the Africa Health Research Institute (AHRI) in the uMkhanyakude district of rural KwaZulu-Natal, South Africa <span class="citation" data-cites="chidumwa2022isisekelo">(<a href="#ref-chidumwa2022isisekelo" role="doc-biblioref">Chidumwa et al. 2022</a>)</span>. The trial aimed to evaluate interventions integrating HIV prevention and care within sexual and reproductive health services. The study setting is predominantly rural and characterized by high levels of poverty and unemployment, with over 85% of young adults aged 20–24 reported as unemployed. The AHRI demographic surveillance area covers a population of approximately 140,000, characterized by a high prevalence of HIV.</p>
 </section>
-<section id="participants" class="level3">
-<h3 class="anchored" data-anchor-id="participants">Participants</h3>
-<p>The Isisekelo Sempilo trial utilised the AHRI demographic surveillance system as a sampling frame to randomly select 3,000 men and women aged 16–29 years, stratified by sex. Eligibility criteria for the main trial included residence within the surveillance area, willingness to provide informed consent, and willingness to participate in follow-up assessments including HIV testing via dried blood spot. For the present psychometric analysis, a subsample of participants was selected based on age (16–24 years) and the availability of concurrent baseline measurements for both the SSQ-14 and the PHQ-9. This subset ensures that the validation and harmonisation analyses are conducted on a directly comparable cohort relevant to adolescent and young adult mental health.</p>
+<section id="participants-and-sampling" class="level3">
+<h3 class="anchored" data-anchor-id="participants-and-sampling">Participants and Sampling</h3>
+<p>The trial utilized the AHRI demographic surveillance system as a sampling frame to randomly select 3,000 men and women aged 16–29 years, stratified by sex. Eligibility criteria for the main trial included residence within the surveillance area, willingness to provide informed consent, and willingness to participate in follow-up assessments including HIV testing via dried blood spot.</p>
+<p>For the present psychometric analysis, a specific subsample was selected based on age, restricting the cohort to participants aged 16–24 years, and data completeness, requiring concurrent baseline measurements for both the SSQ-14 and the PHQ-9. This selection ensures that the validation and harmonization analyses are conducted on a directly comparable cohort relevant to adolescent and young adult mental health.</p>
+</section>
+<section id="data-collection-procedures" class="level3">
+<h3 class="anchored" data-anchor-id="data-collection-procedures">Data Collection Procedures</h3>
+<p>Participants were invited to participate via home visits conducted by trained fieldworkers. Upon contact, the study purpose was explained, and informed consent was obtained (written consent for adults; assent plus parental/guardian consent for participants aged 16–17).</p>
+<p>Participants completed a structured baseline questionnaire administered electronically by fieldworkers using secure tablets. The interview included sociodemographic details, health care utilization history, and the full SSQ-14 and PHQ-9 instruments. To minimize social desirability bias and ensure comprehension, interviews were conducted in the local language, isiZulu, in private settings within the participant’s household or a preferred community location. Clinical attendance data were captured electronically via the ClinicLink system across 11 clinics within the surveillance area.</p>
 </section>
 <section id="measures" class="level3">
 <h3 class="anchored" data-anchor-id="measures">Measures</h3>
-<section id="the-patient-health-questionnaire-phq-9" class="level4">
-<h4 class="anchored" data-anchor-id="the-patient-health-questionnaire-phq-9">The Patient Health Questionnaire (PHQ-9)</h4>
-<p>The PHQ-9 is the depression module of the PRIME-MD diagnostic instrument, designed to align strictly with the criteria for Major Depressive Disorder (MDD) in the DSM-IV <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>. It consists of 9 items scored on a 4-point Likert scale ranging from “Not at all” (0) to “Nearly every day” (3). It measures the severity of MDD symptoms over the past 2 weeks, covering domains such as anhedonia, depressed mood, sleep disturbance, fatigue, and suicidal ideation. In South Africa, the PHQ-9 has been validated across various languages, including isiXhosa, showing high sensitivity and specificity among adolescents. However, its etic approach may miss non-DSM manifestations of distress common in African contexts, and its factor structure can be inconsistent in some local populations.</p>
+<p><strong>The Patient Health Questionnaire (PHQ-9)</strong></p>
+<p>The PHQ-9 is the depression module of the PRIME-MD diagnostic instrument, designed to align strictly with the criteria for Major Depressive Disorder (MDD) in the DSM-IV <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>. It consists of 9 items scored on a 4-point Likert scale ranging from “Not at all” (0) to “Nearly every day” (3). It measures the severity of MDD symptoms over the past 2 weeks, covering domains such as anhedonia, depressed mood, sleep disturbance, fatigue, and suicidal ideation. While validated in South Africa, its etic approach may miss non-DSM manifestations of distress common in African contexts.</p>
+<p><strong>The Shona Symptom Questionnaire (SSQ-14)</strong></p>
+<p>The SSQ-14 represents an emic alternative. Developed in Zimbabwe, it was derived from ethnographic research into how Shona speakers articulate mental distress <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>. It consists of 14 items with a binary (Yes/No) response format and measures Common Mental Disorders (CMD)—a blend of depression and anxiety—over the past 7 days. It includes indigenous idioms such as kufungisisa (“thinking too much”) and somatic sensations. While culturally resonant, its binary format and mixing of anxiety and depression items present specific challenges for harmonisation with the polytomous, depression-specific PHQ-9 <span class="citation" data-cites="Haney2014">(<a href="#ref-Haney2014" role="doc-biblioref">Haney et al. 2014</a>)</span>.</p>
+<p><strong>Derivation of the SSQ-10 (Theoretical Subset)</strong></p>
+<p>To enhance the specificity of the SSQ for depression screening, a theoretically derived subset (SSQ-10) was configured by retaining items that conceptually align with DSM-5 and ICD-11 criteria for a depressive episode, while excluding non-specific distress items <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>.</p>
+<p>Ten items were retained: thinking too much (cognitive distress/rumination), difficulty concentrating (cognitive), irritability (affective-arousal), poor sleep (somatic-affective), crying (affective), feeling tired (somatic-affective), suicidal thoughts (cognitive-affective), general unhappiness (affective-cognitive), work lagging behind (functional/cognitive), and difficulty deciding (cognitive). Irritability was specifically retained as it is recognized as an alternative mood expression for youth depression in DSM-5.</p>
+<p>Four items were excluded from the theoretical subset due to conceptual divergence from the core depression construct. Nightmares (SSQ04) were removed as they overlap with sleep disturbance but align more closely with anxiety or trauma. Seeing or hearing things (SSQ05) was excluded as it represents perceptual disturbances associated with severe or psychotic depression rather than core depressive criteria. Stomach ache (SSQ06) was excluded to reduce confounding with general somatic complaints common in this setting, while being frightened by trivial things (SSQ07) was removed as it serves as a marker for anxiety or hyperarousal rather than depression.</p>
 </section>
-<section id="the-shona-symptom-questionnaire-ssq-14" class="level4">
-<h4 class="anchored" data-anchor-id="the-shona-symptom-questionnaire-ssq-14">The Shona Symptom Questionnaire (SSQ-14)</h4>
-<p>The SSQ-14 represents an emic alternative. Developed in Zimbabwe, it was derived from ethnographic research into how Shona speakers articulate mental distress <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>. It consists of 14 items with a binary (Yes/No) response format and measures Common Mental Disorders (CMD)—a blend of depression and anxiety—over the past 7 days. It includes universal symptoms but also indigenous idioms such as kufungisisa (“thinking too much”) and somatic sensations. While it captures a culturally resonant experience of distress, its binary format and mixing of anxiety and depression items present specific challenges for harmonisation with the polytomous, depression-specific PHQ-9 <span class="citation" data-cites="Haney2014">(<a href="#ref-Haney2014" role="doc-biblioref">Haney et al. 2014</a>)</span>.</p>
-</section>
-<section id="ssq-10-item-configuration-theoretical-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-10-item-configuration-theoretical-subset">SSQ-10 Item Configuration (Theoretical Subset)</h4>
-<p>To enhance the specificity of the SSQ for depression screening, a theoretically derived subset, denoted as SSQ-10, was configured by retaining items that conceptually align with DSM-5 and ICD-11 criteria for a depressive episode while excluding non-specific distress items. Ten items were retained: thinking too much (cognitive distress/rumination), difficulty concentrating (cognitive), irritability (affective-arousal), poor sleep (somatic-affective), crying (affective), feeling tired (somatic-affective), suicidal thoughts (cognitive-affective), general unhappiness (affective-cognitive), work lagging behind (functional/cognitive), and difficulty deciding (cognitive). Irritability was retained as it is recognized as an alternative mood expression for youth depression in DSM-5.</p>
-<p>Four items were excluded based on theoretical distinctions. Nightmares (SSQ04) were removed as they overlap with sleep disturbance but align more closely with anxiety or trauma. Seeing or hearing things (SSQ05) was excluded as it represents perceptual disturbances associated with severe or psychotic depression rather than core depressive criteria. Stomach ache (SSQ06), while a common somatic idiom of distress, was excluded to reduce confounding with general somatic complaints. Frightened by trivial things (SSQ07) was removed as it serves as a marker for anxiety or hyperarousal rather than depression.</p>
-</section>
-</section>
-<section id="procedures" class="level3">
-<h3 class="anchored" data-anchor-id="procedures">Procedures</h3>
-<p>Participants were identified using the AHRI demographic surveillance system as a sampling frame. A random sample of individuals aged 16–29 years was selected, stratified by sex, and invited to participate via home visits conducted by trained fieldworkers. Upon contact, the study purpose was explained, and written informed consent was obtained. For participants aged 16–17 years, assent was obtained in conjunction with parental or guardian consent, in accordance with South African ethical guidelines for research with minors.</p>
-<p>Following consent, participants completed a structured baseline questionnaire administered electronically by fieldworkers using secure tablets. This questionnaire included sociodemographic details, health care utilization history, and the full SSQ-14 and PHQ-9 instruments. To minimize social desirability bias and ensure comprehension, interviews were conducted in the local language, isiZulu, in private settings within the participant’s household or a preferred community location. Data were captured offline and synchronized daily with the AHRI central data repository for quality control and storage.</p>
-</section>
-<section id="statistical-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="statistical-analysis">Statistical Analysis</h3>
-<p><em>Structural Validity and Stability Analysis</em>: To determine the most robust version of the SSQ for screening purposes, three item configurations were evaluated: the original 14-item scale (SSQ-14), a theoretically derived 10-item subset focusing on core depressive symptoms (SSQ-10), and the 8-item Dixon-Chibanda subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. A Monte Carlo split-sample resampling approach was employed to rigorously test the stability of these structures. The dataset was randomly partitioned into exploratory and confirmatory halves for 10,000 iterations. In each iteration, Exploratory Factor Analysis (EFA) was conducted to identify the most likely factor structure using established criteria appropriate for categorical data, specifically the Kaiser Criterion and Parallel Analysis <span class="citation" data-cites="holgado2010polychoric">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>)</span>. The Consensus Model was then identified as the specific grouping of items that appeared most frequently across these replications, serving as the definitive structure for each scale version.</p>
-<p><em>Confirmatory Validation and Measurement Invariance</em>: Following the exploratory phase, the stability of the Consensus Model for the SSQ-10 was tested using Confirmatory Factor Analysis (CFA) on the hold-out data samples. To ensure the scale performs fairly across different populations, measurement invariance was assessed. This procedure evaluated whether the SSQ-10 measures depression consistently regardless of a participant’s biological sex, age group, or depression severity status <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Internal consistency reliability was calculated using both Cronbach’s Alpha and McDonald’s Omega Total to provide a comprehensive assessment of the scale’s precision.</p>
-<p><em>Derivation of Diagnostic Cut-offs and Harmonisation</em>: An optimal screening cut-off for the SSQ-10 was established using the PHQ-9 as the clinical reference standard. Two complementary methods were applied. First, Receiver Operating Characteristic (ROC) analysis was used to identify the score threshold that maximised the balance between sensitivity and specificity. Second, Item Response Theory (IRT) was employed to overcome the limitations of simple binary cut-offs by linking the SSQ-10 and PHQ-9 onto a common latent metric of depression severity <span class="citation" data-cites="samejima1969estimation">(<a href="#ref-samejima1969estimation" role="doc-biblioref">Samejima 1969</a>)</span>. This allowed for the identification of the precise level of underlying depression corresponding to the PHQ-9 threshold and mapping it directly to the SSQ-10, creating a harmonised standard for classification <span class="citation" data-cites="kolen2014test">(<a href="#ref-kolen2014test" role="doc-biblioref">Kolen and Brennan 2014</a>)</span>. All analyses were conducted using R Statistical Software <span class="citation" data-cites="rcoreteam2023">(<a href="#ref-rcoreteam2023" role="doc-biblioref">R Core Team 2023</a>)</span>.</p>
+<section id="data-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis">Data Analysis</h3>
+<p>All statistical analyses were conducted using R Statistical Software <span class="citation" data-cites="rcoreteam2023">(<a href="#ref-rcoreteam2023" role="doc-biblioref">R Core Team 2023</a>)</span>.</p>
+<p><strong>Descriptive Statistics</strong></p>
+<p>Descriptive statistics were computed to summarize the demographic and clinical characteristics of the sample. Categorical variables (e.g., biological sex, employment status, depression status) were reported as frequencies and percentages. Continuous variables (e.g., age, PHQ-9 total score) were summarized using means and standard deviations (SD). The distribution of item responses was examined to identify endorsement rates and potential floor or ceiling effects.</p>
+<p><strong>Structural Validity and Stability</strong></p>
+<p>To determine the most robust version of the SSQ for screening purposes, three item configurations were evaluated: the original 14-item scale (SSQ-14), a theoretically derived 10-item subset focusing on core depressive symptoms (SSQ-10), and the 8-item Dixon-Chibanda subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>.</p>
+<p>A Monte Carlo split-sample resampling approach was employed to rigorously test the stability of these structures. The dataset was randomly partitioned into exploratory and confirmatory halves for 10,000 iterations. In each iteration, Exploratory Factor Analysis (EFA) was conducted to identify the most likely factor structure using established criteria appropriate for categorical data, specifically the Kaiser Criterion and Parallel Analysis, utilizing polychoric correlations <span class="citation" data-cites="holgado2010polychoric">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>)</span>. The Consensus Model was then identified as the specific grouping of items that appeared most frequently across these replications, serving as the definitive structure for each scale version.</p>
+<p>Following the exploratory phase, the stability of the Consensus Model for the SSQ-10 was tested using Confirmatory Factor Analysis (CFA) on the hold-out data samples using the Weighted Least Squares Mean and Variance adjusted (WLSMV) estimator.</p>
+<p><strong>Reliability and Measurement Invariance</strong></p>
+<p>Internal consistency reliability was calculated using both Cronbach’s Alpha and McDonald’s Omega Total to provide a comprehensive assessment of the scale’s precision.</p>
+<p>To ensure the scale performs fairly across different populations, measurement invariance was assessed. This procedure evaluated whether the SSQ-10 measures depression consistently regardless of a participant’s biological sex, age group, or depression severity status <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>.</p>
+<p><strong>Diagnostic Cut-offs and Harmonisation</strong></p>
+<p>To drive diagnostic cut-offs and harmonisation, an optimal screening cut-off for the SSQ-10 was established using the PHQ-9 as the clinical reference standard. Two complementary methods were applied. First, Receiver Operating Characteristic (ROC) analysis was used to identify the score threshold that maximized the balance between sensitivity and specificity. Second, Item Response Theory (IRT) was employed to overcome the limitations of simple binary cut-offs by linking the SSQ-10 and PHQ-9 onto a common latent metric of depression severity <span class="citation" data-cites="samejima1969estimation">(<a href="#ref-samejima1969estimation" role="doc-biblioref">Samejima 1969</a>)</span>. This allowed for the identification of the precise level of underlying depression corresponding to the PHQ-9 threshold and mapping it directly to the SSQ-10, creating a harmonized standard for classification <span class="citation" data-cites="kolen2014test">(<a href="#ref-kolen2014test" role="doc-biblioref">Kolen and Brennan 2014</a>)</span>.</p>
 </section>
 </section>
 <section id="results" class="level2">
 <h2 class="anchored" data-anchor-id="results">Results</h2>
 <section id="participant-characteristics" class="level3">
 <h3 class="anchored" data-anchor-id="participant-characteristics">Participant Characteristics</h3>
+<p>The demographic and clinical characteristics of the study sample (<span class="math inline">\(N=843\)</span>) are summarized in <a href="#tbl-demographics" class="quarto-xref">Table&nbsp;1</a>. The cohort included a relatively balanced distribution of biological sex, with 51% males and 49% females. The age distribution was skewed slightly towards young adults, with 57% of participants aged 20–24 years and 43% aged 17–19 years. The majority of participants resided in rural households (68%), while 28% lived in peri-urban areas and 3.1% in urban settings.</p>
+<p>Regarding socioeconomic status, 44% of participants were currently enrolled in school, and 44% were not employed. Notably, 23% were classified as students and thus not applicable for standard unemployment definitions. Food insecurity was reported by 27% of the sample, and 21% were recipients of a government grant. In terms of health and risk factors, 11% of participants tested positive for HIV, 20% reported experiencing violence, and 52% reported alcohol use. Based on the PHQ-9 reference standard, the prevalence of probable depression (score <span class="math inline">\(\ge\)</span> 10) in the sample was 4.0% (<span class="math inline">\(n=34\)</span>).</p>
+<p>Item-level analysis of the SSQ-14 revealed significant variability in symptom endorsement between depressed and non-depressed groups (<a href="#tbl-item-dist" class="quarto-xref">Table&nbsp;2</a>). Participants classified as depressed by the PHQ-9 endorsed SSQ items at substantially higher rates than non-depressed participants. For example, thinking too much (SSQ01) was endorsed by 74% of the depressed group compared to 26% of the non-depressed group, and general unhappiness (SSQ12) was endorsed by 59% versus 11%.</p>
+<p>Point-biserial correlations confirmed strong associations between individual SSQ items and the continuous PHQ-9 total score, with coefficients ranging from 0.190 to 0.405 (all <span class="math inline">\(p &lt; 0.001\)</span>). The strongest correlations with the PHQ-9 total score were observed for thinking too much (<span class="math inline">\(r_{pb}=0.405\)</span>), generally unhappy (<span class="math inline">\(r_{pb}=0.405\)</span>), and difficulty concentrating (<span class="math inline">\(r_{pb}=0.400\)</span>). Conversely, items excluded from the theoretical SSQ-10 subset demonstrated weaker correlations with the depression benchmark, including stomach ache (<span class="math inline">\(r_{pb}=0.190\)</span>), hallucinations (<span class="math inline">\(r_{pb}=0.258\)</span>), and nightmares (<span class="math inline">\(r_{pb}=0.293\)</span>), supporting the theoretical decision to refine the scale for depression specificity.</p>
 <div style="page-break-after: always;"></div>
-<p>The demographic and clinical characteristics of the study sample (<span class="math inline">\(N=843\)</span>) are summarized in <a href="#tbl-table1" class="quarto-xref">Table&nbsp;1</a>. The cohort included a balanced distribution of biological sex, with 51% males and 49% females. The age distribution was skewed slightly towards young adults, with 57% of participants aged 20–24 years and 43% aged 17–19 years. The majority of participants resided in rural households (68%), and nearly half (44%) were currently enrolled in school. Based on the PHQ-9 reference standard, the prevalence of probable depression (score <span class="math inline">\(\ge\)</span> 10) in the sample was 4.0% (<span class="math inline">\(n=34\)</span>).</p>
 <div class="cell">
-<div id="tbl-table1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-demographics" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: <strong>Participant Characteristics</strong>
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-demographics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1
 </figcaption>
-<div aria-describedby="tbl-table1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-demographics-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="eznntgitul" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#eznntgitul table {
+<div id="tsgzggejpv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#tsgzggejpv table {
   font-family: Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#eznntgitul thead, #eznntgitul tbody, #eznntgitul tfoot, #eznntgitul tr, #eznntgitul td, #eznntgitul th {
+#tsgzggejpv thead, #tsgzggejpv tbody, #tsgzggejpv tfoot, #tsgzggejpv tr, #tsgzggejpv td, #tsgzggejpv th {
   border-style: none;
 }
 
-#eznntgitul p {
+#tsgzggejpv p {
   margin: 0;
   padding: 0;
 }
 
-#eznntgitul .gt_table {
+#tsgzggejpv .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -338,12 +344,12 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-left-color: #D3D3D3;
 }
 
-#eznntgitul .gt_caption {
+#tsgzggejpv .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#eznntgitul .gt_title {
+#tsgzggejpv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -355,7 +361,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-bottom-width: 0;
 }
 
-#eznntgitul .gt_subtitle {
+#tsgzggejpv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -367,7 +373,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-top-width: 0;
 }
 
-#eznntgitul .gt_heading {
+#tsgzggejpv .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -379,13 +385,13 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-right-color: #D3D3D3;
 }
 
-#eznntgitul .gt_bottom_border {
+#tsgzggejpv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#eznntgitul .gt_col_headings {
+#tsgzggejpv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -400,7 +406,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-right-color: #D3D3D3;
 }
 
-#eznntgitul .gt_col_heading {
+#tsgzggejpv .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -420,7 +426,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   overflow-x: hidden;
 }
 
-#eznntgitul .gt_column_spanner_outer {
+#tsgzggejpv .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -432,15 +438,15 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   padding-right: 4px;
 }
 
-#eznntgitul .gt_column_spanner_outer:first-child {
+#tsgzggejpv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#eznntgitul .gt_column_spanner_outer:last-child {
+#tsgzggejpv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#eznntgitul .gt_column_spanner {
+#tsgzggejpv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -452,11 +458,11 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   width: 100%;
 }
 
-#eznntgitul .gt_spanner_row {
+#tsgzggejpv .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#eznntgitul .gt_group_heading {
+#tsgzggejpv .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -482,7 +488,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   text-align: left;
 }
 
-#eznntgitul .gt_empty_group_heading {
+#tsgzggejpv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -497,15 +503,15 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   vertical-align: middle;
 }
 
-#eznntgitul .gt_from_md > :first-child {
+#tsgzggejpv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#eznntgitul .gt_from_md > :last-child {
+#tsgzggejpv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#eznntgitul .gt_row {
+#tsgzggejpv .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -524,7 +530,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   overflow-x: hidden;
 }
 
-#eznntgitul .gt_stub {
+#tsgzggejpv .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -537,7 +543,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   padding-right: 5px;
 }
 
-#eznntgitul .gt_stub_row_group {
+#tsgzggejpv .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -551,15 +557,15 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   vertical-align: top;
 }
 
-#eznntgitul .gt_row_group_first td {
+#tsgzggejpv .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#eznntgitul .gt_row_group_first th {
+#tsgzggejpv .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#eznntgitul .gt_summary_row {
+#tsgzggejpv .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -569,16 +575,16 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   padding-right: 5px;
 }
 
-#eznntgitul .gt_first_summary_row {
+#tsgzggejpv .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#eznntgitul .gt_first_summary_row.thick {
+#tsgzggejpv .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#eznntgitul .gt_last_summary_row {
+#tsgzggejpv .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -588,7 +594,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-bottom-color: #D3D3D3;
 }
 
-#eznntgitul .gt_grand_summary_row {
+#tsgzggejpv .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -598,7 +604,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   padding-right: 5px;
 }
 
-#eznntgitul .gt_first_grand_summary_row {
+#tsgzggejpv .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -608,7 +614,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-top-color: #D3D3D3;
 }
 
-#eznntgitul .gt_last_grand_summary_row_top {
+#tsgzggejpv .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -618,11 +624,11 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-bottom-color: #D3D3D3;
 }
 
-#eznntgitul .gt_striped {
+#tsgzggejpv .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#eznntgitul .gt_table_body {
+#tsgzggejpv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -631,7 +637,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-bottom-color: #D3D3D3;
 }
 
-#eznntgitul .gt_footnotes {
+#tsgzggejpv .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -645,7 +651,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-right-color: #D3D3D3;
 }
 
-#eznntgitul .gt_footnote {
+#tsgzggejpv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -654,7 +660,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   padding-right: 5px;
 }
 
-#eznntgitul .gt_sourcenotes {
+#tsgzggejpv .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -668,7 +674,7 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   border-right-color: #D3D3D3;
 }
 
-#eznntgitul .gt_sourcenote {
+#tsgzggejpv .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -676,78 +682,77 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
   padding-right: 5px;
 }
 
-#eznntgitul .gt_left {
+#tsgzggejpv .gt_left {
   text-align: left;
 }
 
-#eznntgitul .gt_center {
+#tsgzggejpv .gt_center {
   text-align: center;
 }
 
-#eznntgitul .gt_right {
+#tsgzggejpv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#eznntgitul .gt_font_normal {
+#tsgzggejpv .gt_font_normal {
   font-weight: normal;
 }
 
-#eznntgitul .gt_font_bold {
+#tsgzggejpv .gt_font_bold {
   font-weight: bold;
 }
 
-#eznntgitul .gt_font_italic {
+#tsgzggejpv .gt_font_italic {
   font-style: italic;
 }
 
-#eznntgitul .gt_super {
+#tsgzggejpv .gt_super {
   font-size: 65%;
 }
 
-#eznntgitul .gt_footnote_marks {
+#tsgzggejpv .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#eznntgitul .gt_asterisk {
+#tsgzggejpv .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#eznntgitul .gt_indent_1 {
+#tsgzggejpv .gt_indent_1 {
   text-indent: 5px;
 }
 
-#eznntgitul .gt_indent_2 {
+#tsgzggejpv .gt_indent_2 {
   text-indent: 10px;
 }
 
-#eznntgitul .gt_indent_3 {
+#tsgzggejpv .gt_indent_3 {
   text-indent: 15px;
 }
 
-#eznntgitul .gt_indent_4 {
+#tsgzggejpv .gt_indent_4 {
   text-indent: 20px;
 }
 
-#eznntgitul .gt_indent_5 {
+#tsgzggejpv .gt_indent_5 {
   text-indent: 25px;
 }
 
-#eznntgitul .katex-display {
+#tsgzggejpv .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#eznntgitul div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#tsgzggejpv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
 
-<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption><strong>Participant Characteristics</strong></caption>
+<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -755,7 +760,10 @@ Table&nbsp;1: <strong>Participant Characteristics</strong>
 <col style="width: 25%">
 </colgroup>
 <thead>
-<tr class="gt_col_headings header">
+<tr class="gt_heading header">
+<th colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border">Participant Characteristics</th>
+</tr>
+<tr class="gt_col_headings even">
 <th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
 <th id="stat_0" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Overall</strong><br>
 N = 843<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
@@ -1045,32 +1053,31 @@ N = 34<span class="gt_footnote_marks" style="white-space:nowrap;font-style:itali
 </div>
 <a class="quarto-notebook-link" id="nblink-1" href="index-preview.html">Source: Article Notebook</a></div>
 <div style="page-break-after: always;"></div>
-<p>Item-level analysis of the SSQ-14 revealed significant variability in symptom endorsement between depressed and non-depressed groups (<a href="#tbl-table2" class="quarto-xref">Table&nbsp;2</a>), with point-biserial correlations confirming strong associations between individual SSQ items and the continuous PHQ-9 total score (<span class="math inline">\(r_{pb}\)</span> range: 0.26–0.41, all <span class="math inline">\(p &lt; 0.001\)</span>). Notably, items excluded from the theoretical SSQ-10 subset, such as hallucinations (SSQ05) and stomach ache (SSQ06), showed weaker correlations with the depression benchmark compared to core affective items like general unhappiness (SSQ12) and thinking too much (SSQ01).</p>
 <div class="cell">
-<div id="tbl-table2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-item-dist" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-table2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-item-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2
 </figcaption>
-<div aria-describedby="tbl-table2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-item-dist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="dvblicsbxd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#dvblicsbxd table {
+<div id="jdjodzhvnh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#jdjodzhvnh table {
   font-family: Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#dvblicsbxd thead, #dvblicsbxd tbody, #dvblicsbxd tfoot, #dvblicsbxd tr, #dvblicsbxd td, #dvblicsbxd th {
+#jdjodzhvnh thead, #jdjodzhvnh tbody, #jdjodzhvnh tfoot, #jdjodzhvnh tr, #jdjodzhvnh td, #jdjodzhvnh th {
   border-style: none;
 }
 
-#dvblicsbxd p {
+#jdjodzhvnh p {
   margin: 0;
   padding: 0;
 }
 
-#dvblicsbxd .gt_table {
+#jdjodzhvnh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1096,12 +1103,12 @@ Table&nbsp;2
   border-left-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_caption {
+#jdjodzhvnh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#dvblicsbxd .gt_title {
+#jdjodzhvnh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1113,7 +1120,7 @@ Table&nbsp;2
   border-bottom-width: 0;
 }
 
-#dvblicsbxd .gt_subtitle {
+#jdjodzhvnh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1125,7 +1132,7 @@ Table&nbsp;2
   border-top-width: 0;
 }
 
-#dvblicsbxd .gt_heading {
+#jdjodzhvnh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1137,13 +1144,13 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_bottom_border {
+#jdjodzhvnh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_col_headings {
+#jdjodzhvnh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1158,7 +1165,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_col_heading {
+#jdjodzhvnh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1178,7 +1185,7 @@ Table&nbsp;2
   overflow-x: hidden;
 }
 
-#dvblicsbxd .gt_column_spanner_outer {
+#jdjodzhvnh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1190,15 +1197,15 @@ Table&nbsp;2
   padding-right: 4px;
 }
 
-#dvblicsbxd .gt_column_spanner_outer:first-child {
+#jdjodzhvnh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dvblicsbxd .gt_column_spanner_outer:last-child {
+#jdjodzhvnh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dvblicsbxd .gt_column_spanner {
+#jdjodzhvnh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1210,11 +1217,11 @@ Table&nbsp;2
   width: 100%;
 }
 
-#dvblicsbxd .gt_spanner_row {
+#jdjodzhvnh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#dvblicsbxd .gt_group_heading {
+#jdjodzhvnh .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1240,7 +1247,7 @@ Table&nbsp;2
   text-align: left;
 }
 
-#dvblicsbxd .gt_empty_group_heading {
+#jdjodzhvnh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1255,15 +1262,15 @@ Table&nbsp;2
   vertical-align: middle;
 }
 
-#dvblicsbxd .gt_from_md > :first-child {
+#jdjodzhvnh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dvblicsbxd .gt_from_md > :last-child {
+#jdjodzhvnh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dvblicsbxd .gt_row {
+#jdjodzhvnh .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1282,7 +1289,7 @@ Table&nbsp;2
   overflow-x: hidden;
 }
 
-#dvblicsbxd .gt_stub {
+#jdjodzhvnh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1295,7 +1302,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#dvblicsbxd .gt_stub_row_group {
+#jdjodzhvnh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1309,15 +1316,15 @@ Table&nbsp;2
   vertical-align: top;
 }
 
-#dvblicsbxd .gt_row_group_first td {
+#jdjodzhvnh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dvblicsbxd .gt_row_group_first th {
+#jdjodzhvnh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#dvblicsbxd .gt_summary_row {
+#jdjodzhvnh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1327,16 +1334,16 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#dvblicsbxd .gt_first_summary_row {
+#jdjodzhvnh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_first_summary_row.thick {
+#jdjodzhvnh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dvblicsbxd .gt_last_summary_row {
+#jdjodzhvnh .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1346,7 +1353,7 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_grand_summary_row {
+#jdjodzhvnh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1356,7 +1363,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#dvblicsbxd .gt_first_grand_summary_row {
+#jdjodzhvnh .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1366,7 +1373,7 @@ Table&nbsp;2
   border-top-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_last_grand_summary_row_top {
+#jdjodzhvnh .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -1376,11 +1383,11 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_striped {
+#jdjodzhvnh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dvblicsbxd .gt_table_body {
+#jdjodzhvnh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1389,7 +1396,7 @@ Table&nbsp;2
   border-bottom-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_footnotes {
+#jdjodzhvnh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1403,7 +1410,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_footnote {
+#jdjodzhvnh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -1412,7 +1419,7 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#dvblicsbxd .gt_sourcenotes {
+#jdjodzhvnh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1426,7 +1433,7 @@ Table&nbsp;2
   border-right-color: #D3D3D3;
 }
 
-#dvblicsbxd .gt_sourcenote {
+#jdjodzhvnh .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -1434,72 +1441,72 @@ Table&nbsp;2
   padding-right: 5px;
 }
 
-#dvblicsbxd .gt_left {
+#jdjodzhvnh .gt_left {
   text-align: left;
 }
 
-#dvblicsbxd .gt_center {
+#jdjodzhvnh .gt_center {
   text-align: center;
 }
 
-#dvblicsbxd .gt_right {
+#jdjodzhvnh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dvblicsbxd .gt_font_normal {
+#jdjodzhvnh .gt_font_normal {
   font-weight: normal;
 }
 
-#dvblicsbxd .gt_font_bold {
+#jdjodzhvnh .gt_font_bold {
   font-weight: bold;
 }
 
-#dvblicsbxd .gt_font_italic {
+#jdjodzhvnh .gt_font_italic {
   font-style: italic;
 }
 
-#dvblicsbxd .gt_super {
+#jdjodzhvnh .gt_super {
   font-size: 65%;
 }
 
-#dvblicsbxd .gt_footnote_marks {
+#jdjodzhvnh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#dvblicsbxd .gt_asterisk {
+#jdjodzhvnh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dvblicsbxd .gt_indent_1 {
+#jdjodzhvnh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#dvblicsbxd .gt_indent_2 {
+#jdjodzhvnh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#dvblicsbxd .gt_indent_3 {
+#jdjodzhvnh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#dvblicsbxd .gt_indent_4 {
+#jdjodzhvnh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#dvblicsbxd .gt_indent_5 {
+#jdjodzhvnh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#dvblicsbxd .katex-display {
+#jdjodzhvnh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#dvblicsbxd div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jdjodzhvnh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1507,7 +1514,7 @@ Table&nbsp;2
 <table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
 <thead>
 <tr class="gt_heading header">
-<th colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border"><strong>Distribution of SSQ-14 Items by Depression Status and Correlations</strong></th>
+<th colspan="6" class="gt_heading gt_title gt_font_normal gt_bottom_border">Distribution of SSQ-14 Items by Depression Status and Correlations</th>
 </tr>
 <tr class="gt_col_headings even">
 <th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>SSQ-14 Item</strong></th>
@@ -1648,44 +1655,570 @@ Table&nbsp;2
 </figure>
 </div>
 </div>
+<div style="page-break-after: always;"></div>
 </section>
 <section id="structural-validity-and-stability" class="level3">
 <h3 class="anchored" data-anchor-id="structural-validity-and-stability">Structural Validity and Stability</h3>
-<p>The Monte Carlo split-sample analysis revealed distinct structural patterns across the three item configurations, identifying the optimal factor structure for each version while highlighting the limitations of the full scale and the existing subset (<a href="#fig-figure1_ssq_10_14_08_factor_retention" class="quarto-xref">Figure&nbsp;1</a>).</p>
-<div id="cell-fig-figure1_ssq_10_14_08_factor_retention" class="cell">
+<p>We conducted an Exploratory Factor Analysis (EFA) to determine the optimal factor structure, comparing the performance of the original SSQ-14, the existing SSQ-08, and the theoretical SSQ-10. This comparative analysis is visualized in Figure 1, which displays the factor retention probabilities and counts across the three configurations based on 10,000 Monte Carlo resampling iterations. (<a href="#fig-factor-retention" class="quarto-xref">Figure&nbsp;1</a>).</p>
+</section>
+<section id="the-existing-structure-ssq-14-and-ssq-08" class="level3">
+<h3 class="anchored" data-anchor-id="the-existing-structure-ssq-14-and-ssq-08">The Existing Structure (SSQ-14 and SSQ-08)</h3>
+<p>For the established versions of the instrument, we observed a distinct methodological divergence between retention criteria. For the original SSQ-14 (<a href="#fig-factor-retention" class="quarto-xref">Figure&nbsp;1</a>, Panel A), the Kaiser criterion <span class="citation" data-cites="kaiser1974index">(<a href="#ref-kaiser1974index" role="doc-biblioref">Kaiser 1974</a>)</span> favored a 2-factor solution in 87.5% of iterations, whereas Parallel Analysis (PA) <span class="citation" data-cites="hayton2004factor">(<a href="#ref-hayton2004factor" role="doc-biblioref">Hayton, Allen, and Scarpello 2004</a>)</span> suggested a more complex 3-factor structure (probability = 0.696).</p>
+<p>Similarly, for the brief SSQ-08 (<a href="#fig-factor-retention" class="quarto-xref">Figure&nbsp;1</a>, Panel C), the Kaiser criterion was unequivocal, suggesting a unidimensional (1-factor) structure in 100% of iterations. In contrast, PA continued to suggest multidimensionality, retaining 3 factors in 66.3% of the bootstrapped samples. Examination of the item clustering stability in Supplementary (Supp.) <a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a> provides granular insight into these structural divergences. For the SSQ-14 (Supp. <a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel A), the 2-factor solution favored by the Kaiser criterion—which emerged as the consensus model with a stability of r cm_ka_ssq14—demonstrates high internal stability, with items consistently partitioning into distinct cognitive-somatic and affective subdomains. Most notably, thinking too much (SSQ01), difficulty concentrating (SSQ02), and irritability (SSQ03) co-occurred with greater than 95% probability across both extraction methods, identifying them as a robust core symptom cluster within the original tool.</p>
+<p>However, the 3-factor solution suggested by Parallel Analysis (Supp. <a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel B), which achieved a consensus stability of r cm_pa_ssq14, reveals that the added dimensionality in the full scale is largely driven by the distinct clustering of somatic and perceptual items (e.g., hallucinations, nightmares) into a separate factor. Critically, while the existing SSQ-08 subset (Supp. <a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel C) retains thinking too much (SSQ01), it excludes the highly stable partners of this core cluster, specifically SSQ02 and SSQ03. The omission of these clinically coherent neurocognitive and affective markers, despite their strong structural cohesion with the primary idiom of distress (kufungisisa), suggests a potential limitation in capturing the full breadth of depressive symptomatology in this specific adolescent cohort. In this cohort, Parallel Analysis of the SSQ-08 revealed factors largely splitting between 2-, 3-, and 4-factor solutions, yet yielded a winning consensus model with a stability of 1713/6629 (25.8%); 95% CI: (24.8%, 26.9%). It is important to note, however, that the SSQ-08 was designed and validated to screen for broader Common Mental Disorders (CMD) in populations with high HIV prevalence, rather than depression exclusively. This finding explicitly validates the configuration of the SSQ-10, which retains this entire stable core cluster while systematically removing only the unstable ‘noise’ items (e.g., SSQ04–07) that drove the artifactual dimensionality in the original scale.</p>
+<div id="cell-fig-factor-retention" class="cell">
 <div class="cell-output-display">
-<div id="fig-figure1_ssq_10_14_08_factor_retention" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-factor-retention" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-figure1_ssq_10_14_08_factor_retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-figure1_ssq_10_14_08_factor_retention-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Factor Retention Probabilities and Counts"><img src="index_files/figure-html/fig-figure1_ssq_10_14_08_factor_retention-1.png" class="img-fluid figure-img" width="1536"></a>
+<div aria-describedby="fig-factor-retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/fig-factor-retention-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Factor Retention Probabilities and Counts across SSQ Configurations. The figure displays the probability (left y-axis) and frequency count (right y-axis) of retaining a specific number of factors across 10,000 Monte Carlo split-sample iterations. Blue bars represent the Kaiser Criterion (Eigenvalue > 1), and yellow bars represent Parallel Analysis. (A) Original SSQ-14. (B) Theoretical SSQ-10 subset. (C) SSQ-08 subset. Error bars indicate 95% confidence intervals."><img src="index_files/figure-html/fig-factor-retention-1.png" class="img-fluid figure-img" width="1536"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1_ssq_10_14_08_factor_retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Factor Retention Probabilities and Counts
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-factor-retention-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Factor Retention Probabilities and Counts across SSQ Configurations. The figure displays the probability (left y-axis) and frequency count (right y-axis) of retaining a specific number of factors across 10,000 Monte Carlo split-sample iterations. Blue bars represent the Kaiser Criterion (Eigenvalue &gt; 1), and yellow bars represent Parallel Analysis. <strong>(A)</strong> Original SSQ-14. <strong>(B)</strong> Theoretical SSQ-10 subset. <strong>(C)</strong> SSQ-08 subset. Error bars indicate 95% confidence intervals.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>The SSQ-14 full scale consistently exhibited a multidimensional structure. The Kaiser criterion strongly favored a two-factor solution (89.2% probability), while Parallel Analysis favored a three-factor solution (90.9% probability). Stability analysis of these solutions (Supplementary <a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>) indicated a robust split between a General or Somatic factor and a Core or Depressive factor. The 2-factor Kaiser solution (<a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel A &amp; B) consistently grouped items SSQ09–14 (crying, fatigue, suicide, unhappiness, work lag, difficulty deciding) into a stable “Somatic/Severe” cluster, while items SSQ01–08 (thinking too much, concentration, irritability, nightmares, hallucinations, stomach ache, fear, sleep) formed a “General Distress/Anxiety” cluster. The 3-factor Parallel Analysis solution (<a href="#fig-figure1_supplementary" class="quarto-xref">Figure&nbsp;3</a>, Panel C &amp; D) further fragmented this second cluster, separating core depression items (thinking too much, concentration, irritability) from non-specific anxiety items (nightmares, hallucinations, stomach ache, fear). This persistent multidimensionality suggests that a single summary score for the SSQ-14 conflates distinct symptom clusters—specifically anxiety and somatic idioms with core depression—supporting the theoretical decision to refine the scale.</p>
-<p><strong>Theoretical Subset SSQ-10</strong></p>
-<p>For the theoretically derived SSQ-10 subset, a significant divergence in factor retention criteria emerged (<a href="#fig-figure1_ssq_10_14_08_factor_retention" class="quarto-xref">Figure&nbsp;1</a>, Panel B). The Kaiser criterion overwhelmingly suggested a one-factor solution (81.7% probability), supporting the theoretical intent of a unitary depression scale. In contrast, Parallel Analysis suggested a three-factor solution in 62.2% of iterations, with notable support for a two-factor solution (35.1%).</p>
-<p>To resolve this divergence, the structure of the Parallel Analysis three-factor solution was interrogated (Figure 2). The analysis revealed that the third factor was a statistical artifact: a “singleton” factor defined solely by item SSQ08 (trouble sleeping). Such single-item factors are methodologically unsound for subscale scoring. However, when examining the two-factor solutions produced by Parallel Analysis, a stable consensus structure emerged where SSQ08 merged into the larger Somatic/Severe factor.</p>
-<div id="cell-fig-figure1_ssq_10__14_08_factor_retention_stability" class="cell">
+</section>
+<section id="the-theoretical-subset-divergence-ssq-10" class="level3">
+<h3 class="anchored" data-anchor-id="the-theoretical-subset-divergence-ssq-10">The Theoretical Subset Divergence (SSQ-10)</h3>
+<p>The theoretical SSQ-10 subset (<a href="#fig-factor-retention" class="quarto-xref">Figure&nbsp;1</a>, Panel B) exhibited a similar but pronounced conflict between methods. The Kaiser criterion strongly supported a unidimensional structure, retaining 1 factor in 83.1% of iterations (<span class="math inline">\(n=8311\)</span>). Conversely, PA suggested a 3-factor solution in 72.2% of iterations (<span class="math inline">\(n=7218\)</span>). This robust statistical disagreement—with one method suggesting a single score and the other suggesting three distinct sub-scales—necessitated a deeper investigation to determine whether the third factor represented a substantive latent construct or a statistical artifact.</p>
+</section>
+<section id="artifact-investigation-and-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="artifact-investigation-and-resolution">Artifact Investigation and Resolution</h3>
+<p>To adjudicate the conflicting retention suggestions for the SSQ-10, we examined the clustering of items within the 3-factor solution suggested by Parallel Analysis (consensus stability: 2891/7218 (40.1%); 95% CI: (38.9%, 41.2%)). As illustrated in <a href="#fig-heatmap-ssq10-pa" class="quarto-xref">Figure&nbsp;2</a> (Panel A), the factor loading pattern revealed a distinct anomaly: while two stable factors emerged representing cognitive and affective symptoms (Factors 1 and 2), the third dimension was revealed to be a “singleton” factor comprised solely of poor sleep (SSQ08). This item was separated from both the cognitive (SSQ01–SSQ03) and general affective (SSQ09–SSQ14) clusters. However, closer inspection of the co-occurrence probabilities reveals that poor sleep (SSQ08) co-occurs significantly more often with the affective items (Factor 1: SSQ09–SSQ14) than with the cognitive items (Factor 2: SSQ01–SSQ03). Specifically, Factor 3 exhibited an average co-occurrence of 29.4% with Factor 1 items compared to only 0.3% with Factor 2 items. This pattern suggests that while statistically isolated in the 3-factor solution, the item shares more residual variance with the affective domain, and the isolation is likely driven by item-specific variance or “noise” rather than a substantive multidimensional trait.</p>
+<p>Given that a single-item factor lacks theoretical parsimony, we evaluated the stability of the 2-factor solution as the next most plausible structure. Although the 2-factor solution was suggested as the primary structure in only 9% (<span class="math inline">\(899/10,000\)</span>) of the initial Parallel Analysis iterations, deeper investigation revealed it to be highly robust when statistical artifacts were resolved. Specifically, the consensus stability for this 2-factor configuration was 846/899 (94.1%); 95% CI: (92.6%, 95.6%). This finding confirms that once the artifactual singleton factor is discounted, the SSQ-10 stabilizes into two robust dimensions: a cognitive-functional factor and an affective-emotional factor.</p>
+<div id="cell-fig-heatmap-ssq10-pa" class="cell">
 <div class="cell-output-display">
-<div id="fig-figure1_ssq_10__14_08_factor_retention_stability" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-heatmap-ssq10-pa" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-figure1_ssq_10__14_08_factor_retention_stability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-figure1_ssq_10__14_08_factor_retention_stability-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Factor Retention Probabilities and Counts"><img src="index_files/figure-html/fig-figure1_ssq_10__14_08_factor_retention_stability-1.png" class="img-fluid figure-img" width="1536"></a>
+<div aria-describedby="fig-heatmap-ssq10-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="index_files/figure-html/fig-heatmap-ssq10-pa-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Heatmap and Cluster Stability for the SSQ-10 3-Factor Solution (Parallel Analysis). (A) Co-occurrence probability heatmap showing three distinct clusters. (B) Membership probability plot confirming the separation of items. Note the emergence of a singleton factor driven solely by SSQ08 (Poor sleep), indicative of a structural artifact."><img src="index_files/figure-html/fig-heatmap-ssq10-pa-1.png" class="img-fluid figure-img" width="1344"></a>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1_ssq_10__14_08_factor_retention_stability-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Factor Retention Probabilities and Counts
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-heatmap-ssq10-pa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Heatmap and Cluster Stability for the SSQ-10 3-Factor Solution (Parallel Analysis). (A) Co-occurrence probability heatmap showing three distinct clusters. (B) Membership probability plot confirming the separation of items. Note the emergence of a singleton factor driven solely by SSQ08 (Poor sleep), indicative of a structural artifact.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Consequently, the SSQ-10 is best conceptualized as having a latent two-factor structure comprising a “Somatic/Severe” dimension (SSQ08–14) and a “Core/Cognitive” dimension (SSQ01–03), as visualized in Figure 3.</p>
-<p>Similar to the SSQ-10, the SSQ-08 subset demonstrated a robust uni-dimensional structure under the Kaiser criterion and with 100% probability, as shown in <a href="#fig-figure1_ssq_10_14_08_factor_retention" class="quarto-xref">Figure&nbsp;1</a> (Panel B). However, Parallel Analysis results were ambiguous and unstable, splitting between two factors (37.9%) and three factors (37.2%). While statistically parsimonious, this subset achieves stability by excluding critical core affective items found in the SSQ-14 and SSQ-10 (such as difficulty concentrating and irritability), potentially limiting its content validity as a comprehensive depression screener for this study.</p>
+<div class="cell">
+<div id="tbl-model-comp" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-model-comp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3
+</figcaption>
+<div aria-describedby="tbl-model-comp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="hxvtllzbfj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hxvtllzbfj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#hxvtllzbfj thead, #hxvtllzbfj tbody, #hxvtllzbfj tfoot, #hxvtllzbfj tr, #hxvtllzbfj td, #hxvtllzbfj th {
+  border-style: none;
+}
+
+#hxvtllzbfj p {
+  margin: 0;
+  padding: 0;
+}
+
+#hxvtllzbfj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#hxvtllzbfj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hxvtllzbfj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hxvtllzbfj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hxvtllzbfj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hxvtllzbfj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hxvtllzbfj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hxvtllzbfj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hxvtllzbfj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#hxvtllzbfj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#hxvtllzbfj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hxvtllzbfj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hxvtllzbfj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hxvtllzbfj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hxvtllzbfj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxvtllzbfj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hxvtllzbfj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hxvtllzbfj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#hxvtllzbfj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxvtllzbfj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hxvtllzbfj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxvtllzbfj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hxvtllzbfj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxvtllzbfj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hxvtllzbfj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hxvtllzbfj .gt_left {
+  text-align: left;
+}
+
+#hxvtllzbfj .gt_center {
+  text-align: center;
+}
+
+#hxvtllzbfj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hxvtllzbfj .gt_font_normal {
+  font-weight: normal;
+}
+
+#hxvtllzbfj .gt_font_bold {
+  font-weight: bold;
+}
+
+#hxvtllzbfj .gt_font_italic {
+  font-style: italic;
+}
+
+#hxvtllzbfj .gt_super {
+  font-size: 65%;
+}
+
+#hxvtllzbfj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#hxvtllzbfj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hxvtllzbfj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#hxvtllzbfj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#hxvtllzbfj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#hxvtllzbfj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#hxvtllzbfj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#hxvtllzbfj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#hxvtllzbfj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="5" class="gt_heading gt_title gt_font_normal gt_bottom_border">Model Comparison (1-Factor vs 2-Factor)</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="factor" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Factor</th>
+<th id="CFI-(95%-CI)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">CFI (95% CI)</th>
+<th id="RMSEA-(95%-CI)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">RMSEA (95% CI)</th>
+<th id="Prop_Good_CFI" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Prop. CFI ≥ 0.90</th>
+<th id="Prop_Good_RMSEA" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Prop. RMSEA ≤ 0.08</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="factor">1-Factor</td>
+<td class="gt_row gt_right" headers="CFI (95% CI)">0.992 (0.988, 0.995)</td>
+<td class="gt_row gt_right" headers="RMSEA (95% CI)">0.091 (0.075, 0.107)</td>
+<td class="gt_row gt_right" headers="Prop_Good_CFI">1</td>
+<td class="gt_row gt_right" headers="Prop_Good_RMSEA">0.076</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="factor">2-Factor</td>
+<td class="gt_row gt_right" headers="CFI (95% CI)">1 (0.999, 1)</td>
+<td class="gt_row gt_right" headers="RMSEA (95% CI)">0.01 (0, 0.035)</td>
+<td class="gt_row gt_right" headers="Prop_Good_CFI">1</td>
+<td class="gt_row gt_right" headers="Prop_Good_RMSEA">1.000</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="5" class="gt_sourcenote">Note: CFI/TLI ≥ 0.90 (often ≥ 0.95 for good fit) and RMSEA ≤ 0.08 (≤ 0.06 for good fit) indicate acceptable model fit. Proportions correspond to the fraction of Monte Carlo samples meeting these benchmarks.</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+<p>Table 3: Model Comparison (1-Factor vs 2-Factor)</p>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="phq-09-original" class="level4">
+<h4 class="anchored" data-anchor-id="phq-09-original">PHQ-09 (Original)</h4>
+<section id="parallel-analysis-3-factor-solution" class="level5">
+<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution">Parallel Analysis (3-Factor Solution)</h5>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><a href="index_files/figure-html/unnamed-chunk-4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="1536"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
 </section>
 </section>
 <section id="discussion" class="level2">
@@ -1736,8 +2269,14 @@ Chidumwa, Glory, Natsayi Chimbindi, Carina Herbst, Nonhlanhla Okeselo, Jaco Drey
 <div id="ref-Haney2014" class="csl-entry" role="listitem">
 Haney, E., K. Singh, C. Nyamukapa, et al. 2014. <span>“One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.”</span> <em>Journal of Affective Disorders</em> 167: 358–67. <a href="https://doi.org/10.1016/j.jad.2014.06.015">https://doi.org/10.1016/j.jad.2014.06.015</a>.
 </div>
+<div id="ref-hayton2004factor" class="csl-entry" role="listitem">
+Hayton, James C, David G Allen, and Vida Scarpello. 2004. <span>“Factor Retention Decisions in Exploratory Factor Analysis: A Tutorial on Parallel Analysis.”</span> <em>Organizational Research Methods</em> 7 (2): 191–205. <a href="https://doi.org/10.1177/1094428104263675">https://doi.org/10.1177/1094428104263675</a>.
+</div>
 <div id="ref-holgado2010polychoric" class="csl-entry" role="listitem">
 Holgado–Tello, Francisco Pablo, Salvador Chac’on–Moscoso, Isabel Barbero–Garc’ ia, and Enrique Vila–Abad. 2010. <span>“Polychoric Versus Pearson Correlations in Exploratory and Confirmatory Factor Analysis of Ordinal Variables.”</span> <em>Quality &amp; Quantity</em> 44: 153–66. <a href="https://doi.org/10.1007/s11135-008-9190-y">https://doi.org/10.1007/s11135-008-9190-y</a>.
+</div>
+<div id="ref-kaiser1974index" class="csl-entry" role="listitem">
+Kaiser, Henry F. 1974. <span>“An Index of Factorial Simplicity.”</span> <em>Psychometrika</em> 39 (1): 31–36. <a href="https://doi.org/10.1007/BF02291575">https://doi.org/10.1007/BF02291575</a>.
 </div>
 <div id="ref-kolen2014test" class="csl-entry" role="listitem">
 Kolen, Michael J, and Robert L Brennan. 2014. <em>Test Equating, Scaling, and Linking: Methods and Practices</em>. 3rd ed. Springer. <a href="https://doi.org/10.1007/978-1-4939-0317-7">https://doi.org/10.1007/978-1-4939-0317-7</a>.
@@ -1766,100 +2305,15 @@ Samejima, Fumiko. 1969. <span>“Estimation of Latent Ability Using a Response P
 <div id="fig-figure1_supplementary" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-figure1_supplementary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-figure1_supplementary-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Item co-occurrence for the winning factor count and item stability sorted by Winning Model"><img src="index_files/figure-html/fig-figure1_supplementary-1.png" class="img-fluid figure-img" width="2016"></a>
+<a href="index_files/figure-html/fig-figure1_supplementary-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;3: Item Clustering Stability and Co-occurrence Probabilities. Heatmaps illustrate the probability of item pairs co-occurring within the same factor across 10,000 bootstrap replications. (A) SSQ-14 using the Kaiser Criterion (favoring a 2-factor solution), demonstrating a stable core cluster of neurocognitive items (SSQ01–03). (B) SSQ-14 using Parallel Analysis (favoring a 3-factor solution), revealing a distinct somatic/perceptual factor (SSQ04–07). (C) SSQ-08 using Parallel Analysis, highlighting the exclusion of key core symptoms (SSQ02, SSQ03) despite the retention of SSQ01."><img src="index_files/figure-html/fig-figure1_supplementary-1.png" class="img-fluid figure-img" width="1728"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1_supplementary-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Item co-occurrence for the winning factor count and item stability sorted by Winning Model
+Figure&nbsp;3: Item Clustering Stability and Co-occurrence Probabilities. Heatmaps illustrate the probability of item pairs co-occurring within the same factor across 10,000 bootstrap replications. (A) SSQ-14 using the Kaiser Criterion (favoring a 2-factor solution), demonstrating a stable core cluster of neurocognitive items (SSQ01–03). (B) SSQ-14 using Parallel Analysis (favoring a 3-factor solution), revealing a distinct somatic/perceptual factor (SSQ04–07). (C) SSQ-08 using Parallel Analysis, highlighting the exclusion of key core symptoms (SSQ02, SSQ03) despite the retention of SSQ01.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="preliminary-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="preliminary-analysis">Preliminary Analysis</h2>
-<section id="factor-retention-analysis-determining-the-stable-structure" class="level3">
-<h3 class="anchored" data-anchor-id="factor-retention-analysis-determining-the-stable-structure">Factor Retention Analysis: Determining the Stable Structure</h3>
-<p>The probability of retaining <span class="math inline">\(k\)</span> factors was calculated across 1,000 bootstrap iterations. We determined the most stable structure for each configuration by analysing where the probabilities converged or presented a dominant model.</p>
-<p>For the full scale, the Kaiser Criterion strongly favored a 2-factor solution with approximately 89.2% probability. Conversely, Parallel Analysis favored a 3-factor solution with 90.9% probability. These results indicate that the scale is robustly multidimensional. The 2-factor solution represents the most stable base structure, separating somatic from emotional symptoms, while the 3-factor solution represents a stable refinement of the emotional domain.</p>
-<p>For the theoretical subset, the Kaiser Criterion overwhelmingly suggested a 1-factor solution in 81.7% of iterations. Parallel Analysis was more variable, favoring three factors in 62.2% of iterations but with significant support for two factors in 35.1% of cases. Given the known sensitivity of PA to minor factors and the strong consensus for one factor under the Kaiser Criterion, the 1-factor structure appears to be the most practical and stable configuration for this subset. The additional factors suggested by PA likely reflect minor correlations rather than substantive clinical dimensions.</p>
-<p>For the SSQ-08 subset, the Kaiser Criterion universally suggested a 1-factor solution (100% probability). Parallel Analysis was ambiguous, splitting roughly evenly between 2-factor (37.9%) and 3-factor (37.2%) solutions, with a notable minority (24.4%) supporting a 1-factor solution. Based on these data, this subset is determined to be robustly uni-dimensional. The PA results likely reflect item doublets, or pairs of highly correlated items, rather than distinct latent constructs.</p>
-</section>
-<section id="structural-stability-and-item-co-occurrence" class="level3">
-<h3 class="anchored" data-anchor-id="structural-stability-and-item-co-occurrence">Structural Stability and Item Co-occurrence</h3>
-<p>To validate these determinations, we examined the stability of item memberships within the winning models for each method.</p>
-<section id="ssq-14-origina" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-14-origina">SSQ-14 (Origina)</h4>
-<section id="kaiser-criterion-2-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="kaiser-criterion-2-factor-solution">Kaiser Criterion (2-Factor Solution)</h5>
-<p>Under the Kaiser criterion, the scale splits cleanly into two distinct clusters. The high probabilities in the stability plot indicate very little cross-loading across iterations. The first factor, labeled General/Somatic, comprises items SSQ09 through SSQ14, which include hallucinations, suicide, and somatic complaints. The second factor, labeled Depressive/Anxious, includes items SSQ01 through SSQ08, encompassing symptoms such as thinking too much, sleep difficulties, and tearfulness. This confirms the scale measures two distinct but related constructs: general distress or somatic symptoms and core depression or anxiety.</p>
-</section>
-<section id="parallel-analysis-3-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution">Parallel Analysis (3-Factor Solution)</h5>
-<p>Parallel Analysis consistently splits the Depressive factor further. The first factor remains the Somatic/Severe dimension, comprising items SSQ07 and SSQ09 through SSQ14. A second factor, labeled Core Depression, includes items SSQ01 through SSQ03. A third factor, labeled Cognitive/Anxiety, includes items SSQ04 through SSQ06 and SSQ08. While stable, this granularity may offer less clinical utility than the 2-factor solution depending on the intended use.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="ssq-10-theoretical-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-10-theoretical-subset">SSQ-10 (Theoretical Subset)</h4>
-<p>This subset excludes items SSQ04 through SSQ07 to focus on depressive symptoms. Although the Kaiser Criterion supports a 1-factor model, examining the Parallel Analysis 3-factor solution reveals why a 1-factor model might be superior for this subset.</p>
-<section id="parallel-analysis-3-factor-solution-1" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-1">Parallel Analysis (3-Factor Solution)</h5>
-<p>The structure under PA reveals three factors. The first factor includes items SSQ09 through SSQ14, representing severe symptoms. The second factor includes items SSQ01 through SSQ03, representing core emotional symptoms. The third factor consists solely of item SSQ08, representing fatigue or work lag. The emergence of SSQ08 as a singleton or weakly associated factor in the 3-factor solution suggests structural fragmentation. This supports the decision to treat the SSQ-10 as a uni-dimensional scale, as suggested by the Kaiser Criterion, for the purpose of establishing a depression cut-off, as dividing it further creates unstable, item-specific factors.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-6-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="ssq-08-dixon-chibanda-subset" class="level4">
-<h4 class="anchored" data-anchor-id="ssq-08-dixon-chibanda-subset">SSQ-08 (Dixon-Chibanda Subset)</h4>
-<p>Similarly, while the Kaiser Criterion identifies one factor, the Parallel Analysis 2-factor solution demonstrates instability.</p>
-<section id="parallel-analysis-2-factor-solution" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-2-factor-solution">Parallel Analysis (2-Factor Solution)</h5>
-<p>The structure under the PA 2-factor model splits the items into two groups. Factor 1 contains items SSQ11 through SSQ14. Factor 2 contains items SSQ01, SSQ08, SSQ09, and SSQ10. The co-occurrence heatmap shows fuzziness for Factor 2 items, indicating they do not cluster together as reliably as Factor 1 items. This lack of cohesion under the PA 2-factor model reinforces the conclusion that the 1-factor model identified by the Kaiser Criterion is the most accurate representation of the SSQ-08 structure.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="phq-09-original" class="level4">
-<h4 class="anchored" data-anchor-id="phq-09-original">PHQ-09 (Original)</h4>
-<section id="parallel-analysis-3-factor-solution-2" class="level5">
-<h5 class="anchored" data-anchor-id="parallel-analysis-3-factor-solution-2">Parallel Analysis (3-Factor Solution)</h5>
-<p>Although Kaiser strongly supports a 1-factor model, the PA 3-factor solution (Frequency: 209/374 valid runs) reveals a coherent tripartite substructure. Factor 1 (Cognitive/Severe) includes PHQ906–909 (Guilt, Concentration, Motor, Suicide). Factor 2 (Somatic) includes PHQ903–905 (Sleep, Energy, Appetite). Factor 3 (Core Affective) includes PHQ901–902 (Anhedonia, Mood). While this substructure is theoretically interpretable, the low overall stability and high rate of model non-convergence in bootstrapping support using the robust 1-factor structure for the primary clinical objective.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="1536"></a></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Domain,PHQ-9 Item (Concept),SSQ-14 Item (Concept),Harmonisation Potential Dysphoria,“Feeling down, depressed, hopeless”,Tearfulness; Wishing to be dead,High (Direct conceptual link) Suicidality,Thoughts of hurting self/better off dead,Wishing to be dead,High (Critical anchor) Sleep,“Trouble falling/staying asleep, sleeping too much”,Fail to sleep,High (Somatic anchor) Fatigue,Feeling tired or having little energy,Tiredness,High (Somatic anchor) Cognition,Trouble concentrating,Thinking too much (Kufungisisa),Moderate (Kufungisisa is broader) Appetite,Poor appetite or overeating,Stomach ache / Loss of appetite,Moderate (SSQ focuses on pain/gut) Anxiety,None (PHQ is depression only),Heart beating fast; Frightened,Low (Unique to SSQ) Somatic,General (implicitly covered),Heat in body; Heaviness,Low (Unique to SSQ) Anhedonia,Little interest or pleasure,No direct equivalent,Low (Information loss in SSQ)</p>
-</section>
-</section>
-</section>
 </section>
 
 </main>

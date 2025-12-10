@@ -8,7 +8,7 @@ get_invariance_deltas <- function(data, model, group_var, items) {
       length(unique(na.omit(data[[group_var]]))) < 2) return(NULL)
   
   min_n <- min(table(data[[group_var]]))
-  if (min_n < 50) return(NULL)
+  if (min_n < 30) return(NULL)
   
   tryCatch({
     fit_conf <- cfa(model, data = data, group = group_var,

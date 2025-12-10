@@ -137,11 +137,15 @@ run_ssq_phq_mc_pipeline <- function(
       
       saveRDS(
         list(
-          fit        = mc_res$res_fit,
-          loadings   = mc_res$res_loadings,
-          invariance = mc_res$res_invariance,
-          roc        = mc_res$res_roc,
-          roc_curves = mc_res$res_roc_curves
+          fit         = mc_res$res_fit,
+          loadings    = mc_res$res_loadings,
+          invariance  = mc_res$res_invariance,
+          roc         = mc_res$res_roc,
+          roc_curves  = mc_res$res_roc_curves,
+          factor_corr = mc_res$res_factor_corr,
+          diagnostics = mc_res$diagnostics,
+          n_valid     = mc_res$n_valid,
+          n_tried     = mc_res$n_tried
         ),
         file = mc_path
       )
@@ -154,6 +158,7 @@ run_ssq_phq_mc_pipeline <- function(
         res_invariance = stored$invariance,
         res_roc        = stored$roc,
         res_roc_curves = stored$roc_curves,
+        res_factor_corr = if ("factor_corr" %in% names(stored)) stored$factor_corr else NULL,
         diagnostics    = if ("diagnostics" %in% names(stored)) stored$diagnostics else NULL,
         n_valid        = if ("n_valid" %in% names(stored)) stored$n_valid else NA_integer_,
         n_tried        = if ("n_tried" %in% names(stored)) stored$n_tried else NA_integer_
@@ -179,6 +184,7 @@ run_ssq_phq_mc_pipeline <- function(
         invariance  = mc_res$res_invariance,
         roc         = mc_res$res_roc,
         roc_curves  = mc_res$res_roc_curves,
+        factor_corr = mc_res$res_factor_corr,
         diagnostics = mc_res$diagnostics,
         n_valid     = mc_res$n_valid,
         n_tried     = mc_res$n_tried
@@ -188,10 +194,11 @@ run_ssq_phq_mc_pipeline <- function(
   }
   
   gt_tables <- summarise_results(
-    res_fit        = mc_res$res_fit,
-    res_loadings   = mc_res$res_loadings,
-    res_invariance = mc_res$res_invariance,
-    res_roc        = mc_res$res_roc
+    res_fit         = mc_res$res_fit,
+    res_loadings    = mc_res$res_loadings,
+    res_invariance  = mc_res$res_invariance,
+    res_roc         = mc_res$res_roc,
+    res_factor_corr = mc_res$res_factor_corr
   )
   
   diag_table <- summarise_diagnostics_gt(mc_res$diagnostics)
@@ -204,14 +211,14 @@ run_ssq_phq_mc_pipeline <- function(
   )
   message(paste("Summary tables saved to:", summary_tables_file))
   
-  save_mc_results(
-    res_fit        = mc_res$res_fit,
-    res_loadings   = mc_res$res_loadings,
-    res_invariance = mc_res$res_invariance,
-    res_roc        = mc_res$res_roc,
-    res_roc_curves = mc_res$res_roc_curves,
-    safe_set_name  = safe_set_name
-  )
+  # save_mc_results(
+  #   res_fit        = mc_res$res_fit,
+  #   res_loadings   = mc_res$res_loadings,
+  #   res_invariance = mc_res$res_invariance,
+  #   res_roc        = mc_res$res_roc,
+  #   res_roc_curves = mc_res$res_roc_curves,
+  #   safe_set_name  = safe_set_name
+  # )
   
   plot_list <- generate_plots(
     res_fit         = mc_res$res_fit,
@@ -240,3 +247,6 @@ run_ssq_phq_mc_pipeline <- function(
     factor_list      = factor_list
   ))
 }
+
+# To run the full pipeline after sourcing all helper scripts:
+# run_ssq_phq_mc_pipeline()

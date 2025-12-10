@@ -29,7 +29,7 @@ generate_plots <- function(res_fit, res_loadings, res_invariance,
     
     p_fit <- ggplot(p_fit_data, aes(x = Value, fill = Metric)) +
       geom_histogram(bins = 20, color = "black", alpha = 0.7) +
-      facet_wrap(~Metric, scales = "free", ncol = 2) +
+      facet_wrap(~Metric, scales = "free", ncol = 4) +
       geom_vline(data = cutoffs, aes(xintercept = Intercept),
                  linetype = "dashed", color = "red", linewidth = 0.8) +
       scale_fill_npg() +

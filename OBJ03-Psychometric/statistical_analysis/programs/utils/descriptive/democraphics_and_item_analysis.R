@@ -152,7 +152,6 @@ tbl_list <- tbl_list[valid_idx]
 group_headers <- group_headers[valid_idx]
 
 table1 <- tbl_stack(tbl_list, group_header = group_headers) %>%
-  modify_caption("**Participant Characteristics**") %>%
   # Apply Bold to Group Headers (using gtsummary native function before as_gt)
   modify_table_styling(
     columns = label,
@@ -167,6 +166,7 @@ table1 <- tbl_stack(tbl_list, group_header = group_headers) %>%
   tab_source_note(
     source_note = "Note: Unemployment is defined as being willing/available to work but jobless. Participants currently in school are classified as 'Student (Not Applicable)' to align with labour force participation definitions."
   ) %>%
+  tab_header(title="Participant Characteristics") %>%
   tab_options(table.font.names = "Arial")
 
 # print(table1) # Suppressed
@@ -254,10 +254,6 @@ table2_final <- table2_freq %>%
     c(Corr_PHQ_Label, Corr_SSQ_Label) ~ function(x) x # Prevent auto-formatting errors
   ) %>%
   as_gt() %>%
-  # Update Header: Removed "Table 2." prefix
-  tab_header(
-    title = md("**Distribution of SSQ-14 Items by Depression Status and Correlations**")
-  ) %>%
   # Highlight the excluded items
   tab_style(
     style = list(
@@ -268,6 +264,7 @@ table2_final <- table2_freq %>%
       rows = variable %in% excluded_items
     )
   ) %>%
+  tab_header(title="Distribution of SSQ-14 Items by Depression Status and Correlations") %>%
   tab_source_note(
     source_note = "Note: Data presented as n (%). Correlations are point-biserial coefficients between binary items and continuous total scores. Items highlighted in red (SSQ04-07) are those excluded from the theoretical SSQ-10 subset."
   ) %>%

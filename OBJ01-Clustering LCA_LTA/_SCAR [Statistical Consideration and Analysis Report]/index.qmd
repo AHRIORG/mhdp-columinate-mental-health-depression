@@ -21,8 +21,10 @@ source(here("../../pipelines_and_functions/data_processing_and_description_funcs
 renv::snapshot()
 packages <- c("here", "conflicted", 
               "tidyverse", "labelled", "reshape2",
-              "gtsummary", "gt", "gtreg", 
-              "scales", "ggsci", "patchwork"
+              "gtsummary", "gt", "gtreg", "gtExtras", 
+              "scales", "ggsci", "patchwork",
+              
+              "MplusAutomation"
               )
 
 ## Loop through the packages
@@ -63,4 +65,160 @@ dirs_to_create <- c(
 # The 'showWarnings = FALSE' argument prevents warnings if the directories already exist
 invisible(sapply(dirs_to_create, dir.create, recursive = TRUE, showWarnings = FALSE))
 
+```
+
+
+```{r load-data}
+#| echo: false
+## Load datasets
+load(file=here("../../_private_use/data_management/data/co-luminate/adam/dt_childhood_exposure.RData"))
+```
+
+```{r}
+#| include: false
+#source("lca_mplus_lived_without_mother.R")
+#source("results_extraction.R")
+source(here("statistical_analysis/programs/utils/lcmm_master.R"))
+```
+
+## Univariate Analysis
+
+```{r}
+vrbl=1
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
+```
+
+```{r}
+tab1<-batch_results[[vrbl]]$models$k3$diagnostics_table
+tab2<-batch_results[[vrbl]]$models$k4$diagnostics_table
+tab1
+tab2
+```
+
+```{r, fig.height=5, fig.width=14}
+(batch_results[[vrbl]]$models$k3$plot + batch_results[[vrbl]]$models$k4$plot) + 
+  patchwork::plot_layout(
+    guides = "collect",
+    axes = "collect",
+    axis_titles = "collect"
+    ) +
+  patchwork::plot_annotation(
+    title=NULL,
+    tag_level="A",
+    tag_prefix = "(",
+    tag_suffix = ")"
+    ) &
+  ggplot2::theme_minimal(base_size = 16,base_family = "Arial") & 
+  ggplot2::labs() & 
+  ggsci::scale_color_jco() &
+  ggplot2::theme(
+    legend.position = "bottom",
+    legend.justification = "left",
+    plot.caption = ggplot2::element_text(
+      hjust = 0, size = 12, family = "Arial"
+      ),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+```
+
+```{r}
+batch_results[[vrbl]][["models"]][["k4"]][["estimates_table"]]
+```
+
+```{r}
+vrbl<-2
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
+```
+
+
+```{r}
+tab1<-batch_results[[vrbl]]$models$k3$diagnostics_table
+tab2<-batch_results[[vrbl]]$models$k4$diagnostics_table
+tab1
+tab2
+```
+
+```{r, fig.height=5, fig.width=14}
+(batch_results[[vrbl]]$models$k3$plot + batch_results[[vrbl]]$models$k4$plot) + 
+  patchwork::plot_layout(
+    guides = "collect",
+    axes = "collect",
+    axis_titles = "collect"
+    ) +
+  patchwork::plot_annotation(
+    title=NULL,
+    tag_level="A",
+    tag_prefix = "(",
+    tag_suffix = ")"
+    ) &
+  ggplot2::theme_minimal(base_size = 16,base_family = "Arial") & 
+  ggplot2::labs() & 
+  ggsci::scale_color_jco() &
+  ggplot2::theme(
+    legend.position = "bottom",
+    legend.justification = "left",
+    plot.caption = ggplot2::element_text(
+      hjust = 0, size = 12, family = "Arial"
+      ),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank()
+  )
+```
+
+```{r}
+batch_results[[vrbl]][["models"]][["k4"]][["estimates_table"]]
+```
+
+```{r}
+vrbl<-3#------------------------------------------------------------------------
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
+```
+
+```{r}
+vrbl<-4#------------------------------------------------------------------------
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
+```
+
+```{r}
+vrbl<-5#------------------------------------------------------------------------
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
+```
+
+```{r}
+vrbl<-6#------------------------------------------------------------------------
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
+```
+
+```{r}
+vrbl<-7#------------------------------------------------------------------------
+```
+### `r batch_results[[vrbl]][["display_label"]]`
+
+```{r}
+batch_results[[vrbl]][["fit_summary_table"]]
 ```

@@ -1,212 +1,375 @@
 ############################################################
 # SSQ / PHQ Monte Carlo CFA Validation
-# 04_summary.R - Summary tables & saving results
+# 04_summary.R - Summaries & gt tables
 ############################################################
 
-summarise_results <- function(res_fit, res_loadings, res_invariance, res_roc) {
-  message("
+# Helper: format estimate with 95% CI ---------------------------------
+# Vectorised: est, lower, upper can be vectors of same length
+format_est_ci <- function(est, lower, upper, digits = 3) {
+  n <- length(est)
+  out <- rep(NA_character_, n)
+  valid <- !is.na(est) & !is.na(lower) & !is.na(upper)
+  if (any(valid)) {
+    out[valid] <- paste0(
+      round(est[valid],   digits),
+      " (", round(lower[valid], digits), ", ", round(upper[valid], digits), ")"
+    )
+  }
+  out
+}
 
-========================================================")
-  message("  MONTE CARLO CROSS-VALIDATION RESULTS")
-  message("========================================================")
+
+# 1. Model fit summary gt ----------------------------------------------
+summarise_fit_gt <- function(res_fit) {
+  if (is.null(res_fit) || nrow(res_fit) == 0) return(NULL)
   
-  gt_fit       <- NULL
-  gt_loadings  <- NULL
-  gt_inv       <- NULL
-  gt_roc       <- NULL
+  summary_fit <- res_fit %>%
+    summarise(
+      N_Valid         = n(),
+      Mean_CFI        = mean(cfi,   na.rm = TRUE),
+      Lower_CFI       = quantile(cfi,   0.025, na.rm = TRUE),
+      Upper_CFI       = quantile(cfi,   0.975, na.rm = TRUE),
+      Mean_RMSEA      = mean(rmsea, na.rm = TRUE),
+      Lower_RMSEA     = quantile(rmsea, 0.025, na.rm = TRUE),
+      Upper_RMSEA     = quantile(rmsea, 0.975, na.rm = TRUE),
+      Prop_Good_CFI   = mean(cfi   > 0.90, na.rm = TRUE),
+      Prop_Good_RMSEA = mean(rmsea < 0.08, na.rm = TRUE)
+    ) %>%
+    mutate(
+      `CFI (95% CI)`   = format_est_ci(Mean_CFI,   Lower_CFI,   Upper_CFI),
+      `RMSEA (95% CI)` = format_est_ci(Mean_RMSEA, Lower_RMSEA, Upper_RMSEA)
+    )
   
-  # 1. Global Fit Indices ----------------------------------------------
-  if (nrow(res_fit) > 0) {
-    summary_fit <- res_fit %>%
-      summarise(
-        N_Valid         = n(),
-        Mean_CFI        = mean(cfi,  na.rm = TRUE),
-        Lower_CFI       = quantile(cfi,  0.025, na.rm = TRUE),
-        Upper_CFI       = quantile(cfi,  0.975, na.rm = TRUE),
-        Mean_RMSEA      = mean(rmsea, na.rm = TRUE),
-        Lower_RMSEA     = quantile(rmsea, 0.025, na.rm = TRUE),
-        Upper_RMSEA     = quantile(rmsea, 0.975, na.rm = TRUE),
-        Prop_Good_CFI   = mean(cfi   > 0.90, na.rm = TRUE),
-        Prop_Good_RMSEA = mean(rmsea < 0.08, na.rm = TRUE)
-      ) %>%
-      mutate(
-        CFI_Est_CI   = sprintf("%.3f (%.3f, %.3f)", Mean_CFI,   Lower_CFI,   Upper_CFI),
-        RMSEA_Est_CI = sprintf("%.3f (%.3f, %.3f)", Mean_RMSEA, Lower_RMSEA, Upper_RMSEA)
-      )
-    
-    gt_fit <- summary_fit %>%
-      gt() %>%
-      cols_label(
-        N_Valid         = "Valid runs (N)",
-        CFI_Est_CI      = "CFI (95% CI)",
-        RMSEA_Est_CI    = "RMSEA (95% CI)",
-        Prop_Good_CFI   = "Prop. CFI ≥ 0.90",
-        Prop_Good_RMSEA = "Prop. RMSEA ≤ 0.08"
-      ) %>%
-      cols_hide(c(Mean_CFI, Lower_CFI, Upper_CFI,
-                  Mean_RMSEA, Lower_RMSEA, Upper_RMSEA,
-                  Prop_Good_CFI, Prop_Good_RMSEA)) %>%
-      fmt_number(
-        columns = c(N_Valid),
-        decimals = 0
-      ) %>%
-      tab_source_note(
-        md(
-          "**Interpretation:** CFI/TLI ≥ 0.90 (often ≥ 0.95 for *good* fit) and RMSEA ≤ 0.08 (≤ 0.06 for *good* fit) indicate acceptable model fit. Proportions (not shown) correspond to the fraction of Monte Carlo samples meeting these benchmarks."
-        )
-      )
-  }
+  tab_fit <- summary_fit %>%
+    select(
+      N_Valid,
+      `CFI (95% CI)`,
+      Prop_Good_CFI,
+      `RMSEA (95% CI)`,
+      Prop_Good_RMSEA
+    )
   
-  # 2. Factor Loadings --------------------------------------------------
-  if (nrow(res_loadings) > 0) {
-    summary_loadings <- res_loadings %>%
-      group_by(lhs, rhs) %>%
-      summarise(
-        Mean_Std_Est = mean(est.std),
-        SD_Std_Est   = sd(est.std),
-        Lower_95     = quantile(est.std, 0.025),
-        Upper_95     = quantile(est.std, 0.975),
-        .groups      = "drop"
-      ) %>%
-      mutate(
-        Loading_Est_CI = sprintf("%.3f (%.3f, %.3f)",
-                                 Mean_Std_Est, Lower_95, Upper_95)
+  summary_gt<-gt(tab_fit) %>%
+    tab_header(
+      title = "Global Fit Indices Across Monte Carlo Samples"
+    ) %>%
+    cols_label(
+      N_Valid         = "Number of Valid Runs",
+      `CFI (95% CI)`   = "CFI (95% CI)",
+      Prop_Good_CFI   = "Proportion CFI > 0.90",
+      `RMSEA (95% CI)` = "RMSEA (95% CI)",
+      Prop_Good_RMSEA = "Proportion RMSEA < 0.08"
+    ) %>%
+    fmt_number(
+      columns  = c(Prop_Good_CFI, Prop_Good_RMSEA),
+      decimals = 3
+    ) %>%
+    tab_source_note(
+      source_note = paste(
+        "Interpretation guide: CFI ≥ 0.90 indicates acceptable fit;",
+        "RMSEA ≤ 0.08 indicates acceptable fit."
       )
-    
-    gt_loadings <- summary_loadings %>%
-      arrange(lhs, rhs) %>%
-      gt() %>%
-      cols_label(
-        lhs            = "Factor",
-        rhs            = "Item",
-        Loading_Est_CI = "Std. loading (95% CI)"
-      ) %>%
-      cols_hide(c(Mean_Std_Est, SD_Std_Est, Lower_95, Upper_95)) %>%
-      tab_source_note(
-        md(
-          "**Interpretation:** Standardized loadings ≥ 0.40 are typically considered *salient*; ≥ 0.70 are considered *strong*."
-        )
-      )
-  }
-  
-  # 3. Measurement Invariance -------------------------------------------
-  if (nrow(res_invariance) > 0) {
-    summary_inv <- res_invariance %>%
-      group_by(Group) %>%
-      summarise(
-        N_Runs            = n(),
-        Mean_Delta_CFI    = mean(Delta_CFI),
-        Lower_Delta_CFI   = quantile(Delta_CFI, 0.025),
-        Upper_Delta_CFI   = quantile(Delta_CFI, 0.975),
-        Prop_Inv_CFI      = mean(abs(Delta_CFI) <= 0.010),
-        Mean_Delta_RMSEA  = mean(Delta_RMSEA),
-        Lower_Delta_RMSEA = quantile(Delta_RMSEA, 0.025),
-        Upper_Delta_RMSEA = quantile(Delta_RMSEA, 0.975),
-        Prop_Inv_RMSEA    = mean(abs(Delta_RMSEA) <= 0.015)
-      ) %>%
-      mutate(
-        Delta_CFI_Est_CI   = sprintf("%.3f (%.3f, %.3f)",
-                                     Mean_Delta_CFI, Lower_Delta_CFI, Upper_Delta_CFI),
-        Delta_RMSEA_Est_CI = sprintf("%.3f (%.3f, %.3f)",
-                                     Mean_Delta_RMSEA, Lower_Delta_RMSEA, Upper_Delta_RMSEA)
-      )
-    
-    gt_inv <- summary_inv %>%
-      arrange(Group) %>%
-      gt() %>%
-      cols_label(
-        Group             = "Grouping variable",
-        N_Runs            = "Valid runs (N)",
-        Delta_CFI_Est_CI  = "ΔCFI (95% CI)",
-        Prop_Inv_CFI      = "Prop. |ΔCFI| ≤ 0.010",
-        Delta_RMSEA_Est_CI = "ΔRMSEA (95% CI)",
-        Prop_Inv_RMSEA    = "Prop. |ΔRMSEA| ≤ 0.015"
-      ) %>%
-      cols_hide(c(
-        Mean_Delta_CFI, Lower_Delta_CFI, Upper_Delta_CFI,
-        Mean_Delta_RMSEA, Lower_Delta_RMSEA, Upper_Delta_RMSEA,
-        Prop_Inv_CFI, Prop_Inv_RMSEA
-      )) %>%
-      fmt_number(columns = c(N_Runs), decimals = 0) %>%
-      tab_source_note(
-        md(
-          "**Interpretation:** Scalar invariance is typically supported when ΔCFI ≥ -0.01 and ΔRMSEA ≤ 0.015 between configural and scalar models. Proportions (not shown) correspond to the fraction of Monte Carlo samples satisfying these criteria across runs."
-        )
-      )
-  }
-  
-  # 4. Diagnostic Accuracy (ROC) ----------------------------------------
-  if (nrow(res_roc) > 0) {
-    summary_roc <- res_roc %>%
-      group_by(Group) %>%
-      summarise(
-        Mean_AUC      = mean(AUC),
-        AUC_Lower     = quantile(AUC, 0.025),
-        AUC_Upper     = quantile(AUC, 0.975),
-        Mean_Kappa    = mean(Kappa, na.rm = TRUE),
-        Median_Cutoff = median(Optimal_Cutoff),
-        Cutoff_Lower  = quantile(Optimal_Cutoff, 0.025),
-        Cutoff_Upper  = quantile(Optimal_Cutoff, 0.975),
-        Mean_Sens     = mean(Sensitivity),
-        Sens_Lower    = quantile(Sensitivity, 0.025),
-        Sens_Upper    = quantile(Sensitivity, 0.975),
-        Mean_Spec     = mean(Specificity),
-        Spec_Lower    = quantile(Specificity, 0.025),
-        Spec_Upper    = quantile(Specificity, 0.975)
-      ) %>%
-      mutate(
-        AUC_Est_CI    = sprintf("%.3f (%.3f, %.3f)", Mean_AUC,      AUC_Lower,     AUC_Upper),
-        Cutoff_Est_CI = sprintf("%.3f (%.3f, %.3f)", Median_Cutoff, Cutoff_Lower,  Cutoff_Upper),
-        Sens_Est_CI   = sprintf("%.3f (%.3f, %.3f)", Mean_Sens,     Sens_Lower,    Sens_Upper),
-        Spec_Est_CI   = sprintf("%.3f (%.3f, %.3f)", Mean_Spec,     Spec_Lower,    Spec_Upper)
-      )
-    
-    gt_roc <- summary_roc %>%
-      arrange(Group) %>%
-      gt() %>%
-      cols_label(
-        Group         = "Group",
-        AUC_Est_CI    = "AUC (95% CI)",
-        Mean_Kappa    = "Mean κ",
-        Cutoff_Est_CI = "Cut-off (95% CI)",
-        Sens_Est_CI   = "Sensitivity (95% CI)",
-        Spec_Est_CI   = "Specificity (95% CI)"
-      ) %>%
-      cols_hide(c(
-        Mean_AUC, AUC_Lower, AUC_Upper,
-        Median_Cutoff, Cutoff_Lower, Cutoff_Upper,
-        Mean_Sens, Sens_Lower, Sens_Upper,
-        Mean_Spec, Spec_Lower, Spec_Upper
-      )) %>%
-      fmt_number(columns = c(Mean_Kappa), decimals = 3) %>%
-      tab_source_note(
-        md(
-          "**Interpretation:** AUC 0.70–0.80 = *acceptable*, 0.80–0.90 = *excellent*, >0.90 = *outstanding* discrimination. Cohen's κ < 0.40 = *poor–fair*, 0.40–0.60 = *moderate*, 0.60–0.80 = *substantial*, >0.80 = *almost perfect* agreement. Higher sensitivity/specificity indicate better screening performance relative to PHQ-9 ≥ 10 as the reference."
-        )
-      )
-  }
-  
-  # Return a list of gt tables (entries may be NULL if corresponding data is empty)
+    )
   list(
-    fit        = gt_fit,
-    loadings   = gt_loadings,
-    invariance = gt_inv,
-    roc        = gt_roc
+    summary_source=summary_fit,
+    summary_gt=summary_gt
   )
 }
 
-save_mc_results <- function(res_fit, res_loadings, res_invariance,
-                            res_roc, res_roc_curves, safe_set_name) {
-  output_file <- paste0("mc_cfa_validation_", safe_set_name, ".rds")
-  saveRDS(
-    list(
-      fit        = res_fit,
-      loadings   = res_loadings,
-      invariance = res_invariance,
-      roc        = res_roc,
-      roc_curves = res_roc_curves
-    ),
-    file = here("statistical_analysis/output/objects/mc_cfa", output_file)
+# 2. Factor loadings summary gt ----------------------------------------
+summarise_loadings_gt <- function(res_loadings) {
+  if (is.null(res_loadings) || nrow(res_loadings) == 0) return(NULL)
+  
+  summary_loadings <- res_loadings %>%
+    group_by(lhs, rhs) %>%
+    summarise(
+      Mean_Std_Est = mean(est.std, na.rm = TRUE),
+      Lower_95     = quantile(est.std, 0.025, na.rm = TRUE),
+      Upper_95     = quantile(est.std, 0.975, na.rm = TRUE),
+      .groups      = "drop"
+    ) %>%
+    mutate(
+      `Loading (95% CI)` = format_est_ci(Mean_Std_Est, Lower_95, Upper_95)
+    )
+  
+  tab_load <- summary_loadings %>%
+    select(
+      Factor = lhs,
+      Item   = rhs,
+      `Loading (95% CI)`
+    )
+  
+  summary_gt<-gt(tab_load) %>%
+    tab_header(
+      title = "Standardized Factor Loadings Across Monte Carlo Samples"
+    ) %>%
+    cols_label(
+      Factor             = "Factor",
+      Item               = "Item",
+      `Loading (95% CI)` = "Standardized Loading (95% CI)"
+    ) %>%
+    tab_source_note(
+      source_note = paste(
+        "Interpretation guide: loadings ≥ 0.40 are often considered practically important,",
+        "with higher values indicating stronger association between item and factor."
+      )
+    )
+  list(
+    summary_source=summary_loadings,
+    summary_gt=summary_gt
   )
-  message(paste("\nFull Monte Carlo results saved to:", output_file))
+}
+
+# 3. Measurement invariance summary gt ---------------------------------
+summarise_invariance_gt <- function(res_invariance) {
+  if (is.null(res_invariance) || nrow(res_invariance) == 0) return(NULL)
+  
+  summary_inv <- res_invariance %>%
+    group_by(Group) %>%
+    summarise(
+      N_Runs           = n(),
+      Mean_Delta_CFI   = round(mean(Delta_CFI,   na.rm = TRUE), 4),
+      Max_Delta_CFI    = max(Delta_CFI,   na.rm = TRUE),
+      Prop_Inv_CFI     = mean(abs(Delta_CFI)   <= 0.010, na.rm = TRUE),
+      Mean_Delta_RMSEA = mean(Delta_RMSEA, na.rm = TRUE),
+      Prop_Inv_RMSEA   = mean(abs(Delta_RMSEA) <= 0.015, na.rm = TRUE),
+      .groups          = "drop"
+    )
+  
+  summary_gt<-gt(summary_inv) %>%
+    tab_header(
+      title = "Measurement Invariance: Scalar vs Configural"
+    ) %>%
+    cols_label(
+      Group            = "Grouping Variable",
+      N_Runs           = "Number of Runs",
+      Mean_Delta_CFI   = "Mean ΔCFI (Scalar - Configural)",
+      Max_Delta_CFI    = "Max ΔCFI",
+      Prop_Inv_CFI     = "Proportion |ΔCFI| ≤ 0.010",
+      Mean_Delta_RMSEA = "Mean ΔRMSEA (Scalar - Configural)",
+      Prop_Inv_RMSEA   = "Proportion |ΔRMSEA| ≤ 0.015"
+    ) %>%
+    fmt_number(
+      columns  = c(
+        Mean_Delta_CFI, Max_Delta_CFI, Prop_Inv_CFI,
+        Mean_Delta_RMSEA, Prop_Inv_RMSEA
+      ),
+      decimals = 3
+    ) %>%
+    tab_source_note(
+      source_note = paste(
+        "Interpretation guide: |ΔCFI| ≤ 0.010 and |ΔRMSEA| ≤ 0.015",
+        "are commonly used thresholds for supporting scalar invariance."
+      )
+    )
+  list(
+    summary_source=summary_inv,
+    summary_gt=summary_gt
+  )
+}
+
+# 4. ROC summary gt (all groups) ---------------------------------------
+summarise_roc_gt <- function(res_roc) {
+  if (is.null(res_roc) || nrow(res_roc) == 0) return(NULL)
+  
+  summary_roc <- res_roc %>%
+    group_by(Group) %>%
+    summarise(
+      N_Runs      = n(),
+      Mean_AUC    = mean(AUC, na.rm = TRUE),
+      Lower_AUC   = quantile(AUC, 0.025, na.rm = TRUE),
+      Upper_AUC   = quantile(AUC, 0.975, na.rm = TRUE),
+      Mean_Sens   = mean(Sensitivity, na.rm = TRUE),
+      Lower_Sens  = quantile(Sensitivity, 0.025, na.rm = TRUE),
+      Upper_Sens  = quantile(Sensitivity, 0.975, na.rm = TRUE),
+      Mean_Spec   = mean(Specificity, na.rm = TRUE),
+      Lower_Spec  = quantile(Specificity, 0.025, na.rm = TRUE),
+      Upper_Spec  = quantile(Specificity, 0.975, na.rm = TRUE),
+      Mean_Kappa  = mean(Kappa, na.rm = TRUE),
+      Lower_Kappa = quantile(Kappa, 0.025, na.rm = TRUE),
+      Upper_Kappa = quantile(Kappa, 0.975, na.rm = TRUE),
+      .groups     = "drop"
+    ) %>%
+    mutate(
+      `AUC (95% CI)`   = format_est_ci(Mean_AUC,   Lower_AUC,   Upper_AUC),
+      `Sens (95% CI)`  = format_est_ci(Mean_Sens,  Lower_Sens,  Upper_Sens),
+      `Spec (95% CI)`  = format_est_ci(Mean_Spec,  Lower_Spec,  Upper_Spec),
+      `Kappa (95% CI)` = format_est_ci(Mean_Kappa, Lower_Kappa, Upper_Kappa)
+    )
+  
+  tab_roc <- summary_roc %>%
+    select(
+      Group,
+      `AUC (95% CI)`,
+      `Sens (95% CI)`,
+      `Spec (95% CI)`,
+      `Kappa (95% CI)`,
+      N_Runs
+    )
+  
+  summary_gt<-gt(tab_roc) %>%
+    tab_header(
+      title = "Diagnostic Accuracy: ROC-based Metrics (PHQ-9 ≥ 10 as Benchmark)"
+    ) %>%
+    cols_label(
+      Group            = "Group",
+      `AUC (95% CI)`   = "AUC (95% CI)",
+      `Sens (95% CI)`  = "Sensitivity (95% CI)",
+      `Spec (95% CI)`  = "Specificity (95% CI)",
+      `Kappa (95% CI)` = "Cohen's Kappa (95% CI)",
+      N_Runs           = "Number of Runs"
+    ) %>%
+    tab_source_note(
+      source_note = paste(
+        "Interpretation guide: AUC 0.70–0.80 acceptable, 0.80–0.90 excellent, >0.90 outstanding.",
+        "Kappa > 0.60 indicates substantial agreement; >0.80 indicates almost perfect agreement."
+      )
+    )
+  list(
+    summary_source=summary_roc,
+    summary_gt=summary_gt
+  )
+}
+
+# 5. Latent factor correlations summary gt -----------------------------
+summarise_factor_corr_gt <- function(res_factor_corr) {
+  if (is.null(res_factor_corr) || nrow(res_factor_corr) == 0) return(NULL)
+  
+  summary_corr <- res_factor_corr %>%
+    group_by(F1, F2) %>%
+    summarise(
+      N_Runs     = n(),
+      Mean_Corr  = mean(Corr, na.rm = TRUE),
+      Lower_Corr = quantile(Corr, 0.025, na.rm = TRUE),
+      Upper_Corr = quantile(Corr, 0.975, na.rm = TRUE),
+      .groups    = "drop"
+    ) %>%
+    mutate(
+      `Corr (95% CI)` = format_est_ci(Mean_Corr, Lower_Corr, Upper_Corr)
+    )
+  
+  tab_corr <- summary_corr %>%
+    select(
+      F1,
+      F2,
+      `Corr (95% CI)`,
+      N_Runs
+    )
+  
+  summary_gt<-gt(tab_corr) %>%
+    tab_header(
+      title = "Latent Factor Correlations Across Monte Carlo Samples"
+    ) %>%
+    cols_label(
+      F1              = "Factor 1",
+      F2              = "Factor 2",
+      `Corr (95% CI)` = "Correlation (95% CI)",
+      N_Runs          = "Number of Runs"
+    ) %>%
+    tab_source_note(
+      source_note = paste(
+        "Latent factor correlations estimated from CFA models across Monte Carlo splits,",
+        "reported as mean and 95% Monte Carlo quantile interval."
+      )
+    )
+  list(
+    summary_source=summary_corr,
+    summary_gt=summary_gt
+  )
+}
+
+# 6. Focused ROC comparison: Overall vs Overall (Excl. 0-0) ------------
+summarise_overall_restricted_roc_gt <- function(res_roc) {
+  if (is.null(res_roc) || nrow(res_roc) == 0) return(NULL)
+  
+  comp_df <- res_roc %>%
+    filter(Group %in% c("Overall", "Overall (Excl. 0-0)")) %>%
+    group_by(Group) %>%
+    summarise(
+      N_Runs      = n(),
+      Mean_AUC    = mean(AUC, na.rm = TRUE),
+      Lower_AUC   = quantile(AUC, 0.025, na.rm = TRUE),
+      Upper_AUC   = quantile(AUC, 0.975, na.rm = TRUE),
+      Mean_Sens   = mean(Sensitivity, na.rm = TRUE),
+      Lower_Sens  = quantile(Sensitivity, 0.025, na.rm = TRUE),
+      Upper_Sens  = quantile(Sensitivity, 0.975, na.rm = TRUE),
+      Mean_Spec   = mean(Specificity, na.rm = TRUE),
+      Lower_Spec  = quantile(Specificity, 0.025, na.rm = TRUE),
+      Upper_Spec  = quantile(Specificity, 0.975, na.rm = TRUE),
+      Mean_Kappa  = mean(Kappa, na.rm = TRUE),
+      Lower_Kappa = quantile(Kappa, 0.025, na.rm = TRUE),
+      Upper_Kappa = quantile(Kappa, 0.975, na.rm = TRUE),
+      .groups     = "drop"
+    ) %>%
+    mutate(
+      `AUC (95% CI)`   = format_est_ci(Mean_AUC,   Lower_AUC,   Upper_AUC),
+      `Sens (95% CI)`  = format_est_ci(Mean_Sens,  Lower_Sens,  Upper_Sens),
+      `Spec (95% CI)`  = format_est_ci(Mean_Spec,  Lower_Spec,  Upper_Spec),
+      `Kappa (95% CI)` = format_est_ci(Mean_Kappa, Lower_Kappa, Upper_Kappa)
+    )
+  
+  if (nrow(comp_df) == 0) return(NULL)
+  
+  tab_comp <- comp_df %>%
+    select(
+      Group,
+      `AUC (95% CI)`,
+      `Sens (95% CI)`,
+      `Spec (95% CI)`,
+      `Kappa (95% CI)`,
+      N_Runs
+    )
+  
+  summary_gt<-gt(tab_comp) %>%
+    tab_header(
+      title = "ROC Comparison: Full Sample vs Restricted (Excl. 0-0)"
+    ) %>%
+    cols_label(
+      Group            = "Group",
+      `AUC (95% CI)`   = "AUC (95% CI)",
+      `Sens (95% CI)`  = "Sensitivity (95% CI)",
+      `Spec (95% CI)`  = "Specificity (95% CI)",
+      `Kappa (95% CI)` = "Cohen's Kappa (95% CI)",
+      N_Runs           = "Number of Runs"
+    ) %>%
+    tab_source_note(
+      source_note = paste(
+        "Comparison of ROC metrics between the full sample (\"Overall\") and the restricted sample",
+        "(\"Overall (Excl. 0-0)\") where participants with both SSQ-10 = 0 and PHQ-09 = 0",
+        "were excluded from the ROC calculation."
+      )
+    )
+  list(
+    summary_source=comp_df,
+    summary_gt=summary_gt
+  )
+}
+
+# Master wrapper: summarise_results ------------------------------------
+summarise_results <- function(res_fit,
+                              res_loadings,
+                              res_invariance,
+                              res_roc,
+                              res_factor_corr = NULL) {
+  gt_fit                    <- summarise_fit_gt(res_fit)
+  gt_loadings               <- summarise_loadings_gt(res_loadings)
+  gt_invariance             <- summarise_invariance_gt(res_invariance)
+  gt_roc                    <- summarise_roc_gt(res_roc)
+  gt_roc_overall_restricted <- summarise_overall_restricted_roc_gt(res_roc)
+  gt_factor_corr            <- summarise_factor_corr_gt(res_factor_corr)
+  
+  list(
+    gt_fit_source = gt_fit[['summary_source']],
+    fit        = gt_fit[['summary_gt']],
+    gt_loadings_source = gt_loadings[['summary_source']],
+    loadings   = gt_loadings[['summary_gt']],
+    gt_invariance_source = gt_invariance[['summary_source']],
+    invariance = gt_invariance[['summary_gt']],
+    gt_roc_source = gt_roc[['summary_source']],
+    roc        = gt_roc[['summary_gt']],
+    gt_roc_overall_restricted_source = gt_roc_overall_restricted[['summary_source']],
+    roc_overall_restricted        = gt_roc_overall_restricted[['summary_gt']],
+    gt_factor_correlations_source    = gt_factor_corr[['summary_source']],
+    factor_correlations    = gt_factor_corr[['summary_gt']]
+  )
 }

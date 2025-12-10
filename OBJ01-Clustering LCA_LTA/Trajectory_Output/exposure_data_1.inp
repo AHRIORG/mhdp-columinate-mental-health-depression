@@ -1,0 +1,28 @@
+TITLE:
+LCGA Trajectory Analysis - 1 Classes (No_Mum)
+DATA:
+FILE = "Trajectory_Output/
+exposure_data_1_636bc6706e96d728567c7f6a6dea5fbb.dat"; 
+VARIABLE:
+NAMES = USUBJID no_mum1 no_mum2 no_mum3 no_mum4 no_mum0; 
+ MISSING=.;
+   IDVARIABLE = USUBJID;
+  CLASSES = c(1);
+  USEVARIABLES = USUBJID no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+  CATEGORICAL = no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+ANALYSIS:
+
+      TYPE = MIXTURE;
+      ESTIMATOR = MLR; ! Maximum Likelihood Robust for categorical data
+      PROCESSORS = 4;
+      STARTS = 500 100; ! 500 random starts, 100 optimized to find global maximum
+    
+MODEL:
+
+      %OVERALL%
+      ! Single-class model: no latent class intercepts specified
+    
+OUTPUT:
+TECH11 TECH14 SAMPSTAT;
+PLOT:
+TYPE = PLOT3; SERIES = no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;

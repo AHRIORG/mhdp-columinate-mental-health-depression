@@ -1,0 +1,56 @@
+Mplus VERSION 9 DEMO (Mac)
+MUTHEN & MUTHEN
+12/09/2025  10:13 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  LCGA Trajectory Analysis - 1 Classes (No_Mum)
+  DATA:
+  FILE = "Trajectory_Output/
+  exposure_data_1_636bc6706e96d728567c7f6a6dea5fbb.dat";
+  VARIABLE:
+  NAMES = USUBJID no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+   MISSING=.;
+     IDVARIABLE = USUBJID;
+    CLASSES = c(1);
+    USEVARIABLES = USUBJID no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+    CATEGORICAL = no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+  ANALYSIS:
+
+        TYPE = MIXTURE;
+        ESTIMATOR = MLR; ! Maximum Likelihood Robust for categorical data
+        PROCESSORS = 4;
+        STARTS = 500 100; ! 500 random starts, 100 optimized to find global maximum
+
+  MODEL:
+
+        %OVERALL%
+        ! Single-class model: no latent class intercepts specified
+
+  OUTPUT:
+  TECH11 TECH14 SAMPSTAT;
+  PLOT:
+  TYPE = PLOT3; SERIES = no_mum1 no_mum2 no_mum3 no_mum4 no_mum0;
+
+*** ERROR in PLOT command
+  Missing x-values in the SERIES option for the process:
+  no_mum1 no_mum2 no_mum3 no_mum4 no_mum0
+
+Mplus VERSION 9 DEMO (Mac) has the following limitations:
+  Maximum number of dependent variables: 6
+  Maximum number of independent variables: 2
+  Maximum number of between variables: 2
+  Maximum number of continuous latent variables in time series analysis: 2
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2025 Muthen & Muthen
