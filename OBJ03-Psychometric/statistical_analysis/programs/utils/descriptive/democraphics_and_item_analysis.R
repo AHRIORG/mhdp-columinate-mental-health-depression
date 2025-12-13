@@ -100,6 +100,7 @@ vars_demog <- intersect(c("Age_Group", sex_var, "URBANCAT"), names(df_demog))
 vars_ses   <- intersect(c("SCHOOL", "EMPLOY", "FOODSEC", "GOVTGRNT"), names(df_demog))
 vars_fam   <- intersect(c("ORPHSTAT"), names(df_demog))
 vars_hlth  <- intersect(c("HIVSTRESC", "VIOLENCE", "DRNKALC"), names(df_demog))
+vars_ssq14 <- intersect(ssq14_items, names(df_demog))
 
 # Define labels as a NAMED LIST (using = not ~) to allow robust subsetting
 var_labels <- list(
@@ -129,7 +130,7 @@ make_tbl <- function(vars) {
       by = Depression_Status,
       label = relevant_labels, 
       statistic = list(all_categorical() ~ "{n} ({p}%)"),
-      missing = "ifany"
+      missing = "no"
     ) %>%
     add_overall() %>%
     italicize_levels() # Italicize levels, Labels remain Normal (default)
@@ -140,11 +141,12 @@ t1_demog <- make_tbl(vars_demog)
 t1_ses   <- make_tbl(vars_ses)
 t1_fam   <- make_tbl(vars_fam)
 t1_hlth  <- make_tbl(vars_hlth)
+t1_ssq14 <- make_tbl(vars_ssq14)
 
 # Stack them
 # Filter out NULL tables if variables were missing
-tbl_list <- list(t1_demog, t1_ses, t1_fam, t1_hlth)
-group_headers <- c("Demographics", "Socio-economics", "Family/Vulnerability", "Health & Risk")
+tbl_list <- list(t1_demog, t1_ses, t1_fam, t1_hlth, t1_ssq14)
+group_headers <- c("Demographics", "Socio-economics", "Family/Vulnerability", "Health & Risk", "SSQ-14 Item")
 
 # Keep only valid tables and headers
 valid_idx <- !sapply(tbl_list, is.null)
@@ -231,8 +233,10 @@ cor_tibble <- cor_results %>%
   rename(variable = Item) %>%
   mutate(
     # Force 3 digits for correlations using sprintf
-    Corr_PHQ_Label = paste0(sprintf("%.3f", r_pb_phq), " (p", ifelse(p_val_phq=="<0.001", "", "="), p_val_phq, ")"),
-    Corr_SSQ_Label = paste0(sprintf("%.3f", r_pb_ssq), " (p", ifelse(p_val_ssq=="<0.001", "", "="), p_val_ssq, ")")
+    Corr_PHQ_Label = paste0(sprintf("%.3f", r_pb_phq)#, " (p", ifelse(p_val_phq=="<0.001", "", "="), p_val_phq, ")"
+                            ),
+    Corr_SSQ_Label = paste0(sprintf("%.3f", r_pb_ssq)#, " (p", ifelse(p_val_ssq=="<0.001", "", "="), p_val_ssq, ")"
+                            )
   ) %>%
   select(variable, Corr_PHQ_Label, Corr_SSQ_Label)
 

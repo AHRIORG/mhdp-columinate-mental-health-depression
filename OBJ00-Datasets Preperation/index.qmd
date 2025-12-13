@@ -67,6 +67,8 @@ invisible(sapply(dirs_to_create, dir.create, recursive = TRUE, showWarnings = FA
 
 ```
 
+
+
 # Project Overview & Study Design
 
 The CO-LUMINATE dataset links individual-level mental health outcomes from specific clinical cohorts to longitudinal household data from the AHRI Health and Demographic Surveillance System (HDSS).

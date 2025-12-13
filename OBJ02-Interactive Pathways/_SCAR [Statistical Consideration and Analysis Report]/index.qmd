@@ -1,0 +1,66 @@
+---
+title: Mechanisms of Vulnerability - Behavioral Mediators in the Relationship Between Structural Adversity and Youth Mental Health
+subtitle: "**Statistical Consideration and Analysis Report (SCAR)**"
+
+authors:
+  - name: CO-LUMINATE DSU Team
+    affiliation: Africa Health Research Institute (AHRI)
+    city: Durban & Somokhele
+    country: South Africa
+    
+bibliography: references.bib
+---
+
+```{r setup, include=FALSE}
+#| echo: false
+## This chunk handles all package installations and loading for the factor analysis.
+require(here)
+### Load Helper Functions------------
+source(here("../../pipelines_and_functions/data_processing_and_description_funcs.R"))
+
+renv::snapshot()
+packages <- c("here", "conflicted", 
+              "tidyverse", "labelled", "reshape2",
+              "gtsummary", "gt", "gtreg", 
+              "scales", "ggsci", "patchwork"
+              )
+
+## Loop through the packages
+func_install_and_load(packages)
+renv::snapshot()
+conflict_prefer_all("dplyr",quiet=TRUE)
+rm(packages)
+```
+
+```{r figure-table-setup}
+#| echo: false
+## This chunk sets global options for figures and tables
+theme_gtsummary_compact()
+theme_gtsummary_journal(journal = "jama")
+options(scipen=999)
+```
+
+```{r}
+# Create directory for statistical analysis
+# Define the root directory name
+root_dir <- here("statistical_analysis")
+
+# Define the full list of directories to create
+# Use file.path for OS-independent path construction
+dirs_to_create <- c(
+  file.path(root_dir, "data", "metadata"),
+  file.path(root_dir, "data", "adam"),
+  file.path(root_dir, "programs/analysis"),
+  file.path(root_dir, "programs/utils"),
+  file.path(root_dir, "models"),
+  file.path(root_dir, "output", "table"),
+  file.path(root_dir, "output", "figures"),
+  file.path(root_dir, "output", "listing"),
+  file.path(root_dir, "output", "objects")
+)
+
+# Create all directories recursively
+# The 'showWarnings = FALSE' argument prevents warnings if the directories already exist
+invisible(sapply(dirs_to_create, dir.create, recursive = TRUE, showWarnings = FALSE))
+
+```

@@ -403,6 +403,9 @@ run_single_lcga <- function(config, input_data, out_dir, mod_dir) {
         left_join(dt_long %>% select(ID, RAW_ID) %>% distinct(), by = "ID") %>%
         rename(!!sym(id_var) := RAW_ID) %>%
         select(!!sym(id_var), everything(), -ID)
+      
+      # Save Adjudicated Data to CSV
+      write_csv(k_res$adjudicated_data, here(out_dir, glue("adjudicated_{target_var}_k{k}.csv")))
     }
     
     lcga_results$models[[paste0("k", k)]] <- k_res

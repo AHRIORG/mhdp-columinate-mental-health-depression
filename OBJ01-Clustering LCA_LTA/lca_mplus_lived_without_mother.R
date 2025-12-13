@@ -54,7 +54,7 @@ df_wide <- dt_childhood_exposure %>%
   # ====================================
 
 # === USER FILTER: Restrict to Ages 0, 1, 2, 3, 4 ===
-filter(EXPAGE %in% 1:5) %>%
+filter(EXPAGE %in% 1:10) %>%
   # =================================================================
 
 # === CRITICAL FIX: SELECT ONLY NECESSARY COLUMNS FOR PIVOT ===
@@ -75,7 +75,7 @@ pivot_wider(
   # === REORDER COLUMNS EXPLICITLY ===
   # Ensure columns are in the correct chronological order (0, 1, 2, 3, 4)
   # This matches the expected input for the SERIES command.
-  select(USUBJID, LWOM1, LWOM2, LWOM3, LWOM4, LWOM5)
+  select(any_of(c("USUBJID", "LWOM1", "LWOM2", "LWOM3", "LWOM4", "LWOM5", "LWOM6", "LWOM7", "LWOM8", "LWOM9", "LWOM10")))
 
 
 # Variable names for Mplus automation
@@ -130,7 +130,7 @@ lca_models <- lapply(k_classes, function(k) {
     OUTPUT = "TECH11 TECH14 SAMPSTAT;", # TECH11: VLMR, TECH14: BLRT
     
     # PLOT COMMAND: Updated to use explicit time scores (e.g., LWOM0(0))
-    PLOT = glue("TYPE = PLOT3; SERIES = {mplus_series_string};"),
+    # PLOT = glue("TYPE = PLOT3; SERIES = {mplus_series_string};"),
     
     # SAVEDATA COMMAND: Essential for Adjudication (Assigning individuals to classes)
     # SAVE = CPROB saves the posterior probabilities and the most likely class membership.
@@ -268,7 +268,7 @@ if (exists("fit_summary") && nrow(fit_summary) > 0 && sum(fit_summary$Classes ==
       geom_point(size = 3) +
       scale_y_continuous(labels = scales::percent, limits = c(0, 1)) +
       # X-axis breaks now reflect Age 0 to 4
-      scale_x_continuous(breaks = 0:4) + 
+      scale_x_continuous(breaks = 0:(length(names(df_wide))-1)) + 
       labs(
         title    = glue("Latent Trajectories of Parental Absence ({best_classes} Classes)"),
         subtitle = "Probability of Living Without Mother (Ages 0-4)",

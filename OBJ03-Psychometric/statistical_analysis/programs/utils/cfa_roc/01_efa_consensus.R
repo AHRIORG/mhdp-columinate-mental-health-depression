@@ -205,8 +205,77 @@ build_cfa_syntax <- function(factor_list) {
   syntax
 }
 
-select_mc_seeds <- function(valid_runs, signatures, winning_sig, n_mc_samples) {
+generate_cfa_syntax <- function(factor_list) {
+  if (is.null(factor_list) || length(factor_list) == 0) {
+    stop("factor_list is empty or NULL; cannot generate CFA syntax.")
+  }
+  
+  cfa_syntax_parts <- character(0)
+  
+  for (i in seq_along(factor_list)) {
+    items_i <- factor_list[[i]]
+    if (length(items_i) == 0) next
+    
+    cfa_syntax_parts <- c(
+      cfa_syntax_parts,
+      paste0("F", i, " =~ ", paste(items_i, collapse = " + "))
+    )
+  }
+  
+  paste(cfa_syntax_parts, collapse = "\n")
+}
+
+# Helper: select Monte Carlo seeds based on the winning signature
+select_mc_seeds <- function(valid_runs,
+                            winning_sig,
+                            n_mc_samples,
+                            target_method = NULL,
+                            target_n      = NULL,
+                            signatures    = NULL) {
+  if (is.null(valid_runs) || nrow(valid_runs) == 0) {
+    warning("valid_runs is empty; no seeds selected.")
+    return(integer(0))
+  }
+  
+  # If signatures are not provided, derive them from valid_runs
+  if (is.null(signatures)) {
+    # Prefer to use the method/number of factors if available
+    if (!is.null(target_method) && !is.null(target_n)) {
+      prefix <- if (target_method == "Kaiser") "k_factor_" else "p_factor_"
+      factor_cols <- paste0(prefix, seq_len(target_n))
+      factor_cols <- intersect(factor_cols, names(valid_runs))
+    } else {
+      # Fallback: try all Kaiser or all Parallel factor columns
+      k_cols <- grep("^k_factor_[0-9]+$", names(valid_runs), value = TRUE)
+      p_cols <- grep("^p_factor_[0-9]+$", names(valid_runs), value = TRUE)
+      if (length(k_cols) > 0) {
+        factor_cols <- k_cols
+      } else if (length(p_cols) > 0) {
+        factor_cols <- p_cols
+      } else {
+        stop("No factor columns found in valid_runs to derive signatures.")
+      }
+    }
+    
+    if (length(factor_cols) == 0) {
+      stop("No factor columns available to derive signatures.")
+    }
+    
+    signatures <- apply(
+      valid_runs[, factor_cols, drop = FALSE],
+      1,
+      paste,
+      collapse = "|"
+    )
+  }
+  
   target_seeds <- valid_runs$Seed[signatures == winning_sig]
+  
+  if (length(target_seeds) == 0) {
+    warning("No seeds matched the winning signature; returning empty vector.")
+    return(integer(0))
+  }
+  
   if (length(target_seeds) > n_mc_samples) {
     set.seed(123)
     sample(target_seeds, n_mc_samples)
@@ -214,3 +283,4 @@ select_mc_seeds <- function(valid_runs, signatures, winning_sig, n_mc_samples) {
     target_seeds
   }
 }
+

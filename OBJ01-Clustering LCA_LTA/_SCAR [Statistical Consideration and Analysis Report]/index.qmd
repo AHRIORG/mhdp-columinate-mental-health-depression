@@ -84,7 +84,7 @@ source(here("statistical_analysis/programs/utils/lcmm_master.R"))
 ## Univariate Analysis
 
 ```{r}
-vrbl=1
+vrbl<-1#------------------------------------------------------------------------
 ```
 ### `r batch_results[[vrbl]][["display_label"]]`
 
@@ -131,7 +131,7 @@ batch_results[[vrbl]][["models"]][["k4"]][["estimates_table"]]
 ```
 
 ```{r}
-vrbl<-2
+vrbl<-2#------------------------------------------------------------------------
 ```
 ### `r batch_results[[vrbl]][["display_label"]]`
 

@@ -151,53 +151,121 @@ mc_efa_results<-readRDS(
 
 ```{r, load-run-cfa-roc}
 #| include: false
+
+############################################################
+# SSQ / PHQ Monte Carlo CFA Validation
+# 07_batch.R - Batch runner for multiple configurations
+############################################################
+
 # Source the Helper functions for Psychometric Monte Carlo EFA Pipeline
 func_source_here_files(path_components = c("statistical_analysis", "programs", "utils", "cfa_roc"))
 
-## For SSQ-10
-invisible(
-  mc_cfa_roc_results_ssq10_1 <- run_ssq_phq_mc_pipeline(
-    data_path            = here("../../_private_use/data_management/data/co-luminate/adam/dt_psychometric.RData"),
-    data_object_name     = NULL,
-    target_set_name      = "SSQ-10 (Theoretical Depressive Symptoms)",
-    dataset_label        = "Isisekelo Sempilo",
-    manual_method        = NULL,
-    manual_n_factors     = NULL,
-    n_mc_samples         = 1000,
-    min_items_per_factor = 3,
-    manual_merge_pairs   = NULL
-  )
-)
+#' Run a batch of SSQ/PHQ Monte Carlo CFA pipelines
+#'
+#' This wraps several commonly used configurations, storing the results
+#' in a named list for convenient access. All runs share the same data_path
+#' and data_object_name but differ in target_set_name and factor settings.
+#'
+#' @param data_path character, path to the RData file (passed to run_ssq_phq_mc_pipeline)
+#' @param data_object_name optional, name of object inside the RData (or NULL)
+#' @param n_mc_samples integer, number of Monte Carlo samples per configuration
+#' @param min_items_per_factor integer, minimum items per factor before merging
+#' @return invisibly returns a named list of results (one element per run)
+run_ssq_phq_mc_batch <- function(
+  data_path            = here("../../_private_use/data_management/data/co-luminate/adam/dt_psychometric.RData"),
+  data_object_name     = NULL,
+  n_mc_samples         = 1000,
+  min_items_per_factor = 3
+) {
+  # Common label
+  dataset_label <- "Isisekelo Sempilo"
 
-invisible(
-  mc_cfa_roc_results_ssq10 <- run_ssq_phq_mc_pipeline(
-    data_path            = here("../../_private_use/data_management/data/co-luminate/adam/dt_psychometric.RData"),
-    data_object_name     = NULL,
-    target_set_name      = "SSQ-10 (Theoretical Depressive Symptoms)",
-    dataset_label        = "Isisekelo Sempilo",
-    manual_method        = "Parallel",
-    manual_n_factors     = 3,
-    n_mc_samples         = 1000,
-    min_items_per_factor = 3,
-    manual_merge_pairs   = NULL
-  )
-)
+  # Container for outputs
+  out_list <- list()
 
-## For PHQ-09
-invisible(
-  mc_cfa_roc_results_phq9 <- run_ssq_phq_mc_pipeline(
-    data_path            = here("../../_private_use/data_management/data/co-luminate/adam/dt_psychometric.RData"),
-    data_object_name     = NULL,
-    target_set_name      = "PHQ-09 (Original)",
-    dataset_label        = "Isisekelo Sempilo",
-    manual_method        = "Parallel",
-    manual_n_factors     = 3,
-    n_mc_samples         = 1000,
-    min_items_per_factor = 3,
-    manual_merge_pairs   = NULL
+  # ----------------------------------------------------------
+  # 1) SSQ-10, data-driven factors (no manual override)
+  # ----------------------------------------------------------
+  out_list$ssq10_data_driven <- invisible(
+    run_ssq_phq_mc_pipeline(
+      data_path            = data_path,
+      data_object_name     = data_object_name,
+      target_set_name      = "SSQ-10 (Theoretical Depressive Symptoms)",
+      dataset_label        = dataset_label,
+      manual_method        = NULL,
+      manual_n_factors     = NULL,
+      n_mc_samples         = n_mc_samples,
+      min_items_per_factor = min_items_per_factor,
+      manual_merge_pairs   = NULL
+    )
   )
-)
+
+  # ----------------------------------------------------------
+  # 2) SSQ-10, Parallel Analysis, 3 factors
+  # ----------------------------------------------------------
+  out_list$ssq10_pa_3f <- invisible(
+    run_ssq_phq_mc_pipeline(
+      data_path            = data_path,
+      data_object_name     = data_object_name,
+      target_set_name      = "SSQ-10 (Theoretical Depressive Symptoms)",
+      dataset_label        = dataset_label,
+      manual_method        = "Parallel",
+      manual_n_factors     = 3,
+      n_mc_samples         = n_mc_samples,
+      min_items_per_factor = min_items_per_factor,
+      manual_merge_pairs   = NULL
+    )
+  )
+
+  # ----------------------------------------------------------
+  # 3) PHQ-09, data-driven factors (no manual override)
+  # ----------------------------------------------------------
+  out_list$phq09_data_driven <- invisible(
+    run_ssq_phq_mc_pipeline(
+      data_path            = data_path,
+      data_object_name     = data_object_name,
+      target_set_name      = "PHQ-09 (Original)",
+      dataset_label        = dataset_label,
+      manual_method        = NULL,
+      manual_n_factors     = NULL,
+      n_mc_samples         = n_mc_samples,
+      min_items_per_factor = min_items_per_factor,
+      manual_merge_pairs   = NULL
+    )
+  )
+
+  # ----------------------------------------------------------
+  # 4) PHQ-09, Parallel Analysis, 3 factors
+  # ----------------------------------------------------------
+  out_list$phq09_pa_3f <- invisible(
+    run_ssq_phq_mc_pipeline(
+      data_path            = data_path,
+      data_object_name     = data_object_name,
+      target_set_name      = "PHQ-09 (Original)",
+      dataset_label        = dataset_label,
+      manual_method        = "Parallel",
+      manual_n_factors     = 3,
+      n_mc_samples         = n_mc_samples,
+      min_items_per_factor = min_items_per_factor,
+      manual_merge_pairs   = NULL
+    )
+  )
+
+  invisible(out_list)
+}
+
+# Example usage after sourcing all scripts:
+batch_res <- run_ssq_phq_mc_batch()
+# names(batch_res)
+# batch_res$ssq10_pa_3f$mc_results
 ```
+
+
+```{r, load-run-irt}
+func_source_here_files(path_components = c("statistical_analysis", "programs", "utils", "irt"))
+
+```
+
 
 ## Introduction
 
@@ -205,33 +273,33 @@ The primary aim of this study is to establish a rigorous, evidence-based diagnos
 
 ## Methods
 
-### Setting and Study Design
+**Setting and Study Design**
 
 This study is embedded within the Isisekelo Sempilo ("Foundation of Life") trial, a $2 \times 2$ factorial randomized controlled trial conducted by the Africa Health Research Institute (AHRI) in the uMkhanyakude district of rural KwaZulu-Natal, South Africa [@chidumwa2022isisekelo]. The trial aimed to evaluate interventions integrating HIV prevention and care within sexual and reproductive health services. The study setting is predominantly rural and characterized by high levels of poverty and unemployment, with over 85% of young adults aged 20–24 reported as unemployed. The AHRI demographic surveillance area covers a population of approximately 140,000, characterized by a high prevalence of HIV.
 
-### Participants and Sampling
+**Participants and Sampling**
 
 The trial utilized the AHRI demographic surveillance system as a sampling frame to randomly select 3,000 men and women aged 16–29 years, stratified by sex. Eligibility criteria for the main trial included residence within the surveillance area, willingness to provide informed consent, and willingness to participate in follow-up assessments including HIV testing via dried blood spot.
 
 For the present psychometric analysis, a specific subsample was selected based on age, restricting the cohort to participants aged 16–24 years, and data completeness, requiring concurrent baseline measurements for both the SSQ-14 and the PHQ-9. This selection ensures that the validation and harmonization analyses are conducted on a directly comparable cohort relevant to adolescent and young adult mental health.
 
-### Data Collection Procedures
+**Data Collection Procedures**
 
 Participants were invited to participate via home visits conducted by trained fieldworkers. Upon contact, the study purpose was explained, and informed consent was obtained (written consent for adults; assent plus parental/guardian consent for participants aged 16–17).
 
 Participants completed a structured baseline questionnaire administered electronically by fieldworkers using secure tablets. The interview included sociodemographic details, health care utilization history, and the full SSQ-14 and PHQ-9 instruments. To minimize social desirability bias and ensure comprehension, interviews were conducted in the local language, isiZulu, in private settings within the participant's household or a preferred community location. Clinical attendance data were captured electronically via the ClinicLink system across 11 clinics within the surveillance area.
 
-### Measures
+**Measures**
 
-**The Patient Health Questionnaire (PHQ-9)**
+*The Patient Health Questionnaire (PHQ-9)*
 
 The PHQ-9 is the depression module of the PRIME-MD diagnostic instrument, designed to align strictly with the criteria for Major Depressive Disorder (MDD) in the DSM-IV [@Kroenke2001]. It consists of 9 items scored on a 4-point Likert scale ranging from "Not at all" (0) to "Nearly every day" (3). It measures the severity of MDD symptoms over the past 2 weeks, covering domains such as anhedonia, depressed mood, sleep disturbance, fatigue, and suicidal ideation. While validated in South Africa, its etic approach may miss non-DSM manifestations of distress common in African contexts.
 
-**The Shona Symptom Questionnaire (SSQ-14)**
+*The Shona Symptom Questionnaire (SSQ-14)*
 
 The SSQ-14 represents an emic alternative. Developed in Zimbabwe, it was derived from ethnographic research into how Shona speakers articulate mental distress [@Patel1997]. It consists of 14 items with a binary (Yes/No) response format and measures Common Mental Disorders (CMD)—a blend of depression and anxiety—over the past 7 days. It includes indigenous idioms such as kufungisisa ("thinking too much") and somatic sensations. While culturally resonant, its binary format and mixing of anxiety and depression items present specific challenges for harmonisation with the polytomous, depression-specific PHQ-9 [@Haney2014].
 
-**Derivation of the SSQ-10 (Theoretical Subset)**
+*Derivation of the SSQ-10 (Theoretical Subset)*
 
 To enhance the specificity of the SSQ for depression screening, a theoretically derived subset (SSQ-10) was configured by retaining items that conceptually align with DSM-5 and ICD-11 criteria for a depressive episode, while excluding non-specific distress items [@Patel1997].
 
@@ -239,15 +307,15 @@ Ten items were retained: thinking too much (cognitive distress/rumination), diff
 
 Four items were excluded from the theoretical subset due to conceptual divergence from the core depression construct. Nightmares (SSQ04) were removed as they overlap with sleep disturbance but align more closely with anxiety or trauma. Seeing or hearing things (SSQ05) was excluded as it represents perceptual disturbances associated with severe or psychotic depression rather than core depressive criteria. Stomach ache (SSQ06) was excluded to reduce confounding with general somatic complaints common in this setting, while being frightened by trivial things (SSQ07) was removed as it serves as a marker for anxiety or hyperarousal rather than depression.
 
-### Data Analysis
+**Data Analysis**
 
 All statistical analyses were conducted using R Statistical Software [@rcoreteam2023].
 
-**Descriptive Statistics**
+*Descriptive Statistics*
 
 Descriptive statistics were computed to summarize the demographic and clinical characteristics of the sample. Categorical variables (e.g., biological sex, employment status, depression status) were reported as frequencies and percentages. Continuous variables (e.g., age, PHQ-9 total score) were summarized using means and standard deviations (SD). The distribution of item responses was examined to identify endorsement rates and potential floor or ceiling effects.
 
-**Structural Validity and Stability**
+*Structural Validity and Stability*
 
 To determine the most robust version of the SSQ for screening purposes, three item configurations were evaluated: the original 14-item scale (SSQ-14), a theoretically derived 10-item subset focusing on core depressive symptoms (SSQ-10), and the 8-item Dixon-Chibanda subset [@chibanda2019ssq8].
 
@@ -255,19 +323,19 @@ A Monte Carlo split-sample resampling approach was employed to rigorously test t
 
 Following the exploratory phase, the stability of the Consensus Model for the SSQ-10 was tested using Confirmatory Factor Analysis (CFA) on the hold-out data samples using the Weighted Least Squares Mean and Variance adjusted (WLSMV) estimator.
 
-**Reliability and Measurement Invariance**
+*Reliability and Measurement Invariance*
 
 Internal consistency reliability was calculated using both Cronbach's Alpha and McDonald's Omega Total to provide a comprehensive assessment of the scale's precision.
 
 To ensure the scale performs fairly across different populations, measurement invariance was assessed. This procedure evaluated whether the SSQ-10 measures depression consistently regardless of a participant's biological sex, age group, or depression severity status [@putnick2016measurement].
 
-**Diagnostic Cut-offs and Harmonisation**
+*Diagnostic Cut-offs and Harmonisation*
 
 To drive diagnostic cut-offs and harmonisation, an optimal screening cut-off for the SSQ-10 was established using the PHQ-9 as the clinical reference standard. Two complementary methods were applied. First, Receiver Operating Characteristic (ROC) analysis was used to identify the score threshold that maximized the balance between sensitivity and specificity. Second, Item Response Theory (IRT) was employed to overcome the limitations of simple binary cut-offs by linking the SSQ-10 and PHQ-9 onto a common latent metric of depression severity [@samejima1969estimation]. This allowed for the identification of the precise level of underlying depression corresponding to the PHQ-9 threshold and mapping it directly to the SSQ-10, creating a harmonized standard for classification [@kolen2014test].
 
 ## Results
 
-### Participant Characteristics
+**Participant Characteristics**
 
 The demographic and clinical characteristics of the study sample ($N=843$) are summarized in @tbl-demographics. The cohort included a relatively balanced distribution of biological sex, with 51% males and 49% females. The age distribution was skewed slightly towards young adults, with 57% of participants aged 20–24 years and 43% aged 17–19 years. The majority of participants resided in rural households (68%), while 28% lived in peri-urban areas and 3.1% in urban settings.
 
@@ -288,6 +356,7 @@ tables_1_2<-readRDS(list(table1 = table1, table2 = table2_final),
 
 ```{r}
 #| label: tbl-demographics
+#| tbl-cap: "Table 1: Demographic and Clinical Characteristics"
 tables_1_2$table1
 ```
 
@@ -295,20 +364,29 @@ tables_1_2$table1
 
 ```{r}
 #| label: tbl-item-dist
+#| tbl-cap: "Table 2: Distribution of SSQ-14 Items by Depression Status and Item-Total Correlations"
 tables_1_2$table2
 ```
 
 \newpage
 
-### Structural Validity and Stability
+**Structural Validity and Stability**
 
-We conducted an Exploratory Factor Analysis (EFA) to determine the optimal factor structure, comparing the performance of the original SSQ-14, the existing SSQ-08, and the theoretical SSQ-10. This comparative analysis is visualized in Figure 1, which displays the factor retention probabilities and counts across the three configurations based on 10,000 Monte Carlo resampling iterations. (@fig-factor-retention).
-
-### The Existing Structure (SSQ-14 and SSQ-08)
-
-For the established versions of the instrument, we observed a distinct methodological divergence between retention criteria. For the original SSQ-14 (@fig-factor-retention, Panel A), the Kaiser criterion [@kaiser1974index] favored a 2-factor solution in 87.5% of iterations, whereas Parallel Analysis (PA) [@hayton2004factor] suggested a more complex 3-factor structure (probability = 0.696).
+We conducted an Exploratory Factor Analysis (EFA) to determine the optimal factor structure, assessing the baseline stability of the established measures (PHQ-9 and SSQ-14) and investigating the theoretical SSQ-10 subset. The structural validity results are visualized in @fig-factor-retention, which displays the factor retention probabilities and counts across these three primary configurations based on
 
 ```{r}
+cm_ka_phq9<-gsub(
+  "Frequency: ","",
+  paste(word(gsub("\n\n","|",
+                  mc_efa_results[["PHQ-09 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_stability"]]@labels$caption),1,sep="\\|"))
+  )
+cm_pa_phq9<-gsub(
+  "Frequency: ","",
+  paste(word(gsub("\n\n","|",
+                  mc_efa_results[["PHQ-09 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]@labels$caption),1,sep="\\|"))
+  )
+
+
 cm_ka_ssq14<-gsub(
   "Frequency: ","",
   paste(word(gsub("\n\n","|",
@@ -330,6 +408,9 @@ cm_pa_ssq10<-gsub(
   paste(word(gsub("\n\n","|",
                   mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]@labels$caption),1,sep="\\|"))
   )
+
+
+
 cm_pa_ssq10_2<-(mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["raw_data"]]) |> filter(p_factor_f==2) |> 
   mutate(N=n()) |> 
   group_by(p_factor_1,p_factor_2,N) |> 
@@ -348,16 +429,13 @@ cm_pa_ssq10_2<-(mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["r
   ) |> pull(stats_str)
 ```
 
-Similarly, for the brief SSQ-08 (@fig-factor-retention, Panel C), the Kaiser criterion was unequivocal, suggesting a unidimensional (1-factor) structure in 100% of iterations. In contrast, PA continued to suggest multidimensionality, retaining 3 factors in 66.3% of the bootstrapped samples. Examination of the item clustering stability in Supplementary (Supp.) @fig-figure1_supplementary provides granular insight into these structural divergences. For the SSQ-14 (Supp. @fig-figure1_supplementary, Panel A), the 2-factor solution favored by the Kaiser criterion—which emerged as the consensus model with a stability of r cm_ka_ssq14—demonstrates high internal stability, with items consistently partitioning into distinct cognitive-somatic and affective subdomains. Most notably, thinking too much (SSQ01), difficulty concentrating (SSQ02), and irritability (SSQ03) co-occurred with greater than 95% probability across both extraction methods, identifying them as a robust core symptom cluster within the original tool.
-
-However, the 3-factor solution suggested by Parallel Analysis (Supp. @fig-figure1_supplementary, Panel B), which achieved a consensus stability of r cm_pa_ssq14, reveals that the added dimensionality in the full scale is largely driven by the distinct clustering of somatic and perceptual items (e.g., hallucinations, nightmares) into a separate factor. Critically, while the existing SSQ-08 subset (Supp. @fig-figure1_supplementary, Panel C) retains thinking too much (SSQ01), it excludes the highly stable partners of this core cluster, specifically SSQ02 and SSQ03. The omission of these clinically coherent neurocognitive and affective markers, despite their strong structural cohesion with the primary idiom of distress (kufungisisa), suggests a potential limitation in capturing the full breadth of depressive symptomatology in this specific adolescent cohort. In this cohort, Parallel Analysis of the SSQ-08 revealed factors largely splitting between 2-, 3-, and 4-factor solutions, yet yielded a winning consensus model with a stability of `r cm_pa_ssq08`. It is important to note, however, that the SSQ-08 was designed and validated to screen for broader Common Mental Disorders (CMD) in populations with high HIV prevalence, rather than depression exclusively. This finding explicitly validates the configuration of the SSQ-10, which retains this entire stable core cluster while systematically removing only the unstable 'noise' items (e.g., SSQ04–07) that drove the artifactual dimensionality in the original scale.
-
 ```{r, fig.height=6, fig.width=16}
 #| label: fig-factor-retention
-#| fig-cap: "Factor Retention Probabilities and Counts across SSQ Configurations. The figure displays the probability (left y-axis) and frequency count (right y-axis) of retaining a specific number of factors across 10,000 Monte Carlo split-sample iterations. Blue bars represent the Kaiser Criterion (Eigenvalue > 1), and yellow bars represent Parallel Analysis. **(A)** Original SSQ-14. **(B)** Theoretical SSQ-10 subset. **(C)** SSQ-08 subset. Error bars indicate 95% confidence intervals."
-retention_p1<-mc_efa_results[["SSQ-14 (Original)"]][["retention_analysis"]][["plot"]]
-retention_p2<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["retention_analysis"]][["plot"]]
-retention_p3<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_analysis"]][["plot"]]
+#| fig-cap: "Factor Retention Probabilities and Counts across Scale Configurations. The figure displays the probability (left y-axis) and frequency count (right y-axis) of retaining a specific number of factors across 10,000 Monte Carlo split-sample iterations. Blue bars represent the Kaiser Criterion (Eigenvalue > 1), and yellow bars represent Parallel Analysis. (A) PHQ-9 (Reference Standard). (B) Original SSQ-14. (C) Theoretical SSQ-10 subset. Error bars indicate 95% confidence intervals."
+retention_p1<-mc_efa_results[["PHQ-09 (Original)"]][["retention_analysis"]][["plot"]]
+retention_p2<-mc_efa_results[["SSQ-14 (Original)"]][["retention_analysis"]][["plot"]]
+retention_p3<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["retention_analysis"]][["plot"]]
+#retention_p3<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_analysis"]][["plot"]]
 
 ((retention_p1)+(retention_p2)+(retention_p3)) + 
   patchwork::plot_layout(guides = "collect",
@@ -379,115 +457,453 @@ retention_p3<-mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["retention_anal
     plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank()
+  )&
+  guides(color = "none", fill = "none")
+```
+
+We first evaluated the structural properties of the established measures to determine their baseline stability in this population.
+
+For the PHQ-9 reference standard (@fig-factor-retention, Panel A), a methodological divergence was observed. The Kaiser criterion provided robust support for a unidimensional structure, retaining 1 factor in 95.9% of iterations ($n=9586$). This 2-factor solution favored by the Kaiser criterion—which emerged with the consensus model demonstrates high internal stability of `r cm_ka_phq9`. Conversely, Parallel Analysis (PA) consistently suggested a 3-factor solution (probability = 0.900). The resulting 3-factor consensus model (stability: `r cm_pa_phq9`) partitioned the scale into three distinct domains: core affective symptoms (PHQ901–902), somatic/vegetative symptoms (PHQ903–905), and cognitive/suicidal symptoms (PHQ906–909). Despite this multidimensional potential, the overwhelming support for the 1-factor solution by the Kaiser criterion justifies the continued use of the PHQ-9 total score as a unidimensional benchmark for depression severity in this cohort. `(....suggest additions)`
+
+For the SSQ-14 (@fig-factor-retention, Panel B), the Kaiser criterion favored a 2-factor solution in 87.5% of iterations (stability: `r cm_ka_ssq14`), demonstrating high internal stability with items consistently partitioning into distinct cognitive-somatic and affective subdomains. Most notably, thinking too much (SSQ01), difficulty concentrating (SSQ02), and irritability (SSQ03) co-occurred with greater than 95% probability, identifying them as a robust core symptom cluster. However, the 3-factor solution suggested by Parallel Analysis (probability = 0.696; stability: `r cm_pa_ssq14`) revealed that the added dimensionality was largely driven by the distinct clustering of somatic and perceptual items (e.g., hallucinations, nightmares) into a separate "noise" factor.
+
+<!-- Examination of the item clustering stability in @fig-figure1_supplementary provides granular insight into these structural divergences. For the SSQ-14 (@fig-figure1_supplementary, Panel A), the 2-factor solution favored by the Kaiser criterion—which emerged as the consensus model with a stability of `r cm_ka_ssq14` demonstrates high internal stability, with items consistently partitioning into distinct cognitive-somatic and affective subdomains. Most notably, thinking too much (SSQ01), difficulty concentrating (SSQ02), and irritability (SSQ03) co-occurred with greater than 95% probability across both extraction methods, identifying them as a robust core symptom cluster within the original tool. -->
+
+<!-- However, the 3-factor solution suggested by Parallel Analysis (@fig-figure1_supplementary, Panel B), which achieved a consensus stability of `r cm_pa_ssq14`, reveals that the added dimensionality in the full scale is largely driven by the distinct clustering of somatic and perceptual items (e.g., hallucinations, nightmares) into a separate factor.  -->
+
+<!-- This finding explicitly validates the configuration of the SSQ-10, which retains this entire stable core cluster while systematically removing only the unstable 'noise' items (e.g., SSQ04–07) that drove the artifactual dimensionality in the original scale. -->
+
+```{r, fig.height=14, fig.width=12}
+#| label: fig-figure1
+#| fig-cap: "Item Clustering Stability and Co-occurrence Probabilities for Existing Structures. Heatmaps illustrate the probability of item pairs co-occurring within the same factor across 10,000 Monte Carlo replications. (A) PHQ-9 using Parallel Analysis (3-factor solution), showing separation into affective, somatic, and cognitive domains. (B) SSQ-10 using the Parallel Criterion (3-factor solution), demonstrating a stable core cluster of neurocognitive items (SSQ01–03). Note the emergence of a singleton factor driven solely by SSQ08 (Poor sleep), indicative of a structural artifact."
+
+# A: PHQ-09, Parallel
+p1_parallel_phq9 <- make_panel(
+  scale_key      = "PHQ-09 (Original)",
+  method         = "Parallel",
+  caption_prefix = "3-Factor Parallel Concensus Model:",
+  legend_position = NULL,
+  axes_collect_y  = FALSE,
+  drop_guides     = TRUE
+)
+
+# B: SSQ-10, Parallel
+p1_parallel_ssq10 <- make_panel(
+  scale_key      = "SSQ-10 (Theoretical Depressive Symptoms)",
+  method         = "Parallel",
+  caption_prefix = "2-Factor Kaiser Concensus Model:",
+  legend_position = NULL,
+  axes_collect_y  = FALSE,
+  drop_guides     = TRUE
+)
+
+# Final combined figure with A/B tags
+(p1_parallel_phq9 / p1_parallel_ssq10) +
+  patchwork::plot_layout(guides = "collect", axes = "collect_y")+
+  patchwork::plot_annotation(
+    title      = NULL,
+    # if you're still using custom A "" B "" C "" tagging:
+    tag_levels = list(c("(A)", "", "(B)", ""))
+  ) &
+  ggplot2::theme(
+    plot.tag = ggplot2::element_text(face = "bold", size = 16),  # style for A/B/C
+    legend.position = "bottom",
+    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
+    panel.grid.major.x = ggplot2::element_blank(),
+    panel.grid.minor.x = ggplot2::element_blank()
   )
 ```
 
-### The Theoretical Subset Divergence (SSQ-10)
 
-The theoretical SSQ-10 subset (@fig-factor-retention, Panel B) exhibited a similar but pronounced conflict between methods. The Kaiser criterion strongly supported a unidimensional structure, retaining 1 factor in 83.1% of iterations ($n=8311$). Conversely, PA suggested a 3-factor solution in 72.2% of iterations ($n=7218$). This robust statistical disagreement—with one method suggesting a single score and the other suggesting three distinct sub-scales—necessitated a deeper investigation to determine whether the third factor represented a substantive latent construct or a statistical artifact.
+```{r, fig.height=17, fig.width=15}
+#| label: fig-figure1_supplementary
+#| fig-cap: "Item Clustering Stability and Co-occurrence Probabilities for Existing Structures. Heatmaps illustrate the probability of item pairs co-occurring within the same factor across 10,000 Monte Carlo replications. (A) SSQ-14 using the Kaiser Criterion (2-factor solution), demonstrating a stable core cluster of neurocognitive items (SSQ01–03). (B) SSQ-14 using Parallel Analysis (3-factor solution), revealing a distinct somatic/perceptual factor (SSQ04–07)."
+# B: SSQ-14, Kaiser
+p1_kaiser_ssq14 <- make_panel(
+  scale_key      = "SSQ-14 (Original)",
+  method         = "Kaiser",
+  caption_prefix = "2-Factor Kaiser Concensus Model:",
+  legend_position = NULL,
+  axes_collect_y  = FALSE,
+  drop_guides     = TRUE
+)
 
-###  Artifact Investigation and Resolution
+# C: SSQ-14, Parallel
+p2_parralel_ssq4 <- make_panel(
+  scale_key      = "SSQ-14 (Original)",
+  method         = "Parallel",
+  caption_prefix = "3-Factor Parallel Concensus Model:",
+  legend_position = NULL,
+  axes_collect_y  = FALSE,
+  drop_guides     = FALSE
+)
 
-To adjudicate the conflicting retention suggestions for the SSQ-10, we examined the clustering of items within the 3-factor solution suggested by Parallel Analysis (consensus stability: `r cm_pa_ssq10`). As illustrated in @fig-heatmap-ssq10-pa (Panel A), the factor loading pattern revealed a distinct anomaly: while two stable factors emerged representing cognitive and affective symptoms (Factors 1 and 2), the third dimension was revealed to be a "singleton" factor comprised solely of poor sleep (SSQ08). This item was separated from both the cognitive (SSQ01–SSQ03) and general affective (SSQ09–SSQ14) clusters. However, closer inspection of the co-occurrence probabilities reveals that poor sleep (SSQ08) co-occurs significantly more often with the affective items (Factor 1: SSQ09–SSQ14) than with the cognitive items (Factor 2: SSQ01–SSQ03). Specifically, Factor 3 exhibited an average co-occurrence of 29.4% with Factor 1 items compared to only 0.3% with Factor 2 items. This pattern suggests that while statistically isolated in the 3-factor solution, the item shares more residual variance with the affective domain, and the isolation is likely driven by item-specific variance or "noise" rather than a substantive multidimensional trait.
-
-Given that a single-item factor lacks theoretical parsimony, we evaluated the stability of the 2-factor solution as the next most plausible structure. Although the 2-factor solution was suggested as the primary structure in only 9% ($899/10,000$) of the initial Parallel Analysis iterations, deeper investigation revealed it to be highly robust when statistical artifacts were resolved. Specifically, the consensus stability for this 2-factor configuration was `r cm_pa_ssq10_2`. This finding confirms that once the artifactual singleton factor is discounted, the SSQ-10 stabilizes into two robust dimensions: a cognitive-functional factor and an affective-emotional factor.
-
-```{r, fig.height=8, fig.width=14}
-#| label: fig-heatmap-ssq10-pa
-#| fig-cap: "Heatmap and Cluster Stability for the SSQ-10 3-Factor Solution (Parallel Analysis). (A) Co-occurrence probability heatmap showing three distinct clusters. (B) Membership probability plot confirming the separation of items. Note the emergence of a singleton factor driven solely by SSQ08 (Poor sleep), indicative of a structural artifact."
-
-cooccurrence_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
-stability_p<-mc_efa_results[["SSQ-10 (Theoretical Depressive Symptoms)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
-
-((cooccurrence_p)+(stability_p&ggsci::scale_fill_jco())) + 
-  patchwork::plot_layout(
-    guides = "collect",
-    axes = "collect_y") +
+# Final combined figure with A/B tags
+(p1_kaiser_ssq14 / p2_parralel_ssq4) +
+  patchwork::plot_layout(guides = "collect", axes = "collect_y")+
   patchwork::plot_annotation(
-    title=NULL,
-    tag_level="A",
-    tag_prefix = "(",
-    tag_suffix = ")"
-    ) &
-  ggplot2::theme_minimal(base_size = 16) & 
+    title      = NULL,
+    # if you're still using custom A "" B "" C "" tagging:
+    tag_levels = list(c("(A)", "", "(B)", ""))
+  ) &
   ggplot2::theme(
+    plot.tag = ggplot2::element_text(face = "bold", size = 16),  # style for A/B/C
     legend.position = "bottom",
-    legend.justification = "left",
-    axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
-    )
+    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
+    panel.grid.major.x = ggplot2::element_blank(),
+    panel.grid.minor.x = ggplot2::element_blank()
+  )
 ```
 
+**The Theoretical Subset Divergence (SSQ-10)**
+
+The theoretical SSQ-10 subset (@fig-factor-retention, Panel C) exhibited a similar but pronounced conflict between methods. The Kaiser criterion strongly supported a unidimensional structure, retaining 1 factor in 83.1% of iterations ($n=8311$). Conversely, PA suggested a 3-factor solution in 72.2% of iterations ($n=7218$). This robust statistical disagreement—with one method suggesting a single score and the other suggesting three distinct sub-scales—necessitated a deeper investigation to determine whether the third factor represented a substantive latent construct or a statistical artifact.
+
+**Artifact Investigation and Resolution**  
+
+To adjudicate the conflicting retention suggestions for the SSQ-10, we examined the clustering of items within the 3-factor solution suggested by Parallel Analysis (consensus stability: `r cm_pa_ssq10`). As illustrated in @fig-heatmap-ssq10-pa (Panel A), the factor loading pattern revealed a distinct anomaly: while two stable factors emerged representing cognitive and affective symptoms (Factors 1 and 2), the third dimension was revealed to be a "singleton" factor comprised solely of poor sleep (SSQ08). This item was separated from both the cognitive (SSQ01–SSQ03) and general affective (SSQ09–SSQ14) clusters. However, closer inspection of the co-occurrence probabilities reveals that poor sleep (SSQ08) co-occurs significantly more often with the affective items (Factor 1: SSQ09–SSQ14) than with the cognitive items (Factor 2: SSQ01–SSQ03). Specifically, Factor 3 exhibited an average co-occurrence of 29.4% with Factor 1 items compared to only 0.3% with Factor 2 items. This pattern suggests that while statistically isolated in the 3-factor solution, the item shares more residual variance with the affective domain, and the isolation is likely driven by item-specific variance or "noise" rather than a substantive multidimensional trait.
+Given that a single-item factor lacks theoretical parsimony, we evaluated the stability of the 2-factor solution as the next most plausible structure. Although the 2-factor solution was suggested as the primary structure in only 9% ($899/10,000$) of the initial Parallel Analysis iterations, deeper investigation revealed it to be highly robust when statistical artifacts were resolved. Specifically, the consensus stability for this 2-factor configuration was `r cm_pa_ssq10_2`. This finding confirms that once the artifactual singleton factor is discounted, the SSQ-10 stabilizes into two robust dimensions: a cognitive-functional factor and an affective-emotional factor.
+
+```{r, fig.height=8, fig.width=16}
+#| label: fig-heatmap-ssq10-pa
+#| fig-cap: "Heatmap and Cluster Stability for the SSQ-10 3-Factor Solution (Parallel Analysis). (B) Membership probability plot confirming the separation of items. (A) Co-occurrence probability heatmap showing three distinct clusters. Note the emergence of a singleton factor driven solely by SSQ08 (Poor sleep), indicative of a structural artifact."
+
+set="SSQ-10 (Theoretical Depressive Symptoms)"
+cooccurrence_p <- mc_efa_results[[set]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
+stability_p    <- mc_efa_results[[set]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
+
+# Build caption from the existing caption in stability_p
+cap_raw       <- gsub("\n\n", "\n", c(stability_p@labels$caption))
+cap_extracted <- paste(word(set,1,sep=" "),"3-Factor Parallel Concensus Model:", cap_raw)
+
+((stability_p&ggsci::scale_fill_jama()&ggplot2::labs(caption = NULL))+(cooccurrence_p)) +
+  patchwork::plot_layout(widths = c(1,1),guides = "collect", axes = "collect_y")+
+  patchwork::plot_annotation(
+    caption = cap_extracted,
+    tag_levels = "A"
+  ) &
+  ggplot2::labs(
+    title      = NULL,
+    subtitle      = NULL)&
+  ggplot2::theme(
+    plot.tag = ggplot2::element_text(face = "bold", size = 16),  # style for A/B/C
+    legend.position = "bottom",
+    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
+    panel.grid.major.x = ggplot2::element_blank(),
+    panel.grid.minor.x = ggplot2::element_blank()
+  )
+```
+
+**Other SSQ-14 subset (SSQ-08)**
+
+In addition, we also examined the SSQ-08, a brief subset originally developed and validated for screening Common Mental Disorders (CMD) in populations with high HIV prevalence [@chibanda2019ssq8], a context that aligns closely with our study setting. Similar to the other versions, the Kaiser criterion was unequivocal, suggesting a unidimensional (1-factor) structure in 100% of iterations (Supplementary @fig-ssq08-validity, Panel A). In contrast, PA continued to suggest multidimensionality, retaining 3 factors in 66.3% of the Monte Carlo samples.
+
+Critically, as illustrated in the membership and heatmap plots in Supplementary @fig-ssq08-validity (Panels B & C), while the existing SSQ-08 subset retains thinking too much (SSQ01), it excludes the highly stable partners of this core cluster, specifically SSQ02 and SSQ03. The omission of these clinically coherent neurocognitive and affective markers, despite their strong structural cohesion with the primary idiom of distress (kufungisisa), suggests a potential limitation in capturing the full breadth of depressive symptomatology in this specific adolescent cohort. This finding explicitly validates the configuration of the SSQ-10, which retains this entire stable core cluster while systematically removing only the unstable 'noise' items (e.g., SSQ04–07) that drove the artifactual dimensionality in the original scale.
+
+```{r, fig.height=6, fig.width=16}
+#| label: fig-ssq08-validity
+#| fig-cap: "Structural Validity of the SSQ-08 Subset. (A) Factor retention probabilities comparing Kaiser and Parallel Analysis. (B) Membership probability plot for the 3-factor Parallel Analysis solution. (C) Co-occurrence heatmap illustrating item clustering."
+
+set="SSQ-08 (Dixon Chibanda et.al)"
+cooccurrence_p <- mc_efa_results[[set]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
+stability_p    <- mc_efa_results[[set]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
+retention_p1<-mc_efa_results[[set]][["retention_analysis"]][["plot"]]+ 
+  ggsci::scale_fill_jco()
+# Build caption from the existing caption in stability_p
+cap_raw       <- gsub("\n\n", "\n", c(stability_p@labels$caption))
+cap_extracted <- paste(word(set,1,sep=" "),"3-Factor Parallel Concensus Model:", cap_raw)
+
+((retention_p1)+(stability_p&ggsci::scale_fill_jama()&ggplot2::labs(caption = NULL))+(cooccurrence_p)) +
+  patchwork::plot_layout(widths = c(1,1,1),guides = "collect", axes = "collect_y")+
+  patchwork::plot_annotation(
+    caption = cap_extracted,
+    tag_levels = "A"
+  ) &
+  ggplot2::labs(
+    title      = NULL,
+    subtitle      = NULL)&
+  ggplot2::theme(
+    plot.tag = ggplot2::element_text(face = "bold", size = 16),  # style for A/B/C
+    legend.position = "bottom",
+    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
+    panel.grid.major.x = ggplot2::element_blank(),
+    panel.grid.minor.x = ggplot2::element_blank()
+  )
+```
+
+**Confirmatory Validation and Model Comparison**
+
+Following the discovery phase, we subjected the identified structures to rigorous testing using Confirmatory Factor Analysis (CFA) with the Weighted Least Squares Mean and Variance adjusted (WLSMV) estimator.
+
+*Model Fit and Scoring Justification*
+
+We evaluated the stability and fit of the 1-Factor and 2-Factor models for both the SSQ-10 and the PHQ-9 reference standard across 10,000 Monte Carlo samples. @tbl-model-comp presents the global fit indices, internal consistency reliability, and latent factor correlations.
+
+For the PHQ-9, while the 1-Factor model showed excellent CFI (0.994), the RMSEA was marginal (0.076), with only 64.8% of samples meeting the $\le$ 0.08 threshold. The 2-Factor model improved the RMSEA to 0.049. However, the high correlation between the two factors ($\phi = 0.872$) and the overlapping reliability estimates ($\alpha$ & $\omega$ > .90 for both total and subscales, with 95% CIs consistently excluding values below .90) support the retention of the unidimensional scoring convention.
+
+For the SSQ-10, the contrast was more pronounced. The 1-Factor model demonstrated a poor RMSEA of 0.091 (95% CI: 0.075, 0.107), with only 7.6% of replications indicating acceptable fit. In contrast, the 2-Factor consensus model achieved a near-perfect fit (CFI = 1.000; RMSEA = 0.010), with 100% of samples meeting adequacy thresholds. Despite this structural distinctness, the moderate-to-strong factor correlation ($\phi = 0.792$) and high internal consistency for both the global scale ($\alpha$ & $\omega$ > .90; 95% CIs > .96) and subscales (all 95% CI lower bounds > .93) suggest that the total score remains a meaningful metric for general depression screening, capturing a cohesive underlying construct despite the multidimensional nuances.
+
+<!-- We first evaluated the 1-factor model suggested by the Kaiser criterion.  -->
+<!-- While parsimonious, the fit indices for this model were mixed.  -->
+<!-- Although the Comparative Fit Index (CFI) indicated a good fit (CFI = 0.992; 95% CI: 0.988, 0.995), the Root Mean Square Error of Approximation (RMSEA) suggested a suboptimal fit (RMSEA = 0.091; 95% CI: 0.075, 0.107).  -->
+<!-- Notably, only 7.6% of the Monte Carlo samples achieved an RMSEA $\le$ 0.08, indicating that a strictly unidimensional framework may not adequately capture the complexity of the data structure [@hu1999cutoff]. -->
+<!-- Subsequently, we tested the two-factor consensus model derived from the exploratory phase.  -->
+<!-- As detailed in @tbl-model-comp, this model yielded superior and near-perfect fit statistics compared to the unidimensional alternative.  -->
+<!-- The improvement in RMSEA was substantial, dropping to 0.010 (95% CI: 0.000, 0.035), with 100% of samples meeting the $\le$ 0.08 benchmark.  -->
+<!-- This confirms that modeling the distinct cognitive and affective dimensions provides a significantly more accurate representation of the underlying symptom structure.  -->
+<!-- Despite the statistical superiority of the two-factor model, the practical utility of the instrument relies on its scoring simplicity.  -->
+<!-- We observed a high correlation between the two latent factors ($\phi > .80$), suggesting that while the factors are distinct, they are strongly related and likely tap into a higher-order construct of general psychological distress.  -->
+<!-- Consequently, the use of a single summative score for depression screening remains statistically justifiable [@mcneish2018thanks]. -->
 
 ```{r, fig.height=8, fig.width=14}
 #| label: tbl-model-comp
-#| fig-cap: "Table 3: Model Comparison (1-Factor vs 2-Factor)"
+#| tbl-cap: "Model Comparison (1-Factor vs 2-Factor) Across Monte Carlo Samples. Global Fit Indices, Latent Factor Correlations, and Internal Consistency Reliability for PHQ-9 and SSQ-10. Fit indices presented with 95% Confidence Intervals. Proportions represent the fraction of Monte Carlo samples meeting recommended thresholds (CFI ≥ 0.90, RMSEA ≤ 0.08)."
 #| warning: false
 
-f1_fit_ssq10<-mc_cfa_roc_results_ssq10_1[["plot_objects"]][["fit_indices"]]+labs(title = "1-Factor Solution",caption = NULL)
-f2_fit_ssq10<-mc_cfa_roc_results_ssq10[["plot_objects"]][["fit_indices"]]+labs(title = "2-Factor Solution")
-
-fit_figure<-((f1_fit_ssq10)/(f2_fit_ssq10)) +
-  patchwork::plot_layout(
-    guides = "collect",
-    axes = "collect_x") +
-  patchwork::plot_annotation(
-    title=NULL,
-    tag_level="A",
-    tag_prefix = "(",
-    tag_suffix = ")"
-    ) &
-  ggsci::scale_fill_jco() &
-  ggplot2::theme_minimal(base_size = 16) & 
-  ggplot2::theme(
-    legend.position = "bottom",
-    legend.justification = "left",
-    axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
+# Helper to build CFA stability tables for a 1-factor vs 2-factor solution
+build_cfa_stability_table <- function(results_1factor, results_2factor) {
+  
+  # Fit indices -------------------------------------------------------------
+  fit_tbl <-
+    dplyr::bind_rows(
+      results_1factor[["gt_tables"]][["gt_fit_source"]] |>
+        dplyr::mutate(factor = "1-Factor"),
+      results_2factor[["gt_tables"]][["gt_fit_source"]] |>
+        dplyr::mutate(factor = "2-Factor")
+    ) |>
+    dplyr::mutate(
+      Prop_Good_CFI   = sprintf("%1.1f", Prop_Good_CFI * 100),
+      Prop_Good_RMSEA = sprintf("%1.1f", Prop_Good_RMSEA * 100)
+    ) |>
+    dplyr::select(
+      factor,
+      `CFI (95% CI)`, Prop_Good_CFI,
+      `RMSEA (95% CI)`, Prop_Good_RMSEA
     )
+  
+  # Factor correlations (only for 2-factor solution) -----------------------
+  factor_corr_tbl <-
+    results_2factor[["gt_tables"]][["gt_factor_correlations_source"]] |>
+    dplyr::transmute(
+      `Factors Corr (95% CI)` = `Corr (95% CI)`,
+      factor = "2-Factor"
+    )
+  
+  # Reliability: collapse scales per solution ------------------------------
+  reliability_tbl <-
+    dplyr::bind_rows(
+      results_2factor[["gt_tables"]][["gt_reliability_source"]] |>
+        dplyr::mutate(factor = "2-Factor"),
+      results_1factor[["gt_tables"]][["gt_reliability_source"]] |>
+        dplyr::mutate(factor = "1-Factor")
+    ) |>
+    dplyr::select(factor, Scale, `Alpha (95% CI)`, `Omega (95% CI)`) |>
+    dplyr::group_by(factor) |>
+    dplyr::summarise(
+      `Alpha (95% CI)` = paste0(Scale, ": ", `Alpha (95% CI)`, collapse = "\n"),
+      `Omega (95% CI)` = paste0(Scale, ": ", `Omega (95% CI)`, collapse = "\n"),
+      .groups = "drop"
+    )
+  
+  # Combine, reshape, and create row groups --------------------------------
+  combined <- fit_tbl |>
+    dplyr::left_join(factor_corr_tbl, by = "factor") |>
+    dplyr::left_join(reliability_tbl, by = "factor") |>
+    dplyr::rename(
+      Solution         = factor,
+      `% CFI ≥ 0.90`   = Prop_Good_CFI,
+      `% RMSEA ≤ 0.08` = Prop_Good_RMSEA
+    )
+  
+  combined_long <- combined |>
+    tidyr::pivot_longer(
+      cols      = -Solution,
+      names_to  = "Measure",
+      values_to = "Statistic"
+    ) |>
+    dplyr::mutate(
+      Group = dplyr::case_when(
+        Measure %in% c("CFI (95% CI)", "% CFI ≥ 0.90",
+                       "RMSEA (95% CI)", "% RMSEA ≤ 0.08") ~ "Fit indices",
+        Measure %in% c("Alpha (95% CI)", "Omega (95% CI)") ~ "Reliability",
+        Measure %in% c("Factors Corr (95% CI)") ~ "Factor correlations",
+        TRUE ~ "Other"
+      ),
+      Measure = factor(
+        Measure,
+        levels = c(
+          "CFI (95% CI)", "% CFI ≥ 0.90",
+          "RMSEA (95% CI)", "% RMSEA ≤ 0.08",
+          "Alpha (95% CI)", "Omega (95% CI)",
+          "Factors Corr (95% CI)"
+        )
+      ),
+      Group = factor(
+        Group,
+        levels = c("Fit indices", "Reliability", "Factor correlations", "Other")
+      )
+    ) |>
+    dplyr::arrange(Group, Measure)
+  
+  combined_long |>
+    tidyr::pivot_wider(
+      names_from  = Solution,
+      values_from = Statistic
+    ) |>
+    dplyr::mutate(
+      Measure = as.character(Measure),
+      Group   = as.character(Group)
+    ) |>
+    dplyr::select(Group, Measure, dplyr::everything())
+}
 
-(mc_cfa_roc_results_ssq10_1[["gt_tables"]][["gt_fit_source"]]|> 
-  mutate(factor="1-Factor")) |> 
-  bind_rows(
-    mc_cfa_roc_results_ssq10[["gt_tables"]][["gt_fit_source"]]|> 
-      mutate(factor="2-Factor")
-    ) |> 
-  select(factor,`CFI (95% CI)`,`RMSEA (95% CI)`,Prop_Good_CFI,Prop_Good_RMSEA) |> 
-  set_variable_labels(
-    factor="Factor",
-    Prop_Good_CFI="Prop. CFI ≥ 0.90",
-    Prop_Good_RMSEA="Prop. RMSEA ≤ 0.08"
-  ) |> 
-  gt() %>%
-  tab_header(title="Model Comparison (1-Factor vs 2-Factor)") %>%
-  tab_source_note(
-    source_note = "Note: CFI/TLI ≥ 0.90 (often ≥ 0.95 for good fit) and RMSEA ≤ 0.08 (≤ 0.06 for good fit) indicate acceptable model fit.\nProportions correspond to the fraction of Monte Carlo samples meeting these benchmarks."
+# Build tables for PHQ-9 and SSQ-10 ----------------------------------------
+
+table_phq09_cfa_stability <- build_cfa_stability_table(
+  results_1factor = batch_res$phq09_data_driven,
+  results_2factor = batch_res$phq09_pa_3f
+)
+
+# Remove first columns (Group/Measure) from SSQ-10 table before binding ----
+
+table_ssq10_cfa_stability <- build_cfa_stability_table(
+  results_1factor = batch_res$ssq10_data_driven,
+  results_2factor = batch_res$ssq10_pa_3f
+) |>
+  dplyr::select(-Group, -Measure)
+
+# Clean factor column names and prepare for column groups -------------------
+
+table_phq09_cfa_stability <- table_phq09_cfa_stability |>
+  dplyr::rename(
+    phq9_1factor = `1-Factor`,
+    phq9_2factor = `2-Factor`
+  )
+
+table_ssq10_cfa_stability <- table_ssq10_cfa_stability |>
+  dplyr::rename(
+    ssq10_1factor = `1-Factor`,
+    ssq10_2factor = `2-Factor`
+  )
+
+combined_tbl <- table_phq09_cfa_stability |>
+  dplyr::bind_cols(table_ssq10_cfa_stability)
+
+# Final GT table with column and row groups --------------------------------
+
+combined_tbl |>
+  gt::gt(groupname_col = "Group") |>
+  gt::sub_missing(columns = dplyr::everything(), missing_text = "-") |>
+  # Center all non-group columns
+  gt::cols_align(
+    align   = "center",
+    columns = -c(Group, Measure)
+  ) |>
+  # Clean column labels
+  gt::cols_label(
+    Measure       = "Measure",
+    phq9_1factor  = "1-Factor",
+    phq9_2factor  = "2-Factor",
+    ssq10_1factor = "1-Factor",
+    ssq10_2factor = "2-Factor"
+  ) |>
+  # Column groups (spanners)
+  gt::tab_spanner(
+    label   = "PHQ-9",
+    columns = c(phq9_1factor, phq9_2factor)
+  ) |>
+  gt::tab_spanner(
+    label   = "SSQ-10",
+    columns = c(ssq10_1factor, ssq10_2factor)
+  ) |>
+  # Bold row groups and column groups
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold"),
+    locations = gt::cells_row_groups()
+  ) |>
+  gt::tab_style(
+    style = gt::cell_text(weight = "bold", align = "center"),
+    locations = gt::cells_column_spanners()
+  ) |>
+  gt::tab_header(
+    title    = "Model Comparison (1-Factor vs 2-Factor)",
+    subtitle = paste(
+      c(
+        "Across Monte Carlo Samples: Global Fit Indices",
+        "Latent Factor Correlations",
+        "Internal Consistency Reliability"
+      ),
+      collapse = "; "
+    )
+  ) |>
+  gt::tab_source_note(
+    source_note = paste(
+      c(
+        "Note:",
+        "CFI/TLI ≥ 0.90 (often ≥ 0.95 for good fit) and RMSEA ≤ 0.08 (≤ 0.06 for good fit) indicate acceptable model fit.",
+        "Percentage correspond to the fraction of Monte Carlo samples meeting these benchmarks.",
+        "Latent factor correlations estimated from CFA models across Monte Carlo splits, reported as mean and 95% Monte Carlo quantile interval.",
+        "Interpretation guide: α, ω ≥ 0.70 acceptable, ≥ 0.80 good, ≥ 0.90 excellent.",
+        "Estimates are averaged across Monte Carlo splits with 95% quantile intervals."
+      ),
+      collapse = "\n"
+    )
   )
 ```
-#### PHQ-09 (Original)
 
-##### Parallel Analysis (3-Factor Solution)
+*Measurement Invariance*
 
-```{r, fig.height=10, fig.width=16}
-retention_p<-mc_efa_results[["PHQ-09 (Original)"]][["retention_analysis"]][["plot"]]
-cooccurrence_p<-mc_efa_results[["PHQ-09 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
-stability_p<-mc_efa_results[["PHQ-09 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
+To ensure the equitable utility of the SSQ-10 across different population subgroups, we conducted Multi-Group CFA (MGCFA) using 1,000 Monte Carlo resampling iterations. We tested for measurement invariance across biological sex (Male vs. Female) and age groups (16–19 vs. 20–24). The results for the SSQ-10 (1-Factor & 2-Factor) and PHQ-9 (1-Factor & 2-Factor) models are summarized in Supplementary Table S1.
 
-((retention_p)+(cooccurrence_p)+(stability_p)) + 
-  patchwork::plot_layout() +
-  patchwork::plot_annotation(title="Factor Retention and Item co-occurrence for the winning factor count and item stability sorted by Winning Model",
-                         tag_level="A"
-                  ) &
-  ggplot2::theme_minimal(base_size = 16) & 
-  ggplot2::theme(legend.position = 'bottom',
-                 axis.text.x  = ggplot2::element_text(angle = 45,vjust=.85,hjust=1),
-                 )
+For the PHQ-9 1-Factor model, the analysis demonstrated robust invariance based on the Comparative Fit Index. Across age groups, 99.7% of Monte Carlo samples met the change in CFI criterion ($\le$ 0.010), and across biological sex, 99.5% met this threshold. However, the Root Mean Square Error of Approximation proved highly unstable, with only 16.8% of age group samples and 44.4% of sex samples meeting the invariance criterion ($\le$ 0.015).
+
+Similarly, the PHQ-9 2-Factor model showed perfect stability regarding the Comparative Fit Index, with 100% of samples meeting the criterion across both age and sex groupings. Yet, the Root Mean Square Error of Approximation remained inconsistent, satisfying the threshold in only 20.3% of age group samples and 46.4% of sex samples. Despite the divergence in the error of approximation metric, the high stability of the Comparative Fit Index supports the conclusion that the PHQ-9 constructs are measured comparably across these groups, as the Comparative Fit Index is often considered a more reliable indicator of invariance in this context.
+
+For the SSQ-10 1-Factor Model, the analysis provided strong evidence for scalar invariance. Across Age Groups, the mean $\Delta$CFI was 0.000, with 96.7% of samples meeting the invariance threshold, and 87.5% meeting the RMSEA criterion. Similarly, across Biological Sex, 95.2% of samples satisfied the $\Delta$CFI cutoff, and 94.9% met the $\Delta$RMSEA criterion. These results indicate that the unidimensional structure of the SSQ-10 is measurement invariant across these demographic factors.
+
+For the SSQ-10 2-Factor Model, the analysis also provided strong support for scalar invariance across Biological Sex. The mean change in CFI was 0.000, with 99.8% of Monte Carlo samples meeting the strict invariance threshold. Root Mean Square Error of Approximation stability was also high, with 89.5% of samples meeting the criterion. For Age Groups, the Comparative Fit Index criterion remained highly robust, with 99.7% of samples meeting the $\le$ 0.010 threshold. However, the Root Mean Square Error of Approximation metric was less stable, with only 56.4% of samples meeting the strict $\le$ 0.015 cutoff. This divergence likely reflects the known sensitivity of the Root Mean Square Error of Approximation to sample size and model complexity in subgroup partitions. Given the near-perfect stability of the Comparative Fit Index, these findings suggest that the SSQ-10 measures the underlying construct of depression in a comparable manner across these key demographic groups, satisfying the prerequisites for valid group comparisons [@putnick2016measurement].
+
+#### 1-Factor PHQ-9
+```{r}
+#| label: tbl-invariance-combined
+#| tbl-cap: "Supplementary Table S1: Measurement Invariance (Scalar vs Configural) for SSQ-10 (2-Factor) and PHQ-9 (1-Factor & 2-Factor) Models. Comparison across Age Group and Sex using 1,000 Monte Carlo runs."
+
+batch_res[["phq09_data_driven"]][["gt_tables"]][["invariance"]]
 ```
+
+#### 2-Factor PHQ-9
+```{r}
+batch_res[["phq09_pa_3f"]][["gt_tables"]][["invariance"]]
+```
+
+#### 1-Factor SSQ-10
+```{r}
+batch_res[["ssq10_data_driven"]][["gt_tables"]][["invariance"]]
+```
+
+#### 2-Factor SSQ-10
+```{r}
+batch_res[["ssq10_pa_3f"]][["gt_tables"]][["invariance"]]
+```
+
+
+**Derivation of Diagnostic Cut-offs**
+
+```{r}
+batch_res[["ssq10_data_driven"]][["gt_tables"]][["roc"]]
+```
+
+```{r}
+
+```
+
+
 
 ```{r, fig.height=10, fig.width=16}
 #| eval: false
 #### SSQ-10 and PHQ-09 (Joint structure)
 retention_p<-mc_efa_results[["SSQ-10 and PHQ-09 (Joint Structure)"]][["retention_analysis"]][["plot"]]
 retention_p
-
 
 cooccurrence_p<-mc_efa_results[["SSQ-10 and PHQ-09 (Joint Structure)"]][["cooccurrence"]][["Kaiser"]][["plot_heatmap"]]
 stability_p<-mc_efa_results[["SSQ-10 and PHQ-09 (Joint Structure)"]][["cooccurrence"]][["Kaiser"]][["plot_stability"]]
@@ -550,7 +966,7 @@ stability_p<-mc_efa_results[["SSQ-10 and PHQ-09 (Joint Structure)"]][["cooccurre
 ::: {.callout-warning}
 ## Data Availability Statement
 
-To ensure compliance with the Protection of Personal Information Act (POPIA) and AHRI's Data Sharing Policy and Standard Operating Procedures (SOP), researchers requiring access to the datasets must submit a formal request via the AHRI Data Science Unit (DSU).
+To ensure compliance with AHRI's Data Sharing Policy and Standard Operating Procedures (SOP), researchers requiring access to the datasets must submit a formal request via the AHRI Data Science Unit (DSU).
 :::
 
 ## References
@@ -561,75 +977,3 @@ To ensure compliance with the Protection of Personal Information Act (POPIA) and
 
 ## Supplementary
 
-
-```{r, fig.height=25, fig.width=18}
-#| label: fig-figure1_supplementary
-#| fig-cap: "Item Clustering Stability and Co-occurrence Probabilities. Heatmaps illustrate the probability of item pairs co-occurring within the same factor across 10,000 bootstrap replications. (A) SSQ-14 using the Kaiser Criterion (favoring a 2-factor solution), demonstrating a stable core cluster of neurocognitive items (SSQ01–03). (B) SSQ-14 using Parallel Analysis (favoring a 3-factor solution), revealing a distinct somatic/perceptual factor (SSQ04–07). (C) SSQ-08 using Parallel Analysis, highlighting the exclusion of key core symptoms (SSQ02, SSQ03) despite the retention of SSQ01."
-
-# A: SSQ-14, Kaiser
-cooccurrence_p1 <- mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_heatmap"]]
-stability_p1    <- mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Kaiser"]][["plot_stability"]]
-
-p1_kaiser <- (cooccurrence_p1 + 
-                (stability_p1 & ggplot2::labs(subtitle = NULL) & ggsci::scale_fill_jco())) +
-  patchwork::plot_layout() &
-  ggplot2::labs(caption = NULL,
-                subtitle = ) &
-  patchwork::plot_annotation(
-    caption = paste("A winning consensus model with",paste(word(gsub("\n\n","|",stability_p1@labels$caption),2,sep="\\|"),collapse = "\n"))
-    ) &
-  ggplot2::theme_minimal(base_size = 16) &
-  ggplot2::theme(
-    legend.position = NULL,
-    axis.text.x = ggplot2::element_text(angle = 45, vjust = .85, hjust = 1)
-  )
-
-# B: SSQ-14, Parallel
-cooccurrence_p2 <- mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
-stability_p2    <- mc_efa_results[["SSQ-14 (Original)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
-
-p2_parralel <- (cooccurrence_p2 + (stability_p2 & ggplot2::labs(subtitle = NULL) & ggsci::scale_fill_jco())) +
-  patchwork::plot_layout() &
-  ggplot2::labs(caption = NULL) &
-  ggplot2::theme_minimal(base_size = 16) &
-  ggplot2::theme(
-    legend.position = NULL,
-    axis.text.x = ggplot2::element_text(angle = 45, vjust = .85, hjust = 1)
-  )
-
-# C: SSQ-08, Parallel
-cooccurrence_p3 <- mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["cooccurrence"]][["Parallel"]][["plot_heatmap"]]
-stability_p3    <- mc_efa_results[["SSQ-08 (Dixon Chibanda et.al)"]][["cooccurrence"]][["Parallel"]][["plot_stability"]]
-
-p3_parralel <- (cooccurrence_p3 + (stability_p3 & ggplot2::labs(subtitle = NULL) & ggsci::scale_fill_jco())) +
-  patchwork::plot_layout(axes = "collect_y") &
-  ggplot2::theme_minimal(base_size = 16) &
-  ggplot2::labs(caption = NULL) &
-  ggplot2::theme(
-    legend.position = "bottom",
-    axis.text.x = ggplot2::element_text(angle = 45, vjust = .85, hjust = 1)
-  )
-
-# Final combined figure with A/B/C tags
-(p1_kaiser / p2_parralel / p3_parralel) +
-  patchwork::plot_layout(guides = "collect", axes = "collect_y") +
-  patchwork::plot_annotation(
-    # 6 panels in total -> 6 tags
-    # letters for the first panel of each row, blanks for the others
-    tag_levels = list(c("(A)", "", "(B)", "", "(C)", "")),
-    caption = paste(
-    word(gsub("\n\n","|",c(stability_p1@labels$caption,
-    stability_p2@labels$caption,
-    stability_p3@labels$caption)),2,sep="\\|"),
-    collapse = "\n"
-  )
-  ) &
-  ggplot2::theme(
-    plot.tag = ggplot2::element_text(face = "bold", size = 16),  # style for A/B/C
-    legend.position = "bottom",
-    plot.caption = ggplot2::element_text(hjust = 0, size = 12, family = "Arial"),
-    panel.grid.major.x = ggplot2::element_blank(),
-    panel.grid.minor.x = ggplot2::element_blank()
-  )
-
-```

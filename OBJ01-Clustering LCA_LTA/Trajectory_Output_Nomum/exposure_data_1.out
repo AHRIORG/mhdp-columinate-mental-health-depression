@@ -1,20 +1,20 @@
-Mplus VERSION 9 DEMO (Mac)
+Mplus VERSION 9 (Mac)
 MUTHEN & MUTHEN
-12/10/2025   2:12 AM
+12/12/2025   8:00 PM
 
 INPUT INSTRUCTIONS
 
   TITLE:
   LCGA Trajectory Analysis - 1 Classes (No_Mum)
   DATA:
-  FILE = "exposure_data_1_0fe6bcbf0b94e87e0bf33ffcb5013abe.dat";
+  FILE = "exposure_data_1_afb79a575ba9c964cfe12ca49503552f.dat";
   VARIABLE:
-  NAMES = USUBJID LWOM1 LWOM2 LWOM3 LWOM4 LWOM5;
+  NAMES = USUBJID LWOM1 LWOM2 LWOM3 LWOM4 LWOM5 LWOM6 LWOM7 LWOM8 LWOM9 LWOM10;
    MISSING=.;
      IDVARIABLE = USUBJID;
     CLASSES = c(1);
-    USEVARIABLES = USUBJID LWOM1 LWOM2 LWOM3 LWOM4 LWOM5;
-    CATEGORICAL = LWOM1 LWOM2 LWOM3 LWOM4 LWOM5;
+    USEVARIABLES = USUBJID LWOM1 LWOM2 LWOM3 LWOM4 LWOM5 LWOM6 LWOM7 LWOM8 LWOM9 LWOM10;
+    CATEGORICAL = LWOM1 LWOM2 LWOM3 LWOM4 LWOM5 LWOM6 LWOM7 LWOM8 LWOM9 LWOM10;
   ANALYSIS:
 
         TYPE = MIXTURE;
@@ -31,8 +31,6 @@ INPUT INSTRUCTIONS
   TECH11 TECH14 SAMPSTAT;
   SAVEDATA:
   FILE = savedata_1.dat; SAVE = CPROB;
-  PLOT:
-  TYPE = PLOT3; SERIES = LWOM1(0) LWOM2(1) LWOM3(2) LWOM4(3) LWOM5(4);
 
 
 
@@ -49,7 +47,7 @@ INPUT INSTRUCTIONS
 *** WARNING
   Data set contains cases with missing on all variables.
   These cases were not included in the analysis.
-  Number of cases with missing on all variables:  372
+  Number of cases with missing on all variables:  545
    4 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
 
 
@@ -60,9 +58,9 @@ LCGA Trajectory Analysis - 1 Classes (No_Mum)
 SUMMARY OF ANALYSIS
 
 Number of groups                                                 1
-Number of observations                                        3945
+Number of observations                                        4540
 
-Number of dependent variables                                    5
+Number of dependent variables                                   10
 Number of independent variables                                  0
 Number of continuous latent variables                            0
 Number of categorical latent variables                           1
@@ -70,7 +68,8 @@ Number of categorical latent variables                           1
 Observed dependent variables
 
   Binary and ordered categorical (ordinal)
-   LWOM1       LWOM2       LWOM3       LWOM4       LWOM5
+   LWOM1       LWOM2       LWOM3       LWOM4       LWOM5       LWOM6
+   LWOM7       LWOM8       LWOM9       LWOM10
 
 Categorical latent variables
    C
@@ -118,15 +117,15 @@ Random Starts Specifications
 Link                                                         LOGIT
 
 Input data file(s)
-  exposure_data_1_0fe6bcbf0b94e87e0bf33ffcb5013abe.dat
+  exposure_data_1_afb79a575ba9c964cfe12ca49503552f.dat
 Input data format  FREE
 
 
 SUMMARY OF DATA
 
-     Number of missing data patterns            22
+     Number of missing data patterns           121
      Number of y missing data patterns           0
-     Number of u missing data patterns          22
+     Number of u missing data patterns         121
 
 
 COVARIANCE COVERAGE OF DATA
@@ -140,11 +139,26 @@ Minimum covariance coverage value   0.100
            Covariance Coverage
               LWOM1         LWOM2         LWOM3         LWOM4         LWOM5
               ________      ________      ________      ________      ________
- LWOM1          0.673
- LWOM2          0.666         0.764
- LWOM3          0.657         0.753         0.849
- LWOM4          0.652         0.746         0.840         0.911
- LWOM5          0.648         0.739         0.832         0.900         0.968
+ LWOM1          0.585
+ LWOM2          0.579         0.664
+ LWOM3          0.571         0.655         0.738
+ LWOM4          0.567         0.648         0.730         0.792
+ LWOM5          0.563         0.642         0.723         0.782         0.841
+ LWOM6          0.562         0.639         0.718         0.774         0.832
+ LWOM7          0.560         0.636         0.715         0.770         0.824
+ LWOM8          0.558         0.635         0.713         0.768         0.820
+ LWOM9          0.556         0.633         0.709         0.763         0.814
+ LWOM10         0.556         0.634         0.708         0.762         0.812
+
+
+           Covariance Coverage
+              LWOM6         LWOM7         LWOM8         LWOM9         LWOM10
+              ________      ________      ________      ________      ________
+ LWOM6          0.873
+ LWOM7          0.863         0.891
+ LWOM8          0.857         0.881         0.911
+ LWOM9          0.847         0.870         0.898         0.923
+ LWOM10         0.846         0.867         0.893         0.915         0.946
 
 
 UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
@@ -164,112 +178,127 @@ UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
     LWOM5
       Category 1    0.738         2819.000
       Category 2    0.262          999.000
+    LWOM6
+      Category 1    0.725         2873.000
+      Category 2    0.275         1089.000
+    LWOM7
+      Category 1    0.719         2909.000
+      Category 2    0.281         1138.000
+    LWOM8
+      Category 1    0.715         2955.000
+      Category 2    0.285         1180.000
+    LWOM9
+      Category 1    0.704         2949.000
+      Category 2    0.296         1242.000
+    LWOM10
+      Category 1    0.698         3000.000
+      Category 2    0.302         1297.000
 
 
 RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
 
 Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
 
-           -8727.951  655497           376
-           -8727.951  642909           251
-           -8727.951  340112           126
-           -8727.951  unperturbed      0
-           -8727.951  93468            3
-           -8727.951  462953           7
-           -8727.951  27071            15
-           -8727.951  153942           31
-           -8727.951  227563           63
-           -8727.951  311214           64
-           -8727.951  626891           32
-           -8727.951  565819           65
-           -8727.951  467339           66
-           -8727.951  76974            16
-           -8727.951  749453           33
-           -8727.951  789985           67
-           -8727.951  405079           68
-           -8727.951  341041           34
-           -8727.951  685657           69
-           -8727.951  987090           70
-           -8727.951  939021           8
-           -8727.951  68985            17
-           -8727.951  830392           35
-           -8727.951  475420           71
-           -8727.951  783110           72
-           -8727.951  260601           36
-           -8727.951  354559           73
-           -8727.951  285380           1
-           -8727.951  7959             256
-           -8727.951  164305           128
-           -8727.951  871851           257
-           -8727.951  188498           258
-           -8727.951  814975           129
-           -8727.951  622860           259
-           -8727.951  804660           260
-           -8727.951  509733           130
-           -8727.951  616917           261
-           -8727.951  520177           262
-           -8727.951  468036           131
-           -8727.951  349263           263
-           -8727.951  358488           264
-           -8727.951  313407           132
-           -8727.951  105435           265
-           -8727.951  970689           266
-           -8727.951  321390           133
-           -8727.951  930323           267
-           -8727.951  529455           268
-           -8727.951  903369           134
-           -8727.951  926283           269
-           -8727.951  483369           270
-           -8727.951  437181           135
-           -8727.951  438144           271
-           -8727.951  782821           272
-           -8727.951  232559           136
-           -8727.951  688839           273
-           -8727.951  15715            274
-           -8727.951  848331           137
-           -8727.951  387701           275
-           -8727.951  840031           276
-           -8727.951  741888           138
-           -8727.951  930872           277
-           -8727.951  545140           278
-           -8727.951  118421           139
-           -8727.951  830529           279
-           -8727.951  948615           140
-           -8727.951  931874           141
-           -8727.951  192071           142
-           -8727.951  22089            143
-           -8727.951  856536           144
-           -8727.951  788796           145
-           -8727.951  369602           146
-           -8727.951  863094           147
-           -8727.951  51375            148
-           -8727.951  417035           149
-           -8727.951  695155           150
-           -8727.951  606576           151
-           -8727.951  777045           377
-           -8727.951  153053           378
-           -8727.951  137305           379
-           -8727.951  443442           380
-           -8727.951  985387           381
-           -8727.951  765392           382
-           -8727.951  210870           383
-           -8727.951  1548             384
-           -8727.951  85114            385
-           -8727.951  496710           386
-           -8727.951  507154           387
-           -8727.951  395754           388
-           -8727.951  50887            389
-           -8727.951  416250           390
-           -8727.951  146900           391
-           -8727.951  561664           392
-           -8727.951  801065           393
-           -8727.951  937225           394
-           -8727.951  79945            395
-           -8727.951  965994           396
-           -8727.951  226322           478
-           -8727.951  354395           486
-           -8727.951  652266           490
-           -8727.951  112586           494
+          -21113.095  655497           376
+          -21113.095  642909           251
+          -21113.095  340112           126
+          -21113.095  unperturbed      0
+          -21113.095  93468            3
+          -21113.095  462953           7
+          -21113.095  27071            15
+          -21113.095  153942           31
+          -21113.095  227563           63
+          -21113.095  311214           64
+          -21113.095  626891           32
+          -21113.095  565819           65
+          -21113.095  467339           66
+          -21113.095  76974            16
+          -21113.095  749453           33
+          -21113.095  789985           67
+          -21113.095  405079           68
+          -21113.095  341041           34
+          -21113.095  685657           69
+          -21113.095  987090           70
+          -21113.095  939021           8
+          -21113.095  68985            17
+          -21113.095  830392           35
+          -21113.095  475420           71
+          -21113.095  783110           72
+          -21113.095  260601           36
+          -21113.095  354559           73
+          -21113.095  285380           1
+          -21113.095  7959             256
+          -21113.095  164305           128
+          -21113.095  871851           257
+          -21113.095  188498           258
+          -21113.095  814975           129
+          -21113.095  622860           259
+          -21113.095  804660           260
+          -21113.095  509733           130
+          -21113.095  616917           261
+          -21113.095  520177           262
+          -21113.095  468036           131
+          -21113.095  349263           263
+          -21113.095  358488           264
+          -21113.095  313407           132
+          -21113.095  105435           265
+          -21113.095  970689           266
+          -21113.095  321390           133
+          -21113.095  930323           267
+          -21113.095  529455           268
+          -21113.095  903369           134
+          -21113.095  926283           269
+          -21113.095  483369           270
+          -21113.095  437181           135
+          -21113.095  438144           271
+          -21113.095  782821           272
+          -21113.095  232559           136
+          -21113.095  688839           273
+          -21113.095  15715            274
+          -21113.095  848331           137
+          -21113.095  387701           275
+          -21113.095  840031           276
+          -21113.095  741888           138
+          -21113.095  930872           277
+          -21113.095  545140           278
+          -21113.095  118421           139
+          -21113.095  830529           279
+          -21113.095  948615           140
+          -21113.095  931874           141
+          -21113.095  192071           142
+          -21113.095  22089            143
+          -21113.095  856536           144
+          -21113.095  788796           145
+          -21113.095  369602           146
+          -21113.095  863094           147
+          -21113.095  51375            148
+          -21113.095  417035           149
+          -21113.095  695155           150
+          -21113.095  606576           151
+          -21113.095  777045           377
+          -21113.095  153053           378
+          -21113.095  137305           379
+          -21113.095  443442           380
+          -21113.095  985387           381
+          -21113.095  765392           382
+          -21113.095  210870           383
+          -21113.095  1548             384
+          -21113.095  85114            385
+          -21113.095  496710           386
+          -21113.095  507154           387
+          -21113.095  395754           388
+          -21113.095  50887            389
+          -21113.095  416250           390
+          -21113.095  146900           391
+          -21113.095  561664           392
+          -21113.095  801065           393
+          -21113.095  937225           394
+          -21113.095  79945            395
+          -21113.095  965994           396
+          -21113.095  226322           478
+          -21113.095  354395           486
+          -21113.095  652266           490
+          -21113.095  112586           494
 
 
 
@@ -279,19 +308,19 @@ THE MODEL ESTIMATION TERMINATED NORMALLY
 
 MODEL FIT INFORMATION
 
-Number of Free Parameters                        5
+Number of Free Parameters                       10
 
 Loglikelihood
 
-          H0 Value                       -8727.951
+          H0 Value                      -21113.095
           H0 Scaling Correction Factor      1.0000
             for MLR
 
 Information Criteria
 
-          Akaike (AIC)                   17465.903
-          Bayesian (BIC)                 17497.304
-          Sample-Size Adjusted BIC       17481.416
+          Akaike (AIC)                   42246.189
+          Bayesian (BIC)                 42310.396
+          Sample-Size Adjusted BIC       42278.620
             (n* = (n + 2) / 24)
 
 Chi-Square Test of Model Fit for the Binary and Ordered Categorical
@@ -299,32 +328,32 @@ Chi-Square Test of Model Fit for the Binary and Ordered Categorical
 
           Pearson Chi-Square
 
-          Value                           2657.100
-          Degrees of Freedom                    24
+          Value                          10429.032
+          Degrees of Freedom                   942
           P-Value                           0.0000
 
           Likelihood Ratio Chi-Square
 
-          Value                           1124.598
-          Degrees of Freedom                    24
+          Value                           5549.191
+          Degrees of Freedom                   942
           P-Value                           0.0000
 
-** Of the 190 cells in the latent class indicator table, 2
+** Of the 13622 cells in the latent class indicator table, 71
    were deleted in the calculation of chi-square due to extreme values.
 
 Chi-Square Test for MCAR under the Unrestricted Latent Class Indicator Model
 
           Pearson Chi-Square
 
-          Value                            220.384
-          Degrees of Freedom                   137
-          P-Value                           0.0000
+          Value                           3532.951
+          Degrees of Freedom                 12478
+          P-Value                           1.0000
 
           Likelihood Ratio Chi-Square
 
-          Value                            179.752
-          Degrees of Freedom                   137
-          P-Value                           0.0083
+          Value                           1289.093
+          Degrees of Freedom                 12478
+          P-Value                           1.0000
 
 
 
@@ -334,7 +363,7 @@ BASED ON THE ESTIMATED MODEL
     Latent
    Classes
 
-       1       3945.00000          1.00000
+       1       4540.00000          1.00000
 
 
 FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
@@ -343,7 +372,7 @@ BASED ON ESTIMATED POSTERIOR PROBABILITIES
     Latent
    Classes
 
-       1       3945.00000          1.00000
+       1       4540.00000          1.00000
 
 
 FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
@@ -354,7 +383,7 @@ Class Counts and Proportions
     Latent
    Classes
 
-       1             3945          1.00000
+       1             4540          1.00000
 
 
 Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
@@ -394,11 +423,16 @@ Latent Class 1
     LWOM3$1            1.211      0.041     29.484      0.000
     LWOM4$1            1.112      0.039     28.767      0.000
     LWOM5$1            1.037      0.037     28.174      0.000
+    LWOM6$1            0.970      0.036     27.261      0.000
+    LWOM7$1            0.939      0.035     26.843      0.000
+    LWOM8$1            0.918      0.034     26.657      0.000
+    LWOM9$1            0.865      0.034     25.564      0.000
+    LWOM10$1           0.839      0.033     25.234      0.000
 
 
 QUALITY OF NUMERICAL RESULTS
 
-     Condition Number for the Information Matrix              0.677E-01
+     Condition Number for the Information Matrix              0.303E-01
        (ratio of smallest to largest eigenvalue)
 
 
@@ -424,15 +458,22 @@ Latent Class 1
  LWOM5
     Category 1         0.738      0.007    103.797      0.000
     Category 2         0.262      0.007     36.784      0.000
+ LWOM6
+    Category 1         0.725      0.007    102.238      0.000
+    Category 2         0.275      0.007     38.753      0.000
+ LWOM7
+    Category 1         0.719      0.007    101.711      0.000
+    Category 2         0.281      0.007     39.789      0.000
+ LWOM8
+    Category 1         0.715      0.007    101.760      0.000
+    Category 2         0.285      0.007     40.635      0.000
+ LWOM9
+    Category 1         0.704      0.007     99.755      0.000
+    Category 2         0.296      0.007     42.013      0.000
+ LWOM10
+    Category 1         0.698      0.007     99.695      0.000
+    Category 2         0.302      0.007     43.101      0.000
 
-
-PLOT INFORMATION
-
-The following plots are available:
-
-  Histograms (sample values)
-  Scatterplots (sample values)
-  Sample proportions and estimated probabilities
 
 SAVEDATA INFORMATION
 
@@ -447,28 +488,27 @@ SAVEDATA INFORMATION
     LWOM3          F10.3
     LWOM4          F10.3
     LWOM5          F10.3
+    LWOM6          F10.3
+    LWOM7          F10.3
+    LWOM8          F10.3
+    LWOM9          F10.3
+    LWOM10         F10.3
     CPROB1         F10.3
     MLCC           F10.3
     USUBJID        I7
 
   Save file format
-    7F10.3 I7
+    12F10.3 I7
 
   Save file record length    10000
 
   Save missing symbol        *
 
 
-     Beginning Time:  02:12:39
-        Ending Time:  02:12:40
-       Elapsed Time:  00:00:01
+     Beginning Time:  20:00:08
+        Ending Time:  20:00:10
+       Elapsed Time:  00:00:02
 
-
-Mplus VERSION 9 DEMO (Mac) has the following limitations:
-  Maximum number of dependent variables: 6
-  Maximum number of independent variables: 2
-  Maximum number of between variables: 2
-  Maximum number of continuous latent variables in time series analysis: 2
 
 
 MUTHEN & MUTHEN
