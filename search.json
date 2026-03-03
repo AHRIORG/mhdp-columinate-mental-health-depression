@@ -207,28 +207,28 @@
     "href": "tabs/longitudinal_linkage.html#dependency-structure",
     "title": "Longitudinal Linkage",
     "section": "Dependency Structure",
-    "text": "Dependency Structure\nThe linkage stage depends on three objective workflows, executed in sequence:\n\nOBJ01 SDoH trajectory derivation for childhood windows 0-5 and 6-12 years.\nOBJ03 psychometric calibration using dt_psychometric to produce IRT-based depression classification for SSQ-only records.\nOBJ00 dataset preparation and merge to construct final aligned outputs.\n\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\"}}}%%\nflowchart LR\n  A[\"OBJ01&lt;br/&gt;SDoH trajectories&lt;br/&gt;0-5 and 6-12 years\"] --&gt; C[\"OBJ00&lt;br/&gt;Final preparation and merge\"]\n  B[\"OBJ03&lt;br/&gt;IRT calibration&lt;br/&gt;DPBN derivation\"] --&gt; C\n  C --&gt; D[\"Final dt_multistudies&lt;br/&gt;with DPBN endpoint\"]\n  C --&gt; E[\"Final dt_chilhood_exposure&lt;br/&gt;aligned participants\"]"
+    "text": "Dependency Structure\nThe linkage stage depends on three objective workflows, executed in sequence:\n\nSDoH trajectory derivation for childhood windows 0-5 and 6-12 years.\nPsychometric calibration using dt_psychometric to produce IRT-based depression classification for SSQ-only records.\nDataset preparation and merge to construct final aligned outputs.\n\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\"}}}%%\nflowchart LR\n  A[\"Trajectory modelling&lt;br/&gt;SDoH trajectories&lt;br/&gt;0-5 and 6-12 years\"] --&gt; C[\"Final preparation and merge\"]\n  B[\"Psychometric calibration&lt;br/&gt;IRT calibration&lt;br/&gt;DPBN derivation\"] --&gt; C\n  C --&gt; D[\"Final dt_multistudies&lt;br/&gt;with DPBN endpoint\"]\n  C --&gt; E[\"Final dt_chilhood_exposure&lt;br/&gt;aligned participants\"]"
   },
   {
-    "objectID": "tabs/longitudinal_linkage.html#what-obj01-contributes",
-    "href": "tabs/longitudinal_linkage.html#what-obj01-contributes",
+    "objectID": "tabs/longitudinal_linkage.html#what-trajectory-modelling-contributes",
+    "href": "tabs/longitudinal_linkage.html#what-trajectory-modelling-contributes",
     "title": "Longitudinal Linkage",
-    "section": "What OBJ01 Contributes",
-    "text": "What OBJ01 Contributes\n\nDerives childhood SDoH trajectory classes across exposure windows:\nEarly childhood window: 0-5 years.\nMiddle-late childhood window: 6-12 years.\nSupplies trajectory constructs used downstream in the longitudinal linked analysis framework."
+    "section": "What Trajectory Modelling Contributes",
+    "text": "What Trajectory Modelling Contributes\n\nDerives childhood SDoH trajectory classes across exposure windows:\nEarly childhood window: 0-5 years.\nMiddle-late childhood window: 6-12 years.\nSupplies trajectory constructs used downstream in the longitudinal linked analysis framework."
   },
   {
-    "objectID": "tabs/longitudinal_linkage.html#what-obj03-contributes",
-    "href": "tabs/longitudinal_linkage.html#what-obj03-contributes",
+    "objectID": "tabs/longitudinal_linkage.html#what-psychometric-calibration-contributes",
+    "href": "tabs/longitudinal_linkage.html#what-psychometric-calibration-contributes",
     "title": "Longitudinal Linkage",
-    "section": "What OBJ03 Contributes",
-    "text": "What OBJ03 Contributes\n\nUses dt_psychometric as the bridge dataset for SSQ/PHQ harmonization.\nFits IRT-based calibration models to align SSQ responses with PHQ-based depression reference logic.\nEnables derivation of DPBN for participants in studies with SSQ-only outcome measurement (notably DREAMS and Multilevel segments requiring calibration support)."
+    "section": "What Psychometric Calibration Contributes",
+    "text": "What Psychometric Calibration Contributes\n\nUses dt_psychometric as the bridge dataset for SSQ/PHQ harmonization.\nFits IRT-based calibration models to align SSQ responses with PHQ-based depression reference logic.\nEnables derivation of DPBN for participants in studies with SSQ-only outcome measurement (notably DREAMS and Multilevel segments requiring calibration support)."
   },
   {
-    "objectID": "tabs/longitudinal_linkage.html#what-obj00-finalizes",
-    "href": "tabs/longitudinal_linkage.html#what-obj00-finalizes",
+    "objectID": "tabs/longitudinal_linkage.html#what-final-preparation-and-merge-finalize",
+    "href": "tabs/longitudinal_linkage.html#what-final-preparation-and-merge-finalize",
     "title": "Longitudinal Linkage",
-    "section": "What OBJ00 Finalizes",
-    "text": "What OBJ00 Finalizes\n\nIntegrates HDSS-linked longitudinal exposure information with cohort mental-health outcome data.\nApplies calibrated depression endpoint derivation and carries trajectory constructs into the analytic master.\nProduces the final aligned datasets:\ndt_multistudies for secondary outcome/mediation analyses.\ndt_chilhood_exposure for longitudinal household and caregiver exposure histories."
+    "section": "What Final Preparation And Merge Finalize",
+    "text": "What Final Preparation And Merge Finalize\n\nIntegrates HDSS-linked longitudinal exposure information with cohort mental-health outcome data.\nApplies calibrated depression endpoint derivation and carries trajectory constructs into the analytic master.\nProduces the final aligned datasets:\ndt_multistudies for secondary outcome/mediation analyses.\ndt_chilhood_exposure for longitudinal household and caregiver exposure histories."
   },
   {
     "objectID": "tabs/longitudinal_linkage.html#completion-criteria-for-longitudinal-linkage",
@@ -319,7 +319,7 @@
     "href": "tabs/metadata.html#consort-flow",
     "title": "Metadata",
     "section": "CONSORT Flow",
-    "text": "CONSORT Flow\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\"}}}%%\nflowchart TD\nA[\"dt_multistudies loaded&lt;br/&gt;Records: 6,612&lt;br/&gt;Participants: 6,207\"]\nB[\"With DPBN endpoint&lt;br/&gt;Records: 6,428&lt;br/&gt;Participants: 6,024\"]\nC[\"dt_chilhood_exposure loaded&lt;br/&gt;Records: 53,303&lt;br/&gt;Participants: 5,398\"]\nD[\"Participant overlap&lt;br/&gt;Participants: 5,226\"]\nE[\"Final dt_multistudies&lt;br/&gt;Records: 5,616&lt;br/&gt;Participants: 5,226\"]\nF[\"Final dt_chilhood_exposure&lt;br/&gt;Records: 52,463&lt;br/&gt;Participants: 5,226\"]\nA --&gt; B\nB --&gt; D\nC --&gt; D\nD --&gt; E\nD --&gt; F\n\n\n\n\n\n\nThe row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification."
+    "text": "CONSORT Flow\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\"}}}%%\nflowchart TD\nG[\"Trajectory modelling contribution&lt;br/&gt;SDoH trajectories (0-5 and 6-12 years)&lt;br/&gt;Outputs: ELCDV, MDCDV\"]\nH[\"Psychometric calibration contribution&lt;br/&gt;IRT calibration from psychometric bridge data&lt;br/&gt;Output: DPBN endpoint\"]\nA[\"dt_multistudies loaded&lt;br/&gt;Records: 6,612&lt;br/&gt;Participants: 6,207\"]\nB[\"With DPBN endpoint&lt;br/&gt;Records: 6,428&lt;br/&gt;Participants: 6,024\"]\nC[\"dt_chilhood_exposure loaded&lt;br/&gt;Records: 53,303&lt;br/&gt;Participants: 5,398\"]\nD[\"Participant overlap&lt;br/&gt;Participants: 5,226\"]\nE[\"Final dt_multistudies&lt;br/&gt;Records: 5,616&lt;br/&gt;Participants: 5,226\"]\nF[\"Final dt_chilhood_exposure&lt;br/&gt;Records: 52,463&lt;br/&gt;Participants: 5,226\"]\nA --&gt; B\nH --&gt; B\nB --&gt; D\nC --&gt; D\nG --&gt; D\nD --&gt; E\nD --&gt; F\n\n\n\n\n\n\nThe row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification."
   },
   {
     "objectID": "tabs/metadata.html#data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role",
@@ -341,6 +341,13 @@
     "title": "Metadata",
     "section": "Data Dictionary: dt_multistudies (Derived)",
     "text": "Data Dictionary: dt_multistudies (Derived)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nLabel\nType\nValue Labels\nSource Variables\nDerivation\nStatus\n\n\n\n\nDPBN\nDepressed\nfactor\nNo; Yes\nPHQBIN, irt_joint_models.rds\nPHQBIN &gt;= 10\nImplemented in dataset preparation merge\n\n\nELCDV\nEarly Childhood Development (Ages 0–5)\ncharacter\n\nChildhood exposure trajectories (0-5 years)\nInitialized as NA_character_ during dataset preparation merge; later populated from early-years latent trajectory class assignment.\nPlaceholder in dataset preparation; populated in class-derivation stage\n\n\nMDCDV\nMiddle-Late Childhood Development (Ages 6–12)\ncharacter\n\nChildhood exposure trajectories (6-12 years)\nInitialized as NA_character_ during dataset preparation merge; later populated from middle-late years latent trajectory class assignment.\nPlaceholder in dataset preparation; populated in class-derivation stage"
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html",
+    "href": "tabs/secondary_data_analysis_plan.html",
+    "title": "Pathways to Pathology - Assessing the Longitudinal Impact of Household Instability and Food Insecurity on Youth Mental Health",
+    "section": "",
+    "text": "DAG: Conceptual mediation framework for CO-LUMINATE"
   },
   {
     "objectID": "tabs/reports.html",
@@ -382,7 +389,7 @@
     "href": "tabs/documentations.html#current-status",
     "title": "Documentations",
     "section": "Current Status",
-    "text": "Current Status\n\nProposal: View proposal\nLongitudinal Linkage (OBJ01 + OBJ03 + OBJ00): View documentation\nSAP: to be linked"
+    "text": "Current Status\n\nProposal: View proposal\nLongitudinal Linkage (trajectory modelling + psychometric calibration + dataset integration): View documentation\nSecondary Data Analysis Plan: View plan\nSAP: to be linked (placeholder)"
   },
   {
     "objectID": "tabs/documentations.html#notes",
@@ -453,13 +460,6 @@
     "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
     "section": "Study Design",
     "text": "Study Design\n\n\n\n1\n\n\n\nLongitudinal Linkage\n\n\nIndividual-level depression outcomes are linked to household HDSS trajectories to assess direct and mediation relationships through time.\n\n\n\n\n\n\n\n\n2\n\n\n\nSecondary Data Analysis\n\n\nLongitudinal analyses evaluate relationships between social stress exposures (including SES and caregiver co-residency) and symptoms of depression.\n\n\n\n\n\n\n\n\n3\n\n\n\nYouth Co-Creation\n\n\nEleven YCC members provide co-created input to strengthen relevance, interpretation, and context-sensitive framing of findings."
-  },
-  {
-    "objectID": "index.html#secondary-data-analysis-plan",
-    "href": "index.html#secondary-data-analysis-plan",
-    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
-    "section": "Secondary Data Analysis Plan",
-    "text": "Secondary Data Analysis Plan\n\n\n\nDAG: Conceptual mediation framework for CO-LUMINATE"
   },
   {
     "objectID": "updates.html",

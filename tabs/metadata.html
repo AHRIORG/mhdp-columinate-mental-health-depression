@@ -299,6 +299,8 @@ ul.task-list li input[type="checkbox"] {
 <div>
 <pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear"}}}%%
 flowchart TD
+G["Trajectory modelling contribution&lt;br/&gt;SDoH trajectories (0-5 and 6-12 years)&lt;br/&gt;Outputs: ELCDV, MDCDV"]
+H["Psychometric calibration contribution&lt;br/&gt;IRT calibration from psychometric bridge data&lt;br/&gt;Output: DPBN endpoint"]
 A["dt_multistudies loaded&lt;br/&gt;Records: 6,612&lt;br/&gt;Participants: 6,207"]
 B["With DPBN endpoint&lt;br/&gt;Records: 6,428&lt;br/&gt;Participants: 6,024"]
 C["dt_chilhood_exposure loaded&lt;br/&gt;Records: 53,303&lt;br/&gt;Participants: 5,398"]
@@ -306,8 +308,10 @@ D["Participant overlap&lt;br/&gt;Participants: 5,226"]
 E["Final dt_multistudies&lt;br/&gt;Records: 5,616&lt;br/&gt;Participants: 5,226"]
 F["Final dt_chilhood_exposure&lt;br/&gt;Records: 52,463&lt;br/&gt;Participants: 5,226"]
 A --&gt; B
+H --&gt; B
 B --&gt; D
 C --&gt; D
+G --&gt; D
 D --&gt; E
 D --&gt; F
 </pre>
