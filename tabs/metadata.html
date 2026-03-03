@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Metadata – CO-LUMINATE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-466c708b1a5a2967f0eb6fed410850f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CO-LUMINATE</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/documentations.html"> <i class="bi bi-folder2-open" role="img">
+</i> 
+<span class="menu-text">Documentations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/reports.html"> <i class="bi bi-file-earmark-text" role="img">
+</i> 
+<span class="menu-text">Reports</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/presentations.html"> <i class="bi bi-easel2" role="img">
+</i> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../tabs/metadata.html" aria-current="page"> <i class="bi bi-table" role="img">
+</i> 
+<span class="menu-text">Metadata</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
+</i> 
+<span class="menu-text">Dashboard</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#metadata-source" id="toc-metadata-source" class="nav-link active" data-scroll-target="#metadata-source">Metadata Source</a></li>
+  <li><a href="#dataset-summary" id="toc-dataset-summary" class="nav-link" data-scroll-target="#dataset-summary">Dataset Summary</a></li>
+  <li><a href="#study-design-extract" id="toc-study-design-extract" class="nav-link" data-scroll-target="#study-design-extract">Study Design Extract</a></li>
+  <li><a href="#cohorts-included" id="toc-cohorts-included" class="nav-link" data-scroll-target="#cohorts-included">Cohorts Included</a></li>
+  <li><a href="#object-snapshot" id="toc-object-snapshot" class="nav-link" data-scroll-target="#object-snapshot">Object Snapshot</a></li>
+  <li><a href="#consort-flow" id="toc-consort-flow" class="nav-link" data-scroll-target="#consort-flow">CONSORT Flow</a></li>
+  <li><a href="#data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role" id="toc-data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role">Data Dictionary: <code>dt_chilhood_exposure</code> (Variables of Interest by Role)</a></li>
+  <li><a href="#data-dictionary-dt_multistudies-variables-of-interest-by-role" id="toc-data-dictionary-dt_multistudies-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-dt_multistudies-variables-of-interest-by-role">Data Dictionary: <code>dt_multistudies</code> (Variables of Interest by Role)</a></li>
+  <li><a href="#data-dictionary-dt_multistudies-derived" id="toc-data-dictionary-dt_multistudies-derived" class="nav-link" data-scroll-target="#data-dictionary-dt_multistudies-derived">Data Dictionary: <code>dt_multistudies</code> (Derived)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Metadata</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="metadata-source" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-source">Metadata Source</h2>
+<p>This page is extracted and adapted from the dataset preparation source index.</p>
+<p>Current scope is limited to two data dictionaries:</p>
+<ul>
+<li><code>dt_chilhood_exposure</code></li>
+<li><code>dt_multistudies</code></li>
+</ul>
+<p>All derived R objects for this page are stored in <code>PRJ-CO-LUMINATE/_tools/_objects</code>.</p>
+</section>
+<section id="dataset-summary" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-summary">Dataset Summary</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Project</td>
+<td style="text-align: left;">CO-LUMINATE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Population</td>
+<td style="text-align: left;">South African youth aged 13-24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linked sample size</td>
+<td style="text-align: left;">5,226</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Data source backbone</td>
+<td style="text-align: left;">AHRI HDSS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Core mental health outcomes</td>
+<td style="text-align: left;">Depression symptoms (SSQ-14, PHQ-9)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Priority social determinants</td>
+<td style="text-align: left;">SES and caregiver co-residency</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cohorts nested in AHRI HDSS</td>
+<td style="text-align: left;">DREAMS, Multilevel, Isisekelo Sempilo, TasP, Thetha Nami</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Youth Co-Creators</td>
+<td style="text-align: left;">11</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="study-design-extract" class="level2">
+<h2 class="anchored" data-anchor-id="study-design-extract">Study Design Extract</h2>
+<p>The CO-LUMINATE linked dataset connects individual-level mental health outcomes from cohort studies to household-level longitudinal HDSS records. The objective is to estimate longitudinal direct and mediation relationships between social determinants and depressive symptoms among youth aged 13-24.</p>
+<p>The analytical design combines:</p>
+<ol type="1">
+<li>HDSS longitudinal household exposure histories.</li>
+<li>Cohort-based depression outcomes measured with SSQ-14 and PHQ-9.</li>
+<li>Linkage across five cohorts nested within AHRI HDSS.</li>
+</ol>
+</section>
+<section id="cohorts-included" class="level2">
+<h2 class="anchored" data-anchor-id="cohorts-included">Cohorts Included</h2>
+<ul>
+<li>DREAMS</li>
+<li>Multilevel</li>
+<li>Isisekelo Sempilo</li>
+<li>Treatment as Prevention (TasP)</li>
+<li>Thetha Nami</li>
+</ul>
+</section>
+<section id="object-snapshot" class="level2">
+<h2 class="anchored" data-anchor-id="object-snapshot">Object Snapshot</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: right;">Rows</th>
+<th style="text-align: right;">Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dt_chilhood_exposure</td>
+<td style="text-align: right;">52463</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dt_multistudies</td>
+<td style="text-align: right;">5616</td>
+<td style="text-align: right;">33</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="consort-flow" class="level2">
+<h2 class="anchored" data-anchor-id="consort-flow">CONSORT Flow</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear"}}}%%
+flowchart TD
+A["dt_multistudies loaded&lt;br/&gt;Records: 6,612&lt;br/&gt;Participants: 6,207"]
+B["With DPBN endpoint&lt;br/&gt;Records: 6,428&lt;br/&gt;Participants: 6,024"]
+C["dt_chilhood_exposure loaded&lt;br/&gt;Records: 53,303&lt;br/&gt;Participants: 5,398"]
+D["Participant overlap&lt;br/&gt;Participants: 5,226"]
+E["Final dt_multistudies&lt;br/&gt;Records: 5,616&lt;br/&gt;Participants: 5,226"]
+F["Final dt_chilhood_exposure&lt;br/&gt;Records: 52,463&lt;br/&gt;Participants: 5,226"]
+A --&gt; B
+B --&gt; D
+C --&gt; D
+D --&gt; E
+D --&gt; F
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>The row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification.</p>
+</section>
+<section id="data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role">Data Dictionary: <code>dt_chilhood_exposure</code> (Variables of Interest by Role)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 5%">
+<col style="width: 23%">
+<col style="width: 5%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Value Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Identifier</strong></td>
+<td style="text-align: left;">USUBJID</td>
+<td style="text-align: left;">Unique Subject Identifier</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 48 to 260880</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Time Variable</strong></td>
+<td style="text-align: left;">EXPAGE</td>
+<td style="text-align: left;">Exposure Age</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 0 to 12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Exposure (SDoH Trajectory Input)</strong></td>
+<td style="text-align: left;">LIVEDWOM</td>
+<td style="text-align: left;">Lived Without Mother</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">LIVEDWOF</td>
+<td style="text-align: left;">Lived Without Father</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">HHCHLD14O</td>
+<td style="text-align: left;">Overcrowded (0–14y children &gt; 3)</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">HHSES</td>
+<td style="text-align: left;">Household Socioeconomic Status</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Low; Middle; High</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Baseline Factor</strong></td>
+<td style="text-align: left;">MAGE</td>
+<td style="text-align: left;">Mother’s Age</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 11 to 82</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MEDU</td>
+<td style="text-align: left;">Mother’s Education</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">None/Primary; Secondary; Completed Matric</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MHIV</td>
+<td style="text-align: left;">Mother’s HIV Status</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Error; Negative; Positive</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MPTS</td>
+<td style="text-align: left;">Mother’s Partner Status</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Missing/Refused; No partner; Married; Regular; Casual; Widowed/Separated</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MMIG</td>
+<td style="text-align: left;">Mother’s Ever Migrated (Previous 1 Year)</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MENM</td>
+<td style="text-align: left;">Mother’s Enumeration (Previous 1 Year)</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MHMS</td>
+<td style="text-align: left;">Mother’s Head of HH relationship</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Head/Spouse/Husband; Child; Related; Unrelated/Other</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FAGE</td>
+<td style="text-align: left;">Father’s Age</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 10 to 80</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FEDU</td>
+<td style="text-align: left;">Father’s Education</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">None/Primary; Secondary; Completed Matric</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FHIV</td>
+<td style="text-align: left;">Father’s HIV Status</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Error; Negative; Positive</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FPTS</td>
+<td style="text-align: left;">Father’s Partner Status</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Missing/Refused; No partner; Married; Regular; Casual; Widowed/Separated</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FMIG</td>
+<td style="text-align: left;">Father’s Ever Migrated (Previous 1 Year)</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FENM</td>
+<td style="text-align: left;">Father’s Enumeration (Previous 1 Year)</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FHMS</td>
+<td style="text-align: left;">Father’s Head of HH relationship</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Head/Spouse/Husband; Child; Related; Unrelated/Other</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">MDTH</td>
+<td style="text-align: left;">Configured variable</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Missing in current object</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FDTH</td>
+<td style="text-align: left;">Configured variable</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Missing in current object</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-dictionary-dt_multistudies-variables-of-interest-by-role" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-dt_multistudies-variables-of-interest-by-role">Data Dictionary: <code>dt_multistudies</code> (Variables of Interest by Role)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 6%">
+<col style="width: 18%">
+<col style="width: 5%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Role</th>
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Value Labels</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Identifier</strong></td>
+<td style="text-align: left;">USUBJID</td>
+<td style="text-align: left;">Unique Subject Identifier</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 48 to 260880</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Outcome</strong></td>
+<td style="text-align: left;">DPBN</td>
+<td style="text-align: left;">Depressed</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Mediator</strong></td>
+<td style="text-align: left;">DNKA</td>
+<td style="text-align: left;">Drank Alcohol</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ESXC</td>
+<td style="text-align: left;">Ever Had Sex</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">FDSC</td>
+<td style="text-align: left;">Food Insecure</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">GOVG</td>
+<td style="text-align: left;">No Government Grant</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">VLNC</td>
+<td style="text-align: left;">Experienced Violence</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Mediator-Outcome Confounder</strong></td>
+<td style="text-align: left;">SEX</td>
+<td style="text-align: left;">Sex</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Male; Female</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AGE</td>
+<td style="text-align: left;">Age (Years)</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 13 to 24</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SCSP</td>
+<td style="text-align: left;">Has Social Support</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">SCHL</td>
+<td style="text-align: left;">In School</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">HIVS</td>
+<td style="text-align: left;">HIV Positive</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Negative; Positive</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">ORPH</td>
+<td style="text-align: left;">Orphanhood Status</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Both Parents Alive; One Parent Deceased; Both Parents Deceased</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">EXTMG</td>
+<td style="text-align: left;">External migration</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">RURAL</td>
+<td style="text-align: left;">Reside in Rural Area</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">CLYR</td>
+<td style="text-align: left;">Calendar year</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 0 to 10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="data-dictionary-dt_multistudies-derived" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-dt_multistudies-derived">Data Dictionary: <code>dt_multistudies</code> (Derived)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 13%">
+<col style="width: 3%">
+<col style="width: 3%">
+<col style="width: 13%">
+<col style="width: 41%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variable</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Value Labels</th>
+<th style="text-align: left;">Source Variables</th>
+<th style="text-align: left;">Derivation</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">DPBN</td>
+<td style="text-align: left;">Depressed</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">No; Yes</td>
+<td style="text-align: left;">PHQBIN, irt_joint_models.rds</td>
+<td style="text-align: left;">PHQBIN &gt;= 10</td>
+<td style="text-align: left;">Implemented in dataset preparation merge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ELCDV</td>
+<td style="text-align: left;">Early Childhood Development (Ages 0–5)</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Childhood exposure trajectories (0-5 years)</td>
+<td style="text-align: left;">Initialized as NA_character_ during dataset preparation merge; later populated from early-years latent trajectory class assignment.</td>
+<td style="text-align: left;">Placeholder in dataset preparation; populated in class-derivation stage</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">MDCDV</td>
+<td style="text-align: left;">Middle-Late Childhood Development (Ages 6–12)</td>
+<td style="text-align: left;">character</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Childhood exposure trajectories (6-12 years)</td>
+<td style="text-align: left;">Initialized as NA_character_ during dataset preparation merge; later populated from middle-late years latent trajectory class assignment.</td>
+<td style="text-align: left;">Placeholder in dataset preparation; populated in class-derivation stage</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="../about.html">About</a> | <a href="../tabs/team.html">Team</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Created with <a href="https://quarto.org/" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Quarto</a> and <a href="https://www.r-project.org/" target="_blank" rel="noopener"><i class="bi bi-r-circle"></i> R</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
