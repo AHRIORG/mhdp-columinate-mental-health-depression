@@ -1,0 +1,26 @@
+---
+title: "Reports"
+toc: false
+---
+
+## Reports
+
+This section hosts project reports, technical summaries, and analysis outputs.
+
+## Available Reports
+
+### Psychometric Harmonization
+
+- [Open Report](/reports/obj03_psychometric_report.html)
+- Abstract: This report documents the psychometric harmonization workflow used to align SSQ and PHQ depression constructs, including structural validation, invariance checks, calibration diagnostics, and practical threshold interpretation for transportable scoring.
+- Keywords: psychometric harmonization; SSQ; PHQ-9; measurement invariance; factor structure; calibration; IRT
+- Coverage: detailed source-aligned psychometric introduction/methods/results narrative, psychometric concepts, harmonization workflow, structural diagnostics, calibration evidence, and interpretation for SSQ-PHQ comparability.
+- Visual assets: psychometric figure library in `_assets`.
+
+### Preliminary Mediator Associations
+
+- [Open Report](/reports/preliminary_mediator_associations.html)
+- Abstract: This report summarizes preliminary associations between candidate mediators and depression outcome, presenting unadjusted, base-adjusted, and fully adjusted models alongside pairwise mediator dependence metrics to guide mediation-model prioritization.
+- Keywords: mediator associations; depression outcome; logistic regression; adjusted odds ratios; Cramer's V; pairwise dependence
+- Coverage: detailed source-aligned dataset preparation methods, model specifications, outcome associations, pairwise inter-association table (OR and Cramer's V), and interpretation notes.
+- Source objects: `PRJ-CO-LUMINATE/_tools/_objects/mediation_prelim_*`

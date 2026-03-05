@@ -1,0 +1,257 @@
+---
+title: "Temporary Draft: Data Dependency Structure"
+format: html
+toc: true
+---
+
+## Purpose
+
+This temporary page is for confirming the CO-LUMINATE data dependency structure before integrating into permanent documentation.
+
+## Core Data Inputs
+
+| Data asset | Role in pipeline |
+|------------------------------------|------------------------------------|
+| Psychometric bridge source data | Bridge source for SSQ/PHQ harmonization. |
+| SSQ-only cohort response data | Input scored with IRT-based calibration to align SSQ responses with PHQ-based depression reference logic. |
+| Childhood exposure longitudinal data | Source input for SDoH trajectory derivation in 0-5 and 6-12 year windows. |
+| Integrated secondary analysis dataset | Final integrated dataset joining calibrated depression outcomes and required covariates/exposures for secondary data analysis. |
+
+## Dependency Flow (Draft)
+
+```{r}
+#| include: false
+
+find_project_root <- function(start_dir = normalizePath(getwd(), winslash = "/", mustWork = TRUE)) {
+  dir_now <- start_dir
+  repeat {
+    if (file.exists(file.path(dir_now, "_quarto.yml"))) {
+      return(dir_now)
+    }
+    parent <- dirname(dir_now)
+    if (identical(parent, dir_now)) {
+      return(start_dir)
+    }
+    dir_now <- parent
+  }
+}
+
+safe_load_object <- function(rdata_path, object_name) {
+  if (!file.exists(rdata_path)) {
+    return(NULL)
+  }
+  e <- new.env(parent = emptyenv())
+  load(rdata_path, envir = e)
+  if (!exists(object_name, envir = e, inherits = FALSE)) {
+    return(NULL)
+  }
+  get(object_name, envir = e, inherits = FALSE)
+}
+
+count_distinct_ids <- function(df, id_var = "USUBJID", complete_vars = NULL, require_non_missing = NULL) {
+  if (is.null(df) || !(id_var %in% names(df))) {
+    return(NA_integer_)
+  }
+
+  keep <- !is.na(df[[id_var]])
+
+  if (!is.null(complete_vars)) {
+    vars <- intersect(complete_vars, names(df))
+    if (length(vars) > 0) {
+      keep <- keep & stats::complete.cases(df[, vars, drop = FALSE])
+    }
+  }
+
+  if (!is.null(require_non_missing) && (require_non_missing %in% names(df))) {
+    keep <- keep & !is.na(df[[require_non_missing]])
+  }
+
+  length(unique(df[[id_var]][keep]))
+}
+
+fmt_n <- function(x) {
+  if (is.na(x)) {
+    return("?")
+  }
+  format(x, big.mark = ",", trim = TRUE, scientific = FALSE)
+}
+
+project_root <- find_project_root()
+private_subpath <- file.path("_private_use", "data_management", "data", "co-luminate", "adam")
+private_candidates <- c(
+  file.path(dirname(dirname(project_root)), private_subpath),
+  file.path(project_root, "..", "..", private_subpath),
+  file.path(project_root, "..", private_subpath)
+)
+private_candidates <- unique(normalizePath(private_candidates, winslash = "/", mustWork = FALSE))
+private_adam_dir <- private_candidates[
+  file.exists(file.path(private_candidates, "dt_multistudies.RData"))
+][1]
+
+if (is.na(private_adam_dir) || is.null(private_adam_dir)) {
+  private_adam_dir <- ""
+}
+
+psychometric_df <- safe_load_object(file.path(private_adam_dir, "dt_psychometric.RData"), "dt_psychometric")
+ssq_only_df <- safe_load_object(file.path(private_adam_dir, "dt_dreams_multi_ssq.RData"), "dt_dreams_multi_ssq")
+childhood_df <- safe_load_object(file.path(private_adam_dir, "dt_childhood_exposure.RData"), "dt_childhood_exposure")
+integrated_df <- safe_load_object(file.path(private_adam_dir, "dt_multistudies.RData"), "dt_multistudies")
+
+calibration_vars <- c("PHQSCR", "SSQ01", "SSQ02", "SSQ03", "SSQ08", "SSQ09", "SSQ10", "SSQ11", "SSQ12", "SSQ13", "SSQ14")
+trajectory_vars <- c("LIVEDWOM", "LIVEDWOF", "HHSES", "HHCHLD14O", "HHCHLD4O", "PREGMOT", "HHDEATHS", "HHGRANTS", "HHMIGRANTS")
+
+n_a <- count_distinct_ids(psychometric_df)
+n_b <- count_distinct_ids(psychometric_df, complete_vars = calibration_vars)
+n_c <- count_distinct_ids(ssq_only_df)
+n_d <- count_distinct_ids(ssq_only_df, require_non_missing = "TDEPBIN")
+n_e <- count_distinct_ids(childhood_df)
+
+n_ids_05 <- character(0)
+n_ids_612 <- character(0)
+
+n_f_05 <- {
+  if (is.null(childhood_df) || !("USUBJID" %in% names(childhood_df)) || !("EXPAGE" %in% names(childhood_df))) {
+    NA_integer_
+  } else {
+    keep <- !is.na(childhood_df$USUBJID) &
+      !is.na(childhood_df$EXPAGE) &
+      childhood_df$EXPAGE >= 0 &
+      childhood_df$EXPAGE <= 5
+    n_ids_05 <<- unique(as.character(childhood_df$USUBJID[keep]))
+    length(n_ids_05)
+  }
+}
+
+n_f_612 <- {
+  if (is.null(childhood_df) || !("USUBJID" %in% names(childhood_df)) || !("EXPAGE" %in% names(childhood_df))) {
+    NA_integer_
+  } else {
+    keep <- !is.na(childhood_df$USUBJID) &
+      !is.na(childhood_df$EXPAGE) &
+      childhood_df$EXPAGE >= 6 &
+      childhood_df$EXPAGE <= 12
+    n_ids_612 <<- unique(as.character(childhood_df$USUBJID[keep]))
+    length(n_ids_612)
+  }
+}
+
+n_f_both <- {
+  if (is.na(n_f_05) || is.na(n_f_612)) {
+    NA_integer_
+  } else {
+    length(intersect(n_ids_05, n_ids_612))
+  }
+}
+
+n_f_only_05 <- {
+  if (is.na(n_f_05) || is.na(n_f_612)) {
+    NA_integer_
+  } else {
+    length(setdiff(n_ids_05, n_ids_612))
+  }
+}
+
+n_f_only_612 <- {
+  if (is.na(n_f_05) || is.na(n_f_612)) {
+    NA_integer_
+  } else {
+    length(setdiff(n_ids_612, n_ids_05))
+  }
+}
+
+n_g <- count_distinct_ids(integrated_df, require_non_missing = "DPBN")
+sdoh_component_ids <- if (is.na(n_f_05) || is.na(n_f_612)) character(0) else union(n_ids_05, n_ids_612)
+dpbn_endpoint_ids <- {
+  if (is.null(integrated_df) || !("USUBJID" %in% names(integrated_df)) || !("DPBN" %in% names(integrated_df))) {
+    character(0)
+  } else {
+    unique(as.character(integrated_df$USUBJID[!is.na(integrated_df$USUBJID) & !is.na(integrated_df$DPBN)]))
+  }
+}
+
+n_h <- if (length(sdoh_component_ids) == 0) NA_integer_ else length(sdoh_component_ids)
+n_i <- if (length(sdoh_component_ids) == 0 || length(dpbn_endpoint_ids) == 0) {
+  NA_integer_
+} else {
+  length(intersect(sdoh_component_ids, dpbn_endpoint_ids))
+}
+```
+
+```{r}
+#| echo: false
+#| results: asis
+
+diagram_lines <- c(
+  "```{mermaid}",
+  "%%{init: {\"flowchart\": {\"curve\": \"linear\", \"htmlLabels\": true}} }%%",
+  "flowchart LR",
+  "  O1[\"Objective 1<br/>Build linked<br/>analysis dataset\"]",
+  "  O2[\"Objective 2<br/>Quantify direct<br/>and mediation links\"]",
+  "  O3[\"Objective 3<br/>Characterize SDoH<br/>trajectories\"]",
+  "",
+  "  S1[\"Linkage Stage 1<br/>Psychometric<br/>calibration\"]",
+  "  S2[\"Linkage Stage 2<br/>SDoH trajectory<br/>derivation\"]",
+  "  S3[\"Linkage Stage 3<br/>Final linkage<br/>and integration\"]",
+  "",
+  "  O1 --> S1",
+  "  O1 --> S2",
+  "  O1 --> S3",
+  "  O2 --> S3",
+  "  O3 --> S2",
+  "",
+  sprintf("  S1 --> A[\"Psychometric bridge<br/>source data<br/>(n=%s)\"]", fmt_n(n_a)),
+  sprintf("  A --> B[\"Fit IRT calibration<br/>model (SSQ to PHQ)<br/>reference scale<br/>(n=%s)\"]", fmt_n(n_b)),
+  sprintf("  S1 --> C[\"SSQ-only cohort<br/>response data<br/>(n=%s)\"]", fmt_n(n_c)),
+  sprintf("  C --> D[\"Apply calibration<br/>for harmonized<br/>depression endpoint<br/>(n=%s)\"]", fmt_n(n_d)),
+  "  B --> D",
+  "",
+  sprintf("  S2 --> E[\"Childhood exposure<br/>longitudinal data<br/>(n=%s)\"]", fmt_n(n_e)),
+  sprintf("  E --> F[\"Derive SDoH<br/>trajectories<br/>0-5 years (n=%s)<br/>6-12 years (n=%s)<br/>Both (n=%s)<br/>Only 0-5 (n=%s)<br/>Only 6-12 (n=%s)<br/><br/>\"]", fmt_n(n_f_05), fmt_n(n_f_612), fmt_n(n_f_both), fmt_n(n_f_only_05), fmt_n(n_f_only_612)),
+  "",
+  sprintf("  S3 --> G[\"Assemble mental<br/>health component<br/>(n=%s)\"]", fmt_n(n_g)),
+  sprintf("  S3 --> H[\"Assemble SDoH<br/>trajectory component<br/>(n=%s)\"]", fmt_n(n_h)),
+  "  D --> G",
+  "  F --> H",
+  "",
+  sprintf("  G --> I[\"Integrated secondary<br/>analysis dataset<br/>(n=%s)\"]", fmt_n(n_i)),
+  "  H --> I",
+  "",
+  "  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;",
+  "  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;",
+  "  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;",
+  "  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;",
+  "  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;",
+  "  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;",
+  "  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;",
+  "  class O1,O2,O3 objective;",
+  "  class S1 stage1;",
+  "  class S2 stage2;",
+  "  class S3 stage3;",
+  "  class A,B,C,D,G psych;",
+  "  class E,F,H sdoh;",
+  "  class I integ;",
+  "```"
+)
+
+cat(paste(diagram_lines, collapse = "\n"))
+```
+
+## Dependency Notes
+
+1.  Psychometric bridge source data informs the calibration parameters.
+2.  SSQ-only cohort response data is transformed using the calibration to make depression logic comparable.
+3.  Childhood exposure longitudinal data contributes trajectory-derived social determinant features.
+4.  Integrated secondary analysis dataset is the endpoint for CO-LUMINATE secondary analyses.
+
+Counts in boxes are distinct participants (`USUBJID`) and are calculated at render time from available source objects.
+Integrated dataset count is restricted to participants with both SDoH trajectory coverage and a non-missing depression endpoint.
+Color mapping links workflow intent to project framing:
+
+- Violet nodes: proposal objectives.
+- Blue nodes: psychometric calibration stage.
+- Orange nodes: SDoH trajectory stage.
+- Green nodes: final linkage and integrated dataset stage.
+
+## Temporary Status
+
+This file is intentionally temporary for structure confirmation and can be removed or migrated once approved.

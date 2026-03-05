@@ -1,0 +1,202 @@
+[
+  {
+    "study": "Dreams",
+    "sex": "Female",
+    "age_band": "13-15",
+    "n": 598,
+    "depressed_n": 18,
+    "prevalence_pct": 3
+  },
+  {
+    "study": "Dreams",
+    "sex": "Female",
+    "age_band": "16-18",
+    "n": 575,
+    "depressed_n": 50,
+    "prevalence_pct": 8.7
+  },
+  {
+    "study": "Dreams",
+    "sex": "Female",
+    "age_band": "19-21",
+    "n": 562,
+    "depressed_n": 70,
+    "prevalence_pct": 12.5
+  },
+  {
+    "study": "Dreams",
+    "sex": "Female",
+    "age_band": "22-24",
+    "n": 125,
+    "depressed_n": 28,
+    "prevalence_pct": 22.4
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "sex": "Female",
+    "age_band": "16-18",
+    "n": 83,
+    "depressed_n": 3,
+    "prevalence_pct": 3.6
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "sex": "Female",
+    "age_band": "19-21",
+    "n": 175,
+    "depressed_n": 12,
+    "prevalence_pct": 6.9
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "sex": "Female",
+    "age_band": "22-24",
+    "n": 116,
+    "depressed_n": 2,
+    "prevalence_pct": 1.7
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "sex": "Male",
+    "age_band": "16-18",
+    "n": 87,
+    "depressed_n": 1,
+    "prevalence_pct": 1.1
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "sex": "Male",
+    "age_band": "19-21",
+    "n": 207,
+    "depressed_n": 9,
+    "prevalence_pct": 4.3
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "sex": "Male",
+    "age_band": "22-24",
+    "n": 113,
+    "depressed_n": 5,
+    "prevalence_pct": 4.4
+  },
+  {
+    "study": "Multilevel",
+    "sex": "Female",
+    "age_band": "22-24",
+    "n": 44,
+    "depressed_n": 7,
+    "prevalence_pct": 15.9
+  },
+  {
+    "study": "Multilevel",
+    "sex": "Male",
+    "age_band": "13-15",
+    "n": 463,
+    "depressed_n": 4,
+    "prevalence_pct": 0.9
+  },
+  {
+    "study": "Multilevel",
+    "sex": "Male",
+    "age_band": "16-18",
+    "n": 495,
+    "depressed_n": 13,
+    "prevalence_pct": 2.6
+  },
+  {
+    "study": "Multilevel",
+    "sex": "Male",
+    "age_band": "19-21",
+    "n": 340,
+    "depressed_n": 13,
+    "prevalence_pct": 3.8
+  },
+  {
+    "study": "Multilevel",
+    "sex": "Male",
+    "age_band": "22-24",
+    "n": 220,
+    "depressed_n": 22,
+    "prevalence_pct": 10
+  },
+  {
+    "study": "TasP",
+    "sex": "Female",
+    "age_band": "16-18",
+    "n": 15,
+    "depressed_n": 0,
+    "prevalence_pct": 0
+  },
+  {
+    "study": "TasP",
+    "sex": "Female",
+    "age_band": "19-21",
+    "n": 50,
+    "depressed_n": 0,
+    "prevalence_pct": 0
+  },
+  {
+    "study": "TasP",
+    "sex": "Female",
+    "age_band": "22-24",
+    "n": 75,
+    "depressed_n": 1,
+    "prevalence_pct": 1.3
+  },
+  {
+    "study": "TasP",
+    "sex": "Male",
+    "age_band": "22-24",
+    "n": 13,
+    "depressed_n": 0,
+    "prevalence_pct": 0
+  },
+  {
+    "study": "Thetha Nami",
+    "sex": "Female",
+    "age_band": "16-18",
+    "n": 236,
+    "depressed_n": 19,
+    "prevalence_pct": 8.1
+  },
+  {
+    "study": "Thetha Nami",
+    "sex": "Female",
+    "age_band": "19-21",
+    "n": 88,
+    "depressed_n": 5,
+    "prevalence_pct": 5.7
+  },
+  {
+    "study": "Thetha Nami",
+    "sex": "Female",
+    "age_band": "22-24",
+    "n": 110,
+    "depressed_n": 8,
+    "prevalence_pct": 7.3
+  },
+  {
+    "study": "Thetha Nami",
+    "sex": "Male",
+    "age_band": "16-18",
+    "n": 246,
+    "depressed_n": 13,
+    "prevalence_pct": 5.3
+  },
+  {
+    "study": "Thetha Nami",
+    "sex": "Male",
+    "age_band": "19-21",
+    "n": 79,
+    "depressed_n": 4,
+    "prevalence_pct": 5.1
+  },
+  {
+    "study": "Thetha Nami",
+    "sex": "Male",
+    "age_band": "22-24",
+    "n": 81,
+    "depressed_n": 3,
+    "prevalence_pct": 3.7
+  }
+]

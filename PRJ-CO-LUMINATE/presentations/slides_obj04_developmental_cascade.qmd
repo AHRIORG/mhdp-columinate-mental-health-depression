@@ -1,0 +1,105 @@
+---
+title: |
+  <img src="../_assets/ahri_logo.png" alt="AHRI logo" class="title-logo" />
+  <br />
+  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression
+subtitle: "A Longitudinal Causal Mediation Framework"
+author:
+  - name: CO-LUMINATE DSU Team
+    affiliation: Africa Health Research Institute (AHRI)
+    city: Durban & Somokhele
+    country: South Africa
+format:
+  revealjs:
+    controls: true
+    progress: true
+    slide-number: true
+    zoom: true
+    css:
+      - styles/presentation_0.css
+      - styles/presentation_1.css
+      - styles/presentation_obj04.css
+---
+
+## Motivation
+
+- CO-LUMINATE links harmonized youth mental-health data to AHRI HDSS social-exposure histories.
+- Linked analysis cohort: 5,279 adolescents and young people aged 13-24 years.
+- SAP focus: quantify longitudinal social-determinant effects on depression and mediation through behavioral pathways.
+
+## SAP-Aligned Aim and Questions
+
+- Aim: assess the longitudinal impact of social determinants on youth depression using a causal mediation framework.
+- Research question 4.1: how are social determinants associated longitudinally with depression among young people?
+- Research question 4.2: what are the causal pathways between low SES, crowding, caregiver co-residency, and depression?
+- Research question 4.3: are these relationships mediated by migration, substance use, and sexual behavior?
+
+## CO-LUMINATE Linked Data Sources {.smaller}
+
+| Study | Design | Youth sample (13-24) | Study period | MH timepoints | Tool(s) |
+|---|---|---:|---|---:|---|
+| DREAMS | Observational cohort | 2,184 | 2017-2019 | 3 | SSQ-14 |
+| Multilevel | Observational cohort | 1,833 | 2018-2019 | 2 | SSQ-14 |
+| Isisekelo Sempilo | Individually randomized trial | 859 | 2020-2021 | 1 | SSQ-14, PHQ-9 |
+| Treatment as Prevention (TasP) | Cluster-randomized trial | 403 | 2012-2016 | 6 | PHQ-9 |
+
+- Total linked sample in SAP: 5,279.
+
+## Developmental Cascade Perspective
+
+![](/_assets/Longitudinal%20Cascade.png){width=90%}
+
+- Time-ordered modeling links life-course household exposures to later behavioral and depression outcomes.
+
+## Causal Mediation Structure {.dag-zoom-slide}
+
+<a href="/_assets/DAG-01.svg" target="_blank" class="dag-zoom-link" title="Open zoomable DAG in a new tab">
+  <img src="/_assets/DAG-01.svg" alt="Causal mediation DAG" />
+</a>
+<p class="dag-zoom-note">Click the DAG to open the full-size SVG in a new tab (browser zoom supported).</p>
+
+## DAG Components
+
+- Exposure domain: low SES, crowding, caregiver co-residency (longitudinal HDSS).
+- Mediator domain (SAP, individual-level): migration, substance use, and sexual behaviour.
+- Outcome domain: depression derived from harmonized SSQ-14/PHQ-9 framework.
+
+## SAP Mediators (Explicit)
+
+- Migration
+- Substance use
+- Sexual behaviour
+- These mediators are tested as behavioural pathways between social determinants and depression.
+
+## Youth Co-Creation Input to the SAP
+
+- Youth Advisory Group (YAG) develops a lay DAG from photo-diary and narrative sessions.
+- Co-created DAG is refined with researchers and fed into the causal analysis plan.
+- YAG interpretation workshop is used to contextualize and ground-truth findings.
+
+## SAP Analysis Plan: A to D
+
+1. A: describe social-determinant trajectories using longitudinal latent class analysis.
+2. B: estimate interactions between determinants and mediators (migration, substance use, sexual behaviour) with mixed-effects regression.
+3. C: evaluate SSQ-14 against PHQ-9, derive age-specific cutoffs (13-19, 20-24), estimate prevalence by wave.
+4. D: fit confounder-adjusted logistic models, then estimate causal effects using DAG-guided g-computation.
+
+## Causal Estimation Strategy (SAP Step D)
+
+- Use adjusted logistic models to identify social factors associated with depression.
+- Include associated social factors as causal exposures in the mediation framework.
+- Use g-computation to estimate effects under time-varying exposures.
+- Estimate mediation by behavioral factors at individual level (migration, substance use, sexual behavior).
+
+## Planned Outputs and Translation
+
+- Longitudinal linked dataset and reproducible analytic workflow.
+- Pathway-specific evidence on direct and mediated social-determinant effects on depression.
+- Policy-relevant signals for social protection, crowding-responsive housing interventions, and caregiver-support programming.
+- Scalable method for SAPRIN and APCC network contexts.
+
+## Thank You
+
+- CO-LUMINATE DSU Team
+- Africa Health Research Institute (AHRI)
+- SAP content source: `_assets/proposal/proposal_content.md` (Sections 4.2 and 5.2.2).

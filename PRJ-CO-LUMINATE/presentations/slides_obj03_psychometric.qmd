@@ -1,0 +1,56 @@
+---
+title: |
+  <img src="../_assets/ahri_logo.png" alt="AHRI logo" class="title-logo" />
+  <br />
+  CO-LUMINATE Psychometric Harmonization
+subtitle: "Preliminary SSQ-PHQ Comparability Findings"
+author:
+  - name: CO-LUMINATE DSU Team
+    affiliation: Africa Health Research Institute (AHRI)
+    city: Durban & Somokhele
+    country: South Africa
+format:
+  revealjs:
+    controls: true
+    progress: true
+    slide-number: true
+    css:
+      - styles/presentation_0.css
+      - styles/presentation_1.css
+---
+
+## Scope
+
+- Objective: establish comparability between SSQ and PHQ depression measures in the CO-LUMINATE psychometric stream.
+- Outputs summarize structure stability, calibration performance, and score harmonization evidence.
+
+## Analytical Workflow
+
+1. Monte Carlo EFA for factor-structure stability.
+2. Monte Carlo CFA for model-fit and invariance evaluation.
+3. IRT plus ROC calibration for harmonized outcome interpretation.
+4. Integration of diagnostics into analysis-ready guidance.
+
+## Factor Retention and Structural Evidence
+
+![](/_assets/obj03/fig-factor-retention-1.png){width=92%}
+
+## Core Psychometric Findings
+
+![](/_assets/obj03/fig-figure1-1.png){width=95%}
+
+## Calibration and Validity
+
+![](/_assets/obj03/fig-irtroc-1.png){width=92%}
+
+![](/_assets/obj03/fig-ssq08-validity-1.png){width=92%}
+
+## Pattern Diagnostics
+
+![](/_assets/obj03/fig-heatmap-ssq10-pa-1.png){width=90%}
+
+## Implications for CO-LUMINATE
+
+- Preliminary evidence supports harmonized use of SSQ and PHQ constructs for depression-outcome derivation.
+- Psychometric comparability enables more coherent downstream modeling across linked datasets.
+- Next step: consolidate finalized psychometric outputs into the integrated project analysis pipeline.

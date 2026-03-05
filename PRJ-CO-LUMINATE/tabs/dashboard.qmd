@@ -1,0 +1,224 @@
+---
+title: "**Dashboard**"
+format:
+  dashboard:
+    theme: sandstone
+    css: ../styles.css
+toc: false
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+read_obj <- function(filename) {
+  candidates <- c(
+    file.path("_tools", "_objects", filename),
+    file.path("..", "_tools", "_objects", filename)
+  )
+  idx <- which(file.exists(candidates))[1]
+  if (is.na(idx)) {
+    stop("Missing object file: ", filename)
+  }
+  readRDS(candidates[idx])
+}
+
+kpi <- read_obj("dashboard_kpi.rds")
+
+fmt_int <- function(x) format(round(x), big.mark = ",", trim = TRUE)
+fmt_pct <- function(x) ifelse(is.na(x), "NA", sprintf("%.1f%%", x))
+
+mh_start_label <- if (!is.null(kpi$mh_start_month_year) && nzchar(kpi$mh_start_month_year)) {
+  kpi$mh_start_month_year
+} else {
+  "Not available"
+}
+mh_end_label <- if (!is.null(kpi$mh_end_month_year) && nzchar(kpi$mh_end_month_year)) {
+  kpi$mh_end_month_year
+} else {
+  "Not available"
+}
+mh_range_label <- if (!is.null(kpi$mh_range_month_year) && nzchar(kpi$mh_range_month_year)) {
+  kpi$mh_range_month_year
+} else {
+  "Not available"
+}
+sdoh_start_label <- if (!is.null(kpi$sdoh_start_year) && nzchar(kpi$sdoh_start_year)) {
+  kpi$sdoh_start_year
+} else {
+  "Not available"
+}
+sdoh_end_label <- if (!is.null(kpi$sdoh_end_year) && nzchar(kpi$sdoh_end_year)) {
+  kpi$sdoh_end_year
+} else {
+  "Not available"
+}
+sdoh_range_label <- if (!is.null(kpi$sdoh_range_year) && nzchar(kpi$sdoh_range_year)) {
+  kpi$sdoh_range_year
+} else {
+  "Not available"
+}
+sdoh_start_my_label <- if (!is.null(kpi$sdoh_start_month_year) && nzchar(kpi$sdoh_start_month_year)) {
+  kpi$sdoh_start_month_year
+} else if (sdoh_start_label != "Not available") {
+  paste("Jan", sdoh_start_label)
+} else {
+  "Not available"
+}
+sdoh_end_my_label <- if (!is.null(kpi$sdoh_end_month_year) && nzchar(kpi$sdoh_end_month_year)) {
+  kpi$sdoh_end_month_year
+} else if (sdoh_end_label != "Not available") {
+  paste("Dec", sdoh_end_label)
+} else {
+  "Not available"
+}
+sdoh_range_my_label <- if (!is.null(kpi$sdoh_range_month_year) && nzchar(kpi$sdoh_range_month_year)) {
+  kpi$sdoh_range_month_year
+} else if (sdoh_start_my_label != "Not available" && sdoh_end_my_label != "Not available") {
+  paste0(sdoh_start_my_label, " to ", sdoh_end_my_label)
+} else {
+  "Not available"
+}
+```
+
+# {.sidebar}
+
+::: {style="text-align: center;"}
+**Dataset Coverage**
+
+Mental health (single-timepoint)  
+*`r mh_range_label`*
+
+SDoH trajectories (longitudinal)  
+*`r sdoh_range_my_label`*
+
+<p style="margin-top: 1rem; font-size: 0.9em;"><em>Disclaimer: This dashboard uses aggregated data only.</em></p>
+:::
+
+# All {orientation="rows"}
+
+## Row {height="8%"}
+
+### Column {width="15%"}
+
+```{r}
+#| echo: false
+#| content: valuebox
+#| title: "Cohorts"
+list(
+  icon = "diagram-3",
+  color = "info",
+  value = fmt_int(kpi$studies_total)
+)
+```
+
+### Column {width="25.5%"}
+
+```{r}
+#| echo: false
+#| content: valuebox
+#| title: "Participants/Records"
+list(
+  icon = "people-fill",
+  color = "primary",
+  value = paste(fmt_int(kpi$participants_total), "/", fmt_int(kpi$records_total))
+)
+```
+
+### Column {width="25.5%"}
+
+```{r}
+#| echo: false
+#| content: valuebox
+#| title: "Depression (%)"
+list(
+  icon = "activity",
+  color = "warning",
+  value = fmt_pct(kpi$depression_prev_pct)
+)
+```
+
+### Column {width="25.5%"}
+
+```{r}
+#| echo: false
+#| content: valuebox
+#| title: "Subgroups"
+list(
+  icon = "funnel",
+  color = "primary",
+  value = fmt_int(kpi$filter_dimensions_available)
+)
+```
+
+### Column {width="27.5%"}
+
+```{r}
+#| echo: false
+#| content: valuebox
+#| title: "Trajectory dimensions"
+list(
+  icon = "bezier2",
+  color = "secondary",
+  value = fmt_int(kpi$trajectory_dimensions_available)
+)
+```
+
+## Row {height="46%"}
+
+### Column {width="40%"}
+
+```{r}
+#| title: Plot
+```
+
+### Column {width="60%"}
+
+```{r}
+#| title: Plot
+```
+
+## Row {height="46%"}
+
+```{r}
+#| title: Plot
+```
+
+```{r}
+#| title: Plot
+```
+
+# SDoH
+
+## Row {height="40%"}
+
+### Column {width="40%"}
+
+```{r}
+#| title: Plot
+```
+
+### Column {width="60%"}
+
+```{r}
+#| title: Plot
+```
+
+## Row {height="40%"}
+
+```{r}
+#| title: Plot
+```
+
+```{r}
+#| title: Plot
+```
+
+
+# Trajectories
+
+<!-- Intentionally empty for now. -->
+
+# Data
+
+<!-- Intentionally empty for now. -->

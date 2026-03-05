@@ -1,0 +1,28 @@
+---
+title: "Team"
+toc: false
+---
+
+## CO-LUMINATE Core Team
+
+The CO-LUMINATE proposal team combines expertise in global mental health, biostatistics, epidemiology, and population science.
+
+| Name | Role | Affiliation(s) | Primary Expertise |
+|---|---|---|---|
+| Xanthe Hunt | Lead Applicant | AHRI; Stellenbosch University; SAMRC | Global mental health, co-creation, youth engagement |
+| Nondumiso Mthiyane | Co-applicant 1 | AHRI | Biostatistics |
+| Collins C Iwuji | Co-applicant 2 | AHRI; Brighton and Sussex Medical School, University of Sussex | Global health, HIV medicine, clinical epidemiology |
+| Kathy Baisley | Co-applicant 3 | AHRI; London School of Hygiene and Tropical Medicine | Medical statistics and epidemiology |
+| Kobus Herbst | Co-applicant 4 | AHRI; SAPRIN | Population science and longitudinal data systems |
+
+## Co-Creation And Community Input
+
+- Youth Co-Creators (YCC): 11 young people provide thought leadership and contextual interpretation.
+- Community Advisory Board: supports community engagement, relevance, and acceptability.
+- Stakeholder engagement: input from government and civil-society partners for interpretation and uptake.
+
+## Institutional Partners
+
+- Africa Health Research Institute (AHRI)
+- APHRC
+- Wellcome Trust

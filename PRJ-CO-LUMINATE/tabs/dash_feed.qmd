@@ -1,0 +1,735 @@
+---
+title: "Dashboard"
+format: 
+  dashboard
+---
+
+```{r}
+#| include: false
+#| warning: true
+#| message: false
+has_dt <- requireNamespace("DT", quietly = TRUE)
+has_crosstalk <- requireNamespace("crosstalk", quietly = TRUE)
+has_htmltools <- requireNamespace("htmltools", quietly = TRUE)
+has_dygraphs <- requireNamespace("dygraphs", quietly = TRUE)
+has_xts <- requireNamespace("xts", quietly = TRUE)
+has_interactive_plots <- has_dygraphs && has_xts
+
+if (!has_htmltools) {
+  stop("Package 'htmltools' is required to render dashboard.qmd.")
+}
+if (!has_dt) {
+  warning("Package 'DT' is not installed. Rendering static tables.")
+}
+if (!has_crosstalk) {
+  warning("Package 'crosstalk' is not installed. Rendering non-interactive filter panels.")
+}
+if (!has_interactive_plots) {
+  warning("Packages 'dygraphs' and/or 'xts' are not installed. Interactive plots will be skipped.")
+}
+
+read_obj <- function(filename) {
+  candidates <- c(
+    file.path("_tools", "_objects", filename),
+    file.path("..", "_tools", "_objects", filename)
+  )
+  idx <- which(file.exists(candidates))[1]
+  if (is.na(idx)) {
+    stop("Missing object file: ", filename)
+  }
+  readRDS(candidates[idx])
+}
+
+kpi <- read_obj("dashboard_kpi.rds")
+study_summary <- read_obj("dashboard_study_summary.rds")
+demog_summary <- read_obj("dashboard_demog_summary.rds")
+year_summary <- read_obj("dashboard_year_summary.rds")
+mediator_summary <- read_obj("dashboard_mediator_summary.rds")
+filter_schema <- read_obj("dashboard_filter_schema.rds")
+filter_cube <- read_obj("dashboard_filter_cube.rds")
+trajectory_trend_summary <- read_obj("dashboard_trajectory_trend_summary.rds")
+trajectory_pairwise_summary <- read_obj("dashboard_trajectory_pairwise_summary.rds")
+dashboard_build_info <- read_obj("dashboard_build_info.rds")
+
+fmt_int <- function(x) format(round(x), big.mark = ",", trim = TRUE)
+fmt_pct <- function(x) ifelse(is.na(x), "NA", sprintf("%.1f%%", x))
+
+date_index_from_int <- function(x, base_year = 2000L) {
+  as.Date(sprintf("%d-01-01", base_year + as.integer(x)))
+}
+
+date_index_seq <- function(n, base_year = 2000L) {
+  as.Date(sprintf("%d-01-01", base_year + seq_len(n) - 1L))
+}
+
+datatable_safe <- function(data, ...) {
+  if (has_dt) {
+    return(DT::datatable(data, ...))
+  }
+
+  if (has_crosstalk && inherits(data, "SharedData")) {
+    data <- data$origData()
+  }
+
+  knitr::kable(as.data.frame(data), row.names = FALSE)
+}
+
+card <- function(label, value, note = "") {
+  htmltools::div(
+    class = "dashboard-kpi-card",
+    htmltools::tags$p(class = "dashboard-kpi-label", label),
+    htmltools::tags$p(class = "dashboard-kpi-value", value),
+    htmltools::tags$p(class = "dashboard-kpi-note", note)
+  )
+}
+```
+
+## Dashboard Views {.tabset}
+
+### All
+
+This dashboard follows a standard structure: filter panel, KPI tiles, interactive plots, then detailed aggregated tables.
+
+All outputs are built from aggregated objects only. No participant-level rows are stored in this website project.
+
+#### Global Filter Panel
+
+```{r}
+#| echo: false
+available_schema <- filter_schema[filter_schema$available, , drop = FALSE]
+
+if (nrow(filter_cube) == 0) {
+  cat("No rows available in the suppressed filter cube.")
+} else {
+  display_cols <- c(
+    "study", "sex", "age_band",
+    available_schema$column_name[!is.na(available_schema$column_name)],
+    "n", "depressed_n", "prevalence_pct"
+  )
+  display_cols <- unique(display_cols[display_cols %in% names(filter_cube)])
+  cube_display <- filter_cube[, display_cols, drop = FALSE]
+
+  if (has_crosstalk) {
+    cube_shared <- crosstalk::SharedData$new(
+      cube_display,
+      key = as.character(seq_len(nrow(cube_display))),
+      group = "all_cube_group"
+    )
+
+    controls <- list(
+      crosstalk::filter_select("all_cube_study", "Study", cube_shared, ~study, multiple = TRUE),
+      crosstalk::filter_select("all_cube_sex", "Sex", cube_shared, ~sex, multiple = TRUE),
+      crosstalk::filter_select("all_cube_age", "Age Band", cube_shared, ~age_band, multiple = TRUE)
+    )
+
+    if (nrow(available_schema) > 0) {
+      for (i in seq_len(nrow(available_schema))) {
+        col_nm <- available_schema$column_name[[i]]
+        if (!is.na(col_nm) && col_nm %in% names(cube_display)) {
+          controls[[length(controls) + 1]] <- crosstalk::filter_select(
+            paste0("all_cube_", col_nm),
+            paste0(available_schema$domain[[i]], ": ", available_schema$label[[i]]),
+            cube_shared,
+            stats::as.formula(paste0("~", col_nm)),
+            multiple = TRUE
+          )
+        }
+      }
+    }
+
+    do.call(
+      htmltools::div,
+      c(list(class = "dashboard-filter-grid"), controls)
+    )
+
+    datatable_safe(
+      cube_shared,
+      rownames = FALSE,
+      options = list(pageLength = 8, autoWidth = TRUE, scrollX = TRUE)
+    )
+  } else {
+    datatable_safe(
+      cube_display,
+      rownames = FALSE,
+      options = list(pageLength = 8, autoWidth = TRUE, scrollX = TRUE)
+    )
+  }
+}
+```
+
+#### Snapshot KPIs
+
+```{r}
+#| echo: false
+htmltools::div(
+  class = "dashboard-kpi-grid",
+  card("Participants (snapshot)", fmt_int(kpi$participants_total), "One record per participant."),
+  card("Records (analysis rows)", fmt_int(kpi$records_total), "Rows with non-missing DPBN."),
+  card("Cohorts represented", fmt_int(kpi$studies_total), "Distinct studies."),
+  card("Depression prevalence", fmt_pct(kpi$depression_prev_pct), "Participant snapshot prevalence."),
+  card("Filter dimensions", fmt_int(kpi$filter_dimensions_available), "Available SDoH/trajectory filters."),
+  card("Trajectory dimensions", fmt_int(kpi$trajectory_dimensions_available), "Configured trajectory dimensions available.")
+)
+```
+
+#### Depression Prevalence Trend by Visit Year
+
+```{r}
+#| echo: false
+if (!has_interactive_plots) {
+  cat("Interactive plot dependencies are unavailable in this render environment.")
+} else if (nrow(year_summary) == 0) {
+  cat("No visit-year trend rows available after suppression.")
+} else {
+  clyr_vals <- sort(unique(year_summary$clyr))
+  study_vals <- sort(unique(year_summary$study))
+
+  trend_mat <- matrix(
+    NA_real_,
+    nrow = length(clyr_vals),
+    ncol = length(study_vals),
+    dimnames = list(as.character(clyr_vals), study_vals)
+  )
+
+  for (i in seq_len(nrow(year_summary))) {
+    rr <- year_summary[i, , drop = FALSE]
+    trend_mat[as.character(rr$clyr), as.character(rr$study)] <- as.numeric(rr$prevalence_pct)
+  }
+
+  trend_xts <- xts::xts(trend_mat, order.by = date_index_from_int(clyr_vals))
+
+  dygraphs::dygraph(
+    trend_xts,
+    main = "Depression Prevalence (%) by Visit Year and Cohort"
+  ) |>
+    dygraphs::dyOptions(drawPoints = TRUE, pointSize = 2.8, strokeWidth = 2) |>
+    dygraphs::dyRangeSelector() |>
+    dygraphs::dyLegend(show = "follow") |>
+    dygraphs::dyAxis("y", label = "Depression prevalence (%)") |>
+    dygraphs::dyAxis("x", label = "Visit year")
+}
+```
+
+#### Age-Band Depression Profile by Sex
+
+```{r}
+#| echo: false
+if (!has_interactive_plots) {
+  cat("Interactive plot dependencies are unavailable in this render environment.")
+} else if (nrow(demog_summary) == 0) {
+  cat("No demographic summary rows available after suppression.")
+} else {
+  age_levels <- c("13-15", "16-18", "19-21", "22-24", "25+", "Unknown")
+  age_vals <- age_levels[age_levels %in% unique(as.character(demog_summary$age_band))]
+  sex_vals <- sort(unique(as.character(demog_summary$sex)))
+
+  demog_agg <- stats::aggregate(
+    cbind(n, depressed_n) ~ age_band + sex,
+    data = demog_summary,
+    FUN = sum
+  )
+  demog_agg$prevalence_pct <- with(demog_agg, ifelse(n > 0, round(100 * depressed_n / n, 1), NA_real_))
+
+  demo_mat <- matrix(
+    NA_real_,
+    nrow = length(age_vals),
+    ncol = length(sex_vals),
+    dimnames = list(age_vals, sex_vals)
+  )
+
+  for (i in seq_len(nrow(demog_agg))) {
+    rr <- demog_agg[i, , drop = FALSE]
+    age_key <- as.character(rr$age_band)
+    sex_key <- as.character(rr$sex)
+    if (age_key %in% rownames(demo_mat) && sex_key %in% colnames(demo_mat)) {
+      demo_mat[age_key, sex_key] <- as.numeric(rr$prevalence_pct)
+    }
+  }
+
+  demo_xts <- xts::xts(demo_mat, order.by = date_index_seq(length(age_vals)))
+
+  dygraphs::dygraph(
+    demo_xts,
+    main = "Depression Prevalence (%) by Age Band and Sex"
+  ) |>
+    dygraphs::dyOptions(drawPoints = TRUE, pointSize = 3, strokeWidth = 2) |>
+    dygraphs::dyLegend(show = "follow") |>
+    dygraphs::dyAxis("y", label = "Depression prevalence (%)") |>
+    dygraphs::dyAxis("x", label = "Age-band index")
+}
+```
+
+#### Cohort Snapshot Table
+
+```{r}
+#| echo: false
+study_tbl <- study_summary
+study_tbl$participants <- fmt_int(study_tbl$participants)
+study_tbl$depressed_n <- fmt_int(study_tbl$depressed_n)
+study_tbl$prevalence_pct <- fmt_pct(study_tbl$prevalence_pct)
+study_tbl$female_pct <- fmt_pct(study_tbl$female_pct)
+
+datatable_safe(
+  study_tbl,
+  rownames = FALSE,
+  filter = "top",
+  colnames = c(
+    "Study", "Participants", "Depressed N", "Depression Prev",
+    "Female Share", "Median Age", "Age Q1", "Age Q3"
+  ),
+  options = list(pageLength = 8, autoWidth = TRUE, scrollX = TRUE)
+)
+```
+
+### SDoH
+
+#### Mediator Prevalence Profile by Cohort
+
+```{r}
+#| echo: false
+if (!has_interactive_plots) {
+  cat("Interactive plot dependencies are unavailable in this render environment.")
+} else if (nrow(mediator_summary) == 0) {
+  cat("No mediator summary rows available after suppression.")
+} else {
+  study_vals <- sort(unique(mediator_summary$study))
+  med_vals <- sort(unique(mediator_summary$mediator))
+
+  med_mat <- matrix(
+    NA_real_,
+    nrow = length(study_vals),
+    ncol = length(med_vals),
+    dimnames = list(study_vals, med_vals)
+  )
+
+  for (i in seq_len(nrow(mediator_summary))) {
+    rr <- mediator_summary[i, , drop = FALSE]
+    med_mat[as.character(rr$study), as.character(rr$mediator)] <- as.numeric(rr$yes_pct)
+  }
+
+  med_xts <- xts::xts(med_mat, order.by = date_index_seq(length(study_vals)))
+
+  dygraphs::dygraph(
+    med_xts,
+    main = "Mediator 'Yes' Prevalence (%) by Cohort"
+  ) |>
+    dygraphs::dyOptions(drawPoints = TRUE, pointSize = 2.5, strokeWidth = 1.8) |>
+    dygraphs::dyLegend(show = "follow") |>
+    dygraphs::dyAxis("y", label = "Mediator prevalence (%)") |>
+    dygraphs::dyAxis("x", label = "Cohort index")
+}
+```
+
+#### Interactive Mediator Table
+
+```{r}
+#| echo: false
+if (has_crosstalk) {
+  med_shared <- crosstalk::SharedData$new(
+    mediator_summary,
+    key = ~paste(study, mediator),
+    group = "med_group"
+  )
+
+  crosstalk::bscols(
+    widths = c(2, 2, 8),
+    crosstalk::filter_select("med_study", "Study", med_shared, ~study, multiple = TRUE),
+    crosstalk::filter_select("med_name", "Mediator", med_shared, ~mediator, multiple = TRUE),
+    datatable_safe(
+      med_shared,
+      rownames = FALSE,
+      options = list(pageLength = 10, autoWidth = TRUE, scrollX = TRUE),
+      colnames = c("Study", "Mediator", "Complete N", "Yes N", "Yes (%)")
+    )
+  )
+} else {
+  datatable_safe(
+    mediator_summary,
+    rownames = FALSE,
+    options = list(pageLength = 10, autoWidth = TRUE, scrollX = TRUE),
+    colnames = c("Study", "Mediator", "Complete N", "Yes N", "Yes (%)")
+  )
+}
+```
+
+#### SDoH Multi-filter Cube
+
+```{r}
+#| echo: false
+available_schema <- filter_schema[filter_schema$available, , drop = FALSE]
+sdoh_schema <- available_schema[tolower(available_schema$domain) == "sdoh", , drop = FALSE]
+
+if (nrow(filter_cube) == 0) {
+  cat("No rows available in the suppressed filter cube.")
+} else {
+  display_cols <- c(
+    "study", "sex", "age_band",
+    sdoh_schema$column_name[!is.na(sdoh_schema$column_name)],
+    "n", "depressed_n", "prevalence_pct"
+  )
+  display_cols <- unique(display_cols[display_cols %in% names(filter_cube)])
+  cube_display <- filter_cube[, display_cols, drop = FALSE]
+
+  if (has_crosstalk) {
+    cube_shared <- crosstalk::SharedData$new(
+      cube_display,
+      key = as.character(seq_len(nrow(cube_display))),
+      group = "sdoh_cube_group"
+    )
+
+    controls <- list(
+      crosstalk::filter_select("sdoh_cube_study", "Study", cube_shared, ~study, multiple = TRUE),
+      crosstalk::filter_select("sdoh_cube_sex", "Sex", cube_shared, ~sex, multiple = TRUE),
+      crosstalk::filter_select("sdoh_cube_age", "Age Band", cube_shared, ~age_band, multiple = TRUE)
+    )
+
+    if (nrow(sdoh_schema) > 0) {
+      for (i in seq_len(nrow(sdoh_schema))) {
+        col_nm <- sdoh_schema$column_name[[i]]
+        if (!is.na(col_nm) && col_nm %in% names(cube_display)) {
+          controls[[length(controls) + 1]] <- crosstalk::filter_select(
+            paste0("sdoh_cube_", col_nm),
+            sdoh_schema$label[[i]],
+            cube_shared,
+            stats::as.formula(paste0("~", col_nm)),
+            multiple = TRUE
+          )
+        }
+      }
+    }
+
+    do.call(
+      htmltools::div,
+      c(list(class = "dashboard-filter-grid"), controls)
+    )
+
+    datatable_safe(
+      cube_shared,
+      rownames = FALSE,
+      options = list(pageLength = 12, autoWidth = TRUE, scrollX = TRUE)
+    )
+  } else {
+    datatable_safe(
+      cube_display,
+      rownames = FALSE,
+      options = list(pageLength = 12, autoWidth = TRUE, scrollX = TRUE)
+    )
+  }
+}
+```
+
+### Trajectories
+
+#### Trajectory Summary
+
+```{r}
+#| echo: false
+if (nrow(trajectory_trend_summary) == 0) {
+  cat("No trajectory trend rows available after aggregation and suppression.")
+} else {
+  traj_summary <- stats::aggregate(
+    cbind(n, depressed_n) ~ trajectory_label,
+    data = trajectory_trend_summary,
+    FUN = sum
+  )
+  traj_summary$prevalence_pct <- with(
+    traj_summary,
+    ifelse(n > 0, round(100 * depressed_n / n, 1), NA_real_)
+  )
+  names(traj_summary) <- c("Trajectory Dimension", "N", "Depressed N", "Depression Prev (%)")
+  datatable_safe(traj_summary, rownames = FALSE, options = list(pageLength = 10, autoWidth = TRUE))
+}
+```
+
+#### Trajectory Trend Chart
+
+```{r}
+#| echo: false
+if (!has_interactive_plots) {
+  cat("Interactive plot dependencies are unavailable in this render environment.")
+} else if (nrow(trajectory_trend_summary) == 0) {
+  cat("No trajectory trend rows available after aggregation and suppression.")
+} else {
+  trend_agg <- stats::aggregate(
+    cbind(n, depressed_n) ~ trajectory_label + clyr + trajectory_class,
+    data = trajectory_trend_summary,
+    FUN = sum
+  )
+  trend_agg$prevalence_pct <- with(
+    trend_agg,
+    ifelse(n > 0, round(100 * depressed_n / n, 1), NA_real_)
+  )
+
+  primary_label <- sort(unique(as.character(trend_agg$trajectory_label)))[1]
+  plot_df <- trend_agg[as.character(trend_agg$trajectory_label) == primary_label, , drop = FALSE]
+
+  clyr_vals <- sort(unique(plot_df$clyr))
+  class_vals <- sort(unique(as.character(plot_df$trajectory_class)))
+
+  trend_mat <- matrix(
+    NA_real_,
+    nrow = length(clyr_vals),
+    ncol = length(class_vals),
+    dimnames = list(as.character(clyr_vals), class_vals)
+  )
+
+  for (i in seq_len(nrow(plot_df))) {
+    rr <- plot_df[i, , drop = FALSE]
+    trend_mat[as.character(rr$clyr), as.character(rr$trajectory_class)] <- as.numeric(rr$prevalence_pct)
+  }
+
+  trend_xts <- xts::xts(trend_mat, order.by = date_index_from_int(clyr_vals))
+
+  dygraphs::dygraph(
+    trend_xts,
+    main = paste0("Trajectory Trend: ", primary_label)
+  ) |>
+    dygraphs::dyOptions(drawPoints = TRUE, pointSize = 2.8, strokeWidth = 2) |>
+    dygraphs::dyRangeSelector() |>
+    dygraphs::dyLegend(show = "follow") |>
+    dygraphs::dyAxis("y", label = "Depression prevalence (%)") |>
+    dygraphs::dyAxis("x", label = "Visit year")
+}
+```
+
+#### Interactive Trajectory Tables
+
+```{r}
+#| echo: false
+if (nrow(trajectory_trend_summary) == 0) {
+  cat("No trajectory trend rows available after aggregation and suppression.")
+} else if (has_crosstalk) {
+  trend_shared <- crosstalk::SharedData$new(
+    trajectory_trend_summary,
+    key = ~paste(trajectory_var, study, clyr, trajectory_class),
+    group = "trajectory_trend_group"
+  )
+
+  crosstalk::bscols(
+    widths = c(2, 2, 2, 2, 4),
+    crosstalk::filter_select("traj_dim", "Trajectory Dimension", trend_shared, ~trajectory_label, multiple = TRUE),
+    crosstalk::filter_select("traj_study", "Study", trend_shared, ~study, multiple = TRUE),
+    crosstalk::filter_select("traj_class", "Class", trend_shared, ~trajectory_class, multiple = TRUE),
+    crosstalk::filter_select("traj_clyr", "CLYR", trend_shared, ~clyr, multiple = TRUE),
+    datatable_safe(
+      trend_shared,
+      rownames = FALSE,
+      options = list(pageLength = 12, autoWidth = TRUE, scrollX = TRUE),
+      colnames = c(
+        "Trajectory Variable",
+        "Trajectory Dimension",
+        "Study",
+        "CLYR",
+        "Class",
+        "N",
+        "Depressed N",
+        "Depression Prev (%)"
+      )
+    )
+  )
+} else {
+  datatable_safe(
+    trajectory_trend_summary,
+    rownames = FALSE,
+    options = list(pageLength = 12, autoWidth = TRUE, scrollX = TRUE),
+    colnames = c(
+      "Trajectory Variable",
+      "Trajectory Dimension",
+      "Study",
+      "CLYR",
+      "Class",
+      "N",
+      "Depressed N",
+      "Depression Prev (%)"
+    )
+  )
+}
+```
+
+```{r}
+#| echo: false
+if (nrow(trajectory_pairwise_summary) == 0) {
+  cat("No trajectory cross-class rows available. At least two trajectory dimensions with data are required.")
+} else if (has_crosstalk) {
+  pair_shared <- crosstalk::SharedData$new(
+    trajectory_pairwise_summary,
+    key = ~paste(pair_id, study, class_x, class_y),
+    group = "trajectory_pair_group"
+  )
+
+  crosstalk::bscols(
+    widths = c(2, 2, 2, 2, 4),
+    crosstalk::filter_select("traj_pair", "Trajectory Pair", pair_shared, ~pair_label, multiple = TRUE),
+    crosstalk::filter_select("traj_pair_study", "Study", pair_shared, ~study, multiple = TRUE),
+    crosstalk::filter_select("traj_pair_x", "Class A", pair_shared, ~class_x, multiple = TRUE),
+    crosstalk::filter_select("traj_pair_y", "Class B", pair_shared, ~class_y, multiple = TRUE),
+    datatable_safe(
+      pair_shared,
+      rownames = FALSE,
+      options = list(pageLength = 12, autoWidth = TRUE, scrollX = TRUE),
+      colnames = c(
+        "Pair ID",
+        "Trajectory Pair",
+        "Trajectory Var A",
+        "Trajectory Label A",
+        "Class A",
+        "Trajectory Var B",
+        "Trajectory Label B",
+        "Class B",
+        "Study",
+        "N",
+        "Depressed N",
+        "Depression Prev (%)"
+      )
+    )
+  )
+} else {
+  datatable_safe(
+    trajectory_pairwise_summary,
+    rownames = FALSE,
+    options = list(pageLength = 12, autoWidth = TRUE, scrollX = TRUE),
+    colnames = c(
+      "Pair ID",
+      "Trajectory Pair",
+      "Trajectory Var A",
+      "Trajectory Label A",
+      "Class A",
+      "Trajectory Var B",
+      "Trajectory Label B",
+      "Class B",
+      "Study",
+      "N",
+      "Depressed N",
+      "Depression Prev (%)"
+    )
+  )
+}
+```
+
+### Data
+
+#### Filter Dimension Availability
+
+```{r}
+#| echo: false
+schema_tbl <- filter_schema
+schema_tbl$available <- ifelse(schema_tbl$available, "Yes", "No")
+schema_tbl$source_present <- ifelse(schema_tbl$source_present, "Yes", "No")
+
+datatable_safe(
+  schema_tbl[, c("domain", "label", "var", "type", "source_present", "available", "distinct_levels", "non_missing_n")],
+  rownames = FALSE,
+  options = list(pageLength = 15, autoWidth = TRUE, scrollX = TRUE),
+  colnames = c(
+    "Domain",
+    "Label",
+    "Variable",
+    "Type",
+    "Present in Source",
+    "Usable in Dashboard",
+    "Distinct Levels",
+    "Non-missing N"
+  )
+)
+```
+
+#### Demographic Breakdown Table
+
+```{r}
+#| echo: false
+if (has_crosstalk) {
+  demog_shared <- crosstalk::SharedData$new(
+    demog_summary,
+    key = ~paste(study, sex, age_band),
+    group = "demog_group"
+  )
+
+  crosstalk::bscols(
+    widths = c(2, 2, 2, 6),
+    crosstalk::filter_select("demog_study", "Study", demog_shared, ~study, multiple = TRUE),
+    crosstalk::filter_select("demog_sex", "Sex", demog_shared, ~sex, multiple = TRUE),
+    crosstalk::filter_select("demog_age", "Age Band", demog_shared, ~age_band, multiple = TRUE),
+    datatable_safe(
+      demog_shared,
+      rownames = FALSE,
+      options = list(pageLength = 10, autoWidth = TRUE, scrollX = TRUE),
+      colnames = c("Study", "Sex", "Age Band", "N", "Depressed N", "Depression Prev (%)")
+    )
+  )
+} else {
+  datatable_safe(
+    demog_summary,
+    rownames = FALSE,
+    options = list(pageLength = 10, autoWidth = TRUE, scrollX = TRUE),
+    colnames = c("Study", "Sex", "Age Band", "N", "Depressed N", "Depression Prev (%)")
+  )
+}
+```
+
+#### Visit-Year Table
+
+```{r}
+#| echo: false
+if (has_crosstalk) {
+  year_shared <- crosstalk::SharedData$new(
+    year_summary,
+    key = ~paste(study, clyr),
+    group = "year_group"
+  )
+
+  crosstalk::bscols(
+    widths = c(3, 9),
+    crosstalk::filter_select("year_study", "Study", year_shared, ~study, multiple = TRUE),
+    datatable_safe(
+      year_shared,
+      rownames = FALSE,
+      options = list(pageLength = 10, autoWidth = TRUE, scrollX = TRUE),
+      colnames = c("Study", "CLYR", "N", "Depressed N", "Depression Prev (%)")
+    )
+  )
+} else {
+  datatable_safe(
+    year_summary,
+    rownames = FALSE,
+    options = list(pageLength = 10, autoWidth = TRUE, scrollX = TRUE),
+    colnames = c("Study", "CLYR", "N", "Depressed N", "Depression Prev (%)")
+  )
+}
+```
+
+#### Build Metadata
+
+```{r}
+#| echo: false
+meta_tbl <- data.frame(
+  Field = c(
+    "Build timestamp",
+    "Input rows (private source, not stored)",
+    "Analysis rows after DPBN filter",
+    "Participant snapshot rows",
+    "Small-cell suppression threshold",
+    "Configured filter dimensions",
+    "Available filter dimensions",
+    "Filter cube rows",
+    "Trajectory dimensions available",
+    "Trajectory trend rows",
+    "Trajectory cross-class rows"
+  ),
+  Value = c(
+    dashboard_build_info$rendered_at,
+    dashboard_build_info$n_input_rows,
+    dashboard_build_info$n_analysis_rows,
+    dashboard_build_info$n_participant_snapshot,
+    dashboard_build_info$min_cell_n,
+    dashboard_build_info$n_filter_dimensions_configured,
+    dashboard_build_info$n_filter_dimensions_available,
+    dashboard_build_info$n_filter_cube_rows,
+    dashboard_build_info$n_trajectory_dimensions_available,
+    dashboard_build_info$n_trajectory_trend_rows,
+    dashboard_build_info$n_trajectory_pairwise_rows
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(meta_tbl, align = c("l", "l"), row.names = FALSE)
+```

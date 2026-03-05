@@ -1,0 +1,77 @@
+---
+title: |
+  <img src="../_assets/ahri_logo.png" alt="AHRI logo" class="title-logo" />
+  <br />
+  CO-LUMINATE Dataset Derivation, Documentation and Codebook
+subtitle: "Data Linkage for Longitudinal Dataset"
+author:
+  - name: CO-LUMINATE DSU Team
+    affiliation: Africa Health Research Institute (AHRI)
+    city: Durban & Somokhele
+    country: South Africa
+format:
+  revealjs:
+    controls: true
+    progress: true
+    slide-number: true
+    css:
+      - styles/presentation_0.css
+      - styles/presentation_1.css
+---
+
+## Project Overview
+
+- CO-LUMINATE links individual mental health outcomes from cohort studies to AHRI HDSS household trajectories.
+- Main focus is longitudinal relationships between social determinants and depressive symptoms in youth aged 13-24.
+- Linked sample size: **5,279** adolescents and young people.
+
+## Study Question
+
+- How do social stress exposures relate to depressed mood through time?
+- Priority social determinants:
+  - Socioeconomic status (SES)
+  - Caregiver co-residency and parental absence
+  - Household composition and crowding
+- Outcomes use rigorous depression measures from cohort studies (SSQ-14 and PHQ-9).
+
+## Data Linkage Design
+
+- Start from individual-level cohort participants nested in AHRI HDSS.
+- Link each participant to longitudinal household records across multiple waves.
+- Derive aligned exposure windows for:
+  - Early childhood (0-5)
+  - Middle childhood (6-12)
+  - Entire childhood (0-12)
+
+## Data Sources (Cohorts)
+
+- DREAMS
+- Multilevel
+- Isisekelo Sempilo
+- Treatment as Prevention (TasP)
+- Thetha Nami
+
+These cohorts provide depression outcomes that are not routinely available in HDSS-only data.
+
+## Dataset Outputs
+
+- Harmonized participant-level analysis datasets for mental health and social exposures.
+- Derived household social stress variables and documentation/codebook-ready metadata.
+- Reproducible preparation pipeline for downstream statistical analysis objectives.
+
+## Novel Contribution
+
+- Integrates rigorous depression outcomes with long-run HDSS social exposure histories.
+- Enables testing of **direct and mediation pathways** between social determinants and youth depression.
+- Supports context-grounded interpretation in a low- and middle-income country setting.
+
+## Co-Creation Component
+
+- The project includes **11 Youth Co-Creators (YCC)**.
+- YCC input is used to refine interpretation, framing, and relevance of analyses.
+- Co-creation and secondary data analysis are integrated into one evidence-generation process.
+
+## Thank You
+
+- CO-LUMINATE DSU Team
+- Africa Health Research Institute (AHRI)

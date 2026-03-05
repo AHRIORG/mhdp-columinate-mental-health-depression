@@ -1,0 +1,828 @@
+[
+  {
+    "objectID": "updates.html",
+    "href": "updates.html",
+    "title": "Presentations",
+    "section": "",
+    "text": "This section has been replaced by the Presentations page.\nGo to Presentations"
+  },
+  {
+    "objectID": "tabs/temp_data_dependency.html",
+    "href": "tabs/temp_data_dependency.html",
+    "title": "Temporary Draft: Data Dependency Structure",
+    "section": "",
+    "text": "This temporary page is for confirming the CO-LUMINATE data dependency structure before integrating into permanent documentation."
+  },
+  {
+    "objectID": "tabs/temp_data_dependency.html#purpose",
+    "href": "tabs/temp_data_dependency.html#purpose",
+    "title": "Temporary Draft: Data Dependency Structure",
+    "section": "",
+    "text": "This temporary page is for confirming the CO-LUMINATE data dependency structure before integrating into permanent documentation."
+  },
+  {
+    "objectID": "tabs/temp_data_dependency.html#core-data-inputs",
+    "href": "tabs/temp_data_dependency.html#core-data-inputs",
+    "title": "Temporary Draft: Data Dependency Structure",
+    "section": "Core Data Inputs",
+    "text": "Core Data Inputs\n\n\n\n\n\n\n\nData asset\nRole in pipeline\n\n\n\n\nPsychometric bridge source data\nBridge source for SSQ/PHQ harmonization.\n\n\nSSQ-only cohort response data\nInput scored with IRT-based calibration to align SSQ responses with PHQ-based depression reference logic.\n\n\nChildhood exposure longitudinal data\nSource input for SDoH trajectory derivation in 0-5 and 6-12 year windows.\n\n\nIntegrated secondary analysis dataset\nFinal integrated dataset joining calibrated depression outcomes and required covariates/exposures for secondary data analysis."
+  },
+  {
+    "objectID": "tabs/temp_data_dependency.html#dependency-flow-draft",
+    "href": "tabs/temp_data_dependency.html#dependency-flow-draft",
+    "title": "Temporary Draft: Data Dependency Structure",
+    "section": "Dependency Flow (Draft)",
+    "text": "Dependency Flow (Draft)\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\", \"htmlLabels\": true}} }%%\nflowchart LR\n  O1[\"Objective 1&lt;br/&gt;Build linked&lt;br/&gt;analysis dataset\"]\n  O2[\"Objective 2&lt;br/&gt;Quantify direct&lt;br/&gt;and mediation links\"]\n  O3[\"Objective 3&lt;br/&gt;Characterize SDoH&lt;br/&gt;trajectories\"]\n\n  S1[\"Linkage Stage 1&lt;br/&gt;Psychometric&lt;br/&gt;calibration\"]\n  S2[\"Linkage Stage 2&lt;br/&gt;SDoH trajectory&lt;br/&gt;derivation\"]\n  S3[\"Linkage Stage 3&lt;br/&gt;Final linkage&lt;br/&gt;and integration\"]\n\n  O1 --&gt; S1\n  O1 --&gt; S2\n  O1 --&gt; S3\n  O2 --&gt; S3\n  O3 --&gt; S2\n\n  S1 --&gt; A[\"Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=843)\"]\n  A --&gt; B[\"Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=843)\"]\n  S1 --&gt; C[\"SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=4,021)\"]\n  C --&gt; D[\"Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=4,021)\"]\n  B --&gt; D\n\n  S2 --&gt; E[\"Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=5,398)\"]\n  E --&gt; F[\"Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=4,318)&lt;br/&gt;6-12 years (n=5,386)&lt;br/&gt;Both (n=4,306)&lt;br/&gt;Only 0-5 (n=12)&lt;br/&gt;Only 6-12 (n=1,080)&lt;br/&gt;&lt;br/&gt;\"]\n\n  S3 --&gt; G[\"Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=6,024)\"]\n  S3 --&gt; H[\"Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=5,398)\"]\n  D --&gt; G\n  F --&gt; H\n\n  G --&gt; I[\"Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=5,226)\"]\n  H --&gt; I\n\n  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;\n  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;\n  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;\n  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;\n  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;\n  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;\n  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;\n  class O1,O2,O3 objective;\n  class S1 stage1;\n  class S2 stage2;\n  class S3 stage3;\n  class A,B,C,D,G psych;\n  class E,F,H sdoh;\n  class I integ;"
+  },
+  {
+    "objectID": "tabs/temp_data_dependency.html#dependency-notes",
+    "href": "tabs/temp_data_dependency.html#dependency-notes",
+    "title": "Temporary Draft: Data Dependency Structure",
+    "section": "Dependency Notes",
+    "text": "Dependency Notes\n\nPsychometric bridge source data informs the calibration parameters.\nSSQ-only cohort response data is transformed using the calibration to make depression logic comparable.\nChildhood exposure longitudinal data contributes trajectory-derived social determinant features.\nIntegrated secondary analysis dataset is the endpoint for CO-LUMINATE secondary analyses.\n\nCounts in boxes are distinct participants (USUBJID) and are calculated at render time from available source objects. Integrated dataset count is restricted to participants with both SDoH trajectory coverage and a non-missing depression endpoint. Color mapping links workflow intent to project framing:\n\nViolet nodes: proposal objectives.\nBlue nodes: psychometric calibration stage.\nOrange nodes: SDoH trajectory stage.\nGreen nodes: final linkage and integrated dataset stage."
+  },
+  {
+    "objectID": "tabs/temp_data_dependency.html#temporary-status",
+    "href": "tabs/temp_data_dependency.html#temporary-status",
+    "title": "Temporary Draft: Data Dependency Structure",
+    "section": "Temporary Status",
+    "text": "Temporary Status\nThis file is intentionally temporary for structure confirmation and can be removed or migrated once approved."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html",
+    "href": "tabs/secondary_data_analysis_plan.html",
+    "title": "Statistical Analysis Plan",
+    "section": "",
+    "text": "This Statistical Analysis Plan (SAP) specifies the inferential framework for CO-LUMINATE, a longitudinal linked-data study designed to evaluate how social determinants of health influence depression among young people in rural South Africa. The document is written to align with the approved CO-LUMINATE proposal and to govern reproducible analysis of the linked cohort-household platform developed for this project.\nThe scientific motivation is to estimate both direct and indirect pathways between social stress exposures and depression, with explicit attention to life-course timing, mediation mechanisms, and uncertainty quantification. The analytic strategy is therefore structured around longitudinal exposure characterization, harmonized depression endpoint construction, and causal mediation modeling under prespecified assumptions."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#introduction",
+    "href": "tabs/secondary_data_analysis_plan.html#introduction",
+    "title": "Statistical Analysis Plan",
+    "section": "",
+    "text": "This Statistical Analysis Plan (SAP) specifies the inferential framework for CO-LUMINATE, a longitudinal linked-data study designed to evaluate how social determinants of health influence depression among young people in rural South Africa. The document is written to align with the approved CO-LUMINATE proposal and to govern reproducible analysis of the linked cohort-household platform developed for this project.\nThe scientific motivation is to estimate both direct and indirect pathways between social stress exposures and depression, with explicit attention to life-course timing, mediation mechanisms, and uncertainty quantification. The analytic strategy is therefore structured around longitudinal exposure characterization, harmonized depression endpoint construction, and causal mediation modeling under prespecified assumptions."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#study-aim-objectives-and-research-questions",
+    "href": "tabs/secondary_data_analysis_plan.html#study-aim-objectives-and-research-questions",
+    "title": "Statistical Analysis Plan",
+    "section": "2. Study Aim, Objectives, And Research Questions",
+    "text": "2. Study Aim, Objectives, And Research Questions\nThe overarching aim is to quantify the longitudinal relationship between social determinants and depression symptoms among young people aged 13-24 years, and to evaluate mediation pathways through behavioral and psychosocial factors. In operational terms, this entails estimating how early and mid-childhood exposure patterns are associated with later depression risk, and whether those associations are explained in part by modifiable mediating factors measured during adolescence and young adulthood.\nThe proposal-level objectives are implemented in five linked analytical domains. First, the study describes population-level trajectories of socioeconomic position and caregiver co-residency. Second, it characterizes interactions between these social determinants and mediator domains relevant to youth mental health. Third, it defines and summarizes depression prevalence using a harmonized endpoint. Fourth, it estimates direct and mediated effects of social determinants on depression. Fifth, it integrates co-creation principles through interpretation and contextual framing of findings. Food insecurity was part of the original conceptual plan but is treated as unavailable for primary longitudinal trajectory modeling in the finalized linked analysis dataset (see amendment note in Section 12)."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#data-sources-and-analytical-cohort",
+    "href": "tabs/secondary_data_analysis_plan.html#data-sources-and-analytical-cohort",
+    "title": "Statistical Analysis Plan",
+    "section": "3. Data Sources And Analytical Cohort",
+    "text": "3. Data Sources And Analytical Cohort\nThe analytical platform integrates individual-level mental health data from youth cohorts nested within the AHRI HDSS with household-level longitudinal exposure histories from the surveillance system. The linked cohort includes participants from DREAMS, Multilevel, Isisekelo Sempilo, Treatment as Prevention (TasP), and Thetha Nami, with harmonized follow-up structures sufficient for trajectory and mediation analyses.\nThe primary analysis population includes participants who satisfy both endpoint and linkage requirements: availability of a valid depression endpoint (DPBN) and valid linkage to longitudinal household social-determinant data. Final inferential models are estimated only on participants meeting these criteria. Cohort assembly, exclusions, and denominator transitions are reported transparently in metadata and CONSORT-style flow summaries."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#conceptual-causal-model",
+    "href": "tabs/secondary_data_analysis_plan.html#conceptual-causal-model",
+    "title": "Statistical Analysis Plan",
+    "section": "4. Conceptual Causal Model",
+    "text": "4. Conceptual Causal Model\nThe core causal structure is represented by a directed acyclic graph in which childhood social stress exposures affect depression through both direct pathways and indirect pathways operating via behavioral or social mediators. The framework assumes temporally ordered pathways from childhood exposure windows (0-5 years; 6-12 years), through adolescent mediator profiles, to depression outcome status in adolescence and young adulthood.\n\n\n\nDAG: Conceptual mediation framework for CO-LUMINATE"
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#endpoints-exposures-mediators-and-covariates",
+    "href": "tabs/secondary_data_analysis_plan.html#endpoints-exposures-mediators-and-covariates",
+    "title": "Statistical Analysis Plan",
+    "section": "5. Endpoints, Exposures, Mediators, And Covariates",
+    "text": "5. Endpoints, Exposures, Mediators, And Covariates\n\n5.1 Primary Endpoint\nThe primary endpoint is binary depression status (DPBN). This endpoint is defined on a harmonized psychometric scale that combines directly observed PHQ-based information with SSQ-based calibrated scoring where PHQ is unavailable. Harmonization procedures are fixed prior to mediation model fitting to avoid post-hoc endpoint drift.\n\n\n5.2 Social Determinant Exposures\nExposure domains are modeled longitudinally and include caregiver co-residency and household socioeconomic conditions. Exposure histories are summarized through latent trajectory/class structures within prespecified childhood windows (0-5 years and 6-12 years), and these classes are encoded as analytical indicators for downstream structural models. The planned household food insecurity trajectory domain is not included in primary analyses because the required longitudinal measure was not obtained in the final analytical data assembly.\n\n\n5.3 Mediators\nThe prespecified observed mediator set for primary modeling comprises alcohol use (DNKA), sexual behavior (ESXC), government grant access (GOVG), violence exposure (VLNC), social support (SCSP), and school attendance (SCHL). In addition to this observed parallel mediator representation, a latent mediator phenotype class is estimated as an alternative mediation structure to assess whether mediator clustering yields a more coherent mechanistic profile.\n\n\n5.4 Confounder Strategy\nTwo confounder blocks are prespecified. Baseline confounders capture pre-exposure structural context, including maternal and paternal demographic, educational, HIV, partnership, and migration attributes. Mediator-outcome confounders include sex, age, HIV status, orphanhood, external migration, rural residence, and calendar year. Adjustment sets are fixed before primary effect estimation and are applied consistently across model families, with sensitivity analyses evaluating the impact of alternative adjustment scope."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#statistical-principles",
+    "href": "tabs/secondary_data_analysis_plan.html#statistical-principles",
+    "title": "Statistical Analysis Plan",
+    "section": "6. Statistical Principles",
+    "text": "6. Statistical Principles\nAll primary inferential analyses adopt a Bayesian estimation framework implemented in Mplus. Effect estimation is based on posterior summaries and 95% credible intervals, with primary interpretation focused on interval compatibility with null and effect magnitude. Statistical significance language is used cautiously and is secondary to estimation and uncertainty reporting.\nPrimary estimands are: (i) direct effects of childhood exposure class indicators on depression; (ii) specific natural indirect effects through each observed mediator; and (iii) natural indirect effects through the latent mediator phenotype class. These estimands are interpreted under standard causal mediation assumptions, including exchangeability conditional on measured covariates, positivity, and correct model specification."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#analytical-workflow",
+    "href": "tabs/secondary_data_analysis_plan.html#analytical-workflow",
+    "title": "Statistical Analysis Plan",
+    "section": "7. Analytical Workflow",
+    "text": "7. Analytical Workflow\n\n7.1 Descriptive And Data Quality Analyses\nDescriptive analyses quantify cohort composition, missingness structure, prevalence of endpoint and mediator domains, and distribution of exposure classes. These analyses serve both quality control and interpretive context and are reported before causal models.\n\n\n7.2 Longitudinal Exposure Modeling\nExposure trajectories are modeled separately in childhood windows (0-5 years; 6-12 years). Candidate class structures are evaluated using fit indices, class interpretability, and practical constraints including minimum class prevalence. Selected class solutions are locked prior to mediation estimation.\n\n\n7.3 Depression Harmonization\nDepression harmonization uses calibrated psychometric modeling to map SSQ-only records onto a PHQ-referenced depression scale, after which a fixed binary endpoint (DPBN) is derived. This harmonization stage is treated as upstream data preparation and not iteratively tuned based on mediation outcomes.\n\n\n7.4 Primary Causal Mediation Models\nTwo model families are estimated to address complementary mechanistic assumptions. The first uses observed parallel mediators, where each mediator is regressed on exposure indicators and confounders, and the depression endpoint is regressed on all mediators, exposures, and confounders. Natural indirect effects are estimated via parametric g-computation syntax in Mplus (MODEL INDIRECT ... (CAUSAL)), pooled over multiple imputation/plausible-value draws.\nThe second model family uses a latent categorical mediator phenotype, where exposure indicators predict latent class membership and the endpoint is modeled as a function of latent mediator class, exposure indicators, and confounders. This approach evaluates whether mediator co-occurrence patterns provide stronger explanatory structure than separate observed mediators.\nFor pooled Bayesian analyses, the target imputation/plausible-value framework is m = 100 draws. Posterior estimates are extracted and summarized in publication-ready effect tables with explicit interval reporting."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#missing-data-and-imputation",
+    "href": "tabs/secondary_data_analysis_plan.html#missing-data-and-imputation",
+    "title": "Statistical Analysis Plan",
+    "section": "8. Missing Data And Imputation",
+    "text": "8. Missing Data And Imputation\nMissing data are handled through a structured imputation-aware modeling workflow integrated with Bayesian estimation. Covariate and mediator missingness are addressed under model-based assumptions consistent with the imputation design. Participants with structurally missing core linkage components or unavailable primary endpoint are excluded according to prespecified rules. Sensitivity comparisons include reduced models and complete-case contrasts to assess robustness of substantive conclusions."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#sensitivity-robustness-and-secondary-analyses",
+    "href": "tabs/secondary_data_analysis_plan.html#sensitivity-robustness-and-secondary-analyses",
+    "title": "Statistical Analysis Plan",
+    "section": "9. Sensitivity, Robustness, And Secondary Analyses",
+    "text": "9. Sensitivity, Robustness, And Secondary Analyses\nRobustness is assessed along four dimensions: mediator representation (observed vs latent), class solution alternatives, covariate adjustment sets, and depression endpoint threshold specification. Additional sensitivity summaries include effect-stability diagnostics and E-value style reporting for key indirect pathways where applicable. These analyses are interpreted as robustness evidence and do not replace the prespecified primary estimands.\nSubgroup summaries by sex, age band, rural context, and HIV status are reported descriptively or as exploratory heterogeneity assessments unless explicitly prespecified for confirmatory inference."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#reporting-standards",
+    "href": "tabs/secondary_data_analysis_plan.html#reporting-standards",
+    "title": "Statistical Analysis Plan",
+    "section": "10. Reporting Standards",
+    "text": "10. Reporting Standards\nAll primary and sensitivity outputs are reported with clear separation between estimand definition, model specification, and interpretation. Tables and figures present posterior estimates, interval bounds, and pathway labels mapped to the conceptual framework. Interpretation emphasizes direction, magnitude, and uncertainty, and avoids causal overstatement beyond assumptions supported by design and measured covariates."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#reproducibility-governance-and-data-use-constraints",
+    "href": "tabs/secondary_data_analysis_plan.html#reproducibility-governance-and-data-use-constraints",
+    "title": "Statistical Analysis Plan",
+    "section": "11. Reproducibility, Governance, And Data Use Constraints",
+    "text": "11. Reproducibility, Governance, And Data Use Constraints\nThe SAP is operationalized through version-controlled scripts organized into data preparation, model fitting, extraction, and reporting modules. Analytical objects (.rds), tables, and figures are generated from scripted pipelines and traced to model configuration files.\nParticipant-level private data remain in controlled environments. Public-facing website outputs are restricted to non-disclosive summaries, derived figures, and metadata artifacts. Access to full internal proposal and restricted analysis products remains governed by the Principal Investigator and project governance procedures."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#sap-versioning-and-amendments",
+    "href": "tabs/secondary_data_analysis_plan.html#sap-versioning-and-amendments",
+    "title": "Statistical Analysis Plan",
+    "section": "12. SAP Versioning And Amendments",
+    "text": "12. SAP Versioning And Amendments\nThis SAP reflects the current CO-LUMINATE scientific plan and linked-data workflow. Any amendments to endpoint definition, exposure class selection, covariate sets, mediator structure, or inferential model family will be logged as SAP updates with explicit rationale, implementation date, and impact statement on prior results.\n\n12.1 Amendment Record\nOn March 5, 2026, the SAP was amended to document that food insecurity was not obtained in the finalized longitudinal exposure build for this phase of CO-LUMINATE. As a result, food insecurity is removed from the primary longitudinal exposure specification and from the primary observed mediator set used for confirmatory mediation models in this SAP version."
+  },
+  {
+    "objectID": "tabs/proposal.html",
+    "href": "tabs/proposal.html",
+    "title": "Proposal",
+    "section": "",
+    "text": "CO-LUMINATE investigates how social stress exposures shape depressive symptoms among young people in rural South Africa over time. The work links cohort mental health outcomes with AHRI HDSS household trajectories to support longitudinal and mediation-focused analysis."
+  },
+  {
+    "objectID": "tabs/proposal.html#project-at-a-glance",
+    "href": "tabs/proposal.html#project-at-a-glance",
+    "title": "Proposal",
+    "section": "",
+    "text": "CO-LUMINATE investigates how social stress exposures shape depressive symptoms among young people in rural South Africa over time. The work links cohort mental health outcomes with AHRI HDSS household trajectories to support longitudinal and mediation-focused analysis."
+  },
+  {
+    "objectID": "tabs/proposal.html#scope",
+    "href": "tabs/proposal.html#scope",
+    "title": "Proposal",
+    "section": "Scope",
+    "text": "Scope\n\nPopulation focus: adolescents and young adults aged 13-24 years.\nData structure: linked longitudinal cohort and HDSS records.\nCore domains: socioeconomic status, food insecurity, caregiver co-residency, and related social stress exposures.\nOutcome focus: symptoms of depression measured repeatedly over time.\nCo-creation: youth partners contribute to interpretation and relevance framing."
+  },
+  {
+    "objectID": "tabs/proposal.html#what-the-project-will-achieve",
+    "href": "tabs/proposal.html#what-the-project-will-achieve",
+    "title": "Proposal",
+    "section": "What The Project Will Achieve",
+    "text": "What The Project Will Achieve\n\nBuild and maintain a longitudinal linked dataset for youth mental health and social determinants.\nQuantify direct and mediation relationships between key social exposures and depression outcomes.\nCharacterize exposure patterns and risk trajectories across cohorts and time.\nGenerate actionable evidence for policy, program design, and future research in LMIC settings."
+  },
+  {
+    "objectID": "tabs/proposal.html#planned-deliverables",
+    "href": "tabs/proposal.html#planned-deliverables",
+    "title": "Proposal",
+    "section": "Planned Deliverables",
+    "text": "Planned Deliverables\n\nCurated linked analysis datasets with supporting metadata and documentation.\nReproducible statistical workflows, technical reports, and presentation outputs.\nEvidence summaries for research, policy, and stakeholder engagement.\nCo-created interpretation products to strengthen contextual validity and uptake."
+  },
+  {
+    "objectID": "tabs/proposal.html#access-to-full-proposal",
+    "href": "tabs/proposal.html#access-to-full-proposal",
+    "title": "Proposal",
+    "section": "Access To Full Proposal",
+    "text": "Access To Full Proposal\nThis page presents a high-level summary for website readers.\nThe full proposal is an internal document and is not published on the website.\nRequests for the full proposal can be directed to the study team and will be considered at the Principal Investigator’s discretion."
+  },
+  {
+    "objectID": "tabs/metadata.html",
+    "href": "tabs/metadata.html",
+    "title": "Metadata",
+    "section": "",
+    "text": "This page is extracted and adapted from the dataset preparation source index.\nCurrent scope is limited to two data dictionaries:\n\nChildhood social exposure panel\nIntegrated multi-study mental health panel\n\nAll derived R objects for this page are stored in PRJ-CO-LUMINATE/_tools/_objects."
+  },
+  {
+    "objectID": "tabs/metadata.html#metadata-source",
+    "href": "tabs/metadata.html#metadata-source",
+    "title": "Metadata",
+    "section": "",
+    "text": "This page is extracted and adapted from the dataset preparation source index.\nCurrent scope is limited to two data dictionaries:\n\nChildhood social exposure panel\nIntegrated multi-study mental health panel\n\nAll derived R objects for this page are stored in PRJ-CO-LUMINATE/_tools/_objects."
+  },
+  {
+    "objectID": "tabs/metadata.html#dataset-summary",
+    "href": "tabs/metadata.html#dataset-summary",
+    "title": "Metadata",
+    "section": "Dataset Summary",
+    "text": "Dataset Summary\n\n\n\n\n\n\n\n\n\nField\nValue\n\n\n\n\nProject\nCO-LUMINATE\n\n\nPopulation\nSouth African youth aged 13-24\n\n\nLinked sample size\n5,226\n\n\nData source backbone\nAHRI HDSS\n\n\nCore mental health outcomes\nDepression symptoms (SSQ-14, PHQ-9)\n\n\nPriority social determinants\nSES and caregiver co-residency\n\n\nCohorts nested in AHRI HDSS\nDREAMS, Multilevel, Isisekelo Sempilo, TasP, Thetha Nami\n\n\nYouth Co-Creators\n11"
+  },
+  {
+    "objectID": "tabs/metadata.html#study-design-extract",
+    "href": "tabs/metadata.html#study-design-extract",
+    "title": "Metadata",
+    "section": "Study Design Extract",
+    "text": "Study Design Extract\nThe CO-LUMINATE linked dataset connects individual-level mental health outcomes from cohort studies to household-level longitudinal HDSS records. The objective is to estimate longitudinal direct and mediation relationships between social determinants and depressive symptoms among youth aged 13-24.\nThe analytical design combines:\n\nHDSS longitudinal household exposure histories.\nCohort-based depression outcomes measured with SSQ-14 and PHQ-9.\nLinkage across five cohorts nested within AHRI HDSS."
+  },
+  {
+    "objectID": "tabs/metadata.html#cohorts-included",
+    "href": "tabs/metadata.html#cohorts-included",
+    "title": "Metadata",
+    "section": "Cohorts Included",
+    "text": "Cohorts Included\n\nDREAMS\nMultilevel\nIsisekelo Sempilo\nTreatment as Prevention (TasP)\nThetha Nami"
+  },
+  {
+    "objectID": "tabs/metadata.html#object-snapshot",
+    "href": "tabs/metadata.html#object-snapshot",
+    "title": "Metadata",
+    "section": "Object Snapshot",
+    "text": "Object Snapshot\n\n\n\n\n\nDataset\nRows\nColumns\n\n\n\n\nChildhood Social Exposure Panel\n52463\n31\n\n\nIntegrated Multi-study Mental Health Panel\n5616\n33"
+  },
+  {
+    "objectID": "tabs/metadata.html#consort-flow",
+    "href": "tabs/metadata.html#consort-flow",
+    "title": "Metadata",
+    "section": "CONSORT Flow",
+    "text": "CONSORT Flow\n\n\n\n\n\n\nParticipant-focused CONSORT logic: participants are retained only if they have both a depression endpoint and SDoH trajectory coverage.\nThe row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification."
+  },
+  {
+    "objectID": "tabs/metadata.html#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role",
+    "href": "tabs/metadata.html#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role",
+    "title": "Metadata",
+    "section": "Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)",
+    "text": "Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)\n\n\n\n\n\n\n\n\n\n\n\n\nRole\nVariable\nLabel\nType\nValue Labels\n\n\n\n\nIdentifier\nUSUBJID\nUnique Subject Identifier\nnumeric\nMin-Max: 48 to 260880\n\n\nTime Variable\nEXPAGE\nExposure Age\nnumeric\nMin-Max: 0 to 12\n\n\nExposure (SDoH Trajectory Input)\nLIVEDWOM\nLived Without Mother\nfactor\nNo; Yes\n\n\n\nLIVEDWOF\nLived Without Father\nfactor\nNo; Yes\n\n\n\nHHCHLD14O\nOvercrowded (0–14y children &gt; 3)\nfactor\nNo; Yes\n\n\n\nHHSES\nHousehold Socioeconomic Status\nfactor\nLow; Middle; High\n\n\nBaseline Factor\nMAGE\nMother’s Age\nnumeric\nMin-Max: 11 to 82\n\n\n\nMEDU\nMother’s Education\nfactor\nNone/Primary; Secondary; Completed Matric\n\n\n\nMHIV\nMother’s HIV Status\nfactor\nError; Negative; Positive\n\n\n\nMPTS\nMother’s Partner Status\nfactor\nMissing/Refused; No partner; Married; Regular; Casual; Widowed/Separated\n\n\n\nMMIG\nMother’s Ever Migrated (Previous 1 Year)\ncharacter\n\n\n\n\nFAGE\nFather’s Age\nnumeric\nMin-Max: 10 to 80\n\n\n\nFEDU\nFather’s Education\nfactor\nNone/Primary; Secondary; Completed Matric\n\n\n\nFHIV\nFather’s HIV Status\nfactor\nError; Negative; Positive\n\n\n\nFPTS\nFather’s Partner Status\nfactor\nMissing/Refused; No partner; Married; Regular; Casual; Widowed/Separated\n\n\n\nFMIG\nFather’s Ever Migrated (Previous 1 Year)\ncharacter"
+  },
+  {
+    "objectID": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role",
+    "href": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role",
+    "title": "Metadata",
+    "section": "Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)",
+    "text": "Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)\n\n\n\n\n\n\n\n\n\n\n\n\nRole\nVariable\nLabel\nType\nValue Labels\n\n\n\n\nIdentifier\nUSUBJID\nUnique Subject Identifier\nnumeric\nMin-Max: 48 to 260880\n\n\nOutcome\nDPBN\nDepressed\nfactor\nNo; Yes\n\n\nMediator\nDNKA\nDrank Alcohol\nfactor\nNo; Yes\n\n\n\nESXC\nEver Had Sex\nfactor\nNo; Yes\n\n\n\nFDSC\nFood Insecure\nfactor\nNo; Yes\n\n\n\nGOVG\nNo Government Grant\nfactor\nNo; Yes\n\n\n\nVLNC\nExperienced Violence\nfactor\nNo; Yes\n\n\n\nSCSP\nHas Social Support\nfactor\nNo; Yes\n\n\n\nSCHL\nIn School\nfactor\nNo; Yes\n\n\nMediator-Outcome Confounder\nSEX\nSex\nfactor\nMale; Female\n\n\n\nAGE\nAge (Years)\nnumeric\nMin-Max: 13 to 24\n\n\n\nHIVS\nHIV Positive\nfactor\nNegative; Positive\n\n\n\nORPH\nOrphanhood Status\nfactor\nBoth Parents Alive; One Parent Deceased; Both Parents Deceased\n\n\n\nEXTMG\nExternal migration\nfactor\nNo; Yes\n\n\n\nRURAL\nReside in Rural Area\nfactor\nNo; Yes\n\n\n\nCLYR\nCalendar year\nnumeric\nMin-Max: 0 to 10"
+  },
+  {
+    "objectID": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables",
+    "href": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables",
+    "title": "Metadata",
+    "section": "Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)",
+    "text": "Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nLabel\nType\nValue Labels\nSource Variables\nDerivation\nStatus\n\n\n\n\nDPBN\nDepressed\nfactor\nNo; Yes\nPHQBIN, irt_joint_models.rds\nPHQBIN &gt;= 10\nImplemented in dataset preparation merge\n\n\nELCDV\nEarly Childhood Development (Ages 0–5)\ncharacter\n\nChildhood exposure trajectories (0-5 years)\nInitialized as NA_character_ during dataset preparation merge; later populated from early-years latent trajectory class assignment.\nPlaceholder in dataset preparation; populated in class-derivation stage\n\n\nMDCDV\nMiddle-Late Childhood Development (Ages 6–12)\ncharacter\n\nChildhood exposure trajectories (6-12 years)\nInitialized as NA_character_ during dataset preparation merge; later populated from middle-late years latent trajectory class assignment.\nPlaceholder in dataset preparation; populated in class-derivation stage"
+  },
+  {
+    "objectID": "tabs/metadata.html#dataset-name-reference",
+    "href": "tabs/metadata.html#dataset-name-reference",
+    "title": "Metadata",
+    "section": "Dataset Name Reference",
+    "text": "Dataset Name Reference\n\n\n\n\n\nDataset Name\nReadable Name\n\n\n\n\ndt_childhood_exposure\nChildhood Social Exposure Panel\n\n\ndt_multistudies\nIntegrated Multi-study Mental Health Panel\n\n\ndt_psychometric\nPsychometric Bridge Source Data\n\n\ndt_dreams_multi_ssq\nSSQ-only Cohort Response Data"
+  },
+  {
+    "objectID": "tabs/documentations.html",
+    "href": "tabs/documentations.html",
+    "title": "Documentations",
+    "section": "",
+    "text": "This section is for project documentation files such as:\n\nStudy proposal\nStatistical analysis plan (SAP)\nProtocol amendments and version notes"
+  },
+  {
+    "objectID": "tabs/documentations.html#core-documentation",
+    "href": "tabs/documentations.html#core-documentation",
+    "title": "Documentations",
+    "section": "",
+    "text": "This section is for project documentation files such as:\n\nStudy proposal\nStatistical analysis plan (SAP)\nProtocol amendments and version notes"
+  },
+  {
+    "objectID": "tabs/documentations.html#current-status",
+    "href": "tabs/documentations.html#current-status",
+    "title": "Documentations",
+    "section": "Current Status",
+    "text": "Current Status\n\nProposal: View proposal\nLongitudinal Linkage (trajectory modelling + psychometric calibration + dataset integration): View documentation\nSecondary Data Analysis Plan / SAP: View plan"
+  },
+  {
+    "objectID": "tabs/documentations.html#notes",
+    "href": "tabs/documentations.html#notes",
+    "title": "Documentations",
+    "section": "Notes",
+    "text": "Notes\nUse this page as the central documentation index for CO-LUMINATE."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html",
+    "href": "reports/obj03_psychometric_report.html",
+    "title": "Psychometric Harmonization Report",
+    "section": "",
+    "text": "This report reflects the detailed structure of the psychometric source index, including:\n\nIntroduction and clinical rationale.\nMethods (setting, sampling, measures, and statistical workflow).\nResults (structure, invariance, calibration, and harmonization).\nInterpretation for transportable depression-outcome derivation."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#source-alignment",
+    "href": "reports/obj03_psychometric_report.html#source-alignment",
+    "title": "Psychometric Harmonization Report",
+    "section": "",
+    "text": "This report reflects the detailed structure of the psychometric source index, including:\n\nIntroduction and clinical rationale.\nMethods (setting, sampling, measures, and statistical workflow).\nResults (structure, invariance, calibration, and harmonization).\nInterpretation for transportable depression-outcome derivation."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#introduction",
+    "href": "reports/obj03_psychometric_report.html#introduction",
+    "title": "Psychometric Harmonization Report",
+    "section": "Introduction",
+    "text": "Introduction\nThe primary aim is to derive a rigorous and evidence-based SSQ threshold aligned to PHQ-9 probable depression (PHQ-9 &gt;= 10) for adolescents and young adults. The source analysis compares SSQ-14, a theoretically refined SSQ-10 subset, and reference PHQ-9 structure to support harmonized depression classification in CO-LUMINATE linked analyses."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#methods",
+    "href": "reports/obj03_psychometric_report.html#methods",
+    "title": "Psychometric Harmonization Report",
+    "section": "Methods",
+    "text": "Methods\n\nSetting and Study Design\nThe work is embedded in the Isisekelo Sempilo trial context in rural uMkhanyakude (KwaZulu-Natal), using AHRI surveillance-linked data structures and clinically anchored psychometric evaluation.\n\n\nParticipants and Sampling\nThe psychometric analysis cohort in the source index is restricted to participants with concurrent baseline SSQ-14 and PHQ-9 information, focused on adolescents and young adults.\n\n\nMeasures and Construct Strategy\n\n\n\n\n\n\n\n\n\n\nInstrument\nRole\nNotes\n\n\n\n\nPHQ-9\nReference depression benchmark and calibration anchor.\nPolytomous DSM-aligned depressive symptom scale.\n\n\nSSQ-14\nOriginal culturally grounded distress measure.\nBinary symptom measure with broader CMD content.\n\n\nSSQ-10 (theoretical subset)\nDepression-focused subset for harmonized screening and transportability.\nRetains core depressive/cognitive-affective items and excludes less specific items.\n\n\n\n\n\n\n\nStatistical Workflow from Source Index\n\nDescriptive profiling and item-level diagnostics.\nMonte Carlo split-sample EFA for factor-retention stability.\nMonte Carlo CFA for fit verification of candidate solutions.\nReliability and measurement invariance checks across sex and age groups.\nIRT-based harmonization and ROC operating-point comparison.\nThreshold translation and transportability checks for SSQ-only scoring."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#core-concepts",
+    "href": "reports/obj03_psychometric_report.html#core-concepts",
+    "title": "Psychometric Harmonization Report",
+    "section": "Core Concepts",
+    "text": "Core Concepts\n\n\n\n\n\n\n\n\n\nConcept\nMeaning\n\n\n\n\nLatent structure\nUnderlying factor organization captured by candidate psychometric models.\n\n\nMeasurement invariance\nStability of measurement properties across demographic and clinical strata.\n\n\nCalibration\nAlignment of score scales or thresholds between SSQ and PHQ.\n\n\nDiscrimination\nAbility to separate probable depression from non-cases.\n\n\nTransportability\nAbility to apply harmonized scoring rules in cohorts lacking PHQ."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#results-summary",
+    "href": "reports/obj03_psychometric_report.html#results-summary",
+    "title": "Psychometric Harmonization Report",
+    "section": "Results Summary",
+    "text": "Results Summary\n\nParticipant and Baseline Signal Summary\nKey source-index highlights:\n\nAnalysis sample reported in source results: N = 843.\nPHQ-defined probable depression prevalence in source results: approximately 4.0%.\nSeveral SSQ items show stronger alignment with PHQ severity than excluded SSQ items, supporting subset refinement logic.\n\n\n\nStructural Validity and Stability\nSource-index interpretation indicates:\n\nPHQ-9 shows strong practical support for unidimensional scoring despite methodological divergence in retention heuristics.\nSSQ-14 shows multidimensional tendencies with distinct clusters, motivating subset refinement.\nSSQ-10 resolves toward stable and interpretable core dimensions after artifact inspection (singleton-factor handling).\n\n\n\n\nFactor Retention and Structure\n\n\n\n\n\nPrimary Psychometric Results Overview\n\n\n\n\nInvariance and Reliability\nSource findings support robust CFI-based invariance behavior across sex and age group partitions for key models, with RMSEA behavior interpreted in context of subgroup sensitivity and model complexity. Reliability indicators remain high enough to support harmonized use in downstream analyses.\n\n\nHarmonization and Calibration\nSource-index harmonization findings emphasize:\n\nROC-only cutoffs can inflate predicted prevalence relative to PHQ reference prevalence.\nIRT-anchored approaches better control false positives and improve transportability to SSQ-only settings.\nOperating-point choice should prioritize intended downstream use (screening sensitivity vs analytic specificity).\n\n\n\n\nIRT and ROC Performance\n\n\n\n\n\nSSQ-08 Validity Evidence\n\n\n\n\n\nSSQ-10 Parallel Analysis Heatmap"
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#interpretation",
+    "href": "reports/obj03_psychometric_report.html#interpretation",
+    "title": "Psychometric Harmonization Report",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nStatistical Interpretation\n\nHarmonization quality depends on jointly evaluating structure, invariance, reliability, and calibration, not any single metric.\nThe SSQ-10 configuration provides a pragmatic balance between construct coherence and operational usability.\nIRT-anchored translation to PHQ-compatible thresholds is preferred where prevalence inflation from naive thresholds is unacceptable.\n\n\n\nOperational Interpretation\n\nHarmonized depression derivation supports comparability across linked CO-LUMINATE cohorts.\nThe framework is suitable for secondary longitudinal analyses where instruments differ by cohort.\nSensitivity analyses around threshold rules remain essential in subsequent objective-level analyses."
+  },
+  {
+    "objectID": "reports/obj03_psychometric_report.html#reporting-note",
+    "href": "reports/obj03_psychometric_report.html#reporting-note",
+    "title": "Psychometric Harmonization Report",
+    "section": "Reporting Note",
+    "text": "Reporting Note\nThis website report is a communication-focused detailed summary aligned to the source index narrative. Full reproducible technical outputs remain in the dedicated psychometric workstream."
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#scope",
+    "href": "presentations/slides_obj03_psychometric.html#scope",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Scope",
+    "text": "Scope\n\nObjective: establish comparability between SSQ and PHQ depression measures in the CO-LUMINATE psychometric stream.\nOutputs summarize structure stability, calibration performance, and score harmonization evidence."
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#analytical-workflow",
+    "href": "presentations/slides_obj03_psychometric.html#analytical-workflow",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Analytical Workflow",
+    "text": "Analytical Workflow\n\nMonte Carlo EFA for factor-structure stability.\nMonte Carlo CFA for model-fit and invariance evaluation.\nIRT plus ROC calibration for harmonized outcome interpretation.\nIntegration of diagnostics into analysis-ready guidance."
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#factor-retention-and-structural-evidence",
+    "href": "presentations/slides_obj03_psychometric.html#factor-retention-and-structural-evidence",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Factor Retention and Structural Evidence",
+    "text": "Factor Retention and Structural Evidence"
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#core-psychometric-findings",
+    "href": "presentations/slides_obj03_psychometric.html#core-psychometric-findings",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Core Psychometric Findings",
+    "text": "Core Psychometric Findings"
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#calibration-and-validity",
+    "href": "presentations/slides_obj03_psychometric.html#calibration-and-validity",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Calibration and Validity",
+    "text": "Calibration and Validity"
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#pattern-diagnostics",
+    "href": "presentations/slides_obj03_psychometric.html#pattern-diagnostics",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Pattern Diagnostics",
+    "text": "Pattern Diagnostics"
+  },
+  {
+    "objectID": "presentations/slides_obj03_psychometric.html#implications-for-co-luminate",
+    "href": "presentations/slides_obj03_psychometric.html#implications-for-co-luminate",
+    "title": "  CO-LUMINATE Psychometric Harmonization",
+    "section": "Implications for CO-LUMINATE",
+    "text": "Implications for CO-LUMINATE\n\nPreliminary evidence supports harmonized use of SSQ and PHQ constructs for depression-outcome derivation.\nPsychometric comparability enables more coherent downstream modeling across linked datasets.\nNext step: consolidate finalized psychometric outputs into the integrated project analysis pipeline."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#project-overview",
+    "href": "presentations/slides_obj00_dataset_derivation.html#project-overview",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Project Overview",
+    "text": "Project Overview\n\nCO-LUMINATE links individual mental health outcomes from cohort studies to AHRI HDSS household trajectories.\nMain focus is longitudinal relationships between social determinants and depressive symptoms in youth aged 13-24.\nLinked sample size: 5,279 adolescents and young people."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#study-question",
+    "href": "presentations/slides_obj00_dataset_derivation.html#study-question",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Study Question",
+    "text": "Study Question\n\nHow do social stress exposures relate to depressed mood through time?\nPriority social determinants:\n\nSocioeconomic status (SES)\nCaregiver co-residency and parental absence\nHousehold composition and crowding\n\nOutcomes use rigorous depression measures from cohort studies (SSQ-14 and PHQ-9)."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#data-linkage-design",
+    "href": "presentations/slides_obj00_dataset_derivation.html#data-linkage-design",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Data Linkage Design",
+    "text": "Data Linkage Design\n\nStart from individual-level cohort participants nested in AHRI HDSS.\nLink each participant to longitudinal household records across multiple waves.\nDerive aligned exposure windows for:\n\nEarly childhood (0-5)\nMiddle childhood (6-12)\nEntire childhood (0-12)"
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#data-sources-cohorts",
+    "href": "presentations/slides_obj00_dataset_derivation.html#data-sources-cohorts",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Data Sources (Cohorts)",
+    "text": "Data Sources (Cohorts)\n\nDREAMS\nMultilevel\nIsisekelo Sempilo\nTreatment as Prevention (TasP)\nThetha Nami\n\nThese cohorts provide depression outcomes that are not routinely available in HDSS-only data."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#dataset-outputs",
+    "href": "presentations/slides_obj00_dataset_derivation.html#dataset-outputs",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Dataset Outputs",
+    "text": "Dataset Outputs\n\nHarmonized participant-level analysis datasets for mental health and social exposures.\nDerived household social stress variables and documentation/codebook-ready metadata.\nReproducible preparation pipeline for downstream statistical analysis objectives."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#novel-contribution",
+    "href": "presentations/slides_obj00_dataset_derivation.html#novel-contribution",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Novel Contribution",
+    "text": "Novel Contribution\n\nIntegrates rigorous depression outcomes with long-run HDSS social exposure histories.\nEnables testing of direct and mediation pathways between social determinants and youth depression.\nSupports context-grounded interpretation in a low- and middle-income country setting."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#co-creation-component",
+    "href": "presentations/slides_obj00_dataset_derivation.html#co-creation-component",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Co-Creation Component",
+    "text": "Co-Creation Component\n\nThe project includes 11 Youth Co-Creators (YCC).\nYCC input is used to refine interpretation, framing, and relevance of analyses.\nCo-creation and secondary data analysis are integrated into one evidence-generation process."
+  },
+  {
+    "objectID": "presentations/slides_obj00_dataset_derivation.html#thank-you",
+    "href": "presentations/slides_obj00_dataset_derivation.html#thank-you",
+    "title": "  CO-LUMINATE Dataset Derivation, Documentation and Codebook",
+    "section": "Thank You",
+    "text": "Thank You\n\nCO-LUMINATE DSU Team\nAfrica Health Research Institute (AHRI)"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About CO-LUMINATE",
+    "section": "",
+    "text": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures\nThis project investigates the longitudinal relationship between social determinants (SES, and caregiver co-residency) and depression symptoms among South African youth aged 13-24.\nLeveraging the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS), the study creates the CO-LUMINATE dataset by linking longitudinal data from 5,279 adolescents.\nThe project employs a co-creation model that engages 11 Youth Co-Creators (YCC) to provide thought leadership that refines and nuances the proposed research.\nThrough co-creation and secondary data analysis, the project generates transformative insights into how key social determinants of mental health relate to symptoms of depression among South African young people."
+  },
+  {
+    "objectID": "about.html#co-luminate",
+    "href": "about.html#co-luminate",
+    "title": "About CO-LUMINATE",
+    "section": "",
+    "text": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures\nThis project investigates the longitudinal relationship between social determinants (SES, and caregiver co-residency) and depression symptoms among South African youth aged 13-24.\nLeveraging the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS), the study creates the CO-LUMINATE dataset by linking longitudinal data from 5,279 adolescents.\nThe project employs a co-creation model that engages 11 Youth Co-Creators (YCC) to provide thought leadership that refines and nuances the proposed research.\nThrough co-creation and secondary data analysis, the project generates transformative insights into how key social determinants of mental health relate to symptoms of depression among South African young people."
+  },
+  {
+    "objectID": "about.html#novel-contribution",
+    "href": "about.html#novel-contribution",
+    "title": "About CO-LUMINATE",
+    "section": "Novel Contribution",
+    "text": "Novel Contribution\n\nThe project integrates rigorous longitudinal data linkage with a formal youth co-creation process rather than treating youth input as consultative only.\nIt focuses on direct and mediation pathways between social stress exposures and depression symptoms in a population-level LMIC youth sample.\nIt produces actionable, contextually grounded evidence for advancing youth mental health research and response in South Africa."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
+    "section": "",
+    "text": "Youth Mental Health and Social Stress Exposures\n\n\n\n\nCo-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures\n\n\n\n\n\n\n\nThis project investigates the longitudinal relationship between social determinants and depression symptoms among South African youth aged 13-24, combining rigorous secondary data analysis with youth-led co-creation."
+  },
+  {
+    "objectID": "index.html#project-overview",
+    "href": "index.html#project-overview",
+    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
+    "section": "Project Overview",
+    "text": "Project Overview\nCO-LUMINATE leverages the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS) to create a longitudinal linked dataset of 5,279 adolescents and young people. The dataset supports analysis of how social determinants of mental health, including socioeconomic status (SES) and caregiver co-residency, relate to depressive symptoms over time.\nThe project also uses a structured co-creation model with 11 Youth Co-Creators (YCC), who contribute meaningful thought leadership to refine, guide, and nuance the research process and interpretation."
+  },
+  {
+    "objectID": "index.html#study-design",
+    "href": "index.html#study-design",
+    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
+    "section": "Study Design",
+    "text": "Study Design\n\n\n\n1\n\n\n\nLongitudinal Linkage\n\n\nIndividual-level depression outcomes are linked to household HDSS trajectories to assess direct and mediation relationships through time.\n\n\n\n\n\n\n\n\n2\n\n\n\nSecondary Data Analysis\n\n\nLongitudinal analyses evaluate relationships between social stress exposures (including SES and caregiver co-residency) and symptoms of depression.\n\n\n\n\n\n\n\n\n3\n\n\n\nYouth Co-Creation\n\n\nEleven YCC members provide co-created input to strengthen relevance, interpretation, and context-sensitive framing of findings."
+  },
+  {
+    "objectID": "presentations/slides_obj00_mediation_prelim.html#analysis-scope",
+    "href": "presentations/slides_obj00_mediation_prelim.html#analysis-scope",
+    "title": "  CO-LUMINATE Mediation to Outcome Preliminary Analysis",
+    "section": "Analysis Scope",
+    "text": "Analysis Scope\n\nObjective: assess associations between potential mediators and depression outcome (DPBN).\nUnadjusted model: each mediator fitted independently (bivariate association).\nBase model: each mediator fitted separately, adjusted for Sex, Age, HIV, visit year, migration, rural residence, and orphanhood.\nFully adjusted model: all candidate mediators entered simultaneously with the same covariates.\nData source used at build time: private ADaM dt_multistudies (no row-level data saved in project objects)."
+  },
+  {
+    "objectID": "presentations/slides_obj00_mediation_prelim.html#model-outputs",
+    "href": "presentations/slides_obj00_mediation_prelim.html#model-outputs",
+    "title": "  CO-LUMINATE Mediation to Outcome Preliminary Analysis",
+    "section": "Model Outputs",
+    "text": "Model Outputs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPotential Mediator\nUnadjusted OR (95% CI)\nUnadjusted p-value\nBase OR (95% CI)\nBase p-value\nFully Adjusted OR (95% CI)\nFully Adjusted p-value\n\n\n\n\nDrank Alcohol\n1.36 (1.10, 1.67)\n0.00374\n1.45 (1.15, 1.82)\n0.00171\n1.22 (0.95, 1.55)\n0.11121\n\n\nEver Had Sex\n2.38 (1.90, 2.99)\n&lt; 0.001\n1.78 (1.33, 2.39)\n&lt; 0.001\n1.61 (1.20, 2.17)\n0.00181\n\n\nFood Insecure\n2.08 (1.69, 2.56)\n&lt; 0.001\n1.76 (1.41, 2.19)\n&lt; 0.001\n1.81 (1.44, 2.26)\n&lt; 0.001\n\n\nNo Government Grant\n1.46 (1.18, 1.83)\n&lt; 0.001\n1.47 (1.15, 1.88)\n0.00197\n1.36 (1.06, 1.75)\n0.01554\n\n\nExperienced Violence\n2.02 (1.64, 2.49)\n&lt; 0.001\n2.23 (1.78, 2.78)\n&lt; 0.001\n2.11 (1.68, 2.67)\n&lt; 0.001\n\n\nIn School\n0.63 (0.51, 0.77)\n&lt; 0.001\n1.22 (0.91, 1.62)\n0.18029\n1.16 (0.87, 1.55)\n0.31771\n\n\nHas Social Support\n0.99 (0.73, 1.39)\n0.96607\n1.11 (0.79, 1.60)\n0.54238\n1.09 (0.77, 1.59)\n0.63245"
+  },
+  {
+    "objectID": "presentations/slides_obj00_mediation_prelim.html#forest-pattern-evidence",
+    "href": "presentations/slides_obj00_mediation_prelim.html#forest-pattern-evidence",
+    "title": "  CO-LUMINATE Mediation to Outcome Preliminary Analysis",
+    "section": "Forest + Pattern Evidence",
+    "text": "Forest + Pattern Evidence"
+  },
+  {
+    "objectID": "presentations/slides_obj00_mediation_prelim.html#interpretation",
+    "href": "presentations/slides_obj00_mediation_prelim.html#interpretation",
+    "title": "  CO-LUMINATE Mediation to Outcome Preliminary Analysis",
+    "section": "Interpretation",
+    "text": "Interpretation\n\n\n- Fully adjusted associations indicate the strongest independent mediator candidates are: Experienced Violence (aOR 2.11 (1.68, 2.67)); Food Insecure (aOR 1.81 (1.44, 2.26)); Ever Had Sex (aOR 1.61 (1.20, 2.17)); No Government Grant (aOR 1.36 (1.06, 1.75))\n\n- Non-significant in the fully adjusted model: Drank Alcohol, In School, Has Social Support . These results support prioritizing robust signals in mediation pathway testing while retaining weaker variables as supporting covariates where scientifically justified."
+  },
+  {
+    "objectID": "presentations/slides_obj00_mediation_prelim.html#object-governance",
+    "href": "presentations/slides_obj00_mediation_prelim.html#object-governance",
+    "title": "  CO-LUMINATE Mediation to Outcome Preliminary Analysis",
+    "section": "Object Governance",
+    "text": "Object Governance\n\nScript used: PRJ-CO-LUMINATE/_tools/_scripts/build_mediation_prelim_objects.R\nSaved objects: aggregated outcome-association summaries, inter-association/correlation summaries, pattern summaries, and presentation-ready figure.\nExplicitly excluded from _tools/_objects: participant-level datasets and row-level extracts.\nBuild rows analyzed: 6428 participants."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#motivation",
+    "href": "presentations/slides_obj04_developmental_cascade.html#motivation",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Motivation",
+    "text": "Motivation\n\nCO-LUMINATE links harmonized youth mental-health data to AHRI HDSS social-exposure histories.\nLinked analysis cohort: 5,279 adolescents and young people aged 13-24 years.\nSAP focus: quantify longitudinal social-determinant effects on depression and mediation through behavioral pathways."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#sap-aligned-aim-and-questions",
+    "href": "presentations/slides_obj04_developmental_cascade.html#sap-aligned-aim-and-questions",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "SAP-Aligned Aim and Questions",
+    "text": "SAP-Aligned Aim and Questions\n\nAim: assess the longitudinal impact of social determinants on youth depression using a causal mediation framework.\nResearch question 4.1: how are social determinants associated longitudinally with depression among young people?\nResearch question 4.2: what are the causal pathways between low SES, crowding, caregiver co-residency, and depression?\nResearch question 4.3: are these relationships mediated by migration, substance use, and sexual behavior?"
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#co-luminate-linked-data-sources",
+    "href": "presentations/slides_obj04_developmental_cascade.html#co-luminate-linked-data-sources",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "CO-LUMINATE Linked Data Sources",
+    "text": "CO-LUMINATE Linked Data Sources\n\n\n\n\n\n\n\n\n\n\n\nStudy\nDesign\nYouth sample (13-24)\nStudy period\nMH timepoints\nTool(s)\n\n\n\n\nDREAMS\nObservational cohort\n2,184\n2017-2019\n3\nSSQ-14\n\n\nMultilevel\nObservational cohort\n1,833\n2018-2019\n2\nSSQ-14\n\n\nIsisekelo Sempilo\nIndividually randomized trial\n859\n2020-2021\n1\nSSQ-14, PHQ-9\n\n\nTreatment as Prevention (TasP)\nCluster-randomized trial\n403\n2012-2016\n6\nPHQ-9\n\n\n\n\nTotal linked sample in SAP: 5,279."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#developmental-cascade-perspective",
+    "href": "presentations/slides_obj04_developmental_cascade.html#developmental-cascade-perspective",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Developmental Cascade Perspective",
+    "text": "Developmental Cascade Perspective\n\n\nTime-ordered modeling links life-course household exposures to later behavioral and depression outcomes."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#causal-mediation-structure",
+    "href": "presentations/slides_obj04_developmental_cascade.html#causal-mediation-structure",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Causal Mediation Structure",
+    "text": "Causal Mediation Structure\n  \n\nClick the DAG to open the full-size SVG in a new tab (browser zoom supported)."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#dag-components",
+    "href": "presentations/slides_obj04_developmental_cascade.html#dag-components",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "DAG Components",
+    "text": "DAG Components\n\nExposure domain: low SES, crowding, caregiver co-residency (longitudinal HDSS).\nMediator domain (SAP, individual-level): migration, substance use, and sexual behaviour.\nOutcome domain: depression derived from harmonized SSQ-14/PHQ-9 framework."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#sap-mediators-explicit",
+    "href": "presentations/slides_obj04_developmental_cascade.html#sap-mediators-explicit",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "SAP Mediators (Explicit)",
+    "text": "SAP Mediators (Explicit)\n\nMigration\nSubstance use\nSexual behaviour\nThese mediators are tested as behavioural pathways between social determinants and depression."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#youth-co-creation-input-to-the-sap",
+    "href": "presentations/slides_obj04_developmental_cascade.html#youth-co-creation-input-to-the-sap",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Youth Co-Creation Input to the SAP",
+    "text": "Youth Co-Creation Input to the SAP\n\nYouth Advisory Group (YAG) develops a lay DAG from photo-diary and narrative sessions.\nCo-created DAG is refined with researchers and fed into the causal analysis plan.\nYAG interpretation workshop is used to contextualize and ground-truth findings."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#sap-analysis-plan-a-to-d",
+    "href": "presentations/slides_obj04_developmental_cascade.html#sap-analysis-plan-a-to-d",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "SAP Analysis Plan: A to D",
+    "text": "SAP Analysis Plan: A to D\n\nA: describe social-determinant trajectories using longitudinal latent class analysis.\nB: estimate interactions between determinants and mediators (migration, substance use, sexual behaviour) with mixed-effects regression.\nC: evaluate SSQ-14 against PHQ-9, derive age-specific cutoffs (13-19, 20-24), estimate prevalence by wave.\nD: fit confounder-adjusted logistic models, then estimate causal effects using DAG-guided g-computation."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#causal-estimation-strategy-sap-step-d",
+    "href": "presentations/slides_obj04_developmental_cascade.html#causal-estimation-strategy-sap-step-d",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Causal Estimation Strategy (SAP Step D)",
+    "text": "Causal Estimation Strategy (SAP Step D)\n\nUse adjusted logistic models to identify social factors associated with depression.\nInclude associated social factors as causal exposures in the mediation framework.\nUse g-computation to estimate effects under time-varying exposures.\nEstimate mediation by behavioral factors at individual level (migration, substance use, sexual behavior)."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#planned-outputs-and-translation",
+    "href": "presentations/slides_obj04_developmental_cascade.html#planned-outputs-and-translation",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Planned Outputs and Translation",
+    "text": "Planned Outputs and Translation\n\nLongitudinal linked dataset and reproducible analytic workflow.\nPathway-specific evidence on direct and mediated social-determinant effects on depression.\nPolicy-relevant signals for social protection, crowding-responsive housing interventions, and caregiver-support programming.\nScalable method for SAPRIN and APCC network contexts."
+  },
+  {
+    "objectID": "presentations/slides_obj04_developmental_cascade.html#thank-you",
+    "href": "presentations/slides_obj04_developmental_cascade.html#thank-you",
+    "title": "  The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression",
+    "section": "Thank You",
+    "text": "Thank You\n\nCO-LUMINATE DSU Team\nAfrica Health Research Institute (AHRI)\nSAP content source: _assets/proposal/proposal_content.md (Sections 4.2 and 5.2.2)."
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html",
+    "href": "reports/preliminary_mediator_associations.html",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "",
+    "text": "This report reflects the detailed analytical intent and implementation in the dataset preparation source index, specifically:\n\nMediators vs Outcome.\nPotential Mediators: Inter-association and Correlation.\n\nThis web report presents outcome-association and pairwise inter-association outputs using aggregated objects only (no row-level data stored in this project)."
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#scope",
+    "href": "reports/preliminary_mediator_associations.html#scope",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "",
+    "text": "This report reflects the detailed analytical intent and implementation in the dataset preparation source index, specifically:\n\nMediators vs Outcome.\nPotential Mediators: Inter-association and Correlation.\n\nThis web report presents outcome-association and pairwise inter-association outputs using aggregated objects only (no row-level data stored in this project)."
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#source-alignment-dataset-preparation",
+    "href": "reports/preliminary_mediator_associations.html#source-alignment-dataset-preparation",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Source Alignment (Dataset Preparation)",
+    "text": "Source Alignment (Dataset Preparation)\nThe report mirrors the dataset preparation source workflow:\n\nRecode and harmonize analysis variables from dt_multistudies.\nFit three logistic models for mediator-to-outcome association.\nQuantify pairwise mediator dependence with OR and Cramer’s V.\nProvide interpretation anchored to fully adjusted and pairwise strength patterns."
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#analytical-inputs",
+    "href": "reports/preliminary_mediator_associations.html#analytical-inputs",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Analytical Inputs",
+    "text": "Analytical Inputs\n\n\n\n\n\n\n\n\n\nComponent\nSpecification\n\n\n\n\nOutcome\nDPBN (binary depression indicator)\n\n\nCandidate mediators\nDNKA, ESXC, FDSC, GOVG, VLNC, SCHL, SCSP\n\n\nCovariates in base/fully-adjusted models\nSEX, AGE, HIVS, VSTY, EXTMG, RURAL, ORPH\n\n\nKey preprocessing from source workflow\nGOVG recoded to ‘No Government Grant’; VSTY derived from VISITDT year and centered.\n\n\nData source at build time\n/Users/Marothi.Letsoalo/Library/CloudStorage/OneDrive-AHRI/Data Science Unit - Marothi/projects/_private_use/data_management/data/co-luminate/adam/dt_multistudies.RData"
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#model-specifications-from-source-workflow",
+    "href": "reports/preliminary_mediator_associations.html#model-specifications-from-source-workflow",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Model Specifications (from source workflow)",
+    "text": "Model Specifications (from source workflow)\n\n\n\n\n\n\n\n\n\n\nModel\nFormula\nInterpretation\n\n\n\n\nUnadjusted\nDPBN ~ mediator\nCrude association per mediator.\n\n\nBase model + single mediator\nDPBN ~ mediator + SEX + AGE + HIVS + VSTY + EXTMG + RURAL + ORPH\nMediator association adjusted for prespecified confounding set.\n\n\nFully adjusted model\nDPBN ~ DNKA + ESXC + FDSC + GOVG + VLNC + SCHL + SCSP + SEX + AGE + HIVS + VSTY + EXTMG + RURAL (+ ORPH as specified in source build)\nIndependent mediator signal with all candidate mediators entered simultaneously."
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#build-metadata",
+    "href": "reports/preliminary_mediator_associations.html#build-metadata",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Build Metadata",
+    "text": "Build Metadata\n\n\n\n\n\nField\nValue\n\n\n\n\nRendered at\n2026-02-25 16:25:58.608542\n\n\nAnalysis rows\n6428\n\n\nMediator pairs\n21"
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#outcome-associations-unadjusted-base-fully-adjusted",
+    "href": "reports/preliminary_mediator_associations.html#outcome-associations-unadjusted-base-fully-adjusted",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Outcome Associations (Unadjusted, Base, Fully Adjusted)",
+    "text": "Outcome Associations (Unadjusted, Base, Fully Adjusted)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPotential Mediator\nUnadjusted OR (95% CI)\nUnadjusted p-value\nBase OR (95% CI)\nBase p-value\nFully Adjusted OR (95% CI)\nFully Adjusted p-value\n\n\n\n\nDrank Alcohol\n1.36 (1.10, 1.67)\n0.00374\n1.45 (1.15, 1.82)\n0.00171\n1.22 (0.95, 1.55)\n0.11121\n\n\nEver Had Sex\n2.38 (1.90, 2.99)\n&lt; 0.001\n1.78 (1.33, 2.39)\n&lt; 0.001\n1.61 (1.20, 2.17)\n0.00181\n\n\nFood Insecure\n2.08 (1.69, 2.56)\n&lt; 0.001\n1.76 (1.41, 2.19)\n&lt; 0.001\n1.81 (1.44, 2.26)\n&lt; 0.001\n\n\nNo Government Grant\n1.46 (1.18, 1.83)\n&lt; 0.001\n1.47 (1.15, 1.88)\n0.00197\n1.36 (1.06, 1.75)\n0.01554\n\n\nExperienced Violence\n2.02 (1.64, 2.49)\n&lt; 0.001\n2.23 (1.78, 2.78)\n&lt; 0.001\n2.11 (1.68, 2.67)\n&lt; 0.001\n\n\nIn School\n0.63 (0.51, 0.77)\n&lt; 0.001\n1.22 (0.91, 1.62)\n0.18029\n1.16 (0.87, 1.55)\n0.31771\n\n\nHas Social Support\n0.99 (0.73, 1.39)\n0.96607\n1.11 (0.79, 1.60)\n0.54238\n1.09 (0.77, 1.59)\n0.63245"
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#pairwise-inter-association-or-and-cramers-v",
+    "href": "reports/preliminary_mediator_associations.html#pairwise-inter-association-or-and-cramers-v",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Pairwise Inter-association (OR and Cramer’s V)",
+    "text": "Pairwise Inter-association (OR and Cramer’s V)\n\n\n\n\n\n\n\n\n\n\n\n\n\nMediator A\nMediator B\nComplete N\nOR (95% CI)\nOR p-value\nCramer’s V\n\n\n\n\nEver Had Sex\nIn School\n6247\n0.08 (0.07, 0.09)\n&lt;0.001\n0.495\n\n\nDrank Alcohol\nEver Had Sex\n6247\n2.85 (2.56, 3.18)\n&lt;0.001\n0.248\n\n\nEver Had Sex\nNo Government Grant\n5949\n2.68 (2.41, 2.99)\n&lt;0.001\n0.237\n\n\nNo Government Grant\nIn School\n6126\n0.47 (0.42, 0.52)\n&lt;0.001\n0.169\n\n\nDrank Alcohol\nNo Government Grant\n6126\n1.72 (1.54, 1.92)\n&lt;0.001\n0.126\n\n\nEver Had Sex\nFood Insecure\n6247\n1.63 (1.46, 1.83)\n&lt;0.001\n0.112\n\n\nDrank Alcohol\nIn School\n6428\n0.62 (0.56, 0.69)\n&lt;0.001\n0.111\n\n\nDrank Alcohol\nExperienced Violence\n6428\n1.54 (1.38, 1.72)\n&lt;0.001\n0.096\n\n\nFood Insecure\nIn School\n6428\n0.70 (0.63, 0.79)\n&lt;0.001\n0.077\n\n\nIn School\nHas Social Support\n6425\n1.60 (1.36, 1.87)\n&lt;0.001\n0.073\n\n\nExperienced Violence\nIn School\n6428\n1.39 (1.23, 1.57)\n&lt;0.001\n0.068\n\n\nEver Had Sex\nHas Social Support\n6244\n0.68 (0.58, 0.80)\n&lt;0.001\n0.060\n\n\nExperienced Violence\nHas Social Support\n6425\n1.55 (1.28, 1.87)\n&lt;0.001\n0.058\n\n\nFood Insecure\nNo Government Grant\n6126\n1.28 (1.14, 1.43)\n&lt;0.001\n0.055\n\n\nNo Government Grant\nExperienced Violence\n6126\n0.79 (0.71, 0.89)\n&lt;0.001\n0.053\n\n\nNo Government Grant\nHas Social Support\n6123\n0.81 (0.68, 0.95)\n0.0104\n0.033\n\n\nEver Had Sex\nExperienced Violence\n6247\n0.87 (0.78, 0.98)\n0.0150\n0.031\n\n\nFood Insecure\nHas Social Support\n6425\n1.23 (1.03, 1.47)\n0.0205\n0.029\n\n\nFood Insecure\nExperienced Violence\n6428\n0.93 (0.82, 1.04)\n0.2065\n0.016\n\n\nDrank Alcohol\nHas Social Support\n6425\n1.09 (0.93, 1.29)\n0.2917\n0.014\n\n\nDrank Alcohol\nFood Insecure\n6428\n1.02 (0.91, 1.13)\n0.8006\n0.003"
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#interpretation",
+    "href": "reports/preliminary_mediator_associations.html#interpretation",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nOutcome Association Interpretation\n\n\n- Fully adjusted associations indicate the strongest independent mediator candidates are: Experienced Violence (aOR 2.11 (1.68, 2.67)); Food Insecure (aOR 1.81 (1.44, 2.26)); Ever Had Sex (aOR 1.61 (1.20, 2.17)); No Government Grant (aOR 1.36 (1.06, 1.75))\n- Non-significant in the fully adjusted model: Drank Alcohol, In School, Has Social Support . These results support prioritizing robust signals in mediation pathway testing while retaining weaker variables as supporting covariates where scientifically justified.\n\n\n- Unadjusted estimates are descriptive; fully adjusted estimates should guide prioritization.\n\n\n\n\nPairwise Interpretation\n\n\n- Ever Had Sex vs In School: OR 0.08, Cramer's V 0.50.\n- Drank Alcohol vs Ever Had Sex: OR 2.85, Cramer's V 0.25.\n- Ever Had Sex vs No Government Grant: OR 2.68, Cramer's V 0.24.\n\n\n- Inter-association identifies co-patterning among mediators and does not imply causal direction."
+  },
+  {
+    "objectID": "reports/preliminary_mediator_associations.html#correlation-reporting-decision",
+    "href": "reports/preliminary_mediator_associations.html#correlation-reporting-decision",
+    "title": "Preliminary Mediator Associations Report",
+    "section": "Correlation Reporting Decision",
+    "text": "Correlation Reporting Decision\nCorrelation heatmap and rho columns are intentionally omitted in this report version.\nFor binary 2x2 mediator pairs, the correlation measure (phi/rho in this coding) is numerically equivalent to Cramer’s V; therefore, Cramer’s V is retained as the single strength metric."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html",
+    "href": "tabs/longitudinal_linkage.html",
+    "title": "Longitudinal Linkage",
+    "section": "",
+    "text": "This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#purpose",
+    "href": "tabs/longitudinal_linkage.html#purpose",
+    "title": "Longitudinal Linkage",
+    "section": "",
+    "text": "This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#goal-alignment",
+    "href": "tabs/longitudinal_linkage.html#goal-alignment",
+    "title": "Longitudinal Linkage",
+    "section": "Goal Alignment",
+    "text": "Goal Alignment\nThe linkage workflow directly supports the project objectives:\n\nBuild and maintain a linked analysis dataset.\nQuantify direct and mediation relationships for depression outcomes.\nCharacterize social determinant trajectories across childhood windows."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#stage-flow-current-build-counts",
+    "href": "tabs/longitudinal_linkage.html#stage-flow-current-build-counts",
+    "title": "Longitudinal Linkage",
+    "section": "Stage Flow (Current Build Counts)",
+    "text": "Stage Flow (Current Build Counts)\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\", \"htmlLabels\": true}} }%%\nflowchart LR\n  O1[\"Objective 1&lt;br/&gt;Build linked&lt;br/&gt;analysis dataset\"]\n  O2[\"Objective 2&lt;br/&gt;Quantify direct&lt;br/&gt;and mediation links\"]\n  O3[\"Objective 3&lt;br/&gt;Characterize SDoH&lt;br/&gt;trajectories\"]\n\n  S1[\"Linkage Stage 1&lt;br/&gt;Psychometric&lt;br/&gt;calibration\"]\n  S2[\"Linkage Stage 2&lt;br/&gt;SDoH trajectory&lt;br/&gt;derivation\"]\n  S3[\"Linkage Stage 3&lt;br/&gt;Final linkage&lt;br/&gt;and integration\"]\n\n  O1 --&gt; S1\n  O1 --&gt; S2\n  O1 --&gt; S3\n  O2 --&gt; S3\n  O3 --&gt; S2\n\n  S1 --&gt; A[\"Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=843)\"]\n  A --&gt; B[\"Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=843)\"]\n  S1 --&gt; C[\"SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=4,021)\"]\n  C --&gt; D[\"Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=4,021)\"]\n  B --&gt; D\n\n  S2 --&gt; E[\"Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=5,398)\"]\n  E --&gt; F[\"Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=4,318)&lt;br/&gt;6-12 years (n=5,386)&lt;br/&gt;Both (n=4,306)&lt;br/&gt;Only 0-5 (n=12)&lt;br/&gt;Only 6-12 (n=1,080)&lt;br/&gt;&lt;br/&gt;\"]\n\n  S3 --&gt; G[\"Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=6,024)\"]\n  S3 --&gt; H[\"Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=5,398)\"]\n  D --&gt; G\n  F --&gt; H\n\n  G --&gt; I[\"Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=5,226)\"]\n  H --&gt; I\n\n  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;\n  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;\n  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;\n  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;\n  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;\n  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;\n  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;\n  class O1,O2,O3 objective;\n  class S1 stage1;\n  class S2 stage2;\n  class S3 stage3;\n  class A,B,C,D,G psych;\n  class E,F,H sdoh;\n  class I integ;"
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#interpretation",
+    "href": "tabs/longitudinal_linkage.html#interpretation",
+    "title": "Longitudinal Linkage",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nStage 1 calibrates depression information for SSQ-only records.\nStage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.\nStage 3 integrates both streams and keeps participants with both: Depression endpoint and SDoH trajectory coverage."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#completion-criteria",
+    "href": "tabs/longitudinal_linkage.html#completion-criteria",
+    "title": "Longitudinal Linkage",
+    "section": "Completion Criteria",
+    "text": "Completion Criteria\nThis stage is complete when:\n\nDepression endpoint values are available for integrated mental health records.\nSDoH trajectory coverage is available across childhood windows.\nFinal integrated data retains only participants meeting both criteria."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#notes",
+    "href": "tabs/longitudinal_linkage.html#notes",
+    "title": "Longitudinal Linkage",
+    "section": "Notes",
+    "text": "Notes\n\nCounts are distinct participants (USUBJID) and are calculated at render time.\nViolet nodes: proposal objectives.\nBlue nodes: psychometric stage.\nOrange nodes: SDoH trajectory stage.\nGreen nodes: final integration stage."
+  },
+  {
+    "objectID": "tabs/presentations.html",
+    "href": "tabs/presentations.html",
+    "title": "Presentations",
+    "section": "",
+    "text": "Open presentation in a new tab\n\n\n\n\nThis presentation summarizes the core workflow used to derive and document the CO-LUMINATE longitudinal linked dataset, including linkage design, cohort inputs, and analysis-ready outputs.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation reports latent class growth and joint trajectory findings across early childhood (0-5), middle childhood (6-12), and entire childhood (0-12), and maps trajectory patterns to adolescent and young adult depression outcomes.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation summarizes the preliminary psychometric work on SSQ-PHQ comparability, including factor-structure stability, calibration performance, and harmonized depression-outcome interpretation.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation summarizes preliminary association analyses between potential mediators and depression outcome, including the base vs fully adjusted models, integrated forest-plot evidence, pattern-based support plots, and interpretation for mediation-model prioritization.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation introduces a longitudinal causal mediation framework that links childhood social-determinant trajectories to adolescent depression through behavioral phenotypes, with emphasis on pathway decomposition and intervention-relevant interpretation."
+  },
+  {
+    "objectID": "tabs/presentations.html#presentation-library",
+    "href": "tabs/presentations.html#presentation-library",
+    "title": "Presentations",
+    "section": "",
+    "text": "Open presentation in a new tab\n\n\n\n\nThis presentation summarizes the core workflow used to derive and document the CO-LUMINATE longitudinal linked dataset, including linkage design, cohort inputs, and analysis-ready outputs.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation reports latent class growth and joint trajectory findings across early childhood (0-5), middle childhood (6-12), and entire childhood (0-12), and maps trajectory patterns to adolescent and young adult depression outcomes.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation summarizes the preliminary psychometric work on SSQ-PHQ comparability, including factor-structure stability, calibration performance, and harmonized depression-outcome interpretation.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation summarizes preliminary association analyses between potential mediators and depression outcome, including the base vs fully adjusted models, integrated forest-plot evidence, pattern-based support plots, and interpretation for mediation-model prioritization.\n\n\n\n\n\n\n\nOpen presentation in a new tab\n\n\n\n\nThis presentation introduces a longitudinal causal mediation framework that links childhood social-determinant trajectories to adolescent depression through behavioral phenotypes, with emphasis on pathway decomposition and intervention-relevant interpretation."
+  },
+  {
+    "objectID": "tabs/reports.html",
+    "href": "tabs/reports.html",
+    "title": "Reports",
+    "section": "",
+    "text": "This section hosts project reports, technical summaries, and analysis outputs."
+  },
+  {
+    "objectID": "tabs/reports.html#reports",
+    "href": "tabs/reports.html#reports",
+    "title": "Reports",
+    "section": "",
+    "text": "This section hosts project reports, technical summaries, and analysis outputs."
+  },
+  {
+    "objectID": "tabs/reports.html#available-reports",
+    "href": "tabs/reports.html#available-reports",
+    "title": "Reports",
+    "section": "Available Reports",
+    "text": "Available Reports\n\nPsychometric Harmonization\n\nOpen Report\nAbstract: This report documents the psychometric harmonization workflow used to align SSQ and PHQ depression constructs, including structural validation, invariance checks, calibration diagnostics, and practical threshold interpretation for transportable scoring.\nKeywords: psychometric harmonization; SSQ; PHQ-9; measurement invariance; factor structure; calibration; IRT\nCoverage: detailed source-aligned psychometric introduction/methods/results narrative, psychometric concepts, harmonization workflow, structural diagnostics, calibration evidence, and interpretation for SSQ-PHQ comparability.\nVisual assets: psychometric figure library in _assets.\n\n\n\nPreliminary Mediator Associations\n\nOpen Report\nAbstract: This report summarizes preliminary associations between candidate mediators and depression outcome, presenting unadjusted, base-adjusted, and fully adjusted models alongside pairwise mediator dependence metrics to guide mediation-model prioritization.\nKeywords: mediator associations; depression outcome; logistic regression; adjusted odds ratios; Cramer’s V; pairwise dependence\nCoverage: detailed source-aligned dataset preparation methods, model specifications, outcome associations, pairwise inter-association table (OR and Cramer’s V), and interpretation notes.\nSource objects: PRJ-CO-LUMINATE/_tools/_objects/mediation_prelim_*"
+  },
+  {
+    "objectID": "tabs/team.html",
+    "href": "tabs/team.html",
+    "title": "Team",
+    "section": "",
+    "text": "The CO-LUMINATE proposal team combines expertise in global mental health, biostatistics, epidemiology, and population science.\n\n\n\n\n\n\n\n\n\nName\nRole\nAffiliation(s)\nPrimary Expertise\n\n\n\n\nXanthe Hunt\nLead Applicant\nAHRI; Stellenbosch University; SAMRC\nGlobal mental health, co-creation, youth engagement\n\n\nNondumiso Mthiyane\nCo-applicant 1\nAHRI\nBiostatistics\n\n\nCollins C Iwuji\nCo-applicant 2\nAHRI; Brighton and Sussex Medical School, University of Sussex\nGlobal health, HIV medicine, clinical epidemiology\n\n\nKathy Baisley\nCo-applicant 3\nAHRI; London School of Hygiene and Tropical Medicine\nMedical statistics and epidemiology\n\n\nKobus Herbst\nCo-applicant 4\nAHRI; SAPRIN\nPopulation science and longitudinal data systems"
+  },
+  {
+    "objectID": "tabs/team.html#co-luminate-core-team",
+    "href": "tabs/team.html#co-luminate-core-team",
+    "title": "Team",
+    "section": "",
+    "text": "The CO-LUMINATE proposal team combines expertise in global mental health, biostatistics, epidemiology, and population science.\n\n\n\n\n\n\n\n\n\nName\nRole\nAffiliation(s)\nPrimary Expertise\n\n\n\n\nXanthe Hunt\nLead Applicant\nAHRI; Stellenbosch University; SAMRC\nGlobal mental health, co-creation, youth engagement\n\n\nNondumiso Mthiyane\nCo-applicant 1\nAHRI\nBiostatistics\n\n\nCollins C Iwuji\nCo-applicant 2\nAHRI; Brighton and Sussex Medical School, University of Sussex\nGlobal health, HIV medicine, clinical epidemiology\n\n\nKathy Baisley\nCo-applicant 3\nAHRI; London School of Hygiene and Tropical Medicine\nMedical statistics and epidemiology\n\n\nKobus Herbst\nCo-applicant 4\nAHRI; SAPRIN\nPopulation science and longitudinal data systems"
+  },
+  {
+    "objectID": "tabs/team.html#co-creation-and-community-input",
+    "href": "tabs/team.html#co-creation-and-community-input",
+    "title": "Team",
+    "section": "Co-Creation And Community Input",
+    "text": "Co-Creation And Community Input\n\nYouth Co-Creators (YCC): 11 young people provide thought leadership and contextual interpretation.\nCommunity Advisory Board: supports community engagement, relevance, and acceptability.\nStakeholder engagement: input from government and civil-society partners for interpretation and uptake."
+  },
+  {
+    "objectID": "tabs/team.html#institutional-partners",
+    "href": "tabs/team.html#institutional-partners",
+    "title": "Team",
+    "section": "Institutional Partners",
+    "text": "Institutional Partners\n\nAfrica Health Research Institute (AHRI)\nAPHRC\nWellcome Trust"
+  },
+  {
+    "objectID": "tabs/tools.html",
+    "href": "tabs/tools.html",
+    "title": "Tools",
+    "section": "",
+    "text": "This section provides technical tools for online IRT calibration scoring."
+  },
+  {
+    "objectID": "tabs/tools.html#interactive-scoring-workspace",
+    "href": "tabs/tools.html#interactive-scoring-workspace",
+    "title": "Tools",
+    "section": "Interactive Scoring Workspace",
+    "text": "Interactive Scoring Workspace\nRun locally before using the workspace:\nRscript _tools/_scripts/assess_irt_api_model.R\nRscript _tools/api/run_api.R\nDefault API URL: http://127.0.0.1:8088\n\n\n\n  \n    \n      API Base URL\n      \n    \n    \n      API Key (Bearer token)\n      \n    \n    Check Connection\n    Load Engines\n  \n  Not connected.\n  If API key auth is enabled, provide the token above.\n\n\n\n  \n    \n      Scoring Engine\n      \n    \n    Load engines to inspect factor and cutoff mode.\n  \n  \n\n\nSingle Participant\n\n\n  \n  \n    \n      Sex\n      \n        \n        Female\n        Male\n      \n    \n    \n      Age\n      \n    \n    \n      Age Group\n      \n    \n    \n      Sex + Age Group\n      \n    \n    Score Single\n    Load Example\n  \n  \n  \n\n\nBatch Scoring\n\n\n  \n    \n      Upload CSV or JSON\n      \n    \n    Score Batch\n    Download Template CSV\n    Download Scored CSV"
+  },
+  {
+    "objectID": "tabs/tools.html#model-capability-snapshot",
+    "href": "tabs/tools.html#model-capability-snapshot",
+    "title": "Tools",
+    "section": "Model Capability Snapshot",
+    "text": "Model Capability Snapshot\nThis snapshot is generated from _tools/_objects/irt_api_assessment.rds.\n\n\nAssessment object not found. Run `Rscript _tools/_scripts/assess_irt_api_model.R` first."
+  },
+  {
+    "objectID": "tabs/tools.html#api-endpoints",
+    "href": "tabs/tools.html#api-endpoints",
+    "title": "Tools",
+    "section": "API Endpoints",
+    "text": "API Endpoints\n\nGET /health\nGET /engines\nGET /contract\nPOST /score/single\nPOST /score/batch\n\nCore files:\n\n_tools/api/plumber.R\n_tools/api/run_api.R\n_tools/api/CONTRACT.md\n_tools/_scripts/assess_irt_api_model.R"
+  },
+  {
+    "objectID": "tabs/tools.html#https-deployment-files",
+    "href": "tabs/tools.html#https-deployment-files",
+    "title": "Tools",
+    "section": "HTTPS Deployment Files",
+    "text": "HTTPS Deployment Files\n\n_tools/api/Dockerfile\n_tools/api/.env.example\n_tools/api/DEPLOYMENT.md\n_tools/api/scoring_runtime.R\n_tools/_scripts/prepare_api_deploy_bundle.R\n\nPrepare deploy bundle and run local container test:\nRscript _tools/_scripts/prepare_api_deploy_bundle.R\ndocker build -f _tools/api/Dockerfile -t columinate-irt-api ..\ndocker run --rm -p 8080:8080 --env-file _tools/api/.env.example columinate-irt-api"
+  }
+]

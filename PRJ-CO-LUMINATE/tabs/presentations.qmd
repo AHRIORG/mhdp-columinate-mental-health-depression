@@ -1,0 +1,65 @@
+---
+title: "Presentations"
+toc: false
+---
+
+## Presentation Library
+
+::: {.presentation-list}
+
+::: {.presentation-item}
+::: {.presentation-item__preview}
+<iframe src="../presentations/slides_obj00_dataset_derivation.html" title="CO-LUMINATE: Dataset Derivation, Documentation and Codebook " allowfullscreen loading="lazy" class="presentation-embed"></iframe>
+<p class="presentation-link"><a href="../presentations/slides_obj00_dataset_derivation.html" target="_blank">Open presentation in a new tab</a></p>
+:::
+::: {.presentation-item__details}
+### 01. Dataset Derivation, Documentation and Codebook
+This presentation summarizes the core workflow used to derive and document the CO-LUMINATE longitudinal linked dataset, including linkage design, cohort inputs, and analysis-ready outputs.
+:::
+:::
+
+::: {.presentation-item}
+::: {.presentation-item__preview}
+<iframe src="../presentations/slides_obj01_trajectories.html" title="CO-LUMINATE: Trajectories of Childhood Social Determinants " allowfullscreen loading="lazy" class="presentation-embed"></iframe>
+<p class="presentation-link"><a href="../presentations/slides_obj01_trajectories.html" target="_blank">Open presentation in a new tab</a></p>
+:::
+::: {.presentation-item__details}
+### 02. Trajectories of Childhood Social Determinants
+This presentation reports latent class growth and joint trajectory findings across early childhood (0-5), middle childhood (6-12), and entire childhood (0-12), and maps trajectory patterns to adolescent and young adult depression outcomes.
+:::
+:::
+
+::: {.presentation-item}
+::: {.presentation-item__preview}
+<iframe src="../presentations/slides_obj03_psychometric.html" title="CO-LUMINATE: Psychometric Harmonization " allowfullscreen loading="lazy" class="presentation-embed"></iframe>
+<p class="presentation-link"><a href="../presentations/slides_obj03_psychometric.html" target="_blank">Open presentation in a new tab</a></p>
+:::
+::: {.presentation-item__details}
+### 03. Psychometric Harmonization
+This presentation summarizes the preliminary psychometric work on SSQ-PHQ comparability, including factor-structure stability, calibration performance, and harmonized depression-outcome interpretation.
+:::
+:::
+
+::: {.presentation-item}
+::: {.presentation-item__preview}
+<iframe src="../presentations/slides_obj00_mediation_prelim.html" title="CO-LUMINATE: Mediation to Outcome Preliminary Analysis " allowfullscreen loading="lazy" class="presentation-embed"></iframe>
+<p class="presentation-link"><a href="../presentations/slides_obj00_mediation_prelim.html" target="_blank">Open presentation in a new tab</a></p>
+:::
+::: {.presentation-item__details}
+### 04. Mediation to Outcome Preliminary Analysis
+This presentation summarizes preliminary association analyses between potential mediators and depression outcome, including the base vs fully adjusted models, integrated forest-plot evidence, pattern-based support plots, and interpretation for mediation-model prioritization.
+:::
+:::
+
+::: {.presentation-item}
+::: {.presentation-item__preview}
+<iframe src="../presentations/slides_obj04_developmental_cascade.html" title="CO-LUMINATE: Developmental Cascade Causal Mediation Framework" allowfullscreen loading="lazy" class="presentation-embed"></iframe>
+<p class="presentation-link"><a href="../presentations/slides_obj04_developmental_cascade.html" target="_blank">Open presentation in a new tab</a></p>
+:::
+::: {.presentation-item__details}
+### 05. The Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression: A Longitudinal Causal Mediation Framework
+This presentation introduces a longitudinal causal mediation framework that links childhood social-determinant trajectories to adolescent depression through behavioral phenotypes, with emphasis on pathway decomposition and intervention-relevant interpretation.
+:::
+:::
+
+:::

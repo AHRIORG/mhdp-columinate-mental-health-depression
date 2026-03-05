@@ -1,0 +1,247 @@
+[
+  {
+    "study": "Dreams",
+    "mediator": "Has Social Support",
+    "n_complete": 1860,
+    "yes_n": 1683,
+    "yes_pct": 90.5
+  },
+  {
+    "study": "Dreams",
+    "mediator": "In School",
+    "n_complete": 1860,
+    "yes_n": 1393,
+    "yes_pct": 74.9
+  },
+  {
+    "study": "Dreams",
+    "mediator": "No Government Grant",
+    "n_complete": 1860,
+    "yes_n": 867,
+    "yes_pct": 46.6
+  },
+  {
+    "study": "Dreams",
+    "mediator": "Ever Had Sex",
+    "n_complete": 1826,
+    "yes_n": 735,
+    "yes_pct": 40.3
+  },
+  {
+    "study": "Dreams",
+    "mediator": "Experienced Violence",
+    "n_complete": 1860,
+    "yes_n": 653,
+    "yes_pct": 35.1
+  },
+  {
+    "study": "Dreams",
+    "mediator": "Food Insecure",
+    "n_complete": 1860,
+    "yes_n": 575,
+    "yes_pct": 30.9
+  },
+  {
+    "study": "Dreams",
+    "mediator": "Drank Alcohol",
+    "n_complete": 1860,
+    "yes_n": 451,
+    "yes_pct": 24.2
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "Has Social Support",
+    "n_complete": 781,
+    "yes_n": 626,
+    "yes_pct": 80.2
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "Ever Had Sex",
+    "n_complete": 755,
+    "yes_n": 560,
+    "yes_pct": 74.2
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "Drank Alcohol",
+    "n_complete": 781,
+    "yes_n": 397,
+    "yes_pct": 50.8
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "In School",
+    "n_complete": 781,
+    "yes_n": 339,
+    "yes_pct": 43.4
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "Food Insecure",
+    "n_complete": 781,
+    "yes_n": 205,
+    "yes_pct": 26.2
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "Experienced Violence",
+    "n_complete": 781,
+    "yes_n": 163,
+    "yes_pct": 20.9
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "mediator": "No Government Grant",
+    "n_complete": 781,
+    "yes_n": 155,
+    "yes_pct": 19.8
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "Has Social Support",
+    "n_complete": 1563,
+    "yes_n": 1478,
+    "yes_pct": 94.6
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "In School",
+    "n_complete": 1563,
+    "yes_n": 1192,
+    "yes_pct": 76.3
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "Drank Alcohol",
+    "n_complete": 1563,
+    "yes_n": 741,
+    "yes_pct": 47.4
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "Ever Had Sex",
+    "n_complete": 1527,
+    "yes_n": 667,
+    "yes_pct": 43.7
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "Experienced Violence",
+    "n_complete": 1563,
+    "yes_n": 657,
+    "yes_pct": 42
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "No Government Grant",
+    "n_complete": 1563,
+    "yes_n": 618,
+    "yes_pct": 39.5
+  },
+  {
+    "study": "Multilevel",
+    "mediator": "Food Insecure",
+    "n_complete": 1563,
+    "yes_n": 336,
+    "yes_pct": 21.5
+  },
+  {
+    "study": "TasP",
+    "mediator": "Has Social Support",
+    "n_complete": 161,
+    "yes_n": 161,
+    "yes_pct": 100
+  },
+  {
+    "study": "TasP",
+    "mediator": "Ever Had Sex",
+    "n_complete": 126,
+    "yes_n": 109,
+    "yes_pct": 86.5
+  },
+  {
+    "study": "TasP",
+    "mediator": "Food Insecure",
+    "n_complete": 164,
+    "yes_n": 103,
+    "yes_pct": 62.8
+  },
+  {
+    "study": "TasP",
+    "mediator": "No Government Grant",
+    "n_complete": 164,
+    "yes_n": 67,
+    "yes_pct": 40.9
+  },
+  {
+    "study": "TasP",
+    "mediator": "In School",
+    "n_complete": 164,
+    "yes_n": 24,
+    "yes_pct": 14.6
+  },
+  {
+    "study": "TasP",
+    "mediator": "Drank Alcohol",
+    "n_complete": 164,
+    "yes_n": 1,
+    "yes_pct": 0.6
+  },
+  {
+    "study": "TasP",
+    "mediator": "Experienced Violence",
+    "n_complete": 164,
+    "yes_n": 1,
+    "yes_pct": 0.6
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "Has Social Support",
+    "n_complete": 858,
+    "yes_n": 695,
+    "yes_pct": 81
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "In School",
+    "n_complete": 858,
+    "yes_n": 606,
+    "yes_pct": 70.6
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "Ever Had Sex",
+    "n_complete": 842,
+    "yes_n": 406,
+    "yes_pct": 48.2
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "Drank Alcohol",
+    "n_complete": 858,
+    "yes_n": 360,
+    "yes_pct": 42
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "Food Insecure",
+    "n_complete": 858,
+    "yes_n": 304,
+    "yes_pct": 35.4
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "No Government Grant",
+    "n_complete": 858,
+    "yes_n": 286,
+    "yes_pct": 33.3
+  },
+  {
+    "study": "Thetha Nami",
+    "mediator": "Experienced Violence",
+    "n_complete": 858,
+    "yes_n": 60,
+    "yes_pct": 7
+  }
+]

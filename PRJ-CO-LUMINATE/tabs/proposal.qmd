@@ -1,0 +1,37 @@
+---
+title: "Proposal"
+toc: true
+---
+
+## Project At A Glance
+
+CO-LUMINATE investigates how social stress exposures shape depressive symptoms among young people in rural South Africa over time. The work links cohort mental health outcomes with AHRI HDSS household trajectories to support longitudinal and mediation-focused analysis.
+
+## Scope
+
+- Population focus: adolescents and young adults aged 13-24 years.
+- Data structure: linked longitudinal cohort and HDSS records.
+- Core domains: socioeconomic status, food insecurity, caregiver co-residency, and related social stress exposures.
+- Outcome focus: symptoms of depression measured repeatedly over time.
+- Co-creation: youth partners contribute to interpretation and relevance framing.
+
+## What The Project Will Achieve
+
+1. Build and maintain a longitudinal linked dataset for youth mental health and social determinants.
+2. Quantify direct and mediation relationships between key social exposures and depression outcomes.
+3. Characterize exposure patterns and risk trajectories across cohorts and time.
+4. Generate actionable evidence for policy, program design, and future research in LMIC settings.
+
+## Planned Deliverables
+
+- Curated linked analysis datasets with supporting metadata and documentation.
+- Reproducible statistical workflows, technical reports, and presentation outputs.
+- Evidence summaries for research, policy, and stakeholder engagement.
+- Co-created interpretation products to strengthen contextual validity and uptake.
+
+## Access To Full Proposal
+
+This page presents a high-level summary for website readers.  
+The full proposal is an internal document and is not published on the website.
+
+Requests for the full proposal can be directed to the study team and will be considered at the Principal Investigator's discretion.

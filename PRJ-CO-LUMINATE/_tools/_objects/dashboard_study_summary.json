@@ -1,0 +1,52 @@
+[
+  {
+    "study": "Dreams",
+    "participants": 1860,
+    "depressed_n": 166,
+    "prevalence_pct": 8.9,
+    "female_pct": 100,
+    "median_age": 17,
+    "age_q1": 15,
+    "age_q3": 20
+  },
+  {
+    "study": "Multilevel",
+    "participants": 1563,
+    "depressed_n": 59,
+    "prevalence_pct": 3.8,
+    "female_pct": 2.9,
+    "median_age": 17,
+    "age_q1": 15,
+    "age_q3": 20
+  },
+  {
+    "study": "Thetha Nami",
+    "participants": 858,
+    "depressed_n": 54,
+    "prevalence_pct": 6.3,
+    "female_pct": 51.6,
+    "median_age": 18,
+    "age_q1": 17,
+    "age_q3": 21
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "participants": 781,
+    "depressed_n": 32,
+    "prevalence_pct": 4.1,
+    "female_pct": 47.9,
+    "median_age": 20,
+    "age_q1": 19,
+    "age_q3": 22
+  },
+  {
+    "study": "TasP",
+    "participants": 164,
+    "depressed_n": 1,
+    "prevalence_pct": 0.6,
+    "female_pct": 85.4,
+    "median_age": 22,
+    "age_q1": 20,
+    "age_q3": 23
+  }
+]

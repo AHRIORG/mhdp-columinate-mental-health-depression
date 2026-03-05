@@ -1,0 +1,237 @@
+---
+title: "Preliminary Mediator Associations Report"
+subtitle: "Detailed Methods and Findings from Dataset Preparation"
+toc: true
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+read_obj <- function(filename) {
+  candidates <- c(
+    file.path("..", "_tools", "_objects", filename),
+    file.path("_tools", "_objects", filename)
+  )
+  idx <- which(file.exists(candidates))[1]
+  if (is.na(idx)) {
+    stop("Missing object file: ", filename)
+  }
+  readRDS(candidates[idx])
+}
+
+summary_df <- read_obj("mediation_prelim_summary.rds")
+pair_assoc_df <- read_obj("mediation_prelim_pair_assoc.rds")
+interpretation <- tryCatch(
+  read_obj("mediation_prelim_interpretation.rds"),
+  error = function(e) NULL
+)
+build_info <- read_obj("mediation_prelim_build_info.rds")
+combined_plot_path <- file.path("..", "_tools", "_objects", "mediation_prelim_combined_plot.png")
+
+fmt_p <- function(x) {
+  ifelse(is.na(x), NA_character_, format.pval(x, digits = 3, eps = 0.001))
+}
+```
+
+## Scope
+
+This report reflects the detailed analytical intent and implementation in the dataset preparation source index, specifically:
+
+1.  `Mediators vs Outcome`.
+2.  `Potential Mediators: Inter-association and Correlation`.
+
+This web report presents outcome-association and pairwise inter-association outputs using aggregated objects only (no row-level data stored in this project).
+
+## Source Alignment (Dataset Preparation)
+
+The report mirrors the dataset preparation source workflow:
+
+1.  Recode and harmonize analysis variables from `dt_multistudies`.
+2.  Fit three logistic models for mediator-to-outcome association.
+3.  Quantify pairwise mediator dependence with OR and Cramer's V.
+4.  Provide interpretation anchored to fully adjusted and pairwise strength patterns.
+
+## Analytical Inputs
+
+```{r}
+#| echo: false
+input_tbl <- data.frame(
+  Component = c(
+    "Outcome",
+    "Candidate mediators",
+    "Covariates in base/fully-adjusted models",
+    "Key preprocessing from source workflow",
+    "Data source at build time"
+  ),
+  Specification = c(
+    "DPBN (binary depression indicator)",
+    "DNKA, ESXC, FDSC, GOVG, VLNC, SCHL, SCSP",
+    "SEX, AGE, HIVS, VSTY, EXTMG, RURAL, ORPH",
+    "GOVG recoded to 'No Government Grant'; VSTY derived from VISITDT year and centered.",
+    build_info$source
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(input_tbl, align = c("l", "l"), row.names = FALSE)
+```
+
+## Model Specifications (from source workflow)
+
+```{r}
+#| echo: false
+model_tbl <- data.frame(
+  Model = c(
+    "Unadjusted",
+    "Base model + single mediator",
+    "Fully adjusted model"
+  ),
+  Formula = c(
+    "DPBN ~ mediator",
+    "DPBN ~ mediator + SEX + AGE + HIVS + VSTY + EXTMG + RURAL + ORPH",
+    "DPBN ~ DNKA + ESXC + FDSC + GOVG + VLNC + SCHL + SCSP + SEX + AGE + HIVS + VSTY + EXTMG + RURAL (+ ORPH as specified in source build)"
+  ),
+  Interpretation = c(
+    "Crude association per mediator.",
+    "Mediator association adjusted for prespecified confounding set.",
+    "Independent mediator signal with all candidate mediators entered simultaneously."
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(model_tbl, align = c("l", "l", "l"), row.names = FALSE)
+```
+
+## Build Metadata
+
+```{r}
+#| echo: false
+meta_tbl <- data.frame(
+  Field = c("Rendered at", "Analysis rows", "Mediator pairs"),
+  Value = c(
+    build_info$rendered_at,
+    build_info$n_analysis,
+    build_info$n_pairs
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(meta_tbl, align = c("l", "l"), row.names = FALSE)
+```
+
+## Outcome Associations (Unadjusted, Base, Fully Adjusted)
+
+```{r}
+#| echo: false
+outcome_tbl <- data.frame(
+  `Potential Mediator` = summary_df$label,
+  `Unadjusted OR (95% CI)` = summary_df$unadj_or_ci,
+  `Unadjusted p-value` = fmt_p(summary_df$unadj_p.value),
+  `Base OR (95% CI)` = summary_df$base_or_ci,
+  `Base p-value` = fmt_p(summary_df$base_p.value),
+  `Fully Adjusted OR (95% CI)` = summary_df$adj_or_ci,
+  `Fully Adjusted p-value` = fmt_p(summary_df$adj_p.value),
+  check.names = FALSE
+)
+
+knitr::kable(outcome_tbl, row.names = FALSE)
+```
+
+```{r}
+#| echo: false
+knitr::include_graphics(combined_plot_path)
+```
+
+## Pairwise Inter-association (OR and Cramer's V)
+
+```{r}
+#| echo: false
+pair_tbl <- data.frame(
+  `Mediator A` = pair_assoc_df$label_a,
+  `Mediator B` = pair_assoc_df$label_b,
+  `Complete N` = pair_assoc_df$n_complete,
+  `OR (95% CI)` = ifelse(
+    is.na(pair_assoc_df$or),
+    "NA",
+    sprintf("%.2f (%.2f, %.2f)", pair_assoc_df$or, pair_assoc_df$conf.low, pair_assoc_df$conf.high)
+  ),
+  `OR p-value` = fmt_p(pair_assoc_df$p_value),
+  `Cramer's V` = round(pair_assoc_df$cramer_v, 3),
+  check.names = FALSE
+)
+ord <- order(-pair_tbl$`Cramer's V`, pair_tbl$`OR p-value`)
+pair_tbl <- pair_tbl[ord, , drop = FALSE]
+
+knitr::kable(pair_tbl, row.names = FALSE)
+```
+
+## Interpretation
+
+### Outcome Association Interpretation
+
+```{r}
+#| echo: false
+if (!is.null(interpretation) && length(interpretation) > 0) {
+  cat(paste0("- ", interpretation), sep = "\n")
+} else {
+  sig_adj <- summary_df[!is.na(summary_df$adj_p.value) & summary_df$adj_p.value < 0.05, , drop = FALSE]
+  if (nrow(sig_adj) > 0) {
+    sig_adj <- sig_adj[order(-sig_adj$adj_estimate), , drop = FALSE]
+    sig_adj <- head(sig_adj, 3)
+  }
+
+  if (nrow(sig_adj) == 0) {
+    cat("- No mediator reached statistical significance in the fully adjusted model.\n")
+  } else {
+    txt <- paste(
+      sig_adj$label,
+      sprintf("(aOR %s)", sig_adj$adj_or_ci),
+      collapse = "; "
+    )
+    cat("- Strongest fully adjusted signals are: \n", txt, ".\n", sep = "")
+  }
+}
+cat("- Unadjusted estimates are descriptive; fully adjusted estimates should guide prioritization.\n")
+```
+
+### Pairwise Interpretation
+
+```{r}
+#| echo: false
+pair_interpret <- pair_assoc_df[!is.na(pair_assoc_df$cramer_v), , drop = FALSE]
+if (nrow(pair_interpret) > 0) {
+  pair_interpret <- pair_interpret[
+    order(-pair_interpret$cramer_v, pair_interpret$p_value),
+    ,
+    drop = FALSE
+  ]
+  pair_interpret <- head(pair_interpret, 3)
+}
+
+if (nrow(pair_interpret) == 0) {
+  cat("- Pairwise inter-association summary was not available for interpretation.\n")
+} else {
+  for (i in seq_len(nrow(pair_interpret))) {
+    r <- pair_interpret[i, ]
+    cat(
+      "- ",
+      r$label_a,
+      " vs ",
+      r$label_b,
+      ": OR ",
+      ifelse(is.na(r$or), "NA", sprintf("%.2f", r$or)),
+      ", Cramer's V ",
+      ifelse(is.na(r$cramer_v), "NA", sprintf("%.2f", r$cramer_v)),
+      ".\n",
+      sep = ""
+    )
+  }
+}
+cat("- Inter-association identifies co-patterning among mediators and does not imply causal direction.\n")
+```
+
+## Correlation Reporting Decision
+
+Correlation heatmap and rho columns are intentionally omitted in this report version.\
+For binary 2x2 mediator pairs, the correlation measure (phi/rho in this coding) is numerically equivalent to Cramer's V; therefore, Cramer's V is retained as the single strength metric.

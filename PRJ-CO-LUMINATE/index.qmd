@@ -1,0 +1,98 @@
+---
+title: "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures"
+page-layout: full
+toc: false
+---
+
+::: {.home-hero}
+::: {.home-hero__content}
+::: {.home-hero__title-row}
+::: {.home-hero__title-copy}
+<p class="home-hero__eyebrow">Youth Mental Health and Social Stress Exposures</p>
+
+# CO-LUMINATE
+
+<p class="project-subtitle"><strong>Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures</strong></p>
+:::
+<div class="home-hero__title-logo-wrap">
+<img src="_assets/ahri_logo.png" class="home-hero__title-logo" alt="AHRI logo" />
+</div>
+:::
+
+This project investigates the longitudinal relationship between social determinants and depression symptoms among South African youth aged 13-24, combining rigorous secondary data analysis with youth-led co-creation.
+:::
+
+:::
+
+::: {.home-content-layout}
+::: {.home-content-layout__left}
+::: {.metric-column}
+<p class="metric-column__eyebrow">Study Snapshot</p>
+
+::: {.metric-row}
+::: {.metric-card}
+<div class="metric-card__inner">
+<p class="metric-card__value">5,279</p>
+<p class="metric-card__label">Young people in linked sample</p>
+</div>
+:::
+::: {.metric-card}
+<div class="metric-card__inner">
+<p class="metric-card__value">13-24</p>
+<p class="metric-card__label">Age range</p>
+</div>
+:::
+::: {.metric-card}
+<div class="metric-card__inner">
+<p class="metric-card__value">5 Cohorts</p>
+<p class="metric-card__label">Nested within AHRI HDSS</p>
+</div>
+:::
+::: {.metric-card}
+<div class="metric-card__inner">
+<p class="metric-card__value">11 YCC</p>
+<p class="metric-card__label">Youth Co-Creators providing thought leadership</p>
+</div>
+:::
+:::
+:::
+:::
+
+::: {.home-content-layout__right}
+
+## Project Overview
+
+CO-LUMINATE leverages the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS) to create a longitudinal linked dataset of 5,279 adolescents and young people. The dataset supports analysis of how social determinants of mental health, including socioeconomic status (SES) and caregiver co-residency, relate to depressive symptoms over time.
+
+The project also uses a structured co-creation model with 11 Youth Co-Creators (YCC), who contribute meaningful thought leadership to refine, guide, and nuance the research process and interpretation.
+
+## Study Design
+
+::: {.study-flow}
+::: {.study-flow__step}
+<div class="study-flow__badge">1</div>
+<div class="study-flow__content">
+<h3>Longitudinal Linkage</h3>
+<p>Individual-level depression outcomes are linked to household HDSS trajectories to assess direct and mediation relationships through time.</p>
+</div>
+:::
+<div class="study-flow__arrow" aria-hidden="true"></div>
+::: {.study-flow__step}
+<div class="study-flow__badge">2</div>
+<div class="study-flow__content">
+<h3>Secondary Data Analysis</h3>
+<p>Longitudinal analyses evaluate relationships between social stress exposures (including SES and caregiver co-residency) and symptoms of depression.</p>
+</div>
+:::
+<div class="study-flow__arrow" aria-hidden="true"></div>
+::: {.study-flow__step}
+<div class="study-flow__badge">3</div>
+<div class="study-flow__content">
+<h3>Youth Co-Creation</h3>
+<p>Eleven YCC members provide co-created input to strengthen relevance, interpretation, and context-sensitive framing of findings.</p>
+</div>
+:::
+:::
+
+:::
+:::

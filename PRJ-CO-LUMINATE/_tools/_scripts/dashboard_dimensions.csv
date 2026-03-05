@@ -1,0 +1,14 @@
+domain,var,label,type
+SDoH,DNKA,Drank Alcohol,binary
+SDoH,ESXC,Ever Had Sex,binary
+SDoH,FDSC,Food Insecure,binary
+SDoH,GOVG,No Government Grant,binary
+SDoH,VLNC,Experienced Violence,binary
+SDoH,SCHL,In School,binary
+SDoH,SCSP,Has Social Support,binary
+SDoH,RURAL,Reside in Rural Area,binary
+SDoH,EXTMG,External Migration,binary
+SDoH,ORPH,Orphanhood Status,categorical
+Trajectory,ELCDV,Early Childhood Trajectory,categorical
+Trajectory,MDCDV,Middle-Late Childhood Trajectory,categorical
+Trajectory,GBCDV,Global Childhood Trajectory,categorical

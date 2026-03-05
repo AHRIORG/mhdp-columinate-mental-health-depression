@@ -1,0 +1,18 @@
+{
+  "participants_total": 5226,
+  "records_total": 5616,
+  "studies_total": 5,
+  "depression_prev_pct": 6,
+  "mh_start_month_year": "Aug 2012",
+  "mh_end_month_year": "Dec 2022",
+  "mh_range_month_year": "Aug 2012 to Dec 2022",
+  "sdoh_start_month_year": "Jan 2000",
+  "sdoh_end_month_year": "Dec 2019",
+  "sdoh_range_month_year": "Jan 2000 to Dec 2019",
+  "sdoh_start_year": "2000",
+  "sdoh_end_year": "2019",
+  "sdoh_range_year": "2000 to 2019",
+  "min_cell_n": 10,
+  "filter_dimensions_available": 10,
+  "trajectory_dimensions_available": 0
+}

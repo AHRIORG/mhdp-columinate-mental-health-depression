@@ -1,0 +1,97 @@
+---
+title: |
+  <img src="../_assets/ahri_logo.png" alt="AHRI logo" class="title-logo" />
+  <br />
+  CO-LUMINATE Mediation to Outcome Preliminary Analysis
+subtitle: "Mediators vs Outcome"
+author:
+  - name: CO-LUMINATE DSU Team
+    affiliation: Africa Health Research Institute (AHRI)
+    city: Durban & Somokhele
+    country: South Africa
+format:
+  revealjs:
+    controls: true
+    progress: true
+    slide-number: true
+    css:
+      - styles/presentation_0.css
+      - styles/presentation_1.css
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+read_obj <- function(filename) {
+  candidates <- c(
+    file.path("..", "_tools", "_objects", filename),
+    file.path("_tools", "_objects", filename)
+  )
+  idx <- which(file.exists(candidates))[1]
+  if (is.na(idx)) {
+    stop("Missing object file: ", filename)
+  }
+  candidates[idx]
+}
+
+summary_path <- read_obj("mediation_prelim_summary.rds")
+interpretation_path <- read_obj("mediation_prelim_interpretation.rds")
+build_info_path <- read_obj("mediation_prelim_build_info.rds")
+plot_path <- read_obj("mediation_prelim_combined_plot.png")
+
+summary_df <- readRDS(summary_path)
+interpretation <- readRDS(interpretation_path)
+build_info <- readRDS(build_info_path)
+```
+
+## Analysis Scope
+
+-   Objective: assess associations between potential mediators and depression outcome (`DPBN`).
+-   Unadjusted model: each mediator fitted independently (bivariate association).
+-   Base model: each mediator fitted separately, adjusted for Sex, Age, HIV, visit year, migration, rural residence, and orphanhood.
+-   Fully adjusted model: all candidate mediators entered simultaneously with the same covariates.
+-   Data source used at build time: private ADaM `dt_multistudies` (no row-level data saved in project objects).
+
+## Model Outputs {.smaller}
+
+```{r}
+#| echo: false
+summary_display <- data.frame(
+  `Potential Mediator` = summary_df$label,
+  `Unadjusted OR (95% CI)` = summary_df$unadj_or_ci,
+  `Unadjusted p-value` = format.pval(summary_df$unadj_p.value, digits = 3, eps = 0.001),
+  `Base OR (95% CI)` = summary_df$base_or_ci,
+  `Base p-value` = format.pval(summary_df$base_p.value, digits = 3, eps = 0.001),
+  `Fully Adjusted OR (95% CI)` = summary_df$adj_or_ci,
+  `Fully Adjusted p-value` = format.pval(summary_df$adj_p.value, digits = 3, eps = 0.001),
+  check.names = FALSE
+)
+
+knitr::kable(
+  summary_display,
+  align = c("l", "l", "r", "l", "r", "l", "r"),
+  row.names = FALSE
+)
+```
+
+## Forest + Pattern Evidence
+
+```{r}
+#| echo: false
+knitr::include_graphics(plot_path)
+```
+
+## Interpretation
+
+```{r}
+#| echo: false
+cat(paste0("- ", interpretation), sep = "\n\n")
+```
+
+## Object Governance
+
+-   Script used: `PRJ-CO-LUMINATE/_tools/_scripts/build_mediation_prelim_objects.R`
+-   Saved objects: aggregated outcome-association summaries, inter-association/correlation summaries, pattern summaries, and presentation-ready figure.
+-   Explicitly excluded from `_tools/_objects`: participant-level datasets and row-level extracts.
+-   Build rows analyzed: `r build_info$n_analysis` participants.

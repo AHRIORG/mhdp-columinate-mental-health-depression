@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Lato:wght@400;700&display=swap");
+
+:root {
+  --pmep-navy: #001f3f;
+  --pmep-teal: #008080;
+  --pmep-coral: #ff7f50;
+  --pmep-ink: #243447;
+  --pmep-panel: #f7fafc;
+}
+
+.reveal {
+  color: var(--pmep-ink);
+}
+
+.reveal .slides section {
+  text-align: left;
+  padding: 28px 52px 42px 52px;
+  border-left: 8px solid var(--pmep-teal);
+  background:
+    radial-gradient(900px 520px at 110% -10%, rgba(0, 128, 128, 0.09), transparent 64%),
+    radial-gradient(700px 420px at -10% 110%, rgba(255, 127, 80, 0.08), transparent 64%),
+    linear-gradient(180deg, #ffffff 0%, var(--pmep-panel) 100%);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  font-family: "Montserrat", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--pmep-navy);
+  line-height: 1.15;
+}
+
+.reveal .slides section h2 {
+  color: var(--pmep-navy);
+}
+
+.reveal h2 {
+  border-left: 7px solid var(--pmep-coral);
+  padding-left: 0.45em;
+  margin-top: 0;
+  margin-bottom: 0.45em;
+}
+
+/* Shrink slide body text without using Reveal's section-level `.smaller`. */
+.reveal .body-small {
+  font-size: 0.84em;
+}
+
+/* Prevent heading upscaling when `.smaller` is used at section level. */
+.reveal .slides section.smaller > h1 {
+  font-size: 1.6em;
+}
+
+.reveal .slides section.smaller > h2 {
+  font-size: 1.15em;
+}
+
+.reveal .slides section.smaller > h3 {
+  font-size: 1em;
+}
+
+.reveal p,
+.reveal li,
+.reveal table {
+  font-family: "Lato", "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.reveal strong {
+  color: var(--pmep-teal);
+  font-weight: 800;
+}
+
+.reveal .kw {
+  color: var(--pmep-coral);
+  font-weight: 800;
+}
+
+.reveal .core-cite {
+  border: 2px solid var(--pmep-coral);
+  border-radius: 10px;
+  background: rgba(255, 127, 80, 0.06);
+  padding: 0.2em 0.45em;
+  margin: 0 0 0.45em 0;
+}
+
+.reveal .core-cite p {
+  margin: 0;
+  font-size: 0.58em;
+  line-height: 1.3;
+}
+
+.reveal .core-cite.vars-tight {
+  padding: 0.14em 0.38em;
+}
+
+.reveal .core-cite.vars-tight ul {
+  margin-left: 0.72em;
+  margin-top: 0.12em;
+  margin-bottom: 0.12em;
+}
+
+.reveal .core-cite.vars-tight li {
+  font-size: 0.72em;
+  line-height: 1.22;
+  margin-bottom: 0.08em;
+}
+
+.reveal .intro-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 0.6em;
+  align-items: center;
+}
+
+.reveal .intro-left {
+  min-width: 0;
+}
+
+.reveal .intro-right {
+  min-width: 0;
+}
+
+.reveal .intro-image {
+  display: block;
+  width: 100%;
+  max-height: 470px;
+  object-fit: contain;
+  border: 2px solid var(--pmep-coral);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.reveal .rq-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65em;
+  align-items: center;
+}
+
+.reveal .rq-left,
+.reveal .rq-right {
+  min-width: 0;
+}
+
+.reveal .rq-image {
+  display: block;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border: 2px solid var(--pmep-coral);
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.reveal .cbc-layout {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 0.65em;
+  align-items: center;
+}
+
+.reveal .cbc-left,
+.reveal .cbc-right {
+  min-width: 0;
+}
+
+.reveal .cbc-image {
+  display: block;
+  width: 96%;
+  margin: 0 auto;
+  max-height: 460px;
+  object-fit: contain;
+  border: 2px dashed var(--pmep-teal);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.reveal .aims-flow-image {
+  display: block;
+  width: 94%;
+  margin: 0.45em auto 0 auto;
+  max-height: 210px;
+  object-fit: contain;
+  border: 2px solid var(--pmep-coral);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.reveal ul {
+  margin-left: 0.9em;
+}
+
+.reveal ul li::marker {
+  color: var(--pmep-teal);
+}
+
+.reveal table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.73em;
+}
+
+.reveal table th {
+  background: var(--pmep-navy);
+  color: #ffffff;
+  border: 1px solid #d8e1ea;
+  padding: 0.45em 0.5em;
+}
+
+.reveal table td {
+  border: 1px solid #d8e1ea;
+  padding: 0.45em 0.5em;
+  vertical-align: top;
+}
+
+.reveal .math.display {
+  font-size: 0.84em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+#title-slide {
+  border-left: 8px solid var(--pmep-coral);
+  background:
+    linear-gradient(145deg, rgba(0, 31, 63, 0.97), rgba(0, 31, 63, 0.9)),
+    radial-gradient(700px 420px at 90% 10%, rgba(0, 128, 128, 0.33), transparent 70%);
+}
+
+/* Title slide logo (top center). */
+#title-slide .title-logo {
+  display: block;
+  width: 460px;
+  height: auto;
+  margin: 0 auto 0.35em auto;
+}
+
+#title-slide .title,
+#title-slide .subtitle,
+#title-slide .quarto-title-author-name,
+#title-slide .quarto-title-affiliation,
+#title-slide .date {
+  color: #f8fbff;
+}
+
+#title-slide .title p {
+  margin: 0;
+}
+
+.reveal .footer {
+  left: 14px;
+  right: 110px;
+  width: auto;
+  margin: 0;
+  text-align: left;
+  font-size: 0.5em;
+  line-height: 1.2;
+  bottom: 8px;
+}
+
+.reveal .slides section.thank-you-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-left: 8px solid var(--pmep-coral);
+  background:
+    radial-gradient(900px 500px at 50% -20%, rgba(0, 128, 128, 0.08), transparent 68%),
+    radial-gradient(900px 500px at 50% 120%, rgba(255, 127, 80, 0.1), transparent 70%),
+    linear-gradient(180deg, #ffffff 0%, var(--pmep-panel) 100%);
+}
+
+.reveal .thank-you-slide h2 {
+  border-left: 0;
+  padding-left: 0;
+  margin-bottom: 0.5em;
+}
+
+.reveal .thank-you-slide ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 88%;
+}
+
+.reveal .thank-you-slide li {
+  font-size: 0.72em;
+  line-height: 1.35;
+  margin-bottom: 0.35em;
+}
+
+.reveal .thank-you-slide li::marker,
+.reveal .thank-you-slide li::before {
+  content: none;
+}
+
+@media (max-width: 1100px) {
+  .reveal .intro-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reveal .rq-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reveal .cbc-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .reveal .intro-image {
+    max-height: 280px;
+  }
+
+  .reveal .rq-image {
+    max-height: 290px;
+  }
+
+  .reveal .cbc-image {
+    max-height: 290px;
+  }
+
+  .reveal .aims-flow-image {
+    max-height: 170px;
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "study": "Dreams",
+    "clyr": 5,
+    "n": 1422,
+    "depressed_n": 132,
+    "prevalence_pct": 9.3
+  },
+  {
+    "study": "Dreams",
+    "clyr": 6,
+    "n": 644,
+    "depressed_n": 42,
+    "prevalence_pct": 6.5
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "clyr": 9,
+    "n": 269,
+    "depressed_n": 15,
+    "prevalence_pct": 5.6
+  },
+  {
+    "study": "Isisekelo Sempilo",
+    "clyr": 10,
+    "n": 512,
+    "depressed_n": 17,
+    "prevalence_pct": 3.3
+  },
+  {
+    "study": "Multilevel",
+    "clyr": 6,
+    "n": 875,
+    "depressed_n": 43,
+    "prevalence_pct": 4.9
+  },
+  {
+    "study": "Multilevel",
+    "clyr": 7,
+    "n": 872,
+    "depressed_n": 21,
+    "prevalence_pct": 2.4
+  },
+  {
+    "study": "TasP",
+    "clyr": 0,
+    "n": 10,
+    "depressed_n": 0,
+    "prevalence_pct": 0
+  },
+  {
+    "study": "TasP",
+    "clyr": 1,
+    "n": 87,
+    "depressed_n": 0,
+    "prevalence_pct": 0
+  },
+  {
+    "study": "TasP",
+    "clyr": 2,
+    "n": 67,
+    "depressed_n": 1,
+    "prevalence_pct": 1.5
+  },
+  {
+    "study": "Thetha Nami",
+    "clyr": 10,
+    "n": 858,
+    "depressed_n": 54,
+    "prevalence_pct": 6.3
+  }
+]

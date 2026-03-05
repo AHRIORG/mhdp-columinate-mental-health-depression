@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Statistical Analysis Plan – CO-LUMINATE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-466c708b1a5a2967f0eb6fed410850f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CO-LUMINATE</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/documentations.html"> <i class="bi bi-folder2-open" role="img">
+</i> 
+<span class="menu-text">Documentations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/reports.html"> <i class="bi bi-file-earmark-text" role="img">
+</i> 
+<span class="menu-text">Reports</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/presentations.html"> <i class="bi bi-easel2" role="img">
+</i> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/metadata.html"> <i class="bi bi-table" role="img">
+</i> 
+<span class="menu-text">Metadata</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+</i> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
+</i> 
+<span class="menu-text">Dashboard</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#study-aim-objectives-and-research-questions" id="toc-study-aim-objectives-and-research-questions" class="nav-link" data-scroll-target="#study-aim-objectives-and-research-questions">2. Study Aim, Objectives, And Research Questions</a></li>
+  <li><a href="#data-sources-and-analytical-cohort" id="toc-data-sources-and-analytical-cohort" class="nav-link" data-scroll-target="#data-sources-and-analytical-cohort">3. Data Sources And Analytical Cohort</a></li>
+  <li><a href="#conceptual-causal-model" id="toc-conceptual-causal-model" class="nav-link" data-scroll-target="#conceptual-causal-model">4. Conceptual Causal Model</a></li>
+  <li><a href="#endpoints-exposures-mediators-and-covariates" id="toc-endpoints-exposures-mediators-and-covariates" class="nav-link" data-scroll-target="#endpoints-exposures-mediators-and-covariates">5. Endpoints, Exposures, Mediators, And Covariates</a>
+  <ul class="collapse">
+  <li><a href="#primary-endpoint" id="toc-primary-endpoint" class="nav-link" data-scroll-target="#primary-endpoint">5.1 Primary Endpoint</a></li>
+  <li><a href="#social-determinant-exposures" id="toc-social-determinant-exposures" class="nav-link" data-scroll-target="#social-determinant-exposures">5.2 Social Determinant Exposures</a></li>
+  <li><a href="#mediators" id="toc-mediators" class="nav-link" data-scroll-target="#mediators">5.3 Mediators</a></li>
+  <li><a href="#confounder-strategy" id="toc-confounder-strategy" class="nav-link" data-scroll-target="#confounder-strategy">5.4 Confounder Strategy</a></li>
+  </ul></li>
+  <li><a href="#statistical-principles" id="toc-statistical-principles" class="nav-link" data-scroll-target="#statistical-principles">6. Statistical Principles</a></li>
+  <li><a href="#analytical-workflow" id="toc-analytical-workflow" class="nav-link" data-scroll-target="#analytical-workflow">7. Analytical Workflow</a>
+  <ul class="collapse">
+  <li><a href="#descriptive-and-data-quality-analyses" id="toc-descriptive-and-data-quality-analyses" class="nav-link" data-scroll-target="#descriptive-and-data-quality-analyses">7.1 Descriptive And Data Quality Analyses</a></li>
+  <li><a href="#longitudinal-exposure-modeling" id="toc-longitudinal-exposure-modeling" class="nav-link" data-scroll-target="#longitudinal-exposure-modeling">7.2 Longitudinal Exposure Modeling</a></li>
+  <li><a href="#depression-harmonization" id="toc-depression-harmonization" class="nav-link" data-scroll-target="#depression-harmonization">7.3 Depression Harmonization</a></li>
+  <li><a href="#primary-causal-mediation-models" id="toc-primary-causal-mediation-models" class="nav-link" data-scroll-target="#primary-causal-mediation-models">7.4 Primary Causal Mediation Models</a></li>
+  </ul></li>
+  <li><a href="#missing-data-and-imputation" id="toc-missing-data-and-imputation" class="nav-link" data-scroll-target="#missing-data-and-imputation">8. Missing Data And Imputation</a></li>
+  <li><a href="#sensitivity-robustness-and-secondary-analyses" id="toc-sensitivity-robustness-and-secondary-analyses" class="nav-link" data-scroll-target="#sensitivity-robustness-and-secondary-analyses">9. Sensitivity, Robustness, And Secondary Analyses</a></li>
+  <li><a href="#reporting-standards" id="toc-reporting-standards" class="nav-link" data-scroll-target="#reporting-standards">10. Reporting Standards</a></li>
+  <li><a href="#reproducibility-governance-and-data-use-constraints" id="toc-reproducibility-governance-and-data-use-constraints" class="nav-link" data-scroll-target="#reproducibility-governance-and-data-use-constraints">11. Reproducibility, Governance, And Data Use Constraints</a></li>
+  <li><a href="#sap-versioning-and-amendments" id="toc-sap-versioning-and-amendments" class="nav-link" data-scroll-target="#sap-versioning-and-amendments">12. SAP Versioning And Amendments</a>
+  <ul class="collapse">
+  <li><a href="#amendment-record" id="toc-amendment-record" class="nav-link" data-scroll-target="#amendment-record">12.1 Amendment Record</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Statistical Analysis Plan</h1>
+<p class="subtitle lead">CO-LUMINATE Secondary Data Analysis</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>This Statistical Analysis Plan (SAP) specifies the inferential framework for CO-LUMINATE, a longitudinal linked-data study designed to evaluate how social determinants of health influence depression among young people in rural South Africa. The document is written to align with the approved CO-LUMINATE proposal and to govern reproducible analysis of the linked cohort-household platform developed for this project.</p>
+<p>The scientific motivation is to estimate both direct and indirect pathways between social stress exposures and depression, with explicit attention to life-course timing, mediation mechanisms, and uncertainty quantification. The analytic strategy is therefore structured around longitudinal exposure characterization, harmonized depression endpoint construction, and causal mediation modeling under prespecified assumptions.</p>
+</section>
+<section id="study-aim-objectives-and-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="study-aim-objectives-and-research-questions">2. Study Aim, Objectives, And Research Questions</h2>
+<p>The overarching aim is to quantify the longitudinal relationship between social determinants and depression symptoms among young people aged 13-24 years, and to evaluate mediation pathways through behavioral and psychosocial factors. In operational terms, this entails estimating how early and mid-childhood exposure patterns are associated with later depression risk, and whether those associations are explained in part by modifiable mediating factors measured during adolescence and young adulthood.</p>
+<p>The proposal-level objectives are implemented in five linked analytical domains. First, the study describes population-level trajectories of socioeconomic position and caregiver co-residency. Second, it characterizes interactions between these social determinants and mediator domains relevant to youth mental health. Third, it defines and summarizes depression prevalence using a harmonized endpoint. Fourth, it estimates direct and mediated effects of social determinants on depression. Fifth, it integrates co-creation principles through interpretation and contextual framing of findings. Food insecurity was part of the original conceptual plan but is treated as unavailable for primary longitudinal trajectory modeling in the finalized linked analysis dataset (see amendment note in Section 12).</p>
+</section>
+<section id="data-sources-and-analytical-cohort" class="level2">
+<h2 class="anchored" data-anchor-id="data-sources-and-analytical-cohort">3. Data Sources And Analytical Cohort</h2>
+<p>The analytical platform integrates individual-level mental health data from youth cohorts nested within the AHRI HDSS with household-level longitudinal exposure histories from the surveillance system. The linked cohort includes participants from DREAMS, Multilevel, Isisekelo Sempilo, Treatment as Prevention (TasP), and Thetha Nami, with harmonized follow-up structures sufficient for trajectory and mediation analyses.</p>
+<p>The primary analysis population includes participants who satisfy both endpoint and linkage requirements: availability of a valid depression endpoint (<code>DPBN</code>) and valid linkage to longitudinal household social-determinant data. Final inferential models are estimated only on participants meeting these criteria. Cohort assembly, exclusions, and denominator transitions are reported transparently in metadata and CONSORT-style flow summaries.</p>
+</section>
+<section id="conceptual-causal-model" class="level2">
+<h2 class="anchored" data-anchor-id="conceptual-causal-model">4. Conceptual Causal Model</h2>
+<p>The core causal structure is represented by a directed acyclic graph in which childhood social stress exposures affect depression through both direct pathways and indirect pathways operating via behavioral or social mediators. The framework assumes temporally ordered pathways from childhood exposure windows (0-5 years; 6-12 years), through adolescent mediator profiles, to depression outcome status in adolescence and young adulthood.</p>
+<div class="aim-dag">
+<figure class="figure">
+<figcaption>
+DAG: Conceptual mediation framework for CO-LUMINATE
+</figcaption>
+<img src="../_assets/DAG-01.png" alt="Conceptual mediation framework for CO-LUMINATE" class="figure-img">
+</figure>
+</div>
+</section>
+<section id="endpoints-exposures-mediators-and-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="endpoints-exposures-mediators-and-covariates">5. Endpoints, Exposures, Mediators, And Covariates</h2>
+<section id="primary-endpoint" class="level3">
+<h3 class="anchored" data-anchor-id="primary-endpoint">5.1 Primary Endpoint</h3>
+<p>The primary endpoint is binary depression status (<code>DPBN</code>). This endpoint is defined on a harmonized psychometric scale that combines directly observed PHQ-based information with SSQ-based calibrated scoring where PHQ is unavailable. Harmonization procedures are fixed prior to mediation model fitting to avoid post-hoc endpoint drift.</p>
+</section>
+<section id="social-determinant-exposures" class="level3">
+<h3 class="anchored" data-anchor-id="social-determinant-exposures">5.2 Social Determinant Exposures</h3>
+<p>Exposure domains are modeled longitudinally and include caregiver co-residency and household socioeconomic conditions. Exposure histories are summarized through latent trajectory/class structures within prespecified childhood windows (0-5 years and 6-12 years), and these classes are encoded as analytical indicators for downstream structural models. The planned household food insecurity trajectory domain is not included in primary analyses because the required longitudinal measure was not obtained in the final analytical data assembly.</p>
+</section>
+<section id="mediators" class="level3">
+<h3 class="anchored" data-anchor-id="mediators">5.3 Mediators</h3>
+<p>The prespecified observed mediator set for primary modeling comprises alcohol use (<code>DNKA</code>), sexual behavior (<code>ESXC</code>), government grant access (<code>GOVG</code>), violence exposure (<code>VLNC</code>), social support (<code>SCSP</code>), and school attendance (<code>SCHL</code>). In addition to this observed parallel mediator representation, a latent mediator phenotype class is estimated as an alternative mediation structure to assess whether mediator clustering yields a more coherent mechanistic profile.</p>
+</section>
+<section id="confounder-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="confounder-strategy">5.4 Confounder Strategy</h3>
+<p>Two confounder blocks are prespecified. Baseline confounders capture pre-exposure structural context, including maternal and paternal demographic, educational, HIV, partnership, and migration attributes. Mediator-outcome confounders include sex, age, HIV status, orphanhood, external migration, rural residence, and calendar year. Adjustment sets are fixed before primary effect estimation and are applied consistently across model families, with sensitivity analyses evaluating the impact of alternative adjustment scope.</p>
+</section>
+</section>
+<section id="statistical-principles" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-principles">6. Statistical Principles</h2>
+<p>All primary inferential analyses adopt a Bayesian estimation framework implemented in Mplus. Effect estimation is based on posterior summaries and 95% credible intervals, with primary interpretation focused on interval compatibility with null and effect magnitude. Statistical significance language is used cautiously and is secondary to estimation and uncertainty reporting.</p>
+<p>Primary estimands are: (i) direct effects of childhood exposure class indicators on depression; (ii) specific natural indirect effects through each observed mediator; and (iii) natural indirect effects through the latent mediator phenotype class. These estimands are interpreted under standard causal mediation assumptions, including exchangeability conditional on measured covariates, positivity, and correct model specification.</p>
+</section>
+<section id="analytical-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-workflow">7. Analytical Workflow</h2>
+<section id="descriptive-and-data-quality-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-and-data-quality-analyses">7.1 Descriptive And Data Quality Analyses</h3>
+<p>Descriptive analyses quantify cohort composition, missingness structure, prevalence of endpoint and mediator domains, and distribution of exposure classes. These analyses serve both quality control and interpretive context and are reported before causal models.</p>
+</section>
+<section id="longitudinal-exposure-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="longitudinal-exposure-modeling">7.2 Longitudinal Exposure Modeling</h3>
+<p>Exposure trajectories are modeled separately in childhood windows (0-5 years; 6-12 years). Candidate class structures are evaluated using fit indices, class interpretability, and practical constraints including minimum class prevalence. Selected class solutions are locked prior to mediation estimation.</p>
+</section>
+<section id="depression-harmonization" class="level3">
+<h3 class="anchored" data-anchor-id="depression-harmonization">7.3 Depression Harmonization</h3>
+<p>Depression harmonization uses calibrated psychometric modeling to map SSQ-only records onto a PHQ-referenced depression scale, after which a fixed binary endpoint (<code>DPBN</code>) is derived. This harmonization stage is treated as upstream data preparation and not iteratively tuned based on mediation outcomes.</p>
+</section>
+<section id="primary-causal-mediation-models" class="level3">
+<h3 class="anchored" data-anchor-id="primary-causal-mediation-models">7.4 Primary Causal Mediation Models</h3>
+<p>Two model families are estimated to address complementary mechanistic assumptions. The first uses observed parallel mediators, where each mediator is regressed on exposure indicators and confounders, and the depression endpoint is regressed on all mediators, exposures, and confounders. Natural indirect effects are estimated via parametric g-computation syntax in Mplus (<code>MODEL INDIRECT ... (CAUSAL)</code>), pooled over multiple imputation/plausible-value draws.</p>
+<p>The second model family uses a latent categorical mediator phenotype, where exposure indicators predict latent class membership and the endpoint is modeled as a function of latent mediator class, exposure indicators, and confounders. This approach evaluates whether mediator co-occurrence patterns provide stronger explanatory structure than separate observed mediators.</p>
+<p>For pooled Bayesian analyses, the target imputation/plausible-value framework is <code>m = 100</code> draws. Posterior estimates are extracted and summarized in publication-ready effect tables with explicit interval reporting.</p>
+</section>
+</section>
+<section id="missing-data-and-imputation" class="level2">
+<h2 class="anchored" data-anchor-id="missing-data-and-imputation">8. Missing Data And Imputation</h2>
+<p>Missing data are handled through a structured imputation-aware modeling workflow integrated with Bayesian estimation. Covariate and mediator missingness are addressed under model-based assumptions consistent with the imputation design. Participants with structurally missing core linkage components or unavailable primary endpoint are excluded according to prespecified rules. Sensitivity comparisons include reduced models and complete-case contrasts to assess robustness of substantive conclusions.</p>
+</section>
+<section id="sensitivity-robustness-and-secondary-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="sensitivity-robustness-and-secondary-analyses">9. Sensitivity, Robustness, And Secondary Analyses</h2>
+<p>Robustness is assessed along four dimensions: mediator representation (observed vs latent), class solution alternatives, covariate adjustment sets, and depression endpoint threshold specification. Additional sensitivity summaries include effect-stability diagnostics and E-value style reporting for key indirect pathways where applicable. These analyses are interpreted as robustness evidence and do not replace the prespecified primary estimands.</p>
+<p>Subgroup summaries by sex, age band, rural context, and HIV status are reported descriptively or as exploratory heterogeneity assessments unless explicitly prespecified for confirmatory inference.</p>
+</section>
+<section id="reporting-standards" class="level2">
+<h2 class="anchored" data-anchor-id="reporting-standards">10. Reporting Standards</h2>
+<p>All primary and sensitivity outputs are reported with clear separation between estimand definition, model specification, and interpretation. Tables and figures present posterior estimates, interval bounds, and pathway labels mapped to the conceptual framework. Interpretation emphasizes direction, magnitude, and uncertainty, and avoids causal overstatement beyond assumptions supported by design and measured covariates.</p>
+</section>
+<section id="reproducibility-governance-and-data-use-constraints" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-governance-and-data-use-constraints">11. Reproducibility, Governance, And Data Use Constraints</h2>
+<p>The SAP is operationalized through version-controlled scripts organized into data preparation, model fitting, extraction, and reporting modules. Analytical objects (<code>.rds</code>), tables, and figures are generated from scripted pipelines and traced to model configuration files.</p>
+<p>Participant-level private data remain in controlled environments. Public-facing website outputs are restricted to non-disclosive summaries, derived figures, and metadata artifacts. Access to full internal proposal and restricted analysis products remains governed by the Principal Investigator and project governance procedures.</p>
+</section>
+<section id="sap-versioning-and-amendments" class="level2">
+<h2 class="anchored" data-anchor-id="sap-versioning-and-amendments">12. SAP Versioning And Amendments</h2>
+<p>This SAP reflects the current CO-LUMINATE scientific plan and linked-data workflow. Any amendments to endpoint definition, exposure class selection, covariate sets, mediator structure, or inferential model family will be logged as SAP updates with explicit rationale, implementation date, and impact statement on prior results.</p>
+<section id="amendment-record" class="level3">
+<h3 class="anchored" data-anchor-id="amendment-record">12.1 Amendment Record</h3>
+<p>On March 5, 2026, the SAP was amended to document that food insecurity was not obtained in the finalized longitudinal exposure build for this phase of CO-LUMINATE. As a result, food insecurity is removed from the primary longitudinal exposure specification and from the primary observed mediator set used for confirmatory mediation models in this SAP version.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="../about.html">About</a> | <a href="../tabs/team.html">Team</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Created with <a href="https://quarto.org/" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Quarto</a> and <a href="https://www.r-project.org/" target="_blank" rel="noopener"><i class="bi bi-r-circle"></i> R</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

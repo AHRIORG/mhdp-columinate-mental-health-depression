@@ -1,0 +1,21 @@
+---
+title: "About CO-LUMINATE"
+---
+
+## CO-LUMINATE
+
+**CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures**
+
+This project investigates the longitudinal relationship between social determinants (SES, and caregiver co-residency) and depression symptoms among South African youth aged 13-24.
+
+Leveraging the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS), the study creates the CO-LUMINATE dataset by linking longitudinal data from 5,279 adolescents.
+
+The project employs a co-creation model that engages 11 Youth Co-Creators (YCC) to provide thought leadership that refines and nuances the proposed research.
+
+Through co-creation and secondary data analysis, the project generates transformative insights into how key social determinants of mental health relate to symptoms of depression among South African young people.
+
+## Novel Contribution
+
+- The project integrates rigorous longitudinal data linkage with a formal youth co-creation process rather than treating youth input as consultative only.
+- It focuses on direct and mediation pathways between social stress exposures and depression symptoms in a population-level LMIC youth sample.
+- It produces actionable, contextually grounded evidence for advancing youth mental health research and response in South Africa.

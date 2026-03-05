@@ -1,0 +1,326 @@
+---
+title: "Metadata"
+toc: true
+---
+
+## Metadata Source
+
+This page is extracted and adapted from the dataset preparation source index.
+
+Current scope is limited to two data dictionaries:
+
+- Childhood social exposure panel
+- Integrated multi-study mental health panel
+
+All derived R objects for this page are stored in `PRJ-CO-LUMINATE/_tools/_objects`.
+
+```{r}
+#| echo: false
+read_obj <- function(filename) {
+  candidates <- c(
+    file.path("_tools", "_objects", filename),
+    file.path("..", "_tools", "_objects", filename)
+  )
+  idx <- which(file.exists(candidates))[1]
+  if (is.na(idx)) {
+    stop("Missing object file: ", filename)
+  }
+  readRDS(candidates[idx])
+}
+
+render_role_dictionary <- function(role_df) {
+  role_df <- role_df[, c("analysis_role", "variable", "label", "type", "value_label"), drop = FALSE]
+  names(role_df) <- c("Role", "Variable", "Label", "Type", "Value Labels")
+
+  if (requireNamespace("gt", quietly = TRUE)) {
+    return(
+      gt::gt(role_df, groupname_col = "Role") |>
+        gt::cols_hide(columns = "Role") |>
+        gt::tab_style(
+          style = gt::cell_text(weight = "bold"),
+          locations = gt::cells_row_groups()
+        )
+    )
+  }
+
+  role_df$Role <- ifelse(
+    duplicated(role_df$Role),
+    "",
+    paste0("**", role_df$Role, "**")
+  )
+
+  knitr::kable(
+    role_df,
+    align = c("l", "l", "l", "l", "l"),
+    escape = FALSE,
+    row.names = FALSE
+  )
+}
+
+append_missing_to_role_dictionary <- function(role_df, missing_df) {
+  if (is.null(missing_df) || nrow(missing_df) == 0) {
+    return(role_df)
+  }
+
+  missing_df <- missing_df[!missing_df$variable %in% role_df$variable, , drop = FALSE]
+  if (nrow(missing_df) == 0) {
+    return(role_df)
+  }
+
+  add_rows <- data.frame(
+    analysis_role = missing_df$analysis_role,
+    variable = missing_df$variable,
+    label = "Configured variable",
+    type = "",
+    value_label = "Missing in current object",
+    stringsAsFactors = FALSE
+  )
+
+  rbind(role_df, add_rows)
+}
+```
+
+## Dataset Summary
+
+```{r}
+#| echo: false
+metadata_summary <- read_obj("metadata_summary.rds")
+knitr::kable(
+  metadata_summary,
+  col.names = c("Field", "Value"),
+  align = c("l", "l"),
+  row.names = FALSE
+)
+```
+
+## Study Design Extract
+
+The CO-LUMINATE linked dataset connects individual-level mental health outcomes from cohort studies to household-level longitudinal HDSS records. The objective is to estimate longitudinal direct and mediation relationships between social determinants and depressive symptoms among youth aged 13-24.
+
+The analytical design combines:
+
+1. HDSS longitudinal household exposure histories.
+2. Cohort-based depression outcomes measured with SSQ-14 and PHQ-9.
+3. Linkage across five cohorts nested within AHRI HDSS.
+
+## Cohorts Included
+
+- DREAMS
+- Multilevel
+- Isisekelo Sempilo
+- Treatment as Prevention (TasP)
+- Thetha Nami
+
+## Object Snapshot
+
+```{r}
+#| echo: false
+object_snapshot <- read_obj("object_snapshot.rds")
+
+knitr::kable(object_snapshot, align = c("l", "r", "r"), row.names = FALSE)
+```
+
+## CONSORT Flow
+
+```{r}
+#| echo: false
+consort_counts <- read_obj("consort_counts.rds")
+consort_exclusion_studies <- read_obj("consort_exclusion_studies.rds")
+
+metric_value <- function(metric) {
+  idx <- match(metric, consort_counts$metric)
+  if (is.na(idx)) return(NA_integer_)
+  consort_counts$value[idx]
+}
+
+fmt_n <- function(x) {
+  if (is.na(x)) return("NA")
+  format(as.integer(x), big.mark = ",", trim = TRUE, scientific = FALSE)
+}
+
+n_multi_loaded <- metric_value("multi_participants_loaded")
+n_multi_with_dpbn <- metric_value("multi_participants_with_dpbn")
+n_child_loaded <- metric_value("child_participants_loaded")
+n_overlap <- metric_value("overlap_participants")
+n_final <- metric_value("multi_participants_final")
+
+n_excl_missing_dpbn <- if (is.na(n_multi_loaded) || is.na(n_multi_with_dpbn)) NA_integer_ else n_multi_loaded - n_multi_with_dpbn
+n_excl_multi_no_sdoh <- if (is.na(n_multi_with_dpbn) || is.na(n_overlap)) NA_integer_ else n_multi_with_dpbn - n_overlap
+n_excl_child_no_multi <- if (is.na(n_child_loaded) || is.na(n_overlap)) NA_integer_ else n_child_loaded - n_overlap
+n_mh_remaining_after_endpoint <- n_multi_with_dpbn
+n_mh_remaining_after_match <- n_overlap
+n_sdoh_remaining_after_match <- if (is.na(n_child_loaded) || is.na(n_excl_child_no_multi)) NA_integer_ else n_child_loaded - n_excl_child_no_multi
+
+user_lib <- Sys.getenv("R_LIBS_USER", unset = "")
+if (nzchar(user_lib) && dir.exists(user_lib)) {
+  .libPaths(unique(c(user_lib, .libPaths())))
+}
+
+study_value <- function(exclusion_key) {
+  idx <- match(exclusion_key, consort_exclusion_studies$exclusion_key)
+  if (is.na(idx)) return("Study source unavailable")
+  if ("study_breakdown" %in% names(consort_exclusion_studies)) {
+    return(consort_exclusion_studies$study_breakdown[idx])
+  }
+  consort_exclusion_studies$studies[idx]
+}
+
+fmt_study_lines <- function(x) {
+  if (is.na(x) || !nzchar(x)) {
+    return("Study source unavailable")
+  }
+  split_pat <- if (grepl(";", x, fixed = TRUE)) ";" else ","
+  parts <- trimws(strsplit(x, split_pat, fixed = TRUE)[[1]])
+  parts <- parts[nzchar(parts)]
+  if (length(parts) == 0) return("Study source unavailable")
+  paste(parts, collapse = "<br/>")
+}
+
+if (requireNamespace("DiagrammeR", quietly = TRUE)) {
+  mermaid_code <- paste(
+    "%%{init: {\"themeVariables\": {\"fontSize\": \"20px\"}, \"flowchart\": {\"nodeSpacing\": 80, \"rankSpacing\": 110}}}%%",
+    "graph TD",
+    sprintf("A[\"Mental health<br/>available<br/>(n=%s)\"]", fmt_n(n_multi_loaded)),
+    sprintf(
+      "X1[\"Excluded<br/>Missing depression<br/>endpoint (n=%s)<br/>Studies:<br/>%s\"]",
+      fmt_n(n_excl_missing_dpbn),
+      fmt_study_lines(study_value("missing_depression_endpoint"))
+    ),
+    sprintf("B[\"Mental health<br/>remaining after<br/>endpoint filter<br/>(n=%s)\"]", fmt_n(n_mh_remaining_after_endpoint)),
+    sprintf(
+      "X2[\"Excluded<br/>No SDoH match<br/>(n=%s)<br/>Studies:<br/>%s\"]",
+      fmt_n(n_excl_multi_no_sdoh),
+      fmt_study_lines(study_value("no_sdoh_match"))
+    ),
+    sprintf("M[\"Mental health<br/>remaining after<br/>match filter<br/>(n=%s)\"]", fmt_n(n_mh_remaining_after_match)),
+    sprintf("C[\"SDoH<br/>available<br/>(n=%s)\"]", fmt_n(n_child_loaded)),
+    sprintf(
+      "X3[\"Excluded<br/>No eligible mental<br/>health match<br/>(n=%s)<br/>Studies:<br/>%s\"]",
+      fmt_n(n_excl_child_no_multi),
+      fmt_study_lines(study_value("no_eligible_mental_health_match"))
+    ),
+    sprintf("S[\"SDoH remaining<br/>after match filter<br/>(n=%s)\"]", fmt_n(n_sdoh_remaining_after_match)),
+    sprintf("D[\"Final included<br/>Depression endpoint<br/>and SDoH coverage<br/>(n=%s)\"]", fmt_n(n_final)),
+    "A --> B",
+    "B --> M",
+    "M --> D",
+    "C --> S",
+    "S --> D",
+    "A --> X1",
+    "B --> X2",
+    "C --> X3",
+    "classDef included fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;",
+    "classDef excluded fill:#fff1f2,stroke:#e11d48,color:#4c0519,stroke-width:1.5px;",
+    "class A,B,M,C,S,D included;",
+    "class X1,X2,X3 excluded;",
+    sep = "\n"
+  )
+  DiagrammeR::mermaid(mermaid_code, width = "100%", height = "900px")
+} else {
+  cat("DiagrammeR package is not available in this environment.")
+}
+```
+
+Participant-focused CONSORT logic:
+participants are retained only if they have both a depression endpoint and SDoH trajectory coverage.
+
+The row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification.
+
+## Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)
+
+```{r}
+#| echo: false
+dt_chilhood_exposure_role_dictionary <- read_obj("dt_chilhood_exposure_role_dictionary.rds")
+dt_chilhood_exposure_role_missing <- read_obj("dt_chilhood_exposure_role_missing.rds")
+dt_chilhood_exposure_with_missing <- append_missing_to_role_dictionary(
+  dt_chilhood_exposure_role_dictionary,
+  dt_chilhood_exposure_role_missing
+)
+render_role_dictionary(dt_chilhood_exposure_with_missing)
+```
+
+## Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)
+
+```{r}
+#| echo: false
+dt_multistudies_role_dictionary <- read_obj("dt_multistudies_role_dictionary.rds")
+render_role_dictionary(dt_multistudies_role_dictionary)
+```
+
+## Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)
+
+```{r}
+#| echo: false
+dt_multistudies_derived_dictionary <- read_obj("dt_multistudies_derived_dictionary.rds")
+dt_multistudies_derived_dictionary <- dt_multistudies_derived_dictionary[
+  !dt_multistudies_derived_dictionary$variable %in% c("CLYR", "GBCDV"),
+  ,
+  drop = FALSE
+]
+if ("derivation_note" %in% names(dt_multistudies_derived_dictionary)) {
+  dt_multistudies_derived_dictionary$derivation_note <- gsub(
+    "\\b[A-Z]{3}[0-9]{2}\\b",
+    "dataset preparation",
+    dt_multistudies_derived_dictionary$derivation_note
+  )
+}
+if ("derivation_status" %in% names(dt_multistudies_derived_dictionary)) {
+  dt_multistudies_derived_dictionary$derivation_status <- gsub(
+    "\\b[A-Z]{3}[0-9]{2}\\b",
+    "dataset preparation",
+    dt_multistudies_derived_dictionary$derivation_status
+  )
+}
+if ("DPBN" %in% dt_multistudies_derived_dictionary$variable) {
+  dpbn_idx <- which(dt_multistudies_derived_dictionary$variable == "DPBN")[1]
+  dt_multistudies_derived_dictionary$source_variables[dpbn_idx] <- "PHQBIN, irt_joint_models.rds"
+  dt_multistudies_derived_dictionary$derivation_note[dpbn_idx] <- "PHQBIN >= 10"
+  dt_multistudies_derived_dictionary$derivation_status[dpbn_idx] <- "Implemented in dataset preparation merge"
+}
+if (nrow(dt_multistudies_derived_dictionary) == 0) {
+  cat("No derived variables were identified in the current metadata objects.")
+} else {
+  knitr::kable(
+    dt_multistudies_derived_dictionary,
+    col.names = c(
+      "Variable",
+      "Label",
+      "Type",
+      "Value Labels",
+      "Source Variables",
+      "Derivation",
+      "Status"
+    ),
+    align = c("l", "l", "l", "l", "l", "l", "l"),
+    row.names = FALSE
+  )
+}
+```
+
+## Dataset Name Reference
+
+```{r}
+#| echo: false
+dataset_name_reference <- data.frame(
+  Dataset_Name = c(
+    "dt_childhood_exposure",
+    "dt_multistudies",
+    "dt_psychometric",
+    "dt_dreams_multi_ssq"
+  ),
+  Readable_Name = c(
+    "Childhood Social Exposure Panel",
+    "Integrated Multi-study Mental Health Panel",
+    "Psychometric Bridge Source Data",
+    "SSQ-only Cohort Response Data"
+  ),
+  stringsAsFactors = FALSE
+)
+
+knitr::kable(
+  dataset_name_reference,
+  col.names = c("Dataset Name", "Readable Name"),
+  align = c("l", "l"),
+  row.names = FALSE
+)
+```

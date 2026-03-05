@@ -1,0 +1,145 @@
+[
+  {
+    "domain": "SDoH",
+    "var": "DNKA",
+    "label": "Drank Alcohol",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 2,
+    "column_name": "f_dnka"
+  },
+  {
+    "domain": "SDoH",
+    "var": "ESXC",
+    "label": "Ever Had Sex",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5076,
+    "distinct_levels": 2,
+    "column_name": "f_esxc"
+  },
+  {
+    "domain": "SDoH",
+    "var": "FDSC",
+    "label": "Food Insecure",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 2,
+    "column_name": "f_fdsc"
+  },
+  {
+    "domain": "SDoH",
+    "var": "GOVG",
+    "label": "No Government Grant",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 2,
+    "column_name": "f_govg"
+  },
+  {
+    "domain": "SDoH",
+    "var": "VLNC",
+    "label": "Experienced Violence",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 2,
+    "column_name": "f_vlnc"
+  },
+  {
+    "domain": "SDoH",
+    "var": "SCHL",
+    "label": "In School",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 2,
+    "column_name": "f_schl"
+  },
+  {
+    "domain": "SDoH",
+    "var": "SCSP",
+    "label": "Has Social Support",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5223,
+    "distinct_levels": 2,
+    "column_name": "f_scsp"
+  },
+  {
+    "domain": "SDoH",
+    "var": "RURAL",
+    "label": "Reside in Rural Area",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5193,
+    "distinct_levels": 2,
+    "column_name": "f_rural"
+  },
+  {
+    "domain": "SDoH",
+    "var": "EXTMG",
+    "label": "External Migration",
+    "type": "binary",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 2,
+    "column_name": "f_extmg"
+  },
+  {
+    "domain": "SDoH",
+    "var": "ORPH",
+    "label": "Orphanhood Status",
+    "type": "categorical",
+    "source_present": true,
+    "available": true,
+    "non_missing_n": 5226,
+    "distinct_levels": 3,
+    "column_name": "f_orph"
+  },
+  {
+    "domain": "Trajectory",
+    "var": "ELCDV",
+    "label": "Early Childhood Trajectory",
+    "type": "categorical",
+    "source_present": true,
+    "available": false,
+    "non_missing_n": 0,
+    "distinct_levels": 0,
+    "column_name": "f_elcdv"
+  },
+  {
+    "domain": "Trajectory",
+    "var": "MDCDV",
+    "label": "Middle-Late Childhood Trajectory",
+    "type": "categorical",
+    "source_present": true,
+    "available": false,
+    "non_missing_n": 0,
+    "distinct_levels": 0,
+    "column_name": "f_mdcdv"
+  },
+  {
+    "domain": "Trajectory",
+    "var": "GBCDV",
+    "label": "Global Childhood Trajectory",
+    "type": "categorical",
+    "source_present": true,
+    "available": false,
+    "non_missing_n": 0,
+    "distinct_levels": 0,
+    "column_name": "f_gbcdv"
+  }
+]

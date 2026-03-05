@@ -1,0 +1,6 @@
+.git
+.Rproj.user
+_site
+tabs/*_cache
+presentations/*_cache
+reports/*_cache

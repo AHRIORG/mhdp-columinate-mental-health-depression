@@ -1,0 +1,66 @@
+project:
+  type: website
+  render:
+    - "*.qmd"
+    - "tabs/*.qmd"
+    - "presentations/*.qmd"
+    - "reports/*.qmd"
+  resources:
+    - presentations/slides_obj01_trajectories.html
+    - presentations/slides_reporting_results_files/**
+    - presentations/assets/**
+
+website:
+  title: "CO-LUMINATE"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+        icon: house
+      - href: tabs/documentations.qmd
+        text: Documentations
+        icon: folder2-open
+      - href: tabs/reports.qmd
+        text: Reports
+        icon: file-earmark-text
+      - href: tabs/presentations.qmd
+        text: Presentations
+        icon: easel2
+    right:
+      - href: tabs/metadata.qmd
+        text: Metadata
+        icon: table
+      - href: tabs/tools.qmd
+        text: Tools
+        icon: tools
+      - href: tabs/dashboard.qmd
+        text: Dashboard
+        icon: bar-chart-line
+    tools:
+      - icon: github
+        href: https://github.com/AHRIORG/CO-LUMINATE
+        aria-label: CO-LUMINATE GitHub
+        target: _blank
+      - icon: globe2
+        href: https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569
+        aria-label: CO-LUMINATE OSF
+        target: _blank
+  page-footer:
+    left: |
+      [About](/about.html) | [Team](/tabs/team.html)
+    right: |
+      Created with <a href="https://quarto.org/" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Quarto</a> and <a href="https://www.r-project.org/" target="_blank" rel="noopener"><i class="bi bi-r-circle"></i> R</a>
+
+format:
+  html:
+    grid:
+      sidebar-width: 300px
+      body-width: 1500px
+      margin-width: 300px
+      gutter-width: 1.5rem
+    theme:
+      - sandstone
+    css: styles.css
+    toc: true
+
+editor: visual

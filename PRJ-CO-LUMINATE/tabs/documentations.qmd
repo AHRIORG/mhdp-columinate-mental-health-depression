@@ -1,0 +1,22 @@
+---
+title: "Documentations"
+toc: false
+---
+
+## Core Documentation
+
+This section is for project documentation files such as:
+
+- Study proposal
+- Statistical analysis plan (SAP)
+- Protocol amendments and version notes
+
+## Current Status
+
+- Proposal: [View proposal](proposal.qmd)
+- Longitudinal Linkage (trajectory modelling + psychometric calibration + dataset integration): [View documentation](longitudinal_linkage.qmd)
+- Secondary Data Analysis Plan / SAP: [View plan](secondary_data_analysis_plan.qmd)
+
+## Notes
+
+Use this page as the central documentation index for CO-LUMINATE.

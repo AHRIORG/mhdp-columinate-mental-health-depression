@@ -1,0 +1,143 @@
+---
+title: "Psychometric Harmonization Report"
+subtitle: "Detailed Source-Aligned Summary"
+toc: true
+---
+
+## Source Alignment
+
+This report reflects the detailed structure of the psychometric source index, including:
+
+1. Introduction and clinical rationale.
+2. Methods (setting, sampling, measures, and statistical workflow).
+3. Results (structure, invariance, calibration, and harmonization).
+4. Interpretation for transportable depression-outcome derivation.
+
+## Introduction
+
+The primary aim is to derive a rigorous and evidence-based SSQ threshold aligned to PHQ-9 probable depression (`PHQ-9 >= 10`) for adolescents and young adults.
+The source analysis compares SSQ-14, a theoretically refined SSQ-10 subset, and reference PHQ-9 structure to support harmonized depression classification in CO-LUMINATE linked analyses.
+
+## Methods
+
+### Setting and Study Design
+
+The work is embedded in the Isisekelo Sempilo trial context in rural uMkhanyakude (KwaZulu-Natal), using AHRI surveillance-linked data structures and clinically anchored psychometric evaluation.
+
+### Participants and Sampling
+
+The psychometric analysis cohort in the source index is restricted to participants with concurrent baseline SSQ-14 and PHQ-9 information, focused on adolescents and young adults.
+
+### Measures and Construct Strategy
+
+```{r}
+#| echo: false
+measure_tbl <- data.frame(
+  Instrument = c("PHQ-9", "SSQ-14", "SSQ-10 (theoretical subset)"),
+  Role = c(
+    "Reference depression benchmark and calibration anchor.",
+    "Original culturally grounded distress measure.",
+    "Depression-focused subset for harmonized screening and transportability."
+  ),
+  Notes = c(
+    "Polytomous DSM-aligned depressive symptom scale.",
+    "Binary symptom measure with broader CMD content.",
+    "Retains core depressive/cognitive-affective items and excludes less specific items."
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(measure_tbl, align = c("l", "l", "l"), row.names = FALSE)
+```
+
+### Statistical Workflow from Source Index
+
+1. Descriptive profiling and item-level diagnostics.
+2. Monte Carlo split-sample EFA for factor-retention stability.
+3. Monte Carlo CFA for fit verification of candidate solutions.
+4. Reliability and measurement invariance checks across sex and age groups.
+5. IRT-based harmonization and ROC operating-point comparison.
+6. Threshold translation and transportability checks for SSQ-only scoring.
+
+## Core Concepts
+
+```{r}
+#| echo: false
+concepts <- data.frame(
+  Concept = c(
+    "Latent structure",
+    "Measurement invariance",
+    "Calibration",
+    "Discrimination",
+    "Transportability"
+  ),
+  Meaning = c(
+    "Underlying factor organization captured by candidate psychometric models.",
+    "Stability of measurement properties across demographic and clinical strata.",
+    "Alignment of score scales or thresholds between SSQ and PHQ.",
+    "Ability to separate probable depression from non-cases.",
+    "Ability to apply harmonized scoring rules in cohorts lacking PHQ."
+  ),
+  check.names = FALSE
+)
+
+knitr::kable(concepts, align = c("l", "l"), row.names = FALSE)
+```
+
+## Results Summary
+
+### Participant and Baseline Signal Summary
+
+Key source-index highlights:
+
+1. Analysis sample reported in source results: `N = 843`.
+2. PHQ-defined probable depression prevalence in source results: approximately `4.0%`.
+3. Several SSQ items show stronger alignment with PHQ severity than excluded SSQ items, supporting subset refinement logic.
+
+### Structural Validity and Stability
+
+Source-index interpretation indicates:
+
+1. PHQ-9 shows strong practical support for unidimensional scoring despite methodological divergence in retention heuristics.
+2. SSQ-14 shows multidimensional tendencies with distinct clusters, motivating subset refinement.
+3. SSQ-10 resolves toward stable and interpretable core dimensions after artifact inspection (singleton-factor handling).
+
+![Factor Retention and Structure](/_assets/obj03/fig-factor-retention-1.png)
+
+![Primary Psychometric Results Overview](/_assets/obj03/fig-figure1-1.png)
+
+### Invariance and Reliability
+
+Source findings support robust CFI-based invariance behavior across sex and age group partitions for key models, with RMSEA behavior interpreted in context of subgroup sensitivity and model complexity. Reliability indicators remain high enough to support harmonized use in downstream analyses.
+
+### Harmonization and Calibration
+
+Source-index harmonization findings emphasize:
+
+1. ROC-only cutoffs can inflate predicted prevalence relative to PHQ reference prevalence.
+2. IRT-anchored approaches better control false positives and improve transportability to SSQ-only settings.
+3. Operating-point choice should prioritize intended downstream use (screening sensitivity vs analytic specificity).
+
+![IRT and ROC Performance](/_assets/obj03/fig-irtroc-1.png)
+
+![SSQ-08 Validity Evidence](/_assets/obj03/fig-ssq08-validity-1.png)
+
+![SSQ-10 Parallel Analysis Heatmap](/_assets/obj03/fig-heatmap-ssq10-pa-1.png)
+
+## Interpretation
+
+### Statistical Interpretation
+
+1. Harmonization quality depends on jointly evaluating structure, invariance, reliability, and calibration, not any single metric.
+2. The SSQ-10 configuration provides a pragmatic balance between construct coherence and operational usability.
+3. IRT-anchored translation to PHQ-compatible thresholds is preferred where prevalence inflation from naive thresholds is unacceptable.
+
+### Operational Interpretation
+
+1. Harmonized depression derivation supports comparability across linked CO-LUMINATE cohorts.
+2. The framework is suitable for secondary longitudinal analyses where instruments differ by cohort.
+3. Sensitivity analyses around threshold rules remain essential in subsequent objective-level analyses.
+
+## Reporting Note
+
+This website report is a communication-focused detailed summary aligned to the source index narrative. Full reproducible technical outputs remain in the dedicated psychometric workstream.
