@@ -123,6 +123,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Metadata</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+</i> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
 </i> 
 <span class="menu-text">Dashboard</span></a>
@@ -145,13 +150,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#scope" id="toc-scope" class="nav-link active" data-scroll-target="#scope">Scope</a></li>
-  <li><a href="#dependency-structure" id="toc-dependency-structure" class="nav-link" data-scroll-target="#dependency-structure">Dependency Structure</a></li>
-  <li><a href="#what-trajectory-modelling-contributes" id="toc-what-trajectory-modelling-contributes" class="nav-link" data-scroll-target="#what-trajectory-modelling-contributes">What Trajectory Modelling Contributes</a></li>
-  <li><a href="#what-psychometric-calibration-contributes" id="toc-what-psychometric-calibration-contributes" class="nav-link" data-scroll-target="#what-psychometric-calibration-contributes">What Psychometric Calibration Contributes</a></li>
-  <li><a href="#what-final-preparation-and-merge-finalize" id="toc-what-final-preparation-and-merge-finalize" class="nav-link" data-scroll-target="#what-final-preparation-and-merge-finalize">What Final Preparation And Merge Finalize</a></li>
-  <li><a href="#completion-criteria-for-longitudinal-linkage" id="toc-completion-criteria-for-longitudinal-linkage" class="nav-link" data-scroll-target="#completion-criteria-for-longitudinal-linkage">Completion Criteria For Longitudinal Linkage</a></li>
-  <li><a href="#stage-outcome" id="toc-stage-outcome" class="nav-link" data-scroll-target="#stage-outcome">Stage Outcome</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#goal-alignment" id="toc-goal-alignment" class="nav-link" data-scroll-target="#goal-alignment">Goal Alignment</a></li>
+  <li><a href="#stage-flow-current-build-counts" id="toc-stage-flow-current-build-counts" class="nav-link" data-scroll-target="#stage-flow-current-build-counts">Stage Flow (Current Build Counts)</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#completion-criteria" id="toc-completion-criteria" class="nav-link" data-scroll-target="#completion-criteria">Completion Criteria</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -177,29 +181,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="scope" class="level2">
-<h2 class="anchored" data-anchor-id="scope">Scope</h2>
-<p>This documentation summarizes the Longitudinal Linkage stage of CO-LUMINATE, where the final analysis-ready <code>dt_multistudies</code> and <code>dt_chilhood_exposure</code> datasets are completed for secondary analysis.</p>
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset.</p>
 </section>
-<section id="dependency-structure" class="level2">
-<h2 class="anchored" data-anchor-id="dependency-structure">Dependency Structure</h2>
-<p>The linkage stage depends on three objective workflows, executed in sequence:</p>
+<section id="goal-alignment" class="level2">
+<h2 class="anchored" data-anchor-id="goal-alignment">Goal Alignment</h2>
+<p>The linkage workflow directly supports the project objectives:</p>
 <ol type="1">
-<li>SDoH trajectory derivation for childhood windows <code>0-5</code> and <code>6-12</code> years.</li>
-<li>Psychometric calibration using <code>dt_psychometric</code> to produce IRT-based depression classification for SSQ-only records.</li>
-<li>Dataset preparation and merge to construct final aligned outputs.</li>
+<li>Build and maintain a linked analysis dataset.</li>
+<li>Quantify direct and mediation relationships for depression outcomes.</li>
+<li>Characterize social determinant trajectories across childhood windows.</li>
 </ol>
+</section>
+<section id="stage-flow-current-build-counts" class="level2">
+<h2 class="anchored" data-anchor-id="stage-flow-current-build-counts">Stage Flow (Current Build Counts)</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear"}}}%%
+<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear", "htmlLabels": true}} }%%
 flowchart LR
-  A["Trajectory modelling&lt;br/&gt;SDoH trajectories&lt;br/&gt;0-5 and 6-12 years"] --&gt; C["Final preparation and merge"]
-  B["Psychometric calibration&lt;br/&gt;IRT calibration&lt;br/&gt;DPBN derivation"] --&gt; C
-  C --&gt; D["Final dt_multistudies&lt;br/&gt;with DPBN endpoint"]
-  C --&gt; E["Final dt_chilhood_exposure&lt;br/&gt;aligned participants"]
+  O1["Objective 1&lt;br/&gt;Build linked&lt;br/&gt;analysis dataset"]
+  O2["Objective 2&lt;br/&gt;Quantify direct&lt;br/&gt;and mediation links"]
+  O3["Objective 3&lt;br/&gt;Characterize SDoH&lt;br/&gt;trajectories"]
+
+  S1["Linkage Stage 1&lt;br/&gt;Psychometric&lt;br/&gt;calibration"]
+  S2["Linkage Stage 2&lt;br/&gt;SDoH trajectory&lt;br/&gt;derivation"]
+  S3["Linkage Stage 3&lt;br/&gt;Final linkage&lt;br/&gt;and integration"]
+
+  O1 --&gt; S1
+  O1 --&gt; S2
+  O1 --&gt; S3
+  O2 --&gt; S3
+  O3 --&gt; S2
+
+  S1 --&gt; A["Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=843)"]
+  A --&gt; B["Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=843)"]
+  S1 --&gt; C["SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=4,021)"]
+  C --&gt; D["Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=4,021)"]
+  B --&gt; D
+
+  S2 --&gt; E["Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=5,398)"]
+  E --&gt; F["Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=4,318)&lt;br/&gt;6-12 years (n=5,386)&lt;br/&gt;Both (n=4,306)&lt;br/&gt;Only 0-5 (n=12)&lt;br/&gt;Only 6-12 (n=1,080)&lt;br/&gt;&lt;br/&gt;"]
+
+  S3 --&gt; G["Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=6,024)"]
+  S3 --&gt; H["Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=5,398)"]
+  D --&gt; G
+  F --&gt; H
+
+  G --&gt; I["Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=5,226)"]
+  H --&gt; I
+
+  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;
+  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;
+  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;
+  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;
+  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;
+  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;
+  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;
+  class O1,O2,O3 objective;
+  class S1 stage1;
+  class S2 stage2;
+  class S3 stage3;
+  class A,B,C,D,G psych;
+  class E,F,H sdoh;
+  class I integ;
 </pre>
 </div>
 <p></p></figure><p></p>
@@ -207,45 +255,32 @@ flowchart LR
 </div>
 </div>
 </section>
-<section id="what-trajectory-modelling-contributes" class="level2">
-<h2 class="anchored" data-anchor-id="what-trajectory-modelling-contributes">What Trajectory Modelling Contributes</h2>
-<ul>
-<li>Derives childhood SDoH trajectory classes across exposure windows:</li>
-<li>Early childhood window: <code>0-5</code> years.</li>
-<li>Middle-late childhood window: <code>6-12</code> years.</li>
-<li>Supplies trajectory constructs used downstream in the longitudinal linked analysis framework.</li>
-</ul>
-</section>
-<section id="what-psychometric-calibration-contributes" class="level2">
-<h2 class="anchored" data-anchor-id="what-psychometric-calibration-contributes">What Psychometric Calibration Contributes</h2>
-<ul>
-<li>Uses <code>dt_psychometric</code> as the bridge dataset for SSQ/PHQ harmonization.</li>
-<li>Fits IRT-based calibration models to align SSQ responses with PHQ-based depression reference logic.</li>
-<li>Enables derivation of <code>DPBN</code> for participants in studies with SSQ-only outcome measurement (notably DREAMS and Multilevel segments requiring calibration support).</li>
-</ul>
-</section>
-<section id="what-final-preparation-and-merge-finalize" class="level2">
-<h2 class="anchored" data-anchor-id="what-final-preparation-and-merge-finalize">What Final Preparation And Merge Finalize</h2>
-<ul>
-<li>Integrates HDSS-linked longitudinal exposure information with cohort mental-health outcome data.</li>
-<li>Applies calibrated depression endpoint derivation and carries trajectory constructs into the analytic master.</li>
-<li>Produces the final aligned datasets:</li>
-<li><code>dt_multistudies</code> for secondary outcome/mediation analyses.</li>
-<li><code>dt_chilhood_exposure</code> for longitudinal household and caregiver exposure histories.</li>
-</ul>
-</section>
-<section id="completion-criteria-for-longitudinal-linkage" class="level2">
-<h2 class="anchored" data-anchor-id="completion-criteria-for-longitudinal-linkage">Completion Criteria For Longitudinal Linkage</h2>
-<p>This stage is treated as complete when:</p>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
 <ol type="1">
-<li><code>dt_multistudies</code> contains participants with non-missing <code>DPBN</code> endpoint ready for secondary analysis.</li>
-<li><code>dt_chilhood_exposure</code> and <code>dt_multistudies</code> are participant-aligned for linked modeling.</li>
-<li>Required social determinant, mediator, confounder, and outcome variables are available in the final analysis objects.</li>
+<li>Stage 1 calibrates depression information for SSQ-only records.</li>
+<li>Stage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.</li>
+<li>Stage 3 integrates both streams and keeps participants with both: <code>Depression endpoint</code> and <code>SDoH trajectory coverage</code>.</li>
 </ol>
 </section>
-<section id="stage-outcome" class="level2">
-<h2 class="anchored" data-anchor-id="stage-outcome">Stage Outcome</h2>
-<p>The Longitudinal Linkage stage has produced the final linked data foundation required for the CO-LUMINATE secondary data analysis phase.</p>
+<section id="completion-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="completion-criteria">Completion Criteria</h2>
+<p>This stage is complete when:</p>
+<ol type="1">
+<li>Depression endpoint values are available for integrated mental health records.</li>
+<li>SDoH trajectory coverage is available across childhood windows.</li>
+<li>Final integrated data retains only participants meeting both criteria.</li>
+</ol>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li>Counts are distinct participants (<code>USUBJID</code>) and are calculated at render time.</li>
+<li>Violet nodes: proposal objectives.</li>
+<li>Blue nodes: psychometric stage.</li>
+<li>Orange nodes: SDoH trajectory stage.</li>
+<li>Green nodes: final integration stage.</li>
+</ul>
 
 
 </section>

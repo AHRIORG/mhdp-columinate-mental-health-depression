@@ -68,9 +68,14 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../site_libs/d3-3.3.8/d3.min.js"></script>
+<script src="../site_libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="../site_libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="../site_libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="../site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="../site_libs/chromatography-0.1/chromatography.js"></script>
+<script src="../site_libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -123,6 +128,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Metadata</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+</i> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
 </i> 
 <span class="menu-text">Dashboard</span></a>
@@ -151,9 +161,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cohorts-included" id="toc-cohorts-included" class="nav-link" data-scroll-target="#cohorts-included">Cohorts Included</a></li>
   <li><a href="#object-snapshot" id="toc-object-snapshot" class="nav-link" data-scroll-target="#object-snapshot">Object Snapshot</a></li>
   <li><a href="#consort-flow" id="toc-consort-flow" class="nav-link" data-scroll-target="#consort-flow">CONSORT Flow</a></li>
-  <li><a href="#data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role" id="toc-data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role">Data Dictionary: <code>dt_chilhood_exposure</code> (Variables of Interest by Role)</a></li>
-  <li><a href="#data-dictionary-dt_multistudies-variables-of-interest-by-role" id="toc-data-dictionary-dt_multistudies-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-dt_multistudies-variables-of-interest-by-role">Data Dictionary: <code>dt_multistudies</code> (Variables of Interest by Role)</a></li>
-  <li><a href="#data-dictionary-dt_multistudies-derived" id="toc-data-dictionary-dt_multistudies-derived" class="nav-link" data-scroll-target="#data-dictionary-dt_multistudies-derived">Data Dictionary: <code>dt_multistudies</code> (Derived)</a></li>
+  <li><a href="#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" id="toc-data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</a></li>
+  <li><a href="#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" id="toc-data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</a></li>
+  <li><a href="#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" id="toc-data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="nav-link" data-scroll-target="#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</a></li>
+  <li><a href="#dataset-name-reference" id="toc-dataset-name-reference" class="nav-link" data-scroll-target="#dataset-name-reference">Dataset Name Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -184,8 +195,8 @@ ul.task-list li input[type="checkbox"] {
 <p>This page is extracted and adapted from the dataset preparation source index.</p>
 <p>Current scope is limited to two data dictionaries:</p>
 <ul>
-<li><code>dt_chilhood_exposure</code></li>
-<li><code>dt_multistudies</code></li>
+<li>Childhood social exposure panel</li>
+<li>Integrated multi-study mental health panel</li>
 </ul>
 <p>All derived R objects for this page are stored in <code>PRJ-CO-LUMINATE/_tools/_objects</code>.</p>
 </section>
@@ -276,12 +287,12 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">dt_chilhood_exposure</td>
+<td style="text-align: left;">Childhood Social Exposure Panel</td>
 <td style="text-align: right;">52463</td>
 <td style="text-align: right;">31</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">dt_multistudies</td>
+<td style="text-align: left;">Integrated Multi-study Mental Health Panel</td>
 <td style="text-align: right;">5616</td>
 <td style="text-align: right;">33</td>
 </tr>
@@ -292,38 +303,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="consort-flow" class="level2">
 <h2 class="anchored" data-anchor-id="consort-flow">CONSORT Flow</h2>
-<div class="cell" data-layout-align="default">
+<div class="cell">
 <div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear"}}}%%
-flowchart TD
-G["Trajectory modelling contribution&lt;br/&gt;SDoH trajectories (0-5 and 6-12 years)&lt;br/&gt;Outputs: ELCDV, MDCDV"]
-H["Psychometric calibration contribution&lt;br/&gt;IRT calibration from psychometric bridge data&lt;br/&gt;Output: DPBN endpoint"]
-A["dt_multistudies loaded&lt;br/&gt;Records: 6,612&lt;br/&gt;Participants: 6,207"]
-B["With DPBN endpoint&lt;br/&gt;Records: 6,428&lt;br/&gt;Participants: 6,024"]
-C["dt_chilhood_exposure loaded&lt;br/&gt;Records: 53,303&lt;br/&gt;Participants: 5,398"]
-D["Participant overlap&lt;br/&gt;Participants: 5,226"]
-E["Final dt_multistudies&lt;br/&gt;Records: 5,616&lt;br/&gt;Participants: 5,226"]
-F["Final dt_chilhood_exposure&lt;br/&gt;Records: 52,463&lt;br/&gt;Participants: 5,226"]
-A --&gt; B
-H --&gt; B
-B --&gt; D
-C --&gt; D
-G --&gt; D
-D --&gt; E
-D --&gt; F
-</pre>
-</div>
-<p></p></figure><p></p>
+<div id="htmlwidget-dcf91430955476fd1fdd" style="width:100%;height:900px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-dcf91430955476fd1fdd">{"x":{"diagram":"%%{init: {\"themeVariables\": {\"fontSize\": \"20px\"}, \"flowchart\": {\"nodeSpacing\": 80, \"rankSpacing\": 110}}}%%\ngraph TD\nA[\"Mental health<br/>available<br/>(n=6,207)\"]\nX1[\"Excluded<br/>Missing depression<br/>endpoint (n=183)<br/>Studies:<br/>TasP (n=181)<br/>Dreams (n=1)<br/>Multilevel (n=1)\"]\nB[\"Mental health<br/>remaining after<br/>endpoint filter<br/>(n=6,024)\"]\nX2[\"Excluded<br/>No SDoH match<br/>(n=798)<br/>Studies:<br/>Thetha Nami (n=528)<br/>Dreams (n=116)<br/>Multilevel (n=84)<br/>Isisekelo Sempilo (n=77)<br/>TasP (n=7)\"]\nM[\"Mental health<br/>remaining after<br/>match filter<br/>(n=5,226)\"]\nC[\"SDoH<br/>available<br/>(n=5,398)\"]\nX3[\"Excluded<br/>No eligible mental<br/>health match<br/>(n=172)<br/>Studies:<br/>TasP (n=170)<br/>Dreams (n=1)<br/>Multilevel (n=1)\"]\nS[\"SDoH remaining<br/>after match filter<br/>(n=5,226)\"]\nD[\"Final included<br/>Depression endpoint<br/>and SDoH coverage<br/>(n=5,226)\"]\nA --> B\nB --> M\nM --> D\nC --> S\nS --> D\nA --> X1\nB --> X2\nC --> X3\nclassDef included fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;\nclassDef excluded fill:#fff1f2,stroke:#e11d48,color:#4c0519,stroke-width:1.5px;\nclass A,B,M,C,S,D included;\nclass X1,X2,X3 excluded;"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-</div>
+<p>Participant-focused CONSORT logic: participants are retained only if they have both a depression endpoint and SDoH trajectory coverage.</p>
 <p>The row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification.</p>
 </section>
-<section id="data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary-dt_chilhood_exposure-variables-of-interest-by-role">Data Dictionary: <code>dt_chilhood_exposure</code> (Variables of Interest by Role)</h2>
+<section id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -423,20 +413,6 @@ D --&gt; F
 </tr>
 <tr class="even">
 <td style="text-align: left;"></td>
-<td style="text-align: left;">MENM</td>
-<td style="text-align: left;">Mother’s Enumeration (Previous 1 Year)</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MHMS</td>
-<td style="text-align: left;">Mother’s Head of HH relationship</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Head/Spouse/Husband; Child; Related; Unrelated/Other</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
 <td style="text-align: left;">FAGE</td>
 <td style="text-align: left;">Father’s Age</td>
 <td style="text-align: left;">numeric</td>
@@ -470,41 +446,13 @@ D --&gt; F
 <td style="text-align: left;">character</td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FENM</td>
-<td style="text-align: left;">Father’s Enumeration (Previous 1 Year)</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FHMS</td>
-<td style="text-align: left;">Father’s Head of HH relationship</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Head/Spouse/Husband; Child; Related; Unrelated/Other</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MDTH</td>
-<td style="text-align: left;">Configured variable</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Missing in current object</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FDTH</td>
-<td style="text-align: left;">Configured variable</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Missing in current object</td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
-<section id="data-dictionary-dt_multistudies-variables-of-interest-by-role" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary-dt_multistudies-variables-of-interest-by-role">Data Dictionary: <code>dt_multistudies</code> (Variables of Interest by Role)</h2>
+<section id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -575,20 +523,6 @@ D --&gt; F
 <td style="text-align: left;">No; Yes</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Mediator-Outcome Confounder</strong></td>
-<td style="text-align: left;">SEX</td>
-<td style="text-align: left;">Sex</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Male; Female</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">AGE</td>
-<td style="text-align: left;">Age (Years)</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 13 to 24</td>
-</tr>
-<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">SCSP</td>
 <td style="text-align: left;">Has Social Support</td>
@@ -601,6 +535,20 @@ D --&gt; F
 <td style="text-align: left;">In School</td>
 <td style="text-align: left;">factor</td>
 <td style="text-align: left;">No; Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Mediator-Outcome Confounder</strong></td>
+<td style="text-align: left;">SEX</td>
+<td style="text-align: left;">Sex</td>
+<td style="text-align: left;">factor</td>
+<td style="text-align: left;">Male; Female</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AGE</td>
+<td style="text-align: left;">Age (Years)</td>
+<td style="text-align: left;">numeric</td>
+<td style="text-align: left;">Min-Max: 13 to 24</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"></td>
@@ -642,8 +590,8 @@ D --&gt; F
 </div>
 </div>
 </section>
-<section id="data-dictionary-dt_multistudies-derived" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary-dt_multistudies-derived">Data Dictionary: <code>dt_multistudies</code> (Derived)</h2>
+<section id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</h2>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -694,6 +642,39 @@ D --&gt; F
 <td style="text-align: left;">Childhood exposure trajectories (6-12 years)</td>
 <td style="text-align: left;">Initialized as NA_character_ during dataset preparation merge; later populated from middle-late years latent trajectory class assignment.</td>
 <td style="text-align: left;">Placeholder in dataset preparation; populated in class-derivation stage</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="dataset-name-reference" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-name-reference">Dataset Name Reference</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dataset Name</th>
+<th style="text-align: left;">Readable Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dt_childhood_exposure</td>
+<td style="text-align: left;">Childhood Social Exposure Panel</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dt_multistudies</td>
+<td style="text-align: left;">Integrated Multi-study Mental Health Panel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dt_psychometric</td>
+<td style="text-align: left;">Psychometric Bridge Source Data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dt_dreams_multi_ssq</td>
+<td style="text-align: left;">SSQ-only Cohort Response Data</td>
 </tr>
 </tbody>
 </table>

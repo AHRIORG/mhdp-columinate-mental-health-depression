@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tools – CO-LUMINATE</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-466c708b1a5a2967f0eb6fed410850f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">CO-LUMINATE</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/documentations.html"> <i class="bi bi-folder2-open" role="img">
+</i> 
+<span class="menu-text">Documentations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/reports.html"> <i class="bi bi-file-earmark-text" role="img">
+</i> 
+<span class="menu-text">Reports</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/presentations.html"> <i class="bi bi-easel2" role="img">
+</i> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/metadata.html"> <i class="bi bi-table" role="img">
+</i> 
+<span class="menu-text">Metadata</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../tabs/tools.html" aria-current="page"> <i class="bi bi-tools" role="img">
+</i> 
+<span class="menu-text">Tools</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
+</i> 
+<span class="menu-text">Dashboard</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><strong>Tools</strong></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This section provides technical tools for online IRT calibration scoring.</p>
+<section id="interactive-scoring-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="interactive-scoring-workspace">Interactive Scoring Workspace</h2>
+<p>Run locally before using the workspace:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> _tools/_scripts/assess_irt_api_model.R</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> _tools/api/run_api.R</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Default API URL: <code>http://127.0.0.1:8088</code></p>
+<style>
+.tools-block {
+  border-top: 1px solid #d7dee8;
+  padding: 0.9rem 0 0.8rem 0;
+}
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: end;
+  margin-bottom: 0.5rem;
+}
+.tools-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  min-width: 180px;
+  gap: 0.2rem;
+}
+.tools-row input,
+.tools-row select {
+  border: 1px solid #9ba9bc;
+  border-radius: 0;
+  padding: 0.28rem 0.38rem;
+  font-size: 0.92rem;
+  background: #ffffff;
+}
+.tools-btn {
+  border: 1px solid #104872;
+  border-radius: 0;
+  background: #104872;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.38rem 0.7rem;
+}
+.tools-btn.secondary {
+  background: #ffffff;
+  color: #104872;
+}
+.tools-btn:disabled {
+  opacity: 0.6;
+}
+.tools-status {
+  font-size: 0.88rem;
+  margin: 0.15rem 0 0.2rem 0;
+}
+.tools-status.info {
+  color: #4d5d73;
+}
+.tools-status.ok {
+  color: #165b38;
+}
+.tools-status.error {
+  color: #8c1e1e;
+}
+.tools-note {
+  font-size: 0.86rem;
+  color: #4d5d73;
+}
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.55rem;
+}
+.items-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.86rem;
+  gap: 0.2rem;
+}
+.items-grid select {
+  border: 1px solid #9ba9bc;
+  border-radius: 0;
+  padding: 0.24rem 0.32rem;
+  font-size: 0.9rem;
+  background: #ffffff;
+}
+.tools-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.89rem;
+}
+.tools-table th,
+.tools-table td {
+  border-bottom: 1px solid #dde4ed;
+  padding: 0.36rem 0.42rem;
+  text-align: left;
+  vertical-align: top;
+}
+.tools-subhead {
+  margin-top: 0.5rem;
+  margin-bottom: 0.45rem;
+}
+</style>
+
+<div class="tools-block">
+  <div class="tools-row">
+    <label for="apiBaseUrl">
+      <strong>API Base URL</strong>
+      <input id="apiBaseUrl" type="text" value="http://127.0.0.1:8088">
+    </label>
+    <label for="apiToken">
+      <strong>API Key (Bearer token)</strong>
+      <input id="apiToken" type="password" placeholder="Optional">
+    </label>
+    <button id="btnCheckHealth" class="tools-btn secondary" type="button">Check Connection</button>
+    <button id="btnLoadEngines" class="tools-btn" type="button">Load Engines</button>
+  </div>
+  <div id="apiStatus" class="tools-status info">Not connected.</div>
+  <div class="tools-note">If API key auth is enabled, provide the token above.</div>
+</div>
+
+<div class="tools-block">
+  <div class="tools-row">
+    <label for="engineSelect">
+      <strong>Scoring Engine</strong>
+      <select id="engineSelect"></select>
+    </label>
+    <div id="engineMeta" class="tools-note">Load engines to inspect factor and cutoff mode.</div>
+  </div>
+  <div id="requiredColumns" class="tools-note"></div>
+</div>
+
+<h3 class="tools-subhead anchored">Single Participant</h3>
+
+<div class="tools-block">
+  <div id="singleItemsGrid" class="items-grid"></div>
+  <div class="tools-row">
+    <label for="singleSex">
+      <strong>Sex</strong>
+      <select id="singleSex">
+        <option value=""></option>
+        <option value="Female">Female</option>
+        <option value="Male">Male</option>
+      </select>
+    </label>
+    <label for="singleAge">
+      <strong>Age</strong>
+      <input id="singleAge" type="number" min="0" max="120" step="1">
+    </label>
+    <label for="singleAgeGrp">
+      <strong>Age Group</strong>
+      <input id="singleAgeGrp" type="text" placeholder="e.g., 13-17">
+    </label>
+    <label for="singleSexAgeGrp">
+      <strong>Sex + Age Group</strong>
+      <input id="singleSexAgeGrp" type="text" placeholder="e.g., Female_13-17">
+    </label>
+    <button id="btnScoreSingle" class="tools-btn" type="button">Score Single</button>
+    <button id="btnLoadExample" class="tools-btn secondary" type="button">Load Example</button>
+  </div>
+  <div id="singleStatus" class="tools-status info"></div>
+  <div id="singleOutput"></div>
+</div>
+
+<h3 class="tools-subhead anchored">Batch Scoring</h3>
+
+<div class="tools-block">
+  <div class="tools-row">
+    <label for="batchFile">
+      <strong>Upload CSV or JSON</strong>
+      <input id="batchFile" type="file" accept=".csv,.json">
+    </label>
+    <button id="btnScoreBatch" class="tools-btn" type="button">Score Batch</button>
+    <button id="btnDownloadTemplate" class="tools-btn secondary" type="button">Download Template CSV</button>
+    <button id="btnDownloadBatch" class="tools-btn secondary" type="button" disabled="">Download Scored CSV</button>
+  </div>
+  <div id="batchHint" class="tools-note"></div>
+  <div id="batchStatus" class="tools-status info"></div>
+  <div id="batchOutput"></div>
+</div>
+
+<script>
+(() => {
+  const DEFAULT_ITEMS = [
+    "SSQ01", "SSQ02", "SSQ03", "SSQ08", "SSQ09",
+    "SSQ10", "SSQ11", "SSQ12", "SSQ13", "SSQ14"
+  ];
+
+  const state = {
+    engines: [],
+    selectedItems: DEFAULT_ITEMS.slice(),
+    batchOutput: []
+  };
+
+  function firstValue(value) {
+    if (Array.isArray(value)) {
+      if (value.length === 0) return null;
+      if (value.length === 1) return value[0];
+      return value;
+    }
+    return value;
+  }
+
+  function asArray(value) {
+    const out = firstValue(value);
+    if (out == null) return [];
+    return Array.isArray(out) ? out : [out];
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function formatValue(value) {
+    if (value == null) return "";
+    if (typeof value === "number" && Number.isFinite(value)) {
+      return value.toFixed(4).replace(/\.?0+$/, "");
+    }
+    return String(value);
+  }
+
+  function setStatus(id, message, type = "info") {
+    const el = document.getElementById(id);
+    el.textContent = message;
+    el.className = `tools-status ${type}`;
+  }
+
+  function setScoringEnabled(enabled) {
+    document.getElementById("engineSelect").disabled = !enabled;
+    document.getElementById("btnScoreSingle").disabled = !enabled;
+    document.getElementById("btnLoadExample").disabled = !enabled;
+    document.getElementById("btnScoreBatch").disabled = !enabled;
+    document.getElementById("btnDownloadTemplate").disabled = !enabled;
+    if (!enabled) {
+      document.getElementById("btnDownloadBatch").disabled = true;
+    }
+  }
+
+  function apiBase() {
+    const input = document.getElementById("apiBaseUrl");
+    return input.value.trim().replace(/\/+$/, "");
+  }
+
+  function apiToken() {
+    const input = document.getElementById("apiToken");
+    return input.value.trim();
+  }
+
+  function loadSavedSettings() {
+    try {
+      const savedUrl = window.localStorage.getItem("columinate_api_base_url");
+      const savedToken = window.localStorage.getItem("columinate_api_token");
+      if (savedUrl) document.getElementById("apiBaseUrl").value = savedUrl;
+      if (savedToken) document.getElementById("apiToken").value = savedToken;
+    } catch (_error) {
+      // no-op
+    }
+  }
+
+  function persistSettings() {
+    try {
+      window.localStorage.setItem("columinate_api_base_url", apiBase());
+      window.localStorage.setItem("columinate_api_token", apiToken());
+    } catch (_error) {
+      // no-op
+    }
+  }
+
+  function validateApiUrl() {
+    const base = apiBase();
+    if (!base) {
+      throw new Error("API Base URL is required.");
+    }
+    if (window.location.protocol === "https:" && base.startsWith("http://")) {
+      throw new Error(
+        "HTTPS page cannot call an HTTP API URL. Use an HTTPS API URL or run the site locally."
+      );
+    }
+    return base;
+  }
+
+  function normalizeError(data, status) {
+    const err = firstValue(data?.error) || `HTTP ${status}`;
+    const details = firstValue(data?.details);
+    if (details == null || details === "") return err;
+    if (typeof details === "object") return `${err}: ${JSON.stringify(details)}`;
+    return `${err}: ${details}`;
+  }
+
+  async function fetchJson(path, options = {}) {
+    const base = validateApiUrl();
+    const opts = { ...options };
+    opts.headers = { ...(options.headers || {}) };
+    const token = apiToken();
+    if (token && !opts.headers.Authorization) {
+      opts.headers.Authorization = `Bearer ${token}`;
+    }
+    if (opts.body && !opts.headers["Content-Type"]) {
+      opts.headers["Content-Type"] = "application/json";
+    }
+
+    const response = await fetch(`${base}${path}`, opts);
+    const text = await response.text();
+    let data = {};
+
+    if (text) {
+      try {
+        data = JSON.parse(text);
+      } catch (_error) {
+        throw new Error(`Non-JSON response from ${path}.`);
+      }
+    }
+
+    if (!response.ok) {
+      throw new Error(normalizeError(data, response.status));
+    }
+    return data;
+  }
+
+  function normalizeEngine(raw) {
+    return {
+      engineId: String(firstValue(raw.engine_id) || ""),
+      items: asArray(raw.items).map((x) => String(firstValue(x))),
+      nFactors: Number(firstValue(raw.n_factors)),
+      cutoffMode: String(firstValue(raw.cutoff_apply_mode) || "none")
+    };
+  }
+
+  function selectedEngineId() {
+    return document.getElementById("engineSelect").value;
+  }
+
+  function renderSingleItemInputs(items) {
+    const container = document.getElementById("singleItemsGrid");
+    container.innerHTML = "";
+
+    items.forEach((item) => {
+      const label = document.createElement("label");
+      label.setAttribute("for", `single_${item}`);
+      label.innerHTML = `<strong>${escapeHtml(item)}</strong>`;
+
+      const select = document.createElement("select");
+      select.id = `single_${item}`;
+      [
+        { value: "", label: "" },
+        { value: "0", label: "0" },
+        { value: "1", label: "1" },
+        { value: "2", label: "2" },
+        { value: "3", label: "3" },
+        { value: "4", label: "4" }
+      ].forEach((optionDef) => {
+        const option = document.createElement("option");
+        option.value = optionDef.value;
+        option.textContent = optionDef.label;
+        select.appendChild(option);
+      });
+
+      label.appendChild(select);
+      container.appendChild(label);
+    });
+  }
+
+  function applyEngine(engineId) {
+    const engine = state.engines.find((x) => x.engineId === engineId);
+    const items = engine && engine.items.length > 0 ? engine.items : DEFAULT_ITEMS.slice();
+    state.selectedItems = items;
+    renderSingleItemInputs(items);
+
+    if (engine) {
+      const factors = Number.isFinite(engine.nFactors) ? engine.nFactors : "NA";
+      document.getElementById("engineMeta").textContent =
+        `Factors: ${factors} | Cutoff mode: ${engine.cutoffMode}`;
+    } else {
+      document.getElementById("engineMeta").textContent =
+        "Engine metadata not available.";
+    }
+
+    document.getElementById("requiredColumns").innerHTML =
+      `<strong>Required batch columns:</strong> ${items.join(", ")}.`;
+    document.getElementById("batchHint").textContent =
+      "Optional columns: SEX, AGE, AGEGRP, SEX_AGEGRP.";
+  }
+
+  function normalizeSingleOutput(output) {
+    if (output == null) return {};
+    if (Array.isArray(output)) {
+      if (output.length === 1 && typeof output[0] === "object") {
+        return normalizeSingleOutput(output[0]);
+      }
+      return {};
+    }
+
+    if (typeof output === "object") {
+      const out = {};
+      Object.entries(output).forEach(([key, val]) => {
+        if (key === "_row") return;
+        out[key] = Array.isArray(val) && val.length === 1 ? val[0] : val;
+      });
+      return out;
+    }
+
+    return { result: output };
+  }
+
+  function renderSingleOutput(payload) {
+    const container = document.getElementById("singleOutput");
+    const entries = Object.entries(payload || {});
+
+    if (entries.length === 0) {
+      container.innerHTML = "<div class='tools-note'>No score output.</div>";
+      return;
+    }
+
+    let html = "<" + "table class='tools-table'><thead><tr><th>Metric</th><th>Value</th></tr></thead><tbody>";
+    entries.forEach(([k, v]) => {
+      html += `<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(formatValue(v))}</td></tr>`;
+    });
+    html += "</tbody></" + "table>";
+    container.innerHTML = html;
+  }
+
+  function parseCsvLine(line) {
+    const out = [];
+    let current = "";
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i += 1) {
+      const char = line[i];
+      if (char === "\"") {
+        if (inQuotes && line[i + 1] === "\"") {
+          current += "\"";
+          i += 1;
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === "," && !inQuotes) {
+        out.push(current);
+        current = "";
+      } else {
+        current += char;
+      }
+    }
+    out.push(current);
+    return out;
+  }
+
+  function parseCsv(text) {
+    const lines = text
+      .split(/\r?\n/)
+      .map((x) => x.trim())
+      .filter((x) => x.length > 0);
+
+    if (lines.length < 2) {
+      throw new Error("CSV must include a header row and at least one data row.");
+    }
+
+    const headers = parseCsvLine(lines[0]).map((x) => x.trim());
+    return lines.slice(1).map((line) => {
+      const values = parseCsvLine(line);
+      const row = {};
+      headers.forEach((header, idx) => {
+        row[header] = values[idx] === undefined ? "" : values[idx];
+      });
+      return row;
+    });
+  }
+
+  function toUpperSet(records) {
+    const set = new Set();
+    records.forEach((row) => {
+      Object.keys(row).forEach((k) => set.add(k.trim().toUpperCase()));
+    });
+    return set;
+  }
+
+  function getIgnoreCase(row, target) {
+    const targetUpper = target.toUpperCase();
+    const key = Object.keys(row).find((k) => k.trim().toUpperCase() === targetUpper);
+    return key === undefined ? undefined : row[key];
+  }
+
+  function normalizeBatchInput(records) {
+    const covariates = ["SEX", "AGE", "AGEGRP", "SEX_AGEGRP"];
+    return records.map((row) => {
+      const out = {};
+      state.selectedItems.forEach((item) => {
+        const value = getIgnoreCase(row, item);
+        out[item] = value === undefined || value === "" ? null : value;
+      });
+      covariates.forEach((key) => {
+        const value = getIgnoreCase(row, key);
+        if (value !== undefined && value !== "") out[key] = value;
+      });
+      return out;
+    });
+  }
+
+  function normalizeRow(row) {
+    const out = {};
+    Object.entries(row || {}).forEach(([key, val]) => {
+      if (key === "_row") return;
+      out[key] = Array.isArray(val) && val.length === 1 ? val[0] : val;
+    });
+    return out;
+  }
+
+  function normalizeBatchOutput(output) {
+    if (output == null) return [];
+    if (Array.isArray(output)) return output.map(normalizeRow);
+
+    if (typeof output === "object") {
+      const keys = Object.keys(output);
+      if (keys.length === 0) return [];
+
+      const first = output[keys[0]];
+      if (Array.isArray(first)) {
+        const n = first.length;
+        const rows = [];
+        for (let i = 0; i < n; i += 1) {
+          const row = {};
+          keys.forEach((key) => {
+            const value = output[key];
+            row[key] = Array.isArray(value) ? value[i] : value;
+          });
+          rows.push(normalizeRow(row));
+        }
+        return rows;
+      }
+      return [normalizeRow(output)];
+    }
+    return [];
+  }
+
+  function renderBatchOutput(rows) {
+    const container = document.getElementById("batchOutput");
+    if (!rows || rows.length === 0) {
+      container.innerHTML = "<div class='tools-note'>No batch output.</div>";
+      return;
+    }
+
+    const columns = Array.from(
+      rows.reduce((acc, row) => {
+        Object.keys(row).forEach((key) => acc.add(key));
+        return acc;
+      }, new Set())
+    );
+
+    const preview = rows.slice(0, 25);
+    let html = "<" + "table class='tools-table'><thead><tr>";
+    columns.forEach((col) => {
+      html += `<th>${escapeHtml(col)}</th>`;
+    });
+    html += "</tr></thead><tbody>";
+
+    preview.forEach((row) => {
+      html += "<tr>";
+      columns.forEach((col) => {
+        html += `<td>${escapeHtml(formatValue(row[col]))}</td>`;
+      });
+      html += "</tr>";
+    });
+    html += "</tbody></" + "table>";
+
+    if (rows.length > preview.length) {
+      html += `<div class='tools-note'>Preview showing ${preview.length} of ${rows.length} rows.</div>`;
+    }
+
+    container.innerHTML = html;
+  }
+
+  function toCsv(rows) {
+    if (!rows || rows.length === 0) return "";
+    const columns = Array.from(
+      rows.reduce((acc, row) => {
+        Object.keys(row).forEach((key) => acc.add(key));
+        return acc;
+      }, new Set())
+    );
+
+    const escape = (value) => {
+      if (value == null) return "";
+      const text = String(value);
+      if (/[",\n]/.test(text)) {
+        return `"${text.replace(/"/g, "\"\"")}"`;
+      }
+      return text;
+    };
+
+    const lines = [columns.join(",")];
+    rows.forEach((row) => {
+      lines.push(columns.map((col) => escape(row[col])).join(","));
+    });
+    return lines.join("\n");
+  }
+
+  function collectSinglePayload() {
+    const payload = {
+      engine_id: selectedEngineId(),
+      responses: {}
+    };
+
+    state.selectedItems.forEach((item) => {
+      const input = document.getElementById(`single_${item}`);
+      const value = input.value.trim();
+      payload.responses[item] = value === "" ? null : Number(value);
+    });
+
+    const sex = document.getElementById("singleSex").value.trim();
+    const age = document.getElementById("singleAge").value.trim();
+    const agegrp = document.getElementById("singleAgeGrp").value.trim();
+    const sexAgegrp = document.getElementById("singleSexAgeGrp").value.trim();
+
+    if (sex) payload.sex = sex;
+    if (age) payload.age = Number(age);
+    if (agegrp) payload.agegrp = agegrp;
+    if (sexAgegrp) payload.sex_agegrp = sexAgegrp;
+
+    return payload;
+  }
+
+  async function checkHealth() {
+    persistSettings();
+    setStatus("apiStatus", "Checking API connection...", "info");
+    try {
+      const response = await fetchJson("/health");
+      const n = Number(firstValue(response.engines_loaded) || 0);
+      setStatus("apiStatus", `API online. Engines loaded: ${n}.`, "ok");
+    } catch (error) {
+      setStatus("apiStatus", `Connection failed: ${error.message}`, "error");
+    }
+  }
+
+  async function loadEngines() {
+    persistSettings();
+    setStatus("apiStatus", "Loading engines...", "info");
+    try {
+      const response = await fetchJson("/engines");
+      const engines = Array.isArray(response.engines) ? response.engines : [];
+      state.engines = engines.map(normalizeEngine).filter((x) => x.engineId.length > 0);
+
+      const select = document.getElementById("engineSelect");
+      select.innerHTML = "";
+
+      state.engines.forEach((engine) => {
+        const option = document.createElement("option");
+        option.value = engine.engineId;
+        option.textContent = engine.engineId;
+        select.appendChild(option);
+      });
+
+      if (state.engines.length === 0) {
+        applyEngine("");
+        setScoringEnabled(false);
+        setStatus("apiStatus", "No engines returned by API.", "error");
+        return;
+      }
+
+      const preferred = String(firstValue(response.default_engine_id) || state.engines[0].engineId);
+      if (state.engines.some((x) => x.engineId === preferred)) {
+        select.value = preferred;
+      } else {
+        select.value = state.engines[0].engineId;
+      }
+
+      applyEngine(select.value);
+      setScoringEnabled(true);
+      setStatus("apiStatus", `Connected. Loaded ${state.engines.length} engines.`, "ok");
+    } catch (error) {
+      setScoringEnabled(false);
+      setStatus("apiStatus", `Load failed: ${error.message}`, "error");
+    }
+  }
+
+  function loadSingleExample() {
+    state.selectedItems.forEach((item, idx) => {
+      const input = document.getElementById(`single_${item}`);
+      if (input) {
+        input.value = idx % 2 === 0 ? "1" : "0";
+      }
+    });
+    document.getElementById("singleSex").value = "Female";
+    document.getElementById("singleAge").value = "19";
+    document.getElementById("singleAgeGrp").value = "18-24";
+    document.getElementById("singleSexAgeGrp").value = "Female_18-24";
+    setStatus("singleStatus", "Example values loaded.", "info");
+  }
+
+  async function scoreSingle() {
+    setStatus("singleStatus", "Scoring single participant...", "info");
+    try {
+      const payload = collectSinglePayload();
+      const response = await fetchJson("/score/single", {
+        method: "POST",
+        body: JSON.stringify(payload)
+      });
+      renderSingleOutput(normalizeSingleOutput(response.output));
+      setStatus("singleStatus", "Single score completed.", "ok");
+    } catch (error) {
+      setStatus("singleStatus", `Scoring failed: ${error.message}`, "error");
+    }
+  }
+
+  async function readBatchRecords() {
+    const fileInput = document.getElementById("batchFile");
+    if (!fileInput.files || fileInput.files.length === 0) {
+      throw new Error("Select a CSV or JSON file.");
+    }
+
+    const file = fileInput.files[0];
+    const name = file.name.toLowerCase();
+    const text = await file.text();
+
+    if (name.endsWith(".json")) {
+      const parsed = JSON.parse(text);
+      if (Array.isArray(parsed)) return parsed;
+      if (parsed && Array.isArray(parsed.records)) return parsed.records;
+      throw new Error("JSON must be an array of records or include `records`.");
+    }
+    return parseCsv(text);
+  }
+
+  async function scoreBatch() {
+    setStatus("batchStatus", "Reading batch file...", "info");
+    try {
+      const records = await readBatchRecords();
+      if (!Array.isArray(records) || records.length === 0) {
+        throw new Error("No records found in the uploaded file.");
+      }
+
+      const availableColumns = toUpperSet(records);
+      const missing = state.selectedItems.filter(
+        (item) => !availableColumns.has(item.toUpperCase())
+      );
+      if (missing.length > 0) {
+        throw new Error(`Missing required columns: ${missing.join(", ")}`);
+      }
+
+      setStatus("batchStatus", "Scoring batch...", "info");
+      const payload = {
+        engine_id: selectedEngineId(),
+        records: normalizeBatchInput(records)
+      };
+
+      const response = await fetchJson("/score/batch", {
+        method: "POST",
+        body: JSON.stringify(payload)
+      });
+
+      const rows = normalizeBatchOutput(response.output);
+      state.batchOutput = rows;
+      renderBatchOutput(rows);
+      document.getElementById("btnDownloadBatch").disabled = rows.length === 0;
+      setStatus("batchStatus", `Batch score completed for ${rows.length} records.`, "ok");
+    } catch (error) {
+      document.getElementById("btnDownloadBatch").disabled = true;
+      setStatus("batchStatus", `Batch scoring failed: ${error.message}`, "error");
+    }
+  }
+
+  function downloadBatchCsv() {
+    if (!state.batchOutput || state.batchOutput.length === 0) return;
+    const csv = toCsv(state.batchOutput);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "irt_scored_output.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function downloadTemplateCsv() {
+    const row = {};
+    state.selectedItems.forEach((item) => {
+      row[item] = "";
+    });
+    row.SEX = "";
+    row.AGE = "";
+    row.AGEGRP = "";
+    row.SEX_AGEGRP = "";
+
+    const csv = toCsv([row]);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "irt_batch_template.csv";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function initialize() {
+    loadSavedSettings();
+    renderSingleItemInputs(DEFAULT_ITEMS);
+    applyEngine("");
+    setScoringEnabled(false);
+
+    document.getElementById("btnCheckHealth").addEventListener("click", checkHealth);
+    document.getElementById("btnLoadEngines").addEventListener("click", loadEngines);
+    document.getElementById("apiBaseUrl").addEventListener("change", () => {
+      persistSettings();
+      setScoringEnabled(false);
+      setStatus("apiStatus", "API URL changed. Click Load Engines.", "info");
+    });
+    document.getElementById("apiToken").addEventListener("change", persistSettings);
+    document.getElementById("engineSelect").addEventListener("change", (event) => {
+      applyEngine(event.target.value);
+    });
+    document.getElementById("btnScoreSingle").addEventListener("click", scoreSingle);
+    document.getElementById("btnLoadExample").addEventListener("click", loadSingleExample);
+    document.getElementById("btnScoreBatch").addEventListener("click", scoreBatch);
+    document.getElementById("btnDownloadTemplate").addEventListener("click", downloadTemplateCsv);
+    document.getElementById("btnDownloadBatch").addEventListener("click", downloadBatchCsv);
+
+    loadEngines();
+  }
+
+  initialize();
+})();
+</script>
+</section>
+<section id="model-capability-snapshot" class="level2">
+<h2 class="anchored" data-anchor-id="model-capability-snapshot">Model Capability Snapshot</h2>
+<p>This snapshot is generated from <code>_tools/_objects/irt_api_assessment.rds</code>.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Assessment object not found. Run `Rscript _tools/_scripts/assess_irt_api_model.R` first.</code></pre>
+</div>
+</div>
+</section>
+<section id="api-endpoints" class="level2">
+<h2 class="anchored" data-anchor-id="api-endpoints">API Endpoints</h2>
+<ol type="1">
+<li><code>GET /health</code></li>
+<li><code>GET /engines</code></li>
+<li><code>GET /contract</code></li>
+<li><code>POST /score/single</code></li>
+<li><code>POST /score/batch</code></li>
+</ol>
+<p>Core files:</p>
+<ol type="1">
+<li><code>_tools/api/plumber.R</code></li>
+<li><code>_tools/api/run_api.R</code></li>
+<li><code>_tools/api/CONTRACT.md</code></li>
+<li><code>_tools/_scripts/assess_irt_api_model.R</code></li>
+</ol>
+</section>
+<section id="https-deployment-files" class="level2">
+<h2 class="anchored" data-anchor-id="https-deployment-files">HTTPS Deployment Files</h2>
+<ol type="1">
+<li><code>_tools/api/Dockerfile</code></li>
+<li><code>_tools/api/.env.example</code></li>
+<li><code>_tools/api/DEPLOYMENT.md</code></li>
+<li><code>_tools/api/scoring_runtime.R</code></li>
+<li><code>_tools/_scripts/prepare_api_deploy_bundle.R</code></li>
+</ol>
+<p>Prepare deploy bundle and run local container test:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Rscript</span> _tools/_scripts/prepare_api_deploy_bundle.R</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> build <span class="at">-f</span> _tools/api/Dockerfile <span class="at">-t</span> columinate-irt-api ..</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">docker</span> run <span class="at">--rm</span> <span class="at">-p</span> 8080:8080 <span class="at">--env-file</span> _tools/api/.env.example columinate-irt-api</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><a href="../about.html">About</a> | <a href="../tabs/team.html">Team</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Created with <a href="https://quarto.org/" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Quarto</a> and <a href="https://www.r-project.org/" target="_blank" rel="noopener"><i class="bi bi-r-circle"></i> R</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
