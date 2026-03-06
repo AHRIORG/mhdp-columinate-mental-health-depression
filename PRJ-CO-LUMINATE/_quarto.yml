@@ -6,6 +6,7 @@ project:
     - "presentations/*.qmd"
     - "reports/*.qmd"
   resources:
+    - api-config.json
     - presentations/slides_obj01_trajectories.html
     - presentations/slides_reporting_results_files/**
     - presentations/assets/**

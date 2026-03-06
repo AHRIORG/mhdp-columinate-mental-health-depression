@@ -7,14 +7,16 @@ This section provides technical tools for online IRT calibration scoring.
 
 ## Interactive Scoring Workspace
 
-Run locally before using the workspace:
+Local mode:
 
 ```bash
 Rscript _tools/_scripts/assess_irt_api_model.R
 Rscript _tools/api/run_api.R
 ```
 
-Default API URL: `http://127.0.0.1:8088`
+Local default API URL: `http://127.0.0.1:8088`
+
+Live website mode requires a hosted HTTPS API endpoint. If `api-config.json` is populated, the workspace will prefill that URL automatically.
 
 ```{=html}
 <style>
@@ -117,7 +119,7 @@ Default API URL: `http://127.0.0.1:8088`
   <div class="tools-row">
     <label for="apiBaseUrl">
       <strong>API Base URL</strong>
-      <input id="apiBaseUrl" type="text" value="http://127.0.0.1:8088" />
+      <input id="apiBaseUrl" type="text" value="" placeholder="Resolved automatically" />
     </label>
     <label for="apiToken">
       <strong>API Key (Bearer token)</strong>
@@ -128,6 +130,7 @@ Default API URL: `http://127.0.0.1:8088`
   </div>
   <div id="apiStatus" class="tools-status info">Not connected.</div>
   <div class="tools-note">If API key auth is enabled, provide the token above.</div>
+  <div id="apiModeNote" class="tools-note"></div>
 </div>
 
 <div class="tools-block">
@@ -196,11 +199,13 @@ Default API URL: `http://127.0.0.1:8088`
     "SSQ01", "SSQ02", "SSQ03", "SSQ08", "SSQ09",
     "SSQ10", "SSQ11", "SSQ12", "SSQ13", "SSQ14"
   ];
+  const LOCAL_DEFAULT_API = "http://127.0.0.1:8088";
 
   const state = {
     engines: [],
     selectedItems: DEFAULT_ITEMS.slice(),
-    batchOutput: []
+    batchOutput: [],
+    publicConfig: {}
   };
 
   function firstValue(value) {
@@ -262,15 +267,97 @@ Default API URL: `http://127.0.0.1:8088`
     return input.value.trim();
   }
 
-  function loadSavedSettings() {
+  function isLocalPage() {
+    const host = window.location.hostname;
+    return host === "127.0.0.1" || host === "localhost";
+  }
+
+  function normalizeApiUrl(value) {
+    return String(value || "").trim().replace(/\/+$/, "");
+  }
+
+  function queryApiUrl() {
     try {
-      const savedUrl = window.localStorage.getItem("columinate_api_base_url");
+      const value = new URLSearchParams(window.location.search).get("api");
+      return normalizeApiUrl(value);
+    } catch (_error) {
+      return "";
+    }
+  }
+
+  async function loadPublicConfig() {
+    try {
+      const configUrl = new URL("../api-config.json", window.location.href);
+      const response = await fetch(configUrl.toString(), { cache: "no-store" });
+      if (!response.ok) return {};
+      const data = await response.json();
+      return typeof data === "object" && data !== null ? data : {};
+    } catch (_error) {
+      return {};
+    }
+  }
+
+  function resolveInitialApiUrl(savedUrl) {
+    const fromQuery = queryApiUrl();
+    if (fromQuery) return fromQuery;
+
+    const fromSaved = normalizeApiUrl(savedUrl);
+    if (fromSaved) return fromSaved;
+
+    const fromConfig = normalizeApiUrl(state.publicConfig.api_base_url);
+    if (fromConfig) return fromConfig;
+
+    if (isLocalPage()) return LOCAL_DEFAULT_API;
+    return "";
+  }
+
+  function updateApiModeNote() {
+    const el = document.getElementById("apiModeNote");
+    const base = apiBase();
+
+    if (!base) {
+      if (isLocalPage()) {
+        el.textContent = "Local page detected. Start the API in a separate terminal to connect automatically.";
+      } else {
+        el.textContent = "Live page detected. Enter a hosted HTTPS API URL or publish one in api-config.json.";
+      }
+      return;
+    }
+
+    if (window.location.protocol === "https:" && base.startsWith("http://")) {
+      el.textContent = "This HTTPS page cannot call an HTTP API. Use a hosted HTTPS API URL.";
+      return;
+    }
+
+    if (base.startsWith("http://127.0.0.1") || base.startsWith("http://localhost")) {
+      el.textContent = "Local API target selected. Leave API key blank unless you explicitly enabled Bearer auth.";
+      return;
+    }
+
+    el.textContent = "Hosted API target selected.";
+  }
+
+  function connectionHint(base) {
+    if (!base) {
+      return "Enter an API URL first.";
+    }
+    if (base.startsWith("http://127.0.0.1") || base.startsWith("http://localhost")) {
+      return "Ensure `Rscript _tools/api/run_api.R` is running in a separate terminal.";
+    }
+    return "Confirm the hosted API is reachable and allows this site origin.";
+  }
+
+  function loadSavedSettings() {
+    let savedUrl = "";
+    try {
+      savedUrl = window.localStorage.getItem("columinate_api_base_url") || "";
       const savedToken = window.localStorage.getItem("columinate_api_token");
-      if (savedUrl) document.getElementById("apiBaseUrl").value = savedUrl;
       if (savedToken) document.getElementById("apiToken").value = savedToken;
     } catch (_error) {
       // no-op
     }
+    document.getElementById("apiBaseUrl").value = resolveInitialApiUrl(savedUrl);
+    updateApiModeNote();
   }
 
   function persistSettings() {
@@ -315,7 +402,12 @@ Default API URL: `http://127.0.0.1:8088`
       opts.headers["Content-Type"] = "application/json";
     }
 
-    const response = await fetch(`${base}${path}`, opts);
+    let response;
+    try {
+      response = await fetch(`${base}${path}`, opts);
+    } catch (error) {
+      throw new Error(`${error.message}. ${connectionHint(base)}`);
+    }
     const text = await response.text();
     let data = {};
 
@@ -636,6 +728,7 @@ Default API URL: `http://127.0.0.1:8088`
 
   async function checkHealth() {
     persistSettings();
+    updateApiModeNote();
     setStatus("apiStatus", "Checking API connection...", "info");
     try {
       const response = await fetchJson("/health");
@@ -648,6 +741,7 @@ Default API URL: `http://127.0.0.1:8088`
 
   async function loadEngines() {
     persistSettings();
+    updateApiModeNote();
     setStatus("apiStatus", "Loading engines...", "info");
     try {
       const response = await fetchJson("/engines");
@@ -809,7 +903,8 @@ Default API URL: `http://127.0.0.1:8088`
     URL.revokeObjectURL(url);
   }
 
-  function initialize() {
+  async function initialize() {
+    state.publicConfig = await loadPublicConfig();
     loadSavedSettings();
     renderSingleItemInputs(DEFAULT_ITEMS);
     applyEngine("");
@@ -819,6 +914,7 @@ Default API URL: `http://127.0.0.1:8088`
     document.getElementById("btnLoadEngines").addEventListener("click", loadEngines);
     document.getElementById("apiBaseUrl").addEventListener("change", () => {
       persistSettings();
+      updateApiModeNote();
       setScoringEnabled(false);
       setStatus("apiStatus", "API URL changed. Click Load Engines.", "info");
     });
@@ -831,6 +927,22 @@ Default API URL: `http://127.0.0.1:8088`
     document.getElementById("btnScoreBatch").addEventListener("click", scoreBatch);
     document.getElementById("btnDownloadTemplate").addEventListener("click", downloadTemplateCsv);
     document.getElementById("btnDownloadBatch").addEventListener("click", downloadBatchCsv);
+
+    if (!apiBase()) {
+      setStatus(
+        "apiStatus",
+        isLocalPage()
+          ? "API not connected yet. Start the local API, then click Load Engines."
+          : "Enter a hosted HTTPS API URL, then click Load Engines.",
+        "info"
+      );
+      return;
+    }
+
+    if (window.location.protocol === "https:" && apiBase().startsWith("http://")) {
+      setStatus("apiStatus", "Current API URL is HTTP. Enter a hosted HTTPS API URL.", "error");
+      return;
+    }
 
     loadEngines();
   }

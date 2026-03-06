@@ -1,0 +1,15 @@
+services:
+  - type: web
+    runtime: docker
+    name: columinate-irt-api
+    plan: free
+    dockerfilePath: PRJ-CO-LUMINATE/_tools/api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: COLUMINATE_API_HOST
+        value: 0.0.0.0
+      - key: COLUMINATE_API_CORS_ORIGIN
+        value: https://mapel-lab.github.io
+      - key: COLUMINATE_SCORING_SCRIPT
+        value: /app/PRJ-CO-LUMINATE/_tools/api/scoring_runtime.R

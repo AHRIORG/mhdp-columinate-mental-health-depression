@@ -20,7 +20,11 @@ if (!file.exists(api_file)) {
   stop("Missing API file: ", api_file)
 }
 
-port <- suppressWarnings(as.integer(Sys.getenv("COLUMINATE_API_PORT", unset = "8088")))
+port_env <- Sys.getenv(
+  "COLUMINATE_API_PORT",
+  unset = Sys.getenv("PORT", unset = "8088")
+)
+port <- suppressWarnings(as.integer(port_env))
 if (is.na(port)) {
   port <- 8088L
 }
