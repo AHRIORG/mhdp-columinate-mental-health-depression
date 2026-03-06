@@ -261,30 +261,170 @@
   {
     "objectID": "tabs/documentations.html",
     "href": "tabs/documentations.html",
-    "title": "Documentations",
+    "title": "Technical Docs",
     "section": "",
-    "text": "This section is for project documentation files such as:\n\nStudy proposal\nStatistical analysis plan (SAP)\nProtocol amendments and version notes"
+    "text": "This section groups the reference documents that define project scope, linkage design, and analysis rules for CO-LUMINATE."
   },
   {
-    "objectID": "tabs/documentations.html#core-documentation",
-    "href": "tabs/documentations.html#core-documentation",
-    "title": "Documentations",
+    "objectID": "tabs/documentations.html#technical-docs",
+    "href": "tabs/documentations.html#technical-docs",
+    "title": "Technical Docs",
     "section": "",
-    "text": "This section is for project documentation files such as:\n\nStudy proposal\nStatistical analysis plan (SAP)\nProtocol amendments and version notes"
+    "text": "This section groups the reference documents that define project scope, linkage design, and analysis rules for CO-LUMINATE."
   },
   {
-    "objectID": "tabs/documentations.html#current-status",
-    "href": "tabs/documentations.html#current-status",
-    "title": "Documentations",
-    "section": "Current Status",
-    "text": "Current Status\n\nProposal: View proposal\nLongitudinal Linkage (trajectory modelling + psychometric calibration + dataset integration): View documentation\nSecondary Data Analysis Plan / SAP: View plan"
+    "objectID": "tabs/documentations.html#reference-documents",
+    "href": "tabs/documentations.html#reference-documents",
+    "title": "Technical Docs",
+    "section": "Reference Documents",
+    "text": "Reference Documents\n\nProposal\n\nOpen document\nPurpose: project rationale, objectives, expected outputs, and co-creation design.\n\n\n\nLongitudinal Linkage\n\nOpen document\nPurpose: linkage workflow, cohort integration, trajectory modeling context, and supporting analytical notes.\n\n\n\nStatistical Analysis Plan\n\nOpen document\nPurpose: conceptual mediation framework and analysis-plan anchor for objective-level workstreams."
   },
   {
-    "objectID": "tabs/documentations.html#notes",
-    "href": "tabs/documentations.html#notes",
-    "title": "Documentations",
-    "section": "Notes",
-    "text": "Notes\nUse this page as the central documentation index for CO-LUMINATE."
+    "objectID": "tabs/documentations.html#supporting-technical-outputs",
+    "href": "tabs/documentations.html#supporting-technical-outputs",
+    "title": "Technical Docs",
+    "section": "Supporting Technical Outputs",
+    "text": "Supporting Technical Outputs\n\nDataset Derivation, Documentation and Codebook presentation\nReports library\nPresentations library"
+  },
+  {
+    "objectID": "tabs/documentations.html#use",
+    "href": "tabs/documentations.html#use",
+    "title": "Technical Docs",
+    "section": "Use",
+    "text": "Use\nUse this section for stable project references. For objective-linked outputs, use Analysis Deliverables."
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html",
+    "href": "tabs/deliverable_obj04.html",
+    "title": "Objective 4: Causal Mediation",
+    "section": "",
+    "text": "Assess the impact of social determinants on depression among young people, with emphasis on longitudinal relationships and behavioral mediation.\nCurrent site language uses crowding in place of the earlier food insecurity framing."
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#objective",
+    "href": "tabs/deliverable_obj04.html#objective",
+    "title": "Objective 4: Causal Mediation",
+    "section": "",
+    "text": "Assess the impact of social determinants on depression among young people, with emphasis on longitudinal relationships and behavioral mediation.\nCurrent site language uses crowding in place of the earlier food insecurity framing."
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#abstract",
+    "href": "tabs/deliverable_obj04.html#abstract",
+    "title": "Objective 4: Causal Mediation",
+    "section": "Abstract",
+    "text": "Abstract\nThis deliverable defines the current causal mediation framework for linking childhood social determinants to adolescent depression through behavioral mediators, using a DAG-guided and g-computation-oriented analysis strategy."
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#keywords",
+    "href": "tabs/deliverable_obj04.html#keywords",
+    "title": "Objective 4: Causal Mediation",
+    "section": "Keywords",
+    "text": "Keywords\ncausal mediation; g-computation; longitudinal effects; crowding; low SES; caregiver co-residency; adolescent depression"
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#status",
+    "href": "tabs/deliverable_obj04.html#status",
+    "title": "Objective 4: Causal Mediation",
+    "section": "Status",
+    "text": "Status\n\nPresentation available\nReport pending"
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#current-outputs",
+    "href": "tabs/deliverable_obj04.html#current-outputs",
+    "title": "Objective 4: Causal Mediation",
+    "section": "Current Outputs",
+    "text": "Current Outputs\n\nPresentation\n\nThe Developmental Cascade of Social Determinants and Behavioral Phenotypes on Adolescent Depression\n\n\n\nReport\n\nNo objective-specific causal mediation report is currently published on the site."
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#supporting-technical-docs",
+    "href": "tabs/deliverable_obj04.html#supporting-technical-docs",
+    "title": "Objective 4: Causal Mediation",
+    "section": "Supporting Technical Docs",
+    "text": "Supporting Technical Docs\n\nStatistical Analysis Plan\nProposal"
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html",
+    "href": "tabs/deliverable_obj02.html",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "",
+    "text": "Explore interactions between social determinants and behavioral mediators of depression.\nSAP-aligned mediators currently stated on the site are migration, substance use, and sexual behaviour."
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#objective",
+    "href": "tabs/deliverable_obj02.html#objective",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "",
+    "text": "Explore interactions between social determinants and behavioral mediators of depression.\nSAP-aligned mediators currently stated on the site are migration, substance use, and sexual behaviour."
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#abstract",
+    "href": "tabs/deliverable_obj02.html#abstract",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "Abstract",
+    "text": "Abstract\nThis deliverable summarizes the current mediator-screening and prioritization workstream, including preliminary outcome associations and mediator interdependence patterns used to support downstream causal modeling."
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#keywords",
+    "href": "tabs/deliverable_obj02.html#keywords",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "Keywords",
+    "text": "Keywords\nbehavioral mediators; migration; substance use; sexual behaviour; preliminary associations; logistic regression"
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#status",
+    "href": "tabs/deliverable_obj02.html#status",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "Status",
+    "text": "Status\n\nReport available\nPresentation available\nCurrent outputs operationalize mediator prioritization and support later causal work"
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#current-outputs",
+    "href": "tabs/deliverable_obj02.html#current-outputs",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "Current Outputs",
+    "text": "Current Outputs\n\nReport\n\nPreliminary Mediator Associations Report\n\n\n\nPresentation\n\nMediation to Outcome Preliminary Analysis"
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#supporting-technical-docs",
+    "href": "tabs/deliverable_obj02.html#supporting-technical-docs",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "Supporting Technical Docs",
+    "text": "Supporting Technical Docs\n\nStatistical Analysis Plan\nReports library"
+  },
+  {
+    "objectID": "tabs/analysis_deliverables.html",
+    "href": "tabs/analysis_deliverables.html",
+    "title": "Analysis Deliverables",
+    "section": "",
+    "text": "This section organizes outputs by proposal objective rather than by file format.\nCurrent implementation note: where the active analytical pipeline has replaced food insecurity with crowding, the deliverable pages use the current term crowding."
+  },
+  {
+    "objectID": "tabs/analysis_deliverables.html#analysis-deliverables",
+    "href": "tabs/analysis_deliverables.html#analysis-deliverables",
+    "title": "Analysis Deliverables",
+    "section": "",
+    "text": "This section organizes outputs by proposal objective rather than by file format.\nCurrent implementation note: where the active analytical pipeline has replaced food insecurity with crowding, the deliverable pages use the current term crowding."
+  },
+  {
+    "objectID": "tabs/analysis_deliverables.html#objective-overview",
+    "href": "tabs/analysis_deliverables.html#objective-overview",
+    "title": "Analysis Deliverables",
+    "section": "Objective Overview",
+    "text": "Objective Overview\n\n\n\n\n\n\n\n\n\n\nObjective\nCurrent Focus\nStatus\nReport\nPresentation\n\n\n\n\nObjective 1\nSocial determinant trajectories\nPresentation available\nPending\nAvailable\n\n\nObjective 2\nDeterminants and behavioral mediators\nReport and presentation available\nAvailable\nAvailable\n\n\nObjective 3\nDepression harmonization\nReport and presentation available\nAvailable\nAvailable\n\n\nObjective 4\nCausal mediation\nPresentation available\nPending\nAvailable\n\n\nObjective 5\nYouth co-creation\nNo dedicated site outputs yet\nPending\nPending"
+  },
+  {
+    "objectID": "tabs/analysis_deliverables.html#objective-pages",
+    "href": "tabs/analysis_deliverables.html#objective-pages",
+    "title": "Analysis Deliverables",
+    "section": "Objective Pages",
+    "text": "Objective Pages\n\nObjective 1: Social Determinant Trajectories\nObjective 2: Behavioral Mediators\nObjective 3: Depression Harmonization\nObjective 4: Causal Mediation\nObjective 5: Youth Co-Creation"
+  },
+  {
+    "objectID": "tabs/analysis_deliverables.html#format-indexes",
+    "href": "tabs/analysis_deliverables.html#format-indexes",
+    "title": "Analysis Deliverables",
+    "section": "Format Indexes",
+    "text": "Format Indexes\n\nReports library\nPresentations library"
   },
   {
     "objectID": "reports/obj03_psychometric_report.html",
@@ -679,6 +819,153 @@
     "text": "Correlation Reporting Decision\nCorrelation heatmap and rho columns are intentionally omitted in this report version.\nFor binary 2x2 mediator pairs, the correlation measure (phi/rho in this coding) is numerically equivalent to Cramer’s V; therefore, Cramer’s V is retained as the single strength metric."
   },
   {
+    "objectID": "tabs/deliverable_obj01.html",
+    "href": "tabs/deliverable_obj01.html",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "",
+    "text": "Describe patterns in CO-LUMINATE participants’ exposure to social determinants over the life course.\nCurrent operationalization on the site uses low SES, crowding, and caregiver co-residency."
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#objective",
+    "href": "tabs/deliverable_obj01.html#objective",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "",
+    "text": "Describe patterns in CO-LUMINATE participants’ exposure to social determinants over the life course.\nCurrent operationalization on the site uses low SES, crowding, and caregiver co-residency."
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#abstract",
+    "href": "tabs/deliverable_obj01.html#abstract",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "Abstract",
+    "text": "Abstract\nThis deliverable focuses on trajectory structure across childhood exposure windows and summarizes how longitudinal social determinant patterns are organized before downstream depression and mediation analyses."
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#keywords",
+    "href": "tabs/deliverable_obj01.html#keywords",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "Keywords",
+    "text": "Keywords\nsocial determinants; trajectories; latent class analysis; low SES; crowding; caregiver co-residency"
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#status",
+    "href": "tabs/deliverable_obj01.html#status",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "Status",
+    "text": "Status\n\nPresentation available\nReport pending"
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#current-outputs",
+    "href": "tabs/deliverable_obj01.html#current-outputs",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "Current Outputs",
+    "text": "Current Outputs\n\nPresentation\n\nTrajectories of Childhood Social Determinants\n\n\n\nReport\n\nNo objective-specific report is currently published on the site."
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#supporting-technical-docs",
+    "href": "tabs/deliverable_obj01.html#supporting-technical-docs",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "Supporting Technical Docs",
+    "text": "Supporting Technical Docs\n\nLongitudinal Linkage\nDataset Derivation, Documentation and Codebook presentation"
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html",
+    "href": "tabs/deliverable_obj03.html",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "",
+    "text": "Describe prevalence of depression in the CO-LUMINATE dataset through harmonized depression measurement."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#objective",
+    "href": "tabs/deliverable_obj03.html#objective",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "",
+    "text": "Describe prevalence of depression in the CO-LUMINATE dataset through harmonized depression measurement."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#abstract",
+    "href": "tabs/deliverable_obj03.html#abstract",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Abstract",
+    "text": "Abstract\nThis deliverable covers SSQ-PHQ comparability, age-appropriate harmonization logic, and the psychometric evidence required to derive transportable depression outcomes across linked cohorts."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#keywords",
+    "href": "tabs/deliverable_obj03.html#keywords",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Keywords",
+    "text": "Keywords\ndepression harmonization; SSQ; PHQ-9; psychometrics; calibration; measurement invariance; prevalence derivation"
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#status",
+    "href": "tabs/deliverable_obj03.html#status",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Status",
+    "text": "Status\n\nReport available\nPresentation available"
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#current-outputs",
+    "href": "tabs/deliverable_obj03.html#current-outputs",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Current Outputs",
+    "text": "Current Outputs\n\nReport\n\nPsychometric Harmonization Report\n\n\n\nPresentation\n\nPsychometric Harmonization"
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#supporting-technical-docs",
+    "href": "tabs/deliverable_obj03.html#supporting-technical-docs",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Supporting Technical Docs",
+    "text": "Supporting Technical Docs\n\nStatistical Analysis Plan\nLongitudinal Linkage"
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html",
+    "href": "tabs/deliverable_obj05.html",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "",
+    "text": "Co-create a shared understanding of the role of social determinants in young people’s mental health through a Youth Advisory Group."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#objective",
+    "href": "tabs/deliverable_obj05.html#objective",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "",
+    "text": "Co-create a shared understanding of the role of social determinants in young people’s mental health through a Youth Advisory Group."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#abstract",
+    "href": "tabs/deliverable_obj05.html#abstract",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "Abstract",
+    "text": "Abstract\nThis deliverable captures the co-creation workstream that informs hypothesis generation, lay DAG development, interpretation, and dissemination, but it does not yet have a dedicated report or presentation page on the website."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#keywords",
+    "href": "tabs/deliverable_obj05.html#keywords",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "Keywords",
+    "text": "Keywords\nyouth co-creation; Youth Advisory Group; lay DAG; interpretation workshop; dissemination"
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#status",
+    "href": "tabs/deliverable_obj05.html#status",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "Status",
+    "text": "Status\n\nNo dedicated report published\nNo dedicated presentation published\nProposal and SAP remain the current source references"
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#current-outputs",
+    "href": "tabs/deliverable_obj05.html#current-outputs",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "Current Outputs",
+    "text": "Current Outputs\n\nReport\n\nNo objective-specific report is currently published on the site.\n\n\n\nPresentation\n\nNo objective-specific presentation is currently published on the site."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#supporting-technical-docs",
+    "href": "tabs/deliverable_obj05.html#supporting-technical-docs",
+    "title": "Objective 5: Youth Co-Creation",
+    "section": "Supporting Technical Docs",
+    "text": "Supporting Technical Docs\n\nProposal\nStatistical Analysis Plan"
+  },
+  {
     "objectID": "tabs/longitudinal_linkage.html",
     "href": "tabs/longitudinal_linkage.html",
     "title": "Longitudinal Linkage",
@@ -802,7 +1089,7 @@
     "href": "tabs/tools.html#interactive-scoring-workspace",
     "title": "Tools",
     "section": "Interactive Scoring Workspace",
-    "text": "Interactive Scoring Workspace\nRun locally before using the workspace:\nRscript _tools/_scripts/assess_irt_api_model.R\nRscript _tools/api/run_api.R\nDefault API URL: http://127.0.0.1:8088\n\n\n\n  \n    \n      API Base URL\n      \n    \n    \n      API Key (Bearer token)\n      \n    \n    Check Connection\n    Load Engines\n  \n  Not connected.\n  If API key auth is enabled, provide the token above.\n\n\n\n  \n    \n      Scoring Engine\n      \n    \n    Load engines to inspect factor and cutoff mode.\n  \n  \n\n\nSingle Participant\n\n\n  \n  \n    \n      Sex\n      \n        \n        Female\n        Male\n      \n    \n    \n      Age\n      \n    \n    \n      Age Group\n      \n    \n    \n      Sex + Age Group\n      \n    \n    Score Single\n    Load Example\n  \n  \n  \n\n\nBatch Scoring\n\n\n  \n    \n      Upload CSV or JSON\n      \n    \n    Score Batch\n    Download Template CSV\n    Download Scored CSV"
+    "text": "Interactive Scoring Workspace\nLocal mode:\nRscript _tools/_scripts/assess_irt_api_model.R\nRscript _tools/api/run_api.R\nLocal default API URL: http://127.0.0.1:8088\nLive website mode requires a hosted HTTPS API endpoint. If api-config.json is populated, the workspace will prefill that URL automatically.\n\n\n\n  \n    \n      API Base URL\n      \n    \n    \n      API Key (Bearer token)\n      \n    \n    Check Connection\n    Load Engines\n  \n  Not connected.\n  If API key auth is enabled, provide the token above.\n  \n\n\n\n  \n    \n      Scoring Engine\n      \n    \n    Load engines to inspect factor and cutoff mode.\n  \n  \n\n\nSingle Participant\n\n\n  \n  \n    \n      Sex\n      \n        \n        Female\n        Male\n      \n    \n    \n      Age\n      \n    \n    \n      Age Group\n      \n    \n    \n      Sex + Age Group\n      \n    \n    Score Single\n    Load Example\n  \n  \n  \n\n\nBatch Scoring\n\n\n  \n    \n      Upload CSV or JSON\n      \n    \n    Score Batch\n    Download Template CSV\n    Download Scored CSV"
   },
   {
     "objectID": "tabs/tools.html#model-capability-snapshot",
