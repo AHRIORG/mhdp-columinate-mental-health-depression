@@ -68,9 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -120,6 +117,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tabs/metadata.html">
+ <span class="dropdown-text">Metadata</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
@@ -160,25 +161,64 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/metadata.html"> <i class="bi bi-table" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-newspaper" role="img">
 </i> 
-<span class="menu-text">Metadata</span></a>
+ <span class="menu-text">Updates</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
+        <li>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Analytics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_news.html">
+ <span class="dropdown-text">News</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_blog.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_other.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-tools" role="img">
 </i> 
-<span class="menu-text">Tools</span></a>
+ <span class="menu-text">Research Tools</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
+        <li>
+    <a class="dropdown-item" href="../tabs/tools.html">
+ <span class="dropdown-text">Tools Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
-</i> 
-<span class="menu-text">Dashboard</span></a>
+        <li>
+    <a class="dropdown-item" href="../tabs/dashboard.html">
+ <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
+ <span class="dropdown-text">IRT Scoring Workspace</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
+ <span class="dropdown-text">Mental Health Causal Chains</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/AHRIORG/mhdp-columinate-mental-health-depression" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -193,12 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
-  <li><a href="#goal-alignment" id="toc-goal-alignment" class="nav-link" data-scroll-target="#goal-alignment">Goal Alignment</a></li>
-  <li><a href="#stage-flow-current-build-counts" id="toc-stage-flow-current-build-counts" class="nav-link" data-scroll-target="#stage-flow-current-build-counts">Stage Flow (Current Build Counts)</a></li>
-  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
-  <li><a href="#completion-criteria" id="toc-completion-criteria" class="nav-link" data-scroll-target="#completion-criteria">Completion Criteria</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
+  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
   </ul>
 </nav>
     </div>
@@ -224,111 +259,158 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="purpose" class="level2">
-<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
-<p>This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset.</p>
-</section>
-<section id="goal-alignment" class="level2">
-<h2 class="anchored" data-anchor-id="goal-alignment">Goal Alignment</h2>
-<p>The linkage workflow directly supports the project objectives:</p>
-<ol type="1">
-<li>Build and maintain a linked analysis dataset.</li>
-<li>Quantify direct and mediation relationships for depression outcomes.</li>
-<li>Characterize social determinant trajectories across childhood windows.</li>
-</ol>
-</section>
-<section id="stage-flow-current-build-counts" class="level2">
-<h2 class="anchored" data-anchor-id="stage-flow-current-build-counts">Stage Flow (Current Build Counts)</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear", "htmlLabels": true}} }%%
-flowchart LR
-  O1["Objective 1&lt;br/&gt;Build linked&lt;br/&gt;analysis dataset"]
-  O2["Objective 2&lt;br/&gt;Quantify direct&lt;br/&gt;and mediation links"]
-  O3["Objective 3&lt;br/&gt;Characterize SDoH&lt;br/&gt;trajectories"]
-
-  S1["Linkage Stage 1&lt;br/&gt;Psychometric&lt;br/&gt;calibration"]
-  S2["Linkage Stage 2&lt;br/&gt;SDoH trajectory&lt;br/&gt;derivation"]
-  S3["Linkage Stage 3&lt;br/&gt;Final linkage&lt;br/&gt;and integration"]
-
-  O1 --&gt; S1
-  O1 --&gt; S2
-  O1 --&gt; S3
-  O2 --&gt; S3
-  O3 --&gt; S2
-
-  S1 --&gt; A["Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=843)"]
-  A --&gt; B["Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=843)"]
-  S1 --&gt; C["SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=4,021)"]
-  C --&gt; D["Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=4,021)"]
-  B --&gt; D
-
-  S2 --&gt; E["Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=5,398)"]
-  E --&gt; F["Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=4,318)&lt;br/&gt;6-12 years (n=5,386)&lt;br/&gt;Both (n=4,306)&lt;br/&gt;Only 0-5 (n=12)&lt;br/&gt;Only 6-12 (n=1,080)&lt;br/&gt;&lt;br/&gt;"]
-
-  S3 --&gt; G["Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=6,024)"]
-  S3 --&gt; H["Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=5,398)"]
-  D --&gt; G
-  F --&gt; H
-
-  G --&gt; I["Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=5,226)"]
-  H --&gt; I
-
-  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;
-  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;
-  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;
-  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;
-  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;
-  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;
-  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;
-  class O1,O2,O3 objective;
-  class S1 stage1;
-  class S2 stage2;
-  class S3 stage3;
-  class A,B,C,D,G psych;
-  class E,F,H sdoh;
-  class I integ;
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
-<ol type="1">
-<li>Stage 1 calibrates depression information for SSQ-only records.</li>
-<li>Stage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.</li>
-<li>Stage 3 integrates both streams and keeps participants with both: <code>Depression endpoint</code> and <code>SDoH trajectory coverage</code>.</li>
-</ol>
-</section>
-<section id="completion-criteria" class="level2">
-<h2 class="anchored" data-anchor-id="completion-criteria">Completion Criteria</h2>
-<p>This stage is complete when:</p>
-<ol type="1">
-<li>Depression endpoint values are available for integrated mental health records.</li>
-<li>SDoH trajectory coverage is available across childhood windows.</li>
-<li>Final integrated data retains only participants meeting both criteria.</li>
-</ol>
-</section>
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">Notes</h2>
-<ul>
-<li>Counts are distinct participants (<code>USUBJID</code>) and are calculated at render time.</li>
-<li>Violet nodes: proposal objectives.</li>
-<li>Blue nodes: psychometric stage.</li>
-<li>Orange nodes: SDoH trajectory stage.</li>
-<li>Green nodes: final integration stage.</li>
-</ul>
+<section id="placeholder-section" class="level2">
+<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
+<p>This route preserves the longitudinal-linkage page in the public frame without carrying internal methodological content.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const here = window.location.href;
+  const pathname = window.location.pathname || "";
+  const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const groupedPages = [
+    {
+      id: "technical-docs",
+      label: "Technical Docs",
+      items: [
+        { file: "documentations.html", label: "Overview" },
+        { file: "proposal.html", label: "Proposal" },
+        { file: "longitudinal_linkage.html", label: "Longitudinal Linkage" },
+        { file: "metadata.html", label: "Metadata" },
+        { file: "secondary_data_analysis_plan.html", label: "Statistical Analysis Plan" }
+      ]
+    },
+    {
+      id: "analysis-deliverables",
+      label: "Analysis Deliverables",
+      items: [
+        { file: "analysis_deliverables.html", label: "Overview" },
+        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
+        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
+        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
+        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+      ]
+    },
+    {
+      id: "research-tools",
+      label: "Research Tools",
+      items: [
+        { file: "tools.html", label: "Tools Overview" },
+        { file: "dashboard.html", label: "Project Dashboard" },
+        { file: "dashboard_guide.html", label: "Dashboard Guide" },
+        { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
+        { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
+      ]
+    },
+    {
+      id: "updates",
+      label: "Updates",
+      items: [
+        { file: "updates_website.html", label: "Website" },
+        { file: "updates.html", label: "Analytics" },
+        { file: "updates_news.html", label: "News" },
+        { file: "updates_blog.html", label: "Blog" },
+        { file: "updates_other.html", label: "Others" }
+      ]
+    }
+  ];
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    const textLabel = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const ariaLabel = (link.getAttribute("aria-label") || "").trim();
+    const inferredTitle = textLabel || ariaLabel;
+
+    if ((!link.hasAttribute("title") || !link.getAttribute("title")) && inferredTitle) {
+      link.setAttribute("title", inferredTitle);
+    }
+
+    if (link.hasAttribute("target") || link.hasAttribute("download")) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:")) {
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(rawHref, here);
+    } catch (_error) {
+      return;
+    }
+
+    const path = url.pathname || "";
+    const isExternal = url.origin !== window.location.origin;
+    const isStandaloneInternal =
+      /^\/presentations\/.*\.html$/i.test(path) ||
+      /^\/_tools\//i.test(path) ||
+      /\.(pdf|svg)$/i.test(path);
+
+    if (isExternal || isStandaloneInternal) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+
+  const currentGroup = groupedPages.find(function (group) {
+    return group.items.some(function (item) {
+      return pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    });
+  });
+
+  const content = document.getElementById("quarto-content");
+  if (content && !content.querySelector(".public-site-placeholder")) {
+    const notice = document.createElement("div");
+    notice.className = "public-site-placeholder alert alert-warning";
+    notice.setAttribute("role", "status");
+    notice.style.marginBottom = "1rem";
+    notice.textContent = "In progress, content not yet published to the public website";
+    content.insertBefore(notice, content.firstChild);
+  }
+
+  if (!currentGroup || !content) {
+    return;
+  }
+
+  const nav = document.createElement("aside");
+  nav.className = "section-nav";
+  nav.setAttribute("aria-label", currentGroup.label + " navigation");
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "section-nav__eyebrow";
+  eyebrow.textContent = currentGroup.label;
+  nav.appendChild(eyebrow);
+
+  const title = document.createElement("h2");
+  title.className = "section-nav__title";
+  title.textContent = "In this section";
+  nav.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "section-nav__list";
+
+  currentGroup.items.forEach(function (item) {
+    const link = document.createElement("a");
+    const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    link.className = "section-nav__link" + (isActive ? " is-active" : "");
+    link.href = item.file;
+    link.textContent = item.label;
+    link.setAttribute("title", item.label);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    }
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+  document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
+  content.parentNode.insertBefore(nav, content);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

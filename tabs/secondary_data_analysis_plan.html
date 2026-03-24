@@ -117,6 +117,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tabs/metadata.html">
+ <span class="dropdown-text">Metadata</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
@@ -157,25 +161,64 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/metadata.html"> <i class="bi bi-table" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-newspaper" role="img">
 </i> 
-<span class="menu-text">Metadata</span></a>
+ <span class="menu-text">Updates</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
+        <li>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Analytics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_news.html">
+ <span class="dropdown-text">News</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_blog.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_other.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-tools" role="img">
 </i> 
-<span class="menu-text">Tools</span></a>
+ <span class="menu-text">Research Tools</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
+        <li>
+    <a class="dropdown-item" href="../tabs/tools.html">
+ <span class="dropdown-text">Tools Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
-</i> 
-<span class="menu-text">Dashboard</span></a>
+        <li>
+    <a class="dropdown-item" href="../tabs/dashboard.html">
+ <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
+ <span class="dropdown-text">IRT Scoring Workspace</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
+ <span class="dropdown-text">Mental Health Causal Chains</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/AHRIORG/mhdp-columinate-mental-health-depression" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -190,33 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
-  <li><a href="#study-aim-objectives-and-research-questions" id="toc-study-aim-objectives-and-research-questions" class="nav-link" data-scroll-target="#study-aim-objectives-and-research-questions">2. Study Aim, Objectives, And Research Questions</a></li>
-  <li><a href="#data-sources-and-analytical-cohort" id="toc-data-sources-and-analytical-cohort" class="nav-link" data-scroll-target="#data-sources-and-analytical-cohort">3. Data Sources And Analytical Cohort</a></li>
-  <li><a href="#conceptual-causal-model" id="toc-conceptual-causal-model" class="nav-link" data-scroll-target="#conceptual-causal-model">4. Conceptual Causal Model</a></li>
-  <li><a href="#endpoints-exposures-mediators-and-covariates" id="toc-endpoints-exposures-mediators-and-covariates" class="nav-link" data-scroll-target="#endpoints-exposures-mediators-and-covariates">5. Endpoints, Exposures, Mediators, And Covariates</a>
-  <ul class="collapse">
-  <li><a href="#primary-endpoint" id="toc-primary-endpoint" class="nav-link" data-scroll-target="#primary-endpoint">5.1 Primary Endpoint</a></li>
-  <li><a href="#social-determinant-exposures" id="toc-social-determinant-exposures" class="nav-link" data-scroll-target="#social-determinant-exposures">5.2 Social Determinant Exposures</a></li>
-  <li><a href="#mediators" id="toc-mediators" class="nav-link" data-scroll-target="#mediators">5.3 Mediators</a></li>
-  <li><a href="#confounder-strategy" id="toc-confounder-strategy" class="nav-link" data-scroll-target="#confounder-strategy">5.4 Confounder Strategy</a></li>
-  </ul></li>
-  <li><a href="#statistical-principles" id="toc-statistical-principles" class="nav-link" data-scroll-target="#statistical-principles">6. Statistical Principles</a></li>
-  <li><a href="#analytical-workflow" id="toc-analytical-workflow" class="nav-link" data-scroll-target="#analytical-workflow">7. Analytical Workflow</a>
-  <ul class="collapse">
-  <li><a href="#descriptive-and-data-quality-analyses" id="toc-descriptive-and-data-quality-analyses" class="nav-link" data-scroll-target="#descriptive-and-data-quality-analyses">7.1 Descriptive And Data Quality Analyses</a></li>
-  <li><a href="#longitudinal-exposure-modeling" id="toc-longitudinal-exposure-modeling" class="nav-link" data-scroll-target="#longitudinal-exposure-modeling">7.2 Longitudinal Exposure Modeling</a></li>
-  <li><a href="#depression-harmonization" id="toc-depression-harmonization" class="nav-link" data-scroll-target="#depression-harmonization">7.3 Depression Harmonization</a></li>
-  <li><a href="#primary-causal-mediation-models" id="toc-primary-causal-mediation-models" class="nav-link" data-scroll-target="#primary-causal-mediation-models">7.4 Primary Causal Mediation Models</a></li>
-  </ul></li>
-  <li><a href="#missing-data-and-imputation" id="toc-missing-data-and-imputation" class="nav-link" data-scroll-target="#missing-data-and-imputation">8. Missing Data And Imputation</a></li>
-  <li><a href="#sensitivity-robustness-and-secondary-analyses" id="toc-sensitivity-robustness-and-secondary-analyses" class="nav-link" data-scroll-target="#sensitivity-robustness-and-secondary-analyses">9. Sensitivity, Robustness, And Secondary Analyses</a></li>
-  <li><a href="#reporting-standards" id="toc-reporting-standards" class="nav-link" data-scroll-target="#reporting-standards">10. Reporting Standards</a></li>
-  <li><a href="#reproducibility-governance-and-data-use-constraints" id="toc-reproducibility-governance-and-data-use-constraints" class="nav-link" data-scroll-target="#reproducibility-governance-and-data-use-constraints">11. Reproducibility, Governance, And Data Use Constraints</a></li>
-  <li><a href="#sap-versioning-and-amendments" id="toc-sap-versioning-and-amendments" class="nav-link" data-scroll-target="#sap-versioning-and-amendments">12. SAP Versioning And Amendments</a>
-  <ul class="collapse">
-  <li><a href="#amendment-record" id="toc-amendment-record" class="nav-link" data-scroll-target="#amendment-record">12.1 Amendment Record</a></li>
-  </ul></li>
+  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
   </ul>
 </nav>
     </div>
@@ -226,7 +243,6 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Statistical Analysis Plan</h1>
-<p class="subtitle lead">CO-LUMINATE Secondary Data Analysis</p>
 </div>
 
 
@@ -243,108 +259,158 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
-<p>This Statistical Analysis Plan (SAP) specifies the inferential framework for CO-LUMINATE, a longitudinal linked-data study designed to evaluate how social determinants of health influence depression among young people in rural South Africa. The document is written to align with the approved CO-LUMINATE proposal and to govern reproducible analysis of the linked cohort-household platform developed for this project.</p>
-<p>The scientific motivation is to estimate both direct and indirect pathways between social stress exposures and depression, with explicit attention to life-course timing, mediation mechanisms, and uncertainty quantification. The analytic strategy is therefore structured around longitudinal exposure characterization, harmonized depression endpoint construction, and causal mediation modeling under prespecified assumptions.</p>
-</section>
-<section id="study-aim-objectives-and-research-questions" class="level2">
-<h2 class="anchored" data-anchor-id="study-aim-objectives-and-research-questions">2. Study Aim, Objectives, And Research Questions</h2>
-<p>The overarching aim is to quantify the longitudinal relationship between social determinants and depression symptoms among young people aged 13-24 years, and to evaluate mediation pathways through behavioral and psychosocial factors. In operational terms, this entails estimating how early and mid-childhood exposure patterns are associated with later depression risk, and whether those associations are explained in part by modifiable mediating factors measured during adolescence and young adulthood.</p>
-<p>The proposal-level objectives are implemented in five linked analytical domains. First, the study describes population-level trajectories of socioeconomic position and caregiver co-residency. Second, it characterizes interactions between these social determinants and mediator domains relevant to youth mental health. Third, it defines and summarizes depression prevalence using a harmonized endpoint. Fourth, it estimates direct and mediated effects of social determinants on depression. Fifth, it integrates co-creation principles through interpretation and contextual framing of findings. Food insecurity was part of the original conceptual plan but is treated as unavailable for primary longitudinal trajectory modeling in the finalized linked analysis dataset (see amendment note in Section 12).</p>
-</section>
-<section id="data-sources-and-analytical-cohort" class="level2">
-<h2 class="anchored" data-anchor-id="data-sources-and-analytical-cohort">3. Data Sources And Analytical Cohort</h2>
-<p>The analytical platform integrates individual-level mental health data from youth cohorts nested within the AHRI HDSS with household-level longitudinal exposure histories from the surveillance system. The linked cohort includes participants from DREAMS, Multilevel, Isisekelo Sempilo, Treatment as Prevention (TasP), and Thetha Nami, with harmonized follow-up structures sufficient for trajectory and mediation analyses.</p>
-<p>The primary analysis population includes participants who satisfy both endpoint and linkage requirements: availability of a valid depression endpoint (<code>DPBN</code>) and valid linkage to longitudinal household social-determinant data. Final inferential models are estimated only on participants meeting these criteria. Cohort assembly, exclusions, and denominator transitions are reported transparently in metadata and CONSORT-style flow summaries.</p>
-</section>
-<section id="conceptual-causal-model" class="level2">
-<h2 class="anchored" data-anchor-id="conceptual-causal-model">4. Conceptual Causal Model</h2>
-<p>The core causal structure is represented by a directed acyclic graph in which childhood social stress exposures affect depression through both direct pathways and indirect pathways operating via behavioral or social mediators. The framework assumes temporally ordered pathways from childhood exposure windows (0-5 years; 6-12 years), through adolescent mediator profiles, to depression outcome status in adolescence and young adulthood.</p>
-<div class="aim-dag">
-<figure class="figure">
-<figcaption>
-DAG: Conceptual mediation framework for CO-LUMINATE
-</figcaption>
-<img src="../_assets/DAG-01.png" alt="Conceptual mediation framework for CO-LUMINATE" class="figure-img">
-</figure>
-</div>
-</section>
-<section id="endpoints-exposures-mediators-and-covariates" class="level2">
-<h2 class="anchored" data-anchor-id="endpoints-exposures-mediators-and-covariates">5. Endpoints, Exposures, Mediators, And Covariates</h2>
-<section id="primary-endpoint" class="level3">
-<h3 class="anchored" data-anchor-id="primary-endpoint">5.1 Primary Endpoint</h3>
-<p>The primary endpoint is binary depression status (<code>DPBN</code>). This endpoint is defined on a harmonized psychometric scale that combines directly observed PHQ-based information with SSQ-based calibrated scoring where PHQ is unavailable. Harmonization procedures are fixed prior to mediation model fitting to avoid post-hoc endpoint drift.</p>
-</section>
-<section id="social-determinant-exposures" class="level3">
-<h3 class="anchored" data-anchor-id="social-determinant-exposures">5.2 Social Determinant Exposures</h3>
-<p>Exposure domains are modeled longitudinally and include caregiver co-residency and household socioeconomic conditions. Exposure histories are summarized through latent trajectory/class structures within prespecified childhood windows (0-5 years and 6-12 years), and these classes are encoded as analytical indicators for downstream structural models. The planned household food insecurity trajectory domain is not included in primary analyses because the required longitudinal measure was not obtained in the final analytical data assembly.</p>
-</section>
-<section id="mediators" class="level3">
-<h3 class="anchored" data-anchor-id="mediators">5.3 Mediators</h3>
-<p>The prespecified observed mediator set for primary modeling comprises alcohol use (<code>DNKA</code>), sexual behavior (<code>ESXC</code>), government grant access (<code>GOVG</code>), violence exposure (<code>VLNC</code>), social support (<code>SCSP</code>), and school attendance (<code>SCHL</code>). In addition to this observed parallel mediator representation, a latent mediator phenotype class is estimated as an alternative mediation structure to assess whether mediator clustering yields a more coherent mechanistic profile.</p>
-</section>
-<section id="confounder-strategy" class="level3">
-<h3 class="anchored" data-anchor-id="confounder-strategy">5.4 Confounder Strategy</h3>
-<p>Two confounder blocks are prespecified. Baseline confounders capture pre-exposure structural context, including maternal and paternal demographic, educational, HIV, partnership, and migration attributes. Mediator-outcome confounders include sex, age, HIV status, orphanhood, external migration, rural residence, and calendar year. Adjustment sets are fixed before primary effect estimation and are applied consistently across model families, with sensitivity analyses evaluating the impact of alternative adjustment scope.</p>
-</section>
-</section>
-<section id="statistical-principles" class="level2">
-<h2 class="anchored" data-anchor-id="statistical-principles">6. Statistical Principles</h2>
-<p>All primary inferential analyses adopt a Bayesian estimation framework implemented in Mplus. Effect estimation is based on posterior summaries and 95% credible intervals, with primary interpretation focused on interval compatibility with null and effect magnitude. Statistical significance language is used cautiously and is secondary to estimation and uncertainty reporting.</p>
-<p>Primary estimands are: (i) direct effects of childhood exposure class indicators on depression; (ii) specific natural indirect effects through each observed mediator; and (iii) natural indirect effects through the latent mediator phenotype class. These estimands are interpreted under standard causal mediation assumptions, including exchangeability conditional on measured covariates, positivity, and correct model specification.</p>
-</section>
-<section id="analytical-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="analytical-workflow">7. Analytical Workflow</h2>
-<section id="descriptive-and-data-quality-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="descriptive-and-data-quality-analyses">7.1 Descriptive And Data Quality Analyses</h3>
-<p>Descriptive analyses quantify cohort composition, missingness structure, prevalence of endpoint and mediator domains, and distribution of exposure classes. These analyses serve both quality control and interpretive context and are reported before causal models.</p>
-</section>
-<section id="longitudinal-exposure-modeling" class="level3">
-<h3 class="anchored" data-anchor-id="longitudinal-exposure-modeling">7.2 Longitudinal Exposure Modeling</h3>
-<p>Exposure trajectories are modeled separately in childhood windows (0-5 years; 6-12 years). Candidate class structures are evaluated using fit indices, class interpretability, and practical constraints including minimum class prevalence. Selected class solutions are locked prior to mediation estimation.</p>
-</section>
-<section id="depression-harmonization" class="level3">
-<h3 class="anchored" data-anchor-id="depression-harmonization">7.3 Depression Harmonization</h3>
-<p>Depression harmonization uses calibrated psychometric modeling to map SSQ-only records onto a PHQ-referenced depression scale, after which a fixed binary endpoint (<code>DPBN</code>) is derived. This harmonization stage is treated as upstream data preparation and not iteratively tuned based on mediation outcomes.</p>
-</section>
-<section id="primary-causal-mediation-models" class="level3">
-<h3 class="anchored" data-anchor-id="primary-causal-mediation-models">7.4 Primary Causal Mediation Models</h3>
-<p>Two model families are estimated to address complementary mechanistic assumptions. The first uses observed parallel mediators, where each mediator is regressed on exposure indicators and confounders, and the depression endpoint is regressed on all mediators, exposures, and confounders. Natural indirect effects are estimated via parametric g-computation syntax in Mplus (<code>MODEL INDIRECT ... (CAUSAL)</code>), pooled over multiple imputation/plausible-value draws.</p>
-<p>The second model family uses a latent categorical mediator phenotype, where exposure indicators predict latent class membership and the endpoint is modeled as a function of latent mediator class, exposure indicators, and confounders. This approach evaluates whether mediator co-occurrence patterns provide stronger explanatory structure than separate observed mediators.</p>
-<p>For pooled Bayesian analyses, the target imputation/plausible-value framework is <code>m = 100</code> draws. Posterior estimates are extracted and summarized in publication-ready effect tables with explicit interval reporting.</p>
-</section>
-</section>
-<section id="missing-data-and-imputation" class="level2">
-<h2 class="anchored" data-anchor-id="missing-data-and-imputation">8. Missing Data And Imputation</h2>
-<p>Missing data are handled through a structured imputation-aware modeling workflow integrated with Bayesian estimation. Covariate and mediator missingness are addressed under model-based assumptions consistent with the imputation design. Participants with structurally missing core linkage components or unavailable primary endpoint are excluded according to prespecified rules. Sensitivity comparisons include reduced models and complete-case contrasts to assess robustness of substantive conclusions.</p>
-</section>
-<section id="sensitivity-robustness-and-secondary-analyses" class="level2">
-<h2 class="anchored" data-anchor-id="sensitivity-robustness-and-secondary-analyses">9. Sensitivity, Robustness, And Secondary Analyses</h2>
-<p>Robustness is assessed along four dimensions: mediator representation (observed vs latent), class solution alternatives, covariate adjustment sets, and depression endpoint threshold specification. Additional sensitivity summaries include effect-stability diagnostics and E-value style reporting for key indirect pathways where applicable. These analyses are interpreted as robustness evidence and do not replace the prespecified primary estimands.</p>
-<p>Subgroup summaries by sex, age band, rural context, and HIV status are reported descriptively or as exploratory heterogeneity assessments unless explicitly prespecified for confirmatory inference.</p>
-</section>
-<section id="reporting-standards" class="level2">
-<h2 class="anchored" data-anchor-id="reporting-standards">10. Reporting Standards</h2>
-<p>All primary and sensitivity outputs are reported with clear separation between estimand definition, model specification, and interpretation. Tables and figures present posterior estimates, interval bounds, and pathway labels mapped to the conceptual framework. Interpretation emphasizes direction, magnitude, and uncertainty, and avoids causal overstatement beyond assumptions supported by design and measured covariates.</p>
-</section>
-<section id="reproducibility-governance-and-data-use-constraints" class="level2">
-<h2 class="anchored" data-anchor-id="reproducibility-governance-and-data-use-constraints">11. Reproducibility, Governance, And Data Use Constraints</h2>
-<p>The SAP is operationalized through version-controlled scripts organized into data preparation, model fitting, extraction, and reporting modules. Analytical objects (<code>.rds</code>), tables, and figures are generated from scripted pipelines and traced to model configuration files.</p>
-<p>Participant-level private data remain in controlled environments. Public-facing website outputs are restricted to non-disclosive summaries, derived figures, and metadata artifacts. Access to full internal proposal and restricted analysis products remains governed by the Principal Investigator and project governance procedures.</p>
-</section>
-<section id="sap-versioning-and-amendments" class="level2">
-<h2 class="anchored" data-anchor-id="sap-versioning-and-amendments">12. SAP Versioning And Amendments</h2>
-<p>This SAP reflects the current CO-LUMINATE scientific plan and linked-data workflow. Any amendments to endpoint definition, exposure class selection, covariate sets, mediator structure, or inferential model family will be logged as SAP updates with explicit rationale, implementation date, and impact statement on prior results.</p>
-<section id="amendment-record" class="level3">
-<h3 class="anchored" data-anchor-id="amendment-record">12.1 Amendment Record</h3>
-<p>On March 5, 2026, the SAP was amended to document that food insecurity was not obtained in the finalized longitudinal exposure build for this phase of CO-LUMINATE. As a result, food insecurity is removed from the primary longitudinal exposure specification and from the primary observed mediator set used for confirmatory mediation models in this SAP version.</p>
+<section id="placeholder-section" class="level2">
+<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
+<p>The analysis-plan route is preserved to match the private website structure, but the plan itself is not included.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const here = window.location.href;
+  const pathname = window.location.pathname || "";
+  const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const groupedPages = [
+    {
+      id: "technical-docs",
+      label: "Technical Docs",
+      items: [
+        { file: "documentations.html", label: "Overview" },
+        { file: "proposal.html", label: "Proposal" },
+        { file: "longitudinal_linkage.html", label: "Longitudinal Linkage" },
+        { file: "metadata.html", label: "Metadata" },
+        { file: "secondary_data_analysis_plan.html", label: "Statistical Analysis Plan" }
+      ]
+    },
+    {
+      id: "analysis-deliverables",
+      label: "Analysis Deliverables",
+      items: [
+        { file: "analysis_deliverables.html", label: "Overview" },
+        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
+        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
+        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
+        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+      ]
+    },
+    {
+      id: "research-tools",
+      label: "Research Tools",
+      items: [
+        { file: "tools.html", label: "Tools Overview" },
+        { file: "dashboard.html", label: "Project Dashboard" },
+        { file: "dashboard_guide.html", label: "Dashboard Guide" },
+        { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
+        { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
+      ]
+    },
+    {
+      id: "updates",
+      label: "Updates",
+      items: [
+        { file: "updates_website.html", label: "Website" },
+        { file: "updates.html", label: "Analytics" },
+        { file: "updates_news.html", label: "News" },
+        { file: "updates_blog.html", label: "Blog" },
+        { file: "updates_other.html", label: "Others" }
+      ]
+    }
+  ];
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    const textLabel = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const ariaLabel = (link.getAttribute("aria-label") || "").trim();
+    const inferredTitle = textLabel || ariaLabel;
+
+    if ((!link.hasAttribute("title") || !link.getAttribute("title")) && inferredTitle) {
+      link.setAttribute("title", inferredTitle);
+    }
+
+    if (link.hasAttribute("target") || link.hasAttribute("download")) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:")) {
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(rawHref, here);
+    } catch (_error) {
+      return;
+    }
+
+    const path = url.pathname || "";
+    const isExternal = url.origin !== window.location.origin;
+    const isStandaloneInternal =
+      /^\/presentations\/.*\.html$/i.test(path) ||
+      /^\/_tools\//i.test(path) ||
+      /\.(pdf|svg)$/i.test(path);
+
+    if (isExternal || isStandaloneInternal) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+
+  const currentGroup = groupedPages.find(function (group) {
+    return group.items.some(function (item) {
+      return pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    });
+  });
+
+  const content = document.getElementById("quarto-content");
+  if (content && !content.querySelector(".public-site-placeholder")) {
+    const notice = document.createElement("div");
+    notice.className = "public-site-placeholder alert alert-warning";
+    notice.setAttribute("role", "status");
+    notice.style.marginBottom = "1rem";
+    notice.textContent = "In progress, content not yet published to the public website";
+    content.insertBefore(notice, content.firstChild);
+  }
+
+  if (!currentGroup || !content) {
+    return;
+  }
+
+  const nav = document.createElement("aside");
+  nav.className = "section-nav";
+  nav.setAttribute("aria-label", currentGroup.label + " navigation");
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "section-nav__eyebrow";
+  eyebrow.textContent = currentGroup.label;
+  nav.appendChild(eyebrow);
+
+  const title = document.createElement("h2");
+  title.className = "section-nav__title";
+  title.textContent = "In this section";
+  nav.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "section-nav__list";
+
+  currentGroup.items.forEach(function (item) {
+    const link = document.createElement("a");
+    const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    link.className = "section-nav__link" + (isActive ? " is-active" : "");
+    link.href = item.file;
+    link.textContent = item.label;
+    link.setAttribute("title", item.label);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    }
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+  document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
+  content.parentNode.insertBefore(nav, content);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

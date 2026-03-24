@@ -117,6 +117,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./tabs/metadata.html">
+ <span class="dropdown-text">Metadata</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
@@ -157,25 +161,64 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./tabs/metadata.html"> <i class="bi bi-table" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-newspaper" role="img">
 </i> 
-<span class="menu-text">Metadata</span></a>
+ <span class="menu-text">Updates</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
+        <li>
+    <a class="dropdown-item" href="./updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tabs/tools.html"> <i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="./updates.html">
+ <span class="dropdown-text">Analytics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./updates_news.html">
+ <span class="dropdown-text">News</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./updates_blog.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./updates_other.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-tools" role="img">
 </i> 
-<span class="menu-text">Tools</span></a>
+ <span class="menu-text">Research Tools</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
+        <li>
+    <a class="dropdown-item" href="./tabs/tools.html">
+ <span class="dropdown-text">Tools Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
-</i> 
-<span class="menu-text">Dashboard</span></a>
+        <li>
+    <a class="dropdown-item" href="./tabs/dashboard.html">
+ <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./tabs/tool_irt_scoring.html">
+ <span class="dropdown-text">IRT Scoring Workspace</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tabs/tool_causal_chains.html">
+ <span class="dropdown-text">Mental Health Causal Chains</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/AHRIORG/mhdp-columinate-mental-health-depression" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -190,8 +233,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#co-luminate" id="toc-co-luminate" class="nav-link active" data-scroll-target="#co-luminate">CO-LUMINATE</a></li>
-  <li><a href="#novel-contribution" id="toc-novel-contribution" class="nav-link" data-scroll-target="#novel-contribution">Novel Contribution</a></li>
+  <li><a href="#public-safe-website-shell" id="toc-public-safe-website-shell" class="nav-link active" data-scroll-target="#public-safe-website-shell">Public-safe website shell</a></li>
+  <li><a href="#what-remains-in-the-public-website" id="toc-what-remains-in-the-public-website" class="nav-link" data-scroll-target="#what-remains-in-the-public-website">What remains in the public website</a></li>
+  <li><a href="#what-remains-private" id="toc-what-remains-private" class="nav-link" data-scroll-target="#what-remains-private">What remains private</a></li>
   </ul>
 </nav>
     </div>
@@ -217,26 +261,174 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="co-luminate" class="level2">
-<h2 class="anchored" data-anchor-id="co-luminate">CO-LUMINATE</h2>
-<p><strong>CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures</strong></p>
-<p>This project investigates the longitudinal relationship between social determinants (SES, and caregiver co-residency) and depression symptoms among South African youth aged 13-24.</p>
-<p>Leveraging the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS), the study creates the CO-LUMINATE dataset by linking longitudinal data from 5,279 adolescents.</p>
-<p>The project employs a co-creation model that engages 11 Youth Co-Creators (YCC) to provide thought leadership that refines and nuances the proposed research.</p>
-<p>Through co-creation and secondary data analysis, the project generates transformative insights into how key social determinants of mental health relate to symptoms of depression among South African young people.</p>
+<section id="public-safe-website-shell" class="level2">
+<h2 class="anchored" data-anchor-id="public-safe-website-shell">Public-safe website shell</h2>
+<p>This page preserves the same public-facing frame as the private website while removing substantive internal content.</p>
 </section>
-<section id="novel-contribution" class="level2">
-<h2 class="anchored" data-anchor-id="novel-contribution">Novel Contribution</h2>
+<section id="what-remains-in-the-public-website" class="level2">
+<h2 class="anchored" data-anchor-id="what-remains-in-the-public-website">What remains in the public website</h2>
 <ul>
-<li>The project integrates rigorous longitudinal data linkage with a formal youth co-creation process rather than treating youth input as consultative only.</li>
-<li>It focuses on direct and mediation pathways between social stress exposures and depression symptoms in a population-level LMIC youth sample.</li>
-<li>It produces actionable, contextually grounded evidence for advancing youth mental health research and response in South Africa.</li>
+<li>shared navigation and page structure</li>
+<li>approved branding assets and styling</li>
+<li>placeholder pages for future public-safe releases</li>
+</ul>
+</section>
+<section id="what-remains-private" class="level2">
+<h2 class="anchored" data-anchor-id="what-remains-private">What remains private</h2>
+<ul>
+<li>detailed analysis content</li>
+<li>tool payloads and service-backed workflows</li>
+<li>draft reports, presentations, and update posts</li>
 </ul>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const here = window.location.href;
+  const pathname = window.location.pathname || "";
+  const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const groupedPages = [
+    {
+      id: "technical-docs",
+      label: "Technical Docs",
+      items: [
+        { file: "documentations.html", label: "Overview" },
+        { file: "proposal.html", label: "Proposal" },
+        { file: "longitudinal_linkage.html", label: "Longitudinal Linkage" },
+        { file: "metadata.html", label: "Metadata" },
+        { file: "secondary_data_analysis_plan.html", label: "Statistical Analysis Plan" }
+      ]
+    },
+    {
+      id: "analysis-deliverables",
+      label: "Analysis Deliverables",
+      items: [
+        { file: "analysis_deliverables.html", label: "Overview" },
+        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
+        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
+        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
+        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+      ]
+    },
+    {
+      id: "research-tools",
+      label: "Research Tools",
+      items: [
+        { file: "tools.html", label: "Tools Overview" },
+        { file: "dashboard.html", label: "Project Dashboard" },
+        { file: "dashboard_guide.html", label: "Dashboard Guide" },
+        { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
+        { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
+      ]
+    },
+    {
+      id: "updates",
+      label: "Updates",
+      items: [
+        { file: "updates_website.html", label: "Website" },
+        { file: "updates.html", label: "Analytics" },
+        { file: "updates_news.html", label: "News" },
+        { file: "updates_blog.html", label: "Blog" },
+        { file: "updates_other.html", label: "Others" }
+      ]
+    }
+  ];
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    const textLabel = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const ariaLabel = (link.getAttribute("aria-label") || "").trim();
+    const inferredTitle = textLabel || ariaLabel;
+
+    if ((!link.hasAttribute("title") || !link.getAttribute("title")) && inferredTitle) {
+      link.setAttribute("title", inferredTitle);
+    }
+
+    if (link.hasAttribute("target") || link.hasAttribute("download")) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:")) {
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(rawHref, here);
+    } catch (_error) {
+      return;
+    }
+
+    const path = url.pathname || "";
+    const isExternal = url.origin !== window.location.origin;
+    const isStandaloneInternal =
+      /^\/presentations\/.*\.html$/i.test(path) ||
+      /^\/_tools\//i.test(path) ||
+      /\.(pdf|svg)$/i.test(path);
+
+    if (isExternal || isStandaloneInternal) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+
+  const currentGroup = groupedPages.find(function (group) {
+    return group.items.some(function (item) {
+      return pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    });
+  });
+
+  const content = document.getElementById("quarto-content");
+  if (content && !content.querySelector(".public-site-placeholder")) {
+    const notice = document.createElement("div");
+    notice.className = "public-site-placeholder alert alert-warning";
+    notice.setAttribute("role", "status");
+    notice.style.marginBottom = "1rem";
+    notice.textContent = "In progress, content not yet published to the public website";
+    content.insertBefore(notice, content.firstChild);
+  }
+
+  if (!currentGroup || !content) {
+    return;
+  }
+
+  const nav = document.createElement("aside");
+  nav.className = "section-nav";
+  nav.setAttribute("aria-label", currentGroup.label + " navigation");
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "section-nav__eyebrow";
+  eyebrow.textContent = currentGroup.label;
+  nav.appendChild(eyebrow);
+
+  const title = document.createElement("h2");
+  title.className = "section-nav__title";
+  title.textContent = "In this section";
+  nav.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "section-nav__list";
+
+  currentGroup.items.forEach(function (item) {
+    const link = document.createElement("a");
+    const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    link.className = "section-nav__link" + (isActive ? " is-active" : "");
+    link.href = item.file;
+    link.textContent = item.label;
+    link.setAttribute("title", item.label);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    }
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+  document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
+  content.parentNode.insertBefore(nav, content);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

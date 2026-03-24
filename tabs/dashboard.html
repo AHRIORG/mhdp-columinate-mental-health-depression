@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Placeholder dashboard frame matching the private website structure.">
 
-<title>Dashboard – CO-LUMINATE</title>
+<title>Project Dashboard – CO-LUMINATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="quarto-dashboard nav-fixed dashboard-fill dashboard-sidebar fullcontent quarto-light">
+<body class="quarto-dashboard nav-fixed dashboard-fill fullcontent quarto-light">
 
 
 <div id="quarto-search-results"></div>
@@ -130,6 +131,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tabs/metadata.html">
+ <span class="dropdown-text">Metadata</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
@@ -170,25 +175,64 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/metadata.html"> <i class="bi bi-table" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-newspaper" role="img">
 </i> 
-<span class="menu-text">Metadata</span></a>
+ <span class="menu-text">Updates</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
+        <li>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Analytics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_news.html">
+ <span class="dropdown-text">News</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_blog.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_other.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-tools" role="img">
 </i> 
-<span class="menu-text">Tools</span></a>
+ <span class="menu-text">Research Tools</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
+        <li>
+    <a class="dropdown-item" href="../tabs/tools.html">
+ <span class="dropdown-text">Tools Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../tabs/dashboard.html" aria-current="page"> <i class="bi bi-bar-chart-line" role="img">
-</i> 
-<span class="menu-text">Dashboard</span></a>
+        <li>
+    <a class="dropdown-item" href="../tabs/dashboard.html">
+ <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
+ <span class="dropdown-text">IRT Scoring Workspace</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
+ <span class="dropdown-text">Mental Health Causal Chains</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/AHRIORG/mhdp-columinate-mental-health-depression" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -196,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="quarto-dashboard-header">
 <nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
   <div class="navbar-container container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler hidden" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>    
 
@@ -205,169 +249,225 @@ ul.task-list li input[type="checkbox"] {
 
 
       <div class="navbar-title">
-        <div class="navbar-title-text"><a href="#"><strong>Dashboard</strong></a></div>
-        
+        <div class="navbar-title-text"><a href="#">Project Dashboard</a></div>
+        <div class="navbar-subtitle">Developmental Cascade Explorer</div>
         
       </div>
     </div>
-<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-all" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#all" data-scrolling="false" href="#all" aria-controls="all" aria-selected="true"><span class="nav-link-text">All</span></a></li><li class="nav-item" role="presentation"><a id="tab-sdoh" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#sdoh" data-scrolling="false" href="#sdoh" aria-controls="sdoh" aria-selected="false"><span class="nav-link-text">SDoH</span></a></li><li class="nav-item" role="presentation"><a id="tab-trajectories" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#trajectories" data-scrolling="false" href="#trajectories" aria-controls="trajectories" aria-selected="false"><span class="nav-link-text">Trajectories</span></a></li><li class="nav-item" role="presentation"><a id="tab-data" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#data" data-scrolling="false" href="#data" aria-controls="data" aria-selected="false"><span class="nav-link-text">Data</span></a></li></ul></div></div>
+</div>
 </nav>
 </header></header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages dashboard-sidebar-container">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill">
 <!-- sidebar -->
 <!-- margin-sidebar -->
 <!-- main -->
 
-<div class="bslib-sidebar-layout html-fill-item html-fill-container" data-bslib-sidebar-open="desktop" data-bslib-sidebar-init="true" data-bslib-sidebar-border="false" data-bslib-sidebar-border-radius="false"><div class="main html-fill-container html-fill-item"><div class="sidebar-content html-fill-item html-fill-container">
-<div class="tab-content bslib-grid html-fill-item html-fill-container" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+<div class="bslib-grid-item html-fill-item bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div id="all" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-all">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 8fr) minmax(3em, 46fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 15fr) minmax(3em, 25.5fr) minmax(3em, 25.5fr) minmax(3em, 25.5fr) minmax(3em, 27.5fr);
+<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>The dashboard route remains part of the public website structure.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<p>No dashboard feeds, objects, or internal analytical content are published here.</p>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+</div>
+<div class="bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
 grid-auto-rows: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-info showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
+<div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div data-icon="diagram-3" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
-
-<i class="bi bi-diagram-3"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Cohorts
-</p>
-<p class="value-box-value">
-5
-</p>
+<p>Approved dashboard content can be promoted later without rebuilding the site frame.</p>
 </div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-primary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div><div class="bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content); grid-auto-columns: minmax(0, 1fr);">
+<div class="card bslib-card html-fill-container" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<div data-icon="people-fill" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
-
-<i class="bi bi-people-fill"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Participants/Records
-</p>
-<p class="value-box-value">
-5,226 / 5,616
-</p>
+<p>This public route intentionally acts as a placeholder only.</p>
 </div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-warning showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="activity" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
-
-<i class="bi bi-activity"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Depression (%)
-</p>
-<p class="value-box-value">
-6.0%
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-primary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="funnel" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
-
-<i class="bi bi-funnel"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Subgroups
-</p>
-<p class="value-box-value">
-10
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div><div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="card valuebox cell html-fill-item html-fill-container bslib-card bslib-value-box bg-secondary showcase-left-center" data-bslib-card-init="" data-require-bs-caller="card()">
-<div class="card-body html-fill-item html-fill-container">
-<div data-icon="bezier2" class="html-fill-item html-fill-container value-box-grid">
-<div class="value-box-showcase html-fill-item html-fill-container">
-
-<i class="bi bi-bezier2"></i></div>
-<div class="value-box-area">
-<p class="value-box-title">
-Trajectory dimensions
-</p>
-<p class="value-box-value">
-0
-</p>
-</div>
-</div>
-</div>
-<script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
-</div>
-</div>
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: ;
-grid-auto-rows: minmax(0, 1fr);">
-
-</div>
-</div>
-</div><div id="sdoh" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-sdoh">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, 40fr); grid-auto-columns: minmax(0, 1fr);">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: ;
-grid-auto-rows: minmax(0, 1fr);">
-
-</div>
-</div>
-</div><div id="trajectories" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-trajectories">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: ; grid-auto-columns: minmax(0, 1fr);">
-<!-- Intentionally empty for now. -->
-</div>
-</div><div id="data" class="dashboard-page tab-pane grid-skip html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-data">
-<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: ; grid-auto-columns: minmax(0, 1fr);">
-<!-- Intentionally empty for now. -->
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 
 
-<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+<div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden">
 
 </div>
 </div>
 </div>
 </div>
-</div></div><aside id="bslib-sidebar-1" class="sidebar html-fill-container html-fill-item"><div class="html-fill-container html-fill-item">
-<div style="text-align: center;">
-<p><strong>Dataset Coverage</strong></p>
-<p>Mental health (single-timepoint)<br>
-<em>Aug 2012 to Dec 2022</em></p>
-<p>SDoH trajectories (longitudinal)<br>
-<em>Jan 2000 to Dec 2019</em></p>
-<p style="margin-top: 1rem; font-size: 0.9em;">
-<em>Disclaimer: This dashboard uses aggregated data only.</em>
-</p>
-</div>
-</div></aside>
-<button class="collapse-toggle" type="button" title="Toggle sidebar" aria-expanded="true" aria-controls="bslib-sidebar-1">
-    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-chevron-left collapse-icon" style="fill:currentColor;" aria-hidden="true" role="img">
-      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"></path>
-    </svg>
-</button>
-<script data-bslib-sidebar-init="">
-bslib.Sidebar.initCollapsibleAll()
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const here = window.location.href;
+  const pathname = window.location.pathname || "";
+  const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const groupedPages = [
+    {
+      id: "technical-docs",
+      label: "Technical Docs",
+      items: [
+        { file: "documentations.html", label: "Overview" },
+        { file: "proposal.html", label: "Proposal" },
+        { file: "longitudinal_linkage.html", label: "Longitudinal Linkage" },
+        { file: "metadata.html", label: "Metadata" },
+        { file: "secondary_data_analysis_plan.html", label: "Statistical Analysis Plan" }
+      ]
+    },
+    {
+      id: "analysis-deliverables",
+      label: "Analysis Deliverables",
+      items: [
+        { file: "analysis_deliverables.html", label: "Overview" },
+        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
+        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
+        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
+        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+      ]
+    },
+    {
+      id: "research-tools",
+      label: "Research Tools",
+      items: [
+        { file: "tools.html", label: "Tools Overview" },
+        { file: "dashboard.html", label: "Project Dashboard" },
+        { file: "dashboard_guide.html", label: "Dashboard Guide" },
+        { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
+        { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
+      ]
+    },
+    {
+      id: "updates",
+      label: "Updates",
+      items: [
+        { file: "updates_website.html", label: "Website" },
+        { file: "updates.html", label: "Analytics" },
+        { file: "updates_news.html", label: "News" },
+        { file: "updates_blog.html", label: "Blog" },
+        { file: "updates_other.html", label: "Others" }
+      ]
+    }
+  ];
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    const textLabel = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const ariaLabel = (link.getAttribute("aria-label") || "").trim();
+    const inferredTitle = textLabel || ariaLabel;
+
+    if ((!link.hasAttribute("title") || !link.getAttribute("title")) && inferredTitle) {
+      link.setAttribute("title", inferredTitle);
+    }
+
+    if (link.hasAttribute("target") || link.hasAttribute("download")) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:")) {
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(rawHref, here);
+    } catch (_error) {
+      return;
+    }
+
+    const path = url.pathname || "";
+    const isExternal = url.origin !== window.location.origin;
+    const isStandaloneInternal =
+      /^\/presentations\/.*\.html$/i.test(path) ||
+      /^\/_tools\//i.test(path) ||
+      /\.(pdf|svg)$/i.test(path);
+
+    if (isExternal || isStandaloneInternal) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+
+  const currentGroup = groupedPages.find(function (group) {
+    return group.items.some(function (item) {
+      return pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    });
+  });
+
+  const content = document.getElementById("quarto-content");
+  if (content && !content.querySelector(".public-site-placeholder")) {
+    const notice = document.createElement("div");
+    notice.className = "public-site-placeholder alert alert-warning";
+    notice.setAttribute("role", "status");
+    notice.style.marginBottom = "1rem";
+    notice.textContent = "In progress, content not yet published to the public website";
+    content.insertBefore(notice, content.firstChild);
+  }
+
+  if (!currentGroup || !content) {
+    return;
+  }
+
+  const nav = document.createElement("aside");
+  nav.className = "section-nav";
+  nav.setAttribute("aria-label", currentGroup.label + " navigation");
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "section-nav__eyebrow";
+  eyebrow.textContent = currentGroup.label;
+  nav.appendChild(eyebrow);
+
+  const title = document.createElement("h2");
+  title.className = "section-nav__title";
+  title.textContent = "In this section";
+  nav.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "section-nav__list";
+
+  currentGroup.items.forEach(function (item) {
+    const link = document.createElement("a");
+    const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    link.className = "section-nav__link" + (isActive ? " is-active" : "");
+    link.href = item.file;
+    link.textContent = item.label;
+    link.setAttribute("title", item.label);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    }
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+  document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
+  content.parentNode.insertBefore(nav, content);
+});
 </script>
-</div>
-
-
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

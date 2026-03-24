@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -117,6 +117,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tabs/metadata.html">
+ <span class="dropdown-text">Metadata</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
@@ -157,25 +161,64 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/metadata.html"> <i class="bi bi-table" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-newspaper" role="img">
 </i> 
-<span class="menu-text">Metadata</span></a>
+ <span class="menu-text">Updates</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
+        <li>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Analytics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_news.html">
+ <span class="dropdown-text">News</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_blog.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_other.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-tools" role="img">
 </i> 
-<span class="menu-text">Tools</span></a>
+ <span class="menu-text">Research Tools</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
+        <li>
+    <a class="dropdown-item" href="../tabs/tools.html">
+ <span class="dropdown-text">Tools Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
-</i> 
-<span class="menu-text">Dashboard</span></a>
+        <li>
+    <a class="dropdown-item" href="../tabs/dashboard.html">
+ <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
+ <span class="dropdown-text">IRT Scoring Workspace</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
+ <span class="dropdown-text">Mental Health Causal Chains</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/AHRIORG/mhdp-columinate-mental-health-depression" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -185,7 +228,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#placeholder-deliverable" id="toc-placeholder-deliverable" class="nav-link active" data-scroll-target="#placeholder-deliverable">Placeholder deliverable</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -208,53 +259,158 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="objective" class="level2">
-<h2 class="anchored" data-anchor-id="objective">Objective</h2>
-<p>Explore interactions between social determinants and behavioral mediators of depression.</p>
-<p>SAP-aligned mediators currently stated on the site are <code>migration</code>, <code>substance use</code>, and <code>sexual behaviour</code>.</p>
-</section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>This deliverable summarizes the current mediator-screening and prioritization workstream, including preliminary outcome associations and mediator interdependence patterns used to support downstream causal modeling.</p>
-</section>
-<section id="keywords" class="level2">
-<h2 class="anchored" data-anchor-id="keywords">Keywords</h2>
-<p>behavioral mediators; migration; substance use; sexual behaviour; preliminary associations; logistic regression</p>
-</section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
-<ul>
-<li>Report available</li>
-<li>Presentation available</li>
-<li>Current outputs operationalize mediator prioritization and support later causal work</li>
-</ul>
-</section>
-<section id="current-outputs" class="level2">
-<h2 class="anchored" data-anchor-id="current-outputs">Current Outputs</h2>
-<section id="report" class="level3">
-<h3 class="anchored" data-anchor-id="report">Report</h3>
-<ul>
-<li><a href="../reports/preliminary_mediator_associations.html">Preliminary Mediator Associations Report</a></li>
-</ul>
-</section>
-<section id="presentation" class="level3">
-<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
-<ul>
-<li><a href="../presentations/slides_obj00_mediation_prelim.html">Mediation to Outcome Preliminary Analysis</a></li>
-</ul>
-</section>
-</section>
-<section id="supporting-technical-docs" class="level2">
-<h2 class="anchored" data-anchor-id="supporting-technical-docs">Supporting Technical Docs</h2>
-<ul>
-<li><a href="../tabs/secondary_data_analysis_plan.html">Statistical Analysis Plan</a></li>
-<li><a href="../tabs/reports.html">Reports library</a></li>
-</ul>
+<section id="placeholder-deliverable" class="level2">
+<h2 class="anchored" data-anchor-id="placeholder-deliverable">Placeholder deliverable</h2>
+<p>This objective route remains in the public site frame without publishing objective-specific content.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const here = window.location.href;
+  const pathname = window.location.pathname || "";
+  const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const groupedPages = [
+    {
+      id: "technical-docs",
+      label: "Technical Docs",
+      items: [
+        { file: "documentations.html", label: "Overview" },
+        { file: "proposal.html", label: "Proposal" },
+        { file: "longitudinal_linkage.html", label: "Longitudinal Linkage" },
+        { file: "metadata.html", label: "Metadata" },
+        { file: "secondary_data_analysis_plan.html", label: "Statistical Analysis Plan" }
+      ]
+    },
+    {
+      id: "analysis-deliverables",
+      label: "Analysis Deliverables",
+      items: [
+        { file: "analysis_deliverables.html", label: "Overview" },
+        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
+        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
+        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
+        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+      ]
+    },
+    {
+      id: "research-tools",
+      label: "Research Tools",
+      items: [
+        { file: "tools.html", label: "Tools Overview" },
+        { file: "dashboard.html", label: "Project Dashboard" },
+        { file: "dashboard_guide.html", label: "Dashboard Guide" },
+        { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
+        { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
+      ]
+    },
+    {
+      id: "updates",
+      label: "Updates",
+      items: [
+        { file: "updates_website.html", label: "Website" },
+        { file: "updates.html", label: "Analytics" },
+        { file: "updates_news.html", label: "News" },
+        { file: "updates_blog.html", label: "Blog" },
+        { file: "updates_other.html", label: "Others" }
+      ]
+    }
+  ];
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    const textLabel = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const ariaLabel = (link.getAttribute("aria-label") || "").trim();
+    const inferredTitle = textLabel || ariaLabel;
+
+    if ((!link.hasAttribute("title") || !link.getAttribute("title")) && inferredTitle) {
+      link.setAttribute("title", inferredTitle);
+    }
+
+    if (link.hasAttribute("target") || link.hasAttribute("download")) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:")) {
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(rawHref, here);
+    } catch (_error) {
+      return;
+    }
+
+    const path = url.pathname || "";
+    const isExternal = url.origin !== window.location.origin;
+    const isStandaloneInternal =
+      /^\/presentations\/.*\.html$/i.test(path) ||
+      /^\/_tools\//i.test(path) ||
+      /\.(pdf|svg)$/i.test(path);
+
+    if (isExternal || isStandaloneInternal) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+
+  const currentGroup = groupedPages.find(function (group) {
+    return group.items.some(function (item) {
+      return pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    });
+  });
+
+  const content = document.getElementById("quarto-content");
+  if (content && !content.querySelector(".public-site-placeholder")) {
+    const notice = document.createElement("div");
+    notice.className = "public-site-placeholder alert alert-warning";
+    notice.setAttribute("role", "status");
+    notice.style.marginBottom = "1rem";
+    notice.textContent = "In progress, content not yet published to the public website";
+    content.insertBefore(notice, content.firstChild);
+  }
+
+  if (!currentGroup || !content) {
+    return;
+  }
+
+  const nav = document.createElement("aside");
+  nav.className = "section-nav";
+  nav.setAttribute("aria-label", currentGroup.label + " navigation");
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "section-nav__eyebrow";
+  eyebrow.textContent = currentGroup.label;
+  nav.appendChild(eyebrow);
+
+  const title = document.createElement("h2");
+  title.className = "section-nav__title";
+  title.textContent = "In this section";
+  nav.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "section-nav__list";
+
+  currentGroup.items.forEach(function (item) {
+    const link = document.createElement("a");
+    const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    link.className = "section-nav__link" + (isActive ? " is-active" : "");
+    link.href = item.file;
+    link.textContent = item.label;
+    link.setAttribute("title", item.label);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    }
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+  document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
+  content.parentNode.insertBefore(nav, content);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

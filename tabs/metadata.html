@@ -68,14 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="../site_libs/d3-3.3.8/d3.min.js"></script>
-<script src="../site_libs/dagre-0.4.0/dagre-d3.min.js"></script>
-<link href="../site_libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
-<script src="../site_libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
-<link href="../site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="../site_libs/chromatography-0.1/chromatography.js"></script>
-<script src="../site_libs/DiagrammeR-binding-1.0.11/DiagrammeR.js"></script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -125,6 +117,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tabs/metadata.html">
+ <span class="dropdown-text">Metadata</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
@@ -165,25 +161,64 @@ ul.task-list li input[type="checkbox"] {
   </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
-    <a class="nav-link active" href="../tabs/metadata.html" aria-current="page"> <i class="bi bi-table" role="img">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-newspaper" role="img">
 </i> 
-<span class="menu-text">Metadata</span></a>
+ <span class="menu-text">Updates</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
+        <li>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/tools.html"> <i class="bi bi-tools" role="img">
+        <li>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Analytics</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_news.html">
+ <span class="dropdown-text">News</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_blog.html">
+ <span class="dropdown-text">Blog</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../updates_other.html">
+ <span class="dropdown-text">Others</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-tools" role="img">
 </i> 
-<span class="menu-text">Tools</span></a>
+ <span class="menu-text">Research Tools</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
+        <li>
+    <a class="dropdown-item" href="../tabs/tools.html">
+ <span class="dropdown-text">Tools Overview</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../tabs/dashboard.html"> <i class="bi bi-bar-chart-line" role="img">
-</i> 
-<span class="menu-text">Dashboard</span></a>
+        <li>
+    <a class="dropdown-item" href="../tabs/dashboard.html">
+ <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
+ <span class="dropdown-text">IRT Scoring Workspace</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
+ <span class="dropdown-text">Mental Health Causal Chains</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://github.com/AHRIORG/CO-LUMINATE" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/AHRIORG/mhdp-columinate-mental-health-depression" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE GitHub" target="_blank"><i class="bi bi-github"></i></a>
     <a href="https://osf.io/6j2nu/overview?view_only=552a5734dd794db59af7964d451c2569" title="" class="quarto-navigation-tool px-1" aria-label="CO-LUMINATE OSF" target="_blank"><i class="bi bi-globe2"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -198,16 +233,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#metadata-source" id="toc-metadata-source" class="nav-link active" data-scroll-target="#metadata-source">Metadata Source</a></li>
-  <li><a href="#dataset-summary" id="toc-dataset-summary" class="nav-link" data-scroll-target="#dataset-summary">Dataset Summary</a></li>
-  <li><a href="#study-design-extract" id="toc-study-design-extract" class="nav-link" data-scroll-target="#study-design-extract">Study Design Extract</a></li>
-  <li><a href="#cohorts-included" id="toc-cohorts-included" class="nav-link" data-scroll-target="#cohorts-included">Cohorts Included</a></li>
-  <li><a href="#object-snapshot" id="toc-object-snapshot" class="nav-link" data-scroll-target="#object-snapshot">Object Snapshot</a></li>
-  <li><a href="#consort-flow" id="toc-consort-flow" class="nav-link" data-scroll-target="#consort-flow">CONSORT Flow</a></li>
-  <li><a href="#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" id="toc-data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</a></li>
-  <li><a href="#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" id="toc-data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</a></li>
-  <li><a href="#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" id="toc-data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="nav-link" data-scroll-target="#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</a></li>
-  <li><a href="#dataset-name-reference" id="toc-dataset-name-reference" class="nav-link" data-scroll-target="#dataset-name-reference">Dataset Name Reference</a></li>
+  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
   </ul>
 </nav>
     </div>
@@ -233,501 +259,158 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="metadata-source" class="level2">
-<h2 class="anchored" data-anchor-id="metadata-source">Metadata Source</h2>
-<p>This page is extracted and adapted from the dataset preparation source index.</p>
-<p>Current scope is limited to two data dictionaries:</p>
-<ul>
-<li>Childhood social exposure panel</li>
-<li>Integrated multi-study mental health panel</li>
-</ul>
-<p>All derived R objects for this page are stored in <code>PRJ-CO-LUMINATE/_tools/_objects</code>.</p>
-</section>
-<section id="dataset-summary" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-summary">Dataset Summary</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 66%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Field</th>
-<th style="text-align: left;">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Project</td>
-<td style="text-align: left;">CO-LUMINATE</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Population</td>
-<td style="text-align: left;">South African youth aged 13-24</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Linked sample size</td>
-<td style="text-align: left;">5,226</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Data source backbone</td>
-<td style="text-align: left;">AHRI HDSS</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Core mental health outcomes</td>
-<td style="text-align: left;">Depression symptoms (SSQ-14, PHQ-9)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Priority social determinants</td>
-<td style="text-align: left;">SES and caregiver co-residency</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Cohorts nested in AHRI HDSS</td>
-<td style="text-align: left;">DREAMS, Multilevel, Isisekelo Sempilo, TasP, Thetha Nami</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Youth Co-Creators</td>
-<td style="text-align: left;">11</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="study-design-extract" class="level2">
-<h2 class="anchored" data-anchor-id="study-design-extract">Study Design Extract</h2>
-<p>The CO-LUMINATE linked dataset connects individual-level mental health outcomes from cohort studies to household-level longitudinal HDSS records. The objective is to estimate longitudinal direct and mediation relationships between social determinants and depressive symptoms among youth aged 13-24.</p>
-<p>The analytical design combines:</p>
-<ol type="1">
-<li>HDSS longitudinal household exposure histories.</li>
-<li>Cohort-based depression outcomes measured with SSQ-14 and PHQ-9.</li>
-<li>Linkage across five cohorts nested within AHRI HDSS.</li>
-</ol>
-</section>
-<section id="cohorts-included" class="level2">
-<h2 class="anchored" data-anchor-id="cohorts-included">Cohorts Included</h2>
-<ul>
-<li>DREAMS</li>
-<li>Multilevel</li>
-<li>Isisekelo Sempilo</li>
-<li>Treatment as Prevention (TasP)</li>
-<li>Thetha Nami</li>
-</ul>
-</section>
-<section id="object-snapshot" class="level2">
-<h2 class="anchored" data-anchor-id="object-snapshot">Object Snapshot</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Dataset</th>
-<th style="text-align: right;">Rows</th>
-<th style="text-align: right;">Columns</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Childhood Social Exposure Panel</td>
-<td style="text-align: right;">52463</td>
-<td style="text-align: right;">31</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Integrated Multi-study Mental Health Panel</td>
-<td style="text-align: right;">5616</td>
-<td style="text-align: right;">33</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="consort-flow" class="level2">
-<h2 class="anchored" data-anchor-id="consort-flow">CONSORT Flow</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div id="htmlwidget-84ebe06522c206262db9" style="width:100%;height:900px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-84ebe06522c206262db9">{"x":{"diagram":"%%{init: {\"themeVariables\": {\"fontSize\": \"20px\"}, \"flowchart\": {\"nodeSpacing\": 80, \"rankSpacing\": 110}}}%%\ngraph TD\nA[\"Mental health<br/>available<br/>(n=6,207)\"]\nX1[\"Excluded<br/>Missing depression<br/>endpoint (n=183)<br/>Studies:<br/>TasP (n=181)<br/>Dreams (n=1)<br/>Multilevel (n=1)\"]\nB[\"Mental health<br/>remaining after<br/>endpoint filter<br/>(n=6,024)\"]\nX2[\"Excluded<br/>No SDoH match<br/>(n=798)<br/>Studies:<br/>Thetha Nami (n=528)<br/>Dreams (n=116)<br/>Multilevel (n=84)<br/>Isisekelo Sempilo (n=77)<br/>TasP (n=7)\"]\nM[\"Mental health<br/>remaining after<br/>match filter<br/>(n=5,226)\"]\nC[\"SDoH<br/>available<br/>(n=5,398)\"]\nX3[\"Excluded<br/>No eligible mental<br/>health match<br/>(n=172)<br/>Studies:<br/>TasP (n=170)<br/>Dreams (n=1)<br/>Multilevel (n=1)\"]\nS[\"SDoH remaining<br/>after match filter<br/>(n=5,226)\"]\nD[\"Final included<br/>Depression endpoint<br/>and SDoH coverage<br/>(n=5,226)\"]\nA --> B\nB --> M\nM --> D\nC --> S\nS --> D\nA --> X1\nB --> X2\nC --> X3\nclassDef included fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;\nclassDef excluded fill:#fff1f2,stroke:#e11d48,color:#4c0519,stroke-width:1.5px;\nclass A,B,M,C,S,D included;\nclass X1,X2,X3 excluded;"},"evals":[],"jsHooks":[]}</script>
-</div>
-</div>
-<p>Participant-focused CONSORT logic: participants are retained only if they have both a depression endpoint and SDoH trajectory coverage.</p>
-<p>The row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification.</p>
-</section>
-<section id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 21%">
-<col style="width: 5%">
-<col style="width: 23%">
-<col style="width: 5%">
-<col style="width: 42%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Role</th>
-<th style="text-align: left;">Variable</th>
-<th style="text-align: left;">Label</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Value Labels</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Identifier</strong></td>
-<td style="text-align: left;">USUBJID</td>
-<td style="text-align: left;">Unique Subject Identifier</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 48 to 260880</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Time Variable</strong></td>
-<td style="text-align: left;">EXPAGE</td>
-<td style="text-align: left;">Exposure Age</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 0 to 12</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Exposure (SDoH Trajectory Input)</strong></td>
-<td style="text-align: left;">LIVEDWOM</td>
-<td style="text-align: left;">Lived Without Mother</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">LIVEDWOF</td>
-<td style="text-align: left;">Lived Without Father</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">HHCHLD14O</td>
-<td style="text-align: left;">Overcrowded (0–14y children &gt; 3)</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">HHSES</td>
-<td style="text-align: left;">Household Socioeconomic Status</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Low; Middle; High</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Baseline Factor</strong></td>
-<td style="text-align: left;">MAGE</td>
-<td style="text-align: left;">Mother’s Age</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 11 to 82</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MEDU</td>
-<td style="text-align: left;">Mother’s Education</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">None/Primary; Secondary; Completed Matric</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MHIV</td>
-<td style="text-align: left;">Mother’s HIV Status</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Error; Negative; Positive</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MPTS</td>
-<td style="text-align: left;">Mother’s Partner Status</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Missing/Refused; No partner; Married; Regular; Casual; Widowed/Separated</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MMIG</td>
-<td style="text-align: left;">Mother’s Ever Migrated (Previous 1 Year)</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FAGE</td>
-<td style="text-align: left;">Father’s Age</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 10 to 80</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FEDU</td>
-<td style="text-align: left;">Father’s Education</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">None/Primary; Secondary; Completed Matric</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FHIV</td>
-<td style="text-align: left;">Father’s HIV Status</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Error; Negative; Positive</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FPTS</td>
-<td style="text-align: left;">Father’s Partner Status</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Missing/Refused; No partner; Married; Regular; Casual; Widowed/Separated</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FMIG</td>
-<td style="text-align: left;">Father’s Ever Migrated (Previous 1 Year)</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 23%">
-<col style="width: 6%">
-<col style="width: 18%">
-<col style="width: 5%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Role</th>
-<th style="text-align: left;">Variable</th>
-<th style="text-align: left;">Label</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Value Labels</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><strong>Identifier</strong></td>
-<td style="text-align: left;">USUBJID</td>
-<td style="text-align: left;">Unique Subject Identifier</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 48 to 260880</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Outcome</strong></td>
-<td style="text-align: left;">DPBN</td>
-<td style="text-align: left;">Depressed</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><strong>Mediator</strong></td>
-<td style="text-align: left;">DNKA</td>
-<td style="text-align: left;">Drank Alcohol</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">ESXC</td>
-<td style="text-align: left;">Ever Had Sex</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">FDSC</td>
-<td style="text-align: left;">Food Insecure</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">GOVG</td>
-<td style="text-align: left;">No Government Grant</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">VLNC</td>
-<td style="text-align: left;">Experienced Violence</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">SCSP</td>
-<td style="text-align: left;">Has Social Support</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">SCHL</td>
-<td style="text-align: left;">In School</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><strong>Mediator-Outcome Confounder</strong></td>
-<td style="text-align: left;">SEX</td>
-<td style="text-align: left;">Sex</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Male; Female</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">AGE</td>
-<td style="text-align: left;">Age (Years)</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 13 to 24</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">HIVS</td>
-<td style="text-align: left;">HIV Positive</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Negative; Positive</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">ORPH</td>
-<td style="text-align: left;">Orphanhood Status</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">Both Parents Alive; One Parent Deceased; Both Parents Deceased</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">EXTMG</td>
-<td style="text-align: left;">External migration</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">RURAL</td>
-<td style="text-align: left;">Reside in Rural Area</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">CLYR</td>
-<td style="text-align: left;">Calendar year</td>
-<td style="text-align: left;">numeric</td>
-<td style="text-align: left;">Min-Max: 0 to 10</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="level2">
-<h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 2%">
-<col style="width: 13%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 13%">
-<col style="width: 41%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Variable</th>
-<th style="text-align: left;">Label</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Value Labels</th>
-<th style="text-align: left;">Source Variables</th>
-<th style="text-align: left;">Derivation</th>
-<th style="text-align: left;">Status</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">DPBN</td>
-<td style="text-align: left;">Depressed</td>
-<td style="text-align: left;">factor</td>
-<td style="text-align: left;">No; Yes</td>
-<td style="text-align: left;">PHQBIN, irt_joint_models.rds</td>
-<td style="text-align: left;">PHQBIN &gt;= 10</td>
-<td style="text-align: left;">Implemented in dataset preparation merge</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ELCDV</td>
-<td style="text-align: left;">Early Childhood Development (Ages 0–5)</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Childhood exposure trajectories (0-5 years)</td>
-<td style="text-align: left;">Initialized as NA_character_ during dataset preparation merge; later populated from early-years latent trajectory class assignment.</td>
-<td style="text-align: left;">Placeholder in dataset preparation; populated in class-derivation stage</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">MDCDV</td>
-<td style="text-align: left;">Middle-Late Childhood Development (Ages 6–12)</td>
-<td style="text-align: left;">character</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Childhood exposure trajectories (6-12 years)</td>
-<td style="text-align: left;">Initialized as NA_character_ during dataset preparation merge; later populated from middle-late years latent trajectory class assignment.</td>
-<td style="text-align: left;">Placeholder in dataset preparation; populated in class-derivation stage</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<section id="dataset-name-reference" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-name-reference">Dataset Name Reference</h2>
-<div class="cell">
-<div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Dataset Name</th>
-<th style="text-align: left;">Readable Name</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">dt_childhood_exposure</td>
-<td style="text-align: left;">Childhood Social Exposure Panel</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dt_multistudies</td>
-<td style="text-align: left;">Integrated Multi-study Mental Health Panel</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">dt_psychometric</td>
-<td style="text-align: left;">Psychometric Bridge Source Data</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">dt_dreams_multi_ssq</td>
-<td style="text-align: left;">SSQ-only Cohort Response Data</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<section id="placeholder-section" class="level2">
+<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
+<p>The metadata route remains available for future approved public-safe metadata releases.</p>
 
 
 </section>
 
 </main> <!-- /main -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const here = window.location.href;
+  const pathname = window.location.pathname || "";
+  const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const groupedPages = [
+    {
+      id: "technical-docs",
+      label: "Technical Docs",
+      items: [
+        { file: "documentations.html", label: "Overview" },
+        { file: "proposal.html", label: "Proposal" },
+        { file: "longitudinal_linkage.html", label: "Longitudinal Linkage" },
+        { file: "metadata.html", label: "Metadata" },
+        { file: "secondary_data_analysis_plan.html", label: "Statistical Analysis Plan" }
+      ]
+    },
+    {
+      id: "analysis-deliverables",
+      label: "Analysis Deliverables",
+      items: [
+        { file: "analysis_deliverables.html", label: "Overview" },
+        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
+        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
+        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
+        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+      ]
+    },
+    {
+      id: "research-tools",
+      label: "Research Tools",
+      items: [
+        { file: "tools.html", label: "Tools Overview" },
+        { file: "dashboard.html", label: "Project Dashboard" },
+        { file: "dashboard_guide.html", label: "Dashboard Guide" },
+        { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
+        { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
+      ]
+    },
+    {
+      id: "updates",
+      label: "Updates",
+      items: [
+        { file: "updates_website.html", label: "Website" },
+        { file: "updates.html", label: "Analytics" },
+        { file: "updates_news.html", label: "News" },
+        { file: "updates_blog.html", label: "Blog" },
+        { file: "updates_other.html", label: "Others" }
+      ]
+    }
+  ];
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    const textLabel = (link.textContent || "").replace(/\s+/g, " ").trim();
+    const ariaLabel = (link.getAttribute("aria-label") || "").trim();
+    const inferredTitle = textLabel || ariaLabel;
+
+    if ((!link.hasAttribute("title") || !link.getAttribute("title")) && inferredTitle) {
+      link.setAttribute("title", inferredTitle);
+    }
+
+    if (link.hasAttribute("target") || link.hasAttribute("download")) return;
+
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || rawHref.startsWith("#") || rawHref.startsWith("mailto:") || rawHref.startsWith("tel:")) {
+      return;
+    }
+
+    let url;
+    try {
+      url = new URL(rawHref, here);
+    } catch (_error) {
+      return;
+    }
+
+    const path = url.pathname || "";
+    const isExternal = url.origin !== window.location.origin;
+    const isStandaloneInternal =
+      /^\/presentations\/.*\.html$/i.test(path) ||
+      /^\/_tools\//i.test(path) ||
+      /\.(pdf|svg)$/i.test(path);
+
+    if (isExternal || isStandaloneInternal) {
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener");
+    }
+  });
+
+  const currentGroup = groupedPages.find(function (group) {
+    return group.items.some(function (item) {
+      return pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    });
+  });
+
+  const content = document.getElementById("quarto-content");
+  if (content && !content.querySelector(".public-site-placeholder")) {
+    const notice = document.createElement("div");
+    notice.className = "public-site-placeholder alert alert-warning";
+    notice.setAttribute("role", "status");
+    notice.style.marginBottom = "1rem";
+    notice.textContent = "In progress, content not yet published to the public website";
+    content.insertBefore(notice, content.firstChild);
+  }
+
+  if (!currentGroup || !content) {
+    return;
+  }
+
+  const nav = document.createElement("aside");
+  nav.className = "section-nav";
+  nav.setAttribute("aria-label", currentGroup.label + " navigation");
+
+  const eyebrow = document.createElement("p");
+  eyebrow.className = "section-nav__eyebrow";
+  eyebrow.textContent = currentGroup.label;
+  nav.appendChild(eyebrow);
+
+  const title = document.createElement("h2");
+  title.className = "section-nav__title";
+  title.textContent = "In this section";
+  nav.appendChild(title);
+
+  const list = document.createElement("div");
+  list.className = "section-nav__list";
+
+  currentGroup.items.forEach(function (item) {
+    const link = document.createElement("a");
+    const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
+    link.className = "section-nav__link" + (isActive ? " is-active" : "");
+    link.href = item.file;
+    link.textContent = item.label;
+    link.setAttribute("title", item.label);
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    }
+    list.appendChild(link);
+  });
+
+  nav.appendChild(list);
+  document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
+  content.parentNode.insertBefore(nav, content);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
