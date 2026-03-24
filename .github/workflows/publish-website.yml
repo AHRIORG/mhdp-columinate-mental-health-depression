@@ -3,7 +3,7 @@ name: Publish Website
 on:
   push:
     branches:
-      - gh-pages
+      - main
     paths:
       - ".github/workflows/publish-website.yml"
       - "website/**"
