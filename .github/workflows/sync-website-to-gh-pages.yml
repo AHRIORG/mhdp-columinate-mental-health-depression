@@ -33,6 +33,8 @@ jobs:
           rsync -a --delete --exclude '.git/' --exclude '.DS_Store' website/ "$tmp_dir"/
           find "$tmp_dir" -name '.DS_Store' -delete
           touch "$tmp_dir/.nojekyll"
+          mkdir -p "$tmp_dir/.github/workflows"
+          cp .github/workflows/publish-website.yml "$tmp_dir/.github/workflows/publish-website.yml"
 
           cd "$tmp_dir"
           if git status --porcelain | grep . >/dev/null 2>&1; then
