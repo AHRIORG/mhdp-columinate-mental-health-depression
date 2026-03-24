@@ -1,0 +1,46 @@
+name: Sync Website To gh-pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "website/**"
+      - ".github/workflows/sync-website-to-gh-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync website payload to gh-pages root
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          tmp_dir="$(mktemp -d)"
+          git fetch origin gh-pages
+          git worktree add "$tmp_dir" origin/gh-pages
+
+          rsync -a --delete --exclude '.git/' --exclude '.DS_Store' website/ "$tmp_dir"/
+          find "$tmp_dir" -name '.DS_Store' -delete
+          touch "$tmp_dir/.nojekyll"
+
+          cd "$tmp_dir"
+          if git status --porcelain | grep . >/dev/null 2>&1; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "Sync website payload from main (${GITHUB_SHA:0:7})"
+            git push origin HEAD:gh-pages
+          else
+            echo "No website payload changes to sync."
+          fi
