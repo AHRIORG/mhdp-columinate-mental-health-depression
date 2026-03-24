@@ -1,0 +1,47 @@
+# OS artifacts
+.DS_Store
+Thumbs.db
+
+# Editor / IDE state
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs and local env files
+*.log
+.env
+.env.*
+!.env.example
+
+# R / Quarto local state
+.Rhistory
+.RData
+.RDataTmp
+.Ruserdata
+.Rproj.user/
+.quarto/
+**/*.quarto_ipynb
+
+# renv local state
+renv/library/
+renv/staging/
+website/renv/library/
+website/renv/staging/
+
+# Quarto render output
+_site/
+website/_site/
+website/.quarto/
+
+# Temporary build directories
+dist/
+build/
+tmp/
+
+# Internal-only local folders
+_assets/
+_quarantine/
+!website/_assets/
+!website/_assets/**
