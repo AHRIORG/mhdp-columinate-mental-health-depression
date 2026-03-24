@@ -4,6 +4,10 @@ Public publication repository for the CO-LUMINATE depression workstream within M
 
 This repository is the approved release surface. Development happens in the private `CO-LUMINATE` repository, and only reviewed content should be promoted here.
 
+## Public Website
+
+GitHub Pages URL: https://ahriorg.github.io/mhdp-columinate-mental-health-depression/
+
 ## Intended Structure
 
 - `docs/`: public-facing documentation and study notes.
