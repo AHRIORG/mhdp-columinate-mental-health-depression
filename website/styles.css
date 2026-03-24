@@ -1,3 +1,26 @@
+html {
+  font-size: 12px !important;
+}
+
+body {
+  font-size: 12px !important;
+}
+
+h1, .h1 { font-size: 2rem !important; }
+h2, .h2 { font-size: 1.65rem !important; }
+h3, .h3 { font-size: 1.4rem !important; }
+h4, .h4 { font-size: 1.2rem !important; }
+h5, .h5 { font-size: 1.05rem !important; }
+h6, .h6 { font-size: 0.95rem !important; }
+
+.navbar-brand,
+.navbar-title,
+.nav-link,
+.dropdown-item,
+.menu-text {
+  font-size: 0.9rem !important;
+}
+
 :root {
   --ahri-blue: #004d82;
   --ahri-blue-deep: #00365b;
