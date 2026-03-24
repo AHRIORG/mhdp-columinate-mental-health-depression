@@ -169,12 +169,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
         <li>
-    <a class="dropdown-item" href="../updates_website.html">
- <span class="dropdown-text">Website</span></a>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../updates.html">
- <span class="dropdown-text">Analytics</span></a>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../updates_news.html">
@@ -199,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
         <li>
     <a class="dropdown-item" href="../tabs/tools.html">
- <span class="dropdown-text">Tools Overview</span></a>
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/dashboard.html">
@@ -228,15 +228,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#deliverables-frame" id="toc-deliverables-frame" class="nav-link active" data-scroll-target="#deliverables-frame">Deliverables frame</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -259,12 +251,69 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="deliverables-frame" class="level2">
-<h2 class="anchored" data-anchor-id="deliverables-frame">Deliverables frame</h2>
-<p>This section preserves the objective-level deliverable structure from the private site while withholding substantive outputs.</p>
-
-
-</section>
+<p>This overview organizes the project by proposal objective rather than by file format. Reports and presentations are intentionally kept outside this objective navigation so these pages can stay focused on the analytical work itself.</p>
+<div class="overview-card-grid">
+<div class="overview-card overview-card--teal">
+<div class="overview-card__header">
+<i class="bi bi-bar-chart-line overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Objective 1: Social Determinant Trajectories
+</p>
+</div>
+<p class="overview-card__description">
+Objective-level page for childhood social determinant trajectories and the analytical framing that supports downstream work.
+</p>
+<p><a href="deliverable_obj01.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--blue">
+<div class="overview-card__header">
+<i class="bi bi-bezier2 overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Objective 2: Behavioral Mediators
+</p>
+</div>
+<p class="overview-card__description">
+Objective-level page for adolescent behavioral mediator characterization and its role in the broader causal framework.
+</p>
+<p><a href="deliverable_obj02.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--orange">
+<div class="overview-card__header">
+<i class="bi bi-clipboard2-pulse overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Objective 3: Depression Harmonization
+</p>
+</div>
+<p class="overview-card__description">
+Objective-level page for depression harmonization, endpoint definition, and the supporting psychometric framework.
+</p>
+<p><a href="deliverable_obj03.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--berry">
+<div class="overview-card__header">
+<i class="bi bi-diagram-3 overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Objective 4: Causal Mediation
+</p>
+</div>
+<p class="overview-card__description">
+Objective-level page for the causal mediation workstream and its current pathway-decomposition strategy.
+</p>
+<p><a href="deliverable_obj04.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--mint">
+<div class="overview-card__header">
+<i class="bi bi-people overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Objective 5: Youth Co-Creation
+</p>
+</div>
+<p class="overview-card__description">
+Objective-level page for the youth co-creation workstream and its interpretive role within the project.
+</p>
+<p><a href="deliverable_obj05.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script>
@@ -300,9 +349,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "research-tools",
       label: "Research Tools",
       items: [
-        { file: "tools.html", label: "Tools Overview" },
+        { file: "tools.html", label: "Overview" },
         { file: "dashboard.html", label: "Project Dashboard" },
-        { file: "dashboard_guide.html", label: "Dashboard Guide" },
         { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
         { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
       ]
@@ -311,8 +359,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "updates",
       label: "Updates",
       items: [
+        { file: "updates.html", label: "Overview" },
         { file: "updates_website.html", label: "Website" },
-        { file: "updates.html", label: "Analytics" },
         { file: "updates_news.html", label: "News" },
         { file: "updates_blog.html", label: "Blog" },
         { file: "updates_other.html", label: "Others" }

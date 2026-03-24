@@ -169,12 +169,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
         <li>
-    <a class="dropdown-item" href="../updates_website.html">
- <span class="dropdown-text">Website</span></a>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../updates.html">
- <span class="dropdown-text">Analytics</span></a>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../updates_news.html">
@@ -199,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
         <li>
     <a class="dropdown-item" href="../tabs/tools.html">
- <span class="dropdown-text">Tools Overview</span></a>
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/dashboard.html">
@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This overview preserves the research-tools section of the website while excluding tool payloads.</p>
+<p>This overview groups the live and planned tools that support CO-LUMINATE data collection, scoring, dashboard interpretation, and causal mapping.</p>
 <div class="overview-card-grid">
 <div class="overview-card overview-card--teal">
 <div class="overview-card__header">
@@ -261,9 +261,9 @@ Developmental Cascade Explorer
 </p>
 </div>
 <p class="overview-card__description">
-Dashboard route preserved as a public-safe placeholder.
+Six-module interactive dashboard for the developmental cascade framework, from childhood adversity through mediation to policy simulation.
 </p>
-<p><a href="dashboard.html" class="overview-card__action">Open Dashboard</a></p>
+<p><a href="dashboard.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
 </div>
 <div class="overview-card overview-card--orange">
 <div class="overview-card__header">
@@ -273,9 +273,9 @@ IRT Scoring Workspace
 </p>
 </div>
 <p class="overview-card__description">
-Tool route preserved while interactive scoring content remains private.
+Operational scoring tool for SSQ responses, supporting single-case and batch workflows through the project API.
 </p>
-<p><a href="tool_irt_scoring.html" class="overview-card__action">Open IRT Scoring Workspace</a></p>
+<p><a href="tool_irt_scoring.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
 </div>
 <div class="overview-card overview-card--berry">
 <div class="overview-card__header">
@@ -285,9 +285,9 @@ Causal Chains of Mental Health
 </p>
 </div>
 <p class="overview-card__description">
-Tool route preserved while application content remains private.
+Interactive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.
 </p>
-<p><a href="tool_causal_chains.html" class="overview-card__action">Open Causal Chains</a></p>
+<p><a href="tool_causal_chains.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
 </div>
 </div>
 
@@ -327,9 +327,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "research-tools",
       label: "Research Tools",
       items: [
-        { file: "tools.html", label: "Tools Overview" },
+        { file: "tools.html", label: "Overview" },
         { file: "dashboard.html", label: "Project Dashboard" },
-        { file: "dashboard_guide.html", label: "Dashboard Guide" },
         { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
         { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
       ]
@@ -338,8 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "updates",
       label: "Updates",
       items: [
+        { file: "updates.html", label: "Overview" },
         { file: "updates_website.html", label: "Website" },
-        { file: "updates.html", label: "Analytics" },
         { file: "updates_news.html", label: "News" },
         { file: "updates_blog.html", label: "Blog" },
         { file: "updates_other.html", label: "Others" }

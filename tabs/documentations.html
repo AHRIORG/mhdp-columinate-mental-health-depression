@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Technical Documentation Overview – CO-LUMINATE</title>
+<title>Technical Docs Overview – CO-LUMINATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -169,12 +169,12 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
         <li>
-    <a class="dropdown-item" href="../updates_website.html">
- <span class="dropdown-text">Website</span></a>
+    <a class="dropdown-item" href="../updates.html">
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../updates.html">
- <span class="dropdown-text">Analytics</span></a>
+    <a class="dropdown-item" href="../updates_website.html">
+ <span class="dropdown-text">Website</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../updates_news.html">
@@ -199,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
         <li>
     <a class="dropdown-item" href="../tabs/tools.html">
- <span class="dropdown-text">Tools Overview</span></a>
+ <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/dashboard.html">
@@ -228,22 +228,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#technical-docs-frame" id="toc-technical-docs-frame" class="nav-link active" data-scroll-target="#technical-docs-frame">Technical docs frame</a></li>
-  <li><a href="#public-safe-status" id="toc-public-safe-status" class="nav-link" data-scroll-target="#public-safe-status">Public-safe status</a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Technical Documentation Overview</h1>
+<h1 class="title">Technical Docs Overview</h1>
 </div>
 
 
@@ -260,16 +251,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="technical-docs-frame" class="level2">
-<h2 class="anchored" data-anchor-id="technical-docs-frame">Technical docs frame</h2>
-<p>This section keeps the technical documentation structure from the private site.</p>
-</section>
-<section id="public-safe-status" class="level2">
-<h2 class="anchored" data-anchor-id="public-safe-status">Public-safe status</h2>
-<p>Detailed proposals, linkage notes, and analysis plans are intentionally withheld from this public payload.</p>
-
-
-</section>
+<p>This overview indexes the project reference documents that define scope, linkage design, and analytical rules for CO-LUMINATE.</p>
+<div class="overview-card-grid">
+<div class="overview-card overview-card--teal">
+<div class="overview-card__header">
+<i class="bi bi-file-earmark-text overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Proposal
+</p>
+</div>
+<p class="overview-card__description">
+Project rationale, objectives, expected outputs, and co-creation design for the CO-LUMINATE study.
+</p>
+<p><a href="proposal.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--blue">
+<div class="overview-card__header">
+<i class="bi bi-diagram-2 overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Longitudinal Linkage
+</p>
+</div>
+<p class="overview-card__description">
+Linkage workflow, cohort integration logic, and the analytical context connecting childhood trajectories to adolescent outcomes.
+</p>
+<p><a href="longitudinal_linkage.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--green">
+<div class="overview-card__header">
+<i class="bi bi-table overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Metadata
+</p>
+</div>
+<p class="overview-card__description">
+Dataset summary, CONSORT flow, role-based dictionaries, and derived-variable definitions for the integrated panel.
+</p>
+<p><a href="metadata.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+<div class="overview-card overview-card--orange">
+<div class="overview-card__header">
+<i class="bi bi-journal-text overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Statistical Analysis Plan
+</p>
+</div>
+<p class="overview-card__description">
+Primary analytical document for the project, covering study aims, endpoints, causal framework, variables, and statistical methods.
+</p>
+<p><a href="secondary_data_analysis_plan.html" class="overview-card__action">In progress, content not yet published to the public website</a></p>
+</div>
+</div>
 
 </main> <!-- /main -->
 <script>
@@ -305,9 +337,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "research-tools",
       label: "Research Tools",
       items: [
-        { file: "tools.html", label: "Tools Overview" },
+        { file: "tools.html", label: "Overview" },
         { file: "dashboard.html", label: "Project Dashboard" },
-        { file: "dashboard_guide.html", label: "Dashboard Guide" },
         { file: "tool_irt_scoring.html", label: "IRT Scoring Workspace" },
         { file: "tool_causal_chains.html", label: "Mental Health Causal Chains" }
       ]
@@ -316,8 +347,8 @@ document.addEventListener("DOMContentLoaded", function () {
       id: "updates",
       label: "Updates",
       items: [
+        { file: "updates.html", label: "Overview" },
         { file: "updates_website.html", label: "Website" },
-        { file: "updates.html", label: "Analytics" },
         { file: "updates_news.html", label: "News" },
         { file: "updates_blog.html", label: "Blog" },
         { file: "updates_other.html", label: "Others" }
