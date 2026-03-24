@@ -3,7 +3,7 @@ name: Publish Website
 on:
   push:
     branches:
-      - main
+      - gh-pages
     paths:
       - ".github/workflows/publish-website.yml"
       - "website/**"
@@ -21,6 +21,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out repository
