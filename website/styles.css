@@ -104,25 +104,31 @@ body {
   text-transform: uppercase;
 }
 
-/* Expand "Docs" label to full wording in the UI shell without changing page structure */
+/* Expand "Docs" label to full wording in a stable way (no duplicate text rendering) */
 #nav-menu-technical-docs .menu-text {
-  font-size: 0;
+  display: none;
 }
 
-#nav-menu-technical-docs .menu-text::after {
+#nav-menu-technical-docs::after {
   content: "Technical Documentation";
   font-size: 0.95rem;
+  line-height: 1.2;
+  margin-left: 0.02rem;
 }
 
 body.has-section-nav--technical-docs .section-nav__eyebrow {
-  font-size: 0;
-  letter-spacing: normal;
+  display: none;
 }
 
-body.has-section-nav--technical-docs .section-nav__eyebrow::after {
+body.has-section-nav--technical-docs .section-nav::before {
   content: "Technical Documentation";
+  color: var(--ahri-blue);
+  display: block;
   font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.06em;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
 }
 
 .section-nav__title {
@@ -375,6 +381,7 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
 
 .home-hero__title-copy {
   min-width: 0;
+  max-width: 78ch;
   order: 2;
 }
 
@@ -423,6 +430,9 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   line-height: 1.45;
   border-left: 3px solid rgba(245, 127, 41, 0.9);
   padding-left: 0.65rem;
+  max-width: 72ch;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
 }
 
 .home-hero__content > p {
@@ -430,6 +440,9 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   color: var(--ink-soft);
   font-size: 1.03rem;
   line-height: 1.65;
+  max-width: 78ch;
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
 }
 
 .home-content-layout {
