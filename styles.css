@@ -479,15 +479,16 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
 }
 
 .metric-card {
-  width: 170px;
-  max-width: 100%;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  background: conic-gradient(
+  --ring-gradient: conic-gradient(
     from 145deg,
     rgba(0, 77, 130, 0.92) 0 72%,
     rgba(245, 127, 41, 0.92) 72% 100%
   );
+  width: 170px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: transparent;
   border: 0;
   box-shadow: none;
   display: flex;
@@ -495,6 +496,17 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   justify-content: center;
   padding: 0;
   position: relative;
+  overflow: hidden;
+}
+
+.metric-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--ring-gradient);
+  z-index: 0;
+  animation: snapshot-ring-spin 10s linear infinite;
 }
 
 .metric-card::before {
@@ -503,21 +515,38 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   inset: 8px;
   border-radius: 50%;
   background: linear-gradient(145deg, #ffffff, #f5f9fc);
+  z-index: 1;
 }
 
 .metric-card__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding: 0 0.65rem;
 }
 
 .metric-card:nth-child(even) {
-  background: conic-gradient(
+  --ring-gradient: conic-gradient(
     from 200deg,
     rgba(245, 127, 41, 0.9) 0 30%,
     rgba(0, 77, 130, 0.94) 30% 100%
   );
+}
+
+@keyframes snapshot-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-card::after {
+    animation: none;
+  }
 }
 
 .metric-card__value {
