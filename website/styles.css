@@ -104,12 +104,29 @@ body {
   text-transform: uppercase;
 }
 
+/* Expand "Docs" label to full wording in the UI shell without changing page structure */
+#nav-menu-technical-docs .menu-text {
+  font-size: 0;
+}
+
+#nav-menu-technical-docs .menu-text::after {
+  content: "Technical Documentation";
+  font-size: 0.95rem;
+}
+
+body.has-section-nav--technical-docs .section-nav__eyebrow {
+  font-size: 0;
+  letter-spacing: normal;
+}
+
+body.has-section-nav--technical-docs .section-nav__eyebrow::after {
+  content: "Technical Documentation";
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
 .section-nav__title {
-  color: var(--ink);
-  font-size: 1rem;
-  font-weight: 800;
-  line-height: 1.2;
-  margin: 0 0 0.9rem;
+  display: none;
 }
 
 .section-nav__list {
