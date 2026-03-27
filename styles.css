@@ -88,6 +88,21 @@ body {
   color: var(--ink-soft);
 }
 
+#quarto-margin-sidebar nav[role="doc-toc"] a,
+#quarto-margin-sidebar .toc-active a {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+#quarto-margin-sidebar .toc-active ul {
+  padding-right: 0.25rem;
+}
+
+#quarto-margin-sidebar {
+  overflow-wrap: anywhere;
+}
+
 .section-nav {
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--line);
@@ -97,33 +112,6 @@ body {
 
 .section-nav__eyebrow {
   color: var(--ahri-blue);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin: 0 0 0.35rem;
-  text-transform: uppercase;
-}
-
-/* Expand "Docs" label to full wording in a stable way (no duplicate text rendering) */
-#nav-menu-technical-docs .menu-text {
-  display: none !important;
-}
-
-#nav-menu-technical-docs::after {
-  content: "Technical Documentation";
-  font-size: 0.95rem;
-  line-height: 1.2;
-  margin-left: 0.02rem;
-}
-
-body.has-section-nav--technical-docs .section-nav__eyebrow {
-  display: none;
-}
-
-body.has-section-nav--technical-docs .section-nav::before {
-  content: "Technical Documentation";
-  color: var(--ahri-blue);
-  display: block;
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -193,6 +181,10 @@ body.has-section-nav--technical-docs .section-nav::before {
 
   body.quarto-dashboard .section-nav {
     top: 9.8rem;
+  }
+
+  #quarto-margin-sidebar {
+    max-width: min(20rem, 22vw);
   }
 }
 
@@ -1187,6 +1179,11 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
 table {
   background: #ffffff;
   border: 0;
+}
+
+main.content table td,
+main.content table th {
+  overflow-wrap: anywhere;
 }
 
 thead th {
