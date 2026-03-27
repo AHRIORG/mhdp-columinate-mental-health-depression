@@ -545,7 +545,7 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
 
 @media (prefers-reduced-motion: reduce) {
   .metric-card::after {
-    animation: none;
+    animation-duration: 20s;
   }
 }
 
