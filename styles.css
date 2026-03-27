@@ -106,7 +106,7 @@ body {
 
 /* Expand "Docs" label to full wording in a stable way (no duplicate text rendering) */
 #nav-menu-technical-docs .menu-text {
-  display: none;
+  display: none !important;
 }
 
 #nav-menu-technical-docs::after {
