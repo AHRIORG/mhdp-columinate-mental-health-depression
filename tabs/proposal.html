@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Proposal – CO-LUMINATE</title>
+<title>Project Proposal – CO-LUMINATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -233,7 +233,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Content</h2>
    
   <ul>
-  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
+  <li><a href="#project-at-a-glance" id="toc-project-at-a-glance" class="nav-link active" data-scroll-target="#project-at-a-glance">Project At A Glance</a></li>
+  <li><a href="#scope" id="toc-scope" class="nav-link" data-scroll-target="#scope">Scope</a></li>
+  <li><a href="#what-the-project-will-achieve" id="toc-what-the-project-will-achieve" class="nav-link" data-scroll-target="#what-the-project-will-achieve">What The Project Will Achieve</a></li>
+  <li><a href="#planned-deliverables" id="toc-planned-deliverables" class="nav-link" data-scroll-target="#planned-deliverables">Planned Deliverables</a></li>
+  <li><a href="#access-to-full-proposal" id="toc-access-to-full-proposal" class="nav-link" data-scroll-target="#access-to-full-proposal">Access To Full Proposal</a></li>
   </ul>
 </nav>
     </div>
@@ -242,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proposal</h1>
+<h1 class="title">Project Proposal</h1>
 </div>
 
 
@@ -259,9 +263,42 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="placeholder-section" class="level2">
-<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
-<p>The proposal route is preserved to keep the same technical-document structure, but proposal content is not published here.</p>
+<section id="project-at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="project-at-a-glance">Project At A Glance</h2>
+<p>CO-LUMINATE investigates how social stress exposures shape depressive symptoms among young people in rural South Africa over time. The work links cohort mental health outcomes with AHRI HDSS household trajectories to support longitudinal and mediation-focused analysis.</p>
+</section>
+<section id="scope" class="level2">
+<h2 class="anchored" data-anchor-id="scope">Scope</h2>
+<ul>
+<li><p>Population focus: adolescents and young adults aged 13-24 years.</p></li>
+<li><p>Data structure: linked longitudinal cohort and HDSS records.</p></li>
+<li><p>Core domains: socioeconomic status, food insecurity, caregiver co-residency, and related social stress exposures.</p></li>
+<li><p>Outcome focus: symptoms of depression measured repeatedly over time.</p></li>
+<li><p>Co-creation: youth partners contribute to interpretation and relevance framing.</p></li>
+</ul>
+</section>
+<section id="what-the-project-will-achieve" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-project-will-achieve">What The Project Will Achieve</h2>
+<ol type="1">
+<li><p>Build and maintain a longitudinal linked dataset for youth mental health and social determinants.</p></li>
+<li><p>Quantify direct and mediation relationships between key social exposures and depression outcomes.</p></li>
+<li><p>Characterize exposure patterns and risk trajectories across cohorts and time.</p></li>
+<li><p>Generate actionable evidence for policy, program design, and future research in LMIC settings.</p></li>
+</ol>
+</section>
+<section id="planned-deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="planned-deliverables">Planned Deliverables</h2>
+<ul>
+<li><p>Curated linked analysis datasets with supporting metadata and documentation.</p></li>
+<li><p>Reproducible statistical workflows, technical reports, and presentation outputs.</p></li>
+<li><p>Evidence summaries for research, policy, and stakeholder engagement.</p></li>
+<li><p>Co-created interpretation products to strengthen contextual validity and uptake.</p></li>
+</ul>
+</section>
+<section id="access-to-full-proposal" class="level2">
+<h2 class="anchored" data-anchor-id="access-to-full-proposal">Access To Full Proposal</h2>
+<p>This page presents a high-level summary for website readers. The full proposal is an internal document and is not published on the website.</p>
+<p>Requests for the full proposal can be directed to the study team and will be considered at the Principal Investigator's discretion.</p>
 
 
 </section>
@@ -362,7 +399,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const content = document.getElementById("quarto-content");
-  if (content && !content.querySelector(".public-site-placeholder")) {
+  const suppressPlaceholderNotice = currentFile === "proposal.html";
+  if (!suppressPlaceholderNotice && content && !content.querySelector(".public-site-placeholder")) {
     const notice = document.createElement("div");
     notice.className = "public-site-placeholder alert alert-warning";
     notice.setAttribute("role", "status");
