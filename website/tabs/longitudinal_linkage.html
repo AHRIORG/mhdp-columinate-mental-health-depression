@@ -233,7 +233,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Content</h2>
    
   <ul>
-  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
+  <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
+  <li><a href="#goal-alignment" id="toc-goal-alignment" class="nav-link" data-scroll-target="#goal-alignment">Goal Alignment</a></li>
+  <li><a href="#stage-flow-current-build-logic" id="toc-stage-flow-current-build-logic" class="nav-link" data-scroll-target="#stage-flow-current-build-logic">Stage Flow (Current Build Logic)</a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
+  <li><a href="#completion-criteria" id="toc-completion-criteria" class="nav-link" data-scroll-target="#completion-criteria">Completion Criteria</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
   </ul>
 </nav>
     </div>
@@ -259,11 +264,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="placeholder-section" class="level2">
-<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
-<p>This route preserves the longitudinal-linkage page in the public frame without carrying internal methodological content.</p>
-
-
+<section id="purpose" class="level2">
+<h2 class="anchored" data-anchor-id="purpose">Purpose</h2>
+<p>This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset.</p>
+</section>
+<section id="goal-alignment" class="level2">
+<h2 class="anchored" data-anchor-id="goal-alignment">Goal Alignment</h2>
+<p>The linkage workflow directly supports the project objectives:</p>
+<ol type="1">
+<li><p>Build and maintain a linked analysis dataset.</p></li>
+<li><p>Quantify direct and mediation relationships for depression outcomes.</p></li>
+<li><p>Characterize social determinant trajectories across childhood windows.</p></li>
+</ol>
+</section>
+<section id="stage-flow-current-build-logic" class="level2">
+<h2 class="anchored" data-anchor-id="stage-flow-current-build-logic">Stage Flow (Current Build Logic)</h2>
+<ol type="1">
+<li><p><strong>Stage 1: Psychometric calibration.</strong> Depression information from SSQ-only records is aligned with PHQ-referenced endpoints to support harmonized outcome definition.</p></li>
+<li><p><strong>Stage 2: SDoH trajectory derivation.</strong> Childhood social determinant exposure histories are summarized across key windows (0-5 years and 6-12 years).</p></li>
+<li><p><strong>Stage 3: Final linkage and integration.</strong> Harmonized depression endpoints and SDoH trajectory coverage are merged into the integrated secondary analysis dataset.</p></li>
+</ol>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<ol type="1">
+<li><p>Stage 1 calibrates depression information for SSQ-only records.</p></li>
+<li><p>Stage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.</p></li>
+<li><p>Stage 3 integrates both streams and keeps participants with both <code>Depression endpoint</code> and <code>SDoH trajectory coverage</code>.</p></li>
+</ol>
+</section>
+<section id="completion-criteria" class="level2">
+<h2 class="anchored" data-anchor-id="completion-criteria">Completion Criteria</h2>
+<p>This stage is complete when:</p>
+<ol type="1">
+<li><p>Depression endpoint values are available for integrated mental health records.</p></li>
+<li><p>SDoH trajectory coverage is available across childhood windows.</p></li>
+<li><p>Final integrated data retains only participants meeting both criteria.</p></li>
+</ol>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes</h2>
+<ul>
+<li><p>Participant counts are calculated during private build workflows and are not published on the public site.</p></li>
+<li><p>This page provides the linkage logic and workflow framing for public readers.</p></li>
+</ul>
 </section>
 
 </main> <!-- /main -->
@@ -362,7 +406,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const content = document.getElementById("quarto-content");
-  if (content && !content.querySelector(".public-site-placeholder")) {
+  const suppressPlaceholderNotice = currentFile === "longitudinal_linkage.html";
+  if (!suppressPlaceholderNotice && content && !content.querySelector(".public-site-placeholder")) {
     const notice = document.createElement("div");
     notice.className = "public-site-placeholder alert alert-warning";
     notice.setAttribute("role", "status");
