@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Linkage workflow, cohort integration logic, and the analytical context connecting childhood trajectories to adolescent outcomes.">
 
 <title>Longitudinal Linkage – CO-LUMINATE</title>
 <style>
@@ -68,9 +69,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../styles.css?v=20260327e">
+<link rel="stylesheet" href="../styles.css?v=20260329f1">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -138,24 +142,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
- <span class="dropdown-text">Objective 1: Social Determinant Trajectories</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
- <span class="dropdown-text">Objective 2: Behavioral Mediators</span></a>
+    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
+ <span class="dropdown-text">Objective 1: Youth Co-Creation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj03.html">
- <span class="dropdown-text">Objective 3: Depression Harmonization</span></a>
+ <span class="dropdown-text">Objective 2: Depression Harmonization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
+ <span class="dropdown-text">Objective 3: Social Determinant Trajectories</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
+ <span class="dropdown-text">Objective 4: Behavioral Mediators</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj04.html">
- <span class="dropdown-text">Objective 4: Causal Mediation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
- <span class="dropdown-text">Objective 5: Youth Co-Creation</span></a>
+ <span class="dropdown-text">Objective 5: Causal Mediation</span></a>
   </li>  
     </ul>
   </li>
@@ -235,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
   <li><a href="#goal-alignment" id="toc-goal-alignment" class="nav-link" data-scroll-target="#goal-alignment">Goal Alignment</a></li>
-  <li><a href="#stage-flow-current-build-logic" id="toc-stage-flow-current-build-logic" class="nav-link" data-scroll-target="#stage-flow-current-build-logic">Stage Flow (Current Build Logic)</a></li>
+  <li><a href="#stage-flow-current-build-counts" id="toc-stage-flow-current-build-counts" class="nav-link" data-scroll-target="#stage-flow-current-build-counts">Stage Flow (Current Build Counts)</a></li>
   <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation</a></li>
   <li><a href="#completion-criteria" id="toc-completion-criteria" class="nav-link" data-scroll-target="#completion-criteria">Completion Criteria</a></li>
   <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
@@ -250,6 +254,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Longitudinal Linkage</h1>
 </div>
 
+<div>
+  <div class="description">
+    Linkage workflow, cohort integration logic, and the analytical context connecting childhood trajectories to adolescent outcomes.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -272,84 +281,100 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="goal-alignment">Goal Alignment</h2>
 <p>The linkage workflow directly supports the project objectives:</p>
 <ol type="1">
-<li><p>Build and maintain a linked analysis dataset.</p></li>
-<li><p>Characterize social determinant trajectories across childhood windows.</p></li>
-<li><p>Quantify direct and mediation relationships for depression outcomes.</p></li>
+<li>Build and maintain a linked analysis dataset.</li>
+<li>Quantify direct and mediation relationships for depression outcomes.</li>
+<li>Characterize social determinant trajectories across childhood windows.</li>
 </ol>
 </section>
-<section id="stage-flow-current-build-logic" class="level2">
-<h2 class="anchored" data-anchor-id="stage-flow-current-build-logic">Stage Flow (Current Build Logic)</h2>
-<div class="workflow-snapshot">
-<div class="workflow-snapshot__grid">
-<div class="workflow-lane">
-<p class="workflow-lane__eyebrow">Objective Alignment</p>
-<div class="workflow-stack">
-<div class="workflow-mini workflow-mini--amber">Objective 1: Build and maintain a linked analysis dataset</div>
-<div class="workflow-mini workflow-mini--coral">Objective 3: Characterize social determinant trajectories across childhood windows</div>
-<div class="workflow-mini workflow-mini--purple">Objective 2: Quantify direct and mediation relationships for depression outcomes</div>
+<section id="stage-flow-current-build-counts" class="level2">
+<h2 class="anchored" data-anchor-id="stage-flow-current-build-counts">Stage Flow (Current Build Counts)</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {"flowchart": {"curve": "linear", "htmlLabels": true}} }%%
+flowchart LR
+  O1["Objective 1&lt;br/&gt;Build linked&lt;br/&gt;analysis dataset"]
+  O2["Objective 2&lt;br/&gt;Quantify direct&lt;br/&gt;and mediation links"]
+  O3["Objective 3&lt;br/&gt;Characterize SDoH&lt;br/&gt;trajectories"]
+
+  S1["Linkage Stage 1&lt;br/&gt;Psychometric&lt;br/&gt;calibration"]
+  S2["Linkage Stage 2&lt;br/&gt;SDoH trajectory&lt;br/&gt;derivation"]
+  S3["Linkage Stage 3&lt;br/&gt;Final linkage&lt;br/&gt;and integration"]
+
+  O1 --&gt; S1
+  O1 --&gt; S2
+  O1 --&gt; S3
+  O2 --&gt; S3
+  O3 --&gt; S2
+
+  S1 --&gt; A["Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=?)"]
+  A --&gt; B["Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=?)"]
+  S1 --&gt; C["SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=?)"]
+  C --&gt; D["Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=?)"]
+  B --&gt; D
+
+  S2 --&gt; E["Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=?)"]
+  E --&gt; F["Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=?)&lt;br/&gt;6-12 years (n=?)&lt;br/&gt;Both (n=?)&lt;br/&gt;Only 0-5 (n=?)&lt;br/&gt;Only 6-12 (n=?)&lt;br/&gt;&lt;br/&gt;"]
+
+  S3 --&gt; G["Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=?)"]
+  S3 --&gt; H["Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=?)"]
+  D --&gt; G
+  F --&gt; H
+
+  G --&gt; I["Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=?)"]
+  H --&gt; I
+
+  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;
+  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;
+  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;
+  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;
+  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;
+  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;
+  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;
+  class O1,O2,O3 objective;
+  class S1 stage1;
+  class S2 stage2;
+  class S3 stage3;
+  class A,B,C,D,G psych;
+  class E,F,H sdoh;
+  class I integ;
+</pre>
+</div>
+<p></p></figure><p></p>
 </div>
 </div>
-<div class="workflow-bridge">
-<div class="workflow-bridge__line"></div>
-<div class="workflow-bridge__arrow"></div>
 </div>
-<div class="workflow-lane">
-<p class="workflow-lane__eyebrow">Linkage Stages</p>
-<div class="workflow-card workflow-card--blue">
-<h3>Stage 1: Psychometric Calibration</h3>
-<p>Align SSQ-only records with PHQ-referenced endpoints to support harmonized depression outcome definition.</p>
-</div>
-<div class="workflow-card workflow-card--orange">
-<h3>Stage 2: SDoH Trajectory Derivation</h3>
-<p>Summarize childhood social determinant exposure histories across the 0-5 and 6-12 year windows.</p>
-</div>
-<div class="workflow-card workflow-card--green">
-<h3>Stage 3: Final Linkage and Integration</h3>
-<p>Merge harmonized depression endpoints with trajectory coverage into the integrated secondary analysis dataset.</p>
-</div>
-</div>
-<div class="workflow-bridge">
-<div class="workflow-bridge__line"></div>
-<div class="workflow-bridge__arrow"></div>
-</div>
-<div class="workflow-lane">
-<p class="workflow-lane__eyebrow">Output</p>
-<div class="workflow-output-group workflow-output-group--light">
-<h3>Integrated Secondary Analysis Dataset</h3>
-<p>Retains participants with both depression endpoint information and SDoH trajectory coverage.</p>
-</div>
-</div>
-</div>
-</div>
-<ol type="1">
-<li><p><strong>Stage 1: Psychometric calibration.</strong> Depression information from SSQ-only records is aligned with PHQ-referenced endpoints to support harmonized outcome definition.</p></li>
-<li><p><strong>Stage 2: SDoH trajectory derivation.</strong> Childhood social determinant exposure histories are summarized across key windows (0-5 years and 6-12 years).</p></li>
-<li><p><strong>Stage 3: Final linkage and integration.</strong> Harmonized depression endpoints and SDoH trajectory coverage are merged into the integrated secondary analysis dataset.</p></li>
-</ol>
 </section>
 <section id="interpretation" class="level2">
 <h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
 <ol type="1">
-<li><p>Stage 1 calibrates depression information for SSQ-only records.</p></li>
-<li><p>Stage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.</p></li>
-<li><p>Stage 3 integrates both streams and keeps participants with both <code>Depression endpoint</code> and <code>SDoH trajectory coverage</code>.</p></li>
+<li>Stage 1 calibrates depression information for SSQ-only records.</li>
+<li>Stage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.</li>
+<li>Stage 3 integrates both streams and keeps participants with both: <code>Depression endpoint</code> and <code>SDoH trajectory coverage</code>.</li>
 </ol>
 </section>
 <section id="completion-criteria" class="level2">
 <h2 class="anchored" data-anchor-id="completion-criteria">Completion Criteria</h2>
 <p>This stage is complete when:</p>
 <ol type="1">
-<li><p>Depression endpoint values are available for integrated mental health records.</p></li>
-<li><p>SDoH trajectory coverage is available across childhood windows.</p></li>
-<li><p>Final integrated data retains only participants meeting both criteria.</p></li>
+<li>Depression endpoint values are available for integrated mental health records.</li>
+<li>SDoH trajectory coverage is available across childhood windows.</li>
+<li>Final integrated data retains only participants meeting both criteria.</li>
 </ol>
 </section>
 <section id="notes" class="level2">
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
 <ul>
-<li><p>Participant counts are calculated during private build workflows and are not published on the public site.</p></li>
-<li><p>This page provides the linkage logic and workflow framing for public readers.</p></li>
+<li>Counts are distinct participants (<code>USUBJID</code>) and are calculated at render time.</li>
+<li>Violet nodes: proposal objectives.</li>
+<li>Blue nodes: psychometric stage.</li>
+<li>Orange nodes: SDoH trajectory stage.</li>
+<li>Green nodes: final integration stage.</li>
 </ul>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -375,11 +400,11 @@ document.addEventListener("DOMContentLoaded", function () {
       label: "Analysis Deliverables",
       items: [
         { file: "analysis_deliverables.html", label: "Overview" },
-        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
-        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
-        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
-        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
-        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+        { file: "deliverable_obj05.html", label: "Objective 1: Youth Co-Creation" },
+        { file: "deliverable_obj03.html", label: "Objective 2: Depression Harmonization" },
+        { file: "deliverable_obj01.html", label: "Objective 3: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 4: Behavioral Mediators" },
+        { file: "deliverable_obj04.html", label: "Objective 5: Causal Mediation" }
       ]
     },
     {
@@ -448,16 +473,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const content = document.getElementById("quarto-content");
-  const suppressPlaceholderNotice = currentFile === "longitudinal_linkage.html";
-  if (!suppressPlaceholderNotice && content && !content.querySelector(".public-site-placeholder")) {
-    const notice = document.createElement("div");
-    notice.className = "public-site-placeholder alert alert-warning";
-    notice.setAttribute("role", "status");
-    notice.style.marginBottom = "1rem";
-    notice.textContent = "In progress, content not yet published to the public website";
-    content.insertBefore(notice, content.firstChild);
-  }
-
   if (!currentGroup || !content) {
     return;
   }

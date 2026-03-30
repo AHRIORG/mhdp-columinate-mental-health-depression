@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Psychometric harmonization SAP for SSQ-PHQ depression endpoint derivation in CO-LUMINATE.">
 
 <title>Statistical Analysis Plan – CO-LUMINATE</title>
 <style>
@@ -20,7 +21,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -70,7 +91,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css?v=20260327e">
+<link rel="stylesheet" href="../styles.css?v=20260329f1">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -138,24 +159,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
- <span class="dropdown-text">Objective 1: Social Determinant Trajectories</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
- <span class="dropdown-text">Objective 2: Behavioral Mediators</span></a>
+    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
+ <span class="dropdown-text">Objective 1: Youth Co-Creation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj03.html">
- <span class="dropdown-text">Objective 3: Depression Harmonization</span></a>
+ <span class="dropdown-text">Objective 2: Depression Harmonization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
+ <span class="dropdown-text">Objective 3: Social Determinant Trajectories</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
+ <span class="dropdown-text">Objective 4: Behavioral Mediators</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj04.html">
- <span class="dropdown-text">Objective 4: Causal Mediation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
- <span class="dropdown-text">Objective 5: Youth Co-Creation</span></a>
+ <span class="dropdown-text">Objective 5: Causal Mediation</span></a>
   </li>  
     </ul>
   </li>
@@ -233,7 +254,24 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Content</h2>
    
   <ul>
-  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#background-and-rationale" id="toc-background-and-rationale" class="nav-link" data-scroll-target="#background-and-rationale">Background and Rationale</a></li>
+  <li><a href="#objectives-and-estimand" id="toc-objectives-and-estimand" class="nav-link" data-scroll-target="#objectives-and-estimand">Objectives and Estimand</a></li>
+  </ul></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#study-design-and-analytic-samples" id="toc-study-design-and-analytic-samples" class="nav-link" data-scroll-target="#study-design-and-analytic-samples">Study Design and Analytic Samples</a></li>
+  <li><a href="#measures-and-construct-definition" id="toc-measures-and-construct-definition" class="nav-link" data-scroll-target="#measures-and-construct-definition">Measures and Construct Definition</a></li>
+  <li><a href="#structural-modeling-strategy" id="toc-structural-modeling-strategy" class="nav-link" data-scroll-target="#structural-modeling-strategy">Structural Modeling Strategy</a></li>
+  <li><a href="#invariance-and-differential-item-functioning" id="toc-invariance-and-differential-item-functioning" class="nav-link" data-scroll-target="#invariance-and-differential-item-functioning">Invariance and Differential Item Functioning</a></li>
+  <li><a href="#irt-harmonization-and-threshold-derivation" id="toc-irt-harmonization-and-threshold-derivation" class="nav-link" data-scroll-target="#irt-harmonization-and-threshold-derivation">IRT Harmonization and Threshold Derivation</a></li>
+  <li><a href="#performance-metrics-and-uncertainty" id="toc-performance-metrics-and-uncertainty" class="nav-link" data-scroll-target="#performance-metrics-and-uncertainty">Performance Metrics and Uncertainty</a></li>
+  <li><a href="#sensitivity-and-robustness" id="toc-sensitivity-and-robustness" class="nav-link" data-scroll-target="#sensitivity-and-robustness">Sensitivity and Robustness</a></li>
+  </ul></li>
+  <li><a href="#planned-results-presentation" id="toc-planned-results-presentation" class="nav-link" data-scroll-target="#planned-results-presentation">Planned Results Presentation</a></li>
+  <li><a href="#discussion-and-implementation" id="toc-discussion-and-implementation" class="nav-link" data-scroll-target="#discussion-and-implementation">Discussion and Implementation</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -245,6 +283,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Statistical Analysis Plan</h1>
 </div>
 
+<div>
+  <div class="description">
+    Psychometric harmonization SAP for SSQ-PHQ depression endpoint derivation in CO-LUMINATE.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -259,9 +302,90 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="placeholder-section" class="level2">
-<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
-<p>The analysis-plan route is preserved to match the private website structure, but the plan itself is not included.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="background-and-rationale" class="level3">
+<h3 class="anchored" data-anchor-id="background-and-rationale">Background and Rationale</h3>
+<p>This Statistical Analysis Plan (SAP) defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire (SSQ) and the Patient Health Questionnaire (PHQ-9) in CO-LUMINATE. The methodological problem addressed here is common in multi-cohort longitudinal research: key mental-health constructs are measured with instruments that differ in cultural origin, response format, and clinical specificity, but must be made comparable for valid inference.</p>
+<p>The PHQ-9 is an established benchmark for probable depression and is widely interpreted in clinical and epidemiologic work <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>. By contrast, the SSQ was developed from locally grounded idioms of distress and intentionally captures broader common-mental-disorder expression <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>. Harmonization therefore requires more than score translation; it requires evidence that latent-construct mapping, threshold choice, and subgroup behavior are psychometrically defensible <span class="citation" data-cites="putnick2016measurement woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
+</section>
+<section id="objectives-and-estimand" class="level3">
+<h3 class="anchored" data-anchor-id="objectives-and-estimand">Objectives and Estimand</h3>
+<p>The primary objective is to derive an SSQ-based depression classification aligned to the PHQ-9 probable-depression definition (<code>PHQ-9 &gt;= 10</code>) among adolescents and young adults. The primary estimand is binary depression status under an anchored latent-threshold rule calibrated to the PHQ reference scale.</p>
+<p>The secondary objective is transportability to SSQ-only cohorts. This is operationalized by fixing SSQ parameters from joint calibration and applying pre-specified threshold rules in cohorts without PHQ measurements, with explicit monitoring of prevalence distortion relative to the PHQ-referenced standard.</p>
+</section>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="study-design-and-analytic-samples" class="level3">
+<h3 class="anchored" data-anchor-id="study-design-and-analytic-samples">Study Design and Analytic Samples</h3>
+<p>The development sample includes participants aged 16-24 years with concurrent baseline SSQ-14 and PHQ-9 records, ensuring direct comparability for calibration and endpoint derivation. The transport sample consists of SSQ-only records in linked cohorts. Eligibility is evaluated at each modeling stage; structural and calibration models require complete item-level data for included instruments, and classification is produced only for records meeting model-specific requirements.</p>
+</section>
+<section id="measures-and-construct-definition" class="level3">
+<h3 class="anchored" data-anchor-id="measures-and-construct-definition">Measures and Construct Definition</h3>
+<p>Four instrument configurations are considered: PHQ-9 as the reference benchmark <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>, SSQ-14 as the full culturally grounded instrument <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>, SSQ-10 as the primary depression-focused harmonization subset, and SSQ-08 as a comparator subset for structural benchmarking <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. The endpoint framework is anchored to PHQ-referenced probable depression while preserving SSQ-based portability through latent-trait scoring.</p>
+</section>
+<section id="structural-modeling-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="structural-modeling-strategy">Structural Modeling Strategy</h3>
+<p>Descriptive profiling and item diagnostics are conducted first to characterize endorsement distributions and establish baseline signal quality. Structural validity is then assessed using Monte Carlo split-sample resampling (10,000 iterations). In each replicate, exploratory factor analysis is applied to exploratory splits using polychoric correlations, consistent with ordinal or categorical symptom indicators <span class="citation" data-cites="holgado2010polychoric">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>)</span>. Factor retention is evaluated with both Kaiser and parallel-analysis criteria, and consensus loading structures are identified from recurrent item-grouping patterns across replications.</p>
+<p>Confirmatory validation is performed on hold-out splits using weighted least squares mean and variance adjusted estimation. Candidate one-factor and multi-factor solutions are compared with attention to model-fit behavior under resampling, especially comparative fit index and root mean square error of approximation patterns <span class="citation" data-cites="hu1999cutoff">(<a href="#ref-hu1999cutoff" role="doc-biblioref">Hu and Bentler 1999</a>)</span>. Reliability and latent-factor coherence are interpreted jointly with fit diagnostics.</p>
+</section>
+<section id="invariance-and-differential-item-functioning" class="level3">
+<h3 class="anchored" data-anchor-id="invariance-and-differential-item-functioning">Invariance and Differential Item Functioning</h3>
+<p>Measurement invariance is evaluated across sex and age strata, with additional stratification by depression status where estimable. The inferential focus is on parameter comparability and the stability of fit-difference behavior across Monte Carlo summaries, in line with contemporary invariance guidance <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Differential item functioning assessments are incorporated within the IRT phase to identify subgroup-specific item-parameter departures that could induce differential misclassification <span class="citation" data-cites="woods2009empirical">(<a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
+</section>
+<section id="irt-harmonization-and-threshold-derivation" class="level3">
+<h3 class="anchored" data-anchor-id="irt-harmonization-and-threshold-derivation">IRT Harmonization and Threshold Derivation</h3>
+<p>Harmonization is implemented using graded response models in <code>mirt</code> <span class="citation" data-cites="chalmers2012mirt">(<a href="#ref-chalmers2012mirt" role="doc-biblioref">Chalmers 2012</a>)</span>. Instrument-specific calibrations are estimated first, followed by joint calibration of PHQ-9 and SSQ-10 items on a shared latent depression scale. Latent scores are estimated using expected a posteriori methods.</p>
+<p>The primary classification rule is clinically anchored via the PHQ-9 test characteristic curve, selecting the latent threshold corresponding to an expected PHQ-9 score near 10. Secondary threshold scenarios, including ROC/Youden rules and sensitivity- or specificity-prioritized operating points, are evaluated as sensitivity analyses rather than default deployment strategies.</p>
+<p>For SSQ-only transport, SSQ item parameters from joint calibration are fixed and applied to generate latent scores and final classification. This approach is prioritized when prevalence comparability and misclassification control are required for downstream causal and longitudinal analyses.</p>
+</section>
+<section id="performance-metrics-and-uncertainty" class="level3">
+<h3 class="anchored" data-anchor-id="performance-metrics-and-uncertainty">Performance Metrics and Uncertainty</h3>
+<p>Model and rule performance will be summarized using area under the curve, accuracy, sensitivity, specificity, positive predictive value, negative predictive value, and Cohen’s kappa, with interval estimates where applicable. Because endpoint prevalence materially affects downstream effect estimation, predicted prevalence under each threshold strategy will be compared directly with PHQ-referenced prevalence as a core decision criterion.</p>
+</section>
+<section id="sensitivity-and-robustness" class="level3">
+<h3 class="anchored" data-anchor-id="sensitivity-and-robustness">Sensitivity and Robustness</h3>
+<p>Sensitivity analyses will assess robustness to thresholding strategy, subgroup composition, and latent-structure specification. Planned contrasts include anchored-versus-ROC thresholds, subgroup-specific performance stability by age and sex, and classification behavior under plausible alternative dimensionality assumptions.</p>
+</section>
+</section>
+<section id="planned-results-presentation" class="level2">
+<h2 class="anchored" data-anchor-id="planned-results-presentation">Planned Results Presentation</h2>
+<p>Results will be reported in a structured sequence consistent with this SAP: cohort profile and item diagnostics; structural-validity findings from Monte Carlo exploratory and confirmatory phases; invariance and DIF summaries; IRT calibration evidence; and comparative performance of threshold strategies, including prevalence implications. Reporting will prioritize interpretability for secondary-analysis deployment decisions.</p>
+</section>
+<section id="discussion-and-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-and-implementation">Discussion and Implementation</h2>
+<p>Interpretation will emphasize whether the harmonized rule preserves construct validity, clinical anchoring, and subgroup fairness while remaining operationally portable to SSQ-only cohorts. The SAP is explicitly positioned to support integrated longitudinal analyses in CO-LUMINATE and to minimize endpoint-definition drift across cohorts.</p>
+<p>All analytical steps are implemented in R scripts under version control in the Depression Harmonization workstream (Objective 2). The website version is a governed dissemination artifact, whereas the codebase remains the authoritative record for reproducibility, audit, and future extension.</p>
+</section>
+<section id="references" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-chalmers2012mirt" class="csl-entry" role="listitem">
+Chalmers, R Philip. 2012. <span>“Mirt: A Multidimensional Item Response Theory Package for the r Environment.”</span> <em>Journal of Statistical Software</em> 48 (6): 1–29. <a href="https://doi.org/10.18637/jss.v048.i06">https://doi.org/10.18637/jss.v048.i06</a>.
+</div>
+<div id="ref-chibanda2019ssq8" class="csl-entry" role="listitem">
+Chibanda, Dixon et al. 2019. <span>“Validation of the 8-Item Shona Symptom Questionnaire (SSQ-8) in Zimbabwe.”</span> In <em>AIDSImpact 2019 Conference</em>. <a href="https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA">https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA</a>.
+</div>
+<div id="ref-holgado2010polychoric" class="csl-entry" role="listitem">
+Holgado–Tello, Francisco Pablo, Salvador Chac’on–Moscoso, Isabel Barbero–Garc’ ia, and Enrique Vila–Abad. 2010. <span>“Polychoric Versus Pearson Correlations in Exploratory and Confirmatory Factor Analysis of Ordinal Variables.”</span> <em>Quality &amp; Quantity</em> 44: 153–66. <a href="https://doi.org/10.1007/s11135-008-9190-y">https://doi.org/10.1007/s11135-008-9190-y</a>.
+</div>
+<div id="ref-hu1999cutoff" class="csl-entry" role="listitem">
+Hu, Li-tze, and Peter M Bentler. 1999. <span>“Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 6 (1): 1–55. <a href="https://doi.org/10.1080/10705519909540118">https://doi.org/10.1080/10705519909540118</a>.
+</div>
+<div id="ref-Kroenke2001" class="csl-entry" role="listitem">
+Kroenke, K., R. L. Spitzer, and J. B. Williams. 2001. <span>“The PHQ-9: Validity of a Brief Depression Severity Measure.”</span> <em>Journal of General Internal Medicine</em> 16 (9): 606–13. <a href="https://doi.org/10.1046/j.1525-1497.2001.016009606.x">https://doi.org/10.1046/j.1525-1497.2001.016009606.x</a>.
+</div>
+<div id="ref-Patel1997" class="csl-entry" role="listitem">
+Patel, Vikram, Essie Simunyu, Fungisai Gwanzura, Glyn Lewis, and Anthony H Mann. 1997. <span>“The Shona Symptom Questionnaire: The Development of an Indigenous Measure of Common Mental Disorders in Harare.”</span> <em>Acta Psychiatrica Scandinavica</em> 95 (6): 469–75.
+</div>
+<div id="ref-putnick2016measurement" class="csl-entry" role="listitem">
+Putnick, Diane L, and Marc H Bornstein. 2016. <span>“Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research.”</span> <em>Developmental Review</em> 41: 71–90. <a href="https://doi.org/10.1016/j.dr.2016.06.004">https://doi.org/10.1016/j.dr.2016.06.004</a>.
+</div>
+<div id="ref-woods2009empirical" class="csl-entry" role="listitem">
+Woods, Carol M. 2009. <span>“Empirical Histograms in Item Response Theory with Differential Item Functioning.”</span> <em>Educational and Psychological Measurement</em> 69 (1): 102–25. <a href="https://doi.org/10.1177/0013164408318760">https://doi.org/10.1177/0013164408318760</a>.
+</div>
+</div>
 
 
 </section>
@@ -289,11 +413,11 @@ document.addEventListener("DOMContentLoaded", function () {
       label: "Analysis Deliverables",
       items: [
         { file: "analysis_deliverables.html", label: "Overview" },
-        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
-        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
-        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
-        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
-        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+        { file: "deliverable_obj05.html", label: "Objective 1: Youth Co-Creation" },
+        { file: "deliverable_obj03.html", label: "Objective 2: Depression Harmonization" },
+        { file: "deliverable_obj01.html", label: "Objective 3: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 4: Behavioral Mediators" },
+        { file: "deliverable_obj04.html", label: "Objective 5: Causal Mediation" }
       ]
     },
     {
@@ -362,15 +486,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const content = document.getElementById("quarto-content");
-  if (content && !content.querySelector(".public-site-placeholder")) {
-    const notice = document.createElement("div");
-    notice.className = "public-site-placeholder alert alert-warning";
-    notice.setAttribute("role", "status");
-    notice.style.marginBottom = "1rem";
-    notice.textContent = "In progress, content not yet published to the public website";
-    content.insertBefore(notice, content.firstChild);
-  }
-
   if (!currentGroup || !content) {
     return;
   }
