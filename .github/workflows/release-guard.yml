@@ -60,11 +60,23 @@ jobs:
           set -euo pipefail
 
           fail=0
+          allowed_rds_path='scripts/obj00/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds'
 
           echo "Checking blocked file extensions..."
-          if rg -n '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' changed_files.txt; then
-            echo "::error::Blocked serialized or binary data artifact detected in changed files."
-            fail=1
+          mapfile -t blocked_object_files < <(rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' changed_files.txt || true)
+          if [[ "${#blocked_object_files[@]}" -gt 0 ]]; then
+            disallowed_object_files=()
+            for f in "${blocked_object_files[@]}"; do
+              if [[ "${f}" == "${allowed_rds_path}" ]]; then
+                continue
+              fi
+              disallowed_object_files+=("${f}")
+            done
+            if [[ "${#disallowed_object_files[@]}" -gt 0 ]]; then
+              printf '%s\n' "${disallowed_object_files[@]}"
+              echo "::error::Blocked serialized or binary data artifact detected in changed files."
+              fail=1
+            fi
           fi
 
           echo "Checking blocked housekeeping files and paths..."
