@@ -6,7 +6,8 @@ Place public-safe scripts here. Any script that depends on private data location
 
 - `release_preflight.sh`: local release scan for staged files (or provided paths) before pushing to public.
 
-## OBJ00 Rebuild Pipeline
+## Psychometric Scripts
 
-- `obj00_rebuild_pipeline.R`: public-safe rebuild runner for OBJ00 analysis datasets. Users must plug in their own approved private data path via `--private-data-dir` (or `CO_LUMINATE_PRIVATE_DATA_DIR`).
-- `obj00/`: minimal script bundle used by the rebuild runner (`01b` builder, metadata helper, IRT scoring helper, and approved scoring engine `.rds` needed for final-step rebuild mode).
+- `psychometric/`: public-safe psychometric script bundle.
+- `psychometric/programs/`: active analysis and helper scripts copied from private development (retired scripts excluded).
+- Scripts use repo-local defaults (`data/inputs/*.RData`) and support overrides via `COLU_PSYCHOMETRIC_RDATA` and `COLU_DREAMS_RDATA`.
