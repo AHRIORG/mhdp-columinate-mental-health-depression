@@ -1,10 +1,10 @@
-# Data Examples
+# OBJ00 Synthetic Example Datasets
 
-Store only public-safe example datasets here.
+These files are synthetic placeholders generated from dataset schema only.
+They do not contain participant-level records and are intended for public examples.
 
-Examples must be one of the following:
-- synthetic data
-- fully anonymised demonstration data
-- aggregated examples approved for public release
-
-Do not place restricted, row-level, or re-identifiable data in this folder.
+Generated files:
+- dt_childhood_exposure_example_synth.csv
+- dt_multistudies_example_synth.csv
+- dt_dreams_multi_ssq_example_synth.csv (if available)
+- obj00_examples_manifest.csv

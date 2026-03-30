@@ -1,0 +1,4 @@
+"dataset","source_rows","source_cols","example_rows","synthetic"
+"dt_childhood_exposure",52463,31,20,TRUE
+"dt_multistudies",5616,33,20,TRUE
+"dt_dreams_multi_ssq",4021,16,20,TRUE
