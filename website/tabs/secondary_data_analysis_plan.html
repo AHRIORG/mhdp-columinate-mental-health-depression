@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Psychometric harmonization SAP for SSQ-PHQ depression endpoint derivation in CO-LUMINATE.">
+<meta name="description" content="CO-LUMINATE study SAP integrating depression harmonization and social determinant trajectories workstreams.">
 
 <title>Statistical Analysis Plan – CO-LUMINATE</title>
 <style>
@@ -254,23 +254,26 @@ div.csl-indent {
     <h2 id="toc-title">Content</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#section-a-objective-2-depression-harmonization-sap" id="toc-section-a-objective-2-depression-harmonization-sap" class="nav-link" data-scroll-target="#section-a-objective-2-depression-harmonization-sap">Section A: Objective 2 - Depression Harmonization SAP</a>
   <ul class="collapse">
-  <li><a href="#background-and-rationale" id="toc-background-and-rationale" class="nav-link" data-scroll-target="#background-and-rationale">Background and Rationale</a></li>
-  <li><a href="#objectives-and-estimand" id="toc-objectives-and-estimand" class="nav-link" data-scroll-target="#objectives-and-estimand">Objectives and Estimand</a></li>
+  <li><a href="#a1-background-and-rationale" id="toc-a1-background-and-rationale" class="nav-link" data-scroll-target="#a1-background-and-rationale">A1 Background and Rationale</a></li>
+  <li><a href="#a2-objectives-and-estimand" id="toc-a2-objectives-and-estimand" class="nav-link" data-scroll-target="#a2-objectives-and-estimand">A2 Objectives and Estimand</a></li>
+  <li><a href="#a3-methods" id="toc-a3-methods" class="nav-link" data-scroll-target="#a3-methods">A3 Methods</a></li>
+  <li><a href="#a4-planned-results-presentation" id="toc-a4-planned-results-presentation" class="nav-link" data-scroll-target="#a4-planned-results-presentation">A4 Planned Results Presentation</a></li>
+  <li><a href="#a5-discussion-and-implementation" id="toc-a5-discussion-and-implementation" class="nav-link" data-scroll-target="#a5-discussion-and-implementation">A5 Discussion and Implementation</a></li>
   </ul></li>
-  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <li><a href="#section-b-objective-3-social-determinant-trajectories-sap" id="toc-section-b-objective-3-social-determinant-trajectories-sap" class="nav-link" data-scroll-target="#section-b-objective-3-social-determinant-trajectories-sap">Section B: Objective 3 - Social Determinant Trajectories SAP</a>
   <ul class="collapse">
-  <li><a href="#study-design-and-analytic-samples" id="toc-study-design-and-analytic-samples" class="nav-link" data-scroll-target="#study-design-and-analytic-samples">Study Design and Analytic Samples</a></li>
-  <li><a href="#measures-and-construct-definition" id="toc-measures-and-construct-definition" class="nav-link" data-scroll-target="#measures-and-construct-definition">Measures and Construct Definition</a></li>
-  <li><a href="#structural-modeling-strategy" id="toc-structural-modeling-strategy" class="nav-link" data-scroll-target="#structural-modeling-strategy">Structural Modeling Strategy</a></li>
-  <li><a href="#invariance-and-differential-item-functioning" id="toc-invariance-and-differential-item-functioning" class="nav-link" data-scroll-target="#invariance-and-differential-item-functioning">Invariance and Differential Item Functioning</a></li>
-  <li><a href="#irt-harmonization-and-threshold-derivation" id="toc-irt-harmonization-and-threshold-derivation" class="nav-link" data-scroll-target="#irt-harmonization-and-threshold-derivation">IRT Harmonization and Threshold Derivation</a></li>
-  <li><a href="#performance-metrics-and-uncertainty" id="toc-performance-metrics-and-uncertainty" class="nav-link" data-scroll-target="#performance-metrics-and-uncertainty">Performance Metrics and Uncertainty</a></li>
-  <li><a href="#sensitivity-and-robustness" id="toc-sensitivity-and-robustness" class="nav-link" data-scroll-target="#sensitivity-and-robustness">Sensitivity and Robustness</a></li>
+  <li><a href="#b1-background-and-rationale" id="toc-b1-background-and-rationale" class="nav-link" data-scroll-target="#b1-background-and-rationale">B1 Background and Rationale</a></li>
+  <li><a href="#b2-objectives-and-estimands" id="toc-b2-objectives-and-estimands" class="nav-link" data-scroll-target="#b2-objectives-and-estimands">B2 Objectives and Estimands</a></li>
+  <li><a href="#b3-data-structure-and-measures" id="toc-b3-data-structure-and-measures" class="nav-link" data-scroll-target="#b3-data-structure-and-measures">B3 Data Structure and Measures</a></li>
+  <li><a href="#b4-modeling-strategy" id="toc-b4-modeling-strategy" class="nav-link" data-scroll-target="#b4-modeling-strategy">B4 Modeling Strategy</a></li>
+  <li><a href="#b5-model-selection-and-classification-quality" id="toc-b5-model-selection-and-classification-quality" class="nav-link" data-scroll-target="#b5-model-selection-and-classification-quality">B5 Model Selection and Classification Quality</a></li>
+  <li><a href="#b6-sensitivity-and-robustness" id="toc-b6-sensitivity-and-robustness" class="nav-link" data-scroll-target="#b6-sensitivity-and-robustness">B6 Sensitivity and Robustness</a></li>
+  <li><a href="#b7-planned-outputs-and-reporting" id="toc-b7-planned-outputs-and-reporting" class="nav-link" data-scroll-target="#b7-planned-outputs-and-reporting">B7 Planned Outputs and Reporting</a></li>
   </ul></li>
-  <li><a href="#planned-results-presentation" id="toc-planned-results-presentation" class="nav-link" data-scroll-target="#planned-results-presentation">Planned Results Presentation</a></li>
-  <li><a href="#discussion-and-implementation" id="toc-discussion-and-implementation" class="nav-link" data-scroll-target="#discussion-and-implementation">Discussion and Implementation</a></li>
+  <li><a href="#future-sections" id="toc-future-sections" class="nav-link" data-scroll-target="#future-sections">Future Sections</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -285,7 +288,7 @@ div.csl-indent {
 
 <div>
   <div class="description">
-    Psychometric harmonization SAP for SSQ-PHQ depression endpoint derivation in CO-LUMINATE.
+    CO-LUMINATE study SAP integrating Depression Harmonization and Social Determinant Trajectories.
   </div>
 </div>
 
@@ -302,61 +305,106 @@ div.csl-indent {
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<section id="background-and-rationale" class="level3">
-<h3 class="anchored" data-anchor-id="background-and-rationale">Background and Rationale</h3>
-<p>This Statistical Analysis Plan (SAP) defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire (SSQ) and the Patient Health Questionnaire (PHQ-9) in CO-LUMINATE. The methodological problem addressed here is common in multi-cohort longitudinal research: key mental-health constructs are measured with instruments that differ in cultural origin, response format, and clinical specificity, but must be made comparable for valid inference.</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This document is the integrated CO-LUMINATE study Statistical Analysis Plan (SAP). It is organized by analytical objective and intended to grow incrementally as each workstream is finalized. At this stage, Section A provides the full SAP for Depression Harmonization (Objective 2), and Section B introduces the SAP for Social Determinant Trajectories (Objective 3). Sections for Behavioral Mediators and Causal Mediation are retained as explicit placeholders for staged publication.</p>
+</section>
+<section id="section-a-objective-2-depression-harmonization-sap" class="level2">
+<h2 class="anchored" data-anchor-id="section-a-objective-2-depression-harmonization-sap">Section A: Objective 2 - Depression Harmonization SAP</h2>
+<section id="a1-background-and-rationale" class="level3">
+<h3 class="anchored" data-anchor-id="a1-background-and-rationale">A1 Background and Rationale</h3>
+<p>This SAP component defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire (SSQ) and the Patient Health Questionnaire (PHQ-9) in CO-LUMINATE. The methodological problem addressed here is common in multi-cohort longitudinal research: key mental-health constructs are measured with instruments that differ in cultural origin, response format, and clinical specificity, but must be made comparable for valid inference.</p>
 <p>The PHQ-9 is an established benchmark for probable depression and is widely interpreted in clinical and epidemiologic work <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>. By contrast, the SSQ was developed from locally grounded idioms of distress and intentionally captures broader common-mental-disorder expression <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>. Harmonization therefore requires more than score translation; it requires evidence that latent-construct mapping, threshold choice, and subgroup behavior are psychometrically defensible <span class="citation" data-cites="putnick2016measurement woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
 </section>
-<section id="objectives-and-estimand" class="level3">
-<h3 class="anchored" data-anchor-id="objectives-and-estimand">Objectives and Estimand</h3>
+<section id="a2-objectives-and-estimand" class="level3">
+<h3 class="anchored" data-anchor-id="a2-objectives-and-estimand">A2 Objectives and Estimand</h3>
 <p>The primary objective is to derive an SSQ-based depression classification aligned to the PHQ-9 probable-depression definition (<code>PHQ-9 &gt;= 10</code>) among adolescents and young adults. The primary estimand is binary depression status under an anchored latent-threshold rule calibrated to the PHQ reference scale.</p>
 <p>The secondary objective is transportability to SSQ-only cohorts. This is operationalized by fixing SSQ parameters from joint calibration and applying pre-specified threshold rules in cohorts without PHQ measurements, with explicit monitoring of prevalence distortion relative to the PHQ-referenced standard.</p>
 </section>
-</section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
-<section id="study-design-and-analytic-samples" class="level3">
-<h3 class="anchored" data-anchor-id="study-design-and-analytic-samples">Study Design and Analytic Samples</h3>
+<section id="a3-methods" class="level3">
+<h3 class="anchored" data-anchor-id="a3-methods">A3 Methods</h3>
+<section id="a31-study-design-and-analytic-samples" class="level4">
+<h4 class="anchored" data-anchor-id="a31-study-design-and-analytic-samples">A3.1 Study Design and Analytic Samples</h4>
 <p>The development sample includes participants aged 16-24 years with concurrent baseline SSQ-14 and PHQ-9 records, ensuring direct comparability for calibration and endpoint derivation. The transport sample consists of SSQ-only records in linked cohorts. Eligibility is evaluated at each modeling stage; structural and calibration models require complete item-level data for included instruments, and classification is produced only for records meeting model-specific requirements.</p>
 </section>
-<section id="measures-and-construct-definition" class="level3">
-<h3 class="anchored" data-anchor-id="measures-and-construct-definition">Measures and Construct Definition</h3>
+<section id="a32-measures-and-construct-definition" class="level4">
+<h4 class="anchored" data-anchor-id="a32-measures-and-construct-definition">A3.2 Measures and Construct Definition</h4>
 <p>Four instrument configurations are considered: PHQ-9 as the reference benchmark <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>, SSQ-14 as the full culturally grounded instrument <span class="citation" data-cites="Patel1997">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>)</span>, SSQ-10 as the primary depression-focused harmonization subset, and SSQ-08 as a comparator subset for structural benchmarking <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. The endpoint framework is anchored to PHQ-referenced probable depression while preserving SSQ-based portability through latent-trait scoring.</p>
 </section>
-<section id="structural-modeling-strategy" class="level3">
-<h3 class="anchored" data-anchor-id="structural-modeling-strategy">Structural Modeling Strategy</h3>
-<p>Descriptive profiling and item diagnostics are conducted first to characterize endorsement distributions and establish baseline signal quality. Structural validity is then assessed using Monte Carlo split-sample resampling (10,000 iterations). In each replicate, exploratory factor analysis is applied to exploratory splits using polychoric correlations, consistent with ordinal or categorical symptom indicators <span class="citation" data-cites="holgado2010polychoric">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>)</span>. Factor retention is evaluated with both Kaiser and parallel-analysis criteria, and consensus loading structures are identified from recurrent item-grouping patterns across replications.</p>
+<section id="a33-structural-modeling-strategy" class="level4">
+<h4 class="anchored" data-anchor-id="a33-structural-modeling-strategy">A3.3 Structural Modeling Strategy</h4>
+<p>Descriptive profiling and item diagnostics are conducted first to characterize endorsement distributions and establish baseline signal quality. Structural validity is then assessed using Monte Carlo split-sample resampling (10,000 iterations). In each replicate, exploratory factor analysis is applied to exploratory splits using polychoric correlations, consistent with ordinal or categorical symptom indicators <span class="citation" data-cites="holgado2010polychoric">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado-Tello et al. 2010</a>)</span>. Factor retention is evaluated with both Kaiser and parallel-analysis criteria, and consensus loading structures are identified from recurrent item-grouping patterns across replications.</p>
 <p>Confirmatory validation is performed on hold-out splits using weighted least squares mean and variance adjusted estimation. Candidate one-factor and multi-factor solutions are compared with attention to model-fit behavior under resampling, especially comparative fit index and root mean square error of approximation patterns <span class="citation" data-cites="hu1999cutoff">(<a href="#ref-hu1999cutoff" role="doc-biblioref">Hu and Bentler 1999</a>)</span>. Reliability and latent-factor coherence are interpreted jointly with fit diagnostics.</p>
 </section>
-<section id="invariance-and-differential-item-functioning" class="level3">
-<h3 class="anchored" data-anchor-id="invariance-and-differential-item-functioning">Invariance and Differential Item Functioning</h3>
+<section id="a34-invariance-and-differential-item-functioning" class="level4">
+<h4 class="anchored" data-anchor-id="a34-invariance-and-differential-item-functioning">A3.4 Invariance and Differential Item Functioning</h4>
 <p>Measurement invariance is evaluated across sex and age strata, with additional stratification by depression status where estimable. The inferential focus is on parameter comparability and the stability of fit-difference behavior across Monte Carlo summaries, in line with contemporary invariance guidance <span class="citation" data-cites="putnick2016measurement">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>)</span>. Differential item functioning assessments are incorporated within the IRT phase to identify subgroup-specific item-parameter departures that could induce differential misclassification <span class="citation" data-cites="woods2009empirical">(<a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
 </section>
-<section id="irt-harmonization-and-threshold-derivation" class="level3">
-<h3 class="anchored" data-anchor-id="irt-harmonization-and-threshold-derivation">IRT Harmonization and Threshold Derivation</h3>
+<section id="a35-irt-harmonization-and-threshold-derivation" class="level4">
+<h4 class="anchored" data-anchor-id="a35-irt-harmonization-and-threshold-derivation">A3.5 IRT Harmonization and Threshold Derivation</h4>
 <p>Harmonization is implemented using graded response models in <code>mirt</code> <span class="citation" data-cites="chalmers2012mirt">(<a href="#ref-chalmers2012mirt" role="doc-biblioref">Chalmers 2012</a>)</span>. Instrument-specific calibrations are estimated first, followed by joint calibration of PHQ-9 and SSQ-10 items on a shared latent depression scale. Latent scores are estimated using expected a posteriori methods.</p>
 <p>The primary classification rule is clinically anchored via the PHQ-9 test characteristic curve, selecting the latent threshold corresponding to an expected PHQ-9 score near 10. Secondary threshold scenarios, including ROC/Youden rules and sensitivity- or specificity-prioritized operating points, are evaluated as sensitivity analyses rather than default deployment strategies.</p>
 <p>For SSQ-only transport, SSQ item parameters from joint calibration are fixed and applied to generate latent scores and final classification. This approach is prioritized when prevalence comparability and misclassification control are required for downstream causal and longitudinal analyses.</p>
 </section>
-<section id="performance-metrics-and-uncertainty" class="level3">
-<h3 class="anchored" data-anchor-id="performance-metrics-and-uncertainty">Performance Metrics and Uncertainty</h3>
+<section id="a36-performance-metrics-and-uncertainty" class="level4">
+<h4 class="anchored" data-anchor-id="a36-performance-metrics-and-uncertainty">A3.6 Performance Metrics and Uncertainty</h4>
 <p>Model and rule performance will be summarized using area under the curve, accuracy, sensitivity, specificity, positive predictive value, negative predictive value, and Cohen’s kappa, with interval estimates where applicable. Because endpoint prevalence materially affects downstream effect estimation, predicted prevalence under each threshold strategy will be compared directly with PHQ-referenced prevalence as a core decision criterion.</p>
 </section>
-<section id="sensitivity-and-robustness" class="level3">
-<h3 class="anchored" data-anchor-id="sensitivity-and-robustness">Sensitivity and Robustness</h3>
+<section id="a37-sensitivity-and-robustness" class="level4">
+<h4 class="anchored" data-anchor-id="a37-sensitivity-and-robustness">A3.7 Sensitivity and Robustness</h4>
 <p>Sensitivity analyses will assess robustness to thresholding strategy, subgroup composition, and latent-structure specification. Planned contrasts include anchored-versus-ROC thresholds, subgroup-specific performance stability by age and sex, and classification behavior under plausible alternative dimensionality assumptions.</p>
 </section>
 </section>
-<section id="planned-results-presentation" class="level2">
-<h2 class="anchored" data-anchor-id="planned-results-presentation">Planned Results Presentation</h2>
+<section id="a4-planned-results-presentation" class="level3">
+<h3 class="anchored" data-anchor-id="a4-planned-results-presentation">A4 Planned Results Presentation</h3>
 <p>Results will be reported in a structured sequence consistent with this SAP: cohort profile and item diagnostics; structural-validity findings from Monte Carlo exploratory and confirmatory phases; invariance and DIF summaries; IRT calibration evidence; and comparative performance of threshold strategies, including prevalence implications. Reporting will prioritize interpretability for secondary-analysis deployment decisions.</p>
 </section>
-<section id="discussion-and-implementation" class="level2">
-<h2 class="anchored" data-anchor-id="discussion-and-implementation">Discussion and Implementation</h2>
+<section id="a5-discussion-and-implementation" class="level3">
+<h3 class="anchored" data-anchor-id="a5-discussion-and-implementation">A5 Discussion and Implementation</h3>
 <p>Interpretation will emphasize whether the harmonized rule preserves construct validity, clinical anchoring, and subgroup fairness while remaining operationally portable to SSQ-only cohorts. The SAP is explicitly positioned to support integrated longitudinal analyses in CO-LUMINATE and to minimize endpoint-definition drift across cohorts.</p>
 <p>All analytical steps are implemented in R scripts under version control in the Depression Harmonization workstream (Objective 2). The website version is a governed dissemination artifact, whereas the codebase remains the authoritative record for reproducibility, audit, and future extension.</p>
+</section>
+</section>
+<section id="section-b-objective-3-social-determinant-trajectories-sap" class="level2">
+<h2 class="anchored" data-anchor-id="section-b-objective-3-social-determinant-trajectories-sap">Section B: Objective 3 - Social Determinant Trajectories SAP</h2>
+<section id="b1-background-and-rationale" class="level3">
+<h3 class="anchored" data-anchor-id="b1-background-and-rationale">B1 Background and Rationale</h3>
+<p>This SAP component specifies the analytical plan for characterizing longitudinal trajectories of social determinants of health across childhood and testing how those trajectories relate to later depression outcomes. The scientific rationale is that persistent or shifting exposure patterns during development may encode risk more accurately than single-time-point measures, particularly in settings where household conditions and caregiving arrangements change over time.</p>
+</section>
+<section id="b2-objectives-and-estimands" class="level3">
+<h3 class="anchored" data-anchor-id="b2-objectives-and-estimands">B2 Objectives and Estimands</h3>
+<p>The primary objective is to estimate latent trajectory classes for social determinant domains across two childhood windows (0-5 years and 6-12 years), then quantify associations between class membership and the harmonized depression endpoint in adolescence and young adulthood. Primary estimands are class-specific depression risk contrasts relative to low-risk reference pathways, reported as adjusted risk differences and odds ratios.</p>
+<p>Secondary objectives are to identify cross-window pathway patterns and evaluate whether early-life trajectories condition the effect of later-childhood trajectories on depression risk. Secondary estimands include transition-pattern prevalence and adjusted contrasts between key pathway combinations.</p>
+</section>
+<section id="b3-data-structure-and-measures" class="level3">
+<h3 class="anchored" data-anchor-id="b3-data-structure-and-measures">B3 Data Structure and Measures</h3>
+<p>Analyses will use the linked individual-household longitudinal panel assembled in CO-LUMINATE, with determinant indicators mapped into age-anchored windows for early childhood (0-5 years) and later childhood (6-12 years). Depression outcome definitions will be inherited from Objective 2 harmonization outputs to ensure endpoint consistency across all downstream workstreams.</p>
+<p>Determinant domains are represented through curated derived variables from the integrated childhood panel, with harmonized coding and directionality checks applied prior to model fitting. Covariate adjustment sets will include demographic and cohort-design variables needed for interpretability and comparability across models.</p>
+</section>
+<section id="b4-modeling-strategy" class="level3">
+<h3 class="anchored" data-anchor-id="b4-modeling-strategy">B4 Modeling Strategy</h3>
+<p>The core modeling framework combines univariate latent class growth analysis (LCGA) and joint LCGA within each childhood window. Univariate models will characterize domain-specific trajectory structures, while joint models will identify integrated multi-domain exposure pathways. Model estimation will use robust latent-variable procedures with repeated random starts and convergence diagnostics to minimize local-solution dependence.</p>
+<p>Class assignments will be derived from posterior membership probabilities and then carried forward into outcome models for depression contrasts. Cross-window pathway analyses will combine 0-5 and 6-12 class assignments to test whether early trajectories inform interpretation of later trajectories and their relationship with depression outcomes.</p>
+</section>
+<section id="b5-model-selection-and-classification-quality" class="level3">
+<h3 class="anchored" data-anchor-id="b5-model-selection-and-classification-quality">B5 Model Selection and Classification Quality</h3>
+<p>Class enumeration and model retention will be guided by a joint decision framework combining information criteria, entropy, average posterior probabilities, minimum class size thresholds, and substantive interpretability. No single fit index will be used in isolation. Preference will be given to solutions that are stable across random starts and remain epidemiologically interpretable for policy-facing communication.</p>
+</section>
+<section id="b6-sensitivity-and-robustness" class="level3">
+<h3 class="anchored" data-anchor-id="b6-sensitivity-and-robustness">B6 Sensitivity and Robustness</h3>
+<p>Sensitivity analyses will evaluate robustness to alternate class counts, indicator subsets, and window definitions. Additional checks will compare complete-case versus imputation-compatible pipelines where appropriate, and will quantify the impact of classification uncertainty on downstream effect estimates.</p>
+</section>
+<section id="b7-planned-outputs-and-reporting" class="level3">
+<h3 class="anchored" data-anchor-id="b7-planned-outputs-and-reporting">B7 Planned Outputs and Reporting</h3>
+<p>Planned outputs include trajectory-profile tables, class-probability diagnostics, pathway visual summaries, and adjusted depression-risk contrasts for each retained model family. Reporting will explicitly separate univariate and joint LCGA findings and will align all interpretation to the integrated Objective 2 endpoint framework.</p>
+</section>
+</section>
+<section id="future-sections" class="level2">
+<h2 class="anchored" data-anchor-id="future-sections">Future Sections</h2>
+<ul>
+<li>Section C: Objective 4 - Behavioral Mediators SAP (in progress).</li>
+<li>Section D: Objective 5 - Causal Mediation SAP (in progress).</li>
+</ul>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
