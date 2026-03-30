@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Metadata – CO-LUMINATE</title>
+<title>Project Metadata – CO-LUMINATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,9 +68,13 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="../site_libs/viz-1.8.2/viz.js"></script>
+<link href="../site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="../site_libs/grViz-binding-1.0.11/grViz.js"></script>
 
 
-<link rel="stylesheet" href="../styles.css?v=20260327e">
+<link rel="stylesheet" href="../styles.css?v=20260329f1">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -138,24 +142,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
- <span class="dropdown-text">Objective 1: Social Determinant Trajectories</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
- <span class="dropdown-text">Objective 2: Behavioral Mediators</span></a>
+    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
+ <span class="dropdown-text">Objective 1: Youth Co-Creation</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj03.html">
- <span class="dropdown-text">Objective 3: Depression Harmonization</span></a>
+ <span class="dropdown-text">Objective 2: Depression Harmonization</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
+ <span class="dropdown-text">Objective 3: Social Determinant Trajectories</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
+ <span class="dropdown-text">Objective 4: Behavioral Mediators</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj04.html">
- <span class="dropdown-text">Objective 4: Causal Mediation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
- <span class="dropdown-text">Objective 5: Youth Co-Creation</span></a>
+ <span class="dropdown-text">Objective 5: Causal Mediation</span></a>
   </li>  
     </ul>
   </li>
@@ -233,7 +237,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Content</h2>
    
   <ul>
-  <li><a href="#placeholder-section" id="toc-placeholder-section" class="nav-link active" data-scroll-target="#placeholder-section">Placeholder section</a></li>
+  <li><a href="#metadata-source" id="toc-metadata-source" class="nav-link active" data-scroll-target="#metadata-source">Metadata Source</a></li>
+  <li><a href="#dataset-summary" id="toc-dataset-summary" class="nav-link" data-scroll-target="#dataset-summary">Dataset Summary</a></li>
+  <li><a href="#study-design-extract" id="toc-study-design-extract" class="nav-link" data-scroll-target="#study-design-extract">Study Design Extract</a></li>
+  <li><a href="#cohorts-included" id="toc-cohorts-included" class="nav-link" data-scroll-target="#cohorts-included">Cohorts Included</a></li>
+  <li><a href="#object-snapshot" id="toc-object-snapshot" class="nav-link" data-scroll-target="#object-snapshot">Object Snapshot</a></li>
+  <li><a href="#consort-flow" id="toc-consort-flow" class="nav-link" data-scroll-target="#consort-flow">CONSORT Flow</a></li>
+  <li><a href="#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" id="toc-data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</a></li>
+  <li><a href="#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" id="toc-data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" class="nav-link" data-scroll-target="#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</a></li>
+  <li><a href="#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" id="toc-data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="nav-link" data-scroll-target="#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</a>
+  <ul class="collapse">
+  <li><a href="#lcga-model-inventory" id="toc-lcga-model-inventory" class="nav-link" data-scroll-target="#lcga-model-inventory">LCGA Model Inventory</a></li>
+  </ul></li>
+  <li><a href="#dataset-name-reference" id="toc-dataset-name-reference" class="nav-link" data-scroll-target="#dataset-name-reference">Dataset Name Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -242,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Metadata</h1>
+<h1 class="title">Project Metadata</h1>
 </div>
 
 
@@ -259,9 +275,1943 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="placeholder-section" class="level2">
-<h2 class="anchored" data-anchor-id="placeholder-section">Placeholder section</h2>
-<p>The metadata route remains available for future approved public-safe metadata releases.</p>
+<section id="metadata-source" class="level2">
+<h2 class="anchored" data-anchor-id="metadata-source">Metadata Source</h2>
+<p>This page is extracted and adapted from the dataset preparation source index.</p>
+<p>Current scope is limited to two data dictionaries:</p>
+<ul>
+<li>Childhood social exposure panel</li>
+<li>Integrated multi-study mental health panel</li>
+</ul>
+<p>All derived R objects for this page are generated locally during private site builds and are not distributed through the public website.</p>
+</section>
+<section id="dataset-summary" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-summary">Dataset Summary</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Field</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Project</td>
+<td style="text-align: left;">CO-LUMINATE</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Population</td>
+<td style="text-align: left;">South African youth aged 13-24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Linked sample size</td>
+<td style="text-align: left;">5,226</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Data source backbone</td>
+<td style="text-align: left;">AHRI HDSS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Core mental health outcomes</td>
+<td style="text-align: left;">Depression symptoms (SSQ-14, PHQ-9)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Priority social determinants</td>
+<td style="text-align: left;">SES and caregiver co-residency</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cohorts nested in AHRI HDSS</td>
+<td style="text-align: left;">DREAMS, Multilevel, Isisekelo Sempilo, TasP, Thetha Nami</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Youth Co-Creators</td>
+<td style="text-align: left;">11</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="study-design-extract" class="level2">
+<h2 class="anchored" data-anchor-id="study-design-extract">Study Design Extract</h2>
+<p>The CO-LUMINATE linked dataset connects individual-level mental health outcomes from cohort studies to household-level longitudinal HDSS records. The objective is to estimate longitudinal direct and mediation relationships between social determinants and depressive symptoms among youth aged 13-24.</p>
+<p>The analytical design combines:</p>
+<ol type="1">
+<li>HDSS longitudinal household exposure histories.</li>
+<li>Cohort-based depression outcomes measured with SSQ-14 and PHQ-9.</li>
+<li>Linkage across five cohorts nested within AHRI HDSS.</li>
+</ol>
+</section>
+<section id="cohorts-included" class="level2">
+<h2 class="anchored" data-anchor-id="cohorts-included">Cohorts Included</h2>
+<ul>
+<li>DREAMS</li>
+<li>Multilevel</li>
+<li>Isisekelo Sempilo</li>
+<li>Treatment as Prevention (TasP)</li>
+<li>Thetha Nami</li>
+</ul>
+</section>
+<section id="object-snapshot" class="level2">
+<h2 class="anchored" data-anchor-id="object-snapshot">Object Snapshot</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: right;">Rows</th>
+<th style="text-align: right;">Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Childhood Social Exposure Panel</td>
+<td style="text-align: right;">52463</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Integrated Multi-study Mental Health Panel</td>
+<td style="text-align: right;">5616</td>
+<td style="text-align: right;">33</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="consort-flow" class="level2">
+<h2 class="anchored" data-anchor-id="consort-flow">CONSORT Flow</h2>
+<style>
+.consort-flow {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.consort-flow .html-widget {
+  width: 100% !important;
+  min-width: 900px;
+}
+
+.consort-flow svg text {
+  font-size: 12px !important;
+}
+
+#quarto-content table,
+#quarto-content .gt_table,
+#quarto-content .gt_row_group {
+  font-size: 12px !important;
+}
+
+@media (max-width: 1200px) {
+  .consort-flow .html-widget {
+    min-width: 760px;
+  }
+}
+</style>
+<div class="consort-flow">
+<div id="htmlwidget-e34e1f9b22195459307f" style="width:100%;height:760px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e34e1f9b22195459307f">{"x":{"diagram":"digraph consort {\ngraph [layout=dot, rankdir=TB, splines=ortho, bgcolor=\"transparent\", nodesep=0.95, ranksep=1.0, pad=0.2, outputorder=edgesfirst, newrank=true];\nnode [shape=box, style=\"rounded,filled\", color=\"#5b6473\", fontcolor=\"#1f2937\", fontname=\"Arial\", fontsize=12, penwidth=1.2, margin=\"0.16,0.12\"];\nedge [color=\"#4b5563\", penwidth=1.2, arrowsize=0.7];\nMH0 [label=<Mental health records<BR/>available<BR/>n = 6,207>, fillcolor=\"#f2f5f8\"];\nMH1 [label=<After endpoint filter<BR/>mental health records<BR/>n = 6,024>, fillcolor=\"#f2f5f8\"];\nSDOH0 [label=<Childhood SDoH records<BR/>available<BR/>n = 5,398>, fillcolor=\"#f2f5f8\"];\nLINKED [label=<Linked records with endpoint<BR/>and SDoH coverage<BR/>n = 5,226>, fillcolor=\"#eef3f8\", color=\"#2c5f93\", penwidth=1.4];\nFINAL [label=<Primary analysis set<BR/>n = 5,226>, fillcolor=\"#eef3f8\", color=\"#2c5f93\", penwidth=1.4];\nEX1 [label=<Excluded before linkage<BR/>Missing depression endpoint<BR/>n = 183>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\nEX2 [label=<Excluded at linkage<BR/>No SDoH match<BR/>n = 798>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\nEX3 [label=<Excluded at linkage<BR/>No eligible mental health match<BR/>n = 172>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\n{ rank=same; MH0; EX1; }\n{ rank=same; SDOH0; MH1; EX2; EX3; }\nMH0 -> MH1 [tailport=s, headport=n, minlen=1, weight=4];\nMH1 -> LINKED [tailport=s, headport=n, minlen=1, weight=4];\nLINKED -> FINAL [tailport=s, headport=n, minlen=1, weight=4];\nSDOH0 -> LINKED [tailport=e, headport=w, minlen=1, weight=3];\nMH0 -> EX1 [tailport=e, headport=w, minlen=1, weight=2];\nMH1 -> EX2 [tailport=e, headport=w, minlen=1, weight=2];\nSDOH0 -> EX3 [tailport=w, headport=e, minlen=1, weight=2];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<p>Participant-focused CONSORT logic: participants are retained only if they have both a depression endpoint and SDoH trajectory coverage.</p>
+<p>The row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification.</p>
+</section>
+<section id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="mnfkdxbjov" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#mnfkdxbjov table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#mnfkdxbjov thead, #mnfkdxbjov tbody, #mnfkdxbjov tfoot, #mnfkdxbjov tr, #mnfkdxbjov td, #mnfkdxbjov th {
+  border-style: none;
+}
+
+#mnfkdxbjov p {
+  margin: 0;
+  padding: 0;
+}
+
+#mnfkdxbjov .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#mnfkdxbjov .gt_title {
+  color: #333333;
+  font-size: 12px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#mnfkdxbjov .gt_subtitle {
+  color: #333333;
+  font-size: 12px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#mnfkdxbjov .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#mnfkdxbjov .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#mnfkdxbjov .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#mnfkdxbjov .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#mnfkdxbjov .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#mnfkdxbjov .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#mnfkdxbjov .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#mnfkdxbjov .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#mnfkdxbjov .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#mnfkdxbjov .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#mnfkdxbjov .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#mnfkdxbjov .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mnfkdxbjov .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#mnfkdxbjov .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#mnfkdxbjov .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#mnfkdxbjov .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mnfkdxbjov .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#mnfkdxbjov .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mnfkdxbjov .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#mnfkdxbjov .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mnfkdxbjov .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#mnfkdxbjov .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#mnfkdxbjov .gt_left {
+  text-align: left;
+}
+
+#mnfkdxbjov .gt_center {
+  text-align: center;
+}
+
+#mnfkdxbjov .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#mnfkdxbjov .gt_font_normal {
+  font-weight: normal;
+}
+
+#mnfkdxbjov .gt_font_bold {
+  font-weight: bold;
+}
+
+#mnfkdxbjov .gt_font_italic {
+  font-style: italic;
+}
+
+#mnfkdxbjov .gt_super {
+  font-size: 65%;
+}
+
+#mnfkdxbjov .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#mnfkdxbjov .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#mnfkdxbjov .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#mnfkdxbjov .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#mnfkdxbjov .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#mnfkdxbjov .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#mnfkdxbjov .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#mnfkdxbjov .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#mnfkdxbjov div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Variable</th>
+<th id="Label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Label</th>
+<th id="Type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Type</th>
+<th id="Value-Labels" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value Labels</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Identifier" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Identifier</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Identifier  Variable">USUBJID</td>
+<td class="gt_row gt_left" headers="Identifier  Label">Unique Subject Identifier</td>
+<td class="gt_row gt_left" headers="Identifier  Type">numeric</td>
+<td class="gt_row gt_left" headers="Identifier  Value Labels">Min-Max: 48 to 260880</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Time Variable" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Time Variable</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Time Variable  Variable">EXPAGE</td>
+<td class="gt_row gt_left" headers="Time Variable  Label">Exposure Age</td>
+<td class="gt_row gt_left" headers="Time Variable  Type">numeric</td>
+<td class="gt_row gt_left" headers="Time Variable  Value Labels">Min-Max: 0 to 12</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Exposure (SDoH Trajectory Input)" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Exposure (SDoH Trajectory Input)</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Variable">LIVEDWOM</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Label">Lived Without Mother</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Type">factor</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Value Labels">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Variable">LIVEDWOF</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Label">Lived Without Father</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Type">factor</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Value Labels">No; Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Variable">HHCHLD14O</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Label">Overcrowded (0–14y children &gt; 3)</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Type">factor</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Value Labels">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Variable">HHSES</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Label">Household Socioeconomic Status</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Type">factor</td>
+<td class="gt_row gt_left" headers="Exposure (SDoH Trajectory Input)  Value Labels">Low; Middle; High</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="4" id="Baseline Factor" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Baseline Factor</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">MAGE</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Mother's Age</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">numeric</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">Min-Max: 11 to 82</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">MEDU</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Mother's Education</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">factor</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">None/Primary; Secondary; Completed Matric</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">MHIV</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Mother's HIV Status</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">factor</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">Error; Negative; Positive</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">MPTS</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Mother's Partner Status</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">factor</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">Missing/Refused; No partner; Married; Regular; Casual; Widowed/Separated</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">MMIG</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Mother's Ever Migrated (Previous 1 Year)</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">character</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels"></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">FAGE</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Father's Age</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">numeric</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">Min-Max: 10 to 80</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">FEDU</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Father's Education</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">factor</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">None/Primary; Secondary; Completed Matric</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">FHIV</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Father's HIV Status</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">factor</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">Error; Negative; Positive</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">FPTS</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Father's Partner Status</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">factor</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels">Missing/Refused; No partner; Married; Regular; Casual; Widowed/Separated</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Baseline Factor  Variable">FMIG</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Label">Father's Ever Migrated (Previous 1 Year)</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Type">character</td>
+<td class="gt_row gt_left" headers="Baseline Factor  Value Labels"></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div id="soywoqueoc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#soywoqueoc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#soywoqueoc thead, #soywoqueoc tbody, #soywoqueoc tfoot, #soywoqueoc tr, #soywoqueoc td, #soywoqueoc th {
+  border-style: none;
+}
+
+#soywoqueoc p {
+  margin: 0;
+  padding: 0;
+}
+
+#soywoqueoc .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#soywoqueoc .gt_title {
+  color: #333333;
+  font-size: 12px;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#soywoqueoc .gt_subtitle {
+  color: #333333;
+  font-size: 12px;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#soywoqueoc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#soywoqueoc .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#soywoqueoc .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#soywoqueoc .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#soywoqueoc .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#soywoqueoc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#soywoqueoc .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#soywoqueoc .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#soywoqueoc .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#soywoqueoc .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#soywoqueoc .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#soywoqueoc .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#soywoqueoc .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#soywoqueoc .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#soywoqueoc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#soywoqueoc .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#soywoqueoc .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#soywoqueoc .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#soywoqueoc .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#soywoqueoc .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#soywoqueoc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#soywoqueoc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#soywoqueoc .gt_left {
+  text-align: left;
+}
+
+#soywoqueoc .gt_center {
+  text-align: center;
+}
+
+#soywoqueoc .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#soywoqueoc .gt_font_normal {
+  font-weight: normal;
+}
+
+#soywoqueoc .gt_font_bold {
+  font-weight: bold;
+}
+
+#soywoqueoc .gt_font_italic {
+  font-style: italic;
+}
+
+#soywoqueoc .gt_super {
+  font-size: 65%;
+}
+
+#soywoqueoc .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#soywoqueoc .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#soywoqueoc .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#soywoqueoc .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#soywoqueoc .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#soywoqueoc .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#soywoqueoc .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#soywoqueoc .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#soywoqueoc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Variable" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Variable</th>
+<th id="Label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Label</th>
+<th id="Type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Type</th>
+<th id="Value-Labels" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value Labels</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Identifier" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Identifier</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Identifier  Variable">USUBJID</td>
+<td class="gt_row gt_left" headers="Identifier  Label">Unique Subject Identifier</td>
+<td class="gt_row gt_left" headers="Identifier  Type">numeric</td>
+<td class="gt_row gt_left" headers="Identifier  Value Labels">Min-Max: 48 to 260880</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Outcome" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Outcome</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Outcome  Variable">DPBN</td>
+<td class="gt_row gt_left" headers="Outcome  Label">Depressed</td>
+<td class="gt_row gt_left" headers="Outcome  Type">factor</td>
+<td class="gt_row gt_left" headers="Outcome  Value Labels">No; Yes</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Mediator" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Mediator</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Mediator  Variable">DNKA</td>
+<td class="gt_row gt_left" headers="Mediator  Label">Drank Alcohol</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Mediator  Variable">ESXC</td>
+<td class="gt_row gt_left" headers="Mediator  Label">Ever Had Sex</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Mediator  Variable">FDSC</td>
+<td class="gt_row gt_left" headers="Mediator  Label">Food Insecure</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Mediator  Variable">GOVG</td>
+<td class="gt_row gt_left" headers="Mediator  Label">No Government Grant</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Mediator  Variable">VLNC</td>
+<td class="gt_row gt_left" headers="Mediator  Label">Experienced Violence</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Mediator  Variable">SCSP</td>
+<td class="gt_row gt_left" headers="Mediator  Label">Has Social Support</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Mediator  Variable">SCHL</td>
+<td class="gt_row gt_left" headers="Mediator  Label">In School</td>
+<td class="gt_row gt_left" headers="Mediator  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator  Value Labels">No; Yes</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="4" id="Mediator-Outcome Confounder" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">Mediator-Outcome Confounder</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">SEX</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">Sex</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">Male; Female</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">AGE</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">Age (Years)</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">numeric</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">Min-Max: 13 to 24</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">HIVS</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">HIV Positive</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">Negative; Positive</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">ORPH</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">Orphanhood Status</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">Both Parents Alive; One Parent Deceased; Both Parents Deceased</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">EXTMG</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">External migration</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">RURAL</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">Reside in Rural Area</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">factor</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">No; Yes</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Variable">CLYR</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Label">Calendar year</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Type">numeric</td>
+<td class="gt_row gt_left" headers="Mediator-Outcome Confounder  Value Labels">Min-Max: 0 to 10</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="level2">
+<h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</h2>
+<p>Univariate and Joint LCGA models were fitted in the private analytical pipeline; the derived-variable summary below reflects those model outputs in a transposed format for readability.</p>
+<section id="lcga-model-inventory" class="level3">
+<h3 class="anchored" data-anchor-id="lcga-model-inventory">LCGA Model Inventory</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 51%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Model Family</th>
+<th style="text-align: left;">Time Window</th>
+<th style="text-align: left;">Derived Output</th>
+<th style="text-align: left;">Public Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Univariate LCGA</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">Early-window class assignments</td>
+<td style="text-align: left;">ELCDV</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Univariate LCGA</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">Middle-late-window class assignments</td>
+<td style="text-align: left;">MDCDV</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Joint LCGA</td>
+<td style="text-align: left;">0–5 years</td>
+<td style="text-align: left;">Joint trajectory class assignments for early childhood window</td>
+<td style="text-align: left;">ELCDV (joint)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Joint LCGA</td>
+<td style="text-align: left;">6–12 years</td>
+<td style="text-align: left;">Joint trajectory class assignments for middle-late childhood window</td>
+<td style="text-align: left;">MDCDV (joint)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="zjblxzlwpx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zjblxzlwpx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#zjblxzlwpx thead, #zjblxzlwpx tbody, #zjblxzlwpx tfoot, #zjblxzlwpx tr, #zjblxzlwpx td, #zjblxzlwpx th {
+  border-style: none;
+}
+
+#zjblxzlwpx p {
+  margin: 0;
+  padding: 0;
+}
+
+#zjblxzlwpx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#zjblxzlwpx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#zjblxzlwpx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#zjblxzlwpx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#zjblxzlwpx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#zjblxzlwpx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#zjblxzlwpx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#zjblxzlwpx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#zjblxzlwpx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#zjblxzlwpx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#zjblxzlwpx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 12px;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#zjblxzlwpx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#zjblxzlwpx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#zjblxzlwpx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#zjblxzlwpx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjblxzlwpx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#zjblxzlwpx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#zjblxzlwpx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#zjblxzlwpx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjblxzlwpx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#zjblxzlwpx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjblxzlwpx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#zjblxzlwpx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjblxzlwpx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#zjblxzlwpx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#zjblxzlwpx .gt_left {
+  text-align: left;
+}
+
+#zjblxzlwpx .gt_center {
+  text-align: center;
+}
+
+#zjblxzlwpx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#zjblxzlwpx .gt_font_normal {
+  font-weight: normal;
+}
+
+#zjblxzlwpx .gt_font_bold {
+  font-weight: bold;
+}
+
+#zjblxzlwpx .gt_font_italic {
+  font-style: italic;
+}
+
+#zjblxzlwpx .gt_super {
+  font-size: 65%;
+}
+
+#zjblxzlwpx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#zjblxzlwpx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#zjblxzlwpx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#zjblxzlwpx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#zjblxzlwpx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#zjblxzlwpx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#zjblxzlwpx .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#zjblxzlwpx .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#zjblxzlwpx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Field" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Field</th>
+<th id="Value" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Value</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="gt_group_heading_row odd">
+<th colspan="2" id="DPBN" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">DPBN</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="DPBN  Field">Label</td>
+<td class="gt_row gt_left" headers="DPBN  Value">Depressed</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="DPBN  Field">Type</td>
+<td class="gt_row gt_left" headers="DPBN  Value">factor</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="DPBN  Field">Value Labels</td>
+<td class="gt_row gt_left" headers="DPBN  Value">No; Yes</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="DPBN  Field">Source Variables</td>
+<td class="gt_row gt_left" headers="DPBN  Value">PHQBIN, irt_joint_models.rds</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="DPBN  Field">Derivation</td>
+<td class="gt_row gt_left" headers="DPBN  Value">PHQBIN &gt;= 10</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="DPBN  Field">Status</td>
+<td class="gt_row gt_left" headers="DPBN  Value">Implemented in dataset preparation merge</td>
+</tr>
+<tr class="gt_group_heading_row even">
+<th colspan="2" id="ELCDV" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">ELCDV</th>
+</tr>
+<tr class="gt_row_group_first odd">
+<td class="gt_row gt_left" headers="ELCDV  Field">Label</td>
+<td class="gt_row gt_left" headers="ELCDV  Value">Early Childhood Exposure Trajectory Class (Ages 0-5)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ELCDV  Field">Type</td>
+<td class="gt_row gt_left" headers="ELCDV  Value">character</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ELCDV  Field">Value Labels</td>
+<td class="gt_row gt_left" headers="ELCDV  Value">Character class label from the selected trajectory solution</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ELCDV  Field">Source Variables</td>
+<td class="gt_row gt_left" headers="ELCDV  Value">LCGA trajectory solution (0-5 years): parental absence + household SES</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="ELCDV  Field">Derivation</td>
+<td class="gt_row gt_left" headers="ELCDV  Value">Assigned from the selected trajectory model for early childhood</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="ELCDV  Field">Status</td>
+<td class="gt_row gt_left" headers="ELCDV  Value">Implemented in the childhood class-derivation workflow</td>
+</tr>
+<tr class="gt_group_heading_row odd">
+<th colspan="2" id="MDCDV" class="gt_group_heading" data-quarto-table-cell-role="th" style="font-weight: bold" scope="colgroup">MDCDV</th>
+</tr>
+<tr class="gt_row_group_first even">
+<td class="gt_row gt_left" headers="MDCDV  Field">Label</td>
+<td class="gt_row gt_left" headers="MDCDV  Value">Middle-Late Childhood Exposure Trajectory Class (Ages 6-12)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="MDCDV  Field">Type</td>
+<td class="gt_row gt_left" headers="MDCDV  Value">character</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="MDCDV  Field">Value Labels</td>
+<td class="gt_row gt_left" headers="MDCDV  Value">Character class label from the selected trajectory solution</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="MDCDV  Field">Source Variables</td>
+<td class="gt_row gt_left" headers="MDCDV  Value">LCGA trajectory solution (6-12 years): parental absence + household SES</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="MDCDV  Field">Derivation</td>
+<td class="gt_row gt_left" headers="MDCDV  Value">Assigned from the selected trajectory model for middle-late childhood</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="MDCDV  Field">Status</td>
+<td class="gt_row gt_left" headers="MDCDV  Value">Implemented in the childhood class-derivation workflow</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="dataset-name-reference" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-name-reference">Dataset Name Reference</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Dataset Name</th>
+<th style="text-align: left;">Readable Name</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">dt_childhood_exposure</td>
+<td style="text-align: left;">Childhood Social Exposure Panel</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dt_multistudies</td>
+<td style="text-align: left;">Integrated Multi-study Mental Health Panel</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">dt_psychometric</td>
+<td style="text-align: left;">Psychometric Bridge Source Data</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">dt_dreams_multi_ssq</td>
+<td style="text-align: left;">SSQ-only Cohort Response Data</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 
 </section>
@@ -289,11 +2239,11 @@ document.addEventListener("DOMContentLoaded", function () {
       label: "Analysis Deliverables",
       items: [
         { file: "analysis_deliverables.html", label: "Overview" },
-        { file: "deliverable_obj01.html", label: "Objective 1: Social Determinant Trajectories" },
-        { file: "deliverable_obj02.html", label: "Objective 2: Behavioral Mediators" },
-        { file: "deliverable_obj03.html", label: "Objective 3: Depression Harmonization" },
-        { file: "deliverable_obj04.html", label: "Objective 4: Causal Mediation" },
-        { file: "deliverable_obj05.html", label: "Objective 5: Youth Co-Creation" }
+        { file: "deliverable_obj05.html", label: "Objective 1: Youth Co-Creation" },
+        { file: "deliverable_obj03.html", label: "Objective 2: Depression Harmonization" },
+        { file: "deliverable_obj01.html", label: "Objective 3: Social Determinant Trajectories" },
+        { file: "deliverable_obj02.html", label: "Objective 4: Behavioral Mediators" },
+        { file: "deliverable_obj04.html", label: "Objective 5: Causal Mediation" }
       ]
     },
     {
@@ -362,15 +2312,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const content = document.getElementById("quarto-content");
-  if (content && !content.querySelector(".public-site-placeholder")) {
-    const notice = document.createElement("div");
-    notice.className = "public-site-placeholder alert alert-warning";
-    notice.setAttribute("role", "status");
-    notice.style.marginBottom = "1rem";
-    notice.textContent = "In progress, content not yet published to the public website";
-    content.insertBefore(notice, content.firstChild);
-  }
-
   if (!currentGroup || !content) {
     return;
   }

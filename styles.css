@@ -373,7 +373,8 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
 
 .home-hero__title-copy {
   min-width: 0;
-  max-width: 78ch;
+  max-width: none;
+  width: 100%;
   order: 2;
 }
 
@@ -422,9 +423,13 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   line-height: 1.45;
   border-left: 3px solid rgba(245, 127, 41, 0.9);
   padding-left: 0.65rem;
-  max-width: 72ch;
-  text-wrap: pretty;
-  overflow-wrap: anywhere;
+  max-width: none;
+  width: 100%;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-break: keep-all;
 }
 
 .home-hero__content > p {
@@ -432,9 +437,13 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   color: var(--ink-soft);
   font-size: 1.03rem;
   line-height: 1.65;
-  max-width: 78ch;
-  text-wrap: pretty;
-  overflow-wrap: anywhere;
+  max-width: none;
+  width: 100%;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  word-break: keep-all;
 }
 
 .home-content-layout {
@@ -1541,13 +1550,21 @@ body.quarto-dashboard .card.valuebox .value-box-showcase i {
   }
 
   .home-hero__title-row {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.55rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
     align-items: start;
   }
 
+  .home-hero__title-logo-wrap {
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.25rem 0.6rem 0.45rem;
+  }
+
   .home-hero__title-logo {
-    max-height: 74px;
+    width: min(100%, 300px);
+    max-height: 88px;
   }
 
   .nav-footer .nav-footer-right {
@@ -1597,6 +1614,19 @@ body.quarto-dashboard .card.valuebox .value-box-showcase i {
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: 0.6rem;
+  }
+
+  .home-content-layout__left .metric-column.metric-column--horizontal .metric-row {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.2rem;
+  }
+
+  .home-content-layout__left .metric-column.metric-column--horizontal .metric-card {
+    width: 160px;
+    max-width: 160px;
+    flex: 0 0 160px;
   }
 }
 

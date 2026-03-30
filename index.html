@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20260330a3">
 </head>
 
 <body class="nav-fixed home-page quarto-light">
@@ -266,7 +266,7 @@ Youth Mental Health and Social Stress Exposures
 </section>
 </div>
 <div class="home-hero__title-logo-wrap">
-<p><img src="assets/ahri_logo.png" class="home-hero__title-logo" alt="AHRI logo"></p>
+<p><img src="_assets/ahri_logo.png" class="home-hero__title-logo" alt="AHRI logo"></p>
 </div>
 </div>
 <p>This project investigates the longitudinal relationship between social determinants and depression symptoms among South African youth aged 13-24, combining rigorous secondary data analysis with youth-led co-creation.</p>
@@ -274,7 +274,7 @@ Youth Mental Health and Social Stress Exposures
 </div>
 <div class="home-content-layout">
 <div class="home-content-layout__left">
-<div class="metric-column">
+<div class="metric-column metric-column--horizontal">
 <p class="metric-column__eyebrow">
 Study Snapshot
 </p>
@@ -504,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = document.createElement("a");
     const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
     link.className = "section-nav__link" + (isActive ? " is-active" : "");
-    link.href = item.file === "metadata.html" ? "metadata.html?v=20260328" : item.file;
+    link.href = item.file;
     link.textContent = item.label;
     link.setAttribute("title", item.label);
     if (isActive) {
