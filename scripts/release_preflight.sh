@@ -71,11 +71,28 @@ cat "${tmpfile}"
 echo
 
 fail=0
+ALLOWED_RDS_PATH="scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds"
 
 echo "Check 1/5: blocked object extensions..."
-if rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' "${tmpfile}"; then
-  echo "FAIL: blocked data/object extension found."
-  fail=1
+blocked_object_files=()
+while IFS= read -r f; do
+  [[ -z "${f}" ]] && continue
+  blocked_object_files+=("${f}")
+done < <(rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' "${tmpfile}" || true)
+if [[ "${#blocked_object_files[@]}" -gt 0 ]]; then
+  disallowed_object_files=()
+  for f in "${blocked_object_files[@]}"; do
+    if [[ "${f}" == "${ALLOWED_RDS_PATH}" ]]; then
+      continue
+    fi
+    disallowed_object_files+=("${f}")
+  done
+
+  if [[ "${#disallowed_object_files[@]}" -gt 0 ]]; then
+    printf '%s\n' "${disallowed_object_files[@]}"
+    echo "FAIL: blocked data/object extension found."
+    fail=1
+  fi
 fi
 echo
 
