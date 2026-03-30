@@ -1,0 +1,128 @@
+name: Release Guard
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Compute changed files
+        id: changed
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
+            base="${{ github.event.pull_request.base.sha }}"
+            head="${{ github.event.pull_request.head.sha }}"
+          else
+            base="${{ github.event.before }}"
+            head="${{ github.sha }}"
+            if [[ "$base" == "0000000000000000000000000000000000000000" ]]; then
+              base="$(git rev-list --max-parents=0 "$head" | tail -n1)"
+            fi
+          fi
+
+          git diff --name-only "$base" "$head" | sed '/^$/d' > changed_files.txt
+
+          if [[ ! -s changed_files.txt ]]; then
+            echo "No changed files detected."
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "Changed files:"
+          cat changed_files.txt
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
+
+      - name: Enforce release guard rules
+        if: steps.changed.outputs.has_changes == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          fail=0
+
+          echo "Checking blocked file extensions..."
+          if rg -n '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' changed_files.txt; then
+            echo "::error::Blocked serialized or binary data artifact detected in changed files."
+            fail=1
+          fi
+
+          echo "Checking blocked housekeeping files and paths..."
+          if rg -n '(^|/)\.DS_Store$' changed_files.txt; then
+            echo "::error::.DS_Store files must not be committed."
+            fail=1
+          fi
+
+          if rg -n '(^|/)_quarantine(/|$)' changed_files.txt; then
+            echo "::error::_quarantine content is not allowed in public release commits."
+            fail=1
+          fi
+
+          mapfile -t existing_files < <(while IFS= read -r f; do [[ -f "$f" ]] && echo "$f"; done < changed_files.txt)
+          if [[ "${#existing_files[@]}" -eq 0 ]]; then
+            echo "No existing changed files left to scan (possibly delete-only commit)."
+            if [[ "$fail" -ne 0 ]]; then
+              exit 1
+            fi
+            exit 0
+          fi
+
+          echo "Checking high-confidence secret patterns..."
+          if rg -n -I \
+            -e 'ghp_[A-Za-z0-9]{36,}' \
+            -e 'github_pat_[A-Za-z0-9_]{20,}' \
+            -e 'AKIA[0-9A-Z]{16}' \
+            -e '-----BEGIN (RSA|EC|OPENSSH|DSA|PRIVATE) KEY-----' \
+            "${existing_files[@]}"; then
+            echo "::error::Potential secret detected in changed content."
+            fail=1
+          fi
+
+          mapfile -t non_doc_files < <(
+            printf '%s\n' "${existing_files[@]}" \
+              | rg -v '^docs/' \
+              | rg -v '^README\.md$' \
+              | rg -v '^\.github/workflows/release-guard\.yml$' \
+              | rg -v '^scripts/release_preflight\.sh$' \
+              || true
+          )
+          if [[ "${#non_doc_files[@]}" -gt 0 ]]; then
+            echo "Checking non-doc files for private or machine-specific path leaks..."
+            if rg -n -I \
+              -e '/Users/' \
+              -e 'OneDrive' \
+              -e '_private_use' \
+              -e 'file://' \
+              -e '[A-Za-z]:\\' \
+              "${non_doc_files[@]}"; then
+              echo "::error::Private or machine-specific path markers detected in non-doc files."
+              fail=1
+            fi
+          fi
+
+          if [[ "$fail" -ne 0 ]]; then
+            echo "Release guard failed."
+            exit 1
+          fi
+
+          echo "Release guard passed."
