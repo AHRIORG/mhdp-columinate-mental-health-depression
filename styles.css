@@ -425,11 +425,10 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   padding-left: 0.65rem;
   max-width: none;
   width: 100%;
-  white-space: nowrap;
-  text-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  word-break: keep-all;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .home-hero__content > p {
@@ -439,11 +438,10 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
   line-height: 1.65;
   max-width: none;
   width: 100%;
-  white-space: nowrap;
-  text-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  word-break: keep-all;
+  white-space: normal;
+  overflow: visible;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .home-content-layout {
