@@ -293,6 +293,7 @@ window.Quarto = {
   <li><a href="#a6-irt-harmonization-and-threshold-derivation" id="toc-a6-irt-harmonization-and-threshold-derivation" class="nav-link" data-scroll-target="#a6-irt-harmonization-and-threshold-derivation">A6 IRT Harmonization and Threshold Derivation</a></li>
   <li><a href="#a7-performance-metrics-and-uncertainty" id="toc-a7-performance-metrics-and-uncertainty" class="nav-link" data-scroll-target="#a7-performance-metrics-and-uncertainty">A7 Performance Metrics and Uncertainty</a></li>
   <li><a href="#a8-planned-outputs-and-reporting" id="toc-a8-planned-outputs-and-reporting" class="nav-link" data-scroll-target="#a8-planned-outputs-and-reporting">A8 Planned Outputs and Reporting</a></li>
+  <li><a href="#a9-symbol-to-implementation-crosswalk-objective-2" id="toc-a9-symbol-to-implementation-crosswalk-objective-2" class="nav-link" data-scroll-target="#a9-symbol-to-implementation-crosswalk-objective-2">A9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)</a></li>
   </ul></li>
   <li><a href="#section-b-objective-3---social-determinant-trajectories-sap" id="toc-section-b-objective-3---social-determinant-trajectories-sap" class="nav-link" data-scroll-target="#section-b-objective-3---social-determinant-trajectories-sap">Section B: Objective 3 - Social Determinant Trajectories SAP</a>
   <ul class="collapse">
@@ -462,6 +463,59 @@ Y_i^{H} = \mathbb{1}\{\hat{\theta}_i \ge \tau^\ast\},
 <li>Comparative endpoint performance tables across threshold strategies.</li>
 <li>Final harmonized endpoint definition for downstream Objectives 3-5.</li>
 </ol>
+</section>
+<section id="a9-symbol-to-implementation-crosswalk-objective-2" class="level3">
+<h3 class="anchored" data-anchor-id="a9-symbol-to-implementation-crosswalk-objective-2">A9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)</h3>
+<p>To align the Depression Harmonization SAP (Objective 2) notation with implementation evidence in the public repository, Table A9.1 maps each core quantity to scripts under <code>scripts/psychometric/</code> and to the corresponding generated output artifacts.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 27%">
+<col style="width: 28%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>SAP quantity</th>
+<th>Mathematical definition in this SAP</th>
+<th>Implementation locus (OBJ03 Psychometric)</th>
+<th>Primary output artifact(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\mathbf{x}_i\)</span>, retained item structure</td>
+<td>Observed ordinal symptom response vector used in EFA/CFA stages</td>
+<td>EFA stability and retention pipeline in <code>scripts/psychometric/programs/utils/efa_stability/</code> with orchestration via <code>scripts/psychometric/programs/utils/efa_stability/05_run_pipeline_efa_master.R</code></td>
+<td>Stability/retention figures in SCAR notebook outputs and EFA artifacts</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\theta_i\)</span>, <span class="math inline">\(\boldsymbol{\lambda}\)</span>, <span class="math inline">\(\boldsymbol{\tau}\)</span></td>
+<td>CFA latent trait and ordered-threshold measurement parameters</td>
+<td>CFA + invariance + ROC workflow under <code>scripts/psychometric/programs/utils/cfa_roc/</code> (notably <code>03_mc_loop.R</code>, <code>04_summary.R</code>, <code>06_master.R</code>)</td>
+<td><code>03_IRT_fitted_models_1factor.rds</code>, <code>03_IRT_invariance_models_1factor.rds</code>, fit/invariance PDFs</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(a_j\)</span>, <span class="math inline">\(b_{jk}\)</span></td>
+<td>GRM discrimination and threshold/location parameters</td>
+<td>IRT calibration engine in <code>scripts/psychometric/programs/utils/irt/full_itr.R</code> and batch execution via <code>scripts/psychometric/programs/analysis/run_irt_batch.R</code></td>
+<td><code>03_IRT_Harmonization_Results.rds</code>, batch model objects in <code>output/batch/</code></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\tau^\ast\)</span> and operating-point scenarios</td>
+<td>Applied latent threshold used for harmonized endpoint assignment</td>
+<td>Threshold scenario comparison in <code>scripts/psychometric/programs/analysis/irt_roc_compare.R</code> with harmonization rules consolidated by batch outputs</td>
+<td><code>SSQ10_Harmonized_Scoring_Engine.rds</code>, ROC metric figures/tables</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Y_i^H\)</span> and prevalence alignment <span class="math inline">\(\Delta_p\)</span></td>
+<td>Harmonized depression endpoint and drift vs PHQ-referenced prevalence</td>
+<td>Endpoint performance summaries from IRT + ROC comparison outputs and Monte Carlo result summaries</td>
+<td><code>main_results_boot_10000_Isisekelo_Sempilo.rds</code>, <code>boot_10000_Isisekelo_Sempilo_PHQ-09_(Original)_results.rds</code>, ROC/performance figures</td>
+</tr>
+</tbody>
+</table>
+<p>This crosswalk is scoped to Objective 2 implementation evidence in the public script bundle at <code>scripts/psychometric/</code>. Retired scripts are intentionally excluded from active SAP traceability in public release.</p>
 </section>
 </section>
 <section id="section-b-objective-3---social-determinant-trajectories-sap" class="level2">
