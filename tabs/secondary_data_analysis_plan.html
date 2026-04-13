@@ -6,7 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="CO-LUMINATE study SAP integrating depression harmonization, social determinant trajectories, and behavioral mediators workstreams.">
 
 <title>Statistical Analysis Plan – CO-LUMINATE</title>
 <style>
@@ -280,7 +279,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Content</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
@@ -293,7 +292,7 @@ window.Quarto = {
   <li><a href="#a6-irt-harmonization-and-threshold-derivation" id="toc-a6-irt-harmonization-and-threshold-derivation" class="nav-link" data-scroll-target="#a6-irt-harmonization-and-threshold-derivation">A6 IRT Harmonization and Threshold Derivation</a></li>
   <li><a href="#a7-performance-metrics-and-uncertainty" id="toc-a7-performance-metrics-and-uncertainty" class="nav-link" data-scroll-target="#a7-performance-metrics-and-uncertainty">A7 Performance Metrics and Uncertainty</a></li>
   <li><a href="#a8-planned-outputs-and-reporting" id="toc-a8-planned-outputs-and-reporting" class="nav-link" data-scroll-target="#a8-planned-outputs-and-reporting">A8 Planned Outputs and Reporting</a></li>
-  <li><a href="#a9-symbol-to-implementation-crosswalk-objective-2" id="toc-a9-symbol-to-implementation-crosswalk-objective-2" class="nav-link" data-scroll-target="#a9-symbol-to-implementation-crosswalk-objective-2">A9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)</a></li>
+  <li><a href="#a9-symbol-to-implementation-crosswalk-depression-harmonization-sap" id="toc-a9-symbol-to-implementation-crosswalk-depression-harmonization-sap" class="nav-link" data-scroll-target="#a9-symbol-to-implementation-crosswalk-depression-harmonization-sap">A9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)</a></li>
   </ul></li>
   <li><a href="#section-b-objective-3---social-determinant-trajectories-sap" id="toc-section-b-objective-3---social-determinant-trajectories-sap" class="nav-link" data-scroll-target="#section-b-objective-3---social-determinant-trajectories-sap">Section B: Objective 3 - Social Determinant Trajectories SAP</a>
   <ul class="collapse">
@@ -317,7 +316,12 @@ window.Quarto = {
   <li><a href="#c7-sensitivity-and-robustness" id="toc-c7-sensitivity-and-robustness" class="nav-link" data-scroll-target="#c7-sensitivity-and-robustness">C7 Sensitivity and Robustness</a></li>
   <li><a href="#c8-planned-outputs-and-reporting" id="toc-c8-planned-outputs-and-reporting" class="nav-link" data-scroll-target="#c8-planned-outputs-and-reporting">C8 Planned Outputs and Reporting</a></li>
   </ul></li>
-  <li><a href="#supplementary-glossary-symbol-and-parameters" id="toc-supplementary-glossary-symbol-and-parameters" class="nav-link" data-scroll-target="#supplementary-glossary-symbol-and-parameters">Supplementary: Glossary of Symbols and Parameters</a></li>
+  <li><a href="#supplementary-glossary-of-symbols-and-parameters" id="toc-supplementary-glossary-of-symbols-and-parameters" class="nav-link" data-scroll-target="#supplementary-glossary-of-symbols-and-parameters">Supplementary: Glossary of Symbols and Parameters</a>
+  <ul class="collapse">
+  <li><a href="#objective-2-glossary" id="toc-objective-2-glossary" class="nav-link" data-scroll-target="#objective-2-glossary">Objective 2 Glossary</a></li>
+  <li><a href="#objective-3-glossary" id="toc-objective-3-glossary" class="nav-link" data-scroll-target="#objective-3-glossary">Objective 3 Glossary</a></li>
+  <li><a href="#objective-4-glossary" id="toc-objective-4-glossary" class="nav-link" data-scroll-target="#objective-4-glossary">Objective 4 Glossary</a></li>
+  </ul></li>
   <li><a href="#remaining-sections" id="toc-remaining-sections" class="nav-link" data-scroll-target="#remaining-sections">Remaining Sections</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -331,11 +335,6 @@ window.Quarto = {
 <h1 class="title">Statistical Analysis Plan</h1>
 </div>
 
-<div>
-  <div class="description">
-    CO-LUMINATE study SAP integrating depression harmonization, social determinant trajectories, and behavioral mediators workstreams.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -352,288 +351,238 @@ window.Quarto = {
 
 <section id="overview" class="level2">
 <h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>This document is the integrated CO-LUMINATE Statistical Analysis Plan (SAP). It is organized by analytical objective and structured for staged publication. The current release includes:</p>
+<p>This document is the integrated CO-LUMINATE Statistical Analysis Plan (SAP). It retains the published public section structure while updating the underlying analytical description to reflect the current harmonization, trajectory, and pathway-screening workflows carried forward into the release-safe script bundles.</p>
+<p>The current release includes:</p>
 <ul>
 <li><strong>Section A:</strong> Objective 2 (Depression Harmonization)</li>
 <li><strong>Section B:</strong> Objective 3 (Social Determinant Trajectories)</li>
 <li><strong>Section C:</strong> Objective 4 (Behavioral Mediators)</li>
 </ul>
-<p>Section D (Objective 5: Causal Mediation) remains an intentional placeholder pending the finalization of prespecified mediation model families and implementation diagnostics.</p>
+<p>Section D (Objective 5: Causal Mediation) remains an intentional placeholder pending finalization of prespecified mediation model families and implementation diagnostics.</p>
 </section>
 <section id="section-a-objective-2---depression-harmonization-sap" class="level2">
 <h2 class="anchored" data-anchor-id="section-a-objective-2---depression-harmonization-sap">Section A: Objective 2 - Depression Harmonization SAP</h2>
 <section id="a1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="a1-background-and-rationale">A1 Background and Rationale</h3>
-<p>This SAP component defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire (SSQ) and the Patient Health Questionnaire (PHQ-9). The methodological challenge is multi-instrument comparability in a longitudinal setting where cohorts differ in instrument availability and local validity context.</p>
-<p>The PHQ-9 is treated as the external benchmark for probable depression <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>, while the SSQ captures culturally grounded distress phenotypes relevant to Southern African settings <span class="citation" data-cites="Patel1997 haney2014 chibanda2019ssq8">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>; <a href="#ref-haney2014" role="doc-biblioref">Haney et al. 2014</a>; <a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. Harmonization therefore requires defensible latent-construct alignment, subgroup stability checks, and threshold calibration rather than simple raw-score translation <span class="citation" data-cites="putnick2016measurement woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
+<p>This SAP component defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire and the Patient Health Questionnaire-9. The central challenge is not simple score conversion, but defensible alignment of instruments that differ in item format, recall period, and cultural grounding in a longitudinal multi-cohort setting.</p>
+<p>The PHQ-9 is treated as the external benchmark for probable depression <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>, while the SSQ contributes culturally grounded distress content that is relevant in Southern African settings <span class="citation" data-cites="Patel1997 Haney2014 chibanda2019ssq8">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>; <a href="#ref-Haney2014" role="doc-biblioref">Haney et al. 2014</a>; <a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. The revised Objective 2 workflow therefore treats harmonization as a staged psychometric program: item-set refinement, structural validation, invariance assessment, joint IRT calibration, and threshold comparison. In the current implementation, the theoretically derived SSQ-10 subset is retained as the main transportable SSQ configuration because it preserves the depressive core while avoiding non-specific distress items that weaken comparability with the PHQ benchmark <span class="citation" data-cites="putnick2016measurement woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
 </section>
 <section id="a3-objectives-and-estimands" class="level3">
 <h3 class="anchored" data-anchor-id="a3-objectives-and-estimands">A3 Objectives and Estimands</h3>
-<p>Let <span class="math inline">\(Y_i^{PHQ} = \mathbb{1}\{PHQ9_i \ge 10\}\)</span> denote PHQ-referenced probable depression for participant <span class="math inline">\(i\)</span>.</p>
-<p>The primary estimand is the harmonized binary endpoint:</p>
+<p>Let <span class="math inline">\(Y_i^{PHQ} = \mathbb{1}\{PHQ9_i \ge 10\}\)</span> denote the PHQ-referenced probable-depression indicator for participant <span class="math inline">\(i\)</span>.</p>
+<p>The primary estimand is the harmonized binary endpoint</p>
 <p><span class="math display">\[
 Y_i^{H} = \mathbb{1}\{\hat{\theta}_i \ge \tau^\ast\},
 \]</span></p>
-<p><strong>Parameter definitions (Eq. A3.1):</strong></p>
-<ul>
-<li><span class="math inline">\(Y_i^{H}\)</span>: harmonized depression endpoint for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\mathbb{1}\{\cdot\}\)</span>: indicator function (equals 1 when the condition is true, 0 otherwise).</li>
-<li><span class="math inline">\(\hat{\theta}_i\)</span>: calibrated latent depression score for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\tau^\ast\)</span>: chosen latent-score threshold linked to the PHQ-9 benchmark.</li>
-</ul>
-<p>where <span class="math inline">\(\hat{\theta}_i\)</span> is the calibrated latent depression score from joint PHQ-SSQ modeling and <span class="math inline">\(\tau^\ast\)</span> is the pre-specified threshold linked to the PHQ-9 reference scale.</p>
-<p>For the PHQ-referenced comparator used above, <span class="math inline">\(PHQ9_i\)</span> denotes the total PHQ-9 score for participant <span class="math inline">\(i\)</span>, with the threshold of 10 defining probable depression on the benchmark instrument.</p>
-<p>Secondary estimands include calibration transportability and prevalence alignment in SSQ-only cohorts:</p>
+<p>where <span class="math inline">\(\hat{\theta}_i\)</span> is the calibrated latent depression score from joint PHQ-SSQ modeling and <span class="math inline">\(\tau^\ast\)</span> is the selected latent threshold linked to the PHQ-9 reference scale.</p>
+<p>Secondary estimands include prevalence alignment and threshold transportability:</p>
 <p><span class="math display">\[
 \Delta_p = \Pr(Y_i^{H}=1) - \Pr(Y_i^{PHQ}=1),
 \]</span></p>
-<p><strong>Parameter definitions (Eq. A3.2):</strong></p>
-<ul>
-<li><span class="math inline">\(\Delta_p\)</span>: prevalence drift between harmonized and PHQ-referenced endpoints.</li>
-<li><span class="math inline">\(\Pr(Y_i^{H}=1)\)</span>: marginal prevalence under the harmonized endpoint.</li>
-<li><span class="math inline">\(\Pr(Y_i^{PHQ}=1)\)</span>: marginal prevalence under the PHQ-referenced endpoint.</li>
-</ul>
-<p>interpreted as endpoint-prevalence drift under candidate thresholding strategies.</p>
+<p>where <span class="math inline">\(\Delta_p\)</span> summarizes endpoint-prevalence drift under candidate thresholding strategies. In the revised Objective 2 workflow, threshold comparison is not limited to a single rule. The anchored threshold linked to a PHQ-9 score of approximately 10 is compared with ROC-derived operating points and sensitivity- or specificity-targeted alternatives before a transport rule is selected.</p>
 </section>
 <section id="a4-study-design-and-analytic-samples" class="level3">
 <h3 class="anchored" data-anchor-id="a4-study-design-and-analytic-samples">A4 Study Design and Analytic Samples</h3>
-<p>The development sample comprises participants aged 16-24 years with concurrent SSQ and PHQ observations. The transport sample consists of SSQ-only records in linked cohorts.</p>
-<p>Eligibility is staged by model:</p>
+<p>The development sample comprises participants aged approximately 16-24 years with concurrent SSQ and PHQ observations available for joint calibration. The transport sample consists of SSQ-only records used to extend the harmonized scoring rule beyond the concurrent benchmark subset.</p>
+<p>Eligibility is stage-specific:</p>
 <ul>
-<li>factor-analytic stages require complete item vectors for included indicators;</li>
-<li>IRT calibration requires complete item responses under the final item set;</li>
-<li>endpoint assignment is restricted to records with valid latent score estimates.</li>
+<li>structural-validity stages require complete item vectors for the candidate item set under evaluation;</li>
+<li>IRT calibration requires valid item responses under the retained instrument configuration;</li>
+<li>threshold comparison requires benchmark PHQ information;</li>
+<li>endpoint assignment requires valid latent-score estimates from the final joint or fixed-parameter SSQ scoring workflow.</li>
 </ul>
 </section>
 <section id="a5-structural-modeling-strategy" class="level3">
 <h3 class="anchored" data-anchor-id="a5-structural-modeling-strategy">A5 Structural Modeling Strategy</h3>
-<p>For ordinal symptom items, exploratory and confirmatory analyses are estimated using polychoric correlation structures and robust estimators for ordered-categorical data <span class="citation" data-cites="holgado2010polychoric wu2016identification">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>; <a href="#ref-wu2016identification" role="doc-biblioref">Wu and Estabrook 2016</a>)</span>.</p>
-<p>Exploratory factor analysis (EFA) is run in Monte Carlo split samples to stabilize dimensionality decisions. Confirmatory factor analysis (CFA) is then evaluated on hold-out subsets with fit diagnostics interpreted jointly (CFI, RMSEA, SRMR) rather than by single-cutoff rules <span class="citation" data-cites="hu1999cutoff maccallum2002practice">(<a href="#ref-hu1999cutoff" role="doc-biblioref">Hu and Bentler 1999</a>; <a href="#ref-maccallum2002practice" role="doc-biblioref">MacCallum et al. 2002</a>)</span>.</p>
-<p>Let <span class="math inline">\(\mathbf{x}_i\)</span> denote the ordinal item vector and <span class="math inline">\(\theta_i\)</span> the latent depression factor. The CFA measurement model is:</p>
+<p>The revised Objective 2 workflow evaluates three candidate SSQ configurations: SSQ-14, the theoretical SSQ-10 depressive subset, and the SSQ-8 comparison subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. Structural validity begins with Monte Carlo split-sample EFA using polychoric correlation structures and categorical-data retention criteria, followed by hold-out CFA using WLSMV estimation <span class="citation" data-cites="holgado2010polychoric wu2016identification">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>; <a href="#ref-wu2016identification" role="doc-biblioref">Wu and Estabrook 2016</a>)</span>. Consensus item structures are identified across repeated split samples rather than from a single exploratory fit.</p>
+<p>Let <span class="math inline">\(\mathbf{x}_i\)</span> denote the ordinal or binary symptom vector and <span class="math inline">\(\theta_i\)</span> the latent depression factor. The CFA measurement model is</p>
 <p><span class="math display">\[
 \mathbf{x}_i \sim f(\theta_i; \boldsymbol{\lambda}, \boldsymbol{\tau}),
 \]</span></p>
-<p><strong>Parameter definitions (Eq. A5.1):</strong></p>
-<ul>
-<li><span class="math inline">\(\mathbf{x}_i\)</span>: vector of observed ordinal symptom responses for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\theta_i\)</span>: latent depression factor score.</li>
-<li><span class="math inline">\(f(\cdot)\)</span>: ordinal measurement response function implied by the CFA specification.</li>
-<li><span class="math inline">\(\boldsymbol{\lambda}\)</span>: factor-loading parameters.</li>
-<li><span class="math inline">\(\boldsymbol{\tau}\)</span>: item-threshold parameters.</li>
-</ul>
-<p>where <span class="math inline">\(\boldsymbol{\lambda}\)</span> are loadings and <span class="math inline">\(\boldsymbol{\tau}\)</span> are item thresholds.</p>
-<p>Measurement invariance and differential item functioning are evaluated across sex and age strata using parameter-constraint comparisons and practical fit-change diagnostics <span class="citation" data-cites="putnick2016measurement vandenberg2000 woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-vandenberg2000" role="doc-biblioref">Vandenberg and Lance 2000</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
+<p>where <span class="math inline">\(\boldsymbol{\lambda}\)</span> are factor-loading parameters and <span class="math inline">\(\boldsymbol{\tau}\)</span> are item-threshold parameters. Fit diagnostics are interpreted jointly rather than through single-cutoff rules, consistent with the revised psychometric workflow <span class="citation" data-cites="hu1999cutoff maccallum2002practice">(<a href="#ref-hu1999cutoff" role="doc-biblioref">Hu and Bentler 1999</a>; <a href="#ref-maccallum2002practice" role="doc-biblioref">MacCallum et al. 2002</a>)</span>. Measurement invariance is then assessed across sex and age strata so that downstream thresholding does not rest on item structures that vary materially across key subgroups <span class="citation" data-cites="putnick2016measurement vandenberg2000">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-vandenberg2000" role="doc-biblioref">Vandenberg and Lance 2000</a>)</span>.</p>
 </section>
 <section id="a6-irt-harmonization-and-threshold-derivation" class="level3">
 <h3 class="anchored" data-anchor-id="a6-irt-harmonization-and-threshold-derivation">A6 IRT Harmonization and Threshold Derivation</h3>
-<p>Harmonization uses graded response models (GRM) implemented in <code>mirt</code> <span class="citation" data-cites="samejima1969estimation chalmers2012mirt">(<a href="#ref-samejima1969estimation" role="doc-biblioref">Samejima 1969</a>; <a href="#ref-chalmers2012mirt" role="doc-biblioref">Chalmers 2012</a>)</span>. For item <span class="math inline">\(j\)</span> and category threshold <span class="math inline">\(k\)</span>:</p>
+<p>Harmonization uses graded response models implemented in <code>mirt</code> <span class="citation" data-cites="samejima1969estimation chalmers2012mirt">(<a href="#ref-samejima1969estimation" role="doc-biblioref">Samejima 1969</a>; <a href="#ref-chalmers2012mirt" role="doc-biblioref">Chalmers 2012</a>)</span>. For item <span class="math inline">\(j\)</span> and category threshold <span class="math inline">\(k\)</span>,</p>
 <p><span class="math display">\[
 \Pr(X_{ij} \ge k \mid \theta_i) =
 \operatorname{logit}^{-1}\left[a_j(\theta_i - b_{jk})\right].
 \]</span></p>
-<p><strong>Parameter definitions (Eq. A6.1):</strong></p>
-<ul>
-<li><span class="math inline">\(\Pr(X_{ij} \ge k \mid \theta_i)\)</span>: cumulative probability of endorsing category <span class="math inline">\(k\)</span> or higher for item <span class="math inline">\(j\)</span>.</li>
-<li><span class="math inline">\(X_{ij}\)</span>: ordinal response of participant <span class="math inline">\(i\)</span> on item <span class="math inline">\(j\)</span>.</li>
-<li><span class="math inline">\(\theta_i\)</span>: latent depression severity for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(a_j\)</span>: GRM discrimination parameter for item <span class="math inline">\(j\)</span>.</li>
-<li><span class="math inline">\(b_{jk}\)</span>: GRM threshold/location parameter for item <span class="math inline">\(j\)</span> at threshold <span class="math inline">\(k\)</span>.</li>
-<li><span class="math inline">\(\operatorname{logit}^{-1}(\cdot)\)</span>: inverse-logit link mapping linear predictors to probabilities.</li>
-</ul>
-<p>Joint PHQ-SSQ calibration maps both instruments to a common latent continuum. The anchored rule selects <span class="math inline">\(\tau^\ast\)</span> via PHQ test-characteristic alignment to the clinical PHQ-9 benchmark near 10, while ROC/Youden and sensitivity-prioritized alternatives are retained for robustness comparison.</p>
+<p>Separate instrument-level GRMs are used to confirm single-scale adequacy, after which a joint PHQ-SSQ calibration places both instruments on a common latent continuum. Latent trait scores are estimated using expected a posteriori scoring, and SSQ parameters from the joint model are exported as a fixed-parameter scoring engine so that SSQ-only records can be scored without refitting the full calibration model.</p>
+<p>The primary applied threshold remains a clinically anchored <span class="math inline">\(\theta\)</span> cutoff tied to the PHQ-9 test characteristic curve at approximately 10. However, the revised Objective 2 work compares this anchored rule with Youden-based ROC rules and constrained operating rules targeting high sensitivity or specificity before selecting the transportable endpoint definition for downstream Objectives 3-5.</p>
 </section>
 <section id="a7-performance-metrics-and-uncertainty" class="level3">
 <h3 class="anchored" data-anchor-id="a7-performance-metrics-and-uncertainty">A7 Performance Metrics and Uncertainty</h3>
 <p>Endpoint performance is summarized by:</p>
 <ul>
-<li>sensitivity: <span class="math inline">\(\Pr(Y^H=1 \mid Y^{PHQ}=1)\)</span></li>
-<li>specificity: <span class="math inline">\(\Pr(Y^H=0 \mid Y^{PHQ}=0)\)</span></li>
-<li>PPV, NPV, accuracy, AUC, and Cohen’s <span class="math inline">\(\kappa\)</span></li>
-<li>prevalence drift <span class="math inline">\(\Delta_p\)</span></li>
+<li>sensitivity, specificity, PPV, NPV, and accuracy;</li>
+<li>AUC and Cohen’s <span class="math inline">\(\kappa\)</span>;</li>
+<li>prevalence drift <span class="math inline">\(\Delta_p\)</span>;</li>
+<li>subgroup consistency under alternate threshold strategies.</li>
 </ul>
-<p><strong>Metric definitions:</strong> sensitivity is the probability that the harmonized endpoint is positive among PHQ-positive participants; specificity is the probability that the harmonized endpoint is negative among PHQ-negative participants; PPV and NPV denote positive and negative predictive value, respectively; AUC is the area under the receiver-operating-characteristic curve; and Cohen’s <span class="math inline">\(\kappa\)</span> summarizes agreement beyond chance.</p>
-<p>Interval estimation uses resampling-based uncertainty summaries where appropriate <span class="citation" data-cites="efron1994introduction">(<a href="#ref-efron1994introduction" role="doc-biblioref">Efron and Tibshirani 1994</a>)</span>. Threshold selection is governed by a joint decision criterion balancing discrimination, calibration, and prevalence distortion rather than discrimination alone.</p>
+<p>The current workflow treats discrimination, calibration, and prevalence alignment as a joint decision problem rather than selecting thresholds on AUC or Youden performance alone. Uncertainty is summarized using resampling-based intervals and repeated-split diagnostics where appropriate <span class="citation" data-cites="efron1994introduction">(<a href="#ref-efron1994introduction" role="doc-biblioref">Efron and Tibshirani 1994</a>)</span>.</p>
 </section>
 <section id="a8-planned-outputs-and-reporting" class="level3">
 <h3 class="anchored" data-anchor-id="a8-planned-outputs-and-reporting">A8 Planned Outputs and Reporting</h3>
 <p>Planned outputs are:</p>
 <ol type="1">
-<li>Item and structural diagnostics (EFA/CFA, invariance, DIF).</li>
-<li>IRT calibration tables and threshold-mapping plots.</li>
-<li>Comparative endpoint performance tables across threshold strategies.</li>
-<li>Final harmonized endpoint definition for downstream Objectives 3-5.</li>
+<li>item-retention and structural-validity diagnostics for candidate SSQ configurations;</li>
+<li>CFA, invariance, and DIF summaries for the retained SSQ-based depression structure;</li>
+<li>joint IRT calibration outputs and threshold-mapping comparisons;</li>
+<li>a fixed-parameter SSQ scoring engine for SSQ-only cohorts;</li>
+<li>the final harmonized depression endpoint carried forward into downstream Objectives 3-5.</li>
 </ol>
 </section>
-<section id="a9-symbol-to-implementation-crosswalk-objective-2" class="level3">
-<h3 class="anchored" data-anchor-id="a9-symbol-to-implementation-crosswalk-objective-2">A9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)</h3>
-<p>To align the Depression Harmonization SAP (Objective 2) notation with implementation evidence in the public repository, Table A9.1 maps each core quantity to scripts under <code>scripts/psychometric/</code> and to the corresponding generated output artifacts.</p>
+<section id="a9-symbol-to-implementation-crosswalk-depression-harmonization-sap" class="level3">
+<h3 class="anchored" data-anchor-id="a9-symbol-to-implementation-crosswalk-depression-harmonization-sap">A9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)</h3>
+<p>The Objective 2 crosswalk below maps each core quantity to the public psychometric script bundle under <code>scripts/psychometric/</code>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 23%">
-<col style="width: 27%">
-<col style="width: 28%">
-<col style="width: 22%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>SAP quantity</th>
-<th>Mathematical definition in this SAP</th>
-<th>Implementation locus (OBJ03 Psychometric)</th>
-<th>Primary output artifact(s)</th>
+<th>Definition in this SAP</th>
+<th>Implementation locus (public psychometric bundle)</th>
+<th>Primary output family</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><span class="math inline">\(\mathbf{x}_i\)</span>, retained item structure</td>
-<td>Observed ordinal symptom response vector used in EFA/CFA stages</td>
-<td>EFA stability and retention pipeline in <code>scripts/psychometric/programs/utils/efa_stability/</code> with orchestration via <code>scripts/psychometric/programs/utils/efa_stability/05_run_pipeline_efa_master.R</code></td>
-<td>Stability/retention figures in SCAR notebook outputs and EFA artifacts</td>
+<td>Observed symptom item set carried into structural and IRT stages</td>
+<td><code>scripts/psychometric/programs/utils/efa_stability/05_run_pipeline_efa_master.R</code></td>
+<td>EFA stability summaries and retained-structure artifacts</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\theta_i\)</span>, <span class="math inline">\(\boldsymbol{\lambda}\)</span>, <span class="math inline">\(\boldsymbol{\tau}\)</span></td>
-<td>CFA latent trait and ordered-threshold measurement parameters</td>
-<td>CFA + invariance + ROC workflow under <code>scripts/psychometric/programs/utils/cfa_roc/</code> (notably <code>03_mc_loop.R</code>, <code>04_summary.R</code>, <code>06_master.R</code>)</td>
-<td><code>03_IRT_fitted_models_1factor.rds</code>, <code>03_IRT_invariance_models_1factor.rds</code>, fit/invariance PDFs</td>
+<td>Latent trait, loading, and threshold parameters from CFA stages</td>
+<td><code>scripts/psychometric/programs/utils/cfa_roc/06_master.R</code></td>
+<td>CFA fit, invariance, and ROC-prep model objects</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(a_j\)</span>, <span class="math inline">\(b_{jk}\)</span></td>
-<td>GRM discrimination and threshold/location parameters</td>
-<td>IRT calibration engine in <code>scripts/psychometric/programs/utils/irt/full_itr.R</code> and batch execution via <code>scripts/psychometric/programs/analysis/run_irt_batch.R</code></td>
-<td><code>03_IRT_Harmonization_Results.rds</code>, batch model objects in <code>output/batch/</code></td>
+<td>GRM discrimination and category-threshold parameters</td>
+<td><code>scripts/psychometric/programs/utils/irt/full_itr.R</code> with batch execution via <code>scripts/psychometric/programs/analysis/run_irt_batch.R</code></td>
+<td>IRT model objects and harmonization result bundles</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(\tau^\ast\)</span> and operating-point scenarios</td>
-<td>Applied latent threshold used for harmonized endpoint assignment</td>
-<td>Threshold scenario comparison in <code>scripts/psychometric/programs/analysis/irt_roc_compare.R</code> with harmonization rules consolidated by batch outputs</td>
-<td><code>SSQ10_Harmonized_Scoring_Engine.rds</code>, ROC metric figures/tables</td>
+<td><span class="math inline">\(\tau^\ast\)</span> and alternative operating rules</td>
+<td>Applied latent threshold for endpoint assignment</td>
+<td><code>scripts/psychometric/programs/analysis/irt_roc_compare.R</code></td>
+<td>Threshold-comparison figures and operating-point summaries</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(Y_i^H\)</span> and prevalence alignment <span class="math inline">\(\Delta_p\)</span></td>
-<td>Harmonized depression endpoint and drift vs PHQ-referenced prevalence</td>
-<td>Endpoint performance summaries from IRT + ROC comparison outputs and Monte Carlo result summaries</td>
-<td><code>main_results_boot_10000_Isisekelo_Sempilo.rds</code>, <code>boot_10000_Isisekelo_Sempilo_PHQ-09_(Original)_results.rds</code>, ROC/performance figures</td>
+<td><span class="math inline">\(Y_i^H\)</span> and <span class="math inline">\(\Delta_p\)</span></td>
+<td>Harmonized endpoint and prevalence drift vs PHQ benchmark</td>
+<td>Consolidated IRT + ROC comparison outputs in the Objective 2 analysis pipeline</td>
+<td>Final scoring-engine outputs and downstream endpoint summaries</td>
 </tr>
 </tbody>
 </table>
-<p>This crosswalk is scoped to Objective 2 implementation evidence in the public script bundle at <code>scripts/psychometric/</code>. Retired scripts are intentionally excluded from active SAP traceability in public release.</p>
 </section>
 </section>
 <section id="section-b-objective-3---social-determinant-trajectories-sap" class="level2">
 <h2 class="anchored" data-anchor-id="section-b-objective-3---social-determinant-trajectories-sap">Section B: Objective 3 - Social Determinant Trajectories SAP</h2>
 <section id="b1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="b1-background-and-rationale">B1 Background and Rationale</h3>
-<p>Objective 3 models developmental trajectories of childhood social determinants and evaluates their longitudinal associations with harmonized depression outcomes. Trajectory methods are used to represent heterogeneity in exposure evolution across childhood windows, with explicit distinction between univariate and joint trajectory structures <span class="citation" data-cites="andruff2009latent nagin2005group muthen2001growth">(<a href="#ref-andruff2009latent" role="doc-biblioref">Andruff et al. 2009</a>; <a href="#ref-nagin2005group" role="doc-biblioref">Nagin 2005</a>; <a href="#ref-muthen2001growth" role="doc-biblioref">Muthén 2001</a>)</span>.</p>
+<p>Objective 3 models developmental trajectories of childhood social determinants and evaluates how those trajectories relate to the harmonized depression endpoint. This SAP treats trajectory modeling as a defensibility problem in which class structure, overlap, and interpretability will be examined across multiple analytic restrictions rather than inferred from a single retained solution <span class="citation" data-cites="andruff2009latent nagin2005group muthen2001growth">(<a href="#ref-andruff2009latent" role="doc-biblioref">Andruff et al. 2009</a>; <a href="#ref-nagin2005group" role="doc-biblioref">D. S. Nagin 2005</a>; <a href="#ref-muthen2001growth" role="doc-biblioref">Bengt O. Muthén 2001</a>)</span>.</p>
+<p>This framing follows the current harmonized trajectory workflow, which treats childhood social determinants as time-varying developmental processes and organizes them into early-childhood (0-5 years) and middle-late-childhood (6-12 years) windows <span class="citation" data-cites="hallPosel2019_fragmenting fortier2017_maelstrom simelane2025_sahr">(<a href="#ref-hallPosel2019_fragmenting" role="doc-biblioref">Hall and Posel 2019</a>; <a href="#ref-fortier2017_maelstrom" role="doc-biblioref">Isabel Fortier et al. 2017</a>; <a href="#ref-simelane2025_sahr" role="doc-biblioref">Simelane et al. 2025</a>)</span>. The scientific aim is to preserve developmental timing while distinguishing robust trajectory structures from those that change materially when stronger repeated-measures requirements are imposed.</p>
 </section>
 <section id="b3-objectives-and-estimands" class="level3">
 <h3 class="anchored" data-anchor-id="b3-objectives-and-estimands">B3 Objectives and Estimands</h3>
-<p>Let <span class="math inline">\(E_{it}\)</span> denote exposure profile at developmental time <span class="math inline">\(t\)</span>, and <span class="math inline">\(C_i\)</span> latent trajectory class.</p>
-<p>Primary estimands:</p>
+<p>Let <span class="math inline">\(E_{it}\)</span> denote exposure profile at developmental time <span class="math inline">\(t\)</span>, and let <span class="math inline">\(C_i\)</span> denote latent trajectory class membership.</p>
+<p>Primary estimands include the class-proportion vector</p>
 <p><span class="math display">\[
 \pi_c = \Pr(C_i = c), \quad c = 1,\dots,K,
 \]</span></p>
-<p><strong>Parameter definitions (Eq. B3.1):</strong></p>
-<ul>
-<li><span class="math inline">\(\pi_c\)</span>: population proportion assigned to trajectory class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(C_i\)</span>: latent class membership for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(K\)</span>: total number of retained classes.</li>
-</ul>
-<p>and class-conditional depression risk contrasts:</p>
+<p>and class-conditional depression-risk contrasts</p>
 <p><span class="math display">\[
 \text{OR}_c =
 \frac{\Pr(Y_i^H=1 \mid C_i=c)/\Pr(Y_i^H=0 \mid C_i=c)}
      {\Pr(Y_i^H=1 \mid C_i=c_{ref})/\Pr(Y_i^H=0 \mid C_i=c_{ref})}.
 \]</span></p>
-<p><strong>Parameter definitions (Eq. B3.2):</strong></p>
-<ul>
-<li><span class="math inline">\(\text{OR}_c\)</span>: odds ratio for depression in class <span class="math inline">\(c\)</span> relative to reference class <span class="math inline">\(c_{ref}\)</span>.</li>
-<li><span class="math inline">\(Y_i^H\)</span>: harmonized depression endpoint.</li>
-<li><span class="math inline">\(C_i\)</span>: latent trajectory class membership.</li>
-<li><span class="math inline">\(c_{ref}\)</span>: pre-specified reference class.</li>
-<li><span class="math inline">\(\Pr(Y_i^H=1 \mid C_i=c)\)</span>: conditional probability of depression in class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(\Pr(Y_i^H=0 \mid C_i=c)\)</span>: conditional probability of no depression in class <span class="math inline">\(c\)</span>.</li>
-</ul>
-<p>Secondary estimands include posterior class-assignment quality and cross-window pathway consistency.</p>
+<p>Secondary estimands include posterior classification quality, same-label retention across analytic branches, and cross-scenario reallocation of class membership. These secondary estimands are defined because the Objective 3 workflow will compare unrestricted, primary restricted, sensitivity, and strict joint branches rather than relying on a single fitted branch as the sole evidence source.</p>
 </section>
 <section id="b4-exposure-definitions-and-time-windows" class="level3">
 <h3 class="anchored" data-anchor-id="b4-exposure-definitions-and-time-windows">B4 Exposure Definitions and Time Windows</h3>
-<p>Exposure histories are organized into pre-specified developmental windows (0-5 years and 6-12 years), with harmonized coding of social determinants across cohorts. The objective is to preserve developmental ordering and minimize post-hoc window redefinition.</p>
-<p>For the current Objective 3 analytical package, the active trajectory specifications are:</p>
+<p>Exposure histories are organized into two pre-specified developmental windows: 0-5 years and 6-12 years. All trajectory models are built on harmonized repeated childhood measures, with emphasis on preserving developmental ordering and avoiding post hoc redefinition of windows or determinant families.</p>
+<p>The current active Objective 3 model family set is:</p>
 <ul>
-<li>Univariate: <code>ULWOM</code>, <code>ULWOF</code>, <code>UHSES</code></li>
-<li>Joint: <code>JPA</code>, <code>JPAES</code></li>
+<li><code>ULWOM</code>: univariate maternal co-residence trajectories;</li>
+<li><code>UHSES</code>: univariate household socioeconomic status trajectories;</li>
+<li><code>JPA</code>: joint parental residence pattern trajectories;</li>
+<li><code>JMAES</code>: joint maternal absence plus household socioeconomic status trajectories.</li>
 </ul>
-<p>The following specifications are intentionally retired from the active Objective 3 analysis set and are not part of current SAP implementation checks: <code>UHC14</code>, <code>JPAC</code>, <code>JPACES</code>.</p>
+<p>These four families supersede the earlier, narrower public summary and define the current SAP implementation target. Retired or exploratory specifications are excluded from active SAP compliance checks unless they are reintroduced explicitly in a later release.</p>
 </section>
 <section id="b5-lcga-and-joint-trajectory-strategy" class="level3">
 <h3 class="anchored" data-anchor-id="b5-lcga-and-joint-trajectory-strategy">B5 LCGA and Joint-Trajectory Strategy</h3>
-<p>Univariate LCGA is fitted per window and determinant family, followed by joint-trajectory integration where scientifically justified.</p>
-<p>For participant <span class="math inline">\(i\)</span> in class <span class="math inline">\(c\)</span>, the class-specific growth model is:</p>
+<p>The Objective 3 workflow implements a five-branch comparison framework:</p>
+<ol type="1">
+<li>unrestricted univariate analyses to maximize sample size under likelihood-based handling of incomplete repeated measures;</li>
+<li>primary univariate analyses requiring at least three occasions per window;</li>
+<li>sensitivity univariate analyses requiring at least two occasions per window;</li>
+<li>main joint analyses requiring at least three occasions;</li>
+<li>strict joint sensitivity analyses requiring at least three complete joint occasions.</li>
+</ol>
+<p>For participant <span class="math inline">\(i\)</span> in class <span class="math inline">\(c\)</span>, the class-specific growth model is</p>
 <p><span class="math display">\[
 E_{it} = \eta_{0c} + \eta_{1c}t + \eta_{2c}t^2 + \varepsilon_{it},
 \quad \varepsilon_{it} \sim \mathcal{N}(0,\sigma_c^2).
 \]</span></p>
-<p><strong>Parameter definitions (Eq. B5.1):</strong></p>
-<ul>
-<li><span class="math inline">\(E_{it}\)</span>: observed exposure value for participant <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</li>
-<li><span class="math inline">\(\eta_{0c}\)</span>: class-specific intercept (baseline level) for class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(\eta_{1c}\)</span>: class-specific linear slope.</li>
-<li><span class="math inline">\(\eta_{2c}\)</span>: class-specific quadratic slope.</li>
-<li><span class="math inline">\(\varepsilon_{it}\)</span>: residual term for participant <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</li>
-<li><span class="math inline">\(\sigma_c^2\)</span>: class-specific residual variance.</li>
-<li><span class="math inline">\(\mathcal{N}(0,\sigma_c^2)\)</span>: normal distribution with mean 0 and class-specific variance <span class="math inline">\(\sigma_c^2\)</span>.</li>
-</ul>
-<p>Class-membership probabilities are estimated via multinomial logits:</p>
+<p>Class-membership probabilities are represented as</p>
 <p><span class="math display">\[
 \Pr(C_i=c) = \frac{\exp(\alpha_c)}{\sum_{h=1}^{K}\exp(\alpha_h)}.
 \]</span></p>
-<p><strong>Parameter definitions (Eq. B5.2):</strong></p>
-<ul>
-<li><span class="math inline">\(\Pr(C_i=c)\)</span>: probability that participant <span class="math inline">\(i\)</span> belongs to class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(\alpha_c\)</span>: class-membership logit intercept for class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(K\)</span>: number of candidate classes in the fitted model.</li>
-<li><span class="math inline">\(\exp(\cdot)\)</span>: exponential function used to map logit-scale class parameters onto probabilities.</li>
-<li><span class="math inline">\(\sum_{h=1}^{K}\exp(\alpha_h)\)</span>: normalizing denominator summing over all candidate classes <span class="math inline">\(h\)</span>.</li>
-</ul>
-<p>Model fitting is aligned with established mixture-model workflows, including three-step distal-outcome linkage where needed to reduce class-assignment bias <span class="citation" data-cites="asparouhov2014auxiliary bakk2016relating">(<a href="#ref-asparouhov2014auxiliary" role="doc-biblioref">Asparouhov and Muthen 2014</a>; <a href="#ref-bakk2016relating" role="doc-biblioref">Bakk, Oberski, and Vermunt 2016</a>)</span>.</p>
+<p>In practice, the workflow emphasizes common orchestration for model fitting, labeling, plotting, reporting, and audit generation rather than isolated solution fitting <span class="citation" data-cites="muthen2004_growthMixtureChapter nagin2016_multitraj">(<a href="#ref-muthen2004_growthMixtureChapter" role="doc-biblioref">Bengt O. Muthén 2004</a>; <a href="#ref-nagin2016_multitraj" role="doc-biblioref">Daniel S. Nagin et al. 2016</a>)</span>.</p>
 </section>
 <section id="b6-class-enumeration-and-model-selection" class="level3">
 <h3 class="anchored" data-anchor-id="b6-class-enumeration-and-model-selection">B6 Class Enumeration and Model Selection</h3>
-<p>Class enumeration combines information criteria and interpretability criteria:</p>
+<p>Class enumeration combines statistical and scientific criteria:</p>
 <ul>
-<li>BIC and sample-size adjusted BIC <span class="citation" data-cites="schwarz1978estimating">(<a href="#ref-schwarz1978estimating" role="doc-biblioref">Schwarz 1978</a>)</span></li>
-<li>entropy and posterior separation</li>
-<li>bootstrap likelihood ratio test evidence <span class="citation" data-cites="nylund2007deciding">(<a href="#ref-nylund2007deciding" role="doc-biblioref">Nylund, Asparouhov, and Muthén 2007</a>)</span></li>
-<li>minimum class prevalence and substantive plausibility</li>
+<li>information criteria and neighboring class-count stability;</li>
+<li>minimum useful class size and posterior separation;</li>
+<li>substantive interpretability of class shapes;</li>
+<li>consistency of retained solutions across analytic restrictions;</li>
+<li>documentation against GRoLTS and SMART-LCA-aligned reporting standards <span class="citation" data-cites="nylund2007_classes masyn2013_mixture vanLissa2024_smartlca">(<a href="#ref-nylund2007_classes" role="doc-biblioref">Nylund, Asparouhov, and Muthén 2007</a>; <a href="#ref-masyn2013_mixture" role="doc-biblioref">Masyn 2013</a>; <a href="#ref-vanLissa2024_smartlca" role="doc-biblioref">Lissa, Garnier-Villarreal, and Anadria 2024</a>)</span>.</li>
 </ul>
-<p>Selection is finalized only when statistical fit and scientific interpretability converge.</p>
+<p>Because mixture solutions are sensitive to specification, local maxima, and sample restriction, retained solutions are also evaluated under structural sensitivity checks and overlap/reallocation reviews <span class="citation" data-cites="bauerCurran2003_overextraction bauer2007_observations hippBauer2006_local watson2022_lctmSpecification">(<a href="#ref-bauerCurran2003_overextraction" role="doc-biblioref">Bauer and Curran 2003</a>; <a href="#ref-bauer2007_observations" role="doc-biblioref">Bauer 2007</a>; <a href="#ref-hippBauer2006_local" role="doc-biblioref">Hipp and Bauer 2006</a>; <a href="#ref-watson2022_lctmSpecification" role="doc-biblioref">Watson et al. 2022</a>)</span>.</p>
 </section>
 <section id="b7-association-modeling-and-robustness" class="level3">
 <h3 class="anchored" data-anchor-id="b7-association-modeling-and-robustness">B7 Association Modeling and Robustness</h3>
-<p>Depression association models condition on harmonized endpoint <span class="math inline">\(Y_i^H\)</span> and include pre-specified confounders:</p>
+<p>Downstream association models condition on the harmonized endpoint <span class="math inline">\(Y_i^H\)</span> and fixed covariates once selected class structures are carried forward:</p>
 <p><span class="math display">\[
 \operatorname{logit}\Pr(Y_i^H=1) = \beta_0 + \sum_{c \ne c_{ref}}\beta_c\mathbb{1}(C_i=c) + \boldsymbol{\gamma}^\top\mathbf{Z}_i.
 \]</span></p>
-<p><strong>Parameter definitions (Eq. B7.1):</strong></p>
+<p>For this SAP, robustness is defined more broadly than the final regression stage alone. Planned robustness evidence includes:</p>
 <ul>
-<li><span class="math inline">\(\Pr(Y_i^H=1)\)</span>: probability of harmonized depression for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\beta_0\)</span>: model intercept.</li>
-<li><span class="math inline">\(\beta_c\)</span>: class-effect coefficient for class <span class="math inline">\(c\)</span> relative to <span class="math inline">\(c_{ref}\)</span>.</li>
-<li><span class="math inline">\(\mathbb{1}(C_i=c)\)</span>: indicator for class membership in class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(\mathbf{Z}_i\)</span>: confounder vector for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\boldsymbol{\gamma}\)</span>: confounder-effect coefficient vector.</li>
-<li><span class="math inline">\(\operatorname{logit}(\cdot)\)</span>: log-odds transformation, <span class="math inline">\(\log\{p/(1-p)\}\)</span>.</li>
-<li><span class="math inline">\(\sum_{c \ne c_{ref}}\)</span>: sum across non-reference trajectory classes.</li>
-<li><span class="math inline">\(\boldsymbol{\gamma}^\top \mathbf{Z}_i\)</span>: linear predictor contribution of the confounder vector.</li>
+<li>class-count stability across unrestricted and restricted branches;</li>
+<li>entropy and posterior-probability comparisons;</li>
+<li>same-label retention in overlap samples;</li>
+<li>strict-joint boundary-condition checks;</li>
+<li>complete audit artifact coverage across all active branches.</li>
 </ul>
-<p>Robustness analyses evaluate class-number alternatives, coding variants, and assignment-uncertainty sensitivity.</p>
+<p>This means the SAP treats defensibility and class reallocation as part of the inferential workflow rather than as a post hoc appendix to a single retained model <span class="citation" data-cites="schaferGraham2002_missingData graham2009_missingData parsons2024_twoTimepoints">(<a href="#ref-schaferGraham2002_missingData" role="doc-biblioref">Schafer and Graham 2002</a>; <a href="#ref-graham2009_missingData" role="doc-biblioref">Graham 2009</a>; <a href="#ref-parsons2024_twoTimepoints" role="doc-biblioref">Parsons, McCormick, et al. 2024</a>)</span>.</p>
 </section>
 <section id="b8-planned-outputs-and-reporting" class="level3">
 <h3 class="anchored" data-anchor-id="b8-planned-outputs-and-reporting">B8 Planned Outputs and Reporting</h3>
-<p>Planned outputs include trajectory-profile plots, class diagnostics, class-assignment summaries, and adjusted depression-risk tables for both univariate and joint models.</p>
+<p>Planned outputs include:</p>
+<ol type="1">
+<li>trajectory-profile plots for each active model family and developmental window;</li>
+<li>class-enumeration summaries and posterior-quality diagnostics;</li>
+<li>overlap and reallocation summaries across unrestricted and restricted branches;</li>
+<li>structural-sensitivity and reporting-checklist artifacts;</li>
+<li>downstream class-linked depression association tables using the harmonized endpoint.</li>
+</ol>
 </section>
 <section id="b9-symbol-to-implementation-crosswalk-objective-3" class="level3">
 <h3 class="anchored" data-anchor-id="b9-symbol-to-implementation-crosswalk-objective-3">B9 Symbol-to-Implementation Crosswalk (Objective 3)</h3>
-<p>To ensure direct traceability from the mathematical SAP definitions to executable analysis components, Table B9.1 maps each core symbol or equation block to its implementation locus and output artifact family.</p>
+<p>The Objective 3 crosswalk below maps each core quantity to the intended public trajectory script bundle under <code>scripts/trajectories/</code>.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -644,68 +593,56 @@ E_{it} = \eta_{0c} + \eta_{1c}t + \eta_{2c}t^2 + \varepsilon_{it},
 <thead>
 <tr class="header">
 <th>SAP quantity</th>
-<th>Mathematical definition in this SAP</th>
-<th>Implementation locus (Objective 3 pipeline)</th>
-<th>Primary output artifact(s)</th>
+<th>Definition in this SAP</th>
+<th>Implementation locus (public trajectory bundle)</th>
+<th>Primary output family</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\pi_c\)</span></td>
-<td><span class="math inline">\(\Pr(C_i = c)\)</span></td>
-<td>LCGA class-enumeration and class-proportion extraction in <code>run_lcga.R</code>; class diagnostics assembled in <code>report_univariate_lcga.R</code> and <code>report_joint_lcga.R</code></td>
-<td><code>01_fit_summary_*.html</code>, <code>06a_Final_Solution_Summary_*.html</code></td>
+<td><span class="math inline">\(\pi_c\)</span> and class-count summaries</td>
+<td>Marginal class proportions and retained class counts</td>
+<td><code>scripts/trajectories/programs/analysis/run_lcga.R</code></td>
+<td>Fit-summary and retained-solution tables</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(C_i\)</span></td>
-<td>latent trajectory class for participant <span class="math inline">\(i\)</span></td>
-<td>LCGA solution object (<code>lcga_results_time_*.rds</code>) and posterior-assignment extraction in reporting scripts</td>
-<td><code>02_AvePP_*.html</code>, <code>06a_Final_Solution_Summary_*.html</code></td>
+<td>Latent class membership and posterior assignment</td>
+<td><code>scripts/trajectories/programs/analysis/report_univariate_lcga.R</code> and <code>scripts/trajectories/programs/analysis/report_joint_lcga.R</code></td>
+<td>Posterior-quality and final-solution summaries</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(\eta_{0c},\eta_{1c},\eta_{2c}\)</span></td>
-<td>class-specific intercept and slope parameters</td>
-<td>growth-factor estimation from selected LCGA model in reporting scripts</td>
-<td><code>04_Estimates_*.html</code></td>
+<td><span class="math inline">\(\eta_{0c}, \eta_{1c}, \eta_{2c}\)</span></td>
+<td>Class-specific growth parameters</td>
+<td><code>scripts/trajectories/programs/utils/mplus_lcga.R</code></td>
+<td>Parameter-estimate and profile outputs</td>
 </tr>
 <tr class="even">
-<td>Posterior classification quality</td>
-<td>posterior separation and assignment precision</td>
-<td>posterior-class probability summaries and overlap routines in reporting scripts</td>
-<td><code>02_AvePP_*.html</code>, <code>06c_Class_Overlap_Summary_*.html</code> (joint models)</td>
+<td>Class-selection decision <span class="math inline">\(K\)</span></td>
+<td>Retained solution under fit and plausibility criteria</td>
+<td><code>scripts/trajectories/programs/utils/lcga_selection.R</code></td>
+<td>Selection summaries and audit-aligned decision tables</td>
 </tr>
 <tr class="odd">
-<td>Class-selection decision (<span class="math inline">\(K\)</span>)</td>
-<td>model-enumeration choice under fit and plausibility criteria</td>
-<td>selection logic in <code>lcga_selection.R</code>; execution loop in <code>run_lcga.R</code></td>
-<td><code>01_fit_summary_*.html</code>, model-selection row highlighted in tables</td>
-</tr>
-<tr class="even">
-<td>Sensitivity diagnostics</td>
-<td>misspecification and reporting-standard checks</td>
-<td>sensitivity/checklist builders in reporting scripts</td>
-<td><code>07_Misspecification_Sensitivity_*.html</code>, <code>08_GRoLTS_Checklist_*.html</code></td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(Y_i^H\)</span> contrast model</td>
-<td><span class="math inline">\(\operatorname{logit}\Pr(Y_i^H=1)=\beta_0+\sum_{c\ne c_{ref}}\beta_c\mathbb{1}(C_i=c)+\boldsymbol{\gamma}^\top\mathbf{Z}_i\)</span></td>
-<td>class-linked outcome association workflow using selected class structures and confounder adjustment</td>
-<td>Objective 3 association tables/figures in trajectory deliverables and SAP-linked outputs</td>
+<td>Overlap, reallocation, and robustness diagnostics</td>
+<td>Cross-scenario defensibility checks</td>
+<td><code>scripts/trajectories/programs/utils/class_overlap_reporting.R</code> with overlap summaries assembled in the reporting scripts</td>
+<td>Overlap summaries, sensitivity pages, and reporting checklists</td>
 </tr>
 </tbody>
 </table>
-<p>The crosswalk above is restricted to Objective 3 trajectory components and does not include Objective 5 mediation decomposition modules.</p>
+<p>The public trajectory bundle is specified to use repo-local handoff inputs under <code>data/inputs/</code> by default, with optional overrides through <code>COLU_CHILDHOOD_RDATA</code> and <code>COLU_MULTISTUDIES_RDATA</code>. This replaces the older private-data path pattern and is the public-facing contract assumed by the current SAP crosswalk.</p>
 </section>
 <section id="b10-consistency-stamp-objective-3" class="level3">
 <h3 class="anchored" data-anchor-id="b10-consistency-stamp-objective-3">B10 Consistency Stamp (Objective 3)</h3>
-<p><strong>Consistency stamp date:</strong> 2026-03-30<br>
+<p><strong>Consistency stamp date:</strong> 2026-04-09<br>
 <strong>Scope:</strong> Objective 3 (Social Determinant Trajectories) only.</p>
-<p>This consistency stamp records that, at this release checkpoint:</p>
+<p>This consistency stamp records the intended SAP scope for the current Objective 3 specification:</p>
 <ol type="1">
-<li>Supplementary glossary definitions and Section B3 estimands are aligned with the active trajectory implementation path in the Objective 3 pipeline.</li>
-<li>The active model family set is explicitly constrained to <code>ULWOM</code>, <code>ULWOF</code>, <code>UHSES</code>, <code>JPA</code>, and <code>JPAES</code>; retired specifications (<code>UHC14</code>, <code>JPAC</code>, <code>JPACES</code>) are excluded from active SAP compliance checks.</li>
-<li>Class-selection, posterior-quality diagnostics, sensitivity outputs, and trajectory reporting artifacts are generated in a consistent naming framework (<code>01_</code> through <code>08_</code> table series per active model-window combination).</li>
-<li>Remaining Objective 3 close-out work is documentation-depth only (parameter-level traceability and versioned sign-off), not redesign of the analytical model family.</li>
+<li>the active Objective 3 family set is constrained to <code>ULWOM</code>, <code>UHSES</code>, <code>JPA</code>, and <code>JMAES</code>;</li>
+<li>the SAP is aligned to the five-branch defensibility workflow rather than to a single retained LCGA branch;</li>
+<li>overlap, entropy, and class-reallocation diagnostics are defined as core implementation evidence;</li>
+<li>any future expansion beyond this family set will require an explicit SAP revision.</li>
 </ol>
 </section>
 </section>
@@ -713,126 +650,145 @@ E_{it} = \eta_{0c} + \eta_{1c}t + \eta_{2c}t^2 + \varepsilon_{it},
 <h2 class="anchored" data-anchor-id="section-c-objective-4---behavioral-mediators-sap">Section C: Objective 4 - Behavioral Mediators SAP</h2>
 <section id="c1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="c1-background-and-rationale">C1 Background and Rationale</h3>
-<p>Objective 4 identifies behavioral pathways through which childhood social determinant trajectories may influence depression risk. This section defines mediator-screening and mediator-structuring analyses that precede full causal mediation decomposition.</p>
+<p>Objective 4 identifies adolescent behavioral and proximal social pathway variables through which childhood social determinant trajectories may influence depression risk. This SAP defines Objective 4 as a pathway-screening and prioritization analysis, not a formal causal mediation decomposition. This distinction matters in a harmonized multi-cohort platform where pathway variables, endpoint timing, and contextual exposure history all vary across source studies <span class="citation" data-cites="JornsPresentati2021PLOS Jakobsson2024GMH Rossouw2024PLOS">(<a href="#ref-JornsPresentati2021PLOS" role="doc-biblioref">Jörns-Presentati et al. 2021</a>; <a href="#ref-Jakobsson2024GMH" role="doc-biblioref">Jakobsson et al. 2024</a>; <a href="#ref-Rossouw2024PLOS" role="doc-biblioref">Rossouw et al. 2024</a>)</span>.</p>
+<p>The current Objective 4 framing treats the adolescent pathway block as a constrained but policy-relevant subset of a broader locally grounded pathway ecology. Candidate domains include material deprivation, violence, school-related adversity, social connectedness, and sexual-risk behavior, all positioned after childhood exposure windows and before the harmonized depressive-symptom endpoint <span class="citation" data-cites="Mkhize2024Comppsych Partap2023FrontPsych Zimmerman2021BMJGH">(<a href="#ref-Mkhize2024Comppsych" role="doc-biblioref">M. Mkhize, Westhuizen, and Sorsdahl 2024</a>; <a href="#ref-Partap2023FrontPsych" role="doc-biblioref">Partap et al. 2023</a>; <a href="#ref-Zimmerman2021BMJGH" role="doc-biblioref">Zimmerman et al. 2021</a>)</span>.</p>
 </section>
 <section id="c3-objectives-and-estimands" class="level3">
 <h3 class="anchored" data-anchor-id="c3-objectives-and-estimands">C3 Objectives and Estimands</h3>
-<p>Primary estimands are adjusted mediator-outcome associations conditional on exposure trajectory class and confounders.</p>
-<p>For mediator <span class="math inline">\(M_j\)</span>:</p>
+<p>Primary estimands are adjusted pathway-depression associations and pathway-prioritization signals derived from the joint pattern of upstream A-path support and downstream B-path evidence.</p>
+<p>For mediator <span class="math inline">\(M_j\)</span>, the endpoint model is</p>
 <p><span class="math display">\[
-\operatorname{logit}\Pr(Y_i^H=1) =
-\alpha_0 + \alpha_1 M_{ij} + \alpha_2 C_i + \boldsymbol{\alpha}_3^\top \mathbf{Z}_i.
+\operatorname{logit}\left\{P(Y_i^H=1 \mid S_{0-5}, S_{6-12}, M_1,\ldots,M_7, C)\right\}
+=
+\beta_0 + \beta_1^{\top}S_{0-5} + \beta_2^{\top}S_{6-12} + \sum_{j=1}^{7}\theta_j M_j + \beta_3^{\top} C,
 \]</span></p>
-<p><strong>Parameter definitions (Eq. C3.1):</strong></p>
-<ul>
-<li><span class="math inline">\(\Pr(Y_i^H=1)\)</span>: probability of harmonized depression for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\alpha_0\)</span>: model intercept.</li>
-<li><span class="math inline">\(\alpha_1\)</span>: association parameter for mediator <span class="math inline">\(M_{ij}\)</span>.</li>
-<li><span class="math inline">\(M_{ij}\)</span>: value of mediator <span class="math inline">\(j\)</span> for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\alpha_2\)</span>: effect parameter for trajectory representation <span class="math inline">\(C_i\)</span>.</li>
-<li><span class="math inline">\(C_i\)</span>: trajectory class/exposure representation.</li>
-<li><span class="math inline">\(\mathbf{Z}_i\)</span>: confounder vector.</li>
-<li><span class="math inline">\(\boldsymbol{\alpha}_3\)</span>: confounder-effect coefficient vector.</li>
-<li><span class="math inline">\(\operatorname{logit}(\cdot)\)</span>: log-odds transformation, <span class="math inline">\(\log\{p/(1-p)\}\)</span>.</li>
-<li><span class="math inline">\(\boldsymbol{\alpha}_3^\top \mathbf{Z}_i\)</span>: linear predictor contribution of measured confounders.</li>
-</ul>
-<p>Secondary estimands include mediator inter-association structure and ranking stability across adjustment sets.</p>
+<p>where <span class="math inline">\(S_{0-5}\)</span> and <span class="math inline">\(S_{6-12}\)</span> denote childhood trajectory-class representations, <span class="math inline">\(M_j\)</span> denotes a candidate adolescent pathway domain, and <span class="math inline">\(C\)</span> denotes fixed covariates. The primary parameter of interest for each pathway domain is <span class="math inline">\(\theta_j\)</span>, interpreted as the pathway-specific association with the harmonized depression endpoint after conditioning on transition history and the fixed covariate set.</p>
+<p>Secondary estimands include A-path support hierarchy, nested-adjustment attenuation patterns, and ranking stability across model families. These secondary estimands will be used to decide which pathway domains warrant promotion into later mediation-focused analyses.</p>
 </section>
 <section id="c4-mediator-definitions-and-coding" class="level3">
 <h3 class="anchored" data-anchor-id="c4-mediator-definitions-and-coding">C4 Mediator Definitions and Coding</h3>
-<p>Candidate mediators are operationalized from harmonized adolescent behavioral domains (e.g., school attachment, social support, violence exposure, food insecurity, and related behavioral indicators). Recoding, scaling, and missingness handling follow pre-specified rules from the governed data-preparation pipeline.</p>
+<p>The current empirically testable adolescent pathway block comprises seven harmonized domains:</p>
+<ul>
+<li>alcohol use;</li>
+<li>ever having had sexual intercourse;</li>
+<li>food insecurity;</li>
+<li>lack of government grant receipt;</li>
+<li>violence exposure;</li>
+<li>low social support;</li>
+<li>school disengagement.</li>
+</ul>
+<p>These variables are treated as candidate pathway indicators rather than as already-identified formal mediators. They are harmonized from adolescent data collected after the childhood exposure windows and before the harmonized depression endpoint, with fixed covariate adjustment anchored on sex, age, rural residence, and calendar year <span class="citation" data-cites="Marlow2023JAH Fortier2017 Chilver2023 Mthiyane2025IJPDS">(<a href="#ref-Marlow2023JAH" role="doc-biblioref">Marlow et al. 2023</a>; <a href="#ref-Fortier2017" role="doc-biblioref">I. Fortier et al. 2017</a>; <a href="#ref-Chilver2023" role="doc-biblioref">Chilver et al. 2023</a>; <a href="#ref-Mthiyane2025IJPDS" role="doc-biblioref">Mthiyane et al. 2025</a>)</span>.</p>
 </section>
 <section id="c5-modeling-strategy" class="level3">
 <h3 class="anchored" data-anchor-id="c5-modeling-strategy">C5 Modeling Strategy</h3>
-<p>Three layers are prespecified:</p>
+<p>Objective 4 carries forward transition-based exposure history rather than using isolated class snapshots. The childhood transition backbone is written as</p>
+<p><span class="math display">\[
+P(S_{0-5}, S_{6-12}, U^{(0-5)}, U^{(6-12)})
+=
+P(S_{0-5})
+\times
+P(S_{6-12} \mid S_{0-5})
+\times
+\prod_t P(U_t^{(0-5)} \mid S_{0-5})
+\times
+\prod_t P(U_t^{(6-12)} \mid S_{6-12}),
+\]</span></p>
+<p>with posterior class uncertainty carried into downstream screening rather than resolved through deterministic single-class assignment <span class="citation" data-cites="Vermunt2010ThreeStep AsparouhovMuthen2014 Zyberaj2022LTA">(<a href="#ref-Vermunt2010ThreeStep" role="doc-biblioref">Vermunt 2010</a>; <a href="#ref-AsparouhovMuthen2014" role="doc-biblioref">Asparouhov and Muthén 2014</a>; <a href="#ref-Zyberaj2022LTA" role="doc-biblioref">Zyberaj, Bakaç, and Seibel 2022</a>)</span>.</p>
+<p>Within that transition framework, three analytic layers are prespecified:</p>
 <ol type="1">
-<li>unadjusted models (<span class="math inline">\(Y_i^H \sim M_{ij}\)</span>),</li>
-<li>confounder-adjusted models (<span class="math inline">\(Y_i^H \sim M_{ij} + \mathbf{Z}_i\)</span>),</li>
-<li>jointly adjusted mediator models (<span class="math inline">\(Y_i^H \sim \mathbf{M}_i + \mathbf{Z}_i\)</span>).</li>
+<li>A-path screening of pathway-variable probabilities as functions of childhood transition history and fixed covariates;</li>
+<li>B-path models relating pathway domains to the harmonized depression endpoint after adjustment for transition history and fixed covariates;</li>
+<li>jointly adjusted pathway models used to rank candidate pathway domains rather than to claim identified indirect effects.</li>
 </ol>
-<p><strong>Model-term definitions:</strong> in these compact model expressions, <span class="math inline">\(Y_i^H\)</span> is the harmonized depression endpoint, <span class="math inline">\(M_{ij}\)</span> is a single mediator for participant <span class="math inline">\(i\)</span>, <span class="math inline">\(\mathbf{M}_i\)</span> is the vector of mediators entered jointly, <span class="math inline">\(\mathbf{Z}_i\)</span> is the confounder vector, and the symbol <span class="math inline">\(\sim\)</span> indicates the set of predictors included in the working regression model.</p>
-<p>Given potential mediator collinearity, interpretation emphasizes effect-direction consistency, precision, and stability under alternate adjustment sets rather than single-model significance alone.</p>
+<p>All downstream regression stages use posterior-probability-weighted logistic models with participant-level cluster-robust standard errors. The active model-family set is aligned to Objective 3: <code>ULWOM</code>, <code>UHSES</code>, <code>JPA</code>, and <code>JMAES</code>.</p>
 </section>
 <section id="c6-mediator-prioritization-and-phenotype-planning" class="level3">
 <h3 class="anchored" data-anchor-id="c6-mediator-prioritization-and-phenotype-planning">C6 Mediator Prioritization and Phenotype Planning</h3>
-<p>Mediators are prioritized for Objective 5 if they show:</p>
+<p>Pathway prioritization for Objective 5 will be based on the joint pattern of:</p>
 <ul>
-<li>stable adjusted associations with <span class="math inline">\(Y_i^H\)</span>,</li>
-<li>coherent epidemiologic interpretation,</li>
-<li>acceptable overlap structure for mediation decomposition.</li>
+<li>A-path support across pre-specified primary and secondary hypothesis tiers;</li>
+<li>B-path stability across the four active model families;</li>
+<li>attenuation under nested fixed-covariate adjustment;</li>
+<li>substantive plausibility in relation to the broader co-created pathway ecology.</li>
 </ul>
-<p>Mediator phenotype summaries are treated as supportive representation tools and not substitutes for prespecified individual mediator effects.</p>
+<p>Within that framework, food insecurity, violence exposure, and ever having had sexual intercourse are treated as high-interest candidate domains for close scrutiny because they are strongly motivated by the current substantive framework and the pathway-screening design. Alcohol use, lack of government grant receipt, low social support, and school disengagement remain part of the full evaluated pathway block and will be assessed under the same prioritization rules rather than excluded a priori <span class="citation" data-cites="Duby2022CAPMH Mkhize2022Food">(<a href="#ref-Duby2022CAPMH" role="doc-biblioref">Duby et al. 2022</a>; <a href="#ref-Mkhize2022Food" role="doc-biblioref">S. Mkhize et al. 2022</a>)</span>.</p>
 </section>
 <section id="c7-sensitivity-and-robustness" class="level3">
 <h3 class="anchored" data-anchor-id="c7-sensitivity-and-robustness">C7 Sensitivity and Robustness</h3>
-<p>Sensitivity analyses include alternate coding schemes, complete-case vs missing-data-aware pipelines, and subgroup checks by age/sex strata. E-value style bias-sensitivity summaries may be reported for key associations where decision-relevant <span class="citation" data-cites="mathur2022evalues vanderweele2017sensitivity">(<a href="#ref-mathur2022evalues" role="doc-biblioref">Mathur et al. 2022</a>; <a href="#ref-vanderweele2017sensitivity" role="doc-biblioref">T. J. VanderWeele and Ding 2017</a>)</span>.</p>
+<p>Objective 4 places particular emphasis on nested fixed-covariate adjustment. Sensitivity analyses will assess whether attenuation of pathway-depression associations is driven primarily by age, calendar year, rural residence, or combinations of these factors. This reflects the design assumption that developmental timing and secular period are part of the data-generating structure rather than optional nuisance adjustments.</p>
+<p>Additional robustness layers include:</p>
+<ul>
+<li>pathway ranking by pre-specified primary and secondary A-path hypothesis tiers rather than nominal significance alone <span class="citation" data-cites="benjamini1995">(<a href="#ref-benjamini1995" role="doc-biblioref">Benjamini and Hochberg 1995</a>)</span>;</li>
+<li>complete-case main analyses with targeted multiple-imputation diagnostics for maternal baseline variables <span class="citation" data-cites="White2011 Sterne2009">(<a href="#ref-White2011" role="doc-biblioref">White, Royston, and Wood 2011</a>; <a href="#ref-Sterne2009" role="doc-biblioref">Sterne et al. 2009</a>)</span>;</li>
+<li>interaction reviews for selected pathway combinations, especially violence exposure with school disengagement;</li>
+<li>reporting aligned to STROBE and AGReMA guidance <span class="citation" data-cites="vonelm2007 moreno-betancur2021">(<a href="#ref-vonelm2007" role="doc-biblioref">Elm et al. 2007</a>; <a href="#ref-moreno-betancur2021" role="doc-biblioref">Moreno-Betancur et al. 2021</a>)</span>.</li>
+</ul>
+<p>These robustness checks reinforce that the current objective is prioritization for later mediation work, not a claim of identified direct and indirect effects <span class="citation" data-cites="imai2010identification valeri2013mediation vanderweele2016">(<a href="#ref-imai2010identification" role="doc-biblioref">Imai, Keele, and Yamamoto 2010</a>; <a href="#ref-valeri2013mediation" role="doc-biblioref">Valeri and VanderWeele 2013</a>; <a href="#ref-vanderweele2016" role="doc-biblioref">T. J. VanderWeele et al. 2016</a>)</span>.</p>
 </section>
 <section id="c8-planned-outputs-and-reporting" class="level3">
 <h3 class="anchored" data-anchor-id="c8-planned-outputs-and-reporting">C8 Planned Outputs and Reporting</h3>
-<p>Outputs include mediator-association tables (unadjusted and adjusted), mediator inter-association summaries, and a transparent shortlist of mediators carried into Objective 5 causal mediation modeling.</p>
+<p>Planned outputs include:</p>
+<ol type="1">
+<li>A-path hierarchy tables by hypothesis tier and model family;</li>
+<li>B-path association tables for the seven pathway domains;</li>
+<li>nested-adjustment attenuation reviews showing the effect of age, rural residence, and calendar year;</li>
+<li>a transparent shortlist of pathway domains prioritized for Objective 5;</li>
+<li>contextual summaries linking the measured pathway block to the broader co-created pathway inventory.</li>
+</ol>
 </section>
 </section>
-<section id="supplementary-glossary-symbol-and-parameters" class="level2">
-<h2 class="anchored" data-anchor-id="supplementary-glossary-symbol-and-parameters">Supplementary: Glossary of Symbols and Parameters</h2>
-<p>This supplementary glossary consolidates symbol and parameter notation for quick reference. Equation-specific parameter definitions remain directly below each model/equation in Sections A-C.</p>
-<section id="supplementary-objective-2-glossary" class="level3">
-<h3 class="anchored" data-anchor-id="supplementary-objective-2-glossary">Objective 2 Glossary</h3>
+<section id="supplementary-glossary-of-symbols-and-parameters" class="level2">
+<h2 class="anchored" data-anchor-id="supplementary-glossary-of-symbols-and-parameters">Supplementary: Glossary of Symbols and Parameters</h2>
+<p>This glossary consolidates the core notation used in Sections A-C. Equation-specific parameter definitions remain embedded in the relevant sections.</p>
+<section id="objective-2-glossary" class="level3">
+<h3 class="anchored" data-anchor-id="objective-2-glossary">Objective 2 Glossary</h3>
 <ul>
 <li><span class="math inline">\(i\)</span>: participant index.</li>
 <li><span class="math inline">\(j\)</span>: item index.</li>
 <li><span class="math inline">\(k\)</span>: ordered-category threshold index for item <span class="math inline">\(j\)</span>.</li>
-<li><span class="math inline">\(Y_i^{PHQ}\)</span>: PHQ-referenced probable-depression indicator for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(Y_i^H\)</span>: harmonized depression indicator for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\hat{\theta}_i\)</span>: participant-specific estimated latent depression score (EAP score from joint calibration).</li>
+<li><span class="math inline">\(Y_i^{PHQ}\)</span>: PHQ-referenced probable-depression indicator.</li>
+<li><span class="math inline">\(Y_i^H\)</span>: harmonized depression indicator.</li>
+<li><span class="math inline">\(\hat{\theta}_i\)</span>: participant-specific estimated latent depression score.</li>
 <li><span class="math inline">\(\tau^\ast\)</span>: selected latent threshold used to classify <span class="math inline">\(Y_i^H\)</span>.</li>
 <li><span class="math inline">\(\Delta_p\)</span>: prevalence drift between harmonized and PHQ-referenced endpoint prevalence.</li>
-<li><span class="math inline">\(\mathbf{x}_i\)</span>: vector of observed ordinal item responses for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\theta_i\)</span>: latent depression factor in structural models.</li>
-<li><span class="math inline">\(\boldsymbol{\lambda}\)</span>: factor-loading parameter vector (or matrix).</li>
-<li><span class="math inline">\(\boldsymbol{\tau}\)</span>: item-threshold parameter vector (or matrix) in CFA parameterization.</li>
+<li><span class="math inline">\(\mathbf{x}_i\)</span>: vector of observed symptom item responses.</li>
+<li><span class="math inline">\(\boldsymbol{\lambda}\)</span>: factor-loading parameters.</li>
+<li><span class="math inline">\(\boldsymbol{\tau}\)</span>: CFA item-threshold parameters.</li>
 <li><span class="math inline">\(a_j\)</span>: GRM discrimination parameter for item <span class="math inline">\(j\)</span>.</li>
-<li><span class="math inline">\(b_{jk}\)</span>: GRM category-threshold (difficulty/location) parameter for item <span class="math inline">\(j\)</span>, threshold <span class="math inline">\(k\)</span>.</li>
+<li><span class="math inline">\(b_{jk}\)</span>: GRM category-threshold parameter for item <span class="math inline">\(j\)</span> at threshold <span class="math inline">\(k\)</span>.</li>
 </ul>
 </section>
-<section id="supplementary-objective-3-glossary" class="level3">
-<h3 class="anchored" data-anchor-id="supplementary-objective-3-glossary">Objective 3 Glossary</h3>
+<section id="objective-3-glossary" class="level3">
+<h3 class="anchored" data-anchor-id="objective-3-glossary">Objective 3 Glossary</h3>
 <ul>
 <li><span class="math inline">\(i\)</span>: participant index.</li>
-<li><span class="math inline">\(t\)</span>: time index within developmental window.</li>
+<li><span class="math inline">\(t\)</span>: developmental-time index within a childhood window.</li>
 <li><span class="math inline">\(c, h\)</span>: latent-class indices.</li>
-<li><span class="math inline">\(K\)</span>: total number of latent classes under a candidate model.</li>
-<li><span class="math inline">\(E_{it}\)</span>: observed exposure measure for participant <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</li>
-<li><span class="math inline">\(C_i\)</span>: latent trajectory class membership for participant <span class="math inline">\(i\)</span>.</li>
+<li><span class="math inline">\(K\)</span>: total number of retained or candidate classes.</li>
+<li><span class="math inline">\(E_{it}\)</span>: observed exposure value for participant <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</li>
+<li><span class="math inline">\(C_i\)</span>: latent trajectory class membership.</li>
 <li><span class="math inline">\(\pi_c\)</span>: marginal class proportion for class <span class="math inline">\(c\)</span>.</li>
-<li><span class="math inline">\(Y_i^H\)</span>: harmonized binary depression outcome from Objective 2.</li>
-<li><span class="math inline">\(c_{ref}\)</span>: pre-specified reference class for class-contrast models.</li>
-<li><span class="math inline">\(\eta_{0c}\)</span>: class-specific intercept (initial level) parameter.</li>
-<li><span class="math inline">\(\eta_{1c}\)</span>: class-specific linear time-slope parameter.</li>
-<li><span class="math inline">\(\eta_{2c}\)</span>: class-specific quadratic time-slope parameter.</li>
+<li><span class="math inline">\(Y_i^H\)</span>: harmonized depression outcome from Objective 2.</li>
+<li><span class="math inline">\(c_{ref}\)</span>: reference class for class-contrast models.</li>
+<li><span class="math inline">\(\eta_{0c}, \eta_{1c}, \eta_{2c}\)</span>: class-specific intercept and slope parameters.</li>
 <li><span class="math inline">\(\varepsilon_{it}\)</span>: residual term for participant <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>.</li>
 <li><span class="math inline">\(\sigma_c^2\)</span>: class-specific residual variance.</li>
-<li><span class="math inline">\(\alpha_c\)</span>: multinomial logit intercept parameter governing class-membership probability.</li>
-<li><span class="math inline">\(\beta_0\)</span>: outcome-model intercept.</li>
+<li><span class="math inline">\(\alpha_c\)</span>: multinomial logit intercept governing class-membership probability.</li>
 <li><span class="math inline">\(\beta_c\)</span>: class-effect coefficient for class <span class="math inline">\(c\)</span> relative to <span class="math inline">\(c_{ref}\)</span>.</li>
-<li><span class="math inline">\(\mathbf{Z}_i\)</span>: confounder vector for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\boldsymbol{\gamma}\)</span>: confounder-effect coefficient vector.</li>
-<li><span class="math inline">\(\text{OR}_c\)</span>: odds-ratio contrast in depression risk for class <span class="math inline">\(c\)</span> versus <span class="math inline">\(c_{ref}\)</span>.</li>
 </ul>
 </section>
-<section id="supplementary-objective-4-glossary" class="level3">
-<h3 class="anchored" data-anchor-id="supplementary-objective-4-glossary">Objective 4 Glossary</h3>
+<section id="objective-4-glossary" class="level3">
+<h3 class="anchored" data-anchor-id="objective-4-glossary">Objective 4 Glossary</h3>
 <ul>
-<li><span class="math inline">\(i\)</span>: participant index.</li>
-<li><span class="math inline">\(j\)</span>: mediator index.</li>
-<li><span class="math inline">\(Y_i^H\)</span>: harmonized binary depression outcome.</li>
-<li><span class="math inline">\(M_{ij}\)</span>: value of mediator <span class="math inline">\(j\)</span> for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(C_i\)</span>: trajectory-class summary or exposure-trajectory representation for participant <span class="math inline">\(i\)</span>.</li>
-<li><span class="math inline">\(\mathbf{Z}_i\)</span>: confounder vector.</li>
-<li><span class="math inline">\(\alpha_0\)</span>: model intercept.</li>
-<li><span class="math inline">\(\alpha_1\)</span>: regression coefficient for mediator <span class="math inline">\(M_{ij}\)</span>.</li>
-<li><span class="math inline">\(\alpha_2\)</span>: regression coefficient for trajectory-class representation <span class="math inline">\(C_i\)</span>.</li>
-<li><span class="math inline">\(\boldsymbol{\alpha}_3\)</span>: coefficient vector for confounders <span class="math inline">\(\mathbf{Z}_i\)</span>.</li>
-<li><span class="math inline">\(\mathbf{M}_i\)</span>: vector of candidate mediators in jointly adjusted models.</li>
+<li><span class="math inline">\(S_{0-5}\)</span>: childhood trajectory representation for the 0-5 year window.</li>
+<li><span class="math inline">\(S_{6-12}\)</span>: childhood trajectory representation for the 6-12 year window.</li>
+<li><span class="math inline">\(U^{(0-5)}, U^{(6-12)}\)</span>: observed childhood indicators contributing to each latent transition block.</li>
+<li><span class="math inline">\(M_j\)</span>: candidate adolescent pathway variable <span class="math inline">\(j\)</span>.</li>
+<li><span class="math inline">\(Y_i^H\)</span>: harmonized depression outcome.</li>
+<li><span class="math inline">\(C\)</span>: fixed covariate set used in the pathway-screening models.</li>
+<li><span class="math inline">\(\theta_j\)</span>: pathway-specific association parameter for mediator <span class="math inline">\(j\)</span>.</li>
+<li><span class="math inline">\(\beta_1, \beta_2\)</span>: transition-history effect vectors for the two childhood windows.</li>
+<li><span class="math inline">\(\beta_3\)</span>: fixed-covariate effect vector.</li>
 </ul>
 </section>
 </section>
@@ -848,11 +804,17 @@ E_{it} = \eta_{0c} + \eta_{1c}t + \eta_{2c}t^2 + \varepsilon_{it},
 <div id="ref-andruff2009latent" class="csl-entry" role="listitem">
 Andruff, H., N. Carraro, A. Thompson, P. Gaudreau, and B. Louvet. 2009. <span>“Latent Class Growth Modelling: A Tutorial.”</span> <em>Tutorials in Quantitative Methods for Psychology</em> 5: 11–24. <a href="https://doi.org/10.20982/tqmp.05.1.p011">https://doi.org/10.20982/tqmp.05.1.p011</a>.
 </div>
-<div id="ref-asparouhov2014auxiliary" class="csl-entry" role="listitem">
-Asparouhov, T., and B. Muthen. 2014. <span>“Auxiliary Variables in Mixture Modeling: Three-Step Approaches Using Mplus.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 21 (3): 329–41. <a href="https://doi.org/10.1080/10705511.2014.915181">https://doi.org/10.1080/10705511.2014.915181</a>.
+<div id="ref-AsparouhovMuthen2014" class="csl-entry" role="listitem">
+Asparouhov, Tihomir, and Bengt O. Muthén. 2014. <span>“Auxiliary Variables in Mixture Modeling: Three-Step Approaches Using <span>Mplus</span>.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 21 (3): 329–41. <a href="https://doi.org/10.1080/10705511.2014.915181">https://doi.org/10.1080/10705511.2014.915181</a>.
 </div>
-<div id="ref-bakk2016relating" class="csl-entry" role="listitem">
-Bakk, Z., D. L. Oberski, and J. K. Vermunt. 2016. <span>“Relating Latent Class Membership to Continuous Distal Outcomes: Improving the LTB Approach and a Modified Three-Step Implementation.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 23 (2): 278–89. <a href="https://doi.org/10.1080/10705511.2015.1049698">https://doi.org/10.1080/10705511.2015.1049698</a>.
+<div id="ref-bauer2007_observations" class="csl-entry" role="listitem">
+Bauer, Daniel J. 2007. <span>“Observations on the Use of Growth Mixture Models in Psychological Research.”</span> <em>Multivariate Behavioral Research</em>. <a href="https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/Bauer_2007.pdf">https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/Bauer_2007.pdf</a>.
+</div>
+<div id="ref-bauerCurran2003_overextraction" class="csl-entry" role="listitem">
+Bauer, Daniel J., and Patrick J. Curran. 2003. <span>“Distributional Assumptions of Growth Mixture Models: Implications for Overextraction of Latent Trajectory Classes.”</span> <em>Psychological Methods</em>. <a href="https://doi.org/10.1037/1082-989X.8.3.338">https://doi.org/10.1037/1082-989X.8.3.338</a>.
+</div>
+<div id="ref-benjamini1995" class="csl-entry" role="listitem">
+Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.”</span> <em>Journal of the Royal Statistical Society: Series B (Methodological)</em> 57 (1): 289–300. <a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x">https://doi.org/10.1111/j.2517-6161.1995.tb02031.x</a>.
 </div>
 <div id="ref-chalmers2012mirt" class="csl-entry" role="listitem">
 Chalmers, R Philip. 2012. <span>“Mirt: A Multidimensional Item Response Theory Package for the r Environment.”</span> <em>Journal of Statistical Software</em> 48 (6): 1–29. <a href="https://doi.org/10.18637/jss.v048.i06">https://doi.org/10.18637/jss.v048.i06</a>.
@@ -860,11 +822,35 @@ Chalmers, R Philip. 2012. <span>“Mirt: A Multidimensional Item Response Theory
 <div id="ref-chibanda2019ssq8" class="csl-entry" role="listitem">
 Chibanda, Dixon et al. 2019. <span>“Validation of the 8-Item Shona Symptom Questionnaire (SSQ-8) in Zimbabwe.”</span> In <em>AIDSImpact 2019 Conference</em>. <a href="https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA">https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA</a>.
 </div>
+<div id="ref-Chilver2023" class="csl-entry" role="listitem">
+Chilver, M. R., R. A. Burns, F. Botha, and P. Butterworth. 2023. <span>“Comparing Estimates of Psychological Distress Using 7-Day and 30-Day Recall Periods: A Randomized Controlled Trial.”</span> <em>PLOS ONE</em> 18 (12): e0295535. <a href="https://doi.org/10.1371/journal.pone.0295535">https://doi.org/10.1371/journal.pone.0295535</a>.
+</div>
+<div id="ref-Duby2022CAPMH" class="csl-entry" role="listitem">
+Duby, Zoe, Brittany Bunce, Chantal Fowler, Kate Bergh, Kim Jonas, Janan Janine Dietrich, Darshini Govindasamy, Caroline Kuo, and Catherine Mathews. 2022. <span>“Intersections Between COVID-19 and Socio-Economic Mental Health Stressors in the Lives of South African Adolescent Girls and Young Women.”</span> <em>Child and Adolescent Psychiatry and Mental Health</em> 16 (1): 23. <a href="https://doi.org/10.1186/s13034-022-00457-y">https://doi.org/10.1186/s13034-022-00457-y</a>.
+</div>
 <div id="ref-efron1994introduction" class="csl-entry" role="listitem">
 Efron, Bradley, and Robert J Tibshirani. 1994. <em>An Introduction to the Bootstrap</em>. CRC press. <a href="https://doi.org/10.1201/9780429246593">https://doi.org/10.1201/9780429246593</a>.
 </div>
-<div id="ref-haney2014" class="csl-entry" role="listitem">
-Haney, E., K. Singh, C. Nyamukapa, S. Gregson, L. Robertson, L. Sherr, and C. T. Halpern. 2014. <span>“One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.”</span> <em>Journal of Affective Disorders</em> 167: 358–67. <a href="https://doi.org/10.1016/j.jad.2014.06.015">https://doi.org/10.1016/j.jad.2014.06.015</a>.
+<div id="ref-vonelm2007" class="csl-entry" role="listitem">
+Elm, Erik von, Douglas G. Altman, Matthias Egger, Stuart J. Pocock, Peter C. Gøtzsche, and Jan P. Vandenbroucke. 2007. <span>“The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies.”</span> <em>PLoS Medicine</em> 4 (10): e296. <a href="https://doi.org/10.1371/journal.pmed.0040296">https://doi.org/10.1371/journal.pmed.0040296</a>.
+</div>
+<div id="ref-Fortier2017" class="csl-entry" role="listitem">
+Fortier, I., P. Raina, E. R. Van den Heuvel, et al. 2017. <span>“Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.”</span> <em>International Journal of Epidemiology</em> 46 (1): 103–5. <a href="https://doi.org/10.1093/ije/dyw075">https://doi.org/10.1093/ije/dyw075</a>.
+</div>
+<div id="ref-fortier2017_maelstrom" class="csl-entry" role="listitem">
+Fortier, Isabel, Parminder Raina, Edwin R. van den Heuvel, Lauren E. Griffith, et al. 2017. <span>“Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.”</span> <em>International Journal of Epidemiology</em> 46 (1): 103–15. <a href="https://doi.org/10.1093/ije/dyw075">https://doi.org/10.1093/ije/dyw075</a>.
+</div>
+<div id="ref-graham2009_missingData" class="csl-entry" role="listitem">
+Graham, John W. 2009. <span>“Missing Data Analysis: Making It Work in the Real World.”</span> <em>Annual Review of Psychology</em> 60: 549–76. <a href="https://doi.org/10.1146/annurev.psych.58.110405.085530">https://doi.org/10.1146/annurev.psych.58.110405.085530</a>.
+</div>
+<div id="ref-hallPosel2019_fragmenting" class="csl-entry" role="listitem">
+Hall, Katharine, and Dorrit Posel. 2019. <span>“Fragmenting the Family? The Complexity of Household Migration Strategies in Post-Apartheid South Africa.”</span> <em>IZA Journal of Development and Migration</em> 10 (4). <a href="https://doi.org/10.2478/izajodm-2019-0004">https://doi.org/10.2478/izajodm-2019-0004</a>.
+</div>
+<div id="ref-Haney2014" class="csl-entry" role="listitem">
+Haney, E, K Singh, C Nyamukapa, S Gregson, L Robertson, L Sherr, and T Hallett. 2014. <span>“One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.”</span> <em>Journal of Affective Disorders</em> 167: 358–67.
+</div>
+<div id="ref-hippBauer2006_local" class="csl-entry" role="listitem">
+Hipp, John R., and Daniel J. Bauer. 2006. <span>“Local Solutions in the Estimation of Growth Mixture Models.”</span> <em>Psychological Methods</em>. <a href="https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/hipp-bauer-PM-2006.pdf">https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/hipp-bauer-PM-2006.pdf</a>.
 </div>
 <div id="ref-holgado2010polychoric" class="csl-entry" role="listitem">
 Holgado–Tello, Francisco Pablo, Salvador Chac’on–Moscoso, Isabel Barbero–Garc’ ia, and Enrique Vila–Abad. 2010. <span>“Polychoric Versus Pearson Correlations in Exploratory and Confirmatory Factor Analysis of Ordinal Variables.”</span> <em>Quality &amp; Quantity</em> 44: 153–66. <a href="https://doi.org/10.1007/s11135-008-9190-y">https://doi.org/10.1007/s11135-008-9190-y</a>.
@@ -875,23 +861,59 @@ Hu, Li-tze, and Peter M Bentler. 1999. <span>“Cutoff Criteria for Fit Indexes 
 <div id="ref-imai2010identification" class="csl-entry" role="listitem">
 Imai, K., L. Keele, and T. Yamamoto. 2010. <span>“Identification, Inference and Sensitivity Analysis for Causal Mediation Effects.”</span> <em>Statistical Science</em> 25 (1): 51–71. <a href="https://doi.org/10.1214/10-STS321">https://doi.org/10.1214/10-STS321</a>.
 </div>
+<div id="ref-Jakobsson2024GMH" class="csl-entry" role="listitem">
+Jakobsson, Cecilia E., Natalie E. Johnson, Brenda Ochuku, Rosine Baseke, Evelyn Wong, Christine W. Musyimi, David M. Ndetei, and Katherine E. Venturo-Conerly. 2024. <span>“Meta-Analysis: Prevalence of Youth Mental Disorders in Sub-Saharan Africa.”</span> <em>Cambridge Prisms: Global Mental Health</em> 11: e109. <a href="https://doi.org/10.1017/gmh.2024.82">https://doi.org/10.1017/gmh.2024.82</a>.
+</div>
+<div id="ref-JornsPresentati2021PLOS" class="csl-entry" role="listitem">
+Jörns-Presentati, Astrid, Ann-Kathrin Napp, Anja S. Dessauvagie, Dan J. Stein, Deborah Jonker, Elsie Breet, Weslin Charles, et al. 2021. <span>“The Prevalence of Mental Health Problems in Sub-Saharan Adolescents: A Systematic Review.”</span> <em>PLOS ONE</em> 16 (5): e0251689. <a href="https://doi.org/10.1371/journal.pone.0251689">https://doi.org/10.1371/journal.pone.0251689</a>.
+</div>
 <div id="ref-Kroenke2001" class="csl-entry" role="listitem">
 Kroenke, K., R. L. Spitzer, and J. B. Williams. 2001. <span>“The PHQ-9: Validity of a Brief Depression Severity Measure.”</span> <em>Journal of General Internal Medicine</em> 16 (9): 606–13. <a href="https://doi.org/10.1046/j.1525-1497.2001.016009606.x">https://doi.org/10.1046/j.1525-1497.2001.016009606.x</a>.
+</div>
+<div id="ref-vanLissa2024_smartlca" class="csl-entry" role="listitem">
+Lissa, Caspar J. van, Mauricio Garnier-Villarreal, and Dan Anadria. 2024. <span>“Recommended Practices in Latent Class Analysis Using the Open-Source r-Package tidySEM.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em>. <a href="https://doi.org/10.1080/10705511.2023.2250920">https://doi.org/10.1080/10705511.2023.2250920</a>.
 </div>
 <div id="ref-maccallum2002practice" class="csl-entry" role="listitem">
 MacCallum, Robert C, Shaobo Zhang, Kristopher J Preacher, and Derek D Rucker. 2002. <span>“On the Practice of Dichotomization of Quantitative Variables.”</span> <em>Psychological Methods</em> 7 (1): 19. <a href="https://doi.org/10.1037/1082-989X.7.1.19">https://doi.org/10.1037/1082-989X.7.1.19</a>.
 </div>
-<div id="ref-mathur2022evalues" class="csl-entry" role="listitem">
-Mathur, M. B., L. H. Smith, K. Yoshida, P. Ding, and T. J. VanderWeele. 2022. <span>“E-Values for Effect Heterogeneity and Approximations for Causal Interaction.”</span> <em>International Journal of Epidemiology</em> 51 (4): 1268–75. <a href="https://doi.org/10.1093/ije/dyac073">https://doi.org/10.1093/ije/dyac073</a>.
+<div id="ref-Marlow2023JAH" class="csl-entry" role="listitem">
+Marlow, Marguerite, Sarah Skeen, Caitlin M. Grieve, Liliana Carvajal-Velez, Jill W. Åhs, Brandon A. Kohrt, Jennifer Requejo, et al. 2023. <span>“Detecting Depression and Anxiety Among Adolescents in South Africa: Validity of the Isi<span>X</span>hosa Patient Health Questionnaire-9 and Generalized Anxiety Disorder-7.”</span> <em>Journal of Adolescent Health</em> 72 (1 Suppl): S52–60. <a href="https://doi.org/10.1016/j.jadohealth.2022.09.013">https://doi.org/10.1016/j.jadohealth.2022.09.013</a>.
+</div>
+<div id="ref-masyn2013_mixture" class="csl-entry" role="listitem">
+Masyn, Katherine E. 2013. <span>“Latent Class Analysis and Finite Mixture Modeling.”</span> In <em>The Oxford Handbook of Quantitative Methods</em>. Oxford University Press. <a href="https://www.statmodel.com/download/Masyn_2013.pdf">https://www.statmodel.com/download/Masyn_2013.pdf</a>.
+</div>
+<div id="ref-Mkhize2024Comppsych" class="csl-entry" role="listitem">
+Mkhize, Mirriam, Claire van der Westhuizen, and Katherine Sorsdahl. 2024. <span>“Prevalence and Factors Associated with Depression and Anxiety Among Young School-Going Adolescents in the Western Cape Province of South Africa.”</span> <em>Comprehensive Psychiatry</em> 131: 152469. <a href="https://doi.org/10.1016/j.comppsych.2024.152469">https://doi.org/10.1016/j.comppsych.2024.152469</a>.
+</div>
+<div id="ref-Mkhize2022Food" class="csl-entry" role="listitem">
+Mkhize, Siluleko, Elena Libhaber, Ronel Sewpaul, Priscilla Reddy, and Laurel Baldwin-Ragaven. 2022. <span>“Child and Adolescent Food Insecurity in South Africa: A Household-Level Analysis of Hunger.”</span> <em>PLOS ONE</em> 17 (12): e0278191. <a href="https://doi.org/10.1371/journal.pone.0278191">https://doi.org/10.1371/journal.pone.0278191</a>.
+</div>
+<div id="ref-moreno-betancur2021" class="csl-entry" role="listitem">
+Moreno-Betancur, M., J. B. Carlin, S. L. Brilleman, E. J. Williamson, L. Simonsen, V. Didelez, et al. 2021. <span>“A Guideline for Reporting Mediation Analyses of Randomized Trials and Observational Studies: The AGReMA Statement.”</span> <em>JAMA</em> 326 (11): 1045–56. <a href="https://doi.org/10.1001/jama.2021.14075">https://doi.org/10.1001/jama.2021.14075</a>.
+</div>
+<div id="ref-Mthiyane2025IJPDS" class="csl-entry" role="listitem">
+Mthiyane, Nondumiso, Edwin Mkwanazi, Patrick N. Mwangala, Debra Gareta, Sphiwe Dube, Kobus Herbst, Maryam Shahmanesh, Kathy Baisley, and Amina Abubakar. 2025. <span>“Data Resource Profile: Harmonisation of a Multimodal Dataset to Evaluate Adolescent Mental Health in Rural South Africa.”</span> <em>International Journal of Population Data Science</em> 8 (6): 3003. <a href="https://doi.org/10.23889/ijpds.v8i6.3003">https://doi.org/10.23889/ijpds.v8i6.3003</a>.
 </div>
 <div id="ref-muthen2001growth" class="csl-entry" role="listitem">
 Muthén, Bengt O. 2001. <span>“Growth Curve Modeling.”</span> <em>International Encyclopedia of the Social &amp; Behavioral Sciences</em>, 6281–87.
 </div>
+<div id="ref-muthen2004_growthMixtureChapter" class="csl-entry" role="listitem">
+Muthén, Bengt O. 2004. <span>“Latent Variable Analysis: Growth Mixture Modeling and Related Techniques for Longitudinal Data.”</span> <a href="https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf">https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf</a>.
+</div>
 <div id="ref-nagin2005group" class="csl-entry" role="listitem">
 Nagin, D. S. 2005. <em>Group-Based Modeling of Development</em>. Harvard University Press. <a href="https://doi.org/10.4159/9780674041318">https://doi.org/10.4159/9780674041318</a>.
 </div>
-<div id="ref-nylund2007deciding" class="csl-entry" role="listitem">
-Nylund, Karen L, Tihomir Asparouhov, and Bengt O Muthén. 2007. <span>“Deciding on the Number of Classes in Latent Class Analysis and Growth Mixture Modeling: A Monte Carlo Simulation Study.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 14 (4): 535–69.
+<div id="ref-nagin2016_multitraj" class="csl-entry" role="listitem">
+Nagin, Daniel S. et al. 2016. <span>“Group-Based Multi-Trajectory Modeling.”</span> <em>Statistical Methods in Medical Research</em>. <a href="https://doi.org/10.1177/0962280216673085">https://doi.org/10.1177/0962280216673085</a>.
+</div>
+<div id="ref-nylund2007_classes" class="csl-entry" role="listitem">
+Nylund, Karen L., Tihomir Asparouhov, and Bengt O. Muthén. 2007. <span>“Deciding on the Number of Classes in Latent Class Analysis and Growth Mixture Modeling: A Monte Carlo Simulation Study.”</span> StatModel. <a href="https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf">https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf</a>.
+</div>
+<div id="ref-parsons2024_twoTimepoints" class="csl-entry" role="listitem">
+Parsons, C., E. McCormick, et al. 2024. <span>“Limitations of Two Time Point Data for Understanding Individual Differences in Longitudinal Modeling—What Can Difference Reveal about Change?”</span> <em>Developmental Cognitive Neuroscience</em>. <a href="https://www.sciencedirect.com/science/article/pii/S1878929324000148">https://www.sciencedirect.com/science/article/pii/S1878929324000148</a>.
+</div>
+<div id="ref-Partap2023FrontPsych" class="csl-entry" role="listitem">
+Partap, Uttara P., Nega Assefa, Yemane Berhane, Ali Sie, David Guwatudde, Japhet K. Killewo, Ayoade Oduola, et al. 2023. <span>“The Influence of Depressive Symptoms and School-Going Status on Risky Behaviors: A Pooled Analysis Among Adolescents in Six Sub-Saharan African Countries.”</span> <em>Frontiers in Psychiatry</em> 14: 1171231. <a href="https://doi.org/10.3389/fpsyt.2023.1171231">https://doi.org/10.3389/fpsyt.2023.1171231</a>.
 </div>
 <div id="ref-Patel1997" class="csl-entry" role="listitem">
 Patel, Vikram, Essie Simunyu, Fungisai Gwanzura, Glyn Lewis, and Anthony H Mann. 1997. <span>“The Shona Symptom Questionnaire: The Development of an Indigenous Measure of Common Mental Disorders in Harare.”</span> <em>Acta Psychiatrica Scandinavica</em> 95 (6): 469–75.
@@ -899,11 +921,20 @@ Patel, Vikram, Essie Simunyu, Fungisai Gwanzura, Glyn Lewis, and Anthony H Mann.
 <div id="ref-putnick2016measurement" class="csl-entry" role="listitem">
 Putnick, Diane L, and Marc H Bornstein. 2016. <span>“Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research.”</span> <em>Developmental Review</em> 41: 71–90. <a href="https://doi.org/10.1016/j.dr.2016.06.004">https://doi.org/10.1016/j.dr.2016.06.004</a>.
 </div>
+<div id="ref-Rossouw2024PLOS" class="csl-entry" role="listitem">
+Rossouw, Laura, Kathryn Watt, Leslie L. Davidson, and Chris Desmond. 2024. <span>“The Social Determinants of Adolescent Anxiety and Depression in Peri-Urban South Africa.”</span> <em>PLOS Mental Health</em> 1 (6): e0000173. <a href="https://doi.org/10.1371/journal.pmen.0000173">https://doi.org/10.1371/journal.pmen.0000173</a>.
+</div>
 <div id="ref-samejima1969estimation" class="csl-entry" role="listitem">
 Samejima, Fumiko. 1969. <span>“Estimation of Latent Ability Using a Response Pattern of Graded Scores.”</span> <em>Psychometrika Monograph Supplement</em> 17 (4): 1–100. <a href="https://doi.org/10.1007/BF02290599">https://doi.org/10.1007/BF02290599</a>.
 </div>
-<div id="ref-schwarz1978estimating" class="csl-entry" role="listitem">
-Schwarz, Gideon. 1978. <span>“Estimating the Dimension of a Model.”</span> <em>The Annals of Statistics</em> 6 (2): 461–64.
+<div id="ref-schaferGraham2002_missingData" class="csl-entry" role="listitem">
+Schafer, Joseph L., and John W. Graham. 2002. <span>“Missing Data: Our View of the State of the Art.”</span> <em>Psychological Methods</em>. <a href="https://stat.ethz.ch/education/semesters/ss2012/ams/paper/missing_data_1.pdf">https://stat.ethz.ch/education/semesters/ss2012/ams/paper/missing_data_1.pdf</a>.
+</div>
+<div id="ref-simelane2025_sahr" class="csl-entry" role="listitem">
+Simelane, S., J. Bantjes, S. Kleintjes, et al. 2025. <span>“Putting Child and Adolescent Mental Health at the Centre: Building an Ecosystem of Support.”</span> <em>South African Health Review</em> 27: 131–43. <a href="https://doi.org/10.61473/001c.142241">https://doi.org/10.61473/001c.142241</a>.
+</div>
+<div id="ref-Sterne2009" class="csl-entry" role="listitem">
+Sterne, Jonathan A. C., Ian R. White, John B. Carlin, Michael Spratt, Patrick Royston, Michael G. Kenward, Angela M. Wood, and James R. Carpenter. 2009. <span>“Multiple Imputation for Missing Data in Epidemiological and Clinical Research: Potential and Pitfalls.”</span> <em>BMJ</em> 338: b2393. <a href="https://doi.org/10.1136/bmj.b2393">https://doi.org/10.1136/bmj.b2393</a>.
 </div>
 <div id="ref-valeri2013mediation" class="csl-entry" role="listitem">
 Valeri, L., and T. J. VanderWeele. 2013. <span>“Mediation Analysis Allowing for Exposure-Mediator Interactions and Causal Interpretation: Theoretical Assumptions and Implementation with SAS and SPSS Macros.”</span> <em>Psychological Methods</em> 18 (2): 137–50. <a href="https://doi.org/10.1037/a0031034">https://doi.org/10.1037/a0031034</a>.
@@ -911,20 +942,32 @@ Valeri, L., and T. J. VanderWeele. 2013. <span>“Mediation Analysis Allowing fo
 <div id="ref-vandenberg2000" class="csl-entry" role="listitem">
 Vandenberg, R. J., and C. E. Lance. 2000. <span>“A Review and Synthesis of the Measurement Invariance Literature: Suggestions, Practices, and Recommendations for Organizational Research.”</span> <em>Organizational Research Methods</em> 3 (1): 4–70. <a href="https://doi.org/10.1177/109442810031002">https://doi.org/10.1177/109442810031002</a>.
 </div>
-<div id="ref-vanderweele2017sensitivity" class="csl-entry" role="listitem">
-VanderWeele, T. J., and P. Ding. 2017. <span>“Sensitivity Analysis in Observational Research: Introducing the e-Value.”</span> <em>Annals of Internal Medicine</em> 167 (4): 268–74. <a href="https://doi.org/10.7326/M16-2607">https://doi.org/10.7326/M16-2607</a>.
-</div>
 <div id="ref-vanderweele2016" class="csl-entry" role="listitem">
 VanderWeele, T. J., Y. Li, A. C. Tsai, and I. Kawachi. 2016. <span>“Outcome-Wide Longitudinal Designs for Causal Inference: A New Template for Empirical Studies in Public Health.”</span> <em>Statistical Science</em> 31 (6): 2016. <a href="https://doi.org/10.1214/16-STS581">https://doi.org/10.1214/16-STS581</a>.
 </div>
 <div id="ref-VanderWeele2012" class="csl-entry" role="listitem">
 VanderWeele, Tyler J, and Miguel A Hernan. 2012. <span>“Invited Commentary: Causal Diagrams and Measurement Bias.”</span> <em>American Journal of Epidemiology</em> 175 (12): 1303–10.
 </div>
+<div id="ref-Vermunt2010ThreeStep" class="csl-entry" role="listitem">
+Vermunt, Jeroen K. 2010. <span>“Latent Class Modeling with Covariates: Two Improved Three-Step Approaches.”</span> <em>Political Analysis</em> 18 (4): 450–69. <a href="https://doi.org/10.1093/pan/mpq025">https://doi.org/10.1093/pan/mpq025</a>.
+</div>
+<div id="ref-watson2022_lctmSpecification" class="csl-entry" role="listitem">
+Watson, C. et al. 2022. <span>“Latent Class Trajectory Modelling: Impact of Changes in Model Specification.”</span> <em>American Journal of Translational Research</em> 14 (10): 7593–7606. <a href="https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&amp;filePid=13170140970002346&amp;instCode=44SUR_INST">https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&amp;filePid=13170140970002346&amp;instCode=44SUR_INST</a>.
+</div>
+<div id="ref-White2011" class="csl-entry" role="listitem">
+White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>“Multiple Imputation Using Chained Equations: Issues and Guidance for Practice.”</span> <em>Statistics in Medicine</em> 30 (4): 377–99. <a href="https://doi.org/10.1002/sim.4067">https://doi.org/10.1002/sim.4067</a>.
+</div>
 <div id="ref-woods2009empirical" class="csl-entry" role="listitem">
 Woods, Carol M. 2009. <span>“Empirical Histograms in Item Response Theory with Differential Item Functioning.”</span> <em>Educational and Psychological Measurement</em> 69 (1): 102–25. <a href="https://doi.org/10.1177/0013164408318760">https://doi.org/10.1177/0013164408318760</a>.
 </div>
 <div id="ref-wu2016identification" class="csl-entry" role="listitem">
 Wu, Hao, and Ryne Estabrook. 2016. <span>“Identification of Confirmatory Factor Analysis Models of Different Levels of Invariance for Ordered Categorical Outcomes.”</span> <em>Psychometrika</em> 81: 1014–45. <a href="https://doi.org/10.1007/s11336-016-9506-0">https://doi.org/10.1007/s11336-016-9506-0</a>.
+</div>
+<div id="ref-Zimmerman2021BMJGH" class="csl-entry" role="listitem">
+Zimmerman, Annie, Emily Garman, Mauricio Avendano-Pabon, Ricardo Araya, Sara Evans-Lacko, David McDaid, A-La Park, et al. 2021. <span>“The Impact of Cash Transfers on Mental Health in Children and Young People in Low-Income and Middle-Income Countries: A Systematic Review and Meta-Analysis.”</span> <em>BMJ Global Health</em> 6 (4): e004661. <a href="https://doi.org/10.1136/bmjgh-2020-004661">https://doi.org/10.1136/bmjgh-2020-004661</a>.
+</div>
+<div id="ref-Zyberaj2022LTA" class="csl-entry" role="listitem">
+Zyberaj, Jetmir, Cafer Bakaç, and Sebastian Seibel. 2022. <span>“Latent Transition Analysis in Organizational Psychology: A Simplified <span>‘How to’</span> Guide by Using an Applied Example.”</span> <em>Frontiers in Psychology</em> 13: 977378. <a href="https://doi.org/10.3389/fpsyg.2022.977378">https://doi.org/10.3389/fpsyg.2022.977378</a>.
 </div>
 </div>
 
@@ -1042,7 +1085,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const title = document.createElement("h2");
   title.className = "section-nav__title";
-  title.textContent = "Content";
+  title.textContent = "In this section";
   nav.appendChild(title);
 
   const list = document.createElement("div");
@@ -1052,7 +1095,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const link = document.createElement("a");
     const isActive = pathname.endsWith("/tabs/" + item.file) || currentFile === item.file;
     link.className = "section-nav__link" + (isActive ? " is-active" : "");
-    link.href = item.file === "metadata.html" ? "metadata.html?v=20260328" : item.file;
+    link.href = item.file;
     link.textContent = item.label;
     link.setAttribute("title", item.label);
     if (isActive) {

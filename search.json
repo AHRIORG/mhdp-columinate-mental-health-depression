@@ -1,1 +1,611 @@
-[]
+[
+  {
+    "objectID": "website_updates/2026-03-12-website-structure-refresh.html",
+    "href": "website_updates/2026-03-12-website-structure-refresh.html",
+    "title": "Website Update",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "website_updates/2026-03-12-website-structure-refresh.html#in-progress",
+    "href": "website_updates/2026-03-12-website-structure-refresh.html#in-progress",
+    "title": "Website Update",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_other.html",
+    "href": "updates_other.html",
+    "title": "Other Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_other.html#in-progress",
+    "href": "updates_other.html#in-progress",
+    "title": "Other Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_blog.html",
+    "href": "updates_blog.html",
+    "title": "Blog Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_blog.html#in-progress",
+    "href": "updates_blog.html#in-progress",
+    "title": "Blog Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/tools.html",
+    "href": "tabs/tools.html",
+    "title": "Research Tools Overview",
+    "section": "",
+    "text": "This overview groups the live and planned tools that support CO-LUMINATE data collection, scoring, dashboard interpretation, and causal mapping.\n\n\n\n\n\nDevelopmental Cascade Explorer\n\n\n\nSix-module interactive dashboard for the developmental cascade framework, from childhood adversity through mediation to policy simulation.\n\nIn progress, content not yet published to the public website\n\n\n\n\n\nIRT Scoring Workspace\n\n\n\nOperational scoring tool for SSQ responses, supporting single-case and batch workflows through the project API.\n\nIn progress, content not yet published to the public website\n\n\n\n\n\nCausal Chains of Mental Health\n\n\n\nInteractive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.\n\nIn progress, content not yet published to the public website"
+  },
+  {
+    "objectID": "tabs/tool_causal_chains.html",
+    "href": "tabs/tool_causal_chains.html",
+    "title": "Mental Health Causal Chains",
+    "section": "",
+    "text": "This app is intended to help Youth Co-Creators and researchers capture how social, economic, environmental, and relational experiences turn into mental health outcomes.\nInstead of storing isolated answers, the app is designed to capture short causal chains such as:\nPoverty -&gt; inability to afford food -&gt; stress and worry -&gt; Poor mental health\nIt supports both harmful and protective pathways so that Positive mental health can be documented alongside Poor mental health."
+  },
+  {
+    "objectID": "tabs/tool_causal_chains.html#what-this-app-does",
+    "href": "tabs/tool_causal_chains.html#what-this-app-does",
+    "title": "Mental Health Causal Chains",
+    "section": "",
+    "text": "This app is intended to help Youth Co-Creators and researchers capture how social, economic, environmental, and relational experiences turn into mental health outcomes.\nInstead of storing isolated answers, the app is designed to capture short causal chains such as:\nPoverty -&gt; inability to afford food -&gt; stress and worry -&gt; Poor mental health\nIt supports both harmful and protective pathways so that Positive mental health can be documented alongside Poor mental health."
+  },
+  {
+    "objectID": "tabs/tool_causal_chains.html#embedded-app",
+    "href": "tabs/tool_causal_chains.html#embedded-app",
+    "title": "Mental Health Causal Chains",
+    "section": "Embedded App",
+    "text": "Embedded App\n\n\n  Open App In New Page\n  The embedded prototype is collapsed by default. Open it here or launch it in a separate page.\n\n\n  Show Embedded Prototype"
+  },
+  {
+    "objectID": "tabs/tool_causal_chains.html#master-causal-flowchart",
+    "href": "tabs/tool_causal_chains.html#master-causal-flowchart",
+    "title": "Mental Health Causal Chains",
+    "section": "Master Causal Flowchart",
+    "text": "Master Causal Flowchart\nThe master flowchart below summarizes the shared structure across the full pathway inventory. The more specific pathway variants are kept in the inventory section rather than repeated as separate diagrams.\n\n\n\n\n\n\n%%{init: {\n  \"theme\": \"base\",\n  \"themeVariables\": {\n    \"fontFamily\": \"Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif\",\n    \"fontSize\": \"18px\",\n    \"primaryColor\": \"#edf7fb\",\n    \"primaryTextColor\": \"#163245\",\n    \"primaryBorderColor\": \"#0b6fa4\",\n    \"lineColor\": \"#67819a\",\n    \"clusterBkg\": \"#ffffff\",\n    \"clusterBorder\": \"#d7dee8\"\n  },\n  \"flowchart\": {\n    \"curve\": \"basis\",\n    \"nodeSpacing\": 40,\n    \"rankSpacing\": 70,\n    \"padding\": 12\n  }\n}}%%\nflowchart TB\n  subgraph D[\"Context\"]\n    direction LR\n    MAT[\"Material and economic&lt;br/&gt;conditions\"]:::driver\n    INS[\"Institutions and&lt;br/&gt;services\"]:::driver\n    SOC[\"Social and community&lt;br/&gt;relations\"]:::driver\n    ENV[\"Environment and&lt;br/&gt;safety threats\"]:::driver\n    SPR[\"Spiritual and cultural&lt;br/&gt;context\"]:::driver\n  end\n\n  subgraph B[\"Bridging Pathways\"]\n    direction LR\n    FIN[\"Financial security&lt;br/&gt;or strain\"]:::bridge\n    BEL[\"Belonging,&lt;br/&gt;support, or exclusion\"]:::bridge\n    SELF[\"Hope, shame, and&lt;br/&gt;self-worth\"]:::bridge\n    CARE[\"Care access and&lt;br/&gt;help-seeking\"]:::bridge\n    RISK[\"Substance use and&lt;br/&gt;risky coping\"]:::bridge\n    EMO[\"Stress, grief, fear,&lt;br/&gt;humiliation, or relief\"]:::bridge\n  end\n\n  subgraph O[\"Mental Health Outcomes\"]\n    direction LR\n    NEG[\"Poor mental health\"]:::negative\n    POS[\"Positive mental health\"]:::positive\n  end\n\n  MAT --&gt; FIN\n  MAT --&gt; SELF\n  INS --&gt; CARE\n  INS --&gt; EMO\n  SOC --&gt; BEL\n  SOC --&gt; SELF\n  ENV --&gt; FIN\n  ENV --&gt; RISK\n  ENV --&gt; EMO\n  SPR --&gt; BEL\n  SPR --&gt; SELF\n\n  FIN --&gt; EMO\n  FIN --&gt; POS\n  BEL --&gt; EMO\n  BEL --&gt; POS\n  SELF --&gt; NEG\n  SELF --&gt; POS\n  CARE --&gt; NEG\n  CARE --&gt; POS\n  RISK --&gt; NEG\n  EMO --&gt; NEG\n  EMO --&gt; POS\n\n  classDef driver fill:#f5efe6,stroke:#8b5e34,color:#2c241d,stroke-width:1.3px;\n  classDef bridge fill:#edf7fb,stroke:#0b6fa4,color:#163245,stroke-width:1.3px;\n  classDef positive fill:#d1fae5,stroke:#059669,color:#163245,stroke-width:2px;\n  classDef negative fill:#fee2e2,stroke:#dc2626,color:#163245,stroke-width:2px;\n  style D fill:#fffaf3,stroke:#d7dee8,stroke-width:1px\n  style B fill:#f8fcfe,stroke:#d7dee8,stroke-width:1px\n  style O fill:#fff8f5,stroke:#d7dee8,stroke-width:1px\n\n\n\n\nFigure 1"
+  },
+  {
+    "objectID": "tabs/tool_causal_chains.html#pathway-inventory",
+    "href": "tabs/tool_causal_chains.html#pathway-inventory",
+    "title": "Mental Health Causal Chains",
+    "section": "Pathway Inventory",
+    "text": "Pathway Inventory\n\n1. Socioeconomic Position, Poverty, and Economic Inequality\n\nPoverty -&gt; inability to afford food -&gt; stress and worry -&gt; mental health decline -&gt; Poor mental health.\nReliance on subsistence farming -&gt; loss of income due to theft or natural hazards -&gt; household chaos -&gt; anger and domestic violence -&gt; negative mental health outcomes -&gt; Poor mental health.\nPoverty -&gt; inability to fix or improve living conditions independently -&gt; anxiety and frustration -&gt; Poor mental health.\nHope for the future -&gt; encouragement to persist -&gt; reduced hopelessness -&gt; positive outlook -&gt; improved mental health -&gt; Positive mental health.\n\n\n\n2. Education, Employment, and Working Conditions\n\nLack of school fencing and monitoring -&gt; truancy and time in unsafe spaces -&gt; substance use and sexual activity -&gt; emotional strain and disrupted education -&gt; Poor mental health.\nPhysical punishment at school -&gt; humiliation -&gt; suppressed emotions -&gt; anger and resentment toward authority -&gt; Poor mental health.\nEmployment through mining -&gt; financial security -&gt; improved mental health -&gt; Positive mental health.\nMine closure -&gt; loss of income -&gt; reliance on grants -&gt; communal stress and anxiety -&gt; Poor mental health.\nFinancial stress -&gt; emotional strain -&gt; substance use -&gt; family conflict -&gt; emotional distress -&gt; Poor mental health.\nProtracted unemployment -&gt; eroded self-esteem -&gt; stress -&gt; Poor mental health.\nReliance on government grant -&gt; eroded self-esteem -&gt; Poor mental health.\n\n\n\n3. Housing and Living Conditions\n\nLack of running water -&gt; inability to maintain hygiene -&gt; bullying and shame -&gt; emotional distress -&gt; Poor mental health.\nPoor condition of houses -&gt; discomfort at home -&gt; mental strain -&gt; Poor mental health.\n\n\n\n4. Early Childhood Development\n\nAccess to early learning centers -&gt; better performance in higher grades -&gt; increased self-esteem and reduced stress -&gt; Positive mental health.\nAccess to early learning centers -&gt; safety -&gt; less exposure to trauma -&gt; Positive mental health.\n\n\n\n5. Social Support, Social Capital, Discrimination, and Social Exclusion\n\nMigration for work -&gt; family separation -&gt; loneliness and insecurity -&gt; increased stress and anxiety -&gt; Poor mental health.\nChurch counselling and spiritual guidance -&gt; sense of hope and peace -&gt; Positive mental health.\nAccess to sports grounds -&gt; social engagement through sport -&gt; reduced substance abuse -&gt; improved mental health -&gt; Positive mental health.\nAssociation with bad peers -&gt; parental disapproval -&gt; conflict -&gt; emotional strain -&gt; Poor mental health.\nFeeling excluded from family decision-making -&gt; feelings of marginalisation and powerlessness -&gt; Poor mental health.\nStrong family and community social capital -&gt; access to shared resources such as land, gardens, and employment opportunities -&gt; material security and social support -&gt; improved well-being -&gt; Positive mental health.\nLow social connectedness and weak community cohesion -&gt; exclusion from shared resources and fear of stigma -&gt; reduced help-seeking and exposure to harm such as abuse or conflict -&gt; stress and emotional distress -&gt; Poor mental health.\n\n\n\n6. Physical Environment\n\nAir and water pollution -&gt; ill health -&gt; fear and worry -&gt; Poor mental health.\nMines -&gt; land damage -&gt; grief and stress -&gt; mental health deterioration -&gt; Poor mental health.\nLitter from dumping sites -&gt; perceived danger -&gt; avoidance of nature -&gt; reduced relaxation and well-being -&gt; Poor mental health.\nSubsistence agriculture -&gt; lower financial pressure -&gt; Positive mental health.\nExtreme weather events -&gt; soil erosion and crop destruction -&gt; loss of food and income -&gt; mental distress -&gt; Poor mental health.\nWater scarcity -&gt; dual use of water such as drinking water for cattle versus watering crops -&gt; internal conflict -&gt; emotional distress -&gt; Poor mental health.\n\n\n\n7. Access to Basic Services\n\nNeglected public infrastructure -&gt; exposure to physical danger -&gt; persistent worry and compensatory costs -&gt; Poor mental health.\nNeglected public infrastructure -&gt; inability to use services -&gt; missed opportunities -&gt; frustration -&gt; Poor mental health.\nLow political will to improve basic services -&gt; unmet basic needs -&gt; sense of injustice -&gt; emotional distress -&gt; Poor mental health.\nImproved health awareness -&gt; lower stigma -&gt; easier access to treatment -&gt; emotional relief and improved physical health -&gt; Positive mental health.\nLong queues at clinics -&gt; delays in or avoidance of care -&gt; increased anxiety and discouragement -&gt; Poor mental health.\nStigmatising treatment from healthcare workers -&gt; humiliation -&gt; avoidance of treatment -&gt; worsening health and mental strain -&gt; Poor mental health.\nLack of nearby hospital -&gt; lengthy travel time and transport poverty -&gt; hinders urgent and intensive medical care -&gt; sense of distance from needed care -&gt; Poor mental health.\nDomestic violence -&gt; women withdraw cases due to financial dependence -&gt; ongoing distress -&gt; Poor mental health.\nNeglected public infrastructure -&gt; unable to cross bridges during floods -&gt; unable to attend school or work -&gt; negatively impacts education and income -&gt; Poor mental health.\n\n\n\n8. Violence, Crime, and Safety\n\nAbandoned buildings and taverns -&gt; drug and alcohol use -&gt; increased violence, crime, and risky behaviours -&gt; emotional distress and insecurity -&gt; Poor mental health.\nDrug and alcohol use -&gt; domestic violence -&gt; Poor mental health.\nDrug and alcohol use -&gt; misuse of income -&gt; debt and poverty -&gt; Poor mental health.\n\n\n\n9. Culture, Religion, and Spirituality\n\nChurch attendance and pastoral counselling -&gt; support, mediation, and guidance -&gt; Positive mental health.\nPrayer and rituals -&gt; spiritual connection and perceived ancestral support -&gt; relief and hope -&gt; Positive mental health.\nFear of witchcraft -&gt; worry and distrust -&gt; mental distress -&gt; Poor mental health.\nDual belief systems -&gt; conflicting norms -&gt; internal conflict -&gt; emotional strain -&gt; Poor mental health.\nRejection by church when engaged in stigmatised behaviour -&gt; loss of status -&gt; feeling shunned -&gt; emotional distress -&gt; Poor mental health."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html",
+    "href": "tabs/secondary_data_analysis_plan.html",
+    "title": "Statistical Analysis Plan",
+    "section": "",
+    "text": "This document is the integrated CO-LUMINATE Statistical Analysis Plan (SAP). It retains the published public section structure while updating the underlying analytical description to reflect the current harmonization, trajectory, and pathway-screening workflows carried forward into the release-safe script bundles.\nThe current release includes:\n\nSection A: Objective 2 (Depression Harmonization)\nSection B: Objective 3 (Social Determinant Trajectories)\nSection C: Objective 4 (Behavioral Mediators)\n\nSection D (Objective 5: Causal Mediation) remains an intentional placeholder pending finalization of prespecified mediation model families and implementation diagnostics."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#overview",
+    "href": "tabs/secondary_data_analysis_plan.html#overview",
+    "title": "Statistical Analysis Plan",
+    "section": "",
+    "text": "This document is the integrated CO-LUMINATE Statistical Analysis Plan (SAP). It retains the published public section structure while updating the underlying analytical description to reflect the current harmonization, trajectory, and pathway-screening workflows carried forward into the release-safe script bundles.\nThe current release includes:\n\nSection A: Objective 2 (Depression Harmonization)\nSection B: Objective 3 (Social Determinant Trajectories)\nSection C: Objective 4 (Behavioral Mediators)\n\nSection D (Objective 5: Causal Mediation) remains an intentional placeholder pending finalization of prespecified mediation model families and implementation diagnostics."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#section-a-objective-2---depression-harmonization-sap",
+    "href": "tabs/secondary_data_analysis_plan.html#section-a-objective-2---depression-harmonization-sap",
+    "title": "Statistical Analysis Plan",
+    "section": "Section A: Objective 2 - Depression Harmonization SAP",
+    "text": "Section A: Objective 2 - Depression Harmonization SAP\n\nA1 Background and Rationale\nThis SAP component defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire and the Patient Health Questionnaire-9. The central challenge is not simple score conversion, but defensible alignment of instruments that differ in item format, recall period, and cultural grounding in a longitudinal multi-cohort setting.\nThe PHQ-9 is treated as the external benchmark for probable depression (Kroenke, Spitzer, and Williams 2001), while the SSQ contributes culturally grounded distress content that is relevant in Southern African settings (Patel et al. 1997; Haney et al. 2014; Chibanda et al. 2019). The revised Objective 2 workflow therefore treats harmonization as a staged psychometric program: item-set refinement, structural validation, invariance assessment, joint IRT calibration, and threshold comparison. In the current implementation, the theoretically derived SSQ-10 subset is retained as the main transportable SSQ configuration because it preserves the depressive core while avoiding non-specific distress items that weaken comparability with the PHQ benchmark (Putnick and Bornstein 2016; Woods 2009).\n\n\nA3 Objectives and Estimands\nLet \\(Y_i^{PHQ} = \\mathbb{1}\\{PHQ9_i \\ge 10\\}\\) denote the PHQ-referenced probable-depression indicator for participant \\(i\\).\nThe primary estimand is the harmonized binary endpoint\n\\[\nY_i^{H} = \\mathbb{1}\\{\\hat{\\theta}_i \\ge \\tau^\\ast\\},\n\\]\nwhere \\(\\hat{\\theta}_i\\) is the calibrated latent depression score from joint PHQ-SSQ modeling and \\(\\tau^\\ast\\) is the selected latent threshold linked to the PHQ-9 reference scale.\nSecondary estimands include prevalence alignment and threshold transportability:\n\\[\n\\Delta_p = \\Pr(Y_i^{H}=1) - \\Pr(Y_i^{PHQ}=1),\n\\]\nwhere \\(\\Delta_p\\) summarizes endpoint-prevalence drift under candidate thresholding strategies. In the revised Objective 2 workflow, threshold comparison is not limited to a single rule. The anchored threshold linked to a PHQ-9 score of approximately 10 is compared with ROC-derived operating points and sensitivity- or specificity-targeted alternatives before a transport rule is selected.\n\n\nA4 Study Design and Analytic Samples\nThe development sample comprises participants aged approximately 16-24 years with concurrent SSQ and PHQ observations available for joint calibration. The transport sample consists of SSQ-only records used to extend the harmonized scoring rule beyond the concurrent benchmark subset.\nEligibility is stage-specific:\n\nstructural-validity stages require complete item vectors for the candidate item set under evaluation;\nIRT calibration requires valid item responses under the retained instrument configuration;\nthreshold comparison requires benchmark PHQ information;\nendpoint assignment requires valid latent-score estimates from the final joint or fixed-parameter SSQ scoring workflow.\n\n\n\nA5 Structural Modeling Strategy\nThe revised Objective 2 workflow evaluates three candidate SSQ configurations: SSQ-14, the theoretical SSQ-10 depressive subset, and the SSQ-8 comparison subset (Chibanda et al. 2019). Structural validity begins with Monte Carlo split-sample EFA using polychoric correlation structures and categorical-data retention criteria, followed by hold-out CFA using WLSMV estimation (Holgado–Tello et al. 2010; Wu and Estabrook 2016). Consensus item structures are identified across repeated split samples rather than from a single exploratory fit.\nLet \\(\\mathbf{x}_i\\) denote the ordinal or binary symptom vector and \\(\\theta_i\\) the latent depression factor. The CFA measurement model is\n\\[\n\\mathbf{x}_i \\sim f(\\theta_i; \\boldsymbol{\\lambda}, \\boldsymbol{\\tau}),\n\\]\nwhere \\(\\boldsymbol{\\lambda}\\) are factor-loading parameters and \\(\\boldsymbol{\\tau}\\) are item-threshold parameters. Fit diagnostics are interpreted jointly rather than through single-cutoff rules, consistent with the revised psychometric workflow (Hu and Bentler 1999; MacCallum et al. 2002). Measurement invariance is then assessed across sex and age strata so that downstream thresholding does not rest on item structures that vary materially across key subgroups (Putnick and Bornstein 2016; Vandenberg and Lance 2000).\n\n\nA6 IRT Harmonization and Threshold Derivation\nHarmonization uses graded response models implemented in mirt (Samejima 1969; Chalmers 2012). For item \\(j\\) and category threshold \\(k\\),\n\\[\n\\Pr(X_{ij} \\ge k \\mid \\theta_i) =\n\\operatorname{logit}^{-1}\\left[a_j(\\theta_i - b_{jk})\\right].\n\\]\nSeparate instrument-level GRMs are used to confirm single-scale adequacy, after which a joint PHQ-SSQ calibration places both instruments on a common latent continuum. Latent trait scores are estimated using expected a posteriori scoring, and SSQ parameters from the joint model are exported as a fixed-parameter scoring engine so that SSQ-only records can be scored without refitting the full calibration model.\nThe primary applied threshold remains a clinically anchored \\(\\theta\\) cutoff tied to the PHQ-9 test characteristic curve at approximately 10. However, the revised Objective 2 work compares this anchored rule with Youden-based ROC rules and constrained operating rules targeting high sensitivity or specificity before selecting the transportable endpoint definition for downstream Objectives 3-5.\n\n\nA7 Performance Metrics and Uncertainty\nEndpoint performance is summarized by:\n\nsensitivity, specificity, PPV, NPV, and accuracy;\nAUC and Cohen’s \\(\\kappa\\);\nprevalence drift \\(\\Delta_p\\);\nsubgroup consistency under alternate threshold strategies.\n\nThe current workflow treats discrimination, calibration, and prevalence alignment as a joint decision problem rather than selecting thresholds on AUC or Youden performance alone. Uncertainty is summarized using resampling-based intervals and repeated-split diagnostics where appropriate (Efron and Tibshirani 1994).\n\n\nA8 Planned Outputs and Reporting\nPlanned outputs are:\n\nitem-retention and structural-validity diagnostics for candidate SSQ configurations;\nCFA, invariance, and DIF summaries for the retained SSQ-based depression structure;\njoint IRT calibration outputs and threshold-mapping comparisons;\na fixed-parameter SSQ scoring engine for SSQ-only cohorts;\nthe final harmonized depression endpoint carried forward into downstream Objectives 3-5.\n\n\n\nA9 Symbol-to-Implementation Crosswalk (Depression Harmonization SAP)\nThe Objective 2 crosswalk below maps each core quantity to the public psychometric script bundle under scripts/psychometric/.\n\n\n\n\n\n\n\n\n\nSAP quantity\nDefinition in this SAP\nImplementation locus (public psychometric bundle)\nPrimary output family\n\n\n\n\n\\(\\mathbf{x}_i\\), retained item structure\nObserved symptom item set carried into structural and IRT stages\nscripts/psychometric/programs/utils/efa_stability/05_run_pipeline_efa_master.R\nEFA stability summaries and retained-structure artifacts\n\n\n\\(\\theta_i\\), \\(\\boldsymbol{\\lambda}\\), \\(\\boldsymbol{\\tau}\\)\nLatent trait, loading, and threshold parameters from CFA stages\nscripts/psychometric/programs/utils/cfa_roc/06_master.R\nCFA fit, invariance, and ROC-prep model objects\n\n\n\\(a_j\\), \\(b_{jk}\\)\nGRM discrimination and category-threshold parameters\nscripts/psychometric/programs/utils/irt/full_itr.R with batch execution via scripts/psychometric/programs/analysis/run_irt_batch.R\nIRT model objects and harmonization result bundles\n\n\n\\(\\tau^\\ast\\) and alternative operating rules\nApplied latent threshold for endpoint assignment\nscripts/psychometric/programs/analysis/irt_roc_compare.R\nThreshold-comparison figures and operating-point summaries\n\n\n\\(Y_i^H\\) and \\(\\Delta_p\\)\nHarmonized endpoint and prevalence drift vs PHQ benchmark\nConsolidated IRT + ROC comparison outputs in the Objective 2 analysis pipeline\nFinal scoring-engine outputs and downstream endpoint summaries"
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#section-b-objective-3---social-determinant-trajectories-sap",
+    "href": "tabs/secondary_data_analysis_plan.html#section-b-objective-3---social-determinant-trajectories-sap",
+    "title": "Statistical Analysis Plan",
+    "section": "Section B: Objective 3 - Social Determinant Trajectories SAP",
+    "text": "Section B: Objective 3 - Social Determinant Trajectories SAP\n\nB1 Background and Rationale\nObjective 3 models developmental trajectories of childhood social determinants and evaluates how those trajectories relate to the harmonized depression endpoint. This SAP treats trajectory modeling as a defensibility problem in which class structure, overlap, and interpretability will be examined across multiple analytic restrictions rather than inferred from a single retained solution (Andruff et al. 2009; D. S. Nagin 2005; Bengt O. Muthén 2001).\nThis framing follows the current harmonized trajectory workflow, which treats childhood social determinants as time-varying developmental processes and organizes them into early-childhood (0-5 years) and middle-late-childhood (6-12 years) windows (Hall and Posel 2019; Isabel Fortier et al. 2017; Simelane et al. 2025). The scientific aim is to preserve developmental timing while distinguishing robust trajectory structures from those that change materially when stronger repeated-measures requirements are imposed.\n\n\nB3 Objectives and Estimands\nLet \\(E_{it}\\) denote exposure profile at developmental time \\(t\\), and let \\(C_i\\) denote latent trajectory class membership.\nPrimary estimands include the class-proportion vector\n\\[\n\\pi_c = \\Pr(C_i = c), \\quad c = 1,\\dots,K,\n\\]\nand class-conditional depression-risk contrasts\n\\[\n\\text{OR}_c =\n\\frac{\\Pr(Y_i^H=1 \\mid C_i=c)/\\Pr(Y_i^H=0 \\mid C_i=c)}\n     {\\Pr(Y_i^H=1 \\mid C_i=c_{ref})/\\Pr(Y_i^H=0 \\mid C_i=c_{ref})}.\n\\]\nSecondary estimands include posterior classification quality, same-label retention across analytic branches, and cross-scenario reallocation of class membership. These secondary estimands are defined because the Objective 3 workflow will compare unrestricted, primary restricted, sensitivity, and strict joint branches rather than relying on a single fitted branch as the sole evidence source.\n\n\nB4 Exposure Definitions and Time Windows\nExposure histories are organized into two pre-specified developmental windows: 0-5 years and 6-12 years. All trajectory models are built on harmonized repeated childhood measures, with emphasis on preserving developmental ordering and avoiding post hoc redefinition of windows or determinant families.\nThe current active Objective 3 model family set is:\n\nULWOM: univariate maternal co-residence trajectories;\nUHSES: univariate household socioeconomic status trajectories;\nJPA: joint parental residence pattern trajectories;\nJMAES: joint maternal absence plus household socioeconomic status trajectories.\n\nThese four families supersede the earlier, narrower public summary and define the current SAP implementation target. Retired or exploratory specifications are excluded from active SAP compliance checks unless they are reintroduced explicitly in a later release.\n\n\nB5 LCGA and Joint-Trajectory Strategy\nThe Objective 3 workflow implements a five-branch comparison framework:\n\nunrestricted univariate analyses to maximize sample size under likelihood-based handling of incomplete repeated measures;\nprimary univariate analyses requiring at least three occasions per window;\nsensitivity univariate analyses requiring at least two occasions per window;\nmain joint analyses requiring at least three occasions;\nstrict joint sensitivity analyses requiring at least three complete joint occasions.\n\nFor participant \\(i\\) in class \\(c\\), the class-specific growth model is\n\\[\nE_{it} = \\eta_{0c} + \\eta_{1c}t + \\eta_{2c}t^2 + \\varepsilon_{it},\n\\quad \\varepsilon_{it} \\sim \\mathcal{N}(0,\\sigma_c^2).\n\\]\nClass-membership probabilities are represented as\n\\[\n\\Pr(C_i=c) = \\frac{\\exp(\\alpha_c)}{\\sum_{h=1}^{K}\\exp(\\alpha_h)}.\n\\]\nIn practice, the workflow emphasizes common orchestration for model fitting, labeling, plotting, reporting, and audit generation rather than isolated solution fitting (Bengt O. Muthén 2004; Daniel S. Nagin et al. 2016).\n\n\nB6 Class Enumeration and Model Selection\nClass enumeration combines statistical and scientific criteria:\n\ninformation criteria and neighboring class-count stability;\nminimum useful class size and posterior separation;\nsubstantive interpretability of class shapes;\nconsistency of retained solutions across analytic restrictions;\ndocumentation against GRoLTS and SMART-LCA-aligned reporting standards (Nylund, Asparouhov, and Muthén 2007; Masyn 2013; Lissa, Garnier-Villarreal, and Anadria 2024).\n\nBecause mixture solutions are sensitive to specification, local maxima, and sample restriction, retained solutions are also evaluated under structural sensitivity checks and overlap/reallocation reviews (Bauer and Curran 2003; Bauer 2007; Hipp and Bauer 2006; Watson et al. 2022).\n\n\nB7 Association Modeling and Robustness\nDownstream association models condition on the harmonized endpoint \\(Y_i^H\\) and fixed covariates once selected class structures are carried forward:\n\\[\n\\operatorname{logit}\\Pr(Y_i^H=1) = \\beta_0 + \\sum_{c \\ne c_{ref}}\\beta_c\\mathbb{1}(C_i=c) + \\boldsymbol{\\gamma}^\\top\\mathbf{Z}_i.\n\\]\nFor this SAP, robustness is defined more broadly than the final regression stage alone. Planned robustness evidence includes:\n\nclass-count stability across unrestricted and restricted branches;\nentropy and posterior-probability comparisons;\nsame-label retention in overlap samples;\nstrict-joint boundary-condition checks;\ncomplete audit artifact coverage across all active branches.\n\nThis means the SAP treats defensibility and class reallocation as part of the inferential workflow rather than as a post hoc appendix to a single retained model (Schafer and Graham 2002; Graham 2009; Parsons, McCormick, et al. 2024).\n\n\nB8 Planned Outputs and Reporting\nPlanned outputs include:\n\ntrajectory-profile plots for each active model family and developmental window;\nclass-enumeration summaries and posterior-quality diagnostics;\noverlap and reallocation summaries across unrestricted and restricted branches;\nstructural-sensitivity and reporting-checklist artifacts;\ndownstream class-linked depression association tables using the harmonized endpoint.\n\n\n\nB9 Symbol-to-Implementation Crosswalk (Objective 3)\nThe Objective 3 crosswalk below maps each core quantity to the intended public trajectory script bundle under scripts/trajectories/.\n\n\n\n\n\n\n\n\n\nSAP quantity\nDefinition in this SAP\nImplementation locus (public trajectory bundle)\nPrimary output family\n\n\n\n\n\\(\\pi_c\\) and class-count summaries\nMarginal class proportions and retained class counts\nscripts/trajectories/programs/analysis/run_lcga.R\nFit-summary and retained-solution tables\n\n\n\\(C_i\\)\nLatent class membership and posterior assignment\nscripts/trajectories/programs/analysis/report_univariate_lcga.R and scripts/trajectories/programs/analysis/report_joint_lcga.R\nPosterior-quality and final-solution summaries\n\n\n\\(\\eta_{0c}, \\eta_{1c}, \\eta_{2c}\\)\nClass-specific growth parameters\nscripts/trajectories/programs/utils/mplus_lcga.R\nParameter-estimate and profile outputs\n\n\nClass-selection decision \\(K\\)\nRetained solution under fit and plausibility criteria\nscripts/trajectories/programs/utils/lcga_selection.R\nSelection summaries and audit-aligned decision tables\n\n\nOverlap, reallocation, and robustness diagnostics\nCross-scenario defensibility checks\nscripts/trajectories/programs/utils/class_overlap_reporting.R with overlap summaries assembled in the reporting scripts\nOverlap summaries, sensitivity pages, and reporting checklists\n\n\n\nThe public trajectory bundle is specified to use repo-local handoff inputs under data/inputs/ by default, with optional overrides through COLU_CHILDHOOD_RDATA and COLU_MULTISTUDIES_RDATA. This replaces the older private-data path pattern and is the public-facing contract assumed by the current SAP crosswalk.\n\n\nB10 Consistency Stamp (Objective 3)\nConsistency stamp date: 2026-04-09\nScope: Objective 3 (Social Determinant Trajectories) only.\nThis consistency stamp records the intended SAP scope for the current Objective 3 specification:\n\nthe active Objective 3 family set is constrained to ULWOM, UHSES, JPA, and JMAES;\nthe SAP is aligned to the five-branch defensibility workflow rather than to a single retained LCGA branch;\noverlap, entropy, and class-reallocation diagnostics are defined as core implementation evidence;\nany future expansion beyond this family set will require an explicit SAP revision."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#section-c-objective-4---behavioral-mediators-sap",
+    "href": "tabs/secondary_data_analysis_plan.html#section-c-objective-4---behavioral-mediators-sap",
+    "title": "Statistical Analysis Plan",
+    "section": "Section C: Objective 4 - Behavioral Mediators SAP",
+    "text": "Section C: Objective 4 - Behavioral Mediators SAP\n\nC1 Background and Rationale\nObjective 4 identifies adolescent behavioral and proximal social pathway variables through which childhood social determinant trajectories may influence depression risk. This SAP defines Objective 4 as a pathway-screening and prioritization analysis, not a formal causal mediation decomposition. This distinction matters in a harmonized multi-cohort platform where pathway variables, endpoint timing, and contextual exposure history all vary across source studies (Jörns-Presentati et al. 2021; Jakobsson et al. 2024; Rossouw et al. 2024).\nThe current Objective 4 framing treats the adolescent pathway block as a constrained but policy-relevant subset of a broader locally grounded pathway ecology. Candidate domains include material deprivation, violence, school-related adversity, social connectedness, and sexual-risk behavior, all positioned after childhood exposure windows and before the harmonized depressive-symptom endpoint (M. Mkhize, Westhuizen, and Sorsdahl 2024; Partap et al. 2023; Zimmerman et al. 2021).\n\n\nC3 Objectives and Estimands\nPrimary estimands are adjusted pathway-depression associations and pathway-prioritization signals derived from the joint pattern of upstream A-path support and downstream B-path evidence.\nFor mediator \\(M_j\\), the endpoint model is\n\\[\n\\operatorname{logit}\\left\\{P(Y_i^H=1 \\mid S_{0-5}, S_{6-12}, M_1,\\ldots,M_7, C)\\right\\}\n=\n\\beta_0 + \\beta_1^{\\top}S_{0-5} + \\beta_2^{\\top}S_{6-12} + \\sum_{j=1}^{7}\\theta_j M_j + \\beta_3^{\\top} C,\n\\]\nwhere \\(S_{0-5}\\) and \\(S_{6-12}\\) denote childhood trajectory-class representations, \\(M_j\\) denotes a candidate adolescent pathway domain, and \\(C\\) denotes fixed covariates. The primary parameter of interest for each pathway domain is \\(\\theta_j\\), interpreted as the pathway-specific association with the harmonized depression endpoint after conditioning on transition history and the fixed covariate set.\nSecondary estimands include A-path support hierarchy, nested-adjustment attenuation patterns, and ranking stability across model families. These secondary estimands will be used to decide which pathway domains warrant promotion into later mediation-focused analyses.\n\n\nC4 Mediator Definitions and Coding\nThe current empirically testable adolescent pathway block comprises seven harmonized domains:\n\nalcohol use;\never having had sexual intercourse;\nfood insecurity;\nlack of government grant receipt;\nviolence exposure;\nlow social support;\nschool disengagement.\n\nThese variables are treated as candidate pathway indicators rather than as already-identified formal mediators. They are harmonized from adolescent data collected after the childhood exposure windows and before the harmonized depression endpoint, with fixed covariate adjustment anchored on sex, age, rural residence, and calendar year (Marlow et al. 2023; I. Fortier et al. 2017; Chilver et al. 2023; Mthiyane et al. 2025).\n\n\nC5 Modeling Strategy\nObjective 4 carries forward transition-based exposure history rather than using isolated class snapshots. The childhood transition backbone is written as\n\\[\nP(S_{0-5}, S_{6-12}, U^{(0-5)}, U^{(6-12)})\n=\nP(S_{0-5})\n\\times\nP(S_{6-12} \\mid S_{0-5})\n\\times\n\\prod_t P(U_t^{(0-5)} \\mid S_{0-5})\n\\times\n\\prod_t P(U_t^{(6-12)} \\mid S_{6-12}),\n\\]\nwith posterior class uncertainty carried into downstream screening rather than resolved through deterministic single-class assignment (Vermunt 2010; Asparouhov and Muthén 2014; Zyberaj, Bakaç, and Seibel 2022).\nWithin that transition framework, three analytic layers are prespecified:\n\nA-path screening of pathway-variable probabilities as functions of childhood transition history and fixed covariates;\nB-path models relating pathway domains to the harmonized depression endpoint after adjustment for transition history and fixed covariates;\njointly adjusted pathway models used to rank candidate pathway domains rather than to claim identified indirect effects.\n\nAll downstream regression stages use posterior-probability-weighted logistic models with participant-level cluster-robust standard errors. The active model-family set is aligned to Objective 3: ULWOM, UHSES, JPA, and JMAES.\n\n\nC6 Mediator Prioritization and Phenotype Planning\nPathway prioritization for Objective 5 will be based on the joint pattern of:\n\nA-path support across pre-specified primary and secondary hypothesis tiers;\nB-path stability across the four active model families;\nattenuation under nested fixed-covariate adjustment;\nsubstantive plausibility in relation to the broader co-created pathway ecology.\n\nWithin that framework, food insecurity, violence exposure, and ever having had sexual intercourse are treated as high-interest candidate domains for close scrutiny because they are strongly motivated by the current substantive framework and the pathway-screening design. Alcohol use, lack of government grant receipt, low social support, and school disengagement remain part of the full evaluated pathway block and will be assessed under the same prioritization rules rather than excluded a priori (Duby et al. 2022; S. Mkhize et al. 2022).\n\n\nC7 Sensitivity and Robustness\nObjective 4 places particular emphasis on nested fixed-covariate adjustment. Sensitivity analyses will assess whether attenuation of pathway-depression associations is driven primarily by age, calendar year, rural residence, or combinations of these factors. This reflects the design assumption that developmental timing and secular period are part of the data-generating structure rather than optional nuisance adjustments.\nAdditional robustness layers include:\n\npathway ranking by pre-specified primary and secondary A-path hypothesis tiers rather than nominal significance alone (Benjamini and Hochberg 1995);\ncomplete-case main analyses with targeted multiple-imputation diagnostics for maternal baseline variables (White, Royston, and Wood 2011; Sterne et al. 2009);\ninteraction reviews for selected pathway combinations, especially violence exposure with school disengagement;\nreporting aligned to STROBE and AGReMA guidance (Elm et al. 2007; Moreno-Betancur et al. 2021).\n\nThese robustness checks reinforce that the current objective is prioritization for later mediation work, not a claim of identified direct and indirect effects (Imai, Keele, and Yamamoto 2010; Valeri and VanderWeele 2013; T. J. VanderWeele et al. 2016).\n\n\nC8 Planned Outputs and Reporting\nPlanned outputs include:\n\nA-path hierarchy tables by hypothesis tier and model family;\nB-path association tables for the seven pathway domains;\nnested-adjustment attenuation reviews showing the effect of age, rural residence, and calendar year;\na transparent shortlist of pathway domains prioritized for Objective 5;\ncontextual summaries linking the measured pathway block to the broader co-created pathway inventory."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#supplementary-glossary-of-symbols-and-parameters",
+    "href": "tabs/secondary_data_analysis_plan.html#supplementary-glossary-of-symbols-and-parameters",
+    "title": "Statistical Analysis Plan",
+    "section": "Supplementary: Glossary of Symbols and Parameters",
+    "text": "Supplementary: Glossary of Symbols and Parameters\nThis glossary consolidates the core notation used in Sections A-C. Equation-specific parameter definitions remain embedded in the relevant sections.\n\nObjective 2 Glossary\n\n\\(i\\): participant index.\n\\(j\\): item index.\n\\(k\\): ordered-category threshold index for item \\(j\\).\n\\(Y_i^{PHQ}\\): PHQ-referenced probable-depression indicator.\n\\(Y_i^H\\): harmonized depression indicator.\n\\(\\hat{\\theta}_i\\): participant-specific estimated latent depression score.\n\\(\\tau^\\ast\\): selected latent threshold used to classify \\(Y_i^H\\).\n\\(\\Delta_p\\): prevalence drift between harmonized and PHQ-referenced endpoint prevalence.\n\\(\\mathbf{x}_i\\): vector of observed symptom item responses.\n\\(\\boldsymbol{\\lambda}\\): factor-loading parameters.\n\\(\\boldsymbol{\\tau}\\): CFA item-threshold parameters.\n\\(a_j\\): GRM discrimination parameter for item \\(j\\).\n\\(b_{jk}\\): GRM category-threshold parameter for item \\(j\\) at threshold \\(k\\).\n\n\n\nObjective 3 Glossary\n\n\\(i\\): participant index.\n\\(t\\): developmental-time index within a childhood window.\n\\(c, h\\): latent-class indices.\n\\(K\\): total number of retained or candidate classes.\n\\(E_{it}\\): observed exposure value for participant \\(i\\) at time \\(t\\).\n\\(C_i\\): latent trajectory class membership.\n\\(\\pi_c\\): marginal class proportion for class \\(c\\).\n\\(Y_i^H\\): harmonized depression outcome from Objective 2.\n\\(c_{ref}\\): reference class for class-contrast models.\n\\(\\eta_{0c}, \\eta_{1c}, \\eta_{2c}\\): class-specific intercept and slope parameters.\n\\(\\varepsilon_{it}\\): residual term for participant \\(i\\) at time \\(t\\).\n\\(\\sigma_c^2\\): class-specific residual variance.\n\\(\\alpha_c\\): multinomial logit intercept governing class-membership probability.\n\\(\\beta_c\\): class-effect coefficient for class \\(c\\) relative to \\(c_{ref}\\).\n\n\n\nObjective 4 Glossary\n\n\\(S_{0-5}\\): childhood trajectory representation for the 0-5 year window.\n\\(S_{6-12}\\): childhood trajectory representation for the 6-12 year window.\n\\(U^{(0-5)}, U^{(6-12)}\\): observed childhood indicators contributing to each latent transition block.\n\\(M_j\\): candidate adolescent pathway variable \\(j\\).\n\\(Y_i^H\\): harmonized depression outcome.\n\\(C\\): fixed covariate set used in the pathway-screening models.\n\\(\\theta_j\\): pathway-specific association parameter for mediator \\(j\\).\n\\(\\beta_1, \\beta_2\\): transition-history effect vectors for the two childhood windows.\n\\(\\beta_3\\): fixed-covariate effect vector."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#remaining-sections",
+    "href": "tabs/secondary_data_analysis_plan.html#remaining-sections",
+    "title": "Statistical Analysis Plan",
+    "section": "Remaining Sections",
+    "text": "Remaining Sections\n\nSection D: Objective 5 - Causal Mediation SAP (in progress). This section will formalize natural direct and indirect effect estimands, identification assumptions, and sensitivity procedures for unmeasured mediator-outcome confounding (Imai, Keele, and Yamamoto 2010; Valeri and VanderWeele 2013; Tyler J. VanderWeele and Hernan 2012; T. J. VanderWeele et al. 2016)."
+  },
+  {
+    "objectID": "tabs/secondary_data_analysis_plan.html#references",
+    "href": "tabs/secondary_data_analysis_plan.html#references",
+    "title": "Statistical Analysis Plan",
+    "section": "References",
+    "text": "References\n\n\nAndruff, H., N. Carraro, A. Thompson, P. Gaudreau, and B. Louvet. 2009. “Latent Class Growth Modelling: A Tutorial.” Tutorials in Quantitative Methods for Psychology 5: 11–24. https://doi.org/10.20982/tqmp.05.1.p011.\n\n\nAsparouhov, Tihomir, and Bengt O. Muthén. 2014. “Auxiliary Variables in Mixture Modeling: Three-Step Approaches Using Mplus.” Structural Equation Modeling: A Multidisciplinary Journal 21 (3): 329–41. https://doi.org/10.1080/10705511.2014.915181.\n\n\nBauer, Daniel J. 2007. “Observations on the Use of Growth Mixture Models in Psychological Research.” Multivariate Behavioral Research. https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/Bauer_2007.pdf.\n\n\nBauer, Daniel J., and Patrick J. Curran. 2003. “Distributional Assumptions of Growth Mixture Models: Implications for Overextraction of Latent Trajectory Classes.” Psychological Methods. https://doi.org/10.1037/1082-989X.8.3.338.\n\n\nBenjamini, Yoav, and Yosef Hochberg. 1995. “Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.” Journal of the Royal Statistical Society: Series B (Methodological) 57 (1): 289–300. https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.\n\n\nChalmers, R Philip. 2012. “Mirt: A Multidimensional Item Response Theory Package for the r Environment.” Journal of Statistical Software 48 (6): 1–29. https://doi.org/10.18637/jss.v048.i06.\n\n\nChibanda, Dixon et al. 2019. “Validation of the 8-Item Shona Symptom Questionnaire (SSQ-8) in Zimbabwe.” In AIDSImpact 2019 Conference. https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA.\n\n\nChilver, M. R., R. A. Burns, F. Botha, and P. Butterworth. 2023. “Comparing Estimates of Psychological Distress Using 7-Day and 30-Day Recall Periods: A Randomized Controlled Trial.” PLOS ONE 18 (12): e0295535. https://doi.org/10.1371/journal.pone.0295535.\n\n\nDuby, Zoe, Brittany Bunce, Chantal Fowler, Kate Bergh, Kim Jonas, Janan Janine Dietrich, Darshini Govindasamy, Caroline Kuo, and Catherine Mathews. 2022. “Intersections Between COVID-19 and Socio-Economic Mental Health Stressors in the Lives of South African Adolescent Girls and Young Women.” Child and Adolescent Psychiatry and Mental Health 16 (1): 23. https://doi.org/10.1186/s13034-022-00457-y.\n\n\nEfron, Bradley, and Robert J Tibshirani. 1994. An Introduction to the Bootstrap. CRC press. https://doi.org/10.1201/9780429246593.\n\n\nElm, Erik von, Douglas G. Altman, Matthias Egger, Stuart J. Pocock, Peter C. Gøtzsche, and Jan P. Vandenbroucke. 2007. “The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies.” PLoS Medicine 4 (10): e296. https://doi.org/10.1371/journal.pmed.0040296.\n\n\nFortier, I., P. Raina, E. R. Van den Heuvel, et al. 2017. “Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.” International Journal of Epidemiology 46 (1): 103–5. https://doi.org/10.1093/ije/dyw075.\n\n\nFortier, Isabel, Parminder Raina, Edwin R. van den Heuvel, Lauren E. Griffith, et al. 2017. “Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.” International Journal of Epidemiology 46 (1): 103–15. https://doi.org/10.1093/ije/dyw075.\n\n\nGraham, John W. 2009. “Missing Data Analysis: Making It Work in the Real World.” Annual Review of Psychology 60: 549–76. https://doi.org/10.1146/annurev.psych.58.110405.085530.\n\n\nHall, Katharine, and Dorrit Posel. 2019. “Fragmenting the Family? The Complexity of Household Migration Strategies in Post-Apartheid South Africa.” IZA Journal of Development and Migration 10 (4). https://doi.org/10.2478/izajodm-2019-0004.\n\n\nHaney, E, K Singh, C Nyamukapa, S Gregson, L Robertson, L Sherr, and T Hallett. 2014. “One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.” Journal of Affective Disorders 167: 358–67.\n\n\nHipp, John R., and Daniel J. Bauer. 2006. “Local Solutions in the Estimation of Growth Mixture Models.” Psychological Methods. https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/hipp-bauer-PM-2006.pdf.\n\n\nHolgado–Tello, Francisco Pablo, Salvador Chac’on–Moscoso, Isabel Barbero–Garc’ ia, and Enrique Vila–Abad. 2010. “Polychoric Versus Pearson Correlations in Exploratory and Confirmatory Factor Analysis of Ordinal Variables.” Quality & Quantity 44: 153–66. https://doi.org/10.1007/s11135-008-9190-y.\n\n\nHu, Li-tze, and Peter M Bentler. 1999. “Cutoff Criteria for Fit Indexes in Covariance Structure Analysis: Conventional Criteria Versus New Alternatives.” Structural Equation Modeling: A Multidisciplinary Journal 6 (1): 1–55. https://doi.org/10.1080/10705519909540118.\n\n\nImai, K., L. Keele, and T. Yamamoto. 2010. “Identification, Inference and Sensitivity Analysis for Causal Mediation Effects.” Statistical Science 25 (1): 51–71. https://doi.org/10.1214/10-STS321.\n\n\nJakobsson, Cecilia E., Natalie E. Johnson, Brenda Ochuku, Rosine Baseke, Evelyn Wong, Christine W. Musyimi, David M. Ndetei, and Katherine E. Venturo-Conerly. 2024. “Meta-Analysis: Prevalence of Youth Mental Disorders in Sub-Saharan Africa.” Cambridge Prisms: Global Mental Health 11: e109. https://doi.org/10.1017/gmh.2024.82.\n\n\nJörns-Presentati, Astrid, Ann-Kathrin Napp, Anja S. Dessauvagie, Dan J. Stein, Deborah Jonker, Elsie Breet, Weslin Charles, et al. 2021. “The Prevalence of Mental Health Problems in Sub-Saharan Adolescents: A Systematic Review.” PLOS ONE 16 (5): e0251689. https://doi.org/10.1371/journal.pone.0251689.\n\n\nKroenke, K., R. L. Spitzer, and J. B. Williams. 2001. “The PHQ-9: Validity of a Brief Depression Severity Measure.” Journal of General Internal Medicine 16 (9): 606–13. https://doi.org/10.1046/j.1525-1497.2001.016009606.x.\n\n\nLissa, Caspar J. van, Mauricio Garnier-Villarreal, and Dan Anadria. 2024. “Recommended Practices in Latent Class Analysis Using the Open-Source r-Package tidySEM.” Structural Equation Modeling: A Multidisciplinary Journal. https://doi.org/10.1080/10705511.2023.2250920.\n\n\nMacCallum, Robert C, Shaobo Zhang, Kristopher J Preacher, and Derek D Rucker. 2002. “On the Practice of Dichotomization of Quantitative Variables.” Psychological Methods 7 (1): 19. https://doi.org/10.1037/1082-989X.7.1.19.\n\n\nMarlow, Marguerite, Sarah Skeen, Caitlin M. Grieve, Liliana Carvajal-Velez, Jill W. Åhs, Brandon A. Kohrt, Jennifer Requejo, et al. 2023. “Detecting Depression and Anxiety Among Adolescents in South Africa: Validity of the IsiXhosa Patient Health Questionnaire-9 and Generalized Anxiety Disorder-7.” Journal of Adolescent Health 72 (1 Suppl): S52–60. https://doi.org/10.1016/j.jadohealth.2022.09.013.\n\n\nMasyn, Katherine E. 2013. “Latent Class Analysis and Finite Mixture Modeling.” In The Oxford Handbook of Quantitative Methods. Oxford University Press. https://www.statmodel.com/download/Masyn_2013.pdf.\n\n\nMkhize, Mirriam, Claire van der Westhuizen, and Katherine Sorsdahl. 2024. “Prevalence and Factors Associated with Depression and Anxiety Among Young School-Going Adolescents in the Western Cape Province of South Africa.” Comprehensive Psychiatry 131: 152469. https://doi.org/10.1016/j.comppsych.2024.152469.\n\n\nMkhize, Siluleko, Elena Libhaber, Ronel Sewpaul, Priscilla Reddy, and Laurel Baldwin-Ragaven. 2022. “Child and Adolescent Food Insecurity in South Africa: A Household-Level Analysis of Hunger.” PLOS ONE 17 (12): e0278191. https://doi.org/10.1371/journal.pone.0278191.\n\n\nMoreno-Betancur, M., J. B. Carlin, S. L. Brilleman, E. J. Williamson, L. Simonsen, V. Didelez, et al. 2021. “A Guideline for Reporting Mediation Analyses of Randomized Trials and Observational Studies: The AGReMA Statement.” JAMA 326 (11): 1045–56. https://doi.org/10.1001/jama.2021.14075.\n\n\nMthiyane, Nondumiso, Edwin Mkwanazi, Patrick N. Mwangala, Debra Gareta, Sphiwe Dube, Kobus Herbst, Maryam Shahmanesh, Kathy Baisley, and Amina Abubakar. 2025. “Data Resource Profile: Harmonisation of a Multimodal Dataset to Evaluate Adolescent Mental Health in Rural South Africa.” International Journal of Population Data Science 8 (6): 3003. https://doi.org/10.23889/ijpds.v8i6.3003.\n\n\nMuthén, Bengt O. 2001. “Growth Curve Modeling.” International Encyclopedia of the Social & Behavioral Sciences, 6281–87.\n\n\nMuthén, Bengt O. 2004. “Latent Variable Analysis: Growth Mixture Modeling and Related Techniques for Longitudinal Data.” https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf.\n\n\nNagin, D. S. 2005. Group-Based Modeling of Development. Harvard University Press. https://doi.org/10.4159/9780674041318.\n\n\nNagin, Daniel S. et al. 2016. “Group-Based Multi-Trajectory Modeling.” Statistical Methods in Medical Research. https://doi.org/10.1177/0962280216673085.\n\n\nNylund, Karen L., Tihomir Asparouhov, and Bengt O. Muthén. 2007. “Deciding on the Number of Classes in Latent Class Analysis and Growth Mixture Modeling: A Monte Carlo Simulation Study.” StatModel. https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf.\n\n\nParsons, C., E. McCormick, et al. 2024. “Limitations of Two Time Point Data for Understanding Individual Differences in Longitudinal Modeling—What Can Difference Reveal about Change?” Developmental Cognitive Neuroscience. https://www.sciencedirect.com/science/article/pii/S1878929324000148.\n\n\nPartap, Uttara P., Nega Assefa, Yemane Berhane, Ali Sie, David Guwatudde, Japhet K. Killewo, Ayoade Oduola, et al. 2023. “The Influence of Depressive Symptoms and School-Going Status on Risky Behaviors: A Pooled Analysis Among Adolescents in Six Sub-Saharan African Countries.” Frontiers in Psychiatry 14: 1171231. https://doi.org/10.3389/fpsyt.2023.1171231.\n\n\nPatel, Vikram, Essie Simunyu, Fungisai Gwanzura, Glyn Lewis, and Anthony H Mann. 1997. “The Shona Symptom Questionnaire: The Development of an Indigenous Measure of Common Mental Disorders in Harare.” Acta Psychiatrica Scandinavica 95 (6): 469–75.\n\n\nPutnick, Diane L, and Marc H Bornstein. 2016. “Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research.” Developmental Review 41: 71–90. https://doi.org/10.1016/j.dr.2016.06.004.\n\n\nRossouw, Laura, Kathryn Watt, Leslie L. Davidson, and Chris Desmond. 2024. “The Social Determinants of Adolescent Anxiety and Depression in Peri-Urban South Africa.” PLOS Mental Health 1 (6): e0000173. https://doi.org/10.1371/journal.pmen.0000173.\n\n\nSamejima, Fumiko. 1969. “Estimation of Latent Ability Using a Response Pattern of Graded Scores.” Psychometrika Monograph Supplement 17 (4): 1–100. https://doi.org/10.1007/BF02290599.\n\n\nSchafer, Joseph L., and John W. Graham. 2002. “Missing Data: Our View of the State of the Art.” Psychological Methods. https://stat.ethz.ch/education/semesters/ss2012/ams/paper/missing_data_1.pdf.\n\n\nSimelane, S., J. Bantjes, S. Kleintjes, et al. 2025. “Putting Child and Adolescent Mental Health at the Centre: Building an Ecosystem of Support.” South African Health Review 27: 131–43. https://doi.org/10.61473/001c.142241.\n\n\nSterne, Jonathan A. C., Ian R. White, John B. Carlin, Michael Spratt, Patrick Royston, Michael G. Kenward, Angela M. Wood, and James R. Carpenter. 2009. “Multiple Imputation for Missing Data in Epidemiological and Clinical Research: Potential and Pitfalls.” BMJ 338: b2393. https://doi.org/10.1136/bmj.b2393.\n\n\nValeri, L., and T. J. VanderWeele. 2013. “Mediation Analysis Allowing for Exposure-Mediator Interactions and Causal Interpretation: Theoretical Assumptions and Implementation with SAS and SPSS Macros.” Psychological Methods 18 (2): 137–50. https://doi.org/10.1037/a0031034.\n\n\nVandenberg, R. J., and C. E. Lance. 2000. “A Review and Synthesis of the Measurement Invariance Literature: Suggestions, Practices, and Recommendations for Organizational Research.” Organizational Research Methods 3 (1): 4–70. https://doi.org/10.1177/109442810031002.\n\n\nVanderWeele, T. J., Y. Li, A. C. Tsai, and I. Kawachi. 2016. “Outcome-Wide Longitudinal Designs for Causal Inference: A New Template for Empirical Studies in Public Health.” Statistical Science 31 (6): 2016. https://doi.org/10.1214/16-STS581.\n\n\nVanderWeele, Tyler J, and Miguel A Hernan. 2012. “Invited Commentary: Causal Diagrams and Measurement Bias.” American Journal of Epidemiology 175 (12): 1303–10.\n\n\nVermunt, Jeroen K. 2010. “Latent Class Modeling with Covariates: Two Improved Three-Step Approaches.” Political Analysis 18 (4): 450–69. https://doi.org/10.1093/pan/mpq025.\n\n\nWatson, C. et al. 2022. “Latent Class Trajectory Modelling: Impact of Changes in Model Specification.” American Journal of Translational Research 14 (10): 7593–7606. https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&filePid=13170140970002346&instCode=44SUR_INST.\n\n\nWhite, Ian R., Patrick Royston, and Angela M. Wood. 2011. “Multiple Imputation Using Chained Equations: Issues and Guidance for Practice.” Statistics in Medicine 30 (4): 377–99. https://doi.org/10.1002/sim.4067.\n\n\nWoods, Carol M. 2009. “Empirical Histograms in Item Response Theory with Differential Item Functioning.” Educational and Psychological Measurement 69 (1): 102–25. https://doi.org/10.1177/0013164408318760.\n\n\nWu, Hao, and Ryne Estabrook. 2016. “Identification of Confirmatory Factor Analysis Models of Different Levels of Invariance for Ordered Categorical Outcomes.” Psychometrika 81: 1014–45. https://doi.org/10.1007/s11336-016-9506-0.\n\n\nZimmerman, Annie, Emily Garman, Mauricio Avendano-Pabon, Ricardo Araya, Sara Evans-Lacko, David McDaid, A-La Park, et al. 2021. “The Impact of Cash Transfers on Mental Health in Children and Young People in Low-Income and Middle-Income Countries: A Systematic Review and Meta-Analysis.” BMJ Global Health 6 (4): e004661. https://doi.org/10.1136/bmjgh-2020-004661.\n\n\nZyberaj, Jetmir, Cafer Bakaç, and Sebastian Seibel. 2022. “Latent Transition Analysis in Organizational Psychology: A Simplified ‘How to’ Guide by Using an Applied Example.” Frontiers in Psychology 13: 977378. https://doi.org/10.3389/fpsyg.2022.977378."
+  },
+  {
+    "objectID": "tabs/metadata.html",
+    "href": "tabs/metadata.html",
+    "title": "Project Metadata",
+    "section": "",
+    "text": "This page is extracted and adapted from the dataset preparation source index.\nCurrent scope is limited to two data dictionaries:\n\nChildhood social exposure panel\nIntegrated multi-study mental health panel\n\nAll derived R objects for this page are generated locally during private site builds and are not distributed through the public website."
+  },
+  {
+    "objectID": "tabs/metadata.html#metadata-source",
+    "href": "tabs/metadata.html#metadata-source",
+    "title": "Project Metadata",
+    "section": "",
+    "text": "This page is extracted and adapted from the dataset preparation source index.\nCurrent scope is limited to two data dictionaries:\n\nChildhood social exposure panel\nIntegrated multi-study mental health panel\n\nAll derived R objects for this page are generated locally during private site builds and are not distributed through the public website."
+  },
+  {
+    "objectID": "tabs/metadata.html#dataset-summary",
+    "href": "tabs/metadata.html#dataset-summary",
+    "title": "Project Metadata",
+    "section": "Dataset Summary",
+    "text": "Dataset Summary\n\n\n\n\n\n\n\n\n\nField\nValue\n\n\n\n\nProject\nCO-LUMINATE\n\n\nPopulation\nSouth African youth aged 13-24\n\n\nLinked sample size\n5,226\n\n\nData source backbone\nAHRI HDSS\n\n\nCore mental health outcomes\nDepression symptoms (SSQ-14, PHQ-9)\n\n\nPriority social determinants\nSES and caregiver co-residency\n\n\nCohorts nested in AHRI HDSS\nDREAMS, Multilevel, Isisekelo Sempilo, TasP, Thetha Nami\n\n\nYouth Co-Creators\n11"
+  },
+  {
+    "objectID": "tabs/metadata.html#study-design-extract",
+    "href": "tabs/metadata.html#study-design-extract",
+    "title": "Project Metadata",
+    "section": "Study Design Extract",
+    "text": "Study Design Extract\nThe CO-LUMINATE linked dataset connects individual-level mental health outcomes from cohort studies to household-level longitudinal HDSS records. The objective is to estimate longitudinal direct and mediation relationships between social determinants and depressive symptoms among youth aged 13-24.\nThe analytical design combines:\n\nHDSS longitudinal household exposure histories.\nCohort-based depression outcomes measured with SSQ-14 and PHQ-9.\nLinkage across five cohorts nested within AHRI HDSS."
+  },
+  {
+    "objectID": "tabs/metadata.html#cohorts-included",
+    "href": "tabs/metadata.html#cohorts-included",
+    "title": "Project Metadata",
+    "section": "Cohorts Included",
+    "text": "Cohorts Included\n\nDREAMS\nMultilevel\nIsisekelo Sempilo\nTreatment as Prevention (TasP)\nThetha Nami"
+  },
+  {
+    "objectID": "tabs/metadata.html#object-snapshot",
+    "href": "tabs/metadata.html#object-snapshot",
+    "title": "Project Metadata",
+    "section": "Object Snapshot",
+    "text": "Object Snapshot\n\n\n\n\n\nDataset\nRows\nColumns\n\n\n\n\nChildhood Social Exposure Panel\n52463\n31\n\n\nIntegrated Multi-study Mental Health Panel\n5616\n33"
+  },
+  {
+    "objectID": "tabs/metadata.html#consort-flow",
+    "href": "tabs/metadata.html#consort-flow",
+    "title": "Project Metadata",
+    "section": "CONSORT Flow",
+    "text": "CONSORT Flow\n\n\n\n\n\n\n\n\n\nParticipant-focused CONSORT logic: participants are retained only if they have both a depression endpoint and SDoH trajectory coverage.\nThe row/column snapshot above is based on the current metadata object build inputs. Dictionary definitions below are extracted from the dataset preparation master dictionary specification."
+  },
+  {
+    "objectID": "tabs/metadata.html#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role",
+    "href": "tabs/metadata.html#data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role",
+    "title": "Project Metadata",
+    "section": "Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)",
+    "text": "Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)\n\n\n\n\n\n\n\n\nVariable\nLabel\nType\nValue Labels\n\n\n\n\nIdentifier\n\n\nUSUBJID\nUnique Subject Identifier\nnumeric\nMin-Max: 48 to 260880\n\n\nTime Variable\n\n\nEXPAGE\nExposure Age\nnumeric\nMin-Max: 0 to 12\n\n\nExposure (SDoH Trajectory Input)\n\n\nLIVEDWOM\nLived Without Mother\nfactor\nNo; Yes\n\n\nLIVEDWOF\nLived Without Father\nfactor\nNo; Yes\n\n\nHHCHLD14O\nOvercrowded (0–14y children &gt; 3)\nfactor\nNo; Yes\n\n\nHHSES\nHousehold Socioeconomic Status\nfactor\nLow; Middle; High\n\n\nBaseline Factor\n\n\nMAGE\nMother's Age\nnumeric\nMin-Max: 11 to 82\n\n\nMEDU\nMother's Education\nfactor\nNone/Primary; Secondary; Completed Matric\n\n\nMHIV\nMother's HIV Status\nfactor\nError; Negative; Positive\n\n\nMPTS\nMother's Partner Status\nfactor\nMissing/Refused; No partner; Married; Regular; Casual; Widowed/Separated\n\n\nMMIG\nMother's Ever Migrated (Previous 1 Year)\ncharacter\n\n\n\nFAGE\nFather's Age\nnumeric\nMin-Max: 10 to 80\n\n\nFEDU\nFather's Education\nfactor\nNone/Primary; Secondary; Completed Matric\n\n\nFHIV\nFather's HIV Status\nfactor\nError; Negative; Positive\n\n\nFPTS\nFather's Partner Status\nfactor\nMissing/Refused; No partner; Married; Regular; Casual; Widowed/Separated\n\n\nFMIG\nFather's Ever Migrated (Previous 1 Year)\ncharacter"
+  },
+  {
+    "objectID": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role",
+    "href": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role",
+    "title": "Project Metadata",
+    "section": "Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)",
+    "text": "Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)\n\n\n\n\n\n\n\n\nVariable\nLabel\nType\nValue Labels\n\n\n\n\nIdentifier\n\n\nUSUBJID\nUnique Subject Identifier\nnumeric\nMin-Max: 48 to 260880\n\n\nOutcome\n\n\nDPBN\nDepressed\nfactor\nNo; Yes\n\n\nMediator\n\n\nDNKA\nDrank Alcohol\nfactor\nNo; Yes\n\n\nESXC\nEver Had Sex\nfactor\nNo; Yes\n\n\nFDSC\nFood Insecure\nfactor\nNo; Yes\n\n\nGOVG\nNo Government Grant\nfactor\nNo; Yes\n\n\nVLNC\nExperienced Violence\nfactor\nNo; Yes\n\n\nSCSP\nHas Social Support\nfactor\nNo; Yes\n\n\nSCHL\nIn School\nfactor\nNo; Yes\n\n\nMediator-Outcome Confounder\n\n\nSEX\nSex\nfactor\nMale; Female\n\n\nAGE\nAge (Years)\nnumeric\nMin-Max: 13 to 24\n\n\nHIVS\nHIV Positive\nfactor\nNegative; Positive\n\n\nORPH\nOrphanhood Status\nfactor\nBoth Parents Alive; One Parent Deceased; Both Parents Deceased\n\n\nEXTMG\nExternal migration\nfactor\nNo; Yes\n\n\nRURAL\nReside in Rural Area\nfactor\nNo; Yes\n\n\nCLYR\nCalendar year\nnumeric\nMin-Max: 0 to 10"
+  },
+  {
+    "objectID": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables",
+    "href": "tabs/metadata.html#data-dictionary-integrated-multi-study-mental-health-panel-derived-variables",
+    "title": "Project Metadata",
+    "section": "Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)",
+    "text": "Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)\nUnivariate and Joint LCGA models were fitted in the private analytical pipeline; the derived-variable summary below reflects those model outputs in a transposed format for readability.\n\nLCGA Model Inventory\n\n\n\n\n\n\n\n\n\n\n\nModel Family\nTime Window\nDerived Output\nPublic Label\n\n\n\n\nUnivariate LCGA\nEarly childhood (0-5 years)\nEarly-window class assignments\nELCDV\n\n\nUnivariate LCGA\nMiddle-late childhood (6-12 years)\nMiddle-late-window class assignments\nMDCDV\n\n\nJoint LCGA\n0-5 years\nJoint trajectory class assignments for early childhood window\nELCDV (joint)\n\n\nJoint LCGA\n6-12 years\nJoint trajectory class assignments for middle-late childhood window\nMDCDV (joint)\n\n\n\n\n\n\n\n\n\n\n\n\n\nField\nValue\n\n\n\n\nDPBN\n\n\nLabel\nDepressed\n\n\nType\nfactor\n\n\nValue Labels\nNo; Yes\n\n\nSource Variables\nPHQBIN, irt_joint_models.rds\n\n\nDerivation\nPHQBIN &gt;= 10\n\n\nStatus\nImplemented in dataset preparation merge\n\n\nELCDV\n\n\nLabel\nEarly Childhood Exposure Trajectory Class (Ages 0-5)\n\n\nType\ncharacter\n\n\nValue Labels\nCharacter class label from the selected trajectory solution\n\n\nSource Variables\nLCGA trajectory solution (0-5 years): parental absence + household SES\n\n\nDerivation\nAssigned from the selected trajectory model for early childhood\n\n\nStatus\nImplemented in the childhood class-derivation workflow\n\n\nMDCDV\n\n\nLabel\nMiddle-Late Childhood Exposure Trajectory Class (Ages 6-12)\n\n\nType\ncharacter\n\n\nValue Labels\nCharacter class label from the selected trajectory solution\n\n\nSource Variables\nLCGA trajectory solution (6-12 years): parental absence + household SES\n\n\nDerivation\nAssigned from the selected trajectory model for middle-late childhood\n\n\nStatus\nImplemented in the childhood class-derivation workflow"
+  },
+  {
+    "objectID": "tabs/metadata.html#dataset-name-reference",
+    "href": "tabs/metadata.html#dataset-name-reference",
+    "title": "Project Metadata",
+    "section": "Dataset Name Reference",
+    "text": "Dataset Name Reference\n\n\n\n\n\nDataset Name\nReadable Name\n\n\n\n\ndt_childhood_exposure\nChildhood Social Exposure Panel\n\n\ndt_multistudies\nIntegrated Multi-study Mental Health Panel\n\n\ndt_psychometric\nPsychometric Bridge Source Data\n\n\ndt_dreams_multi_ssq\nSSQ-only Cohort Response Data"
+  },
+  {
+    "objectID": "tabs/documentations.html",
+    "href": "tabs/documentations.html",
+    "title": "Technical Docs Overview",
+    "section": "",
+    "text": "This overview indexes the project reference documents that define scope, linkage design, and analytical rules for CO-LUMINATE.\n\n\n\n\n\nProposal\n\n\n\nProject rationale, objectives, expected outputs, and co-creation design for the CO-LUMINATE study.\n\nOpen Proposal\n\n\n\n\n\nLongitudinal Linkage\n\n\n\nLinkage workflow, cohort integration logic, and the analytical context connecting childhood trajectories to adolescent outcomes.\n\nOpen Longitudinal Linkage\n\n\n\n\n\nStatistical Analysis Plan\n\n\n\nPrimary analytical document for the project, covering study aims, endpoints, causal framework, variables, and statistical methods.\n\nOpen Statistical Analysis Plan"
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html",
+    "href": "tabs/deliverable_obj04.html",
+    "title": "Objective 4: Causal Mediation",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/deliverable_obj04.html#in-progress",
+    "href": "tabs/deliverable_obj04.html#in-progress",
+    "title": "Objective 4: Causal Mediation",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html",
+    "href": "tabs/deliverable_obj02.html",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/deliverable_obj02.html#in-progress",
+    "href": "tabs/deliverable_obj02.html#in-progress",
+    "title": "Objective 2: Behavioral Mediators",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/dashboard_guide.html",
+    "href": "tabs/dashboard_guide.html",
+    "title": "Project Dashboard Guide",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/dashboard_guide.html#in-progress",
+    "href": "tabs/dashboard_guide.html#in-progress",
+    "title": "Project Dashboard Guide",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/analysis_deliverables.html",
+    "href": "tabs/analysis_deliverables.html",
+    "title": "Analysis Deliverables Overview",
+    "section": "",
+    "text": "This overview organizes outputs by proposal objective rather than by file format.\n\n\n\n\n\nObjective 1: Youth Co-Creation\n\n\n\nObjective-level page for the youth co-creation workstream and its current supporting project references.\n\nOpen Objective 1\n\n\n\n\n\nObjective 2: Depression Harmonization\n\n\n\nObjective-level page for depression harmonization, psychometric outputs, and related supporting documents.\n\nOpen Objective 2\n\n\n\n\n\nObjective 3: Social Determinant Trajectories\n\n\n\nObjective-level page for childhood social determinant trajectories, including current outputs and supporting technical links.\n\nOpen Objective 3\n\n\n\n\n\nObjective 4: Behavioral Mediators\n\n\n\nObjective-level page for adolescent behavioral mediators, including current reports, presentations, and supporting links.\n\nOpen Objective 4\n\n\n\n\n\nObjective 5: Causal Mediation\n\n\n\nObjective-level page for the causal mediation workstream, including current presentation outputs and supporting technical documents.\n\nOpen Objective 5"
+  },
+  {
+    "objectID": "analysis_updates/2026-03-12-finalized-childhood-jpaces-class-solutions.html",
+    "href": "analysis_updates/2026-03-12-finalized-childhood-jpaces-class-solutions.html",
+    "title": "Analytics Update",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "analysis_updates/2026-03-12-finalized-childhood-jpaces-class-solutions.html#in-progress",
+    "href": "analysis_updates/2026-03-12-finalized-childhood-jpaces-class-solutions.html#in-progress",
+    "title": "Analytics Update",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About CO-LUMINATE",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "about.html#in-progress",
+    "href": "about.html#in-progress",
+    "title": "About CO-LUMINATE",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "analysis_updates/2026-02-06-psychometric-harmonization-endpoint-definition.html",
+    "href": "analysis_updates/2026-02-06-psychometric-harmonization-endpoint-definition.html",
+    "title": "Analytics Update",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "analysis_updates/2026-02-06-psychometric-harmonization-endpoint-definition.html#in-progress",
+    "href": "analysis_updates/2026-02-06-psychometric-harmonization-endpoint-definition.html#in-progress",
+    "title": "Analytics Update",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
+    "section": "",
+    "text": "Youth Mental Health and Social Stress Exposures\n\n\n\nCo-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures\n\n\n\n\n\n\nCO-LUMINATE investigates how childhood and adolescent social stress exposures shape depression risk over time among South African youth aged 13-24, using a longitudinally linked dataset nested within the AHRI Health and Demographic Surveillance System (HDSS). The study integrates four connected analytical components: depression endpoint harmonization, social determinant trajectory modeling, behavioral mediator assessment, and causal mediation analysis, with Youth Co-Creators guiding interpretation and context-sensitive framing so that findings remain scientifically rigorous, locally grounded, and policy-relevant.\n\n\nStudy Snapshot\n\n\n\n\n\n5,279\n\n\nYoung people in linked sample\n\n\n\n\n\n\n13-24\n\n\nAge range\n\n\n\n\n\n\n5 Cohorts\n\n\nNested within AHRI HDSS\n\n\n\n\n\n\n11 YCC\n\n\nYouth Co-Creators providing thought leadership\n\n\n\n\n\n\n4\n\n\nAnalytical components\n\n\n\n\n\n\n3\n\n\nCore design stages\n\n\n\n\n\n\n1\n\n\nLongitudinal linked dataset\n\n\n\n\n\n\nSA\n\n\nSouth African setting\n\n\n\n\n\n\nAHRI\n\n\nHDSS platform"
+  },
+  {
+    "objectID": "index.html#project-overview",
+    "href": "index.html#project-overview",
+    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
+    "section": "Project Overview",
+    "text": "Project Overview\nCO-LUMINATE leverages the Africa Health Research Institute (AHRI) Health and Demographic Surveillance System (HDSS) to create a longitudinal linked dataset of 5,279 adolescents and young people. The dataset supports analysis of how social determinants of mental health, including socioeconomic status (SES) and caregiver co-residency, relate to depressive symptoms over time.\nThe project also uses a structured co-creation model with 11 Youth Co-Creators (YCC), who contribute meaningful thought leadership to refine, guide, and nuance the research process and interpretation."
+  },
+  {
+    "objectID": "index.html#study-design",
+    "href": "index.html#study-design",
+    "title": "CO-LUMINATE: Co-Creating Knowledge On The Longitudinal Direct And Mediation Relationships Between Youth Mental Health And Social Stress Exposures",
+    "section": "Study Design",
+    "text": "Study Design\n\n\n\n1\n\n\nLongitudinal Linkage\nIndividual-level depression outcomes are linked to household HDSS trajectories to assess direct and mediation relationships through time.\n\n\n\n\n\n\n\n2\n\n\nYouth Co-Creation\nEleven YCC members provide co-created input to strengthen relevance, interpretation, and context-sensitive framing of findings, and to guide analytical pathways.\n\n\n\n\n\n\n\n3\n\n\nSecondary Data Analysis\nLongitudinal analyses evaluate relationships between social stress exposures (including SES and caregiver co-residency) and symptoms of depression."
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html",
+    "href": "tabs/deliverable_obj01.html",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/deliverable_obj01.html#in-progress",
+    "href": "tabs/deliverable_obj01.html#in-progress",
+    "title": "Objective 1: Social Determinant Trajectories",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html",
+    "href": "tabs/deliverable_obj03.html",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "",
+    "text": "CO-LUMINATE uses more than one mental-health instrument across studies and cohorts. The Patient Health Questionnaire-9 (PHQ-9) is a conventional depression-focused reference measure, while the Shona Symptom Questionnaire captures a broader common mental distress space using culturally grounded binary items. Because those tools differ in content, response format, and construct emphasis, raw scores and raw cutoffs cannot be assumed to mean the same thing across instruments.\nThis psychometric work therefore asked a practical question: can we define a defensible depression-oriented endpoint that preserves the PHQ-9 benchmark while still allowing transport into cohorts where only SSQ items are available?"
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#why-this-work-was-needed",
+    "href": "tabs/deliverable_obj03.html#why-this-work-was-needed",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "",
+    "text": "CO-LUMINATE uses more than one mental-health instrument across studies and cohorts. The Patient Health Questionnaire-9 (PHQ-9) is a conventional depression-focused reference measure, while the Shona Symptom Questionnaire captures a broader common mental distress space using culturally grounded binary items. Because those tools differ in content, response format, and construct emphasis, raw scores and raw cutoffs cannot be assumed to mean the same thing across instruments.\nThis psychometric work therefore asked a practical question: can we define a defensible depression-oriented endpoint that preserves the PHQ-9 benchmark while still allowing transport into cohorts where only SSQ items are available?"
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#data-and-instruments",
+    "href": "tabs/deliverable_obj03.html#data-and-instruments",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Data And Instruments",
+    "text": "Data And Instruments\nThe harmonization-ready development sample comprised 843 adolescents and young adults with concurrent baseline SSQ and PHQ measurement. The work compared four instrument configurations:\n\nthe PHQ-9 as the depression-oriented reference benchmark\nthe original SSQ-14\na theory-refined SSQ-10 focused on depressive content\nthe shorter SSQ-08 subset\n\nThe central goal was not only to find a stable factor structure, but to identify which SSQ form best preserved a depression-focused latent trait suitable for later harmonization and downstream analysis."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#what-we-found",
+    "href": "tabs/deliverable_obj03.html#what-we-found",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "What We Found",
+    "text": "What We Found\nThe main structural result was that the PHQ-9 remained a defensible depression-oriented reference, while the SSQ-10 emerged as the strongest retained local instrument for depression-focused harmonization. The full SSQ-14 carried broader common-distress content than was ideal for a transportable depression endpoint, and the SSQ-08 discarded too much of the more stable depressive core.\n\n  \n\nThe retained SSQ-10 solution was analytically attractive because it preserved the strongest depressive content while avoiding the broader, more weakly targeted distress content that made the SSQ-14 harder to use as a depression endpoint. That made the SSQ-10 the most credible local instrument to carry into shared-scale harmonization."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#harmonization-and-thresholding",
+    "href": "tabs/deliverable_obj03.html#harmonization-and-thresholding",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Harmonization And Thresholding",
+    "text": "Harmonization And Thresholding\nThe thresholding problem turned out to be as important as the retained instrument. Naive ROC-balanced SSQ cutoffs performed reasonably in discrimination terms, but they materially inflated the implied burden of depression relative to the PHQ-9 benchmark. In other words, a rule could look statistically appealing while still producing a public-health story that was too liberal to be credible for transport.\nThe more defensible solution came from Item Response Theory calibration. By placing PHQ-9 and SSQ-10 items on a shared latent scale, the analysis supported a clinically interpretable thresholding strategy tied back to the PHQ-9 reference. For cohorts where PHQ items are unavailable, the fixed-parameter SSQ-only scoring engine provided the most practical transport route.\n\n  \n\nThe retained threshold strategy is therefore conservative by design. It favors a transportable SSQ-only engine that keeps estimated case burden close to the PHQ-9 benchmark rather than maximizing sensitivity at the cost of implausibly high prevalence."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#main-recommendation",
+    "href": "tabs/deliverable_obj03.html#main-recommendation",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "Main Recommendation",
+    "text": "Main Recommendation\nThe current recommendation is:\n\nretain the SSQ-10 as the local depression-focused instrument\nretain the joint PHQ-plus-SSQ IRT model as the harmonization reference standard\navoid naive raw-score thresholding as the main interpretation\ncarry forward the fixed-parameter SSQ-only scoring engine for cohorts without PHQ items\n\nThis combination provides the best balance between conceptual coherence, statistical defensibility, and practical transport into later developmental and causal analyses."
+  },
+  {
+    "objectID": "tabs/deliverable_obj03.html#what-this-means-for-co-luminate",
+    "href": "tabs/deliverable_obj03.html#what-this-means-for-co-luminate",
+    "title": "Objective 3: Depression Harmonization",
+    "section": "What This Means For CO-LUMINATE",
+    "text": "What This Means For CO-LUMINATE\nFor the broader CO-LUMINATE program, this work does not simply choose a questionnaire. It defines how depression should be represented when studies rely on different instruments. That matters for burden estimation, subgroup comparison, and any later work that treats depression as an outcome, a screening construct, or part of a harmonized longitudinal endpoint.\nTaken together, these results indicate that the SSQ-10 can serve as the local bridge to a defensible depression-oriented endpoint, but only when interpreted through the harmonized thresholding strategy rather than through a raw SSQ cutoff carried over uncritically from another context."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html",
+    "href": "tabs/deliverable_obj05.html",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "",
+    "text": "Co-create a shared understanding of the role of social determinants in young people’s mental health through a Youth Advisory Group."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#objective",
+    "href": "tabs/deliverable_obj05.html#objective",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "",
+    "text": "Co-create a shared understanding of the role of social determinants in young people’s mental health through a Youth Advisory Group."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#abstract",
+    "href": "tabs/deliverable_obj05.html#abstract",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "Abstract",
+    "text": "Abstract\nThis deliverable captures the youth co-creation workstream that informs hypothesis generation, lay DAG development, interpretation, and dissemination across the CO-LUMINATE study. In the private rebuild, the work is organized in two linked phases:\n\na pre-secondary analysis phase that develops a youth-informed pathway inventory and conceptual framing before formal modeling\na post-secondary analysis phase that uses youth interpretation to contextualize findings and strengthen stakeholder-facing communication\n\nTogether, these phases ensure that the technical analytical sequence remains locally grounded without turning the co-creation workstream into a separate modeled dataset."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#keywords",
+    "href": "tabs/deliverable_obj05.html#keywords",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "Keywords",
+    "text": "Keywords\nyouth co-creation; Youth Advisory Group; lay DAG; pathway inventory; interpretation workshop; dissemination"
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#pre-secondary-analysis",
+    "href": "tabs/deliverable_obj05.html#pre-secondary-analysis",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "Pre-Secondary Analysis",
+    "text": "Pre-Secondary Analysis\nThe pre-secondary analysis phase establishes the interpretive foundations for the later quantitative work. Following an inception workshop, Youth Advisory Group members contribute photo diaries, group-based narrative building, and a co-developed lay DAG describing how everyday social stressors may shape emotional distress among young people in the AHRI surveillance setting.\nThis phase contributes a contextual pathway inventory rather than a separate statistical dataset. The inventory identifies locally salient domains that help explain how structural disadvantage may become embodied as distress, including food strain, unsafe home and community environments, substance-related risk, school adversity, weak social connectedness, family separation, service-access barriers, and spiritual or cultural support.\nThat inventory then provides contextual grounding for the later behavioral mediator analysis. It helps justify why certain adolescent pathway variables were prioritized, clarifies what those measured variables do and do not capture, and keeps interpretation anchored in adolescents’ own accounts of how disadvantage becomes distress.\n\nFull Pathway Inventory\nThe full contextual pathway inventory is shown below so the entire youth-informed pathway landscape is visible on this page rather than only a shortened subset.\n\n\n\n\n\nInventory domain\nInventory support\nContribution to later pathway screening\nCurrent analytical capture\n\n\n\n\nFood insecurity and material deprivation\nRepeated pathways link poverty, crop loss, theft, mine closure, and household financial strain to food stress, worry, and poor mental health.\nProvides strong local support for food insecurity as a proximal adolescent pathway domain and for interpreting it as one indicator of broader material deprivation.\nDirectly operationalized as food insecurity.\n\n\nViolence exposure and unsafe environments\nInventory pathways repeatedly connect domestic violence, unsafe community spaces, taverns, crime, and substance-related insecurity to distress and poor mental health.\nProvides strong local support for violence exposure as a pathway domain and for interpreting it as part of a wider insecurity ecology.\nDirectly operationalized as violence exposure.\n\n\nAlcohol use and substance-related risk\nInventory pathways connect unsafe school and community environments, peer influence, financial strain, and substance use to emotional distress and poor mental health.\nProvides direct contextual support for alcohol use as one observable component of broader substance-related and risk-exposure pathways.\nDirectly operationalized as alcohol use.\n\n\nSexual debut and broader adolescent risk ecology\nInventory pathways describe truancy, unsafe spaces, peer environments, and adolescent risk behaviours that may cluster around early sexual exposure and emotional strain.\nProvides indirect contextual support for sexual debut while indicating that sexual debut captures only one slice of a wider adolescent risk ecology.\nPartially operationalized as ever having had sexual intercourse.\n\n\nSocial protection and government grant conditions\nInventory pathways describe poverty, mine closure, reliance on grants, and the ambivalent social meaning of grant dependence, including stigma and eroded self-esteem.\nProvides cautious support for social protection conditions as a pathway domain while indicating that grant-related experiences may be both protective and strained.\nPartially operationalized as lack of government grant receipt.\n\n\nSchool climate and educational pathway conditions\nInventory pathways highlight lack of school fencing, physical punishment, unsafe school environments, and early learning opportunities.\nShows that important school-related pathways are locally salient but only partly captured by the current pathway block.\nNot directly harmonized in the present manuscript.\n\n\nFamily separation and migration-related stress\nInventory pathways connect migration for work and family separation to loneliness, insecurity, stress, and poor mental health.\nShows that migration-linked family separation is locally salient but outside the measured pathway block.\nNot directly harmonized in the present manuscript.\n\n\nHousing quality and water insecurity\nInventory pathways connect poor housing, water scarcity, hygiene constraints, bullying, and shame to emotional distress.\nShows that housing and water conditions form part of the broader pathway ecology but are not represented in the current analytic dataset.\nNot directly harmonized in the present manuscript.\n\n\nSocial connectedness and community inclusion or exclusion\nInventory pathways describe community cohesion, exclusion from shared resources, low social connectedness, fear of stigma, and reduced help-seeking.\nShows that social-capital and exclusion pathways remain important contextual processes beyond the present measured variables.\nNot directly harmonized in the present manuscript.\n\n\nService access, care barriers, and stigma\nInventory pathways describe long clinic queues, stigmatising treatment, transport barriers, and unmet care needs.\nShows that service-access and clinic-stigma pathways are locally salient but not tested in the present empirical model.\nNot directly harmonized in the present manuscript.\n\n\nReligion, spirituality, and cultural support or strain\nInventory pathways include church counselling, prayer, rituals, fear of witchcraft, and conflicting belief systems.\nShows that spiritual and cultural resources or stressors shape adolescent mental-health pathways but fall outside the current harmonized variables.\nNot directly harmonized in the present manuscript.\n\n\nEnvironmental degradation and climate stress\nInventory pathways link pollution, mine-related land damage, dumping, extreme weather, and erosion to fear, grief, and mental distress.\nShows that environmental and climate-linked pathways are important contextual mechanisms but remain unmeasured in the current analysis.\nNot directly harmonized in the present manuscript.\n\n\n\n\n\nIn practical terms, the co-created pathway inventory strengthens the later pathway-screening work in two ways. First, it supports the selection of policy-relevant pathway domains that can be tested in the harmonized dataset. Second, it documents the broader pathway ecology that remains outside the measured variables, which is important for interpreting later findings with appropriate restraint.\n\n\nSecondary Data Constraints\nThe inventory also makes an important secondary-data limitation visible. Even after careful harmonization, the measured adolescent pathway block captures only part of the broader pathway ecology described by young people. Several locally salient domains, including housing and water insecurity, migration-related family separation, service-access barriers, and spiritual or cultural support, are not directly measured in the current harmonized dataset.\nThis matters because the available indicators were assembled retrospectively across different source cohorts rather than designed as a single shared pathway instrument from the outset. As a result, a variable labelled as food insecurity, social support, school disengagement, or violence exposure may preserve the broad substantive domain while still differing in wording, response structure, timeframe, or local meaning across contributing studies.\nThe co-created pathway inventory therefore serves two purposes at once: it helps identify which measured pathway domains are locally grounded enough to carry forward into later analysis, and it clarifies where the secondary-data platform remains incomplete. This is why the measured pathway block should be understood as a constrained but policy-relevant subset of a wider adolescent pathway system, not as an exhaustive map of all relevant mechanisms."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#post-secondary-analysis",
+    "href": "tabs/deliverable_obj05.html#post-secondary-analysis",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "Post-Secondary Analysis",
+    "text": "Post-Secondary Analysis\nThe post-secondary analysis phase begins after the main quantitative results are available. In this phase, Youth Advisory Group members engage with the emerging findings through structured interpretation and reflection workshops.\nThis workstream is intended to:\n\nrefine the explanatory narrative around the quantitative findings\nidentify where technical results align with, simplify, or miss lived pathway experience\nsupport dissemination materials that are legible to community and stakeholder audiences\nmaintain context-sensitive framing when the study moves from analysis outputs to interpretation and communication\n\nThis post-secondary phase does not replace the statistical analyses. Instead, it strengthens the interpretive bridge between the technical results and the broader community-facing meaning of those results."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#status",
+    "href": "tabs/deliverable_obj05.html#status",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "Status",
+    "text": "Status\n\nYouth co-creation framing is now documented on this page within the private rebuild.\nThe pre-secondary pathway inventory is positioned as contextual input to the behavioral mediator workstream.\nDedicated objective-specific report and presentation outputs remain in progress."
+  },
+  {
+    "objectID": "tabs/deliverable_obj05.html#current-outputs",
+    "href": "tabs/deliverable_obj05.html#current-outputs",
+    "title": "Objective 1: Youth Co-Creation",
+    "section": "Current Outputs",
+    "text": "Current Outputs\n\nReport\n\nNo separate public report is currently published on the website.\nThis page currently serves as the working objective-level summary for the youth co-creation workstream inside the private rebuild.\n\n\n\nPresentation\n\nNo objective-specific public presentation is currently published on the website."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html",
+    "href": "tabs/longitudinal_linkage.html",
+    "title": "Longitudinal Linkage",
+    "section": "",
+    "text": "This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#purpose",
+    "href": "tabs/longitudinal_linkage.html#purpose",
+    "title": "Longitudinal Linkage",
+    "section": "",
+    "text": "This page documents the longitudinal linkage stage that combines mental health outcome harmonization and SDoH trajectory information into the final integrated secondary analysis dataset."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#goal-alignment",
+    "href": "tabs/longitudinal_linkage.html#goal-alignment",
+    "title": "Longitudinal Linkage",
+    "section": "Goal Alignment",
+    "text": "Goal Alignment\nThe linkage workflow directly supports the project objectives:\n\nBuild and maintain a linked analysis dataset.\nQuantify direct and mediation relationships for depression outcomes.\nCharacterize social determinant trajectories across childhood windows."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#stage-flow-current-build-counts",
+    "href": "tabs/longitudinal_linkage.html#stage-flow-current-build-counts",
+    "title": "Longitudinal Linkage",
+    "section": "Stage Flow (Current Build Counts)",
+    "text": "Stage Flow (Current Build Counts)\n\n\n\n\n\n%%{init: {\"flowchart\": {\"curve\": \"linear\", \"htmlLabels\": true}} }%%\nflowchart LR\n  O1[\"Objective 1&lt;br/&gt;Build linked&lt;br/&gt;analysis dataset\"]\n  O2[\"Objective 2&lt;br/&gt;Quantify direct&lt;br/&gt;and mediation links\"]\n  O3[\"Objective 3&lt;br/&gt;Characterize SDoH&lt;br/&gt;trajectories\"]\n\n  S1[\"Linkage Stage 1&lt;br/&gt;Psychometric&lt;br/&gt;calibration\"]\n  S2[\"Linkage Stage 2&lt;br/&gt;SDoH trajectory&lt;br/&gt;derivation\"]\n  S3[\"Linkage Stage 3&lt;br/&gt;Final linkage&lt;br/&gt;and integration\"]\n\n  O1 --&gt; S1\n  O1 --&gt; S2\n  O1 --&gt; S3\n  O2 --&gt; S3\n  O3 --&gt; S2\n\n  S1 --&gt; A[\"Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=843)\"]\n  A --&gt; B[\"Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=843)\"]\n  S1 --&gt; C[\"SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=4,021)\"]\n  C --&gt; D[\"Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=4,021)\"]\n  B --&gt; D\n\n  S2 --&gt; E[\"Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=5,398)\"]\n  E --&gt; F[\"Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=4,318)&lt;br/&gt;6-12 years (n=5,386)&lt;br/&gt;Both (n=4,306)&lt;br/&gt;Only 0-5 (n=12)&lt;br/&gt;Only 6-12 (n=1,080)&lt;br/&gt;&lt;br/&gt;\"]\n\n  S3 --&gt; G[\"Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=6,024)\"]\n  S3 --&gt; H[\"Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=5,398)\"]\n  D --&gt; G\n  F --&gt; H\n\n  G --&gt; I[\"Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=5,226)\"]\n  H --&gt; I\n\n  classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;\n  classDef stage1 fill:#dbeafe,stroke:#1d4ed8,color:#0f172a,stroke-width:1.5px;\n  classDef stage2 fill:#fff7ed,stroke:#c2410c,color:#431407,stroke-width:1.5px;\n  classDef stage3 fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:1.5px;\n  classDef psych fill:#dbeafe,stroke:#1d4ed8,color:#0f172a;\n  classDef sdoh fill:#ffedd5,stroke:#c2410c,color:#431407;\n  classDef integ fill:#dcfce7,stroke:#059669,color:#064e3b,stroke-width:1.5px;\n  class O1,O2,O3 objective;\n  class S1 stage1;\n  class S2 stage2;\n  class S3 stage3;\n  class A,B,C,D,G psych;\n  class E,F,H sdoh;\n  class I integ;"
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#interpretation",
+    "href": "tabs/longitudinal_linkage.html#interpretation",
+    "title": "Longitudinal Linkage",
+    "section": "Interpretation",
+    "text": "Interpretation\n\nStage 1 calibrates depression information for SSQ-only records.\nStage 2 derives SDoH trajectory coverage across 0-5 and 6-12 windows.\nStage 3 integrates both streams and keeps participants with both: Depression endpoint and SDoH trajectory coverage."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#completion-criteria",
+    "href": "tabs/longitudinal_linkage.html#completion-criteria",
+    "title": "Longitudinal Linkage",
+    "section": "Completion Criteria",
+    "text": "Completion Criteria\nThis stage is complete when:\n\nDepression endpoint values are available for integrated mental health records.\nSDoH trajectory coverage is available across childhood windows.\nFinal integrated data retains only participants meeting both criteria."
+  },
+  {
+    "objectID": "tabs/longitudinal_linkage.html#notes",
+    "href": "tabs/longitudinal_linkage.html#notes",
+    "title": "Longitudinal Linkage",
+    "section": "Notes",
+    "text": "Notes\n\nCounts are distinct participants (USUBJID) and are refreshed into website-local linkage snapshot files when the update script is run.\nViolet nodes: proposal objectives.\nBlue nodes: psychometric stage.\nOrange nodes: SDoH trajectory stage.\nGreen nodes: final integration stage."
+  },
+  {
+    "objectID": "tabs/proposal.html",
+    "href": "tabs/proposal.html",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "CO-LUMINATE investigates how social stress exposures shape depressive symptoms among young people in rural South Africa over time. The work links cohort mental health outcomes with AHRI HDSS household trajectories to support longitudinal and mediation-focused analysis."
+  },
+  {
+    "objectID": "tabs/proposal.html#project-at-a-glance",
+    "href": "tabs/proposal.html#project-at-a-glance",
+    "title": "Project Proposal",
+    "section": "",
+    "text": "CO-LUMINATE investigates how social stress exposures shape depressive symptoms among young people in rural South Africa over time. The work links cohort mental health outcomes with AHRI HDSS household trajectories to support longitudinal and mediation-focused analysis."
+  },
+  {
+    "objectID": "tabs/proposal.html#scope",
+    "href": "tabs/proposal.html#scope",
+    "title": "Project Proposal",
+    "section": "Scope",
+    "text": "Scope\n\nPopulation focus: adolescents and young adults aged 13-24 years.\nData structure: linked longitudinal cohort and HDSS records.\nCore domains: socioeconomic status, food insecurity, caregiver co-residency, and related social stress exposures.\nOutcome focus: symptoms of depression measured repeatedly over time.\nCo-creation: youth partners contribute to interpretation and relevance framing."
+  },
+  {
+    "objectID": "tabs/proposal.html#study-objectives-full-statement",
+    "href": "tabs/proposal.html#study-objectives-full-statement",
+    "title": "Project Proposal",
+    "section": "Study Objectives (Full Statement)",
+    "text": "Study Objectives (Full Statement)\n\nObjective 1: Youth Co-Creation. Co-create a shared understanding of how social determinants shape young people’s mental health through a Youth Advisory Group, and integrate youth-led input into hypothesis generation, lay DAG development, interpretation, and dissemination framing.\nObjective 2: Depression Harmonization. Describe prevalence of depression in the CO-LUMINATE dataset by harmonizing depression measures across cohorts (including SSQ and PHQ-9 sources) and deriving transportable depression outcomes for longitudinal analysis.\nObjective 3: Social Determinant Trajectories. Characterize social determinant trajectories across childhood windows, including early childhood (0-5 years) and later childhood (6-12 years), and identify exposure-pattern pathways linked to adolescent depression outcomes.\nObjective 4: Behavioral Mediators. Examine behavioral mediators, including migration, substance use, and sexual behaviour, as pathway mechanisms linking social determinants to depressive symptoms, and prioritize mediator structures for downstream causal modeling.\nObjective 5: Causal Mediation. Estimate direct and mediated effects of key social determinants on depression among young people using longitudinal causal mediation methods and context-sensitive interpretation informed by the youth co-creation workstream."
+  },
+  {
+    "objectID": "tabs/proposal.html#planned-deliverables",
+    "href": "tabs/proposal.html#planned-deliverables",
+    "title": "Project Proposal",
+    "section": "Planned Deliverables",
+    "text": "Planned Deliverables\n\nCurated linked analysis datasets with supporting metadata and documentation.\nReproducible statistical workflows, technical reports, and presentation outputs.\nEvidence summaries for research, policy, and stakeholder engagement.\nCo-created interpretation products to strengthen contextual validity and uptake."
+  },
+  {
+    "objectID": "tabs/proposal.html#access-to-full-proposal",
+    "href": "tabs/proposal.html#access-to-full-proposal",
+    "title": "Project Proposal",
+    "section": "Access To Full Proposal",
+    "text": "Access To Full Proposal\nThis page presents a high-level summary for website readers.\nThe full proposal is an internal document and is not published on the website.\nRequests for the full proposal can be directed to the study team and will be considered at the Principal Investigator’s discretion."
+  },
+  {
+    "objectID": "tabs/team.html",
+    "href": "tabs/team.html",
+    "title": "Project Team",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/team.html#in-progress",
+    "href": "tabs/team.html#in-progress",
+    "title": "Project Team",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/tool_irt_scoring.html",
+    "href": "tabs/tool_irt_scoring.html",
+    "title": "IRT Scoring Workspace",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "tabs/tool_irt_scoring.html#in-progress",
+    "href": "tabs/tool_irt_scoring.html#in-progress",
+    "title": "IRT Scoring Workspace",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates.html",
+    "href": "updates.html",
+    "title": "Analytics Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_news.html",
+    "href": "updates_news.html",
+    "title": "News Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_news.html#in-progress",
+    "href": "updates_news.html#in-progress",
+    "title": "News Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_website.html",
+    "href": "updates_website.html",
+    "title": "Website Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  },
+  {
+    "objectID": "updates_website.html#in-progress",
+    "href": "updates_website.html#in-progress",
+    "title": "Website Updates",
+    "section": "",
+    "text": "In progress, content not yet published to the public website."
+  }
+]
