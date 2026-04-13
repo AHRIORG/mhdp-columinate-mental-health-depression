@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Objective-level page for depression harmonization, psychometric outputs, and related supporting documents.">
 
-<title>Objective 2: Depression Harmonization – CO-LUMINATE</title>
+<title>Objective 3: Depression Harmonization – CO-LUMINATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css?v=20260329f1">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -235,14 +234,9 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Objective 2: Depression Harmonization</h1>
+<h1 class="title">Objective 3: Depression Harmonization</h1>
 </div>
 
-<div>
-  <div class="description">
-    Objective-level page for depression harmonization, psychometric outputs, and related supporting documents.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -257,46 +251,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="objective" class="level2">
-<h2 class="anchored" data-anchor-id="objective">Objective</h2>
-<p>Describe prevalence of depression in the CO-LUMINATE dataset through harmonized depression measurement.</p>
+<style>
+.obj03-figure {
+  margin: 1.15rem auto 1.8rem auto;
+  max-width: 1120px;
+}
+.obj03-figure img {
+  width: 100%;
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 8px 18px rgba(15, 35, 55, 0.06);
+}
+.obj03-embed {
+  margin: 1.15rem auto 1.8rem auto;
+  max-width: 1120px;
+}
+.obj03-embed iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  background: #fff;
+  display: block;
+  box-shadow: 0 8px 18px rgba(15, 35, 55, 0.06);
+}
+</style>
+<section id="why-this-work-was-needed" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-work-was-needed">Why This Work Was Needed</h2>
+<p>CO-LUMINATE uses more than one mental-health instrument across studies and cohorts. The Patient Health Questionnaire-9 (PHQ-9) is a conventional depression-focused reference measure, while the Shona Symptom Questionnaire captures a broader common mental distress space using culturally grounded binary items. Because those tools differ in content, response format, and construct emphasis, raw scores and raw cutoffs cannot be assumed to mean the same thing across instruments.</p>
+<p>This psychometric work therefore asked a practical question: can we define a defensible depression-oriented endpoint that preserves the PHQ-9 benchmark while still allowing transport into cohorts where only SSQ items are available?</p>
 </section>
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>This deliverable covers SSQ-PHQ comparability, age-appropriate harmonization logic, and the psychometric evidence required to derive transportable depression outcomes across linked cohorts.</p>
-</section>
-<section id="keywords" class="level2">
-<h2 class="anchored" data-anchor-id="keywords">Keywords</h2>
-<p>depression harmonization; SSQ; PHQ-9; psychometrics; calibration; measurement invariance; prevalence derivation</p>
-</section>
-<section id="status" class="level2">
-<h2 class="anchored" data-anchor-id="status">Status</h2>
+<section id="data-and-instruments" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-instruments">Data And Instruments</h2>
+<p>The harmonization-ready development sample comprised 843 adolescents and young adults with concurrent baseline SSQ and PHQ measurement. The work compared four instrument configurations:</p>
 <ul>
-<li>Public overview available</li>
-<li>Detailed report and presentation are in progress for public release</li>
+<li>the PHQ-9 as the depression-oriented reference benchmark</li>
+<li>the original SSQ-14</li>
+<li>a theory-refined SSQ-10 focused on depressive content</li>
+<li>the shorter SSQ-08 subset</li>
 </ul>
+<p>The central goal was not only to find a stable factor structure, but to identify which SSQ form best preserved a depression-focused latent trait suitable for later harmonization and downstream analysis.</p>
 </section>
-<section id="current-outputs" class="level2">
-<h2 class="anchored" data-anchor-id="current-outputs">Current Outputs</h2>
-<section id="report" class="level3">
-<h3 class="anchored" data-anchor-id="report">Report</h3>
+<section id="what-we-found" class="level2">
+<h2 class="anchored" data-anchor-id="what-we-found">What We Found</h2>
+<p>The main structural result was that the PHQ-9 remained a defensible depression-oriented reference, while the SSQ-10 emerged as the strongest retained local instrument for depression-focused harmonization. The full SSQ-14 carried broader common-distress content than was ideal for a transportable depression endpoint, and the SSQ-08 discarded too much of the more stable depressive core.</p>
+<div class="obj03-figure">
+  <img src="../_assets/obj03/factor_retention.png" alt="Factor retention across candidate depression measures.">
+</div>
+<p>The retained SSQ-10 solution was analytically attractive because it preserved the strongest depressive content while avoiding the broader, more weakly targeted distress content that made the SSQ-14 harder to use as a depression endpoint. That made the SSQ-10 the most credible local instrument to carry into shared-scale harmonization.</p>
+<div class="obj03-figure">
+  <img src="../_assets/obj03/ssq10_parallel_structure.png" alt="Retained SSQ-10 structure and item clustering.">
+</div>
+</section>
+<section id="harmonization-and-thresholding" class="level2">
+<h2 class="anchored" data-anchor-id="harmonization-and-thresholding">Harmonization And Thresholding</h2>
+<p>The thresholding problem turned out to be as important as the retained instrument. Naive ROC-balanced SSQ cutoffs performed reasonably in discrimination terms, but they materially inflated the implied burden of depression relative to the PHQ-9 benchmark. In other words, a rule could look statistically appealing while still producing a public-health story that was too liberal to be credible for transport.</p>
+<p>The more defensible solution came from Item Response Theory calibration. By placing PHQ-9 and SSQ-10 items on a shared latent scale, the analysis supported a clinically interpretable thresholding strategy tied back to the PHQ-9 reference. For cohorts where PHQ items are unavailable, the fixed-parameter SSQ-only scoring engine provided the most practical transport route.</p>
+<div class="obj03-figure">
+  <img src="../_assets/obj03/harmonization_performance.png" alt="Comparison of harmonization performance across retained thresholding strategies.">
+</div>
+<p>The retained threshold strategy is therefore conservative by design. It favors a transportable SSQ-only engine that keeps estimated case burden close to the PHQ-9 benchmark rather than maximizing sensitivity at the cost of implausibly high prevalence.</p>
+<div class="obj03-embed">
+  <iframe src="../_assets/obj03/table_threshold_performance.html" title="Threshold performance comparison" loading="lazy"></iframe>
+</div>
+</section>
+<section id="main-recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="main-recommendation">Main Recommendation</h2>
+<p>The current recommendation is:</p>
 <ul>
-<li>In progress, content not yet published to the public website.</li>
+<li>retain the SSQ-10 as the local depression-focused instrument</li>
+<li>retain the joint PHQ-plus-SSQ IRT model as the harmonization reference standard</li>
+<li>avoid naive raw-score thresholding as the main interpretation</li>
+<li>carry forward the fixed-parameter SSQ-only scoring engine for cohorts without PHQ items</li>
 </ul>
+<p>This combination provides the best balance between conceptual coherence, statistical defensibility, and practical transport into later developmental and causal analyses.</p>
 </section>
-<section id="presentation" class="level3">
-<h3 class="anchored" data-anchor-id="presentation">Presentation</h3>
-<ul>
-<li>In progress, content not yet published to the public website.</li>
-</ul>
-</section>
-</section>
-<section id="supporting-technical-docs" class="level2">
-<h2 class="anchored" data-anchor-id="supporting-technical-docs">Supporting Technical Documentation</h2>
-<ul>
-<li><a href="../tabs/secondary_data_analysis_plan.html">Statistical Analysis Plan</a></li>
-<li><a href="../tabs/longitudinal_linkage.html">Longitudinal Linkage</a></li>
-</ul>
+<section id="what-this-means-for-co-luminate" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means-for-co-luminate">What This Means For CO-LUMINATE</h2>
+<p>For the broader CO-LUMINATE program, this work does not simply choose a questionnaire. It defines how depression should be represented when studies rely on different instruments. That matters for burden estimation, subgroup comparison, and any later work that treats depression as an outcome, a screening construct, or part of a harmonized longitudinal endpoint.</p>
+<p>Taken together, these results indicate that the SSQ-10 can serve as the local bridge to a defensible depression-oriented endpoint, but only when interpreted through the harmonized thresholding strategy rather than through a raw SSQ cutoff carried over uncritically from another context.</p>
 
 
 </section>
@@ -412,7 +446,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const title = document.createElement("h2");
   title.className = "section-nav__title";
-  title.textContent = "Content";
+  title.textContent = "In this section";
   nav.appendChild(title);
 
   const list = document.createElement("div");

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>body{margin:0;padding:12px;background:#fff;}table{margin:0 auto;} .gt_table{max-width:100%;}</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Threshold Performance Summary</title>
+  <style>
+    :root {
+      --border: #d7dde5;
+      --header: #eef3f7;
+      --text: #203040;
+      --muted: #5a6978;
+      --stripe: #f8fafc;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    thead th {
+      background: var(--header);
+      text-align: left;
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      vertical-align: bottom;
+    }
+    tbody td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      vertical-align: top;
+    }
+    tbody tr:nth-child(even) td {
+      background: var(--stripe);
+    }
+    .strategy {
+      font-weight: 600;
+      min-width: 200px;
+    }
+    .num {
+      white-space: nowrap;
+      text-align: center;
+    }
+    .readout {
+      min-width: 240px;
+    }
+  </style>
+</head>
+<body>
+  <table aria-label="Threshold performance summary">
+    <thead>
+      <tr>
+        <th>Strategy</th>
+        <th>Sensitivity</th>
+        <th>Specificity</th>
+        <th>PPV</th>
+        <th>Predicted prevalence</th>
+        <th>Operational readout</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="strategy">Naive ROC Youden on SSQ-10 sum score</td>
+        <td class="num">82.4%</td>
+        <td class="num">69.5%</td>
+        <td class="num">10.2%</td>
+        <td class="num">32.6%</td>
+        <td class="readout">High case capture, but severe prevalence inflation relative to the PHQ-9 benchmark.</td>
+      </tr>
+      <tr>
+        <td class="strategy">PHQ-linked TCC anchor on the shared latent scale</td>
+        <td class="num">35.3%</td>
+        <td class="num">99.6%</td>
+        <td class="num">80.0%</td>
+        <td class="num">1.8%</td>
+        <td class="readout">Most conservative and most faithful to the PHQ-linked clinical standard.</td>
+      </tr>
+      <tr>
+        <td class="strategy">Portable SSQ-only fixed-parameter scoring engine</td>
+        <td class="num">26.5%</td>
+        <td class="num">97.3%</td>
+        <td class="num">29.0%</td>
+        <td class="num">3.7%</td>
+        <td class="readout">Most practical transport option for SSQ-only cohorts while keeping prevalence close to the PHQ-9 reference.</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+</body>
+</html>
+

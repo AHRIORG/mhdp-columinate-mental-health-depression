@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../styles.css?v=20260329f1">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -234,7 +234,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Content</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#purpose" id="toc-purpose" class="nav-link active" data-scroll-target="#purpose">Purpose</a></li>
@@ -309,21 +309,21 @@ flowchart LR
   O2 --&gt; S3
   O3 --&gt; S2
 
-  S1 --&gt; A["Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=?)"]
-  A --&gt; B["Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=?)"]
-  S1 --&gt; C["SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=?)"]
-  C --&gt; D["Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=?)"]
+  S1 --&gt; A["Psychometric bridge&lt;br/&gt;source data&lt;br/&gt;(n=843)"]
+  A --&gt; B["Fit IRT calibration&lt;br/&gt;model (SSQ to PHQ)&lt;br/&gt;reference scale&lt;br/&gt;(n=843)"]
+  S1 --&gt; C["SSQ-only cohort&lt;br/&gt;response data&lt;br/&gt;(n=4,021)"]
+  C --&gt; D["Apply calibration&lt;br/&gt;for harmonized&lt;br/&gt;depression endpoint&lt;br/&gt;(n=4,021)"]
   B --&gt; D
 
-  S2 --&gt; E["Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=?)"]
-  E --&gt; F["Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=?)&lt;br/&gt;6-12 years (n=?)&lt;br/&gt;Both (n=?)&lt;br/&gt;Only 0-5 (n=?)&lt;br/&gt;Only 6-12 (n=?)&lt;br/&gt;&lt;br/&gt;"]
+  S2 --&gt; E["Childhood exposure&lt;br/&gt;longitudinal data&lt;br/&gt;(n=5,398)"]
+  E --&gt; F["Derive SDoH&lt;br/&gt;trajectories&lt;br/&gt;0-5 years (n=4,318)&lt;br/&gt;6-12 years (n=5,386)&lt;br/&gt;Both (n=4,306)&lt;br/&gt;Only 0-5 (n=12)&lt;br/&gt;Only 6-12 (n=1,080)&lt;br/&gt;&lt;br/&gt;"]
 
-  S3 --&gt; G["Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=?)"]
-  S3 --&gt; H["Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=?)"]
+  S3 --&gt; G["Assemble mental&lt;br/&gt;health component&lt;br/&gt;(n=6,024)"]
+  S3 --&gt; H["Assemble SDoH&lt;br/&gt;trajectory component&lt;br/&gt;(n=5,398)"]
   D --&gt; G
   F --&gt; H
 
-  G --&gt; I["Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=?)"]
+  G --&gt; I["Integrated secondary&lt;br/&gt;analysis dataset&lt;br/&gt;(n=5,226)"]
   H --&gt; I
 
   classDef objective fill:#eef2ff,stroke:#4338ca,color:#1e1b4b,stroke-width:1.5px;
@@ -367,7 +367,7 @@ flowchart LR
 <section id="notes" class="level2">
 <h2 class="anchored" data-anchor-id="notes">Notes</h2>
 <ul>
-<li>Counts are distinct participants (<code>USUBJID</code>) and are calculated at render time.</li>
+<li>Counts are distinct participants (<code>USUBJID</code>) and are refreshed into website-local linkage snapshot files when the update script is run.</li>
 <li>Violet nodes: proposal objectives.</li>
 <li>Blue nodes: psychometric stage.</li>
 <li>Orange nodes: SDoH trajectory stage.</li>
@@ -488,7 +488,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const title = document.createElement("h2");
   title.className = "section-nav__title";
-  title.textContent = "Content";
+  title.textContent = "In this section";
   nav.appendChild(title);
 
   const list = document.createElement("div");

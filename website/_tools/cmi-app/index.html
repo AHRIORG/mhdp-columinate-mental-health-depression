@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CMI UI Prototype</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CO-LUMINATE Prototype</p>
+          <h1>Causal Mapping and Interaction</h1>
+          <p class="lede">A tab-based prototype for capturing, editing, reviewing, and exporting mental health causal chains.</p>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-pill">Interactive Prototype</span>
+          <button id="btnNewChain" class="primary-btn" type="button">Start New Chain</button>
+        </div>
+      </header>
+
+      <section class="summary-banner panel">
+        <div>
+          <span class="mini-label">Current pathway</span>
+          <strong id="bannerTitle">Pathway Builder</strong>
+        </div>
+        <div>
+          <span class="mini-label">Status</span>
+          <strong id="currentStatus" class="state-badge draft">Draft</strong>
+        </div>
+        <div>
+          <span class="mini-label">Pathway sentence</span>
+          <p id="chainSentence" class="sentence-text">Select a pathway to generate a sentence summary.</p>
+        </div>
+        <div>
+          <span class="mini-label">Wording view</span>
+          <div id="wordingModeSwitch" class="mode-switch" role="group" aria-label="Pathway wording view">
+            <button class="chip active" type="button" data-wording="improved">AI Improved</button>
+            <button class="chip" type="button" data-wording="original">Original</button>
+          </div>
+          <p id="wordingModeHelp" class="mode-help">Switch between the cleaned AI-improved wording and the original pathway inventory wording.</p>
+        </div>
+      </section>
+
+      <nav class="tab-nav" role="tablist" aria-label="CMI sections">
+        <button class="tab-btn active" type="button" data-tab="overview" aria-selected="true">Overview</button>
+        <button class="tab-btn" type="button" data-tab="library" aria-selected="false">Library</button>
+        <button class="tab-btn" type="button" data-tab="builder" aria-selected="false">Builder</button>
+        <button class="tab-btn" type="button" data-tab="review" aria-selected="false">Review & Export</button>
+      </nav>
+
+      <section id="panel-overview" class="tab-panel active" role="tabpanel">
+        <div class="panel panel-intro">
+          <h2>Overview</h2>
+          <p>This tab explains how the app is organized. Start here, then move into the library, builder, and review workflow.</p>
+        </div>
+
+        <div class="workflow-strip">
+          <div class="workflow-step">
+            <strong>1. Start Here</strong>
+            Read the overview so you know what each tab is for before editing any pathway.
+          </div>
+          <div class="workflow-step">
+            <strong>2. Find a Pathway</strong>
+            Use the Library tab to search, filter, and open an existing pathway by domain or outcome type.
+          </div>
+          <div class="workflow-step">
+            <strong>3. Build or Edit</strong>
+            Use the Builder tab to adjust pathway wording, place, story note, node order, and outcome polarity.
+          </div>
+          <div class="workflow-step">
+            <strong>4. Review or Export</strong>
+            Use the Review and Export tab to manage status, import prior work, and download structured outputs.
+          </div>
+        </div>
+
+        <div class="overview-grid">
+          <section class="panel stats-panel">
+            <h3>Current Browser Snapshot</h3>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span>Total pathways</span>
+                <strong id="overviewTotal">0</strong>
+              </div>
+              <div class="stat-card">
+                <span>Draft</span>
+                <strong id="overviewDraft">0</strong>
+              </div>
+              <div class="stat-card">
+                <span>Approved</span>
+                <strong id="overviewApproved">0</strong>
+              </div>
+            </div>
+            <div class="overview-note">
+              <span class="mini-label">Current selection</span>
+              <strong id="overviewCurrent">No pathway selected</strong>
+              <p id="overviewSentence" class="sentence-text">Select or create a pathway to begin.</p>
+            </div>
+          </section>
+
+          <section class="panel guide-card">
+            <h3>Library Tab</h3>
+            <p>Use the Library tab to search by title, domain, node label, or story note, then open a saved pathway.</p>
+            <ul class="guide-list">
+              <li>Search pathways</li>
+              <li>Filter by poor or positive mental health</li>
+              <li>Browse domains and saved pathways</li>
+            </ul>
+            <button class="secondary-btn" type="button" data-go-tab="library">Go to Library</button>
+          </section>
+
+          <section class="panel guide-card">
+            <h3>Builder Tab</h3>
+            <p>Use the Builder tab to edit one pathway at a time, including its story note, place, node order, and outcome type.</p>
+            <ul class="guide-list">
+              <li>Edit title, place, and story note</li>
+              <li>Add, remove, and reorder nodes</li>
+              <li>Save draft or move toward approval</li>
+            </ul>
+            <button class="secondary-btn" type="button" data-go-tab="builder">Go to Builder</button>
+          </section>
+
+          <section class="panel guide-card">
+            <h3>Review & Export Tab</h3>
+            <p>Use the Review & Export tab to manage review status, import prior work, and download structured outputs.</p>
+            <ul class="guide-list">
+              <li>Review queue by status</li>
+              <li>Import JSON or CSV</li>
+              <li>Export JSON state, edge list, and summaries</li>
+            </ul>
+            <button class="secondary-btn" type="button" data-go-tab="review">Go to Review & Export</button>
+          </section>
+        </div>
+      </section>
+
+      <section id="panel-library" class="tab-panel" role="tabpanel" hidden>
+        <div class="panel panel-intro">
+          <h2>Library</h2>
+          <p>Open this tab to find an existing pathway. Search narrows the list, outcome filters reduce noise, and the domain list helps you browse by theme.</p>
+        </div>
+
+        <div class="library-grid">
+          <section class="panel">
+            <h3>Search and Filter</h3>
+            <label class="field-block" for="searchInput">
+              <span class="field-label">Search pathways</span>
+              <input id="searchInput" type="search" placeholder="Search by title, node, or story" />
+            </label>
+            <div class="chip-row" id="polarityFilters">
+              <button class="chip active" type="button" data-filter="all">All</button>
+              <button class="chip" type="button" data-filter="negative">Poor mental health</button>
+              <button class="chip" type="button" data-filter="positive">Positive mental health</button>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h3>Domains</h3>
+            <p class="panel-copy">Choose a domain to load matching pathways.</p>
+            <div id="domainList" class="domain-list"></div>
+          </section>
+
+          <section class="panel">
+            <h3>Saved Pathways</h3>
+            <p id="savedMeta" class="panel-copy">Select a domain to inspect sample pathways.</p>
+            <div id="savedList" class="saved-list"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="panel-builder" class="tab-panel" role="tabpanel" hidden>
+        <div class="panel panel-intro">
+          <h2>Builder</h2>
+          <p>Use this tab to work on one pathway at a time. The visual chain updates as you edit the story, place, nodes, or outcome polarity.</p>
+        </div>
+
+        <div class="builder-layout">
+          <section class="panel workspace-panel">
+            <div class="panel-head">
+              <h3 id="chainTitle">Pathway Builder</h3>
+              <p id="chainSummary">Choose a pathway to review or start a new chain.</p>
+            </div>
+            <div id="chainCanvas" class="chain-canvas"></div>
+            <div class="canvas-actions">
+              <button id="btnAddDriver" class="secondary-btn" type="button">Add Driver</button>
+              <button id="btnAddBridge" class="secondary-btn" type="button">Add Bridge</button>
+              <button id="btnAddOutcome" class="secondary-btn" type="button">Add Outcome</button>
+            </div>
+          </section>
+
+          <div class="builder-side">
+            <section class="panel builder-card">
+              <h3>Chain Details</h3>
+              <p id="builderModeCopy" class="mode-help">Editing the AI-improved wording for this pathway.</p>
+              <div class="form-grid">
+                <label class="field-block" for="titleInput">
+                  <span class="field-label">Title</span>
+                  <input id="titleInput" type="text" />
+                </label>
+                <label class="field-block" for="domainSelect">
+                  <span class="field-label">Domain</span>
+                  <select id="domainSelect"></select>
+                </label>
+                <label class="field-block" for="polaritySelect">
+                  <span class="field-label">Outcome polarity</span>
+                  <select id="polaritySelect">
+                    <option value="negative">Poor mental health</option>
+                    <option value="positive">Positive mental health</option>
+                  </select>
+                </label>
+                <label class="field-block" for="placeInput">
+                  <span class="field-label">Place</span>
+                  <input id="placeInput" type="text" placeholder="Optional map pin or village label" />
+                </label>
+              </div>
+              <label class="field-block" for="storyInput">
+                <span class="field-label">Story note</span>
+                <textarea id="storyInput" rows="5" placeholder="Keep the participant's own words visible."></textarea>
+              </label>
+            </section>
+
+            <section class="panel builder-card">
+              <h3>Nodes</h3>
+              <p class="panel-copy">Edit node wording and move steps up or down to refine the chain.</p>
+              <div id="nodeList" class="node-editor"></div>
+            </section>
+
+            <section class="panel builder-card">
+              <h3>Save and Review</h3>
+              <p class="panel-copy">Use these actions to update the pathway state.</p>
+              <div class="canvas-actions stacked">
+                <button id="btnSaveDraft" class="primary-btn" type="button">Save Draft</button>
+                <button id="btnMarkReviewed" class="secondary-btn" type="button">Mark Reviewed</button>
+                <button id="btnApprove" class="secondary-btn" type="button">Approve</button>
+                <button id="btnReset" class="ghost-btn" type="button">Reset Changes</button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="panel-review" class="tab-panel" role="tabpanel" hidden>
+        <div class="panel panel-intro">
+          <h2>Review & Export</h2>
+          <p>Use this tab to manage pathway status, load prior prototype files, and download structured outputs from the current browser state.</p>
+        </div>
+
+        <div class="review-layout">
+          <section class="panel review-panel">
+            <div class="panel-head">
+              <h3>Review Queue</h3>
+              <p>Track which pathways are still draft, reviewed, or approved.</p>
+            </div>
+            <div id="queueSummary" class="queue-summary"></div>
+            <div id="reviewQueue" class="review-list"></div>
+          </section>
+
+          <section class="panel data-panel">
+            <div class="panel-head">
+              <h3>Import and Export</h3>
+              <p>Bring saved work back into the prototype or export the current browser copy.</p>
+            </div>
+            <div class="export-actions">
+              <button id="btnExportState" class="secondary-btn" type="button">Export JSON State</button>
+              <button id="btnExportEdges" class="secondary-btn" type="button">Export Edge List CSV</button>
+              <button id="btnExportSummaries" class="secondary-btn" type="button">Export Chain Summary CSV</button>
+              <button id="btnImportData" class="secondary-btn" type="button">Import JSON or CSV</button>
+              <input id="importFile" type="file" accept=".json,.csv" hidden />
+              <button id="btnResetBrowser" class="ghost-btn" type="button">Reset Browser Data</button>
+            </div>
+            <div id="dataStatus" class="data-status">Supported imports: JSON state exports, summary CSV, or edge list CSV. Summary exports now include both original and AI-improved wording.</div>
+            <div class="insight-card">
+              <h3>Saved In This Browser</h3>
+              <p>Your edits remain in this browser until you reset them or replace them with an imported file.</p>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
