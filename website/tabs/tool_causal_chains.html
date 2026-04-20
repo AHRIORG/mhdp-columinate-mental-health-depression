@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Interactive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.">
 
 <title>Mental Health Causal Chains – CO-LUMINATE</title>
 <style>
@@ -23,22 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../PRJCMA/_site/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../PRJPSM/_site/site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../PRJCMA/_site/site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../PRJPSM/_site/site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../PRJCMA/_site/site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../PRJCMA/_site/site_libs/quarto-search/quarto-search.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../../../OBJ02-Interactive%20Pathways/_SCAR%20[Statistical%20Consideration%20and%20Analysis%20Report]/site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../../PRJPSM/_site/site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../../OBJ02-Interactive%20Pathways/behavioral_mediator_brief_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../../PRJPSM/_site/site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../PRJCMA/_site/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../PRJCMA/_site/site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../PRJPSM/_site/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../OBJ02-Interactive%20Pathways/behavioral_mediator_brief_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../OBJ02-Interactive%20Pathways/behavioral_mediator_brief_files/libs/bootstrap/bootstrap.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-466c708b1a5a2967f0eb6fed410850f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
@@ -68,6 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -105,23 +109,23 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-documentation">    
         <li>
-    <a class="dropdown-item" href="documentations.html">
+    <a class="dropdown-item" href="../tabs/documentations.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="proposal.html">
+    <a class="dropdown-item" href="../tabs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="longitudinal_linkage.html">
+    <a class="dropdown-item" href="../tabs/longitudinal_linkage.html">
  <span class="dropdown-text">Longitudinal Linkage</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="metadata.html">
+    <a class="dropdown-item" href="../tabs/metadata.html">
  <span class="dropdown-text">Metadata</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="secondary_data_analysis_plan.html">
+    <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
   </li>  
     </ul>
@@ -134,27 +138,27 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-analysis-deliverables">    
         <li>
-    <a class="dropdown-item" href="analysis_deliverables.html">
+    <a class="dropdown-item" href="../tabs/analysis_deliverables.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="deliverable_obj05.html">
+    <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
  <span class="dropdown-text">Objective 1: Youth Co-Creation</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="deliverable_obj03.html">
+    <a class="dropdown-item" href="../tabs/deliverable_obj03.html">
  <span class="dropdown-text">Objective 2: Depression Harmonization</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="deliverable_obj01.html">
+    <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
  <span class="dropdown-text">Objective 3: Social Determinant Trajectories</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="deliverable_obj02.html">
+    <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
  <span class="dropdown-text">Objective 4: Behavioral Mediators</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="deliverable_obj04.html">
+    <a class="dropdown-item" href="../tabs/deliverable_obj04.html">
  <span class="dropdown-text">Objective 5: Causal Mediation</span></a>
   </li>  
     </ul>
@@ -198,19 +202,19 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
         <li>
-    <a class="dropdown-item" href="tools.html">
+    <a class="dropdown-item" href="../tabs/tools.html">
  <span class="dropdown-text">Overview</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="dashboard.html">
+    <a class="dropdown-item" href="../tabs/dashboard.html">
  <span class="dropdown-text">Project Dashboard</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="tool_irt_scoring.html">
+    <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
  <span class="dropdown-text">IRT Scoring Workspace</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="tool_causal_chains.html">
+    <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
  <span class="dropdown-text">Mental Health Causal Chains</span></a>
   </li>  
     </ul>
@@ -233,7 +237,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#in-progress" id="toc-in-progress" class="nav-link active" data-scroll-target="#in-progress">In Progress</a></li>
+  <li><a href="#what-this-app-does" id="toc-what-this-app-does" class="nav-link active" data-scroll-target="#what-this-app-does">What This App Does</a></li>
+  <li><a href="#embedded-app" id="toc-embedded-app" class="nav-link" data-scroll-target="#embedded-app">Embedded App</a></li>
+  <li><a href="#master-causal-flowchart" id="toc-master-causal-flowchart" class="nav-link" data-scroll-target="#master-causal-flowchart">Master Causal Flowchart</a></li>
+  <li><a href="#pathway-inventory" id="toc-pathway-inventory" class="nav-link" data-scroll-target="#pathway-inventory">Pathway Inventory</a>
+  <ul class="collapse">
+  <li><a href="#socioeconomic-position-poverty-and-economic-inequality" id="toc-socioeconomic-position-poverty-and-economic-inequality" class="nav-link" data-scroll-target="#socioeconomic-position-poverty-and-economic-inequality">1. Socioeconomic Position, Poverty, and Economic Inequality</a></li>
+  <li><a href="#education-employment-and-working-conditions" id="toc-education-employment-and-working-conditions" class="nav-link" data-scroll-target="#education-employment-and-working-conditions">2. Education, Employment, and Working Conditions</a></li>
+  <li><a href="#housing-and-living-conditions" id="toc-housing-and-living-conditions" class="nav-link" data-scroll-target="#housing-and-living-conditions">3. Housing and Living Conditions</a></li>
+  <li><a href="#early-childhood-development" id="toc-early-childhood-development" class="nav-link" data-scroll-target="#early-childhood-development">4. Early Childhood Development</a></li>
+  <li><a href="#social-support-social-capital-discrimination-and-social-exclusion" id="toc-social-support-social-capital-discrimination-and-social-exclusion" class="nav-link" data-scroll-target="#social-support-social-capital-discrimination-and-social-exclusion">5. Social Support, Social Capital, Discrimination, and Social Exclusion</a></li>
+  <li><a href="#physical-environment" id="toc-physical-environment" class="nav-link" data-scroll-target="#physical-environment">6. Physical Environment</a></li>
+  <li><a href="#access-to-basic-services" id="toc-access-to-basic-services" class="nav-link" data-scroll-target="#access-to-basic-services">7. Access to Basic Services</a></li>
+  <li><a href="#violence-crime-and-safety" id="toc-violence-crime-and-safety" class="nav-link" data-scroll-target="#violence-crime-and-safety">8. Violence, Crime, and Safety</a></li>
+  <li><a href="#culture-religion-and-spirituality" id="toc-culture-religion-and-spirituality" class="nav-link" data-scroll-target="#culture-religion-and-spirituality">9. Culture, Religion, and Spirituality</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -245,6 +263,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Mental Health Causal Chains</h1>
 </div>
 
+<div>
+  <div class="description">
+    Interactive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -259,11 +282,277 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="in-progress" class="level2">
-<h2 class="anchored" data-anchor-id="in-progress">In Progress</h2>
-<p>In progress, content not yet published to the public website.</p>
+<section id="what-this-app-does" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-app-does">What This App Does</h2>
+<p>This app is intended to help Youth Co-Creators and researchers capture how social, economic, environmental, and relational experiences turn into mental health outcomes.</p>
+<p>Instead of storing isolated answers, the app is designed to capture short causal chains such as:</p>
+<p><code>Poverty -&gt; inability to afford food -&gt; stress and worry -&gt; Poor mental health</code></p>
+<p>It supports both harmful and protective pathways so that <code>Positive mental health</code> can be documented alongside <code>Poor mental health</code>.</p>
+</section>
+<section id="embedded-app" class="level2">
+<h2 class="anchored" data-anchor-id="embedded-app">Embedded App</h2>
+<style>
+.cmi-embed-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0.5rem 0 1rem 0;
+}
+.cmi-open-btn {
+  display: inline-block;
+  border: 1px solid #154c79;
+  background: #154c79;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.55rem 0.9rem;
+}
+.cmi-open-btn:hover,
+.cmi-open-btn:focus {
+  color: #ffffff;
+  text-decoration: none;
+}
+.cmi-embed-note {
+  color: #4d5d73;
+  font-size: 0.92rem;
+}
+.cmi-embed-shell {
+  border: 1px solid #d7dee8;
+  background: #fffdf8;
+}
+.cmi-embed-shell summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  color: #154c79;
+}
+.cmi-embed-shell summary::-webkit-details-marker {
+  display: none;
+}
+.cmi-embed-shell summary::before {
+  content: "+ ";
+}
+.cmi-embed-shell[open] summary::before {
+  content: "- ";
+}
+.cmi-embed-frame {
+  border-top: 1px solid #d7dee8;
+  padding: 0.7rem;
+}
+.cmi-embed-frame iframe {
+  width: 100%;
+  min-height: 1020px;
+  border: 0;
+  background: #ffffff;
+}
+@media (max-width: 900px) {
+  .cmi-embed-frame iframe {
+    min-height: 1320px;
+  }
+}
+</style>
+<div class="cmi-embed-actions">
+  <a class="cmi-open-btn" href="../_tools/cmi-app/index.html" target="_blank" rel="noopener">Open App In New Page</a>
+  <span class="cmi-embed-note">The embedded prototype is collapsed by default. Open it here or launch it in a separate page.</span>
+</div>
+<details class="cmi-embed-shell">
+  <summary>Show Embedded Prototype</summary>
+  <div class="cmi-embed-frame">
+    <iframe src="../_tools/cmi-app/index.html" title="Causal Mapping and Interaction prototype" loading="lazy"></iframe>
+  </div>
+</details>
+</section>
+<section id="master-causal-flowchart" class="level2">
+<h2 class="anchored" data-anchor-id="master-causal-flowchart">Master Causal Flowchart</h2>
+<p>The master flowchart below summarizes the shared structure across the full pathway inventory. The more specific pathway variants are kept in the inventory section rather than repeated as separate diagrams.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div id="fig-cmi-master" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cmi-master-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-cmi-master">%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontFamily": "Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif",
+    "fontSize": "18px",
+    "primaryColor": "#edf7fb",
+    "primaryTextColor": "#163245",
+    "primaryBorderColor": "#0b6fa4",
+    "lineColor": "#67819a",
+    "clusterBkg": "#ffffff",
+    "clusterBorder": "#d7dee8"
+  },
+  "flowchart": {
+    "curve": "basis",
+    "nodeSpacing": 40,
+    "rankSpacing": 70,
+    "padding": 12
+  }
+}}%%
+flowchart TB
+  subgraph D["Context"]
+    direction LR
+    MAT["Material and economic&lt;br/&gt;conditions"]:::driver
+    INS["Institutions and&lt;br/&gt;services"]:::driver
+    SOC["Social and community&lt;br/&gt;relations"]:::driver
+    ENV["Environment and&lt;br/&gt;safety threats"]:::driver
+    SPR["Spiritual and cultural&lt;br/&gt;context"]:::driver
+  end
+
+  subgraph B["Bridging Pathways"]
+    direction LR
+    FIN["Financial security&lt;br/&gt;or strain"]:::bridge
+    BEL["Belonging,&lt;br/&gt;support, or exclusion"]:::bridge
+    SELF["Hope, shame, and&lt;br/&gt;self-worth"]:::bridge
+    CARE["Care access and&lt;br/&gt;help-seeking"]:::bridge
+    RISK["Substance use and&lt;br/&gt;risky coping"]:::bridge
+    EMO["Stress, grief, fear,&lt;br/&gt;humiliation, or relief"]:::bridge
+  end
+
+  subgraph O["Mental Health Outcomes"]
+    direction LR
+    NEG["Poor mental health"]:::negative
+    POS["Positive mental health"]:::positive
+  end
+
+  MAT --&gt; FIN
+  MAT --&gt; SELF
+  INS --&gt; CARE
+  INS --&gt; EMO
+  SOC --&gt; BEL
+  SOC --&gt; SELF
+  ENV --&gt; FIN
+  ENV --&gt; RISK
+  ENV --&gt; EMO
+  SPR --&gt; BEL
+  SPR --&gt; SELF
+
+  FIN --&gt; EMO
+  FIN --&gt; POS
+  BEL --&gt; EMO
+  BEL --&gt; POS
+  SELF --&gt; NEG
+  SELF --&gt; POS
+  CARE --&gt; NEG
+  CARE --&gt; POS
+  RISK --&gt; NEG
+  EMO --&gt; NEG
+  EMO --&gt; POS
+
+  classDef driver fill:#f5efe6,stroke:#8b5e34,color:#2c241d,stroke-width:1.3px;
+  classDef bridge fill:#edf7fb,stroke:#0b6fa4,color:#163245,stroke-width:1.3px;
+  classDef positive fill:#d1fae5,stroke:#059669,color:#163245,stroke-width:2px;
+  classDef negative fill:#fee2e2,stroke:#dc2626,color:#163245,stroke-width:2px;
+  style D fill:#fffaf3,stroke:#d7dee8,stroke-width:1px
+  style B fill:#f8fcfe,stroke:#d7dee8,stroke-width:1px
+  style O fill:#fff8f5,stroke:#d7dee8,stroke-width:1px
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-cmi-master-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pathway-inventory" class="level2">
+<h2 class="anchored" data-anchor-id="pathway-inventory">Pathway Inventory</h2>
+<section id="socioeconomic-position-poverty-and-economic-inequality" class="level3">
+<h3 class="anchored" data-anchor-id="socioeconomic-position-poverty-and-economic-inequality">1. Socioeconomic Position, Poverty, and Economic Inequality</h3>
+<ul>
+<li>Poverty -&gt; inability to afford food -&gt; stress and worry -&gt; mental health decline -&gt; Poor mental health.</li>
+<li>Reliance on subsistence farming -&gt; loss of income due to theft or natural hazards -&gt; household chaos -&gt; anger and domestic violence -&gt; negative mental health outcomes -&gt; Poor mental health.</li>
+<li>Poverty -&gt; inability to fix or improve living conditions independently -&gt; anxiety and frustration -&gt; Poor mental health.</li>
+<li>Hope for the future -&gt; encouragement to persist -&gt; reduced hopelessness -&gt; positive outlook -&gt; improved mental health -&gt; Positive mental health.</li>
+</ul>
+</section>
+<section id="education-employment-and-working-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="education-employment-and-working-conditions">2. Education, Employment, and Working Conditions</h3>
+<ul>
+<li>Lack of school fencing and monitoring -&gt; truancy and time in unsafe spaces -&gt; substance use and sexual activity -&gt; emotional strain and disrupted education -&gt; Poor mental health.</li>
+<li>Physical punishment at school -&gt; humiliation -&gt; suppressed emotions -&gt; anger and resentment toward authority -&gt; Poor mental health.</li>
+<li>Employment through mining -&gt; financial security -&gt; improved mental health -&gt; Positive mental health.</li>
+<li>Mine closure -&gt; loss of income -&gt; reliance on grants -&gt; communal stress and anxiety -&gt; Poor mental health.</li>
+<li>Financial stress -&gt; emotional strain -&gt; substance use -&gt; family conflict -&gt; emotional distress -&gt; Poor mental health.</li>
+<li>Protracted unemployment -&gt; eroded self-esteem -&gt; stress -&gt; Poor mental health.</li>
+<li>Reliance on government grant -&gt; eroded self-esteem -&gt; Poor mental health.</li>
+</ul>
+</section>
+<section id="housing-and-living-conditions" class="level3">
+<h3 class="anchored" data-anchor-id="housing-and-living-conditions">3. Housing and Living Conditions</h3>
+<ul>
+<li>Lack of running water -&gt; inability to maintain hygiene -&gt; bullying and shame -&gt; emotional distress -&gt; Poor mental health.</li>
+<li>Poor condition of houses -&gt; discomfort at home -&gt; mental strain -&gt; Poor mental health.</li>
+</ul>
+</section>
+<section id="early-childhood-development" class="level3">
+<h3 class="anchored" data-anchor-id="early-childhood-development">4. Early Childhood Development</h3>
+<ul>
+<li>Access to early learning centers -&gt; better performance in higher grades -&gt; increased self-esteem and reduced stress -&gt; Positive mental health.</li>
+<li>Access to early learning centers -&gt; safety -&gt; less exposure to trauma -&gt; Positive mental health.</li>
+</ul>
+</section>
+<section id="social-support-social-capital-discrimination-and-social-exclusion" class="level3">
+<h3 class="anchored" data-anchor-id="social-support-social-capital-discrimination-and-social-exclusion">5. Social Support, Social Capital, Discrimination, and Social Exclusion</h3>
+<ul>
+<li>Migration for work -&gt; family separation -&gt; loneliness and insecurity -&gt; increased stress and anxiety -&gt; Poor mental health.</li>
+<li>Church counselling and spiritual guidance -&gt; sense of hope and peace -&gt; Positive mental health.</li>
+<li>Access to sports grounds -&gt; social engagement through sport -&gt; reduced substance abuse -&gt; improved mental health -&gt; Positive mental health.</li>
+<li>Association with bad peers -&gt; parental disapproval -&gt; conflict -&gt; emotional strain -&gt; Poor mental health.</li>
+<li>Feeling excluded from family decision-making -&gt; feelings of marginalisation and powerlessness -&gt; Poor mental health.</li>
+<li>Strong family and community social capital -&gt; access to shared resources such as land, gardens, and employment opportunities -&gt; material security and social support -&gt; improved well-being -&gt; Positive mental health.</li>
+<li>Low social connectedness and weak community cohesion -&gt; exclusion from shared resources and fear of stigma -&gt; reduced help-seeking and exposure to harm such as abuse or conflict -&gt; stress and emotional distress -&gt; Poor mental health.</li>
+</ul>
+</section>
+<section id="physical-environment" class="level3">
+<h3 class="anchored" data-anchor-id="physical-environment">6. Physical Environment</h3>
+<ul>
+<li>Air and water pollution -&gt; ill health -&gt; fear and worry -&gt; Poor mental health.</li>
+<li>Mines -&gt; land damage -&gt; grief and stress -&gt; mental health deterioration -&gt; Poor mental health.</li>
+<li>Litter from dumping sites -&gt; perceived danger -&gt; avoidance of nature -&gt; reduced relaxation and well-being -&gt; Poor mental health.</li>
+<li>Subsistence agriculture -&gt; lower financial pressure -&gt; Positive mental health.</li>
+<li>Extreme weather events -&gt; soil erosion and crop destruction -&gt; loss of food and income -&gt; mental distress -&gt; Poor mental health.</li>
+<li>Water scarcity -&gt; dual use of water such as drinking water for cattle versus watering crops -&gt; internal conflict -&gt; emotional distress -&gt; Poor mental health.</li>
+</ul>
+</section>
+<section id="access-to-basic-services" class="level3">
+<h3 class="anchored" data-anchor-id="access-to-basic-services">7. Access to Basic Services</h3>
+<ul>
+<li>Neglected public infrastructure -&gt; exposure to physical danger -&gt; persistent worry and compensatory costs -&gt; Poor mental health.</li>
+<li>Neglected public infrastructure -&gt; inability to use services -&gt; missed opportunities -&gt; frustration -&gt; Poor mental health.</li>
+<li>Low political will to improve basic services -&gt; unmet basic needs -&gt; sense of injustice -&gt; emotional distress -&gt; Poor mental health.</li>
+<li>Improved health awareness -&gt; lower stigma -&gt; easier access to treatment -&gt; emotional relief and improved physical health -&gt; Positive mental health.</li>
+<li>Long queues at clinics -&gt; delays in or avoidance of care -&gt; increased anxiety and discouragement -&gt; Poor mental health.</li>
+<li>Stigmatising treatment from healthcare workers -&gt; humiliation -&gt; avoidance of treatment -&gt; worsening health and mental strain -&gt; Poor mental health.</li>
+<li>Lack of nearby hospital -&gt; lengthy travel time and transport poverty -&gt; hinders urgent and intensive medical care -&gt; sense of distance from needed care -&gt; Poor mental health.</li>
+<li>Domestic violence -&gt; women withdraw cases due to financial dependence -&gt; ongoing distress -&gt; Poor mental health.</li>
+<li>Neglected public infrastructure -&gt; unable to cross bridges during floods -&gt; unable to attend school or work -&gt; negatively impacts education and income -&gt; Poor mental health.</li>
+</ul>
+</section>
+<section id="violence-crime-and-safety" class="level3">
+<h3 class="anchored" data-anchor-id="violence-crime-and-safety">8. Violence, Crime, and Safety</h3>
+<ul>
+<li>Abandoned buildings and taverns -&gt; drug and alcohol use -&gt; increased violence, crime, and risky behaviours -&gt; emotional distress and insecurity -&gt; Poor mental health.</li>
+<li>Drug and alcohol use -&gt; domestic violence -&gt; Poor mental health.</li>
+<li>Drug and alcohol use -&gt; misuse of income -&gt; debt and poverty -&gt; Poor mental health.</li>
+</ul>
+</section>
+<section id="culture-religion-and-spirituality" class="level3">
+<h3 class="anchored" data-anchor-id="culture-religion-and-spirituality">9. Culture, Religion, and Spirituality</h3>
+<ul>
+<li>Church attendance and pastoral counselling -&gt; support, mediation, and guidance -&gt; Positive mental health.</li>
+<li>Prayer and rituals -&gt; spiritual connection and perceived ancestral support -&gt; relief and hope -&gt; Positive mental health.</li>
+<li>Fear of witchcraft -&gt; worry and distrust -&gt; mental distress -&gt; Poor mental health.</li>
+<li>Dual belief systems -&gt; conflicting norms -&gt; internal conflict -&gt; emotional strain -&gt; Poor mental health.</li>
+<li>Rejection by church when engaged in stigmatised behaviour -&gt; loss of status -&gt; feeling shunned -&gt; emotional distress -&gt; Poor mental health.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -805,10 +1094,18 @@ document.addEventListener("DOMContentLoaded", function () {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="../about.html">About</a> | <a href="team.html">Team</a></p>
+<p><a href="../about.html">About</a> | <a href="../tabs/team.html">Team</a></p>
 </div>   
     <div class="nav-footer-center">
-      &nbsp;
-    </div>
+<p><span class="footer-centerline">YOUTH MENTAL HEALTH AND SOCIAL STRESS EXPOSURES</span></p>
+</div>
     <div class="nav-footer-right">
-<p>Created with <a href="https://quarto.org/" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Quarto</a> and <a href="https://www.r-project.org/" ta
+<p>Created with <a href="https://quarto.org/" target="_blank" rel="noopener"><i class="bi bi-journal-code"></i> Quarto</a> and <a href="https://www.r-project.org/" target="_blank" rel="noopener"><i class="bi bi-r-circle"></i> R</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
