@@ -172,6 +172,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../updates_blog.html"> <i class="bi bi-journal-text" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -192,10 +197,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../updates_news.html">
  <span class="dropdown-text">News</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../updates_blog.html">
- <span class="dropdown-text">Blog</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../updates_other.html">
@@ -286,6 +287,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
+  const header = document.getElementById("quarto-header");
+
+  if (header && !document.querySelector(".construction-banner")) {
+    const banner = document.createElement("div");
+    banner.className = "construction-banner";
+    banner.setAttribute("role", "status");
+    banner.textContent = constructionMessage;
+    header.insertBefore(banner, header.firstChild);
+    document.body.classList.add("has-construction-banner");
+  }
+
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -327,7 +340,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { file: "updates.html", label: "Overview" },
         { file: "updates_website.html", label: "Website" },
         { file: "updates_news.html", label: "News" },
-        { file: "updates_blog.html", label: "Blog" },
         { file: "updates_other.html", label: "Others" }
       ]
     }

@@ -22,6 +22,10 @@ body {
     linear-gradient(90deg, #ffffff 0%, #ffffff 78%, #f5f9fc 100%);
 }
 
+body.nav-fixed {
+  padding-top: 0 !important;
+}
+
 /* Full-width page layout with controlled breathing room */
 #quarto-content.quarto-container,
 #quarto-content.quarto-container.page-layout-full {
@@ -137,11 +141,11 @@ body {
 
   .section-nav {
     left: clamp(0.85rem, 1.6vw, 1.4rem);
-    max-height: calc(100vh - 8.6rem);
+    max-height: calc(100vh - 10.8rem);
     overflow-y: auto;
     padding: 1rem;
     position: fixed;
-    top: 6.7rem;
+    top: 8.9rem;
     width: clamp(14.5rem, 15vw, 16.5rem);
     z-index: 998;
   }
@@ -151,7 +155,7 @@ body {
   }
 
   body.quarto-dashboard .section-nav {
-    top: 9.8rem;
+    top: 12rem;
   }
 }
 
@@ -174,8 +178,8 @@ body {
   background: var(--ahri-blue-deep);
   border-bottom: 2px solid rgba(245, 127, 41, 0.9);
   box-shadow: 0 3px 12px rgba(0, 31, 63, 0.28);
-  position: sticky;
-  top: 0;
+  position: relative;
+  top: auto;
   z-index: 1035;
 }
 
@@ -190,6 +194,22 @@ body {
 #quarto-header.headroom--unpinned {
   transform: translateY(0) !important;
   transition: none !important;
+}
+
+.construction-banner {
+  align-items: center;
+  background: red !important;
+  color: #ffffff !important;
+  display: flex;
+  font-size: clamp(0.78rem, 1vw, 0.95rem);
+  font-weight: 900;
+  justify-content: center;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
+  min-height: 2.05rem;
+  padding: 0.45rem clamp(1rem, 2.8vw, 2.8rem);
+  text-align: center;
+  text-wrap: balance;
 }
 
 .navbar .navbar-brand,
@@ -2193,6 +2213,12 @@ body.quarto-dashboard pre {
 @media (max-width: 991px) {
   .overview-card-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1200px) {
+  .updates-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
