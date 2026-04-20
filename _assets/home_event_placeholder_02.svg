@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Project event placeholder 2</title>
+  <desc id="desc">Abstract square placeholder image labeled Youth Co-Creation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#eef6fb"/>
+      <stop offset="100%" stop-color="#fff4ea"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <rect x="50" y="52" width="540" height="536" rx="40" fill="#ffffff" opacity="0.84"/>
+  <rect x="88" y="120" width="464" height="168" rx="28" fill="#00365b"/>
+  <circle cx="178" cy="396" r="64" fill="#79c149"/>
+  <circle cx="320" cy="396" r="64" fill="#f57f29"/>
+  <circle cx="462" cy="396" r="64" fill="#004d82"/>
+  <path d="M132 418 L178 370 L224 418" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M274 418 L320 370 L366 418" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M416 418 L462 370 L508 418" fill="none" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="102" y="228" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700">EVENT 02</text>
+  <text x="102" y="272" fill="#d9e7f2" font-family="Arial, Helvetica, sans-serif" font-size="28">Youth Co-Creation</text>
+  <text x="102" y="556" fill="#4f6172" font-family="Arial, Helvetica, sans-serif" font-size="28">Placeholder project moment</text>
+</svg>

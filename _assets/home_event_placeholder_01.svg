@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Project event placeholder 1</title>
+  <desc id="desc">Abstract square placeholder image labeled Community Workshop.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f9fc"/>
+      <stop offset="100%" stop-color="#dcebf7"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <rect x="54" y="56" width="532" height="528" rx="36" fill="#ffffff" opacity="0.82"/>
+  <circle cx="186" cy="188" r="92" fill="#004d82" opacity="0.9"/>
+  <circle cx="458" cy="210" r="74" fill="#f57f29" opacity="0.88"/>
+  <path d="M104 450 C182 372 258 354 352 412 S520 492 548 438" fill="none" stroke="#004d82" stroke-width="24" stroke-linecap="round"/>
+  <rect x="102" y="468" width="178" height="20" rx="10" fill="#79c149" opacity="0.9"/>
+  <text x="102" y="540" fill="#00365b" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">EVENT 01</text>
+  <text x="102" y="582" fill="#4f6172" font-family="Arial, Helvetica, sans-serif" font-size="28">Community Workshop</text>
+</svg>
