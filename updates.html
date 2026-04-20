@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analytics Updates – CO-LUMINATE</title>
+<title>Updates – CO-LUMINATE</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -159,6 +159,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./updates_blog.html"> <i class="bi bi-journal-text" role="img">
+</i> 
+<span class="menu-text">Blog</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -179,10 +184,6 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./updates_news.html">
  <span class="dropdown-text">News</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./updates_blog.html">
- <span class="dropdown-text">Blog</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./updates_other.html">
@@ -234,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Analytics Updates</h1>
+<h1 class="title">Updates</h1>
 </div>
 
 
@@ -251,7 +252,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>In progress, content not yet published to the public website.</p>
+<p>The CO-LUMINATE updates area brings together website notices, public news, and other project communications. Content in this section is curated for public-facing release once each item has been reviewed and approved.</p>
+<div class="overview-card-grid updates-card-grid">
+<div class="overview-card overview-card--blue">
+<div class="overview-card__header">
+<i class="bi bi-window-stack overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Website
+</p>
+</div>
+<p class="overview-card__description">
+The CO-LUMINATE website is under active construction. The current version is intended for internal review, and the official public release date will be announced once the site has been finalized.
+</p>
+<p><a href="updates_website.html" class="overview-card__action">Open Website Updates</a></p>
+</div>
+<div class="overview-card overview-card--orange">
+<div class="overview-card__header">
+<i class="bi bi-newspaper overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+News
+</p>
+</div>
+<p class="overview-card__description">
+Public news items, institutional announcements, and project-facing communications related to CO-LUMINATE and youth mental health research.
+</p>
+<p><a href="updates_news.html" class="overview-card__action">Open News</a></p>
+</div>
+<div class="overview-card overview-card--mint">
+<div class="overview-card__header">
+<i class="bi bi-three-dots overview-card__icon" aria-hidden="true"></i>
+<p class="overview-card__title">
+Others
+</p>
+</div>
+<p class="overview-card__description">
+Additional notices and supporting updates that do not sit within the main website or news categories.
+</p>
+<p><a href="updates_other.html" class="overview-card__action">Open Other Updates</a></p>
+</div>
+</div>
 
 
 
@@ -261,6 +300,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
+  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
+  const header = document.getElementById("quarto-header");
+
+  if (header && !document.querySelector(".construction-banner")) {
+    const banner = document.createElement("div");
+    banner.className = "construction-banner";
+    banner.setAttribute("role", "status");
+    banner.textContent = constructionMessage;
+    header.insertBefore(banner, header.firstChild);
+    document.body.classList.add("has-construction-banner");
+  }
+
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -302,7 +353,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { file: "updates.html", label: "Overview" },
         { file: "updates_website.html", label: "Website" },
         { file: "updates_news.html", label: "News" },
-        { file: "updates_blog.html", label: "Blog" },
         { file: "updates_other.html", label: "Others" }
       ]
     }
