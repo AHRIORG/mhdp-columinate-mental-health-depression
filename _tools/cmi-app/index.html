@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CMI UI Prototype</title>
+    <title>Mental Health Causal Chains</title>
+    <link rel="icon" type="image/png" href="../../_assets/ahri_logo.png" />
     <link rel="stylesheet" href="../../styles.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -11,36 +12,37 @@
     <div class="app-shell">
       <header class="topbar">
         <div>
-          <p class="eyebrow">CO-LUMINATE Prototype</p>
-          <h1>Causal Mapping and Interaction</h1>
-          <p class="lede">A tab-based prototype for capturing, editing, reviewing, and exporting mental health causal chains.</p>
+          <p class="eyebrow">CO-LUMINATE Internal Workspace</p>
+          <h1>Mental Health Causal Chains</h1>
+          <p class="lede">Use this internal tool to review the approved pathway library, refine pathway wording, and export structured mental health causal chain outputs for downstream work.</p>
         </div>
         <div class="topbar-actions">
-          <span class="status-pill">Interactive Prototype</span>
-          <button id="btnNewChain" class="primary-btn" type="button">Start New Chain</button>
+          <span class="status-pill">Internal tool</span>
+          <span class="status-pill status-pill--soft">Browser-saved session</span>
+          <button id="btnNewChain" class="primary-btn" type="button">Create New Pathway</button>
         </div>
       </header>
 
       <section class="summary-banner panel">
         <div>
-          <span class="mini-label">Current pathway</span>
+          <span class="mini-label">Selected pathway</span>
           <strong id="bannerTitle">Pathway Builder</strong>
         </div>
         <div>
-          <span class="mini-label">Status</span>
+          <span class="mini-label">Review status</span>
           <strong id="currentStatus" class="state-badge draft">Draft</strong>
         </div>
         <div>
-          <span class="mini-label">Pathway sentence</span>
+          <span class="mini-label">Current sentence</span>
           <p id="chainSentence" class="sentence-text">Select a pathway to generate a sentence summary.</p>
         </div>
         <div>
-          <span class="mini-label">Wording view</span>
+          <span class="mini-label">Wording mode</span>
           <div id="wordingModeSwitch" class="mode-switch" role="group" aria-label="Pathway wording view">
             <button class="chip active" type="button" data-wording="improved">AI Improved</button>
             <button class="chip" type="button" data-wording="original">Original</button>
           </div>
-          <p id="wordingModeHelp" class="mode-help">Switch between the cleaned AI-improved wording and the original pathway inventory wording.</p>
+          <p id="wordingModeHelp" class="mode-help">Switch between the original pathway wording and the AI-improved bridge-harmonized wording. Mental health outcomes remain standardized across both views.</p>
         </div>
       </section>
 
@@ -54,35 +56,39 @@
       <section id="panel-overview" class="tab-panel active" role="tabpanel">
         <div class="panel panel-intro">
           <h2>Overview</h2>
-          <p>This tab explains how the app is organized. Start here, then move into the library, builder, and review workflow.</p>
+          <p>This workspace helps the team capture, review, standardize, and export youth-informed causal chains. Start here for orientation, then move into the library, builder, and review workflow.</p>
         </div>
 
         <div class="workflow-strip">
           <div class="workflow-step">
-            <strong>1. Start Here</strong>
-            Read the overview so you know what each tab is for before editing any pathway.
+            <strong>1. Orient</strong>
+            Review the workflow and browser snapshot before editing or exporting any pathway.
           </div>
           <div class="workflow-step">
-            <strong>2. Find a Pathway</strong>
-            Use the Library tab to search, filter, and open an existing pathway by domain or outcome type.
+            <strong>2. Open From The Library</strong>
+            Search, filter, and open an existing pathway by domain, polarity, wording, or narrative content.
           </div>
           <div class="workflow-step">
-            <strong>3. Build or Edit</strong>
-            Use the Builder tab to adjust pathway wording, place, story note, node order, and outcome polarity.
+            <strong>3. Refine The Chain</strong>
+            Adjust title, place, story note, node order, and review status while keeping the chain logic visible.
           </div>
           <div class="workflow-step">
-            <strong>4. Review or Export</strong>
-            Use the Review and Export tab to manage status, import prior work, and download structured outputs.
+            <strong>4. Review And Export</strong>
+            Manage approval status, import prior work, and download structured outputs for analysis or handoff.
           </div>
         </div>
 
         <div class="overview-grid">
           <section class="panel stats-panel">
-            <h3>Current Browser Snapshot</h3>
+            <h3>Current workspace snapshot</h3>
             <div class="stats-grid">
               <div class="stat-card">
-                <span>Total pathways</span>
+                <span>Pathways</span>
                 <strong id="overviewTotal">0</strong>
+              </div>
+              <div class="stat-card">
+                <span>Domains</span>
+                <strong id="overviewDomains">0</strong>
               </div>
               <div class="stat-card">
                 <span>Draft</span>
@@ -102,33 +108,33 @@
 
           <section class="panel guide-card">
             <h3>Library Tab</h3>
-            <p>Use the Library tab to search by title, domain, node label, or story note, then open a saved pathway.</p>
+            <p>Use the Library tab to search by title, domain, node label, or story note, then open an approved or draft pathway for closer review.</p>
             <ul class="guide-list">
-              <li>Search pathways</li>
+              <li>Search across the full pathway inventory</li>
               <li>Filter by poor or positive mental health</li>
-              <li>Browse domains and saved pathways</li>
+              <li>Browse pathways by thematic domain</li>
             </ul>
             <button class="secondary-btn" type="button" data-go-tab="library">Go to Library</button>
           </section>
 
           <section class="panel guide-card">
             <h3>Builder Tab</h3>
-            <p>Use the Builder tab to edit one pathway at a time, including its story note, place, node order, and outcome type.</p>
+            <p>Use the Builder tab to work on one pathway at a time, keeping the node sequence, wording mode, and review status aligned.</p>
             <ul class="guide-list">
               <li>Edit title, place, and story note</li>
               <li>Add, remove, and reorder nodes</li>
-              <li>Save draft or move toward approval</li>
+              <li>Save as draft, reviewed, or approved</li>
             </ul>
             <button class="secondary-btn" type="button" data-go-tab="builder">Go to Builder</button>
           </section>
 
           <section class="panel guide-card">
             <h3>Review & Export Tab</h3>
-            <p>Use the Review & Export tab to manage review status, import prior work, and download structured outputs.</p>
+            <p>Use the Review & Export tab to manage review status, import prior work, and generate structured outputs from the current browser workspace.</p>
             <ul class="guide-list">
               <li>Review queue by status</li>
               <li>Import JSON or CSV</li>
-              <li>Export JSON state, edge list, and summaries</li>
+              <li>Export workspace, edge list, and summary files</li>
             </ul>
             <button class="secondary-btn" type="button" data-go-tab="review">Go to Review & Export</button>
           </section>
@@ -153,11 +159,12 @@
               <button class="chip" type="button" data-filter="negative">Poor mental health</button>
               <button class="chip" type="button" data-filter="positive">Positive mental health</button>
             </div>
+            <p class="panel-copy">Use search to match titles, nodes, domains, story notes, or pathway wording across the full library.</p>
           </section>
 
           <section class="panel">
             <h3>Domains</h3>
-            <p class="panel-copy">Choose a domain to load matching pathways.</p>
+            <p class="panel-copy">Choose a thematic domain to narrow the visible pathway set.</p>
             <div id="domainList" class="domain-list"></div>
           </section>
 
@@ -172,26 +179,187 @@
       <section id="panel-builder" class="tab-panel" role="tabpanel" hidden>
         <div class="panel panel-intro">
           <h2>Builder</h2>
-          <p>Use this tab to work on one pathway at a time. The visual chain updates as you edit the story, place, nodes, or outcome polarity.</p>
+          <p>Use this tab in sequence: capture study and participant context first, add notes or transcript material next, generate and review an AI draft, and only then refine the resulting pathway structure and wording.</p>
         </div>
 
         <div class="builder-layout">
-          <section class="panel workspace-panel">
-            <div class="panel-head">
-              <h3 id="chainTitle">Pathway Builder</h3>
-              <p id="chainSummary">Choose a pathway to review or start a new chain.</p>
-            </div>
-            <div id="chainCanvas" class="chain-canvas"></div>
-            <div class="canvas-actions">
-              <button id="btnAddDriver" class="secondary-btn" type="button">Add Driver</button>
-              <button id="btnAddBridge" class="secondary-btn" type="button">Add Bridge</button>
-              <button id="btnAddOutcome" class="secondary-btn" type="button">Add Outcome</button>
-            </div>
-          </section>
-
           <div class="builder-side">
             <section class="panel builder-card">
-              <h3>Chain Details</h3>
+              <h3>Study Context</h3>
+              <p class="panel-copy">Capture the study, wave, and collection details needed if this workspace is used as part of a mental health data collection workflow.</p>
+              <div class="form-grid">
+                <label class="field-block" for="studyNameInput">
+                  <span class="field-label">Study name</span>
+                  <input id="studyNameInput" type="text" placeholder="Study collecting the source material" />
+                </label>
+                <label class="field-block" for="studyIdInput">
+                  <span class="field-label">Study ID</span>
+                  <input id="studyIdInput" type="text" placeholder="Internal study identifier" />
+                </label>
+                <label class="field-block" for="studyWaveInput">
+                  <span class="field-label">Wave or round</span>
+                  <input id="studyWaveInput" type="text" placeholder="Wave 1, baseline, follow-up, and so on" />
+                </label>
+                <label class="field-block" for="studySiteInput">
+                  <span class="field-label">Site</span>
+                  <input id="studySiteInput" type="text" placeholder="Study site or setting" />
+                </label>
+                <label class="field-block" for="collectionDateInput">
+                  <span class="field-label">Collection date</span>
+                  <input id="collectionDateInput" type="date" />
+                </label>
+                <label class="field-block" for="collectorInput">
+                  <span class="field-label">Interviewer or collector</span>
+                  <input id="collectorInput" type="text" placeholder="Name or role of collector" />
+                </label>
+                <label class="field-block" for="instrumentInput">
+                  <span class="field-label">Instrument or module</span>
+                  <input id="instrumentInput" type="text" placeholder="Interview guide, module, instrument, or form" />
+                </label>
+                <label class="field-block" for="consentStatusInput">
+                  <span class="field-label">Consent status</span>
+                  <select id="consentStatusInput">
+                    <option value="Unknown">Unknown</option>
+                    <option value="Consented">Consented</option>
+                    <option value="Assented">Assented</option>
+                    <option value="Declined">Declined</option>
+                    <option value="Pending verification">Pending verification</option>
+                  </select>
+                </label>
+              </div>
+            </section>
+
+            <section class="panel builder-card">
+              <h3>Participant and Visit Context</h3>
+              <p class="panel-copy">Capture participant identifiers and visit-level descriptors so notes, transcripts, and pathways can later be linked into a study workflow.</p>
+              <div class="form-grid">
+                <label class="field-block" for="participantIdInput">
+                  <span class="field-label">Participant ID</span>
+                  <input id="participantIdInput" type="text" placeholder="Participant identifier" />
+                </label>
+                <label class="field-block" for="participantKeyInput">
+                  <span class="field-label">Pseudonymous key</span>
+                  <input id="participantKeyInput" type="text" placeholder="De-identified study key" />
+                </label>
+                <label class="field-block" for="visitLabelInput">
+                  <span class="field-label">Visit or event label</span>
+                  <input id="visitLabelInput" type="text" placeholder="Baseline interview, follow-up visit, and so on" />
+                </label>
+                <label class="field-block" for="ageBandInput">
+                  <span class="field-label">Age band</span>
+                  <input id="ageBandInput" type="text" placeholder="13-15, 16-18, 19-24, and so on" />
+                </label>
+                <label class="field-block" for="sexGenderInput">
+                  <span class="field-label">Sex or gender field</span>
+                  <input id="sexGenderInput" type="text" placeholder="Optional demographic field" />
+                </label>
+                <label class="field-block" for="linkageNotesInput">
+                  <span class="field-label">Linkage notes</span>
+                  <input id="linkageNotesInput" type="text" placeholder="Key linkage detail or record note" />
+                </label>
+              </div>
+            </section>
+
+            <section class="panel builder-card">
+              <h3>Capture Inputs</h3>
+              <p class="panel-copy">Add field notes, upload text notes, and register audio files. AI drafting uses the typed note and transcript text below; raw audio files are tracked as metadata only in this browser workspace and should be stored securely elsewhere.</p>
+              <div class="capture-grid">
+                <div class="capture-column">
+                  <label class="field-block" for="noteCaptureInput">
+                    <span class="field-label">New note</span>
+                    <textarea id="noteCaptureInput" rows="5" placeholder="Paste or type a participant note, field memo, or interview summary."></textarea>
+                  </label>
+                  <div class="canvas-actions">
+                    <button id="btnAddNote" class="primary-btn" type="button">Add Note</button>
+                    <button id="btnUploadNotes" class="secondary-btn" type="button">Upload Text Note</button>
+                    <input id="noteUploadInput" type="file" accept=".txt,.md,.csv,.json,text/plain" multiple hidden />
+                  </div>
+                  <div id="capturedNotesList" class="capture-list"></div>
+                </div>
+                <div class="capture-column">
+                  <label class="field-block" for="transcriptInput">
+                    <span class="field-label">Working transcript</span>
+                    <textarea id="transcriptInput" rows="7" placeholder="Paste a transcript or translated excerpt here. This is the text the AI draft can structure from uploaded audio."></textarea>
+                  </label>
+                  <div class="canvas-actions">
+                    <button id="btnSaveTranscript" class="secondary-btn" type="button">Save Transcript</button>
+                    <button id="btnUploadAudio" class="secondary-btn" type="button">Register Audio File</button>
+                    <input id="audioUploadInput" type="file" accept="audio/*" multiple hidden />
+                  </div>
+                  <div id="capturedAudioList" class="capture-list"></div>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel builder-card">
+              <h3>AI Draft Workspace</h3>
+              <p class="panel-copy">Use notes or transcript text to generate a structured draft pathway. Review and edit every suggestion before approval.</p>
+              <div class="builder-pill-row">
+                <button id="btnLoadLatestNote" class="ghost-btn" type="button">Load Latest Note</button>
+                <button id="btnLoadTranscript" class="ghost-btn" type="button">Load Transcript</button>
+                <button id="btnLoadAllSources" class="ghost-btn" type="button">Load All Capture Text</button>
+              </div>
+              <label class="field-block" for="aiSourceInput">
+                <span class="field-label">AI source text</span>
+                <textarea id="aiSourceInput" rows="6" placeholder="This source text will be used to draft a pathway suggestion."></textarea>
+              </label>
+              <div id="aiDraftStatus" class="data-status">No AI draft has been generated yet. Load note or transcript text, then generate a draft for review.</div>
+              <div class="form-grid ai-draft-grid">
+                <label class="field-block" for="aiDraftTitleInput">
+                  <span class="field-label">Suggested title</span>
+                  <input id="aiDraftTitleInput" type="text" placeholder="AI-suggested pathway title" />
+                </label>
+                <label class="field-block" for="aiDraftDomainInput">
+                  <span class="field-label">Suggested domain</span>
+                  <select id="aiDraftDomainInput"></select>
+                </label>
+                <label class="field-block" for="aiDraftPolarityInput">
+                  <span class="field-label">Suggested polarity</span>
+                  <select id="aiDraftPolarityInput">
+                    <option value="negative">Poor mental health</option>
+                    <option value="positive">Positive mental health</option>
+                  </select>
+                </label>
+                <label class="field-block" for="aiDraftPlaceInput">
+                  <span class="field-label">Suggested place</span>
+                  <input id="aiDraftPlaceInput" type="text" placeholder="Suggested setting or location" />
+                </label>
+              </div>
+              <label class="field-block" for="aiDraftSentenceInput">
+                <span class="field-label">Suggested pathway sentence</span>
+                <textarea id="aiDraftSentenceInput" rows="4" placeholder="AI-suggested pathway sentence"></textarea>
+              </label>
+              <label class="field-block" for="aiDraftStoryInput">
+                <span class="field-label">Suggested story note</span>
+                <textarea id="aiDraftStoryInput" rows="4" placeholder="AI-suggested story note"></textarea>
+              </label>
+              <label class="field-block" for="aiDraftRationaleInput">
+                <span class="field-label">AI rationale</span>
+                <textarea id="aiDraftRationaleInput" rows="4" placeholder="AI rationale and review notes"></textarea>
+              </label>
+              <div class="canvas-actions">
+                <button id="btnGenerateAiDraft" class="primary-btn" type="button">Generate AI Draft</button>
+                <button id="btnApplyAiDraft" class="secondary-btn" type="button">Approve AI Draft To Builder</button>
+              </div>
+            </section>
+
+            <section class="panel workspace-panel builder-card--result">
+              <div class="panel-head">
+                <span class="mini-label">Resulting pathway</span>
+                <h3>Pathway Draft</h3>
+                <p id="chainTitle" class="resulting-pathway-title">Choose a pathway to review or start a new chain.</p>
+                <p id="chainSummary">The working pathway summary will appear here once a draft is loaded.</p>
+              </div>
+              <div id="chainCanvas" class="chain-canvas"></div>
+              <div class="canvas-actions">
+                <button id="btnAddDriver" class="secondary-btn" type="button">Add Driver</button>
+                <button id="btnAddBridge" class="secondary-btn" type="button">Add Bridge</button>
+                <button id="btnAddOutcome" class="secondary-btn" type="button">Add Outcome</button>
+              </div>
+            </section>
+
+            <section class="panel builder-card builder-card--result">
+              <h3>Resulting Pathway Details</h3>
               <p id="builderModeCopy" class="mode-help">Editing the AI-improved wording for this pathway.</p>
               <div class="form-grid">
                 <label class="field-block" for="titleInput">
@@ -220,14 +388,35 @@
               </label>
             </section>
 
-            <section class="panel builder-card">
-              <h3>Nodes</h3>
+            <section class="panel builder-card builder-card--result">
+              <h3>Resulting Pathway Nodes</h3>
               <p class="panel-copy">Edit node wording and move steps up or down to refine the chain.</p>
               <div id="nodeList" class="node-editor"></div>
             </section>
 
-            <section class="panel builder-card">
-              <h3>Save and Review</h3>
+            <section class="panel builder-card builder-card--result">
+              <h3>Bridge Harmonisation Review</h3>
+              <p class="panel-copy">Use AI improvement here to harmonize bridge wording before approval. Driver context is retained and mental health outcome labels remain standardized.</p>
+              <div class="builder-compare">
+                <div id="compareOriginalCard" class="builder-compare-card">
+                  <span class="mini-label">Original sentence</span>
+                  <p id="compareOriginalSentence" class="sentence-text">No original wording loaded.</p>
+                </div>
+                <div id="compareImprovedCard" class="builder-compare-card">
+                  <span class="mini-label">AI-improved sentence</span>
+                  <p id="compareImprovedSentence" class="sentence-text">No AI-improved wording loaded.</p>
+                </div>
+              </div>
+              <p id="compareChangeNote" class="harmonisation-note">No bridge wording changes were needed for this pathway.</p>
+              <div class="canvas-actions builder-compare-actions">
+                <button id="btnEditOriginal" class="secondary-btn builder-mode-btn" type="button">Edit Original</button>
+                <button id="btnEditImproved" class="secondary-btn builder-mode-btn" type="button">Edit AI Improved</button>
+                <button id="btnAiImprove" class="primary-btn" type="button">Apply AI Bridge Harmonisation</button>
+              </div>
+            </section>
+
+            <section class="panel builder-card builder-card--result">
+              <h3>Finalize Resulting Pathway</h3>
               <p class="panel-copy">Use these actions to update the pathway state.</p>
               <div class="canvas-actions stacked">
                 <button id="btnSaveDraft" class="primary-btn" type="button">Save Draft</button>
@@ -243,7 +432,7 @@
       <section id="panel-review" class="tab-panel" role="tabpanel" hidden>
         <div class="panel panel-intro">
           <h2>Review & Export</h2>
-          <p>Use this tab to manage pathway status, load prior prototype files, and download structured outputs from the current browser state.</p>
+          <p>Use this tab to manage pathway status, load prior workspace files, and download structured outputs from the current browser state.</p>
         </div>
 
         <div class="review-layout">
@@ -259,20 +448,20 @@
           <section class="panel data-panel">
             <div class="panel-head">
               <h3>Import and Export</h3>
-              <p>Bring saved work back into the prototype or export the current browser copy.</p>
+              <p>Bring saved work back into the workspace or export the current browser copy.</p>
             </div>
             <div class="export-actions">
-              <button id="btnExportState" class="secondary-btn" type="button">Export JSON State</button>
-              <button id="btnExportEdges" class="secondary-btn" type="button">Export Edge List CSV</button>
-              <button id="btnExportSummaries" class="secondary-btn" type="button">Export Chain Summary CSV</button>
+              <button id="btnExportState" class="secondary-btn" type="button">Download JSON Workspace</button>
+              <button id="btnExportEdges" class="secondary-btn" type="button">Download Edge List CSV</button>
+              <button id="btnExportSummaries" class="secondary-btn" type="button">Download Summary CSV</button>
               <button id="btnImportData" class="secondary-btn" type="button">Import JSON or CSV</button>
               <input id="importFile" type="file" accept=".json,.csv" hidden />
               <button id="btnResetBrowser" class="ghost-btn" type="button">Reset Browser Data</button>
             </div>
-            <div id="dataStatus" class="data-status">Supported imports: JSON state exports, summary CSV, or edge list CSV. Summary exports now include both original and AI-improved wording.</div>
+            <div id="dataStatus" class="data-status">Supported imports: JSON workspace exports, summary CSV, or edge list CSV. Summary exports include both original and AI-improved wording.</div>
             <div class="insight-card">
               <h3>Saved In This Browser</h3>
-              <p>Your edits remain in this browser until you reset them or replace them with an imported file.</p>
+              <p>Your edits remain in this browser until you reset them or replace them with an imported file. Export a copy before clearing the workspace if you want to retain it elsewhere.</p>
             </div>
           </section>
         </div>

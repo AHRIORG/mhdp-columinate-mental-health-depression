@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Interactive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.">
+<meta name="description" content="Interactive tool for capturing, reviewing, and exporting youth-informed causal pathways between lived experience and mental health outcomes.">
 
 <title>Mental Health Causal Chains – CO-LUMINATE</title>
 <style>
@@ -191,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../updates_other.html">
- <span class="dropdown-text">Others</span></a>
+ <span class="dropdown-text">Activities</span></a>
   </li>  
     </ul>
   </li>
@@ -238,21 +238,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-this-app-does" id="toc-what-this-app-does" class="nav-link active" data-scroll-target="#what-this-app-does">What This App Does</a></li>
-  <li><a href="#embedded-app" id="toc-embedded-app" class="nav-link" data-scroll-target="#embedded-app">Embedded App</a></li>
-  <li><a href="#master-causal-flowchart" id="toc-master-causal-flowchart" class="nav-link" data-scroll-target="#master-causal-flowchart">Master Causal Flowchart</a></li>
-  <li><a href="#pathway-inventory" id="toc-pathway-inventory" class="nav-link" data-scroll-target="#pathway-inventory">Pathway Inventory</a>
-  <ul class="collapse">
-  <li><a href="#socioeconomic-position-poverty-and-economic-inequality" id="toc-socioeconomic-position-poverty-and-economic-inequality" class="nav-link" data-scroll-target="#socioeconomic-position-poverty-and-economic-inequality">1. Socioeconomic Position, Poverty, and Economic Inequality</a></li>
-  <li><a href="#education-employment-and-working-conditions" id="toc-education-employment-and-working-conditions" class="nav-link" data-scroll-target="#education-employment-and-working-conditions">2. Education, Employment, and Working Conditions</a></li>
-  <li><a href="#housing-and-living-conditions" id="toc-housing-and-living-conditions" class="nav-link" data-scroll-target="#housing-and-living-conditions">3. Housing and Living Conditions</a></li>
-  <li><a href="#early-childhood-development" id="toc-early-childhood-development" class="nav-link" data-scroll-target="#early-childhood-development">4. Early Childhood Development</a></li>
-  <li><a href="#social-support-social-capital-discrimination-and-social-exclusion" id="toc-social-support-social-capital-discrimination-and-social-exclusion" class="nav-link" data-scroll-target="#social-support-social-capital-discrimination-and-social-exclusion">5. Social Support, Social Capital, Discrimination, and Social Exclusion</a></li>
-  <li><a href="#physical-environment" id="toc-physical-environment" class="nav-link" data-scroll-target="#physical-environment">6. Physical Environment</a></li>
-  <li><a href="#access-to-basic-services" id="toc-access-to-basic-services" class="nav-link" data-scroll-target="#access-to-basic-services">7. Access to Basic Services</a></li>
-  <li><a href="#violence-crime-and-safety" id="toc-violence-crime-and-safety" class="nav-link" data-scroll-target="#violence-crime-and-safety">8. Violence, Crime, and Safety</a></li>
-  <li><a href="#culture-religion-and-spirituality" id="toc-culture-religion-and-spirituality" class="nav-link" data-scroll-target="#culture-religion-and-spirituality">9. Culture, Religion, and Spirituality</a></li>
-  </ul></li>
+  <li><a href="#workspace-purpose" id="toc-workspace-purpose" class="nav-link active" data-scroll-target="#workspace-purpose">Workspace Purpose</a></li>
+  <li><a href="#recommended-workflow" id="toc-recommended-workflow" class="nav-link" data-scroll-target="#recommended-workflow">Recommended Workflow</a></li>
+  <li><a href="#launch-workspace" id="toc-launch-workspace" class="nav-link" data-scroll-target="#launch-workspace">Launch Workspace</a></li>
+  <li><a href="#what-the-workspace-produces" id="toc-what-the-workspace-produces" class="nav-link" data-scroll-target="#what-the-workspace-produces">What The Workspace Produces</a></li>
+  <li><a href="#conceptual-reference" id="toc-conceptual-reference" class="nav-link" data-scroll-target="#conceptual-reference">Conceptual Reference</a></li>
+  <li><a href="#pathway-library-reference" id="toc-pathway-library-reference" class="nav-link" data-scroll-target="#pathway-library-reference">Pathway Library Reference</a></li>
   </ul>
 </nav>
     </div>
@@ -266,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Interactive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.
+    Interactive tool for capturing, reviewing, and exporting youth-informed causal pathways between lived experience and mental health outcomes.
   </div>
 </div>
 
@@ -283,90 +274,262 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="what-this-app-does" class="level2">
-<h2 class="anchored" data-anchor-id="what-this-app-does">What This App Does</h2>
-<p>This app is intended to help Youth Co-Creators and researchers capture how social, economic, environmental, and relational experiences turn into mental health outcomes.</p>
-<p>Instead of storing isolated answers, the app is designed to capture short causal chains such as:</p>
-<p><code>Poverty -&gt; inability to afford food -&gt; stress and worry -&gt; Poor mental health</code></p>
-<p>It supports both harmful and protective pathways so that <code>Positive mental health</code> can be documented alongside <code>Poor mental health</code>.</p>
-</section>
-<section id="embedded-app" class="level2">
-<h2 class="anchored" data-anchor-id="embedded-app">Embedded App</h2>
 <style>
-.cmi-embed-actions {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  align-items: center;
-  margin: 0.5rem 0 1rem 0;
+.cmi-page-metrics,
+.cmi-page-card-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.1rem;
 }
-.cmi-open-btn {
-  display: inline-block;
-  border: 1px solid #154c79;
-  background: #154c79;
-  color: #ffffff;
-  text-decoration: none;
-  padding: 0.55rem 0.9rem;
+
+.cmi-page-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.cmi-open-btn:hover,
-.cmi-open-btn:focus {
-  color: #ffffff;
-  text-decoration: none;
+
+.cmi-page-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.cmi-embed-note {
-  color: #4d5d73;
-  font-size: 0.92rem;
+
+.cmi-page-card,
+.cmi-page-metric,
+.cmi-page-embed-shell,
+.cmi-page-output-shell,
+.cmi-page-reference-shell {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 249, 252, 0.98) 100%);
+  border: 1px solid rgba(21, 64, 104, 0.14);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.08);
 }
-.cmi-embed-shell {
-  border: 1px solid #d7dee8;
-  background: #fffdf8;
+
+.cmi-page-metric {
+  padding: 1rem 1.05rem;
+  border-top: 5px solid #154c79;
 }
-.cmi-embed-shell summary {
-  cursor: pointer;
-  list-style: none;
-  padding: 0.85rem 1rem;
+
+.cmi-page-metric__label {
+  color: #5d6b7b;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #154c79;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
 }
-.cmi-embed-shell summary::-webkit-details-marker {
-  display: none;
+
+.cmi-page-metric__value {
+  color: #00365b;
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0.3rem 0 0.2rem;
 }
-.cmi-embed-shell summary::before {
-  content: "+ ";
+
+.cmi-page-metric__detail {
+  color: #314256;
+  line-height: 1.55;
+  margin: 0;
 }
-.cmi-embed-shell[open] summary::before {
-  content: "- ";
+
+.cmi-page-card {
+  padding: 1.2rem 1.15rem;
+  border-top: 5px solid #f57f29;
 }
-.cmi-embed-frame {
-  border-top: 1px solid #d7dee8;
-  padding: 0.7rem;
+
+.cmi-page-card h3 {
+  color: #00365b;
+  margin-bottom: 0.45rem;
 }
-.cmi-embed-frame iframe {
+
+.cmi-page-card p,
+.cmi-page-card li,
+.cmi-page-output-shell li,
+.cmi-page-reference-shell p {
+  color: #314256;
+  line-height: 1.65;
+}
+
+.cmi-page-card ul,
+.cmi-page-output-shell ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.cmi-page-launch-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  margin: 0.5rem 0 1rem;
+}
+
+.cmi-page-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  background: #154c79;
+  border: 1px solid #154c79;
+  border-radius: 0.55rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.cmi-page-open-btn:hover,
+.cmi-page-open-btn:focus {
+  background: #0f5d93;
+  box-shadow: 0 12px 24px rgba(0, 31, 63, 0.14);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.cmi-page-note {
+  color: #5d6b7b;
+  font-size: 0.95rem;
+}
+
+.cmi-page-embed-shell,
+.cmi-page-output-shell,
+.cmi-page-reference-shell {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.cmi-page-embed-shell iframe {
   width: 100%;
-  min-height: 1020px;
+  min-height: 1260px;
   border: 0;
+  border-radius: 0.6rem;
   background: #ffffff;
 }
+
+.cmi-page-details {
+  border: 1px solid rgba(21, 64, 104, 0.12);
+  border-radius: 0.65rem;
+  background: #ffffff;
+  padding: 0;
+}
+
+.cmi-page-details + .cmi-page-details {
+  margin-top: 0.8rem;
+}
+
+.cmi-page-details summary {
+  cursor: pointer;
+  color: #154c79;
+  font-weight: 800;
+  list-style: none;
+  padding: 0.95rem 1rem;
+}
+
+.cmi-page-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.cmi-page-details[open] summary {
+  border-bottom: 1px solid rgba(21, 64, 104, 0.1);
+}
+
+.cmi-page-details__body {
+  padding: 0.95rem 1rem 1rem;
+}
+
+.cmi-page-details__body ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.cmi-page-details__body li + li {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 1200px) {
+  .cmi-page-metrics,
+  .cmi-page-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 900px) {
-  .cmi-embed-frame iframe {
-    min-height: 1320px;
+  .cmi-page-metrics,
+  .cmi-page-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cmi-page-embed-shell iframe {
+    min-height: 1560px;
   }
 }
 </style>
-<div class="cmi-embed-actions">
-  <a class="cmi-open-btn" href="../_tools/cmi-app/index.html" target="_blank" rel="noopener">Open App In New Page</a>
-  <span class="cmi-embed-note">The embedded prototype is collapsed by default. Open it here or launch it in a separate page.</span>
+<section id="workspace-purpose" class="level2">
+<h2 class="anchored" data-anchor-id="workspace-purpose">Workspace Purpose</h2>
+<p>The Mental Health Causal Chains workspace is an internal CO-LUMINATE tool for capturing, reviewing, standardizing, and exporting youth-informed explanations of how lived social conditions shape mental health. It is designed to keep causal stories readable while also producing structured outputs that can be reviewed, refined, and carried into downstream analytical or reporting workflows. Within the builder, AI-improved wording is used specifically to harmonize bridge steps while leaving standardized mental health outcomes unchanged.</p>
+<div class="cmi-page-metrics">
+  <section class="cmi-page-metric">
+    <p class="cmi-page-metric__label">Pathway library</p>
+    <p class="cmi-page-metric__value">45</p>
+    <p class="cmi-page-metric__detail">Approved pathways already loaded into the internal workspace.</p>
+  </section>
+  <section class="cmi-page-metric">
+    <p class="cmi-page-metric__label">Thematic domains</p>
+    <p class="cmi-page-metric__value">9</p>
+    <p class="cmi-page-metric__detail">Domains spanning poverty, services, violence, spirituality, and related contexts.</p>
+  </section>
+  <section class="cmi-page-metric">
+    <p class="cmi-page-metric__label">Wording views</p>
+    <p class="cmi-page-metric__value">2</p>
+    <p class="cmi-page-metric__detail">Switch between AI-improved wording and original inventory wording.</p>
+  </section>
+  <section class="cmi-page-metric">
+    <p class="cmi-page-metric__label">Export types</p>
+    <p class="cmi-page-metric__value">3</p>
+    <p class="cmi-page-metric__detail">Workspace JSON, edge list CSV, and chain summary CSV for handoff and reuse.</p>
+  </section>
 </div>
-<details class="cmi-embed-shell">
-  <summary>Show Embedded Prototype</summary>
-  <div class="cmi-embed-frame">
-    <iframe src="../_tools/cmi-app/index.html" title="Causal Mapping and Interaction prototype" loading="lazy"></iframe>
-  </div>
-</details>
 </section>
-<section id="master-causal-flowchart" class="level2">
-<h2 class="anchored" data-anchor-id="master-causal-flowchart">Master Causal Flowchart</h2>
-<p>The master flowchart below summarizes the shared structure across the full pathway inventory. The more specific pathway variants are kept in the inventory section rather than repeated as separate diagrams.</p>
+<section id="recommended-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-workflow">Recommended Workflow</h2>
+<div class="cmi-page-card-grid">
+  <section class="cmi-page-card">
+    <h3 class="anchored">1. Explore the library</h3>
+    <p>Open the pathway library to search by title, domain, node wording, or story note. Use the domain filters to focus on one part of the inventory at a time.</p>
+  </section>
+  <section class="cmi-page-card">
+    <h3 class="anchored">2. Refine the chain</h3>
+    <p>Move into the builder to adjust pathway titles, nodes, polarity, place labels, and story notes while keeping the sentence-level logic visible.</p>
+  </section>
+  <section class="cmi-page-card">
+    <h3 class="anchored">3. Review and export</h3>
+    <p>Use the review queue and export tools to manage approval status, retain browser-local progress, and generate files for later synthesis or reporting.</p>
+  </section>
+</div>
+</section>
+<section id="launch-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="launch-workspace">Launch Workspace</h2>
+<p>The embedded workspace below is the main working environment for this tool. It stores edits in the current browser until they are reset or replaced, so export any version you want to retain outside the session.</p>
+<div class="cmi-page-launch-row">
+  <a class="cmi-page-open-btn" href="../_tools/cmi-app/index.html" target="_blank" rel="noopener">Open Workspace In Full Page</a>
+  <span class="cmi-page-note">Use the full-page option if you want more room for editing, review, or export tasks.</span>
+</div>
+<div class="cmi-page-embed-shell">
+  <iframe src="../_tools/cmi-app/index.html" title="Mental Health Causal Chains internal workspace" loading="lazy"></iframe>
+</div>
+</section>
+<section id="what-the-workspace-produces" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-workspace-produces">What The Workspace Produces</h2>
+<div class="cmi-page-output-shell">
+<ul>
+<li>A browser-local working copy of the current pathway library and any edits made during the session.</li>
+<li>JSON workspace exports that preserve the app state for later re-import.</li>
+<li>Edge list CSV exports suitable for structured network or graph-style downstream use.</li>
+<li>Summary CSV exports that retain displayed wording, original wording, AI-improved wording, and story-note fields together.</li>
+</ul>
+</div>
+</section>
+<section id="conceptual-reference" class="level2">
+<h2 class="anchored" data-anchor-id="conceptual-reference">Conceptual Reference</h2>
+<p>The conceptual flowchart below summarizes the shared structure across the pathway inventory. The detailed pathway variants remain in the inventory reference section rather than being repeated as separate diagrams.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div id="fig-cmi-master" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -460,100 +623,129 @@ Figure&nbsp;1
 </div>
 </div>
 </section>
-<section id="pathway-inventory" class="level2">
-<h2 class="anchored" data-anchor-id="pathway-inventory">Pathway Inventory</h2>
-<section id="socioeconomic-position-poverty-and-economic-inequality" class="level3">
-<h3 class="anchored" data-anchor-id="socioeconomic-position-poverty-and-economic-inequality">1. Socioeconomic Position, Poverty, and Economic Inequality</h3>
-<ul>
-<li>Poverty -&gt; inability to afford food -&gt; stress and worry -&gt; mental health decline -&gt; Poor mental health.</li>
-<li>Reliance on subsistence farming -&gt; loss of income due to theft or natural hazards -&gt; household chaos -&gt; anger and domestic violence -&gt; negative mental health outcomes -&gt; Poor mental health.</li>
-<li>Poverty -&gt; inability to fix or improve living conditions independently -&gt; anxiety and frustration -&gt; Poor mental health.</li>
-<li>Hope for the future -&gt; encouragement to persist -&gt; reduced hopelessness -&gt; positive outlook -&gt; improved mental health -&gt; Positive mental health.</li>
-</ul>
-</section>
-<section id="education-employment-and-working-conditions" class="level3">
-<h3 class="anchored" data-anchor-id="education-employment-and-working-conditions">2. Education, Employment, and Working Conditions</h3>
-<ul>
-<li>Lack of school fencing and monitoring -&gt; truancy and time in unsafe spaces -&gt; substance use and sexual activity -&gt; emotional strain and disrupted education -&gt; Poor mental health.</li>
-<li>Physical punishment at school -&gt; humiliation -&gt; suppressed emotions -&gt; anger and resentment toward authority -&gt; Poor mental health.</li>
-<li>Employment through mining -&gt; financial security -&gt; improved mental health -&gt; Positive mental health.</li>
-<li>Mine closure -&gt; loss of income -&gt; reliance on grants -&gt; communal stress and anxiety -&gt; Poor mental health.</li>
-<li>Financial stress -&gt; emotional strain -&gt; substance use -&gt; family conflict -&gt; emotional distress -&gt; Poor mental health.</li>
-<li>Protracted unemployment -&gt; eroded self-esteem -&gt; stress -&gt; Poor mental health.</li>
-<li>Reliance on government grant -&gt; eroded self-esteem -&gt; Poor mental health.</li>
-</ul>
-</section>
-<section id="housing-and-living-conditions" class="level3">
-<h3 class="anchored" data-anchor-id="housing-and-living-conditions">3. Housing and Living Conditions</h3>
-<ul>
-<li>Lack of running water -&gt; inability to maintain hygiene -&gt; bullying and shame -&gt; emotional distress -&gt; Poor mental health.</li>
-<li>Poor condition of houses -&gt; discomfort at home -&gt; mental strain -&gt; Poor mental health.</li>
-</ul>
-</section>
-<section id="early-childhood-development" class="level3">
-<h3 class="anchored" data-anchor-id="early-childhood-development">4. Early Childhood Development</h3>
-<ul>
-<li>Access to early learning centers -&gt; better performance in higher grades -&gt; increased self-esteem and reduced stress -&gt; Positive mental health.</li>
-<li>Access to early learning centers -&gt; safety -&gt; less exposure to trauma -&gt; Positive mental health.</li>
-</ul>
-</section>
-<section id="social-support-social-capital-discrimination-and-social-exclusion" class="level3">
-<h3 class="anchored" data-anchor-id="social-support-social-capital-discrimination-and-social-exclusion">5. Social Support, Social Capital, Discrimination, and Social Exclusion</h3>
-<ul>
-<li>Migration for work -&gt; family separation -&gt; loneliness and insecurity -&gt; increased stress and anxiety -&gt; Poor mental health.</li>
-<li>Church counselling and spiritual guidance -&gt; sense of hope and peace -&gt; Positive mental health.</li>
-<li>Access to sports grounds -&gt; social engagement through sport -&gt; reduced substance abuse -&gt; improved mental health -&gt; Positive mental health.</li>
-<li>Association with bad peers -&gt; parental disapproval -&gt; conflict -&gt; emotional strain -&gt; Poor mental health.</li>
-<li>Feeling excluded from family decision-making -&gt; feelings of marginalisation and powerlessness -&gt; Poor mental health.</li>
-<li>Strong family and community social capital -&gt; access to shared resources such as land, gardens, and employment opportunities -&gt; material security and social support -&gt; improved well-being -&gt; Positive mental health.</li>
-<li>Low social connectedness and weak community cohesion -&gt; exclusion from shared resources and fear of stigma -&gt; reduced help-seeking and exposure to harm such as abuse or conflict -&gt; stress and emotional distress -&gt; Poor mental health.</li>
-</ul>
-</section>
-<section id="physical-environment" class="level3">
-<h3 class="anchored" data-anchor-id="physical-environment">6. Physical Environment</h3>
-<ul>
-<li>Air and water pollution -&gt; ill health -&gt; fear and worry -&gt; Poor mental health.</li>
-<li>Mines -&gt; land damage -&gt; grief and stress -&gt; mental health deterioration -&gt; Poor mental health.</li>
-<li>Litter from dumping sites -&gt; perceived danger -&gt; avoidance of nature -&gt; reduced relaxation and well-being -&gt; Poor mental health.</li>
-<li>Subsistence agriculture -&gt; lower financial pressure -&gt; Positive mental health.</li>
-<li>Extreme weather events -&gt; soil erosion and crop destruction -&gt; loss of food and income -&gt; mental distress -&gt; Poor mental health.</li>
-<li>Water scarcity -&gt; dual use of water such as drinking water for cattle versus watering crops -&gt; internal conflict -&gt; emotional distress -&gt; Poor mental health.</li>
-</ul>
-</section>
-<section id="access-to-basic-services" class="level3">
-<h3 class="anchored" data-anchor-id="access-to-basic-services">7. Access to Basic Services</h3>
-<ul>
-<li>Neglected public infrastructure -&gt; exposure to physical danger -&gt; persistent worry and compensatory costs -&gt; Poor mental health.</li>
-<li>Neglected public infrastructure -&gt; inability to use services -&gt; missed opportunities -&gt; frustration -&gt; Poor mental health.</li>
-<li>Low political will to improve basic services -&gt; unmet basic needs -&gt; sense of injustice -&gt; emotional distress -&gt; Poor mental health.</li>
-<li>Improved health awareness -&gt; lower stigma -&gt; easier access to treatment -&gt; emotional relief and improved physical health -&gt; Positive mental health.</li>
-<li>Long queues at clinics -&gt; delays in or avoidance of care -&gt; increased anxiety and discouragement -&gt; Poor mental health.</li>
-<li>Stigmatising treatment from healthcare workers -&gt; humiliation -&gt; avoidance of treatment -&gt; worsening health and mental strain -&gt; Poor mental health.</li>
-<li>Lack of nearby hospital -&gt; lengthy travel time and transport poverty -&gt; hinders urgent and intensive medical care -&gt; sense of distance from needed care -&gt; Poor mental health.</li>
-<li>Domestic violence -&gt; women withdraw cases due to financial dependence -&gt; ongoing distress -&gt; Poor mental health.</li>
-<li>Neglected public infrastructure -&gt; unable to cross bridges during floods -&gt; unable to attend school or work -&gt; negatively impacts education and income -&gt; Poor mental health.</li>
-</ul>
-</section>
-<section id="violence-crime-and-safety" class="level3">
-<h3 class="anchored" data-anchor-id="violence-crime-and-safety">8. Violence, Crime, and Safety</h3>
-<ul>
-<li>Abandoned buildings and taverns -&gt; drug and alcohol use -&gt; increased violence, crime, and risky behaviours -&gt; emotional distress and insecurity -&gt; Poor mental health.</li>
-<li>Drug and alcohol use -&gt; domestic violence -&gt; Poor mental health.</li>
-<li>Drug and alcohol use -&gt; misuse of income -&gt; debt and poverty -&gt; Poor mental health.</li>
-</ul>
-</section>
-<section id="culture-religion-and-spirituality" class="level3">
-<h3 class="anchored" data-anchor-id="culture-religion-and-spirituality">9. Culture, Religion, and Spirituality</h3>
-<ul>
-<li>Church attendance and pastoral counselling -&gt; support, mediation, and guidance -&gt; Positive mental health.</li>
-<li>Prayer and rituals -&gt; spiritual connection and perceived ancestral support -&gt; relief and hope -&gt; Positive mental health.</li>
-<li>Fear of witchcraft -&gt; worry and distrust -&gt; mental distress -&gt; Poor mental health.</li>
-<li>Dual belief systems -&gt; conflicting norms -&gt; internal conflict -&gt; emotional strain -&gt; Poor mental health.</li>
-<li>Rejection by church when engaged in stigmatised behaviour -&gt; loss of status -&gt; feeling shunned -&gt; emotional distress -&gt; Poor mental health.</li>
-</ul>
+<section id="pathway-library-reference" class="level2">
+<h2 class="anchored" data-anchor-id="pathway-library-reference">Pathway Library Reference</h2>
+<p>The reference inventory below mirrors the pathway library used by the internal workspace. Expand any domain to inspect the current approved pathway set.</p>
+<div class="cmi-page-reference-shell">
+  <details class="cmi-page-details">
+    <summary>1. Socioeconomic Position, Poverty, and Economic Inequality</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Poverty -&gt; inability to afford food -&gt; stress and worry -&gt; mental health decline -&gt; Poor mental health.</li>
+        <li>Reliance on subsistence farming -&gt; loss of income due to theft or natural hazards -&gt; household chaos -&gt; anger and domestic violence -&gt; negative mental health outcomes -&gt; Poor mental health.</li>
+        <li>Poverty -&gt; inability to fix or improve living conditions independently -&gt; anxiety and frustration -&gt; Poor mental health.</li>
+        <li>Hope for the future -&gt; encouragement to persist -&gt; reduced hopelessness -&gt; positive outlook -&gt; improved mental health -&gt; Positive mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>2. Education, Employment, and Working Conditions</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Lack of school fencing and monitoring -&gt; truancy and time in unsafe spaces -&gt; substance use and sexual activity -&gt; emotional strain and disrupted education -&gt; Poor mental health.</li>
+        <li>Physical punishment at school -&gt; humiliation -&gt; suppressed emotions -&gt; anger and resentment toward authority -&gt; Poor mental health.</li>
+        <li>Employment through mining -&gt; financial security -&gt; improved mental health -&gt; Positive mental health.</li>
+        <li>Mine closure -&gt; loss of income -&gt; reliance on grants -&gt; communal stress and anxiety -&gt; Poor mental health.</li>
+        <li>Financial stress -&gt; emotional strain -&gt; substance use -&gt; family conflict -&gt; emotional distress -&gt; Poor mental health.</li>
+        <li>Protracted unemployment -&gt; eroded self-esteem -&gt; stress -&gt; Poor mental health.</li>
+        <li>Reliance on government grant -&gt; eroded self-esteem -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>3. Housing and Living Conditions</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Lack of running water -&gt; inability to maintain hygiene -&gt; bullying and shame -&gt; emotional distress -&gt; Poor mental health.</li>
+        <li>Poor condition of houses -&gt; discomfort at home -&gt; mental strain -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>4. Early Childhood Development</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Access to early learning centers -&gt; better performance in higher grades -&gt; increased self-esteem and reduced stress -&gt; Positive mental health.</li>
+        <li>Access to early learning centers -&gt; safety -&gt; less exposure to trauma -&gt; Positive mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>5. Social Support, Social Capital, Discrimination, and Social Exclusion</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Migration for work -&gt; family separation -&gt; loneliness and insecurity -&gt; increased stress and anxiety -&gt; Poor mental health.</li>
+        <li>Church counselling and spiritual guidance -&gt; sense of hope and peace -&gt; Positive mental health.</li>
+        <li>Access to sports grounds -&gt; social engagement through sport -&gt; reduced substance abuse -&gt; improved mental health -&gt; Positive mental health.</li>
+        <li>Association with bad peers -&gt; parental disapproval -&gt; conflict -&gt; emotional strain -&gt; Poor mental health.</li>
+        <li>Feeling excluded from family decision-making -&gt; feelings of marginalisation and powerlessness -&gt; Poor mental health.</li>
+        <li>Strong family and community social capital -&gt; access to shared resources such as land, gardens, and employment opportunities -&gt; material security and social support -&gt; improved well-being -&gt; Positive mental health.</li>
+        <li>Low social connectedness and weak community cohesion -&gt; exclusion from shared resources and fear of stigma -&gt; reduced help-seeking and exposure to harm such as abuse or conflict -&gt; stress and emotional distress -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>6. Physical Environment</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Air and water pollution -&gt; ill health -&gt; fear and worry -&gt; Poor mental health.</li>
+        <li>Mines -&gt; land damage -&gt; grief and stress -&gt; mental health deterioration -&gt; Poor mental health.</li>
+        <li>Litter from dumping sites -&gt; perceived danger -&gt; avoidance of nature -&gt; reduced relaxation and well-being -&gt; Poor mental health.</li>
+        <li>Subsistence agriculture -&gt; lower financial pressure -&gt; Positive mental health.</li>
+        <li>Extreme weather events -&gt; soil erosion and crop destruction -&gt; loss of food and income -&gt; mental distress -&gt; Poor mental health.</li>
+        <li>Water scarcity -&gt; dual use of water such as drinking water for cattle versus watering crops -&gt; internal conflict -&gt; emotional distress -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>7. Access to Basic Services</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Neglected public infrastructure -&gt; exposure to physical danger -&gt; persistent worry and compensatory costs -&gt; Poor mental health.</li>
+        <li>Neglected public infrastructure -&gt; inability to use services -&gt; missed opportunities -&gt; frustration -&gt; Poor mental health.</li>
+        <li>Low political will to improve basic services -&gt; unmet basic needs -&gt; sense of injustice -&gt; emotional distress -&gt; Poor mental health.</li>
+        <li>Improved health awareness -&gt; lower stigma -&gt; easier access to treatment -&gt; emotional relief and improved physical health -&gt; Positive mental health.</li>
+        <li>Long queues at clinics -&gt; delays in or avoidance of care -&gt; increased anxiety and discouragement -&gt; Poor mental health.</li>
+        <li>Stigmatising treatment from healthcare workers -&gt; humiliation -&gt; avoidance of treatment -&gt; worsening health and mental strain -&gt; Poor mental health.</li>
+        <li>Lack of nearby hospital -&gt; lengthy travel time and transport poverty -&gt; hinders urgent and intensive medical care -&gt; sense of distance from needed care -&gt; Poor mental health.</li>
+        <li>Domestic violence -&gt; women withdraw cases due to financial dependence -&gt; ongoing distress -&gt; Poor mental health.</li>
+        <li>Neglected public infrastructure -&gt; unable to cross bridges during floods -&gt; unable to attend school or work -&gt; negatively impacts education and income -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>8. Violence, Crime, and Safety</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Abandoned buildings and taverns -&gt; drug and alcohol use -&gt; increased violence, crime, and risky behaviours -&gt; emotional distress and insecurity -&gt; Poor mental health.</li>
+        <li>Drug and alcohol use -&gt; domestic violence -&gt; Poor mental health.</li>
+        <li>Drug and alcohol use -&gt; misuse of income -&gt; debt and poverty -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="cmi-page-details">
+    <summary>9. Culture, Religion, and Spirituality</summary>
+    <div class="cmi-page-details__body">
+      <ul>
+        <li>Church attendance and pastoral counselling -&gt; support, mediation, and guidance -&gt; Positive mental health.</li>
+        <li>Prayer and rituals -&gt; spiritual connection and perceived ancestral support -&gt; relief and hope -&gt; Positive mental health.</li>
+        <li>Fear of witchcraft -&gt; worry and distrust -&gt; mental distress -&gt; Poor mental health.</li>
+        <li>Dual belief systems -&gt; conflicting norms -&gt; internal conflict -&gt; emotional strain -&gt; Poor mental health.</li>
+        <li>Rejection by church when engaged in stigmatised behaviour -&gt; loss of status -&gt; feeling shunned -&gt; emotional distress -&gt; Poor mental health.</li>
+      </ul>
+    </div>
+  </details>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -615,7 +807,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { file: "updates.html", label: "Overview" },
         { file: "updates_website.html", label: "Website" },
         { file: "updates_news.html", label: "News" },
-        { file: "updates_other.html", label: "Others" }
+        { file: "updates_other.html", label: "Activities" }
       ]
     }
   ];
