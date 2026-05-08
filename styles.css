@@ -391,6 +391,12 @@ body.quarto-dashboard .nav-footer .footer-logos img.footer-logo[width="100%"] {
 .home-hero__main {
   min-width: 0;
   order: 1;
+  background: linear-gradient(145deg, #ffffff, #f7fbff);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--ahri-blue);
+  border-radius: 1.2rem;
+  box-shadow: 0 12px 28px rgba(0, 31, 63, 0.08);
+  padding: 1rem 1rem 1.05rem;
 }
 
 .home-hero__title-row {
@@ -1632,9 +1638,19 @@ body.quarto-dashboard .card.valuebox .value-box-showcase i {
   }
 
   .home-hero__title-row {
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 0.55rem;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
     align-items: start;
+  }
+
+  .home-hero__main {
+    padding: 0.9rem 0.8rem 0.95rem;
+  }
+
+  .home-hero__title-logo-wrap {
+    justify-content: flex-start;
+    width: fit-content;
+    max-width: 100%;
   }
 
   .home-hero__title-logo {
@@ -2214,6 +2230,14 @@ body.quarto-dashboard pre {
   .overview-card-grid {
     grid-template-columns: 1fr;
   }
+
+  .activity-card__summary {
+    flex-direction: column;
+  }
+
+  .activity-card__chips {
+    justify-content: flex-start;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -2224,6 +2248,92 @@ body.quarto-dashboard pre {
 
 .overview-card > p:last-of-type {
   margin: 0;
+}
+
+.activity-card-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.4rem;
+}
+
+.activity-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 249, 252, 0.98) 100%);
+  border: 1px solid rgba(21, 64, 104, 0.14);
+  border-top: 5px solid var(--ahri-orange);
+  border-radius: 0.65rem;
+  box-shadow: 0 10px 24px rgba(12, 35, 64, 0.08);
+  overflow: hidden;
+}
+
+.activity-card summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.2rem 1.2rem 1.05rem;
+}
+
+.activity-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.activity-card__summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.activity-card__summary-copy {
+  min-width: 0;
+}
+
+.activity-card__eyebrow {
+  margin: 0 0 0.3rem;
+  color: var(--ahri-blue);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.activity-card__title {
+  display: block;
+  color: var(--ahri-blue-deep);
+  font-size: 1.24rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.activity-card__description {
+  margin: 0.5rem 0 0;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.activity-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  justify-content: flex-end;
+}
+
+.activity-card__chip {
+  background: rgba(0, 77, 130, 0.08);
+  border: 1px solid rgba(0, 77, 130, 0.18);
+  border-radius: 999px;
+  color: var(--ahri-blue-deep);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.45rem 0.8rem;
+  white-space: nowrap;
+}
+
+.activity-card__body {
+  border-top: 1px solid rgba(21, 64, 104, 0.1);
+  padding: 1.15rem 1.2rem 1.2rem;
+}
+
+.activity-card__body > p:first-child {
+  margin-top: 0;
 }
 
 .quiz-shell {

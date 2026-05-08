@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Interactive research scoring workspace for harmonised SSQ-10 depression scoring using packaged IRT engines.">
 
 <title>IRT Scoring Workspace – CO-LUMINATE</title>
 <style>
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -229,7 +230,19 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workspace-purpose" id="toc-workspace-purpose" class="nav-link active" data-scroll-target="#workspace-purpose">Workspace Purpose</a></li>
+  <li><a href="#recommended-workflow" id="toc-recommended-workflow" class="nav-link" data-scroll-target="#recommended-workflow">Recommended Workflow</a></li>
+  <li><a href="#launch-workspace" id="toc-launch-workspace" class="nav-link" data-scroll-target="#launch-workspace">Launch Workspace</a></li>
+  <li><a href="#what-the-workspace-returns" id="toc-what-the-workspace-returns" class="nav-link" data-scroll-target="#what-the-workspace-returns">What The Workspace Returns</a></li>
+  <li><a href="#benefits-and-boundaries" id="toc-benefits-and-boundaries" class="nav-link" data-scroll-target="#benefits-and-boundaries">Benefits And Boundaries</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -238,6 +251,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">IRT Scoring Workspace</h1>
 </div>
 
+<div>
+  <div class="description">
+    Interactive research scoring workspace for harmonised SSQ-10 depression scoring using packaged IRT engines.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -252,9 +270,313 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="in-progress" class="level2">
-<h2 class="anchored" data-anchor-id="in-progress">In Progress</h2>
-<p>In progress, content not yet published to the public website.</p>
+<style>
+.irt-page-metrics,
+.irt-page-card-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.1rem;
+}
+
+.irt-page-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.irt-page-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.irt-page-card,
+.irt-page-metric,
+.irt-page-embed-shell,
+.irt-page-output-shell,
+.irt-page-reference-shell {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(246, 249, 252, 0.98) 100%);
+  border: 1px solid rgba(21, 64, 104, 0.14);
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 28px rgba(12, 35, 64, 0.08);
+}
+
+.irt-page-metric {
+  padding: 1rem 1.05rem;
+  border-top: 5px solid #154c79;
+}
+
+.irt-page-metric__label {
+  color: #5d6b7b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.irt-page-metric__value {
+  color: #00365b;
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0.3rem 0 0.2rem;
+}
+
+.irt-page-metric__detail {
+  color: #314256;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.irt-page-card {
+  padding: 1.2rem 1.15rem;
+  border-top: 5px solid #f57f29;
+}
+
+.irt-page-card h3 {
+  color: #00365b;
+  margin-bottom: 0.45rem;
+}
+
+.irt-page-card p,
+.irt-page-card li,
+.irt-page-output-shell li,
+.irt-page-reference-shell p {
+  color: #314256;
+  line-height: 1.65;
+}
+
+.irt-page-card ul,
+.irt-page-output-shell ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.irt-page-open-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  background: #154c79;
+  border: 1px solid #154c79;
+  border-radius: 0.55rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.irt-page-open-btn:hover,
+.irt-page-open-btn:focus {
+  background: #0f5d93;
+  box-shadow: 0 12px 24px rgba(0, 31, 63, 0.14);
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.irt-page-title-launch {
+  white-space: nowrap;
+}
+
+.irt-page-note-inline {
+  margin: 0.3rem 0 0;
+}
+
+.quarto-title-block .quarto-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.quarto-title-block .quarto-title .title {
+  margin: 0;
+}
+
+.irt-page-note {
+  color: #5d6b7b;
+  font-size: 0.95rem;
+}
+
+.irt-page-embed-shell,
+.irt-page-output-shell,
+.irt-page-reference-shell {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.irt-page-embed-shell iframe {
+  width: 100%;
+  min-height: 1480px;
+  border: 0;
+  border-radius: 0.6rem;
+  background: #ffffff;
+}
+
+.irt-page-details {
+  border: 1px solid rgba(21, 64, 104, 0.12);
+  border-radius: 0.65rem;
+  background: #ffffff;
+  padding: 0;
+}
+
+.irt-page-details + .irt-page-details {
+  margin-top: 0.8rem;
+}
+
+.irt-page-details summary {
+  cursor: pointer;
+  color: #154c79;
+  font-weight: 800;
+  list-style: none;
+  padding: 0.95rem 1rem;
+}
+
+.irt-page-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.irt-page-details[open] summary {
+  border-bottom: 1px solid rgba(21, 64, 104, 0.1);
+}
+
+.irt-page-details__body {
+  padding: 0.95rem 1rem 1rem;
+}
+
+.irt-page-details__body ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+.irt-page-details__body li + li {
+  margin-top: 0.45rem;
+}
+
+@media (max-width: 1200px) {
+  .irt-page-metrics,
+  .irt-page-card-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .irt-page-metrics,
+  .irt-page-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quarto-title-block .quarto-title {
+    align-items: flex-start;
+  }
+
+  .irt-page-embed-shell iframe {
+    min-height: 1700px;
+  }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titleBlock = document.querySelector("#title-block-header .quarto-title");
+  if (!titleBlock || titleBlock.querySelector(".irt-page-title-launch")) return;
+  const launchLink = document.createElement("a");
+  launchLink.className = "irt-page-open-btn irt-page-title-launch";
+  launchLink.href = "http://127.0.0.1:4330/";
+  launchLink.target = "_blank";
+  launchLink.rel = "noopener";
+  launchLink.textContent = "Open Tool";
+  titleBlock.prepend(launchLink);
+});
+</script>
+<section id="workspace-purpose" class="level2">
+<h2 class="anchored" data-anchor-id="workspace-purpose">Workspace Purpose</h2>
+<p>The IRT Scoring Workspace is the internal CO-LUMINATE scoring environment for applying packaged harmonised depression engines to SSQ-10 data. It supports both single-record and batch workflows, returns reader-friendly scoring outputs, and keeps the applied threshold logic visible so scoring decisions remain auditable across runs.</p>
+<div class="irt-page-metrics">
+  <section class="irt-page-metric">
+    <p class="irt-page-metric__label">Production engines</p>
+    <p class="irt-page-metric__value">13</p>
+    <p class="irt-page-metric__detail">Production-safe SSQ-10 engine scenarios exposed for live scoring in the current workspace.</p>
+  </section>
+  <section class="irt-page-metric">
+    <p class="irt-page-metric__label">Scoring modes</p>
+    <p class="irt-page-metric__value">2</p>
+    <p class="irt-page-metric__detail">Manual scoring for one participant and batch scoring for uploaded cohort files.</p>
+  </section>
+  <section class="irt-page-metric">
+    <p class="irt-page-metric__label">Required items</p>
+    <p class="irt-page-metric__value">10</p>
+    <p class="irt-page-metric__detail">Binary SSQ-10 items are required for scoring, with subgroup fields handled as optional covariates.</p>
+  </section>
+  <section class="irt-page-metric">
+    <p class="irt-page-metric__label">Core outputs</p>
+    <p class="irt-page-metric__value">5</p>
+    <p class="irt-page-metric__detail">Observed total score, harmonised theta, binary depression flag, expected PHQ-9 sum, and PHQ-9 &gt;= 10 probability.</p>
+  </section>
+</div>
+</section>
+<section id="recommended-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-workflow">Recommended Workflow</h2>
+<div class="irt-page-card-grid">
+  <section class="irt-page-card">
+    <h3 class="anchored">1. Select the scoring engine</h3>
+    <p>Choose the packaged engine that matches the intended threshold approach and subgroup scope, then confirm the expected input requirements before scoring.</p>
+  </section>
+  <section class="irt-page-card">
+    <h3 class="anchored">2. Score one record or a cohort</h3>
+    <p>Use manual scoring to test a single response profile or upload a cohort CSV to score many records in one session with the same packaged logic.</p>
+  </section>
+  <section class="irt-page-card">
+    <h3 class="anchored">3. Review and export</h3>
+    <p>Inspect the harmonised outputs, confirm the applied threshold metadata, and download the scored dataset when you are satisfied with the session results.</p>
+  </section>
+</div>
+</section>
+<section id="launch-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="launch-workspace">Launch Workspace</h2>
+<p>The embedded workspace below connects directly to the local Shiny scoring runtime. It starts collapsed by default so the page remains easier to scan. If the embedded view does not load, start the local IRT workspace runtime and reload the page. The full-page launch button is positioned beside the page title for quicker access.</p>
+<p class="irt-page-note irt-page-note-inline">Use the button beside the title if you want more room for scoring, previewing results, or downloading outputs.</p>
+<details class="irt-page-details">
+  <summary>Open embedded workspace</summary>
+  <div class="irt-page-embed-shell">
+    <iframe src="http://127.0.0.1:4330/" title="IRT Scoring Workspace live application" loading="lazy"></iframe>
+  </div>
+</details>
+</section>
+<section id="what-the-workspace-returns" class="level2">
+<h2 class="anchored" data-anchor-id="what-the-workspace-returns">What The Workspace Returns</h2>
+<div class="irt-page-output-shell">
+<ul>
+<li><code>SSQ10_Total_Score</code>, the observed raw sum of endorsed SSQ-10 items.</li>
+<li><code>Theta_Harmonized</code>, the continuous harmonised depression score from the packaged IRT engine.</li>
+<li><code>Depression_Binary</code>, the harmonised research-use classification based on the stored threshold logic.</li>
+<li><code>PHQ_Expected_Sum</code> and <code>PHQ_Prob_GE10</code>, which map the harmonised score back to PHQ-oriented summaries.</li>
+<li>Engine and cutoff metadata that record which threshold scope, threshold approach, and applied target were used for the returned classification.</li>
+<li>A downloadable scored CSV for batch runs, while keeping browser previews compact and easier to read.</li>
+</ul>
+</div>
+</section>
+<section id="benefits-and-boundaries" class="level2">
+<h2 class="anchored" data-anchor-id="benefits-and-boundaries">Benefits And Boundaries</h2>
+<details class="irt-page-details">
+  <summary>Benefits of the workspace</summary>
+  <div class="irt-page-details__body">
+    <ul>
+      <li>Supports consistent harmonised scoring across single-record and cohort-level workflows.</li>
+      <li>Exposes both continuous and binary outputs so the same workspace can support different reporting needs.</li>
+      <li>Makes threshold behavior visible rather than hidden, including subgroup-aware fallback behavior where relevant.</li>
+      <li>Helps researchers reuse existing SSQ-10 data without rerunning the full psychometric calibration pipeline.</li>
+    </ul>
+  </div>
+</details>
+<details class="irt-page-details">
+  <summary>Important boundaries of use</summary>
+  <div class="irt-page-details__body">
+    <ul>
+      <li>The workspace is designed for harmonised SSQ-10 research scoring and is not a standalone diagnostic tool.</li>
+      <li>Current production-safe engines share the validated 1-factor SSQ-10 scorer, so engine changes typically affect thresholds more than the latent theta itself.</li>
+      <li>Packaged performance summaries come from the reference packaging sample and may not generalise unchanged to every cohort, language, or treatment context.</li>
+      <li>If subgroup fields are missing or do not match stored threshold levels, the applied threshold falls back to the overall engine threshold.</li>
+    </ul>
+  </div>
+</details>
 
 
 </section>
