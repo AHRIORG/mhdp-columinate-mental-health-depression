@@ -485,56 +485,26 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 <script>
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
   const titleBlock = document.querySelector("#title-block-header .quarto-title");
   if (!titleBlock) return;
+  const bundledUrl = "../_tools/irt-scoring-static/index.html";
 
   let launchLink = titleBlock.querySelector(".irt-page-title-launch");
   if (!launchLink) {
     launchLink = document.createElement("a");
-    launchLink.className = "irt-page-open-btn irt-page-title-launch is-disabled";
-    launchLink.href = "#";
+    launchLink.className = "irt-page-open-btn irt-page-title-launch";
+    launchLink.href = bundledUrl;
     launchLink.rel = "noopener";
-    launchLink.textContent = "Deployment Pending";
+    launchLink.target = "_blank";
+    launchLink.textContent = "Open Tool";
     titleBlock.prepend(launchLink);
   }
 
   const runtimeStatus = document.querySelector("[data-irt-runtime-status]");
-  const fallbackMessage = document.querySelector("[data-irt-fallback]");
   const iframe = document.querySelector("[data-irt-embed]");
-
-  const applyPendingState = (message) => {
-    launchLink.classList.add("is-disabled");
-    launchLink.removeAttribute("target");
-    launchLink.href = "#";
-    launchLink.textContent = "Deployment Pending";
-    if (runtimeStatus) runtimeStatus.textContent = message;
-    if (fallbackMessage) fallbackMessage.hidden = false;
-    if (iframe) iframe.removeAttribute("src");
-  };
-
-  try {
-    const response = await fetch("../api-config.json", { cache: "no-store" });
-    const config = response.ok ? await response.json() : {};
-    const hostedUrl = typeof config.irt_scoring_url === "string"
-      ? config.irt_scoring_url.trim()
-      : "";
-
-    if (!hostedUrl) {
-      applyPendingState("Hosted IRT scoring URL not configured yet.");
-      return;
-    }
-
-    launchLink.classList.remove("is-disabled");
-    launchLink.href = hostedUrl;
-    launchLink.target = "_blank";
-    launchLink.textContent = "Open Tool";
-    if (runtimeStatus) runtimeStatus.textContent = `Hosted tool endpoint: ${hostedUrl}`;
-    if (fallbackMessage) fallbackMessage.hidden = true;
-    if (iframe) iframe.src = hostedUrl;
-  } catch (error) {
-    applyPendingState("Unable to load hosted deployment configuration.");
-  }
+  if (runtimeStatus) runtimeStatus.textContent = "Bundled browser tool is ready on this website.";
+  if (iframe) iframe.src = bundledUrl;
 });
 </script>
 <section id="workspace-purpose" class="level2">
@@ -582,12 +552,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 </section>
 <section id="launch-workspace" class="level2">
 <h2 class="anchored" data-anchor-id="launch-workspace">Launch Workspace</h2>
-<p>The embedded workspace below will connect to the hosted HTTPS deployment once the production URL is registered in the site configuration. It starts collapsed by default so the page remains easier to scan. The full-page launch button is positioned beside the page title for quicker access.</p>
+<p>The embedded workspace below uses the bundled browser-only scoring tool that ships with this website. It starts collapsed by default so the page remains easier to scan. The full-page launch button is positioned beside the page title for quicker access.</p>
 <p class="irt-page-note irt-page-note-inline">Use the button beside the title if you want more room for scoring, previewing results, or downloading outputs.</p>
 <details class="irt-page-details">
   <summary>Open embedded workspace</summary>
-  <p class="irt-page-note irt-page-note-inline" data-irt-runtime-status="">Hosted IRT scoring URL not configured yet.</p>
-  <p class="irt-page-note irt-page-note-inline" data-irt-fallback="">Set <code>irt_scoring_url</code> in <code>api-config.json</code> after deployment to enable the live workspace.</p>
+  <p class="irt-page-note irt-page-note-inline" data-irt-runtime-status="">Bundled browser tool is ready on this website.</p>
   <div class="irt-page-embed-shell">
     <iframe data-irt-embed="" title="IRT Scoring Workspace live application" loading="lazy"></iframe>
   </div>
