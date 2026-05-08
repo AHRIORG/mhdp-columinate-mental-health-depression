@@ -13,6 +13,7 @@ stage_public_repo_bundle <- function(
     ".Rbuildignore",
     ".dockerignore",
     ".gitignore",
+    "BROWSER_JS_ARCHITECTURE.md",
     "DESCRIPTION",
     "DEPLOYMENT.md",
     "Dockerfile",
@@ -25,6 +26,8 @@ stage_public_repo_bundle <- function(
     "inst",
     "shiny-app",
     "tests",
+    file.path("data-raw", "export_browser_engine_bundle.R"),
+    file.path("data-raw", "smoke_test_browser_bundle.R"),
     file.path("data-raw", "sanitize_engine_metadata.R"),
     file.path("data-raw", "stage_public_repo_bundle.R"),
     file.path("data-raw", "rebuild_engine_bundle.R")
