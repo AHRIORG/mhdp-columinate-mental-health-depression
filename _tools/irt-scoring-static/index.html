@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portable SSQ-10 IRT Engine</title>
+    <link rel="icon" type="image/png" href="../../_assets/ahri_logo.png" />
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell portable-app">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CO-LUMINATE Harmonisation Toolkit</p>
+          <h1>Portable SSQ-10 IRT Engine</h1>
+          <p class="lede">
+            Score SSQ-10 responses against the packaged harmonised depression
+            engine, review outputs in a browser-friendly workspace, and download
+            results without retaining raw uploaded data.
+          </p>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-pill">Browser-local scoring</span>
+          <span class="status-pill status-pill--soft">No raw data retention</span>
+          <button id="openBatchBtn" class="primary-btn" type="button">Open Batch Scoring</button>
+        </div>
+      </header>
+
+      <section class="summary-banner panel">
+        <div>
+          <span class="mini-label">Selected engine</span>
+          <strong id="bannerEngine">Loading...</strong>
+        </div>
+        <div>
+          <span class="mini-label">Current workspace</span>
+          <strong id="bannerTab">Overview</strong>
+        </div>
+        <div>
+          <span class="mini-label">Latest run</span>
+          <p id="bannerLatestSummary" class="sentence-text">No scoring run yet.</p>
+        </div>
+        <div>
+          <span class="mini-label">Privacy mode</span>
+          <p class="sentence-text">
+            Uploaded data are scored only in the active browser session and are
+            not written back to project storage.
+          </p>
+        </div>
+      </section>
+
+      <nav class="tab-nav" id="tabNav" aria-label="Scoring workspace navigation">
+        <button class="tab-btn active" type="button" data-tab-target="overview">Overview</button>
+        <button class="tab-btn" type="button" data-tab-target="manual">Manual Scoring</button>
+        <button class="tab-btn" type="button" data-tab-target="batch">Batch Scoring</button>
+        <button class="tab-btn" type="button" data-tab-target="results">Results</button>
+        <button class="tab-btn" type="button" data-tab-target="privacy">Privacy</button>
+        <button class="tab-btn" type="button" data-tab-target="documentation">Documentation</button>
+      </nav>
+
+      <section class="tab-panel is-active" data-tab-panel="overview">
+        <div class="panel panel-intro">
+          <h2>Overview</h2>
+          <p>
+            This workspace packages the current Objective 3 SSQ-10 harmonisation
+            engine into a reusable browser tool. Start here for orientation, then
+            move into manual scoring, batch scoring, and result review.
+          </p>
+        </div>
+
+        <div class="workflow-strip">
+          <div class="workflow-step">
+            <strong>1. Review the engine</strong>
+            Confirm which packaged engine is active, what input fields are
+            expected, and how the stored cutoff is applied.
+          </div>
+          <div class="workflow-step">
+            <strong>2. Score one participant</strong>
+            Use the manual scoring view to test a single SSQ-10 profile and
+            inspect all harmonised outputs before wider use.
+          </div>
+          <div class="workflow-step">
+            <strong>3. Score a cohort</strong>
+            Upload a CSV, validate the schema, score the file in the browser,
+            and download the harmonised dataset immediately.
+          </div>
+          <div class="workflow-step">
+            <strong>4. Review the outputs</strong>
+            Inspect the latest session summary, the most recent result preview,
+            and the interpretation of the returned fields.
+          </div>
+        </div>
+
+        <div class="overview-grid">
+          <section class="panel stats-panel">
+            <h3>Current engine snapshot</h3>
+            <div id="overviewStats" class="stats-grid"></div>
+            <div class="overview-note">
+              <span class="mini-label">Current selection</span>
+              <strong id="overviewCurrent">-</strong>
+              <p id="overviewSentence" class="sentence-text">-</p>
+            </div>
+          </section>
+
+          <section class="panel guide-card">
+            <h3>Manual Scoring</h3>
+            <p>
+              Use the Manual Scoring view to enter one participant at a time,
+              confirm how the packaged engine behaves, and inspect the harmonised
+              metrics immediately.
+            </p>
+            <ul class="guide-list">
+              <li>Select the engine version and optional subgroup fields.</li>
+              <li>Enter each SSQ-10 item as a binary response.</li>
+              <li>Review theta, PHQ-oriented outputs, and binary classification.</li>
+            </ul>
+            <button class="secondary-btn" type="button" data-goto="manual">Go to Manual Scoring</button>
+          </section>
+
+          <section class="panel guide-card">
+            <h3>Batch Scoring</h3>
+            <p>
+              Use the Batch Scoring view for cohort files. The app checks the
+              schema, scores the data in the browser, and returns a downloadable
+              CSV for the same active session.
+            </p>
+            <ul class="guide-list">
+              <li>Choose the engine and upload a CSV file.</li>
+              <li>Review validation notes before downloading.</li>
+              <li>Preview the first scored rows before sharing outputs.</li>
+            </ul>
+            <button class="secondary-btn" type="button" data-goto="batch">Go to Batch Scoring</button>
+          </section>
+
+          <section class="panel guide-card">
+            <h3>Documentation</h3>
+            <p>
+              Use the documentation and privacy views to confirm the expected
+              schema, returned fields, and the privacy-by-design boundaries of the
+              browser deployment.
+            </p>
+            <ul class="guide-list">
+              <li>Inspect the packaged engine catalog.</li>
+              <li>Review the expected item schema and outputs.</li>
+              <li>Confirm the no-retention handling for raw uploads.</li>
+            </ul>
+            <button class="secondary-btn" type="button" data-goto="documentation">Go to Documentation</button>
+          </section>
+        </div>
+
+        <div class="overview-stack">
+          <section class="panel">
+            <h3>Why use this engine</h3>
+            <p class="panel-copy">
+              Used appropriately, the engine helps researchers produce more
+              comparable depression measures from SSQ-10 data while keeping the
+              scoring workflow reproducible and transparent.
+            </p>
+            <ul class="guide-list">
+              <li>It places SSQ-10 responses onto a harmonised depression scale rather than relying only on a raw total score.</li>
+              <li>It returns both continuous and binary outputs, which supports different reporting needs across studies.</li>
+              <li>It makes the applied threshold explicit, including subgroup-specific targets where those are available.</li>
+              <li>It supports batch scoring with the same packaged logic, which improves consistency across participants and cohorts.</li>
+              <li>It helps researchers reuse existing SSQ-10 data without rerunning the full psychometric workflow each time.</li>
+            </ul>
+          </section>
+
+          <section class="panel">
+            <h3>Important limitations</h3>
+            <p class="panel-copy">
+              This tool is intended to support harmonised research scoring. It is
+              not a clinical diagnosis tool, and its outputs should be interpreted
+              alongside study context, local governance, and appropriate
+              subject-matter oversight.
+            </p>
+            <ul class="guide-list">
+              <li>The app scores binary SSQ-10 responses only. It does not accept SSQ-14 or PHQ-9 responses as direct input.</li>
+              <li>Current production-safe engines share the same 1-factor SSQ-10 scorer, so changing engines often changes the applied threshold rather than the harmonised theta itself.</li>
+              <li>Packaged performance metrics come from the packaging sample and may not generalise unchanged to other cohorts, settings, languages, age ranges, or treatment-exposed groups.</li>
+              <li>If subgroup fields needed for a subgroup-specific threshold are missing or unavailable, the app falls back to the stored overall threshold and records the applied target in the output.</li>
+              <li>This browser build has been smoke-tested against the R engine, but it remains a browser implementation and should be version-controlled alongside its validation summary.</li>
+            </ul>
+          </section>
+
+          <details class="panel collapsible-panel">
+            <summary class="collapsible-summary">
+              <div class="collapsible-summary-copy">
+                <h3>Packaged engines</h3>
+                <p class="panel-copy">
+                  The production default is set in the engine catalog and surfaced
+                  throughout the interface.
+                </p>
+              </div>
+              <span class="collapsible-indicator">Open</span>
+            </summary>
+            <div class="collapsible-body">
+              <div class="data-status">
+                Only production-safe engines are exposed in the scoring views.
+                Audit-only exports remain available for provenance but are hidden
+                from live scoring until repaired.
+              </div>
+              <div class="table-shell">
+                <table id="engineTable">
+                  <thead></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+
+          <details class="panel collapsible-panel">
+            <summary class="collapsible-summary">
+              <div class="collapsible-summary-copy">
+                <h3>Expected input schema</h3>
+                <p class="panel-copy">
+                  SEX and AGE remain optional, but the SSQ-10 items are required
+                  for scoring.
+                </p>
+              </div>
+              <span class="collapsible-indicator">Open</span>
+            </summary>
+            <div class="collapsible-body">
+              <div class="table-shell">
+                <table id="schemaTableOverview">
+                  <thead></thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-tab-panel="manual">
+        <div class="panel panel-intro">
+          <h2>Manual Scoring</h2>
+          <p>
+            Use this view to score one participant at a time. This is useful for
+            testing item combinations, reviewing the behaviour of the stored
+            cutoff, and demonstrating the harmonised outputs without uploading a
+            file.
+          </p>
+          <p class="panel-copy">
+            These outputs support harmonised research interpretation and should not
+            be treated as a standalone clinical diagnosis.
+          </p>
+        </div>
+
+        <div class="tool-grid tool-grid--manual">
+          <section class="panel">
+            <h3>Participant input</h3>
+            <p class="panel-copy">
+              Choose the engine, optionally add subgroup fields, then capture the
+              binary SSQ-10 responses.
+            </p>
+            <div class="form-grid">
+              <label class="field-block" for="manualEngineSelect">
+                <span class="field-label">Engine version</span>
+                <select id="manualEngineSelect"></select>
+              </label>
+              <label class="field-block" for="manualSex">
+                <span class="field-label">SEX (optional)</span>
+                <select id="manualSex">
+                  <option value=""></option>
+                  <option value="Female">Female</option>
+                  <option value="Male">Male</option>
+                </select>
+              </label>
+              <label class="field-block" for="manualAge">
+                <span class="field-label">AGE (optional)</span>
+                <input id="manualAge" type="number" min="0" step="1" />
+              </label>
+            </div>
+            <h3>SSQ-10 items</h3>
+            <p class="panel-copy">
+              Record each item as 0 for No or 1 for Yes. Blank values are treated
+              as missing.
+            </p>
+            <div id="manualItems" class="item-grid"></div>
+            <div class="canvas-actions">
+              <button id="scoreManualBtn" class="primary-btn" type="button">Score participant</button>
+              <button class="secondary-btn" type="button" data-goto="results">View Latest Results</button>
+              <button id="resetManualBtn" class="ghost-btn" type="button">Reset</button>
+            </div>
+          </section>
+
+          <section class="panel builder-card builder-card--result">
+            <h3>Scoring result</h3>
+            <p class="panel-copy">
+              The result card stays session-local. The in-app table shows a compact
+              reader-friendly view, while downloaded files retain the full scored
+              dataset.
+            </p>
+            <div id="manualHighlights" class="stats-grid score-highlight-grid"></div>
+            <div id="manualStatus" class="empty-note">Score a participant to see the harmonised outputs.</div>
+            <div class="table-shell">
+              <table id="manualResultTable">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <h3>Current profile across engines</h3>
+          <p class="panel-copy">
+            This comparison shows how the current manual profile behaves across all
+            production-safe engines. It is especially useful when theta stays
+            constant and the change is happening in the applied cutoff.
+          </p>
+          <div id="manualCompareNote" class="empty-note">Score a participant to compare the current profile across engines.</div>
+          <div class="table-shell">
+            <table id="manualEngineCompareTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="tab-panel" data-tab-panel="batch">
+        <div class="panel panel-intro">
+          <h2>Batch Scoring</h2>
+          <p>
+            Upload a CSV cohort file, validate the schema, score the dataset in the
+            browser, and download the harmonised output for the current session.
+          </p>
+          <p class="panel-copy">
+            The returned binary classification is a research-use indicator derived
+            from the packaged engine and should not replace diagnostic assessment.
+          </p>
+        </div>
+
+        <div class="tool-grid tool-grid--batch">
+          <section class="panel">
+            <h3>Upload data</h3>
+            <p class="panel-copy">
+              Use the example file if you want to test the workflow before
+              uploading a real dataset.
+            </p>
+            <label class="field-block" for="batchEngineSelect">
+              <span class="field-label">Engine version</span>
+              <select id="batchEngineSelect"></select>
+            </label>
+            <label class="field-block" for="batchFile">
+              <span class="field-label">Upload CSV</span>
+              <input id="batchFile" type="file" accept=".csv" />
+            </label>
+            <div class="canvas-actions">
+              <button id="scoreBatchBtn" class="primary-btn" type="button">Score uploaded file</button>
+              <button id="downloadBatchBtn" class="secondary-btn" type="button" disabled>Download scored CSV</button>
+              <button id="downloadExampleBtn" class="ghost-btn" type="button">Download example CSV</button>
+            </div>
+          </section>
+
+          <section class="panel builder-card builder-card--result">
+            <h3>Validation and preview</h3>
+            <p class="panel-copy">
+              Validation messages are shown here before you download outputs. The
+              preview shows the first ten scored rows with a compact set of
+              reader-friendly scoring columns.
+            </p>
+            <div id="batchHighlights" class="stats-grid score-highlight-grid"></div>
+            <div id="batchStatus" class="empty-note">No file scored yet.</div>
+            <div class="table-shell">
+              <table id="batchPreviewTable">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-tab-panel="results">
+        <div class="panel panel-intro">
+          <h2>Results</h2>
+          <p>
+            This session summary shows the most recent successful scoring run and a
+            preview of the returned data structure.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <section class="panel">
+            <h3>Latest summary</h3>
+            <div id="latestSummaryCards" class="stats-grid"></div>
+            <div id="latestSummaryText" class="data-status">
+              Only the latest result from the current browser session is shown
+              here.
+            </div>
+            <p class="panel-copy">
+              The preview is intentionally compact so the scoring outputs remain
+              readable in the browser. The downloaded CSV retains the full scored
+              dataset.
+            </p>
+            <div class="table-shell">
+              <table id="latestResultPreviewTable">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-tab-panel="privacy">
+        <div class="panel panel-intro">
+          <h2>Privacy</h2>
+          <p>
+            The intended browser deployment pattern is privacy-first: raw uploads
+            stay within the active session and only user-requested exports are
+            returned.
+          </p>
+        </div>
+
+        <div class="panel-grid panel-grid--two">
+          <section class="panel">
+            <h3>What the app does</h3>
+            <ul class="guide-list">
+              <li>Loads the selected engine and validates the uploaded schema.</li>
+              <li>Scores the data in memory during the active browser session.</li>
+              <li>Returns harmonised outputs directly to the user.</li>
+              <li>Generates downloadable files only when the user requests them.</li>
+            </ul>
+          </section>
+          <section class="panel">
+            <h3>What the app does not do</h3>
+            <ul class="guide-list">
+              <li>It does not write raw uploaded datasets back into the project repository.</li>
+              <li>It does not persist session inputs to GitHub or project storage.</li>
+              <li>It should not log raw item-level responses in production telemetry.</li>
+              <li>It is not designed to replace governance for regulated or restricted data environments.</li>
+            </ul>
+          </section>
+        </div>
+      </section>
+
+      <section class="tab-panel" data-tab-panel="documentation">
+        <div class="panel panel-intro">
+          <h2>Documentation</h2>
+          <p>
+            Use this view to inspect the expected input contract and the
+            interpretation of the returned harmonised fields.
+          </p>
+        </div>
+
+        <div class="panel-grid panel-grid--two">
+          <section class="panel">
+            <h3>Scoring outputs</h3>
+            <ul class="guide-list">
+              <li>SSQ10_Total_Score is the observed raw sum of endorsed SSQ-10 items.</li>
+              <li>Theta_Harmonized is the underlying harmonised depression score.</li>
+              <li>Depression_Binary applies the stored engine-specific cutoff strategy.</li>
+              <li>PHQ_Expected_Sum maps the harmonised theta back into a PHQ-oriented scale.</li>
+              <li>PHQ_Prob_GE10 estimates the probability of being at or above the PHQ-9 &gt;= 10 threshold.</li>
+              <li>The returned output also includes engine and cutoff metadata so result changes remain auditable.</li>
+            </ul>
+          </section>
+          <section class="panel">
+            <h3>Expected input schema</h3>
+            <div class="table-shell">
+              <table id="schemaTableDoc">
+                <thead></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <h3>Benefits and intended strengths</h3>
+          <ul class="guide-list">
+            <li>The browser version keeps scoring local to the user’s machine, which supports privacy-sensitive workflows.</li>
+            <li>The same packaged engine logic can be reused for manual checks and batch files without requiring a live R runtime.</li>
+            <li>The tool makes engine choice, cutoff scope, and threshold target visible in the scored outputs.</li>
+            <li>The browser bundle has been smoke-tested against the R implementation across the production-safe 1-factor engines.</li>
+          </ul>
+        </section>
+
+        <div class="panel-grid panel-grid--two">
+          <section class="panel">
+            <h3>Glossary: abbreviations</h3>
+            <div class="table-shell">
+              <table>
+                <thead>
+                  <tr><th>Abbreviation</th><th>Meaning</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>SSQ-10</td><td>Shona Symptom Questionnaire-10</td></tr>
+                  <tr><td>PHQ-9</td><td>Patient Health Questionnaire-9</td></tr>
+                  <tr><td>IRT</td><td>Item Response Theory</td></tr>
+                  <tr><td>PPV</td><td>Positive Predictive Value</td></tr>
+                  <tr><td>NPV</td><td>Negative Predictive Value</td></tr>
+                  <tr><td>ROC</td><td>Receiver Operating Characteristic</td></tr>
+                  <tr><td>TCC</td><td>Test Characteristic Curve</td></tr>
+                  <tr><td>AUC</td><td>Area Under the Curve</td></tr>
+                  <tr><td>CSV</td><td>Comma-Separated Values</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h3>Glossary: statistical terms</h3>
+            <div class="table-shell">
+              <table>
+                <thead>
+                  <tr><th>Term</th><th>Definition</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Harmonisation</td><td>The process of making scores from different questionnaires comparable on a shared scale.</td></tr>
+                  <tr><td>Harmonized theta</td><td>The underlying depression score estimated by the harmonised IRT model.</td></tr>
+                  <tr><td>Sensitivity</td><td>The proportion of truly depressed participants correctly identified by the engine.</td></tr>
+                  <tr><td>Specificity</td><td>The proportion of truly non-depressed participants correctly identified by the engine.</td></tr>
+                  <tr><td>Accuracy</td><td>The overall proportion of classifications that are correct.</td></tr>
+                  <tr><td>Depression prevalence</td><td>The proportion of scored participants classified as depressed in the current scored dataset.</td></tr>
+                  <tr><td>Cutoff threshold</td><td>The theta value above which the engine classifies a participant as depressed.</td></tr>
+                  <tr><td>Threshold approach</td><td>The rule used to choose the decision threshold, for example prioritising sensitivity or specificity.</td></tr>
+                  <tr><td>Threshold scope</td><td>The grouping level at which thresholds are applied, such as overall, by sex, by age group, or by sex plus age group.</td></tr>
+                  <tr><td>Cohen's kappa</td><td>A measure of agreement between the engine classification and the reference classification after accounting for agreement expected by chance.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
