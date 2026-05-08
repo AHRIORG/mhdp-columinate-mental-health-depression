@@ -1,0 +1,3 @@
+^shiny-app$
+^data-raw$
+^\.gitignore$

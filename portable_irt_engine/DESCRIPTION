@@ -1,0 +1,29 @@
+Package: portableIRTEngine
+Title: Portable SSQ-10 IRT Harmonization Engine
+Version: 0.0.0.9000
+Authors@R: c(
+    person(
+      given = "CO-LUMINATE",
+      family = "DSU Team",
+      role = c("aut", "cre"),
+      email = "dsu@ahri.org"
+    )
+  )
+Description: Packages the selected Objective 3 SSQ-10 harmonization engine
+    into a reusable R scoring core with a Shiny front end scaffold. The tool
+    applies a fixed-parameter IRT scoring engine to new SSQ-10 data, returns
+    harmonized theta scores, maps those scores back to PHQ-oriented outputs,
+    and applies stored binary depression cutoffs.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: false
+Depends:
+    R (>= 4.2.0)
+Imports:
+    shiny,
+    mirt,
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

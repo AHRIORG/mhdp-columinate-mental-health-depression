@@ -1,0 +1,11 @@
+.git
+.github
+.Rhistory
+.RData
+.Rproj.user
+.DS_Store
+renv
+renv.lock
+tests
+data-raw
+*.tar.gz

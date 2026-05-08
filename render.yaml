@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: columinate-irt-scoring
+    runtime: docker
+    rootDir: portable_irt_engine
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: PORTABLE_IRT_HOST
+        value: 0.0.0.0
+      - key: PORTABLE_IRT_PORT
+        value: 8080
