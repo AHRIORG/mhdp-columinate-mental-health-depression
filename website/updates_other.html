@@ -252,17 +252,32 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="co-luminate-knowledge-check" class="level2">
-<h2 class="anchored" data-anchor-id="co-luminate-knowledge-check">CO-LUMINATE knowledge check</h2>
-<p>This short activity is designed for readers who have explored the website and want to test how well they understand the project scope, study design, technical plan, deliverables, and intended outputs.</p>
-<p>Question order is shuffled each time the page loads. Select one answer for each question and submit the quiz to receive your score immediately.</p>
-<noscript>
-<p>
-<strong>This activity requires JavaScript to run.</strong>
-</p>
-</noscript>
-<div id="project-quiz-app" class="quiz-shell">
-
+<p>This page hosts interactive CO-LUMINATE activities. Each activity is presented in its own collapsible card so the page can grow over time without becoming crowded.</p>
+<div class="activity-card-grid">
+  <details class="activity-card">
+    <summary>
+      <div class="activity-card__summary">
+        <div class="activity-card__summary-copy">
+          <p class="activity-card__eyebrow">Activity 1</p>
+          <span class="activity-card__title">CO-LUMINATE knowledge check</span>
+          <p class="activity-card__description">Test how well a reader understands the project scope, study design, technical plan, deliverables, and intended outputs.</p>
+        </div>
+        <div class="activity-card__chips">
+          <span class="activity-card__chip">15 questions</span>
+          <span class="activity-card__chip">Multiple choice</span>
+          <span class="activity-card__chip">Instant score</span>
+        </div>
+      </div>
+    </summary>
+    <div class="activity-card__body">
+      <p>This short activity is designed for readers who have explored the website and want to test how well they understand the project scope, study design, technical plan, deliverables, and intended outputs.</p>
+      <p>Question order is shuffled each time the page loads. Select one answer for each question and submit the quiz to receive your score immediately.</p>
+      <noscript>
+        <p><strong>This activity requires JavaScript to run.</strong></p>
+      </noscript>
+      <div id="project-quiz-app" class="quiz-shell"></div>
+    </div>
+  </details>
 </div>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
@@ -575,7 +590,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-</section>
 
 </main> <!-- /main -->
 <script>

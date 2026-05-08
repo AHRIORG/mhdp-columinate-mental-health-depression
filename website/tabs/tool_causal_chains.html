@@ -353,14 +353,6 @@ ul.task-list li input[type="checkbox"] {
   padding-left: 1.15rem;
 }
 
-.cmi-page-launch-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  align-items: center;
-  margin: 0.5rem 0 1rem;
-}
-
 .cmi-page-open-btn {
   display: inline-flex;
   align-items: center;
@@ -382,6 +374,25 @@ ul.task-list li input[type="checkbox"] {
   color: #ffffff;
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+.cmi-page-title-launch {
+  white-space: nowrap;
+}
+
+.cmi-page-note-inline {
+  margin: 0.3rem 0 0;
+}
+
+.quarto-title-block .quarto-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.quarto-title-block .quarto-title .title {
+  margin: 0;
 }
 
 .cmi-page-note {
@@ -457,11 +468,28 @@ ul.task-list li input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 
+  .quarto-title-block .quarto-title {
+    align-items: flex-start;
+  }
+
   .cmi-page-embed-shell iframe {
     min-height: 1560px;
   }
 }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const titleBlock = document.querySelector("#title-block-header .quarto-title");
+  if (!titleBlock || titleBlock.querySelector(".cmi-page-title-launch")) return;
+  const launchLink = document.createElement("a");
+  launchLink.className = "cmi-page-open-btn cmi-page-title-launch";
+  launchLink.href = "../_tools/cmi-app/index.html";
+  launchLink.target = "_blank";
+  launchLink.rel = "noopener";
+  launchLink.textContent = "Open Tool";
+  titleBlock.prepend(launchLink);
+});
+</script>
 <section id="workspace-purpose" class="level2">
 <h2 class="anchored" data-anchor-id="workspace-purpose">Workspace Purpose</h2>
 <p>The Mental Health Causal Chains workspace is an internal CO-LUMINATE tool for capturing, reviewing, standardizing, and exporting youth-informed explanations of how lived social conditions shape mental health. It is designed to keep causal stories readable while also producing structured outputs that can be reviewed, refined, and carried into downstream analytical or reporting workflows. Within the builder, AI-improved wording is used specifically to harmonize bridge steps while leaving standardized mental health outcomes unchanged.</p>
@@ -507,14 +535,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="launch-workspace" class="level2">
 <h2 class="anchored" data-anchor-id="launch-workspace">Launch Workspace</h2>
-<p>The embedded workspace below is the main working environment for this tool. It stores edits in the current browser until they are reset or replaced, so export any version you want to retain outside the session.</p>
-<div class="cmi-page-launch-row">
-  <a class="cmi-page-open-btn" href="../_tools/cmi-app/index.html" target="_blank" rel="noopener">Open Workspace In Full Page</a>
-  <span class="cmi-page-note">Use the full-page option if you want more room for editing, review, or export tasks.</span>
-</div>
-<div class="cmi-page-embed-shell">
-  <iframe src="../_tools/cmi-app/index.html" title="Mental Health Causal Chains internal workspace" loading="lazy"></iframe>
-</div>
+<p>The embedded workspace below is the main working environment for this tool. It starts collapsed by default so the page remains easier to scan, and it stores edits in the current browser until they are reset or replaced, so export any version you want to retain outside the session. The full-page launch button is positioned beside the page title for quicker access.</p>
+<p class="cmi-page-note cmi-page-note-inline">Use the button beside the title if you want more room for editing, review, or export tasks.</p>
+<details class="cmi-page-details">
+  <summary>Open embedded workspace</summary>
+  <div class="cmi-page-embed-shell">
+    <iframe src="../_tools/cmi-app/index.html" title="Mental Health Causal Chains internal workspace" loading="lazy"></iframe>
+  </div>
+</details>
 </section>
 <section id="what-the-workspace-produces" class="level2">
 <h2 class="anchored" data-anchor-id="what-the-workspace-produces">What The Workspace Produces</h2>

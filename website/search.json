@@ -18,14 +18,7 @@
     "href": "updates_other.html",
     "title": "Activities",
     "section": "",
-    "text": "This short activity is designed for readers who have explored the website and want to test how well they understand the project scope, study design, technical plan, deliverables, and intended outputs.\nQuestion order is shuffled each time the page loads. Select one answer for each question and submit the quiz to receive your score immediately.\n\n\nThis activity requires JavaScript to run."
-  },
-  {
-    "objectID": "updates_other.html#co-luminate-knowledge-check",
-    "href": "updates_other.html#co-luminate-knowledge-check",
-    "title": "Activities",
-    "section": "",
-    "text": "This short activity is designed for readers who have explored the website and want to test how well they understand the project scope, study design, technical plan, deliverables, and intended outputs.\nQuestion order is shuffled each time the page loads. Select one answer for each question and submit the quiz to receive your score immediately.\n\n\nThis activity requires JavaScript to run."
+    "text": "This page hosts interactive CO-LUMINATE activities. Each activity is presented in its own collapsible card so the page can grow over time without becoming crowded.\n\n  \n    \n      \n        \n          Activity 1\n          CO-LUMINATE knowledge check\n          Test how well a reader understands the project scope, study design, technical plan, deliverables, and intended outputs.\n        \n        \n          15 questions\n          Multiple choice\n          Instant score\n        \n      \n    \n    \n      This short activity is designed for readers who have explored the website and want to test how well they understand the project scope, study design, technical plan, deliverables, and intended outputs.\n      Question order is shuffled each time the page loads. Select one answer for each question and submit the quiz to receive your score immediately.\n      \n        This activity requires JavaScript to run."
   },
   {
     "objectID": "updates_blog.html",
@@ -46,7 +39,7 @@
     "href": "tabs/tools.html",
     "title": "Research Tools Overview",
     "section": "",
-    "text": "This overview groups the live and planned tools that support CO-LUMINATE data collection, scoring, dashboard interpretation, and causal mapping.\n\n\n\n\n\nDevelopmental Cascade Explorer\n\n\n\nSix-module interactive dashboard for the developmental cascade framework, from childhood adversity through mediation to policy simulation.\n\nIn progress, content not yet published to the public website\n\n\n\n\n\nIRT Scoring Workspace\n\n\n\nOperational scoring tool for SSQ responses, supporting single-case and batch workflows through the project API.\n\nIn progress, content not yet published to the public website\n\n\n\n\n\nCausal Chains of Mental Health\n\n\n\nInteractive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.\n\nIn progress, content not yet published to the public website"
+    "text": "This overview groups the live and planned tools that support CO-LUMINATE data collection, scoring, dashboard interpretation, and causal mapping.\n\n\n\n\n\nDevelopmental Cascade Explorer\n\n\n\nSix-module interactive dashboard for the developmental cascade framework, from childhood adversity through mediation to policy simulation.\n\nIn progress, content not yet published to the public website\n\n\n\n\n\nIRT Scoring Workspace\n\n\n\nOperational scoring tool for SSQ responses, supporting single-case and batch workflows through the project API.\n\nOpen internal scoring workspace\n\n\n\n\n\nCausal Chains of Mental Health\n\n\n\nInteractive tool for capturing and reviewing youth-informed causal pathways between lived experience and mental health outcomes.\n\nIn progress, content not yet published to the public website"
   },
   {
     "objectID": "tabs/tool_causal_chains.html",
@@ -74,7 +67,7 @@
     "href": "tabs/tool_causal_chains.html#launch-workspace",
     "title": "Mental Health Causal Chains",
     "section": "Launch Workspace",
-    "text": "Launch Workspace\nThe embedded workspace below is the main working environment for this tool. It stores edits in the current browser until they are reset or replaced, so export any version you want to retain outside the session.\n\n  Open Workspace In Full Page\n  Use the full-page option if you want more room for editing, review, or export tasks."
+    "text": "Launch Workspace\nThe embedded workspace below is the main working environment for this tool. It starts collapsed by default so the page remains easier to scan, and it stores edits in the current browser until they are reset or replaced, so export any version you want to retain outside the session. The full-page launch button is positioned beside the page title for quicker access.\nUse the button beside the title if you want more room for editing, review, or export tasks.\n\n  Open embedded workspace"
   },
   {
     "objectID": "tabs/tool_causal_chains.html#what-the-workspace-produces",
@@ -613,14 +606,42 @@
     "href": "tabs/tool_irt_scoring.html",
     "title": "IRT Scoring Workspace",
     "section": "",
-    "text": "In progress, content not yet published to the public website."
+    "text": "The IRT Scoring Workspace is the internal CO-LUMINATE scoring environment for applying packaged harmonised depression engines to SSQ-10 data. It supports both single-record and batch workflows, returns reader-friendly scoring outputs, and keeps the applied threshold logic visible so scoring decisions remain auditable across runs.\n\n  \n    Production engines\n    13\n    Production-safe SSQ-10 engine scenarios exposed for live scoring in the current workspace.\n  \n  \n    Scoring modes\n    2\n    Manual scoring for one participant and batch scoring for uploaded cohort files.\n  \n  \n    Required items\n    10\n    Binary SSQ-10 items are required for scoring, with subgroup fields handled as optional covariates.\n  \n  \n    Core outputs\n    5\n    Observed total score, harmonised theta, binary depression flag, expected PHQ-9 sum, and PHQ-9 &gt;= 10 probability."
   },
   {
-    "objectID": "tabs/tool_irt_scoring.html#in-progress",
-    "href": "tabs/tool_irt_scoring.html#in-progress",
+    "objectID": "tabs/tool_irt_scoring.html#workspace-purpose",
+    "href": "tabs/tool_irt_scoring.html#workspace-purpose",
     "title": "IRT Scoring Workspace",
     "section": "",
-    "text": "In progress, content not yet published to the public website."
+    "text": "The IRT Scoring Workspace is the internal CO-LUMINATE scoring environment for applying packaged harmonised depression engines to SSQ-10 data. It supports both single-record and batch workflows, returns reader-friendly scoring outputs, and keeps the applied threshold logic visible so scoring decisions remain auditable across runs.\n\n  \n    Production engines\n    13\n    Production-safe SSQ-10 engine scenarios exposed for live scoring in the current workspace.\n  \n  \n    Scoring modes\n    2\n    Manual scoring for one participant and batch scoring for uploaded cohort files.\n  \n  \n    Required items\n    10\n    Binary SSQ-10 items are required for scoring, with subgroup fields handled as optional covariates.\n  \n  \n    Core outputs\n    5\n    Observed total score, harmonised theta, binary depression flag, expected PHQ-9 sum, and PHQ-9 &gt;= 10 probability."
+  },
+  {
+    "objectID": "tabs/tool_irt_scoring.html#recommended-workflow",
+    "href": "tabs/tool_irt_scoring.html#recommended-workflow",
+    "title": "IRT Scoring Workspace",
+    "section": "Recommended Workflow",
+    "text": "Recommended Workflow\n\n  \n    1. Select the scoring engine\n    Choose the packaged engine that matches the intended threshold approach and subgroup scope, then confirm the expected input requirements before scoring.\n  \n  \n    2. Score one record or a cohort\n    Use manual scoring to test a single response profile or upload a cohort CSV to score many records in one session with the same packaged logic.\n  \n  \n    3. Review and export\n    Inspect the harmonised outputs, confirm the applied threshold metadata, and download the scored dataset when you are satisfied with the session results."
+  },
+  {
+    "objectID": "tabs/tool_irt_scoring.html#launch-workspace",
+    "href": "tabs/tool_irt_scoring.html#launch-workspace",
+    "title": "IRT Scoring Workspace",
+    "section": "Launch Workspace",
+    "text": "Launch Workspace\nThe embedded workspace below connects directly to the local Shiny scoring runtime. It starts collapsed by default so the page remains easier to scan. If the embedded view does not load, start the local IRT workspace runtime and reload the page. The full-page launch button is positioned beside the page title for quicker access.\nUse the button beside the title if you want more room for scoring, previewing results, or downloading outputs.\n\n  Open embedded workspace"
+  },
+  {
+    "objectID": "tabs/tool_irt_scoring.html#what-the-workspace-returns",
+    "href": "tabs/tool_irt_scoring.html#what-the-workspace-returns",
+    "title": "IRT Scoring Workspace",
+    "section": "What The Workspace Returns",
+    "text": "What The Workspace Returns\n\n\nSSQ10_Total_Score, the observed raw sum of endorsed SSQ-10 items.\nTheta_Harmonized, the continuous harmonised depression score from the packaged IRT engine.\nDepression_Binary, the harmonised research-use classification based on the stored threshold logic.\nPHQ_Expected_Sum and PHQ_Prob_GE10, which map the harmonised score back to PHQ-oriented summaries.\nEngine and cutoff metadata that record which threshold scope, threshold approach, and applied target were used for the returned classification.\nA downloadable scored CSV for batch runs, while keeping browser previews compact and easier to read."
+  },
+  {
+    "objectID": "tabs/tool_irt_scoring.html#benefits-and-boundaries",
+    "href": "tabs/tool_irt_scoring.html#benefits-and-boundaries",
+    "title": "IRT Scoring Workspace",
+    "section": "Benefits And Boundaries",
+    "text": "Benefits And Boundaries\n\n  Benefits of the workspace\n  \n    \n      Supports consistent harmonised scoring across single-record and cohort-level workflows.\n      Exposes both continuous and binary outputs so the same workspace can support different reporting needs.\n      Makes threshold behavior visible rather than hidden, including subgroup-aware fallback behavior where relevant.\n      Helps researchers reuse existing SSQ-10 data without rerunning the full psychometric calibration pipeline.\n    \n  \n\n\n  Important boundaries of use\n  \n    \n      The workspace is designed for harmonised SSQ-10 research scoring and is not a standalone diagnostic tool.\n      Current production-safe engines share the validated 1-factor SSQ-10 scorer, so engine changes typically affect thresholds more than the latent theta itself.\n      Packaged performance summaries come from the reference packaging sample and may not generalise unchanged to every cohort, language, or treatment context.\n      If subgroup fields are missing or do not match stored threshold levels, the applied threshold falls back to the overall engine threshold."
   },
   {
     "objectID": "updates.html",
