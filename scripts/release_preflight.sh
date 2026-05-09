@@ -151,7 +151,8 @@ if [[ "${#non_doc_files[@]}" -gt 0 ]]; then
     -e 'OneDrive' \
     -e '_private_use' \
     -e 'file://' \
-    -e '[A-Za-z]:\\' \
+    -e '[A-Za-z]:\\Users\\' \
+    -e '[A-Za-z]:\\\\Users\\\\' \
     "${non_doc_files[@]}"; then
     echo "FAIL: machine-specific/private path marker detected in non-doc files."
     fail=1

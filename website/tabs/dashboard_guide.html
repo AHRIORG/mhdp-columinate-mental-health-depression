@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Interpretation and maintenance guide for the module-by-module dashboard rebuild.">
 
 <title>Project Dashboard Guide – CO-LUMINATE</title>
 <style>
@@ -19,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -234,7 +270,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#in-progress" id="toc-in-progress" class="nav-link active" data-scroll-target="#in-progress">In Progress</a></li>
+  <li><a href="#current-scope" id="toc-current-scope" class="nav-link active" data-scroll-target="#current-scope">Current Scope</a></li>
+  <li><a href="#interaction-model" id="toc-interaction-model" class="nav-link" data-scroll-target="#interaction-model">Interaction Model</a></li>
+  <li><a href="#design-reference" id="toc-design-reference" class="nav-link" data-scroll-target="#design-reference">Design Reference</a></li>
+  <li><a href="#study-overview-inputs" id="toc-study-overview-inputs" class="nav-link" data-scroll-target="#study-overview-inputs">Study Overview Inputs</a></li>
+  <li><a href="#childhood-sdoh-inputs" id="toc-childhood-sdoh-inputs" class="nav-link" data-scroll-target="#childhood-sdoh-inputs">Childhood SDoH Inputs</a></li>
+  <li><a href="#smoke-render" id="toc-smoke-render" class="nav-link" data-scroll-target="#smoke-render">Smoke Render</a></li>
+  <li><a href="#module-acceptance-checklist" id="toc-module-acceptance-checklist" class="nav-link" data-scroll-target="#module-acceptance-checklist">Module Acceptance Checklist</a></li>
   </ul>
 </nav>
     </div>
@@ -246,6 +288,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Project Dashboard Guide</h1>
 </div>
 
+<div>
+  <div class="description">
+    Interpretation and maintenance guide for the module-by-module dashboard rebuild.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -260,9 +307,79 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="in-progress" class="level2">
-<h2 class="anchored" data-anchor-id="in-progress">In Progress</h2>
-<p>In progress, content not yet published to the public website.</p>
+<section id="current-scope" class="level2">
+<h2 class="anchored" data-anchor-id="current-scope">Current Scope</h2>
+<p>The dashboard is being rebuilt module by module:</p>
+<ol type="1">
+<li>Study Overview &amp; Cohort Profile</li>
+<li>Childhood SDoH &amp; Trajectories</li>
+</ol>
+<p>The previous broad dashboard pass has been removed from the active dashboard surface. New modules should be added one at a time only after the preceding module is reviewed.</p>
+</section>
+<section id="interaction-model" class="level2">
+<h2 class="anchored" data-anchor-id="interaction-model">Interaction Model</h2>
+<p>The dashboard is static HTML with browser-side interactivity. Tables can be sorted and paged. Plots can be hovered, zoomed, and exported through Plotly controls. Nothing is refit in the browser.</p>
+<p>Within a module, figures and tables that communicate the same analytic view should live in one switchable card rather than adjacent duplicate cards. The switch should behave like a compact segmented control, with Figure and Table side by side.</p>
+<p>The Study Overview module uses one shared age-range control (<code>13</code> to <code>24</code> years) and one shared analysis-stratum control (<code>Cohort</code>, <code>Females</code>, <code>Males</code>) for all figures and tables. The middle control-row KPI shows the overall depression prevalence for the selected age range and stratum. Each card keeps only its local <code>Figure</code>/<code>Table</code> switch.</p>
+</section>
+<section id="design-reference" class="level2">
+<h2 class="anchored" data-anchor-id="design-reference">Design Reference</h2>
+<p>The active visual references are the IRT Scoring Workspace and Mental Health Causal Chains pages. The dashboard should follow the same workbench style: compact metric cards, white gradient panels, blue structural accents, orange emphasis accents, restrained explanatory copy, and dense but readable controls.</p>
+</section>
+<section id="study-overview-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="study-overview-inputs">Study Overview Inputs</h2>
+<p>The first module reads existing aggregated dashboard objects from:</p>
+<pre class="text"><code>website/_tools/_objects/</code></pre>
+<p>Current objects are:</p>
+<ul>
+<li><code>dashboard_kpi.rds</code></li>
+<li><code>dashboard_study_summary.rds</code></li>
+<li><code>dashboard_study_stratum_summary.rds</code></li>
+<li><code>dashboard_demog_summary.rds</code></li>
+<li><code>dashboard_mediator_depression_summary.rds</code></li>
+<li><code>dashboard_overview_age_windows.rds</code></li>
+<li><code>dashboard_sdoh_trajectories.rds</code></li>
+<li><code>dashboard_build_info.rds</code> (optional build metadata)</li>
+</ul>
+</section>
+<section id="childhood-sdoh-inputs" class="level2">
+<h2 class="anchored" data-anchor-id="childhood-sdoh-inputs">Childhood SDoH Inputs</h2>
+<p>The second module uses PRJLCGA restricted-sample trajectory products for maternal absence, household socioeconomic status, and joint maternal absence plus household socioeconomic status. The active object is:</p>
+<ul>
+<li><code>dashboard_sdoh_trajectories.rds</code></li>
+</ul>
+<p>The object contains:</p>
+<ul>
+<li><code>univariate_classes</code>: class distributions for maternal absence and household SES;</li>
+<li><code>joint_classes</code>: joint maternal absence plus SES class distributions;</li>
+<li><code>trajectory_profiles</code>: estimated class-profile curves over childhood age;</li>
+<li><code>class_outcomes</code>: DPBN depression prevalence by class.</li>
+</ul>
+</section>
+<section id="smoke-render" class="level2">
+<h2 class="anchored" data-anchor-id="smoke-render">Smoke Render</h2>
+<p>Use the module-specific smoke script:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">_tools/_scripts/render_dashboard_study_overview.sh</span> <span class="at">--smoke</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The script uses <code>caffeinate</code> when available. It also disables the local renv autoloader for the render so Quarto can see the installed widget packages used by the dashboard.</p>
+</section>
+<section id="module-acceptance-checklist" class="level2">
+<h2 class="anchored" data-anchor-id="module-acceptance-checklist">Module Acceptance Checklist</h2>
+<p>Before adding the next module, check that:</p>
+<ul>
+<li>the six top-line KPI boxes are readable without clipping;</li>
+<li>the Childhood SDoH and Mental Health window cards show both calendar window and age range;</li>
+<li>the shared age-range slider changes all study-size, age-profile, and mediator figures and tables together;</li>
+<li>the shared <code>Cohort</code>/<code>Females</code>/<code>Males</code> control changes all study-size, age-profile, and mediator cards together;</li>
+<li>the middle overall depression prevalence updates with both the age-range slider and the analysis-stratum control;</li>
+<li>the study-level Figure/Table switch occupies the same left-half width as Childhood SDoH + Participants + Youth Co-Creators and marks depression prevalence at the end of each study bar;</li>
+<li>the subgroup Figure/Table switch occupies that same left-half width, keeps general cohort charts in CO-LUMINATE blue, uses distinct Frontiers-style colors for Female and Male, and marks depression prevalence above each grouped bar;</li>
+<li>the right half beneath Mental Health + Cohorts + Depression shows all potential mediators, including HIV positive status, with paired Yes/No stacked bars, stratum-colored non-depressed distribution segments, orange depressed segments, a bottom percent axis, a top <code>n</code> axis, and depression-percentage markers at the bar ends;</li>
+<li>the Childhood SDoH module shows univariate class distributions, joint class distributions, trajectory shapes, and depression prevalence by class from the PRJLCGA restricted-sample objects;</li>
+<li>all SDoH class and outcome tables replace missing values with <code>-</code>, not <code>NA</code>;</li>
+<li>switchable cards do not create a visible card nested inside another card;</li>
+<li>provenance is visible enough to explain what the snapshot represents;</li>
+<li>the page has no console errors in a browser smoke check.</li>
+</ul>
 
 
 </section>
@@ -382,6 +499,14 @@ document.addEventListener("DOMContentLoaded", function () {
   nav.className = "section-nav";
   nav.setAttribute("aria-label", currentGroup.label + " navigation");
 
+  const collapseKey = "columinate-section-nav-collapsed-" + currentGroup.id;
+  const toggle = document.createElement("button");
+  toggle.className = "section-nav__toggle";
+  toggle.type = "button";
+  toggle.setAttribute("aria-label", "Collapse section navigation");
+  toggle.setAttribute("aria-expanded", "true");
+  nav.appendChild(toggle);
+
   const eyebrow = document.createElement("p");
   eyebrow.className = "section-nav__eyebrow";
   eyebrow.textContent = currentGroup.label;
@@ -411,6 +536,69 @@ document.addEventListener("DOMContentLoaded", function () {
   nav.appendChild(list);
   document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
   content.parentNode.insertBefore(nav, content);
+
+  function refreshLayout() {
+    window.requestAnimationFrame(function () {
+      window.dispatchEvent(new Event("resize"));
+    });
+  }
+
+  function applyCollapsedLayout(collapsed) {
+    Array.prototype.forEach.call(nav.children, function (child) {
+      if (child !== toggle) {
+        child.style.display = collapsed ? "none" : "";
+      }
+    });
+
+    if (collapsed) {
+      nav.style.width = "2.65rem";
+      nav.style.padding = "0.45rem";
+      nav.style.overflow = "visible";
+      if (window.matchMedia("(min-width: 1200px)").matches) {
+        content.style.setProperty("padding-left", "clamp(3.65rem, 4.2vw, 4.4rem)", "important");
+      }
+    } else {
+      nav.style.width = "";
+      nav.style.padding = "";
+      nav.style.overflow = "";
+      content.style.removeProperty("padding-left");
+    }
+  }
+
+  function setCollapsed(collapsed) {
+    nav.classList.toggle("is-collapsed", collapsed);
+    document.body.classList.toggle("section-nav-is-collapsed", collapsed);
+    toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    toggle.setAttribute(
+      "aria-label",
+      collapsed ? "Expand section navigation" : "Collapse section navigation"
+    );
+    try {
+      window.localStorage.setItem(collapseKey, collapsed ? "true" : "false");
+    } catch (_error) {
+      // Ignore storage failures in restricted preview contexts.
+    }
+    applyCollapsedLayout(collapsed);
+    refreshLayout();
+  }
+
+  let initiallyCollapsed = false;
+  try {
+    initiallyCollapsed = window.localStorage.getItem(collapseKey) === "true";
+  } catch (_error) {
+    initiallyCollapsed = false;
+  }
+  setCollapsed(initiallyCollapsed);
+
+  toggle.addEventListener("click", function () {
+    setCollapsed(!nav.classList.contains("is-collapsed"));
+  });
+
+  window.addEventListener("resize", function () {
+    if (nav.classList.contains("is-collapsed")) {
+      applyCollapsedLayout(true);
+    }
+  });
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">

@@ -79,6 +79,66 @@ body.nav-fixed {
   border: 1px solid var(--line);
   border-top: 4px solid var(--ahri-orange);
   box-shadow: 0 12px 28px rgba(0, 31, 63, 0.08);
+  position: relative;
+  transition: width 180ms ease, padding 180ms ease, box-shadow 180ms ease;
+}
+
+.section-nav__toggle {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid rgba(21, 64, 104, 0.22);
+  border-radius: 0.34rem;
+  color: var(--ahri-blue-deep);
+  cursor: pointer;
+  display: inline-flex;
+  height: 1.65rem;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 0.55rem;
+  top: 0.55rem;
+  width: 1.65rem;
+  z-index: 2;
+}
+
+.section-nav__toggle::before {
+  border-bottom: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  content: "";
+  display: block;
+  height: 0.46rem;
+  transform: rotate(45deg);
+  width: 0.46rem;
+}
+
+.section-nav__toggle:hover,
+.section-nav__toggle:focus-visible {
+  background: var(--ahri-blue-light);
+  border-color: rgba(21, 64, 104, 0.42);
+  outline: none;
+}
+
+.section-nav__eyebrow,
+.section-nav__title {
+  padding-right: 2.2rem;
+}
+
+.section-nav.is-collapsed {
+  overflow: visible;
+  padding: 0.45rem !important;
+  width: 2.65rem !important;
+}
+
+.section-nav.is-collapsed > :not(.section-nav__toggle) {
+  display: none !important;
+}
+
+.section-nav.is-collapsed .section-nav__toggle {
+  position: static;
+}
+
+.section-nav.is-collapsed .section-nav__toggle::before {
+  transform: rotate(225deg);
 }
 
 .section-nav__eyebrow {
@@ -137,6 +197,11 @@ body.nav-fixed {
   body.has-section-nav #quarto-content {
     box-sizing: border-box;
     padding-left: clamp(17rem, 19vw, 18.75rem) !important;
+  }
+
+  body.has-section-nav.section-nav-is-collapsed #quarto-content,
+  body.quarto-dashboard.has-section-nav.section-nav-is-collapsed #quarto-content {
+    padding-left: clamp(3.65rem, 4.2vw, 4.4rem) !important;
   }
 
   .section-nav {
