@@ -248,6 +248,14 @@ body.nav-fixed {
   z-index: 1035;
 }
 
+#quarto-header > nav.navbar {
+  z-index: 3000;
+}
+
+#quarto-header > nav.navbar .dropdown-menu {
+  z-index: 3100;
+}
+
 #quarto-header {
   position: sticky;
   top: 0;
@@ -259,6 +267,35 @@ body.nav-fixed {
 #quarto-header.headroom--unpinned {
   transform: translateY(0) !important;
   transition: none !important;
+}
+
+body.quarto-dashboard #quarto-dashboard-header {
+  position: relative;
+  z-index: 900;
+}
+
+body.quarto-dashboard #quarto-dashboard-header .navbar {
+  box-shadow: 0 3px 10px rgba(0, 31, 63, 0.18);
+  min-height: 2.55rem;
+  padding: 0.2rem clamp(0.8rem, 1.6vw, 1.4rem);
+  z-index: 900;
+}
+
+body.quarto-dashboard #quarto-dashboard-header .navbar-brand-container {
+  display: none !important;
+}
+
+body.quarto-dashboard #dashboard-collapse .navbar-nav {
+  gap: 0.24rem;
+}
+
+body.quarto-dashboard #dashboard-collapse .nav-link {
+  border-radius: 0.34rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  padding: 0.42rem 0.72rem;
+  text-transform: uppercase;
 }
 
 .construction-banner {
