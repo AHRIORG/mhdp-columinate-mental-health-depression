@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Objective-level results page for formal causal mediation analysis.">
 
 <title>Objective 5: Causal Mediation – CO-LUMINATE</title>
 <style>
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -233,7 +234,23 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
 
+  <ul>
+  <li><a href="#why-this-work-was-needed" id="toc-why-this-work-was-needed" class="nav-link active" data-scroll-target="#why-this-work-was-needed">Why This Work Was Needed</a></li>
+  <li><a href="#analysis-scope" id="toc-analysis-scope" class="nav-link" data-scroll-target="#analysis-scope">Analysis Scope</a></li>
+  <li><a href="#causal-structure" id="toc-causal-structure" class="nav-link" data-scroll-target="#causal-structure">Causal Structure</a></li>
+  <li><a href="#total-effect-results" id="toc-total-effect-results" class="nav-link" data-scroll-target="#total-effect-results">Total Effect Results</a></li>
+  <li><a href="#mediation-decomposition" id="toc-mediation-decomposition" class="nav-link" data-scroll-target="#mediation-decomposition">Mediation Decomposition</a></li>
+  <li><a href="#mediator-specific-signals" id="toc-mediator-specific-signals" class="nav-link" data-scroll-target="#mediator-specific-signals">Mediator-Specific Signals</a></li>
+  <li><a href="#robustness-and-interpretation" id="toc-robustness-and-interpretation" class="nav-link" data-scroll-target="#robustness-and-interpretation">Robustness and Interpretation</a></li>
+  <li><a href="#main-recommendation" id="toc-main-recommendation" class="nav-link" data-scroll-target="#main-recommendation">Main Recommendation</a></li>
+  <li><a href="#what-this-means-for-co-luminate" id="toc-what-this-means-for-co-luminate" class="nav-link" data-scroll-target="#what-this-means-for-co-luminate">What This Means For CO-LUMINATE</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -242,6 +259,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Objective 5: Causal Mediation</h1>
 </div>
 
+<div>
+  <div class="description">
+    Objective-level results page for formal causal mediation analysis.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -256,9 +278,416 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="in-progress" class="level2">
-<h2 class="anchored" data-anchor-id="in-progress">In Progress</h2>
-<p>In progress, content not yet published to the public website.</p>
+<style>
+.deliverable-figure {
+  margin: 1.15rem auto 1.8rem auto;
+  max-width: 1180px;
+}
+.deliverable-figure img {
+  width: 100%;
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 8px 18px rgba(15, 35, 55, 0.06);
+  background: #fff;
+}
+.deliverable-note {
+  margin: 1.1rem 0 1.6rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #8a4f00;
+  background: #fff7ed;
+  color: #6b3b00;
+}
+.deliverable-table {
+  font-size: 0.88rem;
+}
+</style>
+<section id="why-this-work-was-needed" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-work-was-needed">Why This Work Was Needed</h2>
+<p>Objective 5 carries the retained childhood exposure histories, harmonized depressive-symptom endpoint, and prioritized adolescent pathway domains into formal causal mediation analysis. The purpose is no longer pathway screening alone. The analysis estimates total effects, direct effects, mediator-specific indirect effects, and combined-pathway indirect effects on the risk-difference scale.</p>
+<p>The public interpretation remains intentionally conservative. These are observational mediation analyses, so the estimates are treated as pathway-consistent evidence under measured-adjustment assumptions rather than as standalone proof that a pathway is causally identified.</p>
+</section>
+<section id="analysis-scope" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-scope">Analysis Scope</h2>
+<p>The finalized implementation is anchored on the strict joint-history branch requiring at least three complete childhood occasions per developmental window. The primary exposure is the joint maternal-absence plus household socioeconomic status history because it preserves developmental ordering and represents co-occurring relational and material adversity.</p>
+<p>The core mediator set carried forward from Objective 4 is:</p>
+<ul>
+<li>food insecurity;</li>
+<li>violence exposure; and</li>
+<li>ever having had sexual intercourse.</li>
+</ul>
+<p>The primary joint-history analytical sample includes 1381 participants. Maternal baseline covariates were multiply imputed using 20 imputations, and posterior-probability-weighted pseudo-records were carried forward so that trajectory-class uncertainty was retained.</p>
+</section>
+<section id="causal-structure" class="level2">
+<h2 class="anchored" data-anchor-id="causal-structure">Causal Structure</h2>
+<p>The working diagram below summarizes the analysis structure: childhood transition histories define the exposure, the adolescent pathway block carries the retained mediator set, and the harmonized depressive-symptom endpoint is the outcome.</p>
+<div class="deliverable-figure">
+  <img src="../_assets/obj04/working_causal_mediation_dag.svg" alt="Working causal mediation diagram linking childhood histories, mediator pathways, and harmonized depressive symptoms.">
+</div>
+</section>
+<section id="total-effect-results" class="level2">
+<h2 class="anchored" data-anchor-id="total-effect-results">Total Effect Results</h2>
+<p>The primary total-effect analysis compares adverse joint histories against lower-risk reference histories. The strongest retained total-effect signal was in middle-late childhood: high maternal absence with low household socioeconomic status versus low maternal absence with higher household socioeconomic status.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Contrast</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Reference risk</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Comparator risk</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Risk difference (95% CI)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">3.0%</td>
+<td style="text-align: left;">7.1%</td>
+<td style="text-align: left;">0.042 (-0.014, 0.098)</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">Low Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">3.0%</td>
+<td style="text-align: left;">2.8%</td>
+<td style="text-align: left;">-0.002 (-0.023, 0.019)</td>
+<td style="text-align: left;">negative; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">Rising Maternal Absence, Improving SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">3.0%</td>
+<td style="text-align: left;">2.1%</td>
+<td style="text-align: left;">-0.009 (-0.049, 0.032)</td>
+<td style="text-align: left;">negative; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">Rising Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">3.0%</td>
+<td style="text-align: left;">2.9%</td>
+<td style="text-align: left;">-0.001 (-0.031, 0.030)</td>
+<td style="text-align: left;">negative; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">Decreasing Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">1.8%</td>
+<td style="text-align: left;">4.0%</td>
+<td style="text-align: left;">0.022 (-0.026, 0.070)</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Improving SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">1.8%</td>
+<td style="text-align: left;">4.3%</td>
+<td style="text-align: left;">0.025 (-0.011, 0.061)</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">1.8%</td>
+<td style="text-align: left;">8.4%</td>
+<td style="text-align: left;">0.066 (0.005, 0.127)</td>
+<td style="text-align: left;">positive; interval excludes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">Low Maternal Absence, Improving SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">1.8%</td>
+<td style="text-align: left;">2.4%</td>
+<td style="text-align: left;">0.006 (-0.014, 0.027)</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">Low Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">1.8%</td>
+<td style="text-align: left;">2.0%</td>
+<td style="text-align: left;">0.002 (-0.026, 0.030)</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">Rising Maternal Absence, Improving SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">1.8%</td>
+<td style="text-align: left;">5.7%</td>
+<td style="text-align: left;">0.039 (-0.014, 0.092)</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="mediation-decomposition" class="level2">
+<h2 class="anchored" data-anchor-id="mediation-decomposition">Mediation Decomposition</h2>
+<p>The three-mediator block provides the main decomposition surface. For the focal middle-late-childhood contrast, the total effect remained positive and the combined indirect effect was also positive, but uncertainty intervals still crossed or approached the null. This is why the results are reported as pathway-consistent evidence rather than as a claim that the measured mediator block fully explains the exposure-outcome association.</p>
+<div class="deliverable-figure">
+  <img src="../_assets/obj04/cross_branch_mediation_summary.png" alt="Summary of total, direct, and indirect mediation estimates across retained contrast families.">
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Contrast</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Effect</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Risk difference (95% CI)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Percent mediated</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Block direct effect</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.025 (-0.023, 0.073)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Total effect</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.038 (-0.017, 0.093)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Total indirect effect</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.013 (-0.003, 0.028)</td>
+<td style="text-align: left;">33.3%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Block direct effect</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.043 (-0.008, 0.095)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Total effect</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.064 (0.001, 0.127)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">positive; interval excludes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Total indirect effect</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.021 (-0.000, 0.042)</td>
+<td style="text-align: left;">32.4%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="mediator-specific-signals" class="level2">
+<h2 class="anchored" data-anchor-id="mediator-specific-signals">Mediator-Specific Signals</h2>
+<p>Mediator-specific decompositions were estimated for the core pathway domains. The strongest indirect-effect patterns were generally carried by food insecurity and ever having had sexual intercourse, while violence exposure remained important for pathway interpretation but showed smaller indirect-effect estimates in the retained decomposition tables.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Contrast</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Mediator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Indirect risk difference (95% CI)</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Percent mediated</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Ever had sexual intercourse</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.004 (-0.006, 0.014)</td>
+<td style="text-align: left;">9.8%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Food insecurity</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">0.009 (-0.003, 0.021)</td>
+<td style="text-align: left;">21.6%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Violence exposure</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">0.002 (-0.003, 0.007)</td>
+<td style="text-align: left;">4.4%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Ever had sexual intercourse</td>
+<td style="text-align: left;">1365</td>
+<td style="text-align: left;">0.010 (-0.004, 0.024)</td>
+<td style="text-align: left;">14.9%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Food insecurity</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">0.015 (-0.002, 0.031)</td>
+<td style="text-align: left;">22.3%</td>
+<td style="text-align: left;">positive; interval includes 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Violence exposure</td>
+<td style="text-align: left;">1381</td>
+<td style="text-align: left;">-0.000 (-0.005, 0.004)</td>
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">negative; interval includes 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="robustness-and-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="robustness-and-interpretation">Robustness and Interpretation</h2>
+<p>The context-adjusted mediation analyses add adolescent age, rural residence, and calendar year to the base maternal-background adjustment set. These models are interpreted as stability checks rather than replacements for the base causal mediation estimand.</p>
+<p>The fixed-context comparison showed that some indirect-effect estimates attenuated after contextual adjustment, especially the ever-sexual-intercourse pathway in the early-childhood focal contrast. Food insecurity remained directionally positive in the main focal contrasts, but uncertainty intervals still require cautious interpretation.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Contrast</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Mediator</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Base indirect estimate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Context-adjusted indirect estimate</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Change</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Ever had sexual intercourse</td>
+<td style="text-align: left;">0.004 (-0.006, 0.014)</td>
+<td style="text-align: left;">0.001 (-0.005, 0.007)</td>
+<td style="text-align: left;">-0.003</td>
+<td style="text-align: left;">Attenuated after fixed-context adjustment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Food insecurity</td>
+<td style="text-align: left;">0.009 (-0.003, 0.021)</td>
+<td style="text-align: left;">0.008 (-0.003, 0.018)</td>
+<td style="text-align: left;">-0.001</td>
+<td style="text-align: left;">Attenuated after fixed-context adjustment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Improving SES</td>
+<td style="text-align: left;">Violence exposure</td>
+<td style="text-align: left;">0.002 (-0.003, 0.007)</td>
+<td style="text-align: left;">0.004 (-0.003, 0.011)</td>
+<td style="text-align: left;">0.002</td>
+<td style="text-align: left;">Base indirect effect near null; attenuation not summarised</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Ever had sexual intercourse</td>
+<td style="text-align: left;">0.010 (-0.004, 0.024)</td>
+<td style="text-align: left;">0.003 (-0.005, 0.012)</td>
+<td style="text-align: left;">-0.007</td>
+<td style="text-align: left;">Attenuated after fixed-context adjustment</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Food insecurity</td>
+<td style="text-align: left;">0.015 (-0.002, 0.031)</td>
+<td style="text-align: left;">0.015 (-0.002, 0.033)</td>
+<td style="text-align: left;">0.001</td>
+<td style="text-align: left;">Larger after fixed-context adjustment</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">High Maternal Absence, Low SES vs Low Maternal Absence, Higher SES</td>
+<td style="text-align: left;">Violence exposure</td>
+<td style="text-align: left;">-0.000 (-0.005, 0.004)</td>
+<td style="text-align: left;">-0.000 (-0.007, 0.006)</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Base indirect effect near null; attenuation not summarised</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="main-recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="main-recommendation">Main Recommendation</h2>
+<p>The current recommendation is:</p>
+<ul>
+<li>use the strict joint-history branch as the primary causal mediation surface;</li>
+<li>treat the high maternal-absence plus low-socioeconomic-status history in middle-late childhood as the main adverse contrast;</li>
+<li>retain food insecurity, violence exposure, and ever having had sexual intercourse as the primary mediator block;</li>
+<li>interpret mediator-specific estimates descriptively and conservatively because indirect-effect intervals commonly include the null;</li>
+<li>report total effects and block decompositions together, rather than over-interpreting any single mediator in isolation.</li>
+</ul>
+</section>
+<section id="what-this-means-for-co-luminate" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means-for-co-luminate">What This Means For CO-LUMINATE</h2>
+<p>For the broader CO-LUMINATE program, Objective 5 provides the formal mediation bridge between childhood social-determinant histories and adolescent depressive symptoms. The findings support a pathway ecology in which material deprivation, violence exposure, and adolescent sexual-risk markers carry part of the social-stress signal, but they do not exhaust the mechanisms described by youth co-creators or implied by the longitudinal exposure histories.</p>
+<p>The public-facing interpretation should therefore emphasize both the measurable pathway evidence and the limits of the measured mediator block. This aligns Objective 5 with the Statistical Analysis Plan and keeps the causal language appropriately cautious.</p>
 
 
 </section>

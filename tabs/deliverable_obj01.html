@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Objective-level results page for childhood social determinant trajectory modelling.">
 
 <title>Objective 3: Social Determinant Trajectories – CO-LUMINATE</title>
 <style>
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -233,7 +234,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
 
+  <ul>
+  <li><a href="#why-this-work-was-needed" id="toc-why-this-work-was-needed" class="nav-link active" data-scroll-target="#why-this-work-was-needed">Why This Work Was Needed</a></li>
+  <li><a href="#analysis-scope" id="toc-analysis-scope" class="nav-link" data-scroll-target="#analysis-scope">Analysis Scope</a></li>
+  <li><a href="#release-coverage" id="toc-release-coverage" class="nav-link" data-scroll-target="#release-coverage">Release Coverage</a></li>
+  <li><a href="#univariate-trajectory-findings" id="toc-univariate-trajectory-findings" class="nav-link" data-scroll-target="#univariate-trajectory-findings">Univariate Trajectory Findings</a></li>
+  <li><a href="#joint-trajectory-findings" id="toc-joint-trajectory-findings" class="nav-link" data-scroll-target="#joint-trajectory-findings">Joint Trajectory Findings</a></li>
+  <li><a href="#scenario-defensibility" id="toc-scenario-defensibility" class="nav-link" data-scroll-target="#scenario-defensibility">Scenario Defensibility</a></li>
+  <li><a href="#main-recommendation" id="toc-main-recommendation" class="nav-link" data-scroll-target="#main-recommendation">Main Recommendation</a></li>
+  <li><a href="#what-this-means-for-co-luminate" id="toc-what-this-means-for-co-luminate" class="nav-link" data-scroll-target="#what-this-means-for-co-luminate">What This Means For CO-LUMINATE</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -242,6 +258,11 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Objective 3: Social Determinant Trajectories</h1>
 </div>
 
+<div>
+  <div class="description">
+    Objective-level results page for childhood social determinant trajectory modelling.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -256,9 +277,258 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="in-progress" class="level2">
-<h2 class="anchored" data-anchor-id="in-progress">In Progress</h2>
-<p>In progress, content not yet published to the public website.</p>
+<style>
+.deliverable-figure {
+  margin: 1.15rem auto 1.8rem auto;
+  max-width: 1180px;
+}
+.deliverable-figure img {
+  width: 100%;
+  border: 1px solid #d7dde5;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 8px 18px rgba(15, 35, 55, 0.06);
+  background: #fff;
+}
+.deliverable-note {
+  margin: 1.1rem 0 1.6rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #1d4f7a;
+  background: #eff6ff;
+  color: #17365d;
+}
+.deliverable-table {
+  font-size: 0.88rem;
+}
+</style>
+<section id="why-this-work-was-needed" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-work-was-needed">Why This Work Was Needed</h2>
+<p>Objective 3 characterizes how childhood social determinants unfold over time before adolescent mental-health assessment. Rather than treating childhood adversity as a single static baseline exposure, the trajectory analysis models repeated histories across early childhood and middle-late childhood.</p>
+<p>The current analysis is designed around scenario comparison. It asks whether retained class solutions remain defensible when stronger repeated-measurement requirements are imposed, and it separates trajectory selection from later distal profiling and mediation analysis.</p>
+</section>
+<section id="analysis-scope" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-scope">Analysis Scope</h2>
+<p>The active trajectory families are:</p>
+<ul>
+<li>univariate lived without mother;</li>
+<li>univariate lived without father;</li>
+<li>univariate household socioeconomic status;</li>
+<li>joint parental residence pattern; and</li>
+<li>joint maternal absence plus household socioeconomic status.</li>
+</ul>
+<p>The trajectory windows are early childhood (0-5 years) and middle-late childhood (6-12 years). The overall childhood-exposure file contains 5398 unique children, with 4318 entering the early-childhood analytic cohort and 5386 entering the middle-late-childhood analytic cohort.</p>
+<p>The main scenario comparisons are:</p>
+<ul>
+<li>univariate unrestricted, at least two observed occasions, and at least three observed occasions;</li>
+<li>joint unrestricted, at least two complete joint occasions, and at least three complete joint occasions.</li>
+</ul>
+</section>
+<section id="release-coverage" class="level2">
+<h2 class="anchored" data-anchor-id="release-coverage">Release Coverage</h2>
+<p>The current release-facing trajectory bundle is complete across the active model families and windows.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Program family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Scenario coverage</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model family coverage</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Windows</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Completed model-window slots</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Univariate trajectories</td>
+<td style="text-align: left;">Unrestricted, at least 2 observed occasions, and at least 3 observed occasions</td>
+<td style="text-align: left;">Maternal co-residence, paternal co-residence, and household socioeconomic status</td>
+<td style="text-align: left;">0-5 years and 6-12 years</td>
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">100%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Joint trajectories</td>
+<td style="text-align: left;">At least 1, at least 2, and at least 3 complete joint occasions</td>
+<td style="text-align: left;">Parental residence pattern and maternal absence with household socioeconomic status</td>
+<td style="text-align: left;">0-5 years and 6-12 years</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="univariate-trajectory-findings" class="level2">
+<h2 class="anchored" data-anchor-id="univariate-trajectory-findings">Univariate Trajectory Findings</h2>
+<p>The univariate analyses show that maternal co-residence and paternal co-residence class counts were stable when the repeated-measurement requirement was strengthened to at least three observed occasions. Household socioeconomic status was more sensitive in early childhood, where the strengthened branch retained a richer four-class structure.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Analysis</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Prior branch N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 3 occasions N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Prior branch K</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 3 occasions K</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Class-solution change</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 3 occasions entropy</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Minimum class share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Univariate Lived Without Mother</td>
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">4318</td>
+<td style="text-align: left;">3361</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4 -&gt; 4 (no change)</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">7.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Univariate Lived Without Mother</td>
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">5386</td>
+<td style="text-align: left;">4369</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">5 -&gt; 5 (no change)</td>
+<td style="text-align: left;">0.919</td>
+<td style="text-align: left;">5.7%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Univariate Household Socioeconomic Status</td>
+<td style="text-align: left;">0-5 years</td>
+<td style="text-align: left;">4318</td>
+<td style="text-align: left;">1606</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2 -&gt; 4</td>
+<td style="text-align: left;">0.744</td>
+<td style="text-align: left;">5.0%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Univariate Household Socioeconomic Status</td>
+<td style="text-align: left;">6-12 years</td>
+<td style="text-align: left;">5386</td>
+<td style="text-align: left;">3988</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">7 -&gt; 7 (no change)</td>
+<td style="text-align: left;">0.636</td>
+<td style="text-align: left;">7.7%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="deliverable-figure">
+  <img src="../_assets/obj01/figure_1_univariate_selected_trajectories.png" alt="Selected univariate social determinant trajectories across early and middle-late childhood.">
+</div>
+</section>
+<section id="joint-trajectory-findings" class="level2">
+<h2 class="anchored" data-anchor-id="joint-trajectory-findings">Joint Trajectory Findings</h2>
+<p>The joint trajectory analyses show why scenario comparison is central to Objective 3. Strengthening eligibility to at least three complete joint occasions reduced the analytic sample, increased posterior separation, and changed retained class counts in the joint models. This does not invalidate the looser branches; rather, it clarifies which solutions are most defensible for downstream interpretation.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Analysis</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Unrestricted N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 2 complete occasions N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 3 complete occasions N</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Unrestricted K</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 2 complete occasions K</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">At least 3 complete occasions K</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Strict entropy</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Strict minimum class share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Joint Parental Residence Patterns</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">4147</td>
+<td style="text-align: left;">3536</td>
+<td style="text-align: left;">1737</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.940</td>
+<td style="text-align: left;">8.4%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Joint Parental Residence Patterns</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">5044</td>
+<td style="text-align: left;">4703</td>
+<td style="text-align: left;">2473</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">0.934</td>
+<td style="text-align: left;">5.9%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Joint Maternal Absence + Household Socioeconomic Status</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">4178</td>
+<td style="text-align: left;">3492</td>
+<td style="text-align: left;">1467</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.890</td>
+<td style="text-align: left;">6.7%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Joint Maternal Absence + Household Socioeconomic Status</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">5270</td>
+<td style="text-align: left;">4850</td>
+<td style="text-align: left;">3478</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">0.886</td>
+<td style="text-align: left;">5.5%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="deliverable-figure">
+  <img src="../_assets/obj01/figure_2_joint_selected_trajectories.png" alt="Selected joint trajectory profiles for parental residence and maternal absence with household socioeconomic status.">
+</div>
+</section>
+<section id="scenario-defensibility" class="level2">
+<h2 class="anchored" data-anchor-id="scenario-defensibility">Scenario Defensibility</h2>
+<p>The release outputs include transition and alluvial summaries that compare class assignment across scenario restrictions on the overlap sample. These outputs are not treated as decorative sensitivity checks; they are part of the evidence used to decide which reference branches should be carried forward.</p>
+<div class="deliverable-figure">
+  <img src="../_assets/obj01/figure_4_joint_scenario_metrics.png" alt="Scenario comparison metrics for joint trajectory solutions.">
+</div>
+<div class="deliverable-figure">
+  <img src="../_assets/obj01/figure_4_joint_class_shift_alluvial.png" alt="Alluvial summary of class reallocation across joint trajectory scenario restrictions.">
+</div>
+</section>
+<section id="main-recommendation" class="level2">
+<h2 class="anchored" data-anchor-id="main-recommendation">Main Recommendation</h2>
+<p>The current recommendation is to use the stronger repeated-measurement branches as the primary reference layer for downstream work, while retaining looser branches as scenario-comparison evidence. For univariate models, this means emphasizing the at-least-three-observed-occasion branch. For joint models, this means emphasizing the at-least-three-complete-occasion branch.</p>
+<p>The trajectory results support a developmental view of childhood social determinants: maternal co-residence, paternal co-residence, household socioeconomic status, and their joint histories show distinct patterns across early and middle-late childhood. These classes provide the exposure histories that are carried into pathway screening and causal mediation.</p>
+</section>
+<section id="what-this-means-for-co-luminate" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-means-for-co-luminate">What This Means For CO-LUMINATE</h2>
+<p>For the broader CO-LUMINATE program, Objective 3 supplies the childhood exposure backbone. The retained trajectory histories are not merely descriptive clusters; they are the structured developmental histories used to evaluate adolescent pathway variables and later mediation contrasts.</p>
+<p>The public-facing interpretation should therefore emphasize both the selected classes and the uncertainty introduced by scenario restrictions. That framing is consistent with the Statistical Analysis Plan and helps avoid over-reading a single latent class solution as if it were the only defensible representation of childhood social conditions.</p>
 
 
 </section>
