@@ -21,7 +21,7 @@ Checks for release blockers:
   - blocked data/object extensions
   - .DS_Store and _quarantine paths
   - high-confidence secret patterns
-  - private machine path markers in non-doc files
+  - private machine/workspace path markers in non-doc files
 EOF
 }
 
@@ -159,10 +159,21 @@ if [[ "${#non_doc_files[@]}" -gt 0 ]]; then
     -e 'OneDrive' \
     -e '_private_use' \
     -e 'file:///Users/' \
+    -e 'C:/Users' \
+    -e 'private/CO-LUMINATE' \
+    -e 'org_repos/private' \
+    -e 'OBJ00-Datasets' \
+    -e 'OBJ01-Clustering' \
+    -e 'OBJ02-Interactive Pathways' \
+    -e 'OBJ03-Psychometric' \
+    -e 'OBJ04-Causal Mediation' \
+    -e 'PRJLCGA' \
+    -e 'PRJPSM' \
+    -e 'PRJCMA' \
     -e '[A-Za-z]:\\Users\\' \
     -e '[A-Za-z]:\\\\Users\\\\' \
     "${non_doc_files[@]}"; then
-    echo "FAIL: machine-specific/private path marker detected in non-doc files."
+    echo "FAIL: machine-specific/private workspace path marker detected in non-doc files."
     fail=1
   fi
 else
@@ -172,8 +183,8 @@ echo
 
 echo "Check 5/5: website-render spot check for local path leaks..."
 if [[ -d website ]]; then
-  if rg -n -I -g '*.html' -e '/Users/|OneDrive|_private_use|file:///Users/' website; then
-    echo "FAIL: local path marker found in rendered website HTML."
+  if rg -n -I -g '*.html' -e '/Users/|OneDrive|_private_use|file:///Users/|C:/Users|private/CO-LUMINATE|org_repos/private|OBJ00-Datasets|OBJ01-Clustering|OBJ02-Interactive Pathways|OBJ03-Psychometric|OBJ04-Causal Mediation|PRJLCGA|PRJPSM|PRJCMA' website; then
+    echo "FAIL: local/private workspace path marker found in rendered website HTML."
     fail=1
   fi
 else

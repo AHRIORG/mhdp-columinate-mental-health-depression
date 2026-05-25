@@ -1,7 +1,7 @@
 # ==============================================================================
-# OBJ00 Candidate Build Script (Non-destructive)
+# Core Data-Management Candidate Build Script (Non-destructive)
 # Purpose:
-#   - Assess and re-implement the OBJ00 core data flow for:
+#   - Assess and re-implement the core data flow for:
 #       1) dt_childhood_exposure
 #       2) dt_multistudies
 #   - Keep the existing production script unchanged.
@@ -27,26 +27,42 @@ suppressPackageStartupMessages({
 # Path helpers
 # ------------------------------------------------------------------------------
 
-detect_obj00_root <- function() {
+script_file_arg <- grep("^--file=", commandArgs(trailingOnly = FALSE), value = TRUE)
+script_file <- if (length(script_file_arg) > 0L) {
+  normalizePath(sub("^--file=", "", script_file_arg[[1]]), winslash = "/", mustWork = TRUE)
+} else {
+  candidate <- tryCatch(sys.frames()[[1]]$ofile, error = function(e) NULL)
+  if (is.null(candidate) || !nzchar(candidate)) {
+    normalizePath(getwd(), winslash = "/", mustWork = TRUE)
+  } else {
+    normalizePath(candidate, winslash = "/", mustWork = FALSE)
+  }
+}
+
+detect_data_management_root <- function() {
+  script_root <- normalizePath(file.path(dirname(script_file), "..", ".."), winslash = "/", mustWork = FALSE)
   candidates <- c(
+    Sys.getenv("COLU_DATA_MANAGEMENT_ROOT", unset = ""),
+    script_root,
+    here::here("scripts", "data_management"),
     here::here(),
-    here::here("OBJ00-Datasets Preperation")
+    getwd()
   )
 
-  for (root in candidates) {
-    probe <- file.path(root, "data_management", "scripts", "99_utils", "metadata_helper.R")
+  for (root in unique(candidates[nzchar(candidates)])) {
+    probe <- file.path(root, "scripts", "99_utils", "metadata_helper.R")
     if (file.exists(probe)) {
-      return(root)
+      return(normalizePath(root, winslash = "/", mustWork = TRUE))
     }
   }
 
-  stop("Unable to detect OBJ00 root with metadata_helper.R available.")
+  stop("Unable to detect data-management root with scripts/99_utils/metadata_helper.R available.")
 }
 
-OBJ00_ROOT <- detect_obj00_root()
-obj00_path <- function(...) file.path(OBJ00_ROOT, ...)
+DATA_MANAGEMENT_ROOT <- detect_data_management_root()
+dm_path <- function(...) file.path(DATA_MANAGEMENT_ROOT, ...)
 
-source(obj00_path("data_management", "scripts", "99_utils", "metadata_helper.R"))
+source(dm_path("scripts", "99_utils", "metadata_helper.R"))
 
 # ------------------------------------------------------------------------------
 # Utilities
@@ -60,7 +76,7 @@ calculate_mode <- function(x) {
 }
 
 private_path <- function(cfg, ...) {
-  normalizePath(file.path(OBJ00_ROOT, cfg$private_dt_dir, ...), winslash = "/", mustWork = FALSE)
+  normalizePath(file.path(DATA_MANAGEMENT_ROOT, cfg$private_dt_dir, ...), winslash = "/", mustWork = FALSE)
 }
 
 build_config <- function(config = list()) {
@@ -69,7 +85,7 @@ build_config <- function(config = list()) {
     ext_path = "raw_data/hdss_raw",
     adam_dir = "adam",
     save_outputs = FALSE,
-    output_dir = "data_management/data_examples/2_final_snippets/candidate_outputs",
+    output_dir = "data_examples/2_final_snippets/candidate_outputs",
     save_format = c("rds", "rdata"),
     return_intermediates = FALSE,
     verbose = TRUE,
@@ -77,8 +93,8 @@ build_config <- function(config = list()) {
     final_inputs_from_adam = TRUE,
     dt_psychometric = NULL,
     dt_dreams_multi_ssq = NULL,
-    score_engines_rds = "data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds",
-    scoring_script = "data_management/scripts/02_harmonization/02b_irt_model.R",
+    score_engines_rds = "data_examples/1_staging_snippets/derived_models/irt_joint_models.rds",
+    scoring_script = "scripts/02_harmonization/02b_irt_model.R",
     best_calibration = NULL,
     save_to_private_adam = FALSE
   )
@@ -547,7 +563,7 @@ build_dt_multistudies <- function(dt_raw, meta) {
 }
 
 # ------------------------------------------------------------------------------
-# Optional finalization from OBJ00 index.qmd
+# Optional finalization from the approved dataset-preparation workflow
 # ------------------------------------------------------------------------------
 
 resolve_index_final_inputs <- function(cfg) {
@@ -586,7 +602,7 @@ ensure_scoring_function <- function(cfg) {
     return(invisible(TRUE))
   }
 
-  scoring_script <- obj00_path(cfg$scoring_script)
+  scoring_script <- dm_path(cfg$scoring_script)
   if (!file.exists(scoring_script)) {
     stop("Scoring script was not found: ", scoring_script)
   }
@@ -607,7 +623,7 @@ apply_index_final_steps <- function(dt_multistudies_core, dt_childhood_exposure,
 
   ensure_scoring_function(cfg)
 
-  score_engine_file <- obj00_path(cfg$score_engines_rds)
+  score_engine_file <- dm_path(cfg$score_engines_rds)
   if (!file.exists(score_engine_file)) {
     stop("Score engines object not found: ", score_engine_file)
   }
@@ -780,7 +796,7 @@ validate_outputs <- function(dt_childhood_exposure, dt_multistudies) {
 }
 
 save_candidate_outputs <- function(results, cfg) {
-  out_dir <- file.path(OBJ00_ROOT, cfg$output_dir)
+  out_dir <- file.path(DATA_MANAGEMENT_ROOT, cfg$output_dir)
   dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
   if ("rds" %in% cfg$save_format) {
@@ -834,7 +850,7 @@ build_obj00_core_datasets <- function(config = list()) {
   cfg <- build_config(config)
   meta <- get_variable_metadata()
 
-  log_msg(cfg, "Starting candidate OBJ00 core build...")
+  log_msg(cfg, "Starting candidate core dataset build...")
   inputs <- load_primary_inputs(cfg)
 
   log_msg(cfg, "Building childhood exposure panel...")
@@ -897,7 +913,7 @@ build_obj00_core_datasets <- function(config = list()) {
     save_private_adam_outputs(results, cfg)
   }
 
-  log_msg(cfg, "Candidate OBJ00 core build completed.")
+  log_msg(cfg, "Candidate core dataset build completed.")
   results
 }
 

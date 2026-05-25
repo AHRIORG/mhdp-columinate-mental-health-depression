@@ -1,0 +1,29 @@
+model_code,pathway_label,strongest_driver,attenuation_step
+JMAES,Alcohol use,Age added,0.035138569338017706
+JMAES,Ever had sexual intercourse,Age added,0.24869815027373188
+JMAES,Food insecurity,Age added,0.007601011728557094
+JMAES,Lack of government grant receipt,Age added,0.08499202145733012
+JMAES,Low social support,Calendar year added,0.02253811178935326
+JMAES,School disengagement,Age added,0.01880743173207336
+JMAES,Violence exposure,Calendar year added,0.056409842317479586
+JPAES,Alcohol use,Age added,0.03873422286442807
+JPAES,Ever had sexual intercourse,Age added,0.251221358144495
+JPAES,Food insecurity,Age added,0.011498216200000688
+JPAES,Lack of government grant receipt,Age added,0.08390151470154988
+JPAES,Low social support,Age added,0.047913544026962684
+JPAES,School disengagement,Age added,0.03830370739101406
+JPAES,Violence exposure,Calendar year added,0.06438614043792767
+UHSES,Alcohol use,Age added,0.008234166736360987
+UHSES,Ever had sexual intercourse,Age added,0.038467201141744956
+UHSES,Food insecurity,Age added,0.004441421184262939
+UHSES,Lack of government grant receipt,Age added,0.016746930895762402
+UHSES,Low social support,Rural added,0.011916335189255667
+UHSES,School disengagement,Calendar year added,7.068754989730808e-4
+UHSES,Violence exposure,Calendar year added,0.00113418587662667
+ULWOM,Alcohol use,Age added,0.0329143417198674
+ULWOM,Ever had sexual intercourse,Age added,0.26495082632830863
+ULWOM,Food insecurity,Age added,0.014434205758496854
+ULWOM,Lack of government grant receipt,Age added,0.09655274662709946
+ULWOM,Low social support,Calendar year added,0.06920753423206298
+ULWOM,School disengagement,Calendar year added,3.938442033838141e-4
+ULWOM,Violence exposure,Calendar year added,0.05626064947221121

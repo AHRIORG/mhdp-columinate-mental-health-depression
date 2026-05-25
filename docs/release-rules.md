@@ -38,7 +38,7 @@ The following material must not be transferred into this public repository:
 - small-cell summaries or other outputs that could support re-identification
 - serialized or binary objects that can carry data or model state, including `.RData`, `.rda`, `.rds`, `.qs`, `.fst`, `.feather`, `.parquet`, `.pkl`, `.joblib`, and `.sqlite`, except approved IRT scoring-engine release artifacts under `scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds` and `portable_irt_engine/inst/engines/*.rds`
 - internal access notes, signed URLs, secrets, API keys, tokens, passwords, or environment files
-- absolute or machine-specific paths outside this repository, including patterns such as `/Users/...`, `C:\...`, `OneDrive...`, network shares, or `_private_use/...`
+- absolute, machine-specific, or private workspace paths outside this repository, including patterns such as `/Users/...`, `C:\...`, `OneDrive...`, network shares, `_private_use/...`, private development repository paths, objective workspace folder names, `PRJ*` internal project workspace names, or `org_repos/private/...`
 - rendered notebooks, preview files, logs, comments, or metadata that expose local usernames, absolute paths, or internal filenames
 - drafts, internal review artefacts, or unpublished materials that have not been approved for external sharing
 
@@ -79,7 +79,7 @@ Suggested preflight commands, run from the repository root:
 
 ```sh
 scripts/release_preflight.sh <candidate-paths>
-rg -n '/Users/|OneDrive|_private_use|C:\\Users\\|file:///Users/' <candidate-paths>
+rg -n '/Users/|OneDrive|_private_use|C:\\Users\\|C:/Users|file:///Users/|private/CO-LUMINATE|org_repos/private|OBJ00-Datasets|OBJ01-Clustering|OBJ02-Interactive Pathways|OBJ03-Psychometric|OBJ04-Causal Mediation|PRJLCGA|PRJPSM|PRJCMA' <candidate-paths>
 rg --files <candidate-paths> | rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' | rg -v '^(scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models\.rds|portable_irt_engine/inst/engines/[^/]+\.rds)$'
 rg --files <candidate-paths> | rg '\.(csv|tsv|xlsx|xls|sav|dta)$'
 rg -n 'readRDS|saveRDS|load\\(|read_csv|fread\\(|read_excel|read_dta|read_sav' <candidate-paths>
@@ -88,12 +88,12 @@ rg -n 'readRDS|saveRDS|load\\(|read_csv|fread\\(|read_excel|read_dta|read_sav' <
 If the release includes rendered website assets, run an additional scan over the rendered output:
 
 ```sh
-rg -n '/Users/|OneDrive|_private_use|file:///Users/|nb-[0-9]+' website
+rg -n '/Users/|OneDrive|_private_use|C:/Users|file:///Users/|private/CO-LUMINATE|org_repos/private|OBJ00-Datasets|OBJ01-Clustering|OBJ02-Interactive Pathways|OBJ03-Psychometric|OBJ04-Causal Mediation|PRJLCGA|PRJPSM|PRJCMA|nb-[0-9]+' website
 ```
 
 ## Promotion Workflow
 
-Use the following workflow when moving approved content from `private/CO-LUMINATE` into this repository:
+Use the following workflow when moving approved content from the private development repository into this public release repository:
 
 1. Prepare and review the candidate files in the private repository.
 2. Confirm that each file belongs in one of the public folders such as `docs/`, `scripts/`, `results/`, `metadata/`, `data/data_examples/`, or `website/`.

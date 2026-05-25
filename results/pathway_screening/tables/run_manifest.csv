@@ -1,0 +1,2 @@
+run_timestamp,models_requested,models_completed,pv_draw_start,pv_draw_end,include_school,a_path_rows_draw_level,b_path_rows_draw_level,a_path_rows_pooled,b_path_rows_pooled,canonical_pooled_files_detected,canonical_mediators_detected
+2026-03-31 17:55:57,"ULWOM, ULWOF, UHSES, JPA, JPAES","JPA, JPAES, UHSES, ULWOF, ULWOM",1,100,TRUE,28700,3500,287,35,5,"DNKA, ESXC, FDSC, GOVG, VLNC"

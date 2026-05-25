@@ -1,0 +1,19 @@
+Analysis,Spec,Window,BaselineClass,BaselineN,OverlapN,DroppedN,OverlapPct
+Univariate Lived Without Mother,ULWOM,time_0_5,"Early Peak, Declining Maternal Absence",274,260,14,0.948905109489051
+Univariate Lived Without Mother,ULWOM,time_0_5,Late-Onset Maternal Absence,475,344,131,0.7242105263157895
+Univariate Lived Without Mother,ULWOM,time_0_5,Stable High Maternal Absence,409,387,22,0.9462102689486552
+Univariate Lived Without Mother,ULWOM,time_0_5,Stable Low Maternal Absence,2793,2370,423,0.8485499462943072
+Univariate Lived Without Mother,ULWOM,time_6_12,Declining Maternal Absence,361,356,5,0.9861495844875346
+Univariate Lived Without Mother,ULWOM,time_6_12,Late-Onset Maternal Absence,264,264,0,1
+Univariate Lived Without Mother,ULWOM,time_6_12,Mid-Childhood Onset Maternal Absence,249,249,0,1
+Univariate Lived Without Mother,ULWOM,time_6_12,Stable High Maternal Absence,945,864,81,0.9142857142857143
+Univariate Lived Without Mother,ULWOM,time_6_12,Stable Low Maternal Absence,2881,2636,245,0.9149600833044081
+Univariate Household Socioeconomic Status,UHSES,time_0_5,Chronic Low SES,2103,1100,1003,0.5230622919638611
+Univariate Household Socioeconomic Status,UHSES,time_0_5,Improving from Low SES,791,506,285,0.6396965865992414
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Chronic Low SES,1577,1247,330,0.7907419150285352
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Early Improvement from Mild Low SES,409,403,6,0.9853300733496333
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Improving from High Low SES,417,392,25,0.9400479616306955
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Late Improvement from Chronic Low SES,448,434,14,0.96875
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Minimal Low SES,766,616,150,0.804177545691906
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Persistent Moderate Low SES,319,306,13,0.9592476489028213
+Univariate Household Socioeconomic Status,UHSES,time_6_12,Stable Higher SES,686,590,96,0.8600583090379009

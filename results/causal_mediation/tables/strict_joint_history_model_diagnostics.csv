@@ -1,0 +1,151 @@
+adjustment_set,window,mediator,model_type,formula,n_subjects,n_pseudo_rows,weighted_outcome_events,weighted_mediator_events,converged_all,n_warning_fits,warnings,m_imputations
+base,0-5 years,Alcohol use,Mediator model,DNKA ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,392.99999999999966,TRUE,20,-,20
+base,0-5 years,Alcohol use,Mediator-adjusted outcome model,DPBN ~ early_exposure + DNKA + SEX + MAGE + MEDU,1381,9347,42.999999999999986,392.99999999999966,TRUE,20,-,20
+base,0-5 years,Base pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ early_exposure + FDSC + VLNC + ESXC + SEX + MAGE + MEDU,1365,9238,42.999999999999986,-,TRUE,20,-,20
+base,0-5 years,Base pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ early_exposure + SEX + MAGE + MEDU + FDSC + VLNC,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,0-5 years,Base pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ early_exposure + SEX + MAGE + MEDU,1365,9238,42.999999999999986,302.99999999999915,TRUE,20,-,20
+base,0-5 years,Base pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ early_exposure + SEX + MAGE + MEDU + FDSC,1365,9238,42.999999999999986,429.9999999999999,TRUE,20,-,20
+base,0-5 years,Ever had sexual intercourse,Mediator model,ESXC ~ early_exposure + SEX + MAGE + MEDU,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,0-5 years,Ever had sexual intercourse,Mediator-adjusted outcome model,DPBN ~ early_exposure + ESXC + SEX + MAGE + MEDU,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,0-5 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ early_exposure + FDSC + VLNC + ESXC + DNKA + GOVG + SCSP +,1365,9238,42.999999999999986,-,TRUE,20,-,20
+base,0-5 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,SCHL + SEX + MAGE + MEDU,1365,9238,42.999999999999986,-,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Alcohol use,Joint-block sequential mediator model,DNKA ~ early_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC,1365,9238,42.999999999999986,384.99999999999966,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ early_exposure + SEX + MAGE + MEDU + FDSC + VLNC,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ early_exposure + SEX + MAGE + MEDU,1365,9238,42.999999999999986,302.99999999999915,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,DNKA,1365,9238,42.999999999999986,574.9999999999975,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,GOVG ~ early_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC +,1365,9238,42.999999999999986,574.9999999999975,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,DNKA + GOVG,1365,9238,42.999999999999986,135.99999999999983,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,SCSP ~ early_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC +,1365,9238,42.999999999999986,135.99999999999983,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,DNKA + GOVG + SCSP,1365,9238,42.999999999999986,103.99999999999991,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,SCHL ~ early_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC +,1365,9238,42.999999999999986,103.99999999999991,TRUE,20,-,20
+base,0-5 years,Expanded pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ early_exposure + SEX + MAGE + MEDU + FDSC,1365,9238,42.999999999999986,429.9999999999999,TRUE,20,-,20
+base,0-5 years,Food insecurity,Mediator model,FDSC ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,308.9999999999992,TRUE,20,-,20
+base,0-5 years,Food insecurity,Mediator-adjusted outcome model,DPBN ~ early_exposure + FDSC + SEX + MAGE + MEDU,1381,9347,42.999999999999986,308.9999999999992,TRUE,20,-,20
+base,0-5 years,Lack of government grant receipt,Mediator model,GOVG ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,584.999999999997,TRUE,20,-,20
+base,0-5 years,Lack of government grant receipt,Mediator-adjusted outcome model,DPBN ~ early_exposure + GOVG + SEX + MAGE + MEDU,1381,9347,42.999999999999986,584.999999999997,TRUE,20,-,20
+base,0-5 years,Low social support,Mediator model,SCSP ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,137.99999999999994,TRUE,20,-,20
+base,0-5 years,Low social support,Mediator-adjusted outcome model,DPBN ~ early_exposure + SCSP + SEX + MAGE + MEDU,1381,9347,42.999999999999986,137.99999999999994,TRUE,20,-,20
+base,0-5 years,School disengagement,Mediator model,SCHL ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,107.99999999999984,TRUE,20,-,20
+base,0-5 years,School disengagement,Mediator-adjusted outcome model,DPBN ~ early_exposure + SCHL + SEX + MAGE + MEDU,1381,9347,42.999999999999986,107.99999999999984,TRUE,20,-,20
+base,0-5 years,Violence exposure,Mediator model,VLNC ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,432.9999999999999,TRUE,20,-,20
+base,0-5 years,Violence exposure,Mediator-adjusted outcome model,DPBN ~ early_exposure + VLNC + SEX + MAGE + MEDU,1381,9347,42.999999999999986,432.9999999999999,TRUE,20,-,20
+base,0-5 years,-,Total-effect outcome model,DPBN ~ early_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,-,TRUE,20,-,20
+base,6-12 years,Alcohol use,Mediator model,DNKA ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,392.99999999999966,TRUE,20,-,20
+base,6-12 years,Alcohol use,Mediator-adjusted outcome model,DPBN ~ mid_exposure + DNKA + SEX + MAGE + MEDU,1381,9347,42.999999999999986,392.99999999999966,TRUE,20,-,20
+base,6-12 years,Base pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ mid_exposure + FDSC + VLNC + ESXC + SEX + MAGE + MEDU,1365,9238,42.999999999999986,-,TRUE,20,-,20
+base,6-12 years,Base pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ mid_exposure + SEX + MAGE + MEDU + FDSC + VLNC,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,6-12 years,Base pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ mid_exposure + SEX + MAGE + MEDU,1365,9238,42.999999999999986,302.99999999999915,TRUE,20,-,20
+base,6-12 years,Base pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ mid_exposure + SEX + MAGE + MEDU + FDSC,1365,9238,42.999999999999986,429.9999999999999,TRUE,20,-,20
+base,6-12 years,Ever had sexual intercourse,Mediator model,ESXC ~ mid_exposure + SEX + MAGE + MEDU,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,6-12 years,Ever had sexual intercourse,Mediator-adjusted outcome model,DPBN ~ mid_exposure + ESXC + SEX + MAGE + MEDU,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,6-12 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ mid_exposure + FDSC + VLNC + ESXC + DNKA + GOVG + SCSP +,1365,9238,42.999999999999986,-,TRUE,20,-,20
+base,6-12 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,SCHL + SEX + MAGE + MEDU,1365,9238,42.999999999999986,-,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Alcohol use,Joint-block sequential mediator model,DNKA ~ mid_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC,1365,9238,42.999999999999986,384.99999999999966,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ mid_exposure + SEX + MAGE + MEDU + FDSC + VLNC,1365,9238,42.999999999999986,274.9999999999996,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ mid_exposure + SEX + MAGE + MEDU,1365,9238,42.999999999999986,302.99999999999915,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,DNKA,1365,9238,42.999999999999986,574.9999999999975,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,GOVG ~ mid_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC +,1365,9238,42.999999999999986,574.9999999999975,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,DNKA + GOVG,1365,9238,42.999999999999986,135.99999999999983,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,SCSP ~ mid_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC +,1365,9238,42.999999999999986,135.99999999999983,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,DNKA + GOVG + SCSP,1365,9238,42.999999999999986,103.99999999999991,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,SCHL ~ mid_exposure + SEX + MAGE + MEDU + FDSC + VLNC + ESXC +,1365,9238,42.999999999999986,103.99999999999991,TRUE,20,-,20
+base,6-12 years,Expanded pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ mid_exposure + SEX + MAGE + MEDU + FDSC,1365,9238,42.999999999999986,429.9999999999999,TRUE,20,-,20
+base,6-12 years,Food insecurity,Mediator model,FDSC ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,308.9999999999992,TRUE,20,-,20
+base,6-12 years,Food insecurity,Mediator-adjusted outcome model,DPBN ~ mid_exposure + FDSC + SEX + MAGE + MEDU,1381,9347,42.999999999999986,308.9999999999992,TRUE,20,-,20
+base,6-12 years,Lack of government grant receipt,Mediator model,GOVG ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,584.999999999997,TRUE,20,-,20
+base,6-12 years,Lack of government grant receipt,Mediator-adjusted outcome model,DPBN ~ mid_exposure + GOVG + SEX + MAGE + MEDU,1381,9347,42.999999999999986,584.999999999997,TRUE,20,-,20
+base,6-12 years,Low social support,Mediator model,SCSP ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,137.99999999999994,TRUE,20,-,20
+base,6-12 years,Low social support,Mediator-adjusted outcome model,DPBN ~ mid_exposure + SCSP + SEX + MAGE + MEDU,1381,9347,42.999999999999986,137.99999999999994,TRUE,20,-,20
+base,6-12 years,School disengagement,Mediator model,SCHL ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,107.99999999999984,TRUE,20,-,20
+base,6-12 years,School disengagement,Mediator-adjusted outcome model,DPBN ~ mid_exposure + SCHL + SEX + MAGE + MEDU,1381,9347,42.999999999999986,107.99999999999984,TRUE,20,-,20
+base,6-12 years,Violence exposure,Mediator model,VLNC ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,432.9999999999999,TRUE,20,-,20
+base,6-12 years,Violence exposure,Mediator-adjusted outcome model,DPBN ~ mid_exposure + VLNC + SEX + MAGE + MEDU,1381,9347,42.999999999999986,432.9999999999999,TRUE,20,-,20
+base,6-12 years,-,Total-effect outcome model,DPBN ~ mid_exposure + SEX + MAGE + MEDU,1381,9347,42.999999999999986,-,TRUE,20,-,20
+fixed_context,0-5 years,Alcohol use,Mediator model,DNKA ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,391.9999999999997,TRUE,20,-,20
+fixed_context,0-5 years,Alcohol use,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,391.9999999999997,TRUE,20,-,20
+fixed_context,0-5 years,Alcohol use,Mediator-adjusted outcome model,DPBN ~ early_exposure + DNKA + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,391.9999999999997,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block,Joint-block mediator-adjusted outcome model,AGE + RURAL + CLYR,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ early_exposure + FDSC + VLNC + ESXC + SEX + MAGE + MEDU +,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,FDSC + VLNC,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,301.9999999999991,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block: Violence exposure,Joint-block sequential mediator model,FDSC,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,Base pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,Ever had sexual intercourse,Mediator model,ESXC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Ever had sexual intercourse,Mediator-adjusted outcome model,CLYR,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Ever had sexual intercourse,Mediator-adjusted outcome model,DPBN ~ early_exposure + ESXC + SEX + MAGE + MEDU + AGE + RURAL +,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ early_exposure + FDSC + VLNC + ESXC + DNKA + GOVG + SCSP +,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,SCHL + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Alcohol use,Joint-block sequential mediator model,DNKA ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,383.99999999999966,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Alcohol use,Joint-block sequential mediator model,FDSC + VLNC + ESXC,1364,9229,42.999999999999986,383.99999999999966,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,FDSC + VLNC,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,301.9999999999991,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,FDSC + VLNC + ESXC + DNKA,1364,9229,42.999999999999986,573.9999999999976,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,GOVG ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,573.9999999999976,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,FDSC + VLNC + ESXC + DNKA + GOVG,1364,9229,42.999999999999986,135.99999999999983,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,SCSP ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,135.99999999999983,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,FDSC + VLNC + ESXC + DNKA + GOVG + SCSP,1364,9229,42.999999999999986,103.99999999999991,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,SCHL ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,103.99999999999991,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Violence exposure,Joint-block sequential mediator model,FDSC,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,Expanded pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,Food insecurity,Mediator model,FDSC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,307.99999999999915,TRUE,20,-,20
+fixed_context,0-5 years,Food insecurity,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,307.99999999999915,TRUE,20,-,20
+fixed_context,0-5 years,Food insecurity,Mediator-adjusted outcome model,DPBN ~ early_exposure + FDSC + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,307.99999999999915,TRUE,20,-,20
+fixed_context,0-5 years,Lack of government grant receipt,Mediator model,GOVG ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,583.9999999999973,TRUE,20,-,20
+fixed_context,0-5 years,Lack of government grant receipt,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,583.9999999999973,TRUE,20,-,20
+fixed_context,0-5 years,Lack of government grant receipt,Mediator-adjusted outcome model,DPBN ~ early_exposure + GOVG + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,583.9999999999973,TRUE,20,-,20
+fixed_context,0-5 years,Low social support,Mediator model,SCSP ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,137.99999999999994,TRUE,20,-,20
+fixed_context,0-5 years,Low social support,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,137.99999999999994,TRUE,20,-,20
+fixed_context,0-5 years,Low social support,Mediator-adjusted outcome model,DPBN ~ early_exposure + SCSP + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,137.99999999999994,TRUE,20,-,20
+fixed_context,0-5 years,School disengagement,Mediator model,SCHL ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,107.99999999999984,TRUE,20,-,20
+fixed_context,0-5 years,School disengagement,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,107.99999999999984,TRUE,20,-,20
+fixed_context,0-5 years,School disengagement,Mediator-adjusted outcome model,DPBN ~ early_exposure + SCHL + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,107.99999999999984,TRUE,20,-,20
+fixed_context,0-5 years,Violence exposure,Mediator model,VLNC ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,432.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,Violence exposure,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,432.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,Violence exposure,Mediator-adjusted outcome model,DPBN ~ early_exposure + VLNC + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,432.9999999999999,TRUE,20,-,20
+fixed_context,0-5 years,-,Total-effect outcome model,DPBN ~ early_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,-,TRUE,20,-,20
+fixed_context,6-12 years,Alcohol use,Mediator model,DNKA ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,391.9999999999997,TRUE,20,-,20
+fixed_context,6-12 years,Alcohol use,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,391.9999999999997,TRUE,20,-,20
+fixed_context,6-12 years,Alcohol use,Mediator-adjusted outcome model,DPBN ~ mid_exposure + DNKA + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,391.9999999999997,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block,Joint-block mediator-adjusted outcome model,AGE + RURAL + CLYR,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ mid_exposure + FDSC + VLNC + ESXC + SEX + MAGE + MEDU +,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,FDSC + VLNC,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,301.9999999999991,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block: Violence exposure,Joint-block sequential mediator model,FDSC,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,Base pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,Ever had sexual intercourse,Mediator model,ESXC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Ever had sexual intercourse,Mediator-adjusted outcome model,CLYR,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Ever had sexual intercourse,Mediator-adjusted outcome model,DPBN ~ mid_exposure + ESXC + SEX + MAGE + MEDU + AGE + RURAL +,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,DPBN ~ mid_exposure + FDSC + VLNC + ESXC + DNKA + GOVG + SCSP +,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block,Joint-block mediator-adjusted outcome model,SCHL + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,-,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Alcohol use,Joint-block sequential mediator model,DNKA ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,383.99999999999966,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Alcohol use,Joint-block sequential mediator model,FDSC + VLNC + ESXC,1364,9229,42.999999999999986,383.99999999999966,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,ESXC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Ever had sexual intercourse,Joint-block sequential mediator model,FDSC + VLNC,1364,9229,42.999999999999986,273.9999999999996,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Food insecurity,Joint-block sequential mediator model,FDSC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1364,9229,42.999999999999986,301.9999999999991,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,FDSC + VLNC + ESXC + DNKA,1364,9229,42.999999999999986,573.9999999999976,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Lack of government grant receipt,Joint-block sequential mediator model,GOVG ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,573.9999999999976,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,FDSC + VLNC + ESXC + DNKA + GOVG,1364,9229,42.999999999999986,135.99999999999983,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Low social support,Joint-block sequential mediator model,SCSP ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,135.99999999999983,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,FDSC + VLNC + ESXC + DNKA + GOVG + SCSP,1364,9229,42.999999999999986,103.99999999999991,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: School disengagement,Joint-block sequential mediator model,SCHL ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,103.99999999999991,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Violence exposure,Joint-block sequential mediator model,FDSC,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,Expanded pathway block: Violence exposure,Joint-block sequential mediator model,VLNC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR +,1364,9229,42.999999999999986,429.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,Food insecurity,Mediator model,FDSC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,307.99999999999915,TRUE,20,-,20
+fixed_context,6-12 years,Food insecurity,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,307.99999999999915,TRUE,20,-,20
+fixed_context,6-12 years,Food insecurity,Mediator-adjusted outcome model,DPBN ~ mid_exposure + FDSC + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,307.99999999999915,TRUE,20,-,20
+fixed_context,6-12 years,Lack of government grant receipt,Mediator model,GOVG ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,583.9999999999973,TRUE,20,-,20
+fixed_context,6-12 years,Lack of government grant receipt,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,583.9999999999973,TRUE,20,-,20
+fixed_context,6-12 years,Lack of government grant receipt,Mediator-adjusted outcome model,DPBN ~ mid_exposure + GOVG + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,583.9999999999973,TRUE,20,-,20
+fixed_context,6-12 years,Low social support,Mediator model,SCSP ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,137.99999999999994,TRUE,20,-,20
+fixed_context,6-12 years,Low social support,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,137.99999999999994,TRUE,20,-,20
+fixed_context,6-12 years,Low social support,Mediator-adjusted outcome model,DPBN ~ mid_exposure + SCSP + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,137.99999999999994,TRUE,20,-,20
+fixed_context,6-12 years,School disengagement,Mediator model,SCHL ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,107.99999999999984,TRUE,20,-,20
+fixed_context,6-12 years,School disengagement,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,107.99999999999984,TRUE,20,-,20
+fixed_context,6-12 years,School disengagement,Mediator-adjusted outcome model,DPBN ~ mid_exposure + SCHL + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,107.99999999999984,TRUE,20,-,20
+fixed_context,6-12 years,Violence exposure,Mediator model,VLNC ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,432.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,Violence exposure,Mediator-adjusted outcome model,CLYR,1380,9338,42.999999999999986,432.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,Violence exposure,Mediator-adjusted outcome model,DPBN ~ mid_exposure + VLNC + SEX + MAGE + MEDU + AGE + RURAL +,1380,9338,42.999999999999986,432.9999999999999,TRUE,20,-,20
+fixed_context,6-12 years,-,Total-effect outcome model,DPBN ~ mid_exposure + SEX + MAGE + MEDU + AGE + RURAL + CLYR,1380,9338,42.999999999999986,-,TRUE,20,-,20

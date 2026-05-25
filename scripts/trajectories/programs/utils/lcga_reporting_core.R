@@ -211,6 +211,31 @@ trajectory_y_label <- function(meta) {
     return("Value")
   }
 
+  prefix <- meta$wide_prefix %||% ""
+  label <- tolower(meta$label %||% "")
+
+  if (identical(prefix, "LWOM") || stringr::str_detect(label, "without mother|maternal")) {
+    return("Probability (Maternal Absence)")
+  }
+
+  if (identical(prefix, "LWOF") || stringr::str_detect(label, "without father|paternal")) {
+    return("Probability (Paternal Absence)")
+  }
+
+  if (identical(prefix, "HC14") || stringr::str_detect(label, "overcrowd")) {
+    return("Probability (Overcrowding)")
+  }
+
+  if (identical(prefix, "HSES") || stringr::str_detect(label, "socioeconomic")) {
+    target_label <- meta$plot_target %||% "lowest"
+    if (identical(target_label, "lowest")) {
+      return("Probability (Low SES)")
+    }
+    if (identical(target_label, "highest")) {
+      return("Probability (High SES)")
+    }
+  }
+
   target_label <- meta$plot_target %||% "highest"
   lvls <- meta$transform_levels %||% meta$levels
 

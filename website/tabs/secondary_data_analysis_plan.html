@@ -316,6 +316,7 @@ window.Quarto = {
   <li><a href="#c6-mediator-prioritization-and-phenotype-planning" id="toc-c6-mediator-prioritization-and-phenotype-planning" class="nav-link" data-scroll-target="#c6-mediator-prioritization-and-phenotype-planning">C6 Mediator Prioritization and Phenotype Planning</a></li>
   <li><a href="#c7-sensitivity-and-robustness" id="toc-c7-sensitivity-and-robustness" class="nav-link" data-scroll-target="#c7-sensitivity-and-robustness">C7 Sensitivity and Robustness</a></li>
   <li><a href="#c8-planned-outputs-and-reporting" id="toc-c8-planned-outputs-and-reporting" class="nav-link" data-scroll-target="#c8-planned-outputs-and-reporting">C8 Planned Outputs and Reporting</a></li>
+  <li><a href="#c9-symbol-to-implementation-crosswalk-objective-4" id="toc-c9-symbol-to-implementation-crosswalk-objective-4" class="nav-link" data-scroll-target="#c9-symbol-to-implementation-crosswalk-objective-4">C9 Symbol-to-Implementation Crosswalk (Objective 4)</a></li>
   </ul></li>
   <li><a href="#section-d-objective-5---causal-mediation-sap" id="toc-section-d-objective-5---causal-mediation-sap" class="nav-link" data-scroll-target="#section-d-objective-5---causal-mediation-sap">Section D: Objective 5 - Causal Mediation SAP</a>
   <ul class="collapse">
@@ -650,7 +651,7 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 </section>
 <section id="b9-symbol-to-implementation-crosswalk-objective-3" class="level3">
 <h3 class="anchored" data-anchor-id="b9-symbol-to-implementation-crosswalk-objective-3">B9 Symbol-to-Implementation Crosswalk (Objective 3)</h3>
-<p>The Objective 3 crosswalk below maps each core quantity to the active PRJLCGA implementation workspace that currently generates the retained solutions, comparison notebooks, results hub, and manuscript-facing outputs.</p>
+<p>The Objective 3 crosswalk below maps each core quantity to the release-facing trajectory bundle and approved reporting surfaces. Internal development workspaces are not cited here because the public SAP should remain interpretable from repository-relative paths and documented release outputs.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -662,7 +663,7 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 <tr class="header">
 <th>SAP quantity</th>
 <th>Definition in this SAP</th>
-<th>Implementation locus (current PRJLCGA workspace)</th>
+<th>Implementation locus</th>
 <th>Primary output family</th>
 </tr>
 </thead>
@@ -670,46 +671,45 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 <tr class="odd">
 <td><span class="math inline">\(O_{iwm}^{(uni)}\)</span>, <span class="math inline">\(O_{iwj}^{(joint)}\)</span> and scenario eligibility</td>
 <td>Within-window observed or complete-occasion counts used to define analytic samples</td>
-<td><code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/utils/analysis_configuration.R</code> and <code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/analysis/run_lcga.R</code></td>
+<td><code>scripts/trajectories/programs/utils/analysis_configuration.R</code> and <code>scripts/trajectories/programs/analysis/run_lcga.R</code></td>
 <td>Scenario-specific run summaries and retained-sample counts</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\eta_{cm}(\tau_t)\)</span> and threshold-based response models</td>
 <td>Class-specific growth functions and categorical/ordinal outcome parameterization</td>
-<td><code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/utils/mplus_lcga.R</code></td>
+<td><code>scripts/trajectories/programs/utils/mplus_lcga.R</code></td>
 <td>Model input files, parameter estimates, and trajectory profiles</td>
 </tr>
 <tr class="odd">
 <td>Class-selection decision <span class="math inline">\(K\)</span> and admissible solution set</td>
 <td>Retained solution under fit, class-size, interpretability, and adjacency criteria</td>
-<td><code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/utils/lcga_selection.R</code></td>
+<td><code>scripts/trajectories/programs/utils/lcga_selection.R</code></td>
 <td>Selection summaries and audit-aligned decision tables</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(C_i\)</span>, posterior quality, and harmonized reporting outputs</td>
 <td>Latent class assignment, posterior summaries, trajectory figures, and distal tables</td>
-<td><code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/analysis/report_univariate_lcga.R</code>, <code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/analysis/report_joint_lcga.R</code>, and <code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/utils/lcga_reporting_core.R</code></td>
+<td><code>scripts/trajectories/programs/analysis/report_univariate_lcga.R</code>, <code>scripts/trajectories/programs/analysis/report_joint_lcga.R</code>, and <code>scripts/trajectories/programs/utils/lcga_reporting_core.R</code></td>
 <td>Scenario-specific result pages and retained-solution summaries</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(T_{cc'}^{(awss')}\)</span> and overlap-based reallocation evidence</td>
 <td>Cross-scenario defensibility checks and transition summaries</td>
-<td><code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/utils/class_overlap_reporting.R</code>, <code>private/CO-LUMINATE/PRJLCGA/docs/univariate_obj04_vs_ge3_trajectory_comparison.qmd</code>, and <code>private/CO-LUMINATE/PRJLCGA/docs/joint_obj04_vs_ge3_trajectory_comparison.qmd</code></td>
+<td><code>scripts/trajectories/programs/utils/class_overlap_reporting.R</code> and approved aggregate outputs under <code>results/trajectories/tables/</code></td>
 <td>Transition tables, overlap summaries, and alluvial figures</td>
 </tr>
 <tr class="even">
 <td>Manuscript-facing extraction surface</td>
-<td>Full staging layer from which main-text and supplementary outputs are drawn</td>
-<td><code>private/CO-LUMINATE/PRJLCGA/docs/results_hub.qmd</code>, <code>private/CO-LUMINATE/PRJLCGA/docs/manuscript_supplement.qmd</code>, and <code>private/CO-LUMINATE/PRJLCGA/statistical_analysis/programs/analysis/build_manuscript_main_text_figures.R</code></td>
-<td>Results hub, supplement, and manuscript figures</td>
+<td>Release-safe staging layer from which public-facing summaries and supplementary outputs are drawn</td>
+<td>Approved trajectory summaries staged through <code>results/trajectories/</code>, <code>scripts/trajectories/</code>, and rendered website documentation</td>
+<td>Results hub summaries, supplementary tables, and manuscript figures</td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="b10-consistency-stamp-objective-3" class="level3">
 <h3 class="anchored" data-anchor-id="b10-consistency-stamp-objective-3">B10 Consistency Stamp (Objective 3)</h3>
-<p><strong>Consistency stamp date:</strong> 2026-05-25<br>
-<strong>Scope:</strong> Objective 3 (Social Determinant Trajectories) only.</p>
+<p><strong>Consistency stamp date:</strong> 2026-05-25 <strong>Scope:</strong> Objective 3 (Social Determinant Trajectories) only.</p>
 <p>This consistency stamp records the intended SAP scope for the current Objective 3 specification:</p>
 <ol type="1">
 <li>the active Objective 3 family set is constrained to <code>ULWOM</code>, <code>ULWOF</code>, <code>UHSES</code>, <code>JPA</code>, and <code>JMAES</code>;</li>
@@ -826,6 +826,58 @@ P(S_{6-12})
 <li>supplementary maternal-baseline diagnostic summaries and a working mediation-specification DAG;</li>
 <li>a transparent shortlist of pathway domains prioritized for later mediation-focused analysis.</li>
 </ol>
+</section>
+<section id="c9-symbol-to-implementation-crosswalk-objective-4" class="level3">
+<h3 class="anchored" data-anchor-id="c9-symbol-to-implementation-crosswalk-objective-4">C9 Symbol-to-Implementation Crosswalk (Objective 4)</h3>
+<p>The Objective 4 crosswalk maps pathway-screening quantities to the public pathway-screening bundle and approved aggregate output folders. The public-facing release does not cite internal development workspaces.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>SAP quantity</th>
+<th>Definition in this SAP</th>
+<th>Implementation locus</th>
+<th>Primary output family</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(M_j\)</span></td>
+<td>Candidate adolescent pathway domain</td>
+<td><code>scripts/causal_mediation/config/pathway_variables.csv</code> and <code>scripts/pathway_screening/</code></td>
+<td>Harmonized pathway-variable registry</td>
+</tr>
+<tr class="even">
+<td>A-path screening terms</td>
+<td>Associations between childhood class history and candidate pathway domains</td>
+<td><code>results/pathway_screening/tables/transition_path_a_hypothesis_coefficients_all_models.csv</code></td>
+<td>A-path hypothesis tables and screening summaries</td>
+</tr>
+<tr class="odd">
+<td>B-path screening terms</td>
+<td>Associations between pathway domains and harmonized depressive-symptom endpoint</td>
+<td><code>results/pathway_screening/tables/transition_path_b_coefficients_all_models.csv</code></td>
+<td>B-path association tables</td>
+</tr>
+<tr class="even">
+<td>Contextual pathway inventory</td>
+<td>Co-created pathway chains mapped to measured and unmeasured pathway domains</td>
+<td><code>scripts/pathway_screening/programs/analysis/build_contextual_inventory_tables.R</code></td>
+<td>Contextual inventory long table and domain summary</td>
+</tr>
+<tr class="odd">
+<td>Public screening release layer</td>
+<td>Sanitized aggregate tables and figures prepared for public handoff</td>
+<td><code>scripts/pathway_screening/programs/analysis/sanitize_pathway_screening_outputs.R</code> and <code>results/pathway_screening/</code></td>
+<td>Release-ready tables, pathway figures, and manifest summaries</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="section-d-objective-5---causal-mediation-sap" class="level2">
@@ -965,37 +1017,37 @@ P(S_{6-12})
 <tr class="odd">
 <td><span class="math inline">\(H_i\)</span>, <span class="math inline">\(h_0\)</span>, <span class="math inline">\(h_1\)</span></td>
 <td>Childhood transition-history exposure and prespecified contrast pair</td>
-<td><code>private/CO-LUMINATE/PRJCMA/statistical_analysis/programs/analysis/run_strict_jmaes_final_inferential.R</code> and the PRJCMA contrast configuration bundle</td>
+<td><code>scripts/causal_mediation/config/total_effect_hypotheses.csv</code> and <code>scripts/causal_mediation/config/direct_effect_hypotheses.csv</code></td>
 <td>Total-effect and decomposition result tables</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(M_{ij}\)</span> and <span class="math inline">\(\mathbf{M}_i\)</span></td>
 <td>Core mediator-specific and joint three-mediator pathway representations</td>
-<td>PRJCMA inferential analysis programs and retained pathway configuration tables</td>
+<td><code>scripts/causal_mediation/config/pathway_variables.csv</code> and <code>scripts/causal_mediation/config/mediation_hypotheses.csv</code></td>
 <td>Single-mediator and joint-block mediation outputs</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\text{TE}\)</span></td>
 <td>Total effect on the risk-difference scale</td>
-<td>PRJCMA inferential output <code>strict_jmaes_final_total_effect_results.csv</code></td>
+<td><code>results/causal_mediation/tables/strict_joint_history_total_effect_results.csv</code></td>
 <td>Main total-effect tables</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\text{NIE}_j\)</span></td>
 <td>Mediator-specific indirect effect on the risk-difference scale</td>
-<td>PRJCMA inferential output <code>strict_jmaes_final_single_mediator_results.csv</code></td>
+<td><code>results/causal_mediation/tables/strict_joint_history_single_mediator_results.csv</code></td>
 <td>Mediator-specific decomposition tables and figures</td>
 </tr>
 <tr class="odd">
 <td><span class="math inline">\(\text{Block NDE}\)</span> and <span class="math inline">\(\text{Block NIE}\)</span></td>
 <td>Direct effect and total indirect effect through the joint three-mediator set</td>
-<td>PRJCMA inferential output <code>strict_jmaes_final_joint_mediator_results.csv</code></td>
+<td><code>results/causal_mediation/tables/strict_joint_history_joint_mediator_results.csv</code></td>
 <td>Joint-block decomposition figure and summaries</td>
 </tr>
 <tr class="even">
 <td>Imputation and simulation diagnostics</td>
 <td>Multiple-imputation settings, simulation-draw settings, and completion metadata</td>
-<td><code>strict_jmaes_final_imputation_run_manifest.csv</code>, <code>strict_jmaes_final_pipeline_manifest.csv</code>, <code>strict_jmaes_final_model_diagnostics.csv</code></td>
+<td><code>results/causal_mediation/tables/strict_joint_history_imputation_run_manifest.csv</code>, <code>results/causal_mediation/tables/strict_joint_history_pipeline_manifest.csv</code>, and <code>results/causal_mediation/tables/strict_joint_history_model_diagnostics.csv</code></td>
 <td>Diagnostics summaries and implementation audit trail</td>
 </tr>
 </tbody>

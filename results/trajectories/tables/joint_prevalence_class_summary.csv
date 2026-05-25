@@ -1,0 +1,72 @@
+Analysis,Spec,Window,WindowLabel,Condition,ClassLabel,NClass
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Declining Return to Two-Parent,395
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Dual Absence, Stable High",1787
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Late Dual Absence,209
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Maternal Absence Transition,246
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Paternal Absence, Stable High",677
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Two-Parent, Stable Presence",222
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Concave Trough Early — Mother: Shift Up Mid (1–5y); Father: Shift Down Early (0–3y),221
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Stable High — Mother: Stable High (0–5y); Father: Stable High (0–5y),651
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Stable Low — Mother: Stable Low (0–5y); Father: Stable Low (0–5y),719
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Stable Medium — Mother: Stable Low (0–5y); Father: Stable High (0–5y),146
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Unrestricted,Declining Return to Two-Parent,223
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Unrestricted,"Dual Absence, Stable High",504
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Unrestricted,Late Dual Absence,266
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Unrestricted,Maternal Absence Transition,227
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Unrestricted,"Paternal Absence, Stable High",2090
+Joint Parental Residence Patterns,JPA,time_0_5,Early childhood (0-5 years),Unrestricted,"Two-Parent, Stable Presence",837
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Declining Return to Two-Parent,264
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Dual Absence, Stable High",687
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),From Dual to Paternal Absence,824
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Late Dual Absence,1696
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Maternal Absence Transition,333
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Paternal Absence, Stable High",313
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Rising Paternal Absence,326
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Two-Parent, Stable Presence",260
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 1,262
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 2,145
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 3,752
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 4,716
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 5,199
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 6,238
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 7,161
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Declining Return to Two-Parent,266
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Dual Absence, Stable High",745
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,From Dual to Paternal Absence,321
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Late Dual Absence,331
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Maternal Absence Transition,332
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Paternal Absence, Stable High",1894
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Rising Paternal Absence,263
+Joint Parental Residence Patterns,JPA,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Two-Parent, Stable Presence",892
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"High Maternal Absence, Low SES",307
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Low Maternal Absence, Improving SES",555
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Low Maternal Absence, Low SES",580
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Rising Maternal Absence, Low SES",2050
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Class 1,186
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Class 2,320
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Class 3,738
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Class 4,125
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Stricter restricted (at least 3 complete waves),Class 5,98
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Unrestricted,"High Maternal Absence, Low SES",687
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Unrestricted,"Low Maternal Absence, Improving SES",623
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Unrestricted,"Low Maternal Absence, Low SES",2555
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_0_5,Early childhood (0-5 years),Unrestricted,"Rising Maternal Absence, Low SES",313
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"High Maternal Absence, Improving SES",783
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"High Maternal Absence, Low SES",340
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Low Maternal Absence, Higher SES",1104
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Low Maternal Absence, Improving SES",1403
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Low Maternal Absence, Low SES",635
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),"Rising Maternal Absence, Improving SES",585
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 1,246
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 2,823
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 3,436
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 4,192
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 5,373
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 6,589
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Stricter restricted (at least 3 complete waves),Class 7,819
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"High Maternal Absence, Improving SES",616
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"High Maternal Absence, Low SES",664
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Low Maternal Absence, Higher SES",828
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Low Maternal Absence, Improving SES",1190
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Low Maternal Absence, Low SES",1634
+Joint Maternal Absence + Household Socioeconomic Status,JMAES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,"Rising Maternal Absence, Improving SES",338

@@ -1,0 +1,2 @@
+run_timestamp,m_imputations,seed,n_simulation_draws,n_block_simulation_draws,n_expanded_block_simulation_draws,pooled_output_prefix
+2026-05-04 12:29:05 SAST,20,20260414,300,120,0,strict_jmaes_final

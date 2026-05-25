@@ -1,0 +1,8 @@
+pathway_variable,pathway_label,included_in_obj02_refit,current_scope_note
+DNKA,Alcohol use,TRUE,Included in current strict restricted LCGA screening scope
+ESXC,Ever had sexual intercourse,TRUE,Included in current strict restricted LCGA screening scope
+FDSC,Food insecurity,TRUE,Included in current strict restricted LCGA screening scope
+GOVG,Lack of government grant receipt,TRUE,Included in current strict restricted LCGA screening scope
+VLNC,Violence exposure,TRUE,Included in current strict restricted LCGA screening scope
+SCSP,Low social support,TRUE,Included in strict LCGA screening via --include_school=true
+SCHL,School disengagement,TRUE,Included in strict LCGA screening via --include_school=true

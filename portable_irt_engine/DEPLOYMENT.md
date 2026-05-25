@@ -72,7 +72,7 @@ services.
 
 After the app is hosted, update the website configuration file:
 
-`private/CO-LUMINATE/website/api-config.json`
+`website/api-config.json`
 
 Set:
 

@@ -1,0 +1,3 @@
+window,window_label,strict_n,strict_k,strict_entropy,strict_min_class_pct,same_label_pct_vs_unrestricted,interpretation
+0-5 years,Early childhood (0-5 years),1467,5,0.890,0.066803,0,"All three early-childhood joint branches recover the same five interpretable families, and the stricter branch retains them with improved classification quality."
+6-12 years,Middle-late childhood (6-12 years),3478,8,0.879,0.052904,0,"The unrestricted and stricter branches recover the full eight-class middle-late childhood family set, whereas the restricted >=2 branch omits two families."

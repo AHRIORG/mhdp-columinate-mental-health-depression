@@ -1,0 +1,8 @@
+variable,label,base_model,extension_model,screening_role,rationale
+FDSC,Food insecurity,true,true,Core base mediator,"Strongest combined A-path and B-path evidence; robust to fixed contextual adjustment."
+VLNC,Violence exposure,true,true,Core base mediator,"Consistent B-path support and plausible upstream pathway signal; retained as a core adversity pathway."
+ESXC,Ever had sexual intercourse,true,true,Core base mediator,"Consistent B-path support and developmentally plausible pathway signal; retained with careful age-context interpretation."
+DNKA,Alcohol use,false,true,Extension mediator,"Upstream signal present, but downstream association weakened after fixed contextual adjustment."
+GOVG,Lack of government grant receipt,false,true,Extension mediator,"Substantively relevant but did not show stable downstream support in the adjusted B-path screen."
+SCSP,Low social support,false,true,Extension mediator,"Substantively relevant but insufficient support for the base mediation model."
+SCHL,School disengagement,false,true,Extension mediator,"Substantively relevant but insufficient support for the base mediation model."

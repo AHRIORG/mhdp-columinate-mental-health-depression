@@ -1,0 +1,3 @@
+adjustment_set,label,covariates,estimand_note
+base,Base causal mediation estimand with imputed maternal baseline,"SEX; MAGE; MEDU","Baseline-adjusted total/direct/indirect decomposition using sex plus imputed maternal age and maternal education."
+fixed_context,Fixed-context-adjusted decomposition with imputed maternal baseline,"SEX; MAGE; MEDU; AGE; RURAL; CLYR","Context-adjusted sensitivity decomposition extending the base estimand with adolescent age, rural residence, and calendar year."
