@@ -493,6 +493,14 @@ document.addEventListener("DOMContentLoaded", function () {
   nav.className = "section-nav";
   nav.setAttribute("aria-label", currentGroup.label + " navigation");
 
+  const collapseKey = "columinate-section-nav-collapsed-" + currentGroup.id;
+  const toggle = document.createElement("button");
+  toggle.className = "section-nav__toggle";
+  toggle.type = "button";
+  toggle.setAttribute("aria-label", "Collapse section navigation");
+  toggle.setAttribute("aria-expanded", "true");
+  nav.appendChild(toggle);
+
   const eyebrow = document.createElement("p");
   eyebrow.className = "section-nav__eyebrow";
   eyebrow.textContent = currentGroup.label;
@@ -522,6 +530,69 @@ document.addEventListener("DOMContentLoaded", function () {
   nav.appendChild(list);
   document.body.classList.add("has-section-nav", "has-section-nav--" + currentGroup.id);
   content.parentNode.insertBefore(nav, content);
+
+  function refreshLayout() {
+    window.requestAnimationFrame(function () {
+      window.dispatchEvent(new Event("resize"));
+    });
+  }
+
+  function applyCollapsedLayout(collapsed) {
+    Array.prototype.forEach.call(nav.children, function (child) {
+      if (child !== toggle) {
+        child.style.display = collapsed ? "none" : "";
+      }
+    });
+
+    if (collapsed) {
+      nav.style.width = "2.65rem";
+      nav.style.padding = "0.45rem";
+      nav.style.overflow = "visible";
+      if (window.matchMedia("(min-width: 1200px)").matches) {
+        content.style.setProperty("padding-left", "clamp(3.65rem, 4.2vw, 4.4rem)", "important");
+      }
+    } else {
+      nav.style.width = "";
+      nav.style.padding = "";
+      nav.style.overflow = "";
+      content.style.removeProperty("padding-left");
+    }
+  }
+
+  function setCollapsed(collapsed) {
+    nav.classList.toggle("is-collapsed", collapsed);
+    document.body.classList.toggle("section-nav-is-collapsed", collapsed);
+    toggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+    toggle.setAttribute(
+      "aria-label",
+      collapsed ? "Expand section navigation" : "Collapse section navigation"
+    );
+    try {
+      window.localStorage.setItem(collapseKey, collapsed ? "true" : "false");
+    } catch (_error) {
+      // Ignore storage failures in restricted preview contexts.
+    }
+    applyCollapsedLayout(collapsed);
+    refreshLayout();
+  }
+
+  let initiallyCollapsed = false;
+  try {
+    initiallyCollapsed = window.localStorage.getItem(collapseKey) === "true";
+  } catch (_error) {
+    initiallyCollapsed = false;
+  }
+  setCollapsed(initiallyCollapsed);
+
+  toggle.addEventListener("click", function () {
+    setCollapsed(!nav.classList.contains("is-collapsed"));
+  });
+
+  window.addEventListener("resize", function () {
+    if (nav.classList.contains("is-collapsed")) {
+      applyCollapsedLayout(true);
+    }
+  });
 });
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
