@@ -1,4 +1,4 @@
-model_code,model_label,k_early,k_mid,n_subjects_total,n_pseudo_rows_total,total_weight_total,a_significant_terms,b_significant_terms,lcga_basis
-ULWOM,Univariate lived without mother,4,5,3273,15677,3272.6920009999985,3,6,Strict restricted trajectory modelling LCGA
-UHSES,Univariate household socioeconomic status,4,5,1541,12518,1540.7660130000093,1,5,Strict restricted trajectory modelling LCGA
-JMAES,Joint maternal absence and socioeconomic status,5,7,3460,31211,3459.3840280001173,4,6,Strict restricted trajectory modelling LCGA
+"model_code","model_label","k_early","k_mid","n_subjects_total","n_pseudo_rows_total","total_weight_total","a_significant_terms","b_significant_terms"
+"ULWOM","Univariate lived without mother",4,5,3273,15677,3272.692001,3,6
+"UHSES","Univariate household socioeconomic status",4,5,1541,12518,1540.76601300001,1,5
+"JMAES","Joint maternal absence and socioeconomic status",5,7,3460,31211,3459.38402800012,4,6

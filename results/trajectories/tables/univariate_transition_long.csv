@@ -1,0 +1,33 @@
+"Analysis","Spec","Window","BaselineClass","RestrictedClass","n","RowTotal","RowPct","StayedSameLabel"
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early Peak, Declining Maternal Absence","Early Peak, Declining Maternal Absence",260,260,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_0_5","Late-Onset Maternal Absence","Late-Onset Maternal Absence",344,344,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_0_5","Stable High Maternal Absence","Stable High Maternal Absence",387,387,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_0_5","Stable Low Maternal Absence","Stable Low Maternal Absence",2370,2370,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Declining Maternal Absence","Declining Maternal Absence",355,356,0.997191011235955,TRUE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Declining Maternal Absence","Late-Onset Maternal Absence",1,356,0.00280898876404494,FALSE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Late-Onset Maternal Absence","Late-Onset Maternal Absence",264,264,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Mid-Childhood Onset Maternal Absence","Mid-Childhood Onset Maternal Absence",249,249,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Stable High Maternal Absence","Stable High Maternal Absence",864,864,1,TRUE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Stable Low Maternal Absence","Late-Onset Maternal Absence",6,2636,0.00227617602427921,FALSE
+"Univariate Lived Without Mother","ULWOM","time_6_12","Stable Low Maternal Absence","Stable Low Maternal Absence",2630,2636,0.997723823975721,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Chronic Low SES","Chronic Low SES",821,1100,0.746363636363636,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Chronic Low SES","Late Improvement from Chronic Low SES",279,1100,0.253636363636364,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Improving from Low SES","Improving from Low SES",349,506,0.689723320158103,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Improving from Low SES","Late Improvement from Chronic Low SES",76,506,0.150197628458498,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Improving from Low SES","Stable Higher SES",81,506,0.160079051383399,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Chronic Low SES","Late Improvement from Chronic Low SES",1247,1247,1,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Early Improvement from Mild Low SES","Chronic Low SES",1,403,0.00248138957816377,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Early Improvement from Mild Low SES","Early Improvement from Mild Low SES",2,403,0.00496277915632754,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Early Improvement from Mild Low SES","Persistent Moderate Low SES",399,403,0.990074441687345,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Early Improvement from Mild Low SES","Stable Higher SES",1,403,0.00248138957816377,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Improving from High Low SES","Early Improvement from Mild Low SES",389,392,0.99234693877551,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Improving from High Low SES","Improving from High Low SES",1,392,0.00255102040816327,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Improving from High Low SES","Minimal Low SES",2,392,0.00510204081632653,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Late Improvement from Chronic Low SES","Improving from High Low SES",427,434,0.983870967741936,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Late Improvement from Chronic Low SES","Late Improvement from Chronic Low SES",7,434,0.0161290322580645,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Minimal Low SES","Early Improvement from Mild Low SES",2,616,0.00324675324675325,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Minimal Low SES","Minimal Low SES",1,616,0.00162337662337662,TRUE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Minimal Low SES","Stable Higher SES",613,616,0.99512987012987,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Persistent Moderate Low SES","Late Improvement from Chronic Low SES",1,306,0.00326797385620915,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Persistent Moderate Low SES","Minimal Low SES",305,306,0.996732026143791,FALSE
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Stable Higher SES","Chronic Low SES",590,590,1,FALSE

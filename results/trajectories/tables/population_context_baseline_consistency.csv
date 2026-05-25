@@ -1,0 +1,12 @@
+"Variable","Label","ChildrenWithData","ChildrenWithMultipleValues","MultipleValuePct"
+"SEX","Child sex",5398,0,0
+"MAGE","Mother's age (years)",3433,0,0
+"MEDU","Mother's education",3801,630,0.165745856353591
+"MHIV","Mother's HIV status",2661,0,0
+"MPTS","Mother's partner status",3080,0,0
+"MMIG","Mother migrated in previous year",3433,0,0
+"FAGE","Father's age (years)",1672,0,0
+"FEDU","Father's education",1704,78,0.0457746478873239
+"FHIV","Father's HIV status",847,0,0
+"FPTS","Father's partner status",1539,0,0
+"FMIG","Father migrated in previous year",1672,0,0

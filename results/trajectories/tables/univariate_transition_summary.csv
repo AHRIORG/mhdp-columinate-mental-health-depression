@@ -1,5 +1,5 @@
-Analysis,Spec,Window,BaselineN,RestrictedN,OverlapN,OverlapPctOfBaseline,OverlapPctOfRestricted,StayedSameLabelN,StayedSameLabelPct
-Univariate Lived Without Mother,ULWOM,time_0_5,3951,3361,3361,0.850670716274361,1,3361,1
-Univariate Lived Without Mother,ULWOM,time_6_12,4700,4369,4369,0.9295744680851064,1,4362,0.9983978027008469
-Univariate Household Socioeconomic Status,UHSES,time_0_5,2894,1606,1606,0.5549412577747063,1,1170,0.7285180572851806
-Univariate Household Socioeconomic Status,UHSES,time_6_12,4622,3988,3988,0.8628299437472955,1,11,0.0027582748244734203
+"Analysis","Spec","Window","BaselineN","RestrictedN","OverlapN","OverlapPctOfBaseline","OverlapPctOfRestricted","StayedSameLabelN","StayedSameLabelPct"
+"Univariate Lived Without Mother","ULWOM","time_0_5",3951,3361,3361,0.850670716274361,1,3361,1
+"Univariate Lived Without Mother","ULWOM","time_6_12",4700,4369,4369,0.929574468085106,1,4362,0.998397802700847
+"Univariate Household Socioeconomic Status","UHSES","time_0_5",2894,1606,1606,0.554941257774706,1,1170,0.728518057285181
+"Univariate Household Socioeconomic Status","UHSES","time_6_12",4622,3988,3988,0.862829943747295,1,11,0.00275827482447342

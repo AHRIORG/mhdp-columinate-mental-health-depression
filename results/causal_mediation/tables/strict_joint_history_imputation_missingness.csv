@@ -1,6 +1,6 @@
-variable,n_missing,pct_missing
-MAGE,173,12.5
-MEDU,222,16.1
-MHIV,369,26.7
-MPTS,191,13.8
-MMIG,173,12.5
+"variable","n_missing","pct_missing"
+"MAGE",173,12.5
+"MEDU",222,16.1
+"MHIV",369,26.7
+"MPTS",191,13.8
+"MMIG",173,12.5

@@ -1,39 +1,39 @@
-Analysis,Spec,Window,WindowLabel,Condition,ClassLabel,NClass
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),"Early Peak, Declining Maternal Absence",260
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Late-Onset Maternal Absence,344
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Stable High Maternal Absence,387
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Stable Low Maternal Absence,2370
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Unrestricted,"Early Peak, Declining Maternal Absence",274
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Unrestricted,Late-Onset Maternal Absence,475
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Unrestricted,Stable High Maternal Absence,409
-Univariate Lived Without Mother,ULWOM,time_0_5,Early childhood (0-5 years),Unrestricted,Stable Low Maternal Absence,2793
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Declining Maternal Absence,355
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Late-Onset Maternal Absence,271
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Mid-Childhood Onset Maternal Absence,249
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Stable High Maternal Absence,864
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Stable Low Maternal Absence,2630
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Declining Maternal Absence,361
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Late-Onset Maternal Absence,264
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Mid-Childhood Onset Maternal Absence,249
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Stable High Maternal Absence,945
-Univariate Lived Without Mother,ULWOM,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Stable Low Maternal Absence,2881
-Univariate Household Socioeconomic Status,UHSES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Chronic Low SES,821
-Univariate Household Socioeconomic Status,UHSES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Improving from Low SES,349
-Univariate Household Socioeconomic Status,UHSES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Late Improvement from Chronic Low SES,355
-Univariate Household Socioeconomic Status,UHSES,time_0_5,Early childhood (0-5 years),Restricted (at least 3 waves),Stable Higher SES,81
-Univariate Household Socioeconomic Status,UHSES,time_0_5,Early childhood (0-5 years),Unrestricted,Chronic Low SES,2103
-Univariate Household Socioeconomic Status,UHSES,time_0_5,Early childhood (0-5 years),Unrestricted,Improving from Low SES,791
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Chronic Low SES,591
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Early Improvement from Mild Low SES,393
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Improving from High Low SES,428
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Late Improvement from Chronic Low SES,1255
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Minimal Low SES,308
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Persistent Moderate Low SES,399
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Restricted (at least 3 waves),Stable Higher SES,614
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Chronic Low SES,1577
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Early Improvement from Mild Low SES,409
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Improving from High Low SES,417
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Late Improvement from Chronic Low SES,448
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Minimal Low SES,766
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Persistent Moderate Low SES,319
-Univariate Household Socioeconomic Status,UHSES,time_6_12,Middle-late childhood (6-12 years),Unrestricted,Stable Higher SES,686
+"Analysis","Spec","Window","WindowLabel","Condition","ClassLabel","NClass"
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Early Peak, Declining Maternal Absence",260
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Late-Onset Maternal Absence",344
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Stable High Maternal Absence",387
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Stable Low Maternal Absence",2370
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Unrestricted","Early Peak, Declining Maternal Absence",274
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Unrestricted","Late-Onset Maternal Absence",475
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Unrestricted","Stable High Maternal Absence",409
+"Univariate Lived Without Mother","ULWOM","time_0_5","Early childhood (0-5 years)","Unrestricted","Stable Low Maternal Absence",2793
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Declining Maternal Absence",355
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Late-Onset Maternal Absence",271
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Mid-Childhood Onset Maternal Absence",249
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Stable High Maternal Absence",864
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Stable Low Maternal Absence",2630
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Declining Maternal Absence",361
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Late-Onset Maternal Absence",264
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Mid-Childhood Onset Maternal Absence",249
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Stable High Maternal Absence",945
+"Univariate Lived Without Mother","ULWOM","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Stable Low Maternal Absence",2881
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Chronic Low SES",821
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Improving from Low SES",349
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Late Improvement from Chronic Low SES",355
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Early childhood (0-5 years)","Restricted (at least 3 waves)","Stable Higher SES",81
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Early childhood (0-5 years)","Unrestricted","Chronic Low SES",2103
+"Univariate Household Socioeconomic Status","UHSES","time_0_5","Early childhood (0-5 years)","Unrestricted","Improving from Low SES",791
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Chronic Low SES",591
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Early Improvement from Mild Low SES",393
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Improving from High Low SES",428
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Late Improvement from Chronic Low SES",1255
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Minimal Low SES",308
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Persistent Moderate Low SES",399
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Restricted (at least 3 waves)","Stable Higher SES",614
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Chronic Low SES",1577
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Early Improvement from Mild Low SES",409
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Improving from High Low SES",417
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Late Improvement from Chronic Low SES",448
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Minimal Low SES",766
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Persistent Moderate Low SES",319
+"Univariate Household Socioeconomic Status","UHSES","time_6_12","Middle-late childhood (6-12 years)","Unrestricted","Stable Higher SES",686

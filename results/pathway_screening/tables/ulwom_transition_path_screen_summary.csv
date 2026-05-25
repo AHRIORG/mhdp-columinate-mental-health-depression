@@ -1,2 +1,2 @@
-model_code,model_label,k_early,k_mid,n_subjects_total,n_pseudo_rows_total,total_weight_total,a_significant_terms,b_significant_terms,lcga_basis
-ULWOM,Univariate lived without mother,4,5,3273,15677,3272.6920009999985,3,6,Strict restricted trajectory modelling LCGA
+"model_code","model_label","k_early","k_mid","n_subjects_total","n_pseudo_rows_total","total_weight_total","a_significant_terms","b_significant_terms"
+"ULWOM","Univariate lived without mother",4,5,3273,15677,3272.692001,3,6

@@ -1,2 +1,2 @@
-model_code,model_label,k_early,k_mid,n_subjects_total,n_pseudo_rows_total,total_weight_total,a_significant_terms,b_significant_terms,lcga_basis
-JMAES,Joint maternal absence and socioeconomic status,5,7,3460,31211,3459.3840280001173,4,6,Strict restricted trajectory modelling LCGA
+"model_code","model_label","k_early","k_mid","n_subjects_total","n_pseudo_rows_total","total_weight_total","a_significant_terms","b_significant_terms"
+"JMAES","Joint maternal absence and socioeconomic status",5,7,3460,31211,3459.38402800012,4,6

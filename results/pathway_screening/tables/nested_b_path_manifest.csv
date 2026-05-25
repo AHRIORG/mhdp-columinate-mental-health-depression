@@ -1,0 +1,17 @@
+"adjustment_code","adjustment_label","model_code","model_label","n_subjects","n_pseudo_rows","total_weight"
+"sex_only","Sex only","ULWOM","Univariate lived without mother",3752,14395,3751.20000000023
+"sex_age","Sex + age","ULWOM","Univariate lived without mother",3752,14395,3751.20000000023
+"sex_age_rural","Sex + age + rural","ULWOM","Univariate lived without mother",3743,14352,3742.20600000023
+"sex_age_rural_clyr","Sex + age + rural + calendar year","ULWOM","Univariate lived without mother",3743,14352,3742.20600000023
+"sex_only","Sex only","UHSES","Univariate household socioeconomic status",2766,13511,2765.66500000003
+"sex_age","Sex + age","UHSES","Univariate household socioeconomic status",2766,13511,2765.66500000003
+"sex_age_rural","Sex + age + rural","UHSES","Univariate household socioeconomic status",2765,13508,2764.66500000003
+"sex_age_rural_clyr","Sex + age + rural + calendar year","UHSES","Univariate household socioeconomic status",2765,13508,2764.66500000003
+"sex_only","Sex only","JMAES","Joint maternal absence and socioeconomic status",4028,19184,4027.0740000002
+"sex_age","Sex + age","JMAES","Joint maternal absence and socioeconomic status",4028,19184,4027.0740000002
+"sex_age_rural","Sex + age + rural","JMAES","Joint maternal absence and socioeconomic status",4019,19121,4018.0740000002
+"sex_age_rural_clyr","Sex + age + rural + calendar year","JMAES","Joint maternal absence and socioeconomic status",4019,19121,4018.0740000002
+"sex_only","Sex only","JPAES","Joint parental absence and socioeconomic status",4078,20435,4077.00300000024
+"sex_age","Sex + age","JPAES","Joint parental absence and socioeconomic status",4078,20435,4077.00300000024
+"sex_age_rural","Sex + age + rural","JPAES","Joint parental absence and socioeconomic status",4069,20364,4068.00300000024
+"sex_age_rural_clyr","Sex + age + rural + calendar year","JPAES","Joint parental absence and socioeconomic status",4069,20364,4068.00300000024

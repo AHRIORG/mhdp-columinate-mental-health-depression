@@ -1,0 +1,11 @@
+"ModelFamily","Analysis","ModelType","Window","WindowLabel","ResultAvailable","StructuralSensitivityAvailable","ReportingChecklistAvailable","SMARTChecklistAvailable"
+"Maternal co-residence","Univariate Lived Without Mother","Univariate","time_0_5","Early childhood (0-5 years)",TRUE,TRUE,TRUE,TRUE
+"Maternal co-residence","Univariate Lived Without Mother","Univariate","time_6_12","Middle-late childhood (6-12 years)",TRUE,TRUE,TRUE,TRUE
+"Paternal co-residence","Univariate Lived Without Father","Univariate","time_0_5","Early childhood (0-5 years)",TRUE,TRUE,TRUE,TRUE
+"Paternal co-residence","Univariate Lived Without Father","Univariate","time_6_12","Middle-late childhood (6-12 years)",TRUE,TRUE,TRUE,TRUE
+"Household socioeconomic status","Univariate Household Socioeconomic Status","Univariate","time_0_5","Early childhood (0-5 years)",TRUE,TRUE,TRUE,TRUE
+"Household socioeconomic status","Univariate Household Socioeconomic Status","Univariate","time_6_12","Middle-late childhood (6-12 years)",TRUE,TRUE,TRUE,TRUE
+"Joint parental residence","Joint Parental Residence Patterns","Joint","time_0_5","Early childhood (0-5 years)",TRUE,TRUE,TRUE,TRUE
+"Joint parental residence","Joint Parental Residence Patterns","Joint","time_6_12","Middle-late childhood (6-12 years)",TRUE,TRUE,TRUE,TRUE
+"Joint maternal absence and household socioeconomic status","Joint Maternal Absence + SES","Joint","time_0_5","Early childhood (0-5 years)",TRUE,TRUE,TRUE,TRUE
+"Joint maternal absence and household socioeconomic status","Joint Maternal Absence + SES","Joint","time_6_12","Middle-late childhood (6-12 years)",TRUE,TRUE,TRUE,TRUE

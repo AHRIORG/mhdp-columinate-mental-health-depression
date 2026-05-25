@@ -1,0 +1,2 @@
+"run_timestamp","branch","n_simulation_draws","seed","n_block_simulation_draws","n_expanded_block_simulation_draws","transition_subjects","transition_pseudo_rows","posterior_weight_floor","posterior_weights_normalised_within_subject","exposure_solution","n_total_effect_contrasts","interval_method","m_imputations"
+"2026-05-04 12:29:05 SAST","strict",300,,120,0,1381,9347,1e-10,TRUE,"Stricter restricted Joint Maternal Absence + Household Socioeconomic Status LCGA",10,"Rubin pooled over 20 imputations; within-imputation intervals from cluster-robust coefficient simulation.",20
