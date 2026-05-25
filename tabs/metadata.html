@@ -400,8 +400,8 @@ ul.task-list li input[type="checkbox"] {
 @media (max-width: 1200px) { .consort-flow .html-widget { min-width: 760px; } }
 </style>
 <div class="consort-flow">
-<div class="grViz html-widget html-fill-item" id="htmlwidget-f8c4e54ac4a6d318c5ae" style="width:100%;height:338px;"></div>
-<script type="application/json" data-for="htmlwidget-f8c4e54ac4a6d318c5ae">{"x":{"diagram":"digraph consort {\ngraph [layout=dot, rankdir=TB, splines=ortho, bgcolor=\"transparent\", nodesep=0.95, ranksep=1.0, pad=0.2, outputorder=edgesfirst, newrank=true];\nnode [shape=box, style=\"rounded,filled\", color=\"#5b6473\", fontcolor=\"#1f2937\", fontname=\"Arial\", fontsize=12, penwidth=1.2, margin=\"0.16,0.12\"];\nedge [color=\"#4b5563\", penwidth=1.2, arrowsize=0.7];\nMH0 [label=<Mental health records<BR/>available<BR/>n = 6,207>, fillcolor=\"#f2f5f8\"];\nMH1 [label=<After endpoint filter<BR/>mental health records<BR/>n = 6,024>, fillcolor=\"#f2f5f8\"];\nSDOH0 [label=<Childhood SDoH records<BR/>available<BR/>n = 5,398>, fillcolor=\"#f2f5f8\"];\nLINKED [label=<Linked records with endpoint<BR/>and SDoH coverage<BR/>n = 5,226>, fillcolor=\"#eef3f8\", color=\"#2c5f93\", penwidth=1.4];\nFINAL [label=<Primary analysis set<BR/>n = 5,226>, fillcolor=\"#eef3f8\", color=\"#2c5f93\", penwidth=1.4];\nEX1 [label=<Excluded before linkage<BR/>Missing depression endpoint<BR/>n = 183>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\nEX2 [label=<Excluded at linkage<BR/>No SDoH match<BR/>n = 798>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\nEX3 [label=<Excluded at linkage<BR/>No eligible mental health match<BR/>n = 172>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\n{ rank=same; MH0; EX1; }\n{ rank=same; SDOH0; MH1; EX2; EX3; }\nMH0 -> MH1 [tailport=s, headport=n, minlen=1, weight=4];\nMH1 -> LINKED [tailport=s, headport=n, minlen=1, weight=4];\nLINKED -> FINAL [tailport=s, headport=n, minlen=1, weight=4];\nSDOH0 -> LINKED [tailport=e, headport=w, minlen=1, weight=3];\nMH0 -> EX1 [tailport=e, headport=w, minlen=1, weight=2];\nMH1 -> EX2 [tailport=e, headport=w, minlen=1, weight=2];\nSDOH0 -> EX3 [tailport=w, headport=e, minlen=1, weight=2];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div class="grViz html-widget html-fill-item" id="htmlwidget-833f7c922470cea327af" style="width:100%;height:338px;"></div>
+<script type="application/json" data-for="htmlwidget-833f7c922470cea327af">{"x":{"diagram":"digraph consort {\ngraph [layout=dot, rankdir=TB, splines=ortho, bgcolor=\"transparent\", nodesep=0.95, ranksep=1.0, pad=0.2, outputorder=edgesfirst, newrank=true];\nnode [shape=box, style=\"rounded,filled\", color=\"#5b6473\", fontcolor=\"#1f2937\", fontname=\"Arial\", fontsize=12, penwidth=1.2, margin=\"0.16,0.12\"];\nedge [color=\"#4b5563\", penwidth=1.2, arrowsize=0.7];\nMH0 [label=<Mental health records<BR/>available<BR/>n = 6,207>, fillcolor=\"#f2f5f8\"];\nMH1 [label=<After endpoint filter<BR/>mental health records<BR/>n = 6,024>, fillcolor=\"#f2f5f8\"];\nSDOH0 [label=<Childhood SDoH records<BR/>available<BR/>n = 5,398>, fillcolor=\"#f2f5f8\"];\nLINKED [label=<Linked records with endpoint<BR/>and SDoH coverage<BR/>n = 5,226>, fillcolor=\"#eef3f8\", color=\"#2c5f93\", penwidth=1.4];\nFINAL [label=<Primary analysis set<BR/>n = 5,226>, fillcolor=\"#eef3f8\", color=\"#2c5f93\", penwidth=1.4];\nEX1 [label=<Excluded before linkage<BR/>Missing depression endpoint<BR/>n = 183>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\nEX2 [label=<Excluded at linkage<BR/>No SDoH match<BR/>n = 798>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\nEX3 [label=<Excluded at linkage<BR/>No eligible mental health match<BR/>n = 172>, fillcolor=\"#ffffff\", color=\"#8b95a5\"];\n{ rank=same; MH0; EX1; }\n{ rank=same; SDOH0; MH1; EX2; EX3; }\nMH0 -> MH1 [tailport=s, headport=n, minlen=1, weight=4];\nMH1 -> LINKED [tailport=s, headport=n, minlen=1, weight=4];\nLINKED -> FINAL [tailport=s, headport=n, minlen=1, weight=4];\nSDOH0 -> LINKED [tailport=e, headport=w, minlen=1, weight=3];\nMH0 -> EX1 [tailport=e, headport=w, minlen=1, weight=2];\nMH1 -> EX2 [tailport=e, headport=w, minlen=1, weight=2];\nSDOH0 -> EX3 [tailport=w, headport=e, minlen=1, weight=2];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div>
@@ -412,23 +412,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data-dictionary-childhood-social-exposure-panel-variables-of-interest-by-role">Data Dictionary: Childhood Social Exposure Panel (Variables of Interest by Role)</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="yefkegtyfo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yefkegtyfo table {
+<div id="metadata-childhood-exposure-role-dictionary" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#metadata-childhood-exposure-role-dictionary table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yefkegtyfo thead, #yefkegtyfo tbody, #yefkegtyfo tfoot, #yefkegtyfo tr, #yefkegtyfo td, #yefkegtyfo th {
+#metadata-childhood-exposure-role-dictionary thead, #metadata-childhood-exposure-role-dictionary tbody, #metadata-childhood-exposure-role-dictionary tfoot, #metadata-childhood-exposure-role-dictionary tr, #metadata-childhood-exposure-role-dictionary td, #metadata-childhood-exposure-role-dictionary th {
   border-style: none;
 }
 
-#yefkegtyfo p {
+#metadata-childhood-exposure-role-dictionary p {
   margin: 0;
   padding: 0;
 }
 
-#yefkegtyfo .gt_table {
+#metadata-childhood-exposure-role-dictionary .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -454,12 +454,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_caption {
+#metadata-childhood-exposure-role-dictionary .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yefkegtyfo .gt_title {
+#metadata-childhood-exposure-role-dictionary .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -471,7 +471,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#yefkegtyfo .gt_subtitle {
+#metadata-childhood-exposure-role-dictionary .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -483,7 +483,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#yefkegtyfo .gt_heading {
+#metadata-childhood-exposure-role-dictionary .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -495,13 +495,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_bottom_border {
+#metadata-childhood-exposure-role-dictionary .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_col_headings {
+#metadata-childhood-exposure-role-dictionary .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -516,7 +516,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_col_heading {
+#metadata-childhood-exposure-role-dictionary .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -536,7 +536,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#yefkegtyfo .gt_column_spanner_outer {
+#metadata-childhood-exposure-role-dictionary .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -548,15 +548,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#yefkegtyfo .gt_column_spanner_outer:first-child {
+#metadata-childhood-exposure-role-dictionary .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yefkegtyfo .gt_column_spanner_outer:last-child {
+#metadata-childhood-exposure-role-dictionary .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yefkegtyfo .gt_column_spanner {
+#metadata-childhood-exposure-role-dictionary .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -568,11 +568,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#yefkegtyfo .gt_spanner_row {
+#metadata-childhood-exposure-role-dictionary .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yefkegtyfo .gt_group_heading {
+#metadata-childhood-exposure-role-dictionary .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -598,7 +598,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#yefkegtyfo .gt_empty_group_heading {
+#metadata-childhood-exposure-role-dictionary .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -613,15 +613,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#yefkegtyfo .gt_from_md > :first-child {
+#metadata-childhood-exposure-role-dictionary .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yefkegtyfo .gt_from_md > :last-child {
+#metadata-childhood-exposure-role-dictionary .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yefkegtyfo .gt_row {
+#metadata-childhood-exposure-role-dictionary .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -640,7 +640,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#yefkegtyfo .gt_stub {
+#metadata-childhood-exposure-role-dictionary .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -653,7 +653,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yefkegtyfo .gt_stub_row_group {
+#metadata-childhood-exposure-role-dictionary .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -667,15 +667,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#yefkegtyfo .gt_row_group_first td {
+#metadata-childhood-exposure-role-dictionary .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yefkegtyfo .gt_row_group_first th {
+#metadata-childhood-exposure-role-dictionary .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yefkegtyfo .gt_summary_row {
+#metadata-childhood-exposure-role-dictionary .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -685,16 +685,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yefkegtyfo .gt_first_summary_row {
+#metadata-childhood-exposure-role-dictionary .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_first_summary_row.thick {
+#metadata-childhood-exposure-role-dictionary .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yefkegtyfo .gt_last_summary_row {
+#metadata-childhood-exposure-role-dictionary .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -704,7 +704,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_grand_summary_row {
+#metadata-childhood-exposure-role-dictionary .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -714,7 +714,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yefkegtyfo .gt_first_grand_summary_row {
+#metadata-childhood-exposure-role-dictionary .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -724,7 +724,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_last_grand_summary_row_top {
+#metadata-childhood-exposure-role-dictionary .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -734,11 +734,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_striped {
+#metadata-childhood-exposure-role-dictionary .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yefkegtyfo .gt_table_body {
+#metadata-childhood-exposure-role-dictionary .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -747,7 +747,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_footnotes {
+#metadata-childhood-exposure-role-dictionary .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -761,7 +761,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_footnote {
+#metadata-childhood-exposure-role-dictionary .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -770,7 +770,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yefkegtyfo .gt_sourcenotes {
+#metadata-childhood-exposure-role-dictionary .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -784,7 +784,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#yefkegtyfo .gt_sourcenote {
+#metadata-childhood-exposure-role-dictionary .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -792,72 +792,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#yefkegtyfo .gt_left {
+#metadata-childhood-exposure-role-dictionary .gt_left {
   text-align: left;
 }
 
-#yefkegtyfo .gt_center {
+#metadata-childhood-exposure-role-dictionary .gt_center {
   text-align: center;
 }
 
-#yefkegtyfo .gt_right {
+#metadata-childhood-exposure-role-dictionary .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yefkegtyfo .gt_font_normal {
+#metadata-childhood-exposure-role-dictionary .gt_font_normal {
   font-weight: normal;
 }
 
-#yefkegtyfo .gt_font_bold {
+#metadata-childhood-exposure-role-dictionary .gt_font_bold {
   font-weight: bold;
 }
 
-#yefkegtyfo .gt_font_italic {
+#metadata-childhood-exposure-role-dictionary .gt_font_italic {
   font-style: italic;
 }
 
-#yefkegtyfo .gt_super {
+#metadata-childhood-exposure-role-dictionary .gt_super {
   font-size: 65%;
 }
 
-#yefkegtyfo .gt_footnote_marks {
+#metadata-childhood-exposure-role-dictionary .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yefkegtyfo .gt_asterisk {
+#metadata-childhood-exposure-role-dictionary .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yefkegtyfo .gt_indent_1 {
+#metadata-childhood-exposure-role-dictionary .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yefkegtyfo .gt_indent_2 {
+#metadata-childhood-exposure-role-dictionary .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yefkegtyfo .gt_indent_3 {
+#metadata-childhood-exposure-role-dictionary .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yefkegtyfo .gt_indent_4 {
+#metadata-childhood-exposure-role-dictionary .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yefkegtyfo .gt_indent_5 {
+#metadata-childhood-exposure-role-dictionary .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yefkegtyfo .katex-display {
+#metadata-childhood-exposure-role-dictionary .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yefkegtyfo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#metadata-childhood-exposure-role-dictionary div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -991,23 +991,23 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-variables-of-interest-by-role">Data Dictionary: Integrated Multi-study Mental Health Panel (Variables of Interest by Role)</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div id="czccaujefv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#czccaujefv table {
+<div id="metadata-multistudy-role-dictionary" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#metadata-multistudy-role-dictionary table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#czccaujefv thead, #czccaujefv tbody, #czccaujefv tfoot, #czccaujefv tr, #czccaujefv td, #czccaujefv th {
+#metadata-multistudy-role-dictionary thead, #metadata-multistudy-role-dictionary tbody, #metadata-multistudy-role-dictionary tfoot, #metadata-multistudy-role-dictionary tr, #metadata-multistudy-role-dictionary td, #metadata-multistudy-role-dictionary th {
   border-style: none;
 }
 
-#czccaujefv p {
+#metadata-multistudy-role-dictionary p {
   margin: 0;
   padding: 0;
 }
 
-#czccaujefv .gt_table {
+#metadata-multistudy-role-dictionary .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1033,12 +1033,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#czccaujefv .gt_caption {
+#metadata-multistudy-role-dictionary .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#czccaujefv .gt_title {
+#metadata-multistudy-role-dictionary .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1050,7 +1050,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#czccaujefv .gt_subtitle {
+#metadata-multistudy-role-dictionary .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1062,7 +1062,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#czccaujefv .gt_heading {
+#metadata-multistudy-role-dictionary .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1074,13 +1074,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#czccaujefv .gt_bottom_border {
+#metadata-multistudy-role-dictionary .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#czccaujefv .gt_col_headings {
+#metadata-multistudy-role-dictionary .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1095,7 +1095,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#czccaujefv .gt_col_heading {
+#metadata-multistudy-role-dictionary .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1115,7 +1115,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#czccaujefv .gt_column_spanner_outer {
+#metadata-multistudy-role-dictionary .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1127,15 +1127,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#czccaujefv .gt_column_spanner_outer:first-child {
+#metadata-multistudy-role-dictionary .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#czccaujefv .gt_column_spanner_outer:last-child {
+#metadata-multistudy-role-dictionary .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#czccaujefv .gt_column_spanner {
+#metadata-multistudy-role-dictionary .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1147,11 +1147,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#czccaujefv .gt_spanner_row {
+#metadata-multistudy-role-dictionary .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#czccaujefv .gt_group_heading {
+#metadata-multistudy-role-dictionary .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1177,7 +1177,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#czccaujefv .gt_empty_group_heading {
+#metadata-multistudy-role-dictionary .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1192,15 +1192,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#czccaujefv .gt_from_md > :first-child {
+#metadata-multistudy-role-dictionary .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#czccaujefv .gt_from_md > :last-child {
+#metadata-multistudy-role-dictionary .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#czccaujefv .gt_row {
+#metadata-multistudy-role-dictionary .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1219,7 +1219,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#czccaujefv .gt_stub {
+#metadata-multistudy-role-dictionary .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1232,7 +1232,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#czccaujefv .gt_stub_row_group {
+#metadata-multistudy-role-dictionary .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1246,15 +1246,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#czccaujefv .gt_row_group_first td {
+#metadata-multistudy-role-dictionary .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#czccaujefv .gt_row_group_first th {
+#metadata-multistudy-role-dictionary .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#czccaujefv .gt_summary_row {
+#metadata-multistudy-role-dictionary .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1264,16 +1264,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#czccaujefv .gt_first_summary_row {
+#metadata-multistudy-role-dictionary .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#czccaujefv .gt_first_summary_row.thick {
+#metadata-multistudy-role-dictionary .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#czccaujefv .gt_last_summary_row {
+#metadata-multistudy-role-dictionary .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1283,7 +1283,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#czccaujefv .gt_grand_summary_row {
+#metadata-multistudy-role-dictionary .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1293,7 +1293,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#czccaujefv .gt_first_grand_summary_row {
+#metadata-multistudy-role-dictionary .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1303,7 +1303,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#czccaujefv .gt_last_grand_summary_row_top {
+#metadata-multistudy-role-dictionary .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1313,11 +1313,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#czccaujefv .gt_striped {
+#metadata-multistudy-role-dictionary .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#czccaujefv .gt_table_body {
+#metadata-multistudy-role-dictionary .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1326,7 +1326,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#czccaujefv .gt_footnotes {
+#metadata-multistudy-role-dictionary .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1340,7 +1340,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#czccaujefv .gt_footnote {
+#metadata-multistudy-role-dictionary .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1349,7 +1349,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#czccaujefv .gt_sourcenotes {
+#metadata-multistudy-role-dictionary .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1363,7 +1363,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#czccaujefv .gt_sourcenote {
+#metadata-multistudy-role-dictionary .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1371,72 +1371,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#czccaujefv .gt_left {
+#metadata-multistudy-role-dictionary .gt_left {
   text-align: left;
 }
 
-#czccaujefv .gt_center {
+#metadata-multistudy-role-dictionary .gt_center {
   text-align: center;
 }
 
-#czccaujefv .gt_right {
+#metadata-multistudy-role-dictionary .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#czccaujefv .gt_font_normal {
+#metadata-multistudy-role-dictionary .gt_font_normal {
   font-weight: normal;
 }
 
-#czccaujefv .gt_font_bold {
+#metadata-multistudy-role-dictionary .gt_font_bold {
   font-weight: bold;
 }
 
-#czccaujefv .gt_font_italic {
+#metadata-multistudy-role-dictionary .gt_font_italic {
   font-style: italic;
 }
 
-#czccaujefv .gt_super {
+#metadata-multistudy-role-dictionary .gt_super {
   font-size: 65%;
 }
 
-#czccaujefv .gt_footnote_marks {
+#metadata-multistudy-role-dictionary .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#czccaujefv .gt_asterisk {
+#metadata-multistudy-role-dictionary .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#czccaujefv .gt_indent_1 {
+#metadata-multistudy-role-dictionary .gt_indent_1 {
   text-indent: 5px;
 }
 
-#czccaujefv .gt_indent_2 {
+#metadata-multistudy-role-dictionary .gt_indent_2 {
   text-indent: 10px;
 }
 
-#czccaujefv .gt_indent_3 {
+#metadata-multistudy-role-dictionary .gt_indent_3 {
   text-indent: 15px;
 }
 
-#czccaujefv .gt_indent_4 {
+#metadata-multistudy-role-dictionary .gt_indent_4 {
   text-indent: 20px;
 }
 
-#czccaujefv .gt_indent_5 {
+#metadata-multistudy-role-dictionary .gt_indent_5 {
   text-indent: 25px;
 }
 
-#czccaujefv .katex-display {
+#metadata-multistudy-role-dictionary .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#czccaujefv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#metadata-multistudy-role-dictionary div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1568,7 +1568,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables" class="level2">
 <h2 class="anchored" data-anchor-id="data-dictionary-integrated-multi-study-mental-health-panel-derived-variables">Data Dictionary: Integrated Multi-study Mental Health Panel (Derived Variables)</h2>
-<p>Univariate and Joint LCGA models were fitted in the private analytical pipeline; the derived-variable summary below reflects those model outputs in a transposed format for readability.</p>
+<p>Univariate and joint LCGA models were fitted in the approved analytical pipeline; the derived-variable summary below reflects those model outputs in a transposed format for readability.</p>
 <section id="lcga-model-inventory" class="level3">
 <h3 class="anchored" data-anchor-id="lcga-model-inventory">LCGA Model Inventory</h3>
 <div class="cell">
@@ -1619,23 +1619,23 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="hxcojlhade" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hxcojlhade table {
+<div id="metadata-derived-variables" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#metadata-derived-variables table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hxcojlhade thead, #hxcojlhade tbody, #hxcojlhade tfoot, #hxcojlhade tr, #hxcojlhade td, #hxcojlhade th {
+#metadata-derived-variables thead, #metadata-derived-variables tbody, #metadata-derived-variables tfoot, #metadata-derived-variables tr, #metadata-derived-variables td, #metadata-derived-variables th {
   border-style: none;
 }
 
-#hxcojlhade p {
+#metadata-derived-variables p {
   margin: 0;
   padding: 0;
 }
 
-#hxcojlhade .gt_table {
+#metadata-derived-variables .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1661,12 +1661,12 @@ ul.task-list li input[type="checkbox"] {
   border-left-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_caption {
+#metadata-derived-variables .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hxcojlhade .gt_title {
+#metadata-derived-variables .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1678,7 +1678,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-width: 0;
 }
 
-#hxcojlhade .gt_subtitle {
+#metadata-derived-variables .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1690,7 +1690,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-width: 0;
 }
 
-#hxcojlhade .gt_heading {
+#metadata-derived-variables .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1702,13 +1702,13 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_bottom_border {
+#metadata-derived-variables .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_col_headings {
+#metadata-derived-variables .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1723,7 +1723,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_col_heading {
+#metadata-derived-variables .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1743,7 +1743,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#hxcojlhade .gt_column_spanner_outer {
+#metadata-derived-variables .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1755,15 +1755,15 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 4px;
 }
 
-#hxcojlhade .gt_column_spanner_outer:first-child {
+#metadata-derived-variables .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hxcojlhade .gt_column_spanner_outer:last-child {
+#metadata-derived-variables .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hxcojlhade .gt_column_spanner {
+#metadata-derived-variables .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1775,11 +1775,11 @@ ul.task-list li input[type="checkbox"] {
   width: 100%;
 }
 
-#hxcojlhade .gt_spanner_row {
+#metadata-derived-variables .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hxcojlhade .gt_group_heading {
+#metadata-derived-variables .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1805,7 +1805,7 @@ ul.task-list li input[type="checkbox"] {
   text-align: left;
 }
 
-#hxcojlhade .gt_empty_group_heading {
+#metadata-derived-variables .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1820,15 +1820,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#hxcojlhade .gt_from_md > :first-child {
+#metadata-derived-variables .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hxcojlhade .gt_from_md > :last-child {
+#metadata-derived-variables .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hxcojlhade .gt_row {
+#metadata-derived-variables .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1847,7 +1847,7 @@ ul.task-list li input[type="checkbox"] {
   overflow-x: hidden;
 }
 
-#hxcojlhade .gt_stub {
+#metadata-derived-variables .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1860,7 +1860,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#hxcojlhade .gt_stub_row_group {
+#metadata-derived-variables .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1874,15 +1874,15 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: top;
 }
 
-#hxcojlhade .gt_row_group_first td {
+#metadata-derived-variables .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hxcojlhade .gt_row_group_first th {
+#metadata-derived-variables .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hxcojlhade .gt_summary_row {
+#metadata-derived-variables .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1892,16 +1892,16 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#hxcojlhade .gt_first_summary_row {
+#metadata-derived-variables .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_first_summary_row.thick {
+#metadata-derived-variables .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hxcojlhade .gt_last_summary_row {
+#metadata-derived-variables .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1911,7 +1911,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_grand_summary_row {
+#metadata-derived-variables .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1921,7 +1921,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#hxcojlhade .gt_first_grand_summary_row {
+#metadata-derived-variables .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1931,7 +1931,7 @@ ul.task-list li input[type="checkbox"] {
   border-top-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_last_grand_summary_row_top {
+#metadata-derived-variables .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1941,11 +1941,11 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_striped {
+#metadata-derived-variables .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hxcojlhade .gt_table_body {
+#metadata-derived-variables .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1954,7 +1954,7 @@ ul.task-list li input[type="checkbox"] {
   border-bottom-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_footnotes {
+#metadata-derived-variables .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1968,7 +1968,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_footnote {
+#metadata-derived-variables .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1977,7 +1977,7 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#hxcojlhade .gt_sourcenotes {
+#metadata-derived-variables .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1991,7 +1991,7 @@ ul.task-list li input[type="checkbox"] {
   border-right-color: #D3D3D3;
 }
 
-#hxcojlhade .gt_sourcenote {
+#metadata-derived-variables .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1999,72 +1999,72 @@ ul.task-list li input[type="checkbox"] {
   padding-right: 5px;
 }
 
-#hxcojlhade .gt_left {
+#metadata-derived-variables .gt_left {
   text-align: left;
 }
 
-#hxcojlhade .gt_center {
+#metadata-derived-variables .gt_center {
   text-align: center;
 }
 
-#hxcojlhade .gt_right {
+#metadata-derived-variables .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hxcojlhade .gt_font_normal {
+#metadata-derived-variables .gt_font_normal {
   font-weight: normal;
 }
 
-#hxcojlhade .gt_font_bold {
+#metadata-derived-variables .gt_font_bold {
   font-weight: bold;
 }
 
-#hxcojlhade .gt_font_italic {
+#metadata-derived-variables .gt_font_italic {
   font-style: italic;
 }
 
-#hxcojlhade .gt_super {
+#metadata-derived-variables .gt_super {
   font-size: 65%;
 }
 
-#hxcojlhade .gt_footnote_marks {
+#metadata-derived-variables .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hxcojlhade .gt_asterisk {
+#metadata-derived-variables .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hxcojlhade .gt_indent_1 {
+#metadata-derived-variables .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hxcojlhade .gt_indent_2 {
+#metadata-derived-variables .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hxcojlhade .gt_indent_3 {
+#metadata-derived-variables .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hxcojlhade .gt_indent_4 {
+#metadata-derived-variables .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hxcojlhade .gt_indent_5 {
+#metadata-derived-variables .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hxcojlhade .katex-display {
+#metadata-derived-variables .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hxcojlhade div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#metadata-derived-variables div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
