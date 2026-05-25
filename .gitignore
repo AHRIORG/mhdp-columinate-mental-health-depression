@@ -24,6 +24,22 @@ Thumbs.db
 .quarto/
 **/*.quarto_ipynb
 
+# Large data and serialized analysis artifacts. Public IRT scoring engines are
+# the only approved RDS exceptions.
+*.RData
+*.Rdata
+*.rda
+*.rds
+*.qs
+*.fst
+*.feather
+*.parquet
+*.pkl
+*.joblib
+*.sqlite
+!scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds
+!portable_irt_engine/inst/engines/*.rds
+
 # renv local state
 renv/library/
 renv/staging/

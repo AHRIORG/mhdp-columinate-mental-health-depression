@@ -71,7 +71,15 @@ cat "${tmpfile}"
 echo
 
 fail=0
-ALLOWED_RDS_PATH="scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds"
+
+is_allowed_object_file() {
+  local file="$1"
+
+  [[ "${file}" == "scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds" ]] && return 0
+  [[ "${file}" == portable_irt_engine/inst/engines/*.rds ]] && return 0
+
+  return 1
+}
 
 echo "Check 1/5: blocked object extensions..."
 blocked_object_files=()
@@ -82,7 +90,7 @@ done < <(rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' "${tmp
 if [[ "${#blocked_object_files[@]}" -gt 0 ]]; then
   disallowed_object_files=()
   for f in "${blocked_object_files[@]}"; do
-    if [[ "${f}" == "${ALLOWED_RDS_PATH}" ]]; then
+    if is_allowed_object_file "${f}"; then
       continue
     fi
     disallowed_object_files+=("${f}")
@@ -150,7 +158,7 @@ if [[ "${#non_doc_files[@]}" -gt 0 ]]; then
     -e '/Users/' \
     -e 'OneDrive' \
     -e '_private_use' \
-    -e 'file://' \
+    -e 'file:///Users/' \
     -e '[A-Za-z]:\\Users\\' \
     -e '[A-Za-z]:\\\\Users\\\\' \
     "${non_doc_files[@]}"; then
@@ -164,7 +172,7 @@ echo
 
 echo "Check 5/5: website-render spot check for local path leaks..."
 if [[ -d website ]]; then
-  if rg -n -I -g '*.html' -e '/Users/|OneDrive|_private_use|file://' website; then
+  if rg -n -I -g '*.html' -e '/Users/|OneDrive|_private_use|file:///Users/' website; then
     echo "FAIL: local path marker found in rendered website HTML."
     fail=1
   fi

@@ -610,6 +610,16 @@ library(ggforce)
   x
 }
 
+.approach_palette <- function() {
+  c(
+    "IRT applied (Joint θ)" = "#405963",
+    "IRT applied (SSQ-only θ)" = "#E39544",
+    "ROC Youden (Joint θ)" = "#1D9BCB",
+    "ROC Youden (SSQ-only θ)" = "#77B49A",
+    "ROC Youden (SSQ Sum)" = "#B74E49"
+  )
+}
+
 .pretty_group_level <- function(level, facet_var) {
   lvl <- as.character(level)
   lvl <- gsub("Age_17_19", "Age 17–19", lvl, fixed = TRUE)
@@ -1112,17 +1122,27 @@ p0<-plot_test_information_for_scenario(run_ids[s], out_dir = out_dir)+
   ggstatsplot::theme_ggstatsplot()+
   theme(text=element_text(size = 16))
 
-p1<-dt..plot |> 
+p1_data <- dt..plot |>
   filter(Run_ID==run_ids[s]) |> 
+  mutate(
+    Legend_Label = paste0(Approach, "; ", sprintf("%.1f", Predicted_Prevalence * 100), "%")
+  ) |>
+  mutate(
+    Legend_Label = factor(Legend_Label, levels = unique(Legend_Label))
+  )
+
+p1_palette <- p1_data |>
+  distinct(Approach, Legend_Label) |>
+  {\(x) setNames(unname(.approach_palette()[x$Approach]), x$Legend_Label)}()
+
+p1<-p1_data |>
   ggplot()+
   
   aes(x=Statistic, 
-      y=Approach,
+      y=Legend_Label,
       xmin = lower, 
       xmax = ifelse(round(lower,3)==round(upper,3),Statistic,upper),
-      colour = paste0(interaction(Approach,
-        sprintf("%.1f",Predicted_Prevalence*100),sep="; "),
-        "%"),
+      colour = Legend_Label,
       #linetype=Predictor,
       group = Predictor
   ) +
@@ -1135,7 +1155,7 @@ p1<-dt..plot |>
   #                                     )
   #               ),color="black",hjust=0)+
   ggforce::facet_col(facets = ~metric)+
-  scale_color_jama()+
+  scale_color_manual(values = p1_palette, drop = FALSE)+
   scale_x_continuous(breaks = seq(0,1,.25))+
   scale_linetype_manual(values = c("dashed","solid"))+
   labs(y="")+
@@ -1145,7 +1165,7 @@ p1<-dt..plot |>
 p1
 
 p2 <- plot_roc_for_scenario(run_ids[s], new_data = prep$data, out_dir = out_dir)+
-  scale_color_jama()+
+  scale_color_manual(values = .approach_palette(), drop = FALSE)+
   theme_forest(base_size = 16)+
   guides(color = "none", fill = "none",shape=guide_legend(title = NULL, ncol = 1))+
   ggstatsplot::theme_ggstatsplot()+

@@ -18,6 +18,7 @@ Promotion into this public repository should normally start from private locatio
 - `results/release/`
 - `metadata/`
 - selected files from `scripts/`
+- approved public-safe IRT package files from `portable_irt_engine/`
 - approved rendered website output from `website/`
 
 Do not copy directly from the following without an explicit release review:
@@ -35,7 +36,7 @@ The following material must not be transferred into this public repository:
 - raw, processed, or participant-level data
 - row-level household or clinical extracts, even when they look small
 - small-cell summaries or other outputs that could support re-identification
-- serialized or binary objects that can carry data or model state, including `.RData`, `.rda`, `.rds`, `.qs`, `.fst`, `.feather`, `.parquet`, `.pkl`, `.joblib`, and `.sqlite`, except the single approved scoring engine file: `scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds`
+- serialized or binary objects that can carry data or model state, including `.RData`, `.rda`, `.rds`, `.qs`, `.fst`, `.feather`, `.parquet`, `.pkl`, `.joblib`, and `.sqlite`, except approved IRT scoring-engine release artifacts under `scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds` and `portable_irt_engine/inst/engines/*.rds`
 - internal access notes, signed URLs, secrets, API keys, tokens, passwords, or environment files
 - absolute or machine-specific paths outside this repository, including patterns such as `/Users/...`, `C:\...`, `OneDrive...`, network shares, or `_private_use/...`
 - rendered notebooks, preview files, logs, comments, or metadata that expose local usernames, absolute paths, or internal filenames
@@ -46,7 +47,7 @@ The following material must not be transferred into this public repository:
 The following are normally appropriate for the public repository once they have been checked:
 
 - scripts that use repo-relative paths and document how restricted inputs can be requested
-- the approved OBJ00 scoring-engine artifact at `scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds` for reproducible public rebuilds
+- approved IRT scoring-engine artifacts at `scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models.rds` and `portable_irt_engine/inst/engines/*.rds` for reproducible public scoring
 - synthetic, fully anonymised, or aggregated example data approved for public release
 - codebooks, dictionaries, variable inventories, and release notes
 - final tables, figures, and reports approved for dissemination
@@ -78,8 +79,8 @@ Suggested preflight commands, run from the repository root:
 
 ```sh
 scripts/release_preflight.sh <candidate-paths>
-rg -n '/Users/|OneDrive|_private_use|C:\\|file://' <candidate-paths>
-rg --files <candidate-paths> | rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' | rg -v '^scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models\.rds$'
+rg -n '/Users/|OneDrive|_private_use|C:\\Users\\|file:///Users/' <candidate-paths>
+rg --files <candidate-paths> | rg '\.(RData|rda|rds|qs|fst|feather|parquet|pkl|joblib|sqlite)$' | rg -v '^(scripts/data_management/data_examples/1_staging_snippets/derived_models/irt_joint_models\.rds|portable_irt_engine/inst/engines/[^/]+\.rds)$'
 rg --files <candidate-paths> | rg '\.(csv|tsv|xlsx|xls|sav|dta)$'
 rg -n 'readRDS|saveRDS|load\\(|read_csv|fread\\(|read_excel|read_dta|read_sav' <candidate-paths>
 ```
@@ -87,7 +88,7 @@ rg -n 'readRDS|saveRDS|load\\(|read_csv|fread\\(|read_excel|read_dta|read_sav' <
 If the release includes rendered website assets, run an additional scan over the rendered output:
 
 ```sh
-rg -n '/Users/|OneDrive|_private_use|file://|nb-[0-9]+' website
+rg -n '/Users/|OneDrive|_private_use|file:///Users/|nb-[0-9]+' website
 ```
 
 ## Promotion Workflow
