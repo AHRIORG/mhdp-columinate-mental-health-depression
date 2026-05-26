@@ -281,11 +281,21 @@ ul.task-list li input[type="checkbox"] {
   display: block;
   box-shadow: 0 8px 18px rgba(15, 35, 55, 0.06);
 }
+.obj03-note {
+  margin: 1.1rem 0 1.6rem 0;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid #5a6f2b;
+  background: #f7f9ef;
+  color: #34430f;
+}
 </style>
 <section id="why-this-work-was-needed" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-work-was-needed">Why This Work Was Needed</h2>
 <p>CO-LUMINATE uses more than one mental-health instrument across studies and cohorts. The Patient Health Questionnaire-9 (PHQ-9) is a conventional depression-focused reference measure, while the Shona Symptom Questionnaire captures a broader common mental distress space using culturally grounded binary items. Because those tools differ in content, response format, and construct emphasis, raw scores and raw cutoffs cannot be assumed to mean the same thing across instruments.</p>
 <p>This psychometric work therefore asked a practical question: can we define a defensible depression-oriented endpoint that preserves the PHQ-9 benchmark while still allowing transport into cohorts where only SSQ items are available?</p>
+<div class="obj03-note">
+This endpoint is a research harmonization tool, not a diagnostic instrument. It is designed to support comparable depression-oriented analyses across cohorts, not to make stand-alone clinical decisions.
+</div>
 </section>
 <section id="data-and-instruments" class="level2">
 <h2 class="anchored" data-anchor-id="data-and-instruments">Data And Instruments</h2>
@@ -308,6 +318,10 @@ ul.task-list li input[type="checkbox"] {
 <div class="obj03-figure">
   <img src="../_assets/obj03/ssq10_parallel_structure.png" alt="Retained SSQ-10 structure and item clustering.">
 </div>
+<p>The loading evidence provides an additional check that the retained SSQ-10 items carry enough coherent information for fixed-parameter scoring. The important point is not that PHQ-9 and SSQ-10 are identical, but that the retained SSQ-10 item set is stable enough to support a transportable depression-oriented endpoint.</p>
+<div class="obj03-figure">
+  <img src="../_assets/obj03/loading_distributions.png" alt="Loading distributions for retained depression harmonization instruments.">
+</div>
 </section>
 <section id="harmonization-and-thresholding" class="level2">
 <h2 class="anchored" data-anchor-id="harmonization-and-thresholding">Harmonization And Thresholding</h2>
@@ -317,6 +331,9 @@ ul.task-list li input[type="checkbox"] {
   <img src="../_assets/obj03/harmonization_performance.png" alt="Comparison of harmonization performance across retained thresholding strategies.">
 </div>
 <p>The retained threshold strategy is therefore conservative by design. It favors a transportable SSQ-only engine that keeps estimated case burden close to the PHQ-9 benchmark rather than maximizing sensitivity at the cost of implausibly high prevalence.</p>
+<div class="obj03-note">
+The preferred SSQ-only scoring route is conservative because it is calibrated to the PHQ-linked latent scale. A high-sensitivity raw-score rule may identify more possible cases, but it would overstate depression burden for the harmonized CO-LUMINATE endpoint.
+</div>
 <div class="obj03-embed">
   <iframe src="../_assets/obj03/table_threshold_performance.html" title="Threshold performance comparison" loading="lazy"></iframe>
 </div>
@@ -329,6 +346,7 @@ ul.task-list li input[type="checkbox"] {
 <li>retain the joint PHQ-plus-SSQ IRT model as the harmonization reference standard</li>
 <li>avoid naive raw-score thresholding as the main interpretation</li>
 <li>carry forward the fixed-parameter SSQ-only scoring engine for cohorts without PHQ items</li>
+<li>keep audit-only multidimensional engine exports out of live scoring until their saved scoring objects are repaired</li>
 </ul>
 <p>This combination provides the best balance between conceptual coherence, statistical defensibility, and practical transport into later developmental and causal analyses.</p>
 </section>
