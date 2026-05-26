@@ -242,6 +242,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-this-work-was-needed" id="toc-why-this-work-was-needed" class="nav-link active" data-scroll-target="#why-this-work-was-needed">Why This Work Was Needed</a></li>
   <li><a href="#analysis-scope" id="toc-analysis-scope" class="nav-link" data-scroll-target="#analysis-scope">Analysis Scope</a></li>
   <li><a href="#release-coverage" id="toc-release-coverage" class="nav-link" data-scroll-target="#release-coverage">Release Coverage</a></li>
+  <li><a href="#reference-solution-evidence" id="toc-reference-solution-evidence" class="nav-link" data-scroll-target="#reference-solution-evidence">Reference-Solution Evidence</a></li>
   <li><a href="#univariate-trajectory-findings" id="toc-univariate-trajectory-findings" class="nav-link" data-scroll-target="#univariate-trajectory-findings">Univariate Trajectory Findings</a></li>
   <li><a href="#joint-trajectory-findings" id="toc-joint-trajectory-findings" class="nav-link" data-scroll-target="#joint-trajectory-findings">Joint Trajectory Findings</a></li>
   <li><a href="#scenario-defensibility" id="toc-scenario-defensibility" class="nav-link" data-scroll-target="#scenario-defensibility">Scenario Defensibility</a></li>
@@ -300,6 +301,40 @@ ul.task-list li input[type="checkbox"] {
 .deliverable-table {
   font-size: 0.88rem;
 }
+.table-responsive,
+.cell-output-display {
+  overflow-x: auto;
+}
+.trajectory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  gap: 1.25rem;
+  margin: 1.15rem 0 1.8rem 0;
+}
+.trajectory-card {
+  border: 1px solid #d7dde5;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(15, 35, 55, 0.06);
+  overflow: hidden;
+}
+.trajectory-card h3 {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e6ebf1;
+  font-size: 1rem;
+  color: #17365d;
+}
+.trajectory-card img {
+  width: 100%;
+  display: block;
+  background: #fff;
+}
+@media (max-width: 760px) {
+  .trajectory-grid {
+    grid-template-columns: 1fr;
+  }
+}
 </style>
 <section id="why-this-work-was-needed" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-work-was-needed">Why This Work Was Needed</h2>
@@ -325,7 +360,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="release-coverage" class="level2">
 <h2 class="anchored" data-anchor-id="release-coverage">Release Coverage</h2>
-<p>The current release-facing trajectory bundle is complete across the active model families and windows.</p>
+<p>The current release-facing trajectory bundle is complete across the active model families and windows. The public summary below is intentionally selective: the full analytical report retains the wider results-hub evidence, including scenario diagnostics, class-label registries, and figure atlases used to defend the shorter website narrative.</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="table table-sm table-striped deliverable-table caption-top small">
@@ -359,6 +394,133 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </div>
+</div>
+</section>
+<section id="reference-solution-evidence" class="level2">
+<h2 class="anchored" data-anchor-id="reference-solution-evidence">Reference-Solution Evidence</h2>
+<p>The retained solutions were not selected from a single statistic. Class count, classification quality, minimum class size, structural-sensitivity completion, and reporting-checklist coverage were reviewed together before downstream use.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped deliverable-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model family</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Window</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Scenario</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Classes</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Entropy</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Minimum class share</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Structural sensitivity complete</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Reporting checklist status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Maternal co-residence</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">Univariate branch requiring at least 3 observed occasions</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.883</td>
+<td style="text-align: left;">7.7%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">14 / 4 / 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Maternal co-residence</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">Univariate branch requiring at least 3 observed occasions</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.919</td>
+<td style="text-align: left;">5.7%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">14 / 4 / 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Paternal co-residence</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">Univariate branch requiring at least 3 observed occasions</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.903</td>
+<td style="text-align: left;">6.0%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">14 / 4 / 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Paternal co-residence</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">Univariate branch requiring at least 3 observed occasions</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.940</td>
+<td style="text-align: left;">7.5%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">14 / 4 / 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Household socioeconomic status</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">Univariate branch requiring at least 3 observed occasions</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.744</td>
+<td style="text-align: left;">5.0%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">14 / 4 / 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Household socioeconomic status</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">Univariate branch requiring at least 3 observed occasions</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">0.636</td>
+<td style="text-align: left;">7.7%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">17 / 1 / 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Joint parental residence</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">Joint branch requiring at least 2 complete occasions</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0.936</td>
+<td style="text-align: left;">8.5%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">17 / 1 / 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Joint parental residence</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">Joint branch requiring at least 2 complete occasions</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">0.925</td>
+<td style="text-align: left;">5.8%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">17 / 1 / 2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Joint maternal absence and household socioeconomic status</td>
+<td style="text-align: left;">Early childhood (0-5 years)</td>
+<td style="text-align: left;">Joint branch requiring at least 2 complete occasions</td>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0.881</td>
+<td style="text-align: left;">6.3%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">17 / 1 / 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Joint maternal absence and household socioeconomic status</td>
+<td style="text-align: left;">Middle-late childhood (6-12 years)</td>
+<td style="text-align: left;">Joint branch requiring at least 2 complete occasions</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">0.877</td>
+<td style="text-align: left;">7.3%</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">17 / 1 / 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="deliverable-note">
+The checklist column reports fully documented / partially documented / not documented items. It is included here because transparent reporting is part of the evidence for using a trajectory solution downstream.
 </div>
 </section>
 <section id="univariate-trajectory-findings" class="level2">
@@ -429,8 +591,31 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<div class="deliverable-figure">
-  <img src="../_assets/obj01/figure_1_univariate_selected_trajectories.png" alt="Selected univariate social determinant trajectories across early and middle-late childhood.">
+<div class="trajectory-grid">
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Maternal co-residence: Early childhood (0-5 years)</h3>
+    <img src="../_assets/obj01/trajectory_maternal_residence_0_5.png" alt="Maternal co-residence trajectory comparison across scenario restrictions in early childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Maternal co-residence: Middle-late childhood (6-12 years)</h3>
+    <img src="../_assets/obj01/trajectory_maternal_residence_6_12.png" alt="Maternal co-residence trajectory comparison across scenario restrictions in middle-late childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Paternal co-residence: Early childhood (0-5 years)</h3>
+    <img src="../_assets/obj01/trajectory_paternal_residence_0_5.png" alt="Paternal co-residence trajectory comparison across scenario restrictions in early childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Paternal co-residence: Middle-late childhood (6-12 years)</h3>
+    <img src="../_assets/obj01/trajectory_paternal_residence_6_12.png" alt="Paternal co-residence trajectory comparison across scenario restrictions in middle-late childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Household socioeconomic status: Early childhood (0-5 years)</h3>
+    <img src="../_assets/obj01/trajectory_household_ses_0_5.png" alt="Household socioeconomic trajectory comparison across scenario restrictions in early childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Household socioeconomic status: Middle-late childhood (6-12 years)</h3>
+    <img src="../_assets/obj01/trajectory_household_ses_6_12.png" alt="Household socioeconomic trajectory comparison across scenario restrictions in middle-late childhood." class="figure-img">
+  </figure>
 </div>
 </section>
 <section id="joint-trajectory-findings" class="level2">
@@ -506,13 +691,28 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
-<div class="deliverable-figure">
-  <img src="../_assets/obj01/figure_2_joint_selected_trajectories.png" alt="Selected joint trajectory profiles for parental residence and maternal absence with household socioeconomic status.">
+<div class="trajectory-grid">
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Joint parental residence: Early childhood (0-5 years)</h3>
+    <img src="../_assets/obj01/trajectory_joint_parental_residence_0_5.png" alt="Joint parental residence trajectory comparison across complete-observed scenario restrictions in early childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Joint parental residence: Middle-late childhood (6-12 years)</h3>
+    <img src="../_assets/obj01/trajectory_joint_parental_residence_6_12.png" alt="Joint parental residence trajectory comparison across complete-observed scenario restrictions in middle-late childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Maternal absence with household socioeconomic status: Early childhood (0-5 years)</h3>
+    <img src="../_assets/obj01/trajectory_joint_maternal_absence_ses_0_5.png" alt="Joint maternal absence and household socioeconomic trajectory comparison across complete-observed scenario restrictions in early childhood." class="figure-img">
+  </figure>
+  <figure class="trajectory-card figure">
+    <h3 class="anchored">Maternal absence with household socioeconomic status: Middle-late childhood (6-12 years)</h3>
+    <img src="../_assets/obj01/trajectory_joint_maternal_absence_ses_6_12.png" alt="Joint maternal absence and household socioeconomic trajectory comparison across complete-observed scenario restrictions in middle-late childhood." class="figure-img">
+  </figure>
 </div>
 </section>
 <section id="scenario-defensibility" class="level2">
 <h2 class="anchored" data-anchor-id="scenario-defensibility">Scenario Defensibility</h2>
-<p>The release outputs include transition and alluvial summaries that compare class assignment across scenario restrictions on the overlap sample. These outputs are not treated as decorative sensitivity checks; they are part of the evidence used to decide which reference branches should be carried forward.</p>
+<p>The release outputs include transition and alluvial summaries that compare class assignment across scenario restrictions on the overlap sample. These outputs are not treated as decorative sensitivity checks; they are part of the evidence used to decide which reference branches should be carried forward. The class labels and colors used in the public figures are harmonized after reviewing the fitted trajectory shapes, so the same descriptive label has the same substantive meaning across the summary tables and figures.</p>
 <div class="deliverable-figure">
   <img src="../_assets/obj01/figure_4_joint_scenario_metrics.png" alt="Scenario comparison metrics for joint trajectory solutions.">
 </div>
@@ -524,6 +724,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="main-recommendation">Main Recommendation</h2>
 <p>The current recommendation is to use the stronger repeated-measurement branches as the primary reference layer for downstream work, while retaining looser branches as scenario-comparison evidence. For univariate models, this means emphasizing the at-least-three-observed-occasion branch. For joint models, this means emphasizing the at-least-three-complete-occasion branch.</p>
 <p>The trajectory results support a developmental view of childhood social determinants: maternal co-residence, paternal co-residence, household socioeconomic status, and their joint histories show distinct patterns across early and middle-late childhood. These classes provide the exposure histories that are carried into pathway screening and causal mediation.</p>
+<p>The public-facing result should therefore be read as a defensible scenario-comparison framework, not as a claim that one latent-class solution is intrinsically the only possible representation of childhood social conditions.</p>
 </section>
 <section id="what-this-means-for-co-luminate" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-means-for-co-luminate">What This Means For CO-LUMINATE</h2>

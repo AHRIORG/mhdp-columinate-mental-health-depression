@@ -276,6 +276,12 @@ ul.task-list li input[type="checkbox"] {
   background: #f0fdfa;
   color: #134e4a;
 }
+.obj02-table {
+  font-size: 0.88rem;
+}
+.cell-output-display {
+  overflow-x: auto;
+}
 </style>
 <section id="why-this-work-was-needed" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-work-was-needed">Why This Work Was Needed</h2>
@@ -306,7 +312,7 @@ ul.task-list li input[type="checkbox"] {
 <li>downstream, by asking whether the pathway domain remained associated with adolescent depressive symptoms after adjustment for exposure history and fixed contextual covariates</li>
 </ul>
 <div class="obj02-note">
-This page is a public summary of the pathway-screening stage. The current release-facing pathway-screening bundle was refreshed on 25 May 2026 and contains the fuller technical detail, fixed-covariate sensitivity review, and strict joint-history imputation specification checks.
+This page is a public summary of the pathway-screening stage. The current release-facing pathway-screening bundle contains the fuller technical detail, fixed-covariate sensitivity review, mediation-specification support, and strict joint-history imputation checks.
 </div>
 </section>
 <section id="screening-framework" class="level2">
@@ -331,6 +337,45 @@ This page is a public summary of the pathway-screening stage. The current releas
   <p><strong>Figure. Pathway evidence map.</strong> The evidence map keeps the full screened pathway record visible, including domains that remain important contextually but are not carried as the core mediator block.</p>
 </div>
 </section>
+<section id="sensitivity-and-mediation-specification-support" class="level2">
+<h2 class="anchored" data-anchor-id="sensitivity-and-mediation-specification-support">Sensitivity And Mediation-Specification Support</h2>
+<p>The screening report now keeps the fixed-covariate sensitivity layer visible because adolescent age, rural residence, and calendar year can affect the interpretation of pathway-outcome associations. Food insecurity and violence exposure remain the strongest practical domains after these checks, while sexual activity remains a supporting domain rather than a stand-alone leading pathway.</p>
+<div class="obj02-figure">
+  <img src="../_assets/obj02/nested_fixed_covariate_b_path_review.png" alt="Nested fixed-covariate pathway review across screened adolescent domains.">
+  <p><strong>Figure. Fixed-covariate pathway review.</strong> The review shows how downstream pathway estimates change after adding fixed contextual covariates.</p>
+</div>
+<p>The pathway-screening stage also informs the structure of the later mediation analysis. The diagram below separates childhood trajectory history, adolescent pathway domains, baseline covariates requiring imputation, fixed contextual covariates, and broader downstream structural nodes. It is a specification aid, not a replacement for the screening estimands.</p>
+<div class="obj02-figure">
+  <img src="../_assets/obj02/future_transition_mediation_dag.svg" alt="Working mediation specification diagram informed by pathway screening.">
+  <p><strong>Figure. Mediation-specification support.</strong> The diagram records how the screened pathway domains inform the formal mediation structure.</p>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped obj02-table caption-top small">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Overlap subjects</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Imputations</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Maximum iterations</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Completed imputation files</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Residual missing values after imputation</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Largest pre-imputation missingness</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1,381</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">20 of 20</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">MHIV (26.7%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 <section id="main-recommendation" class="level2">
 <h2 class="anchored" data-anchor-id="main-recommendation">Main Recommendation</h2>
 <p>The current recommendation is:</p>
@@ -341,6 +386,7 @@ This page is a public summary of the pathway-screening stage. The current releas
 <li>treat alcohol use and lack of government grant receipt more cautiously or reserve them for extended analyses</li>
 </ul>
 <p>Sensitivity checks on the strict joint maternal-absence plus household socioeconomic status branch did not materially change that ordering, so the pathway priorities shown here remain the preferred summary for broad review.</p>
+<p>The strict restricted joint maternal absence and household socioeconomic status exposure family is carried forward as five early-childhood classes and seven middle-late-childhood classes for the current pathway-screening interpretation.</p>
 </section>
 <section id="what-this-means-for-co-luminate" class="level2">
 <h2 class="anchored" data-anchor-id="what-this-means-for-co-luminate">What This Means For CO-LUMINATE</h2>
