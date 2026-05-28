@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Statistical Analysis Plan – CO-LUMINATE</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -17,14 +20,13 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -52,15 +54,14 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-466c708b1a5a2967f0eb6fed410850f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-66a289697fd6a05ab716217f692e85ab.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,7 +91,7 @@ div.csl-indent {
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -129,8 +130,6 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">CO-LUMINATE</span>
     </a>
@@ -143,130 +142,130 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../index.html"> <i class="bi bi-house" role="img">
-</i>
+</i> 
 <span class="menu-text">Home</span></a>
-  </li>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical-documentation" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-folder2-open" role="img">
-</i>
+</i> 
  <span class="menu-text">Technical Documentation</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-documentation">
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-documentation">    
         <li>
     <a class="dropdown-item" href="../tabs/documentations.html">
  <span class="dropdown-text">Overview</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/proposal.html">
  <span class="dropdown-text">Proposal</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/longitudinal_linkage.html">
  <span class="dropdown-text">Longitudinal Linkage</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/metadata.html">
  <span class="dropdown-text">Metadata</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/youth_co_creation_qualitative_analysis_plan.html">
  <span class="dropdown-text">Youth Co-Creation Qualitative Analysis Plan</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/secondary_data_analysis_plan.html">
  <span class="dropdown-text">Statistical Analysis Plan</span></a>
-  </li>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-analysis-deliverables" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-diagram-3" role="img">
-</i>
+</i> 
  <span class="menu-text">Analysis Deliverables</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-analysis-deliverables">
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-analysis-deliverables">    
         <li>
     <a class="dropdown-item" href="../tabs/analysis_deliverables.html">
  <span class="dropdown-text">Overview</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj05.html">
  <span class="dropdown-text">Objective 1: Youth Co-Creation</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj03.html">
  <span class="dropdown-text">Objective 2: Depression Harmonization</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj01.html">
  <span class="dropdown-text">Objective 3: Social Determinant Trajectories</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj02.html">
  <span class="dropdown-text">Objective 4: Behavioral Mediators</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/deliverable_obj04.html">
  <span class="dropdown-text">Objective 5: Causal Mediation</span></a>
-  </li>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="../updates_blog.html"> <i class="bi bi-journal-text" role="img">
-</i>
+</i> 
 <span class="menu-text">Blog</span></a>
-  </li>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-updates" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-newspaper" role="img">
-</i>
+</i> 
  <span class="menu-text">Updates</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-updates">    
         <li>
     <a class="dropdown-item" href="../updates.html">
  <span class="dropdown-text">Overview</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../updates_website.html">
  <span class="dropdown-text">Website</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../updates_news.html">
  <span class="dropdown-text">News</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../updates_other.html">
  <span class="dropdown-text">Activities</span></a>
-  </li>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-research-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-tools" role="img">
-</i>
+</i> 
  <span class="menu-text">Research Tools</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-research-tools">    
         <li>
     <a class="dropdown-item" href="../tabs/tools.html">
  <span class="dropdown-text">Overview</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/dashboard.html">
  <span class="dropdown-text">Project Dashboard</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/tool_irt_scoring.html">
  <span class="dropdown-text">IRT Scoring Workspace</span></a>
-  </li>
+  </li>  
         <li>
     <a class="dropdown-item" href="../tabs/tool_causal_chains.html">
  <span class="dropdown-text">Mental Health Causal Chains</span></a>
-  </li>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -285,7 +284,7 @@ window.Quarto = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
-
+   
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#section-a-objective-2---depression-harmonization-sap" id="toc-section-a-objective-2---depression-harmonization-sap" class="nav-link" data-scroll-target="#section-a-objective-2---depression-harmonization-sap">Section A: Objective 2 - Depression Harmonization SAP</a>
@@ -357,11 +356,11 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
-
-
-
+    
+  
+    
   </div>
-
+  
 
 
 </header>
@@ -383,7 +382,7 @@ window.Quarto = {
 <section id="a1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="a1-background-and-rationale">A1 Background and Rationale</h3>
 <p>This section defines the psychometric protocol for harmonizing depression measurement between the Shona Symptom Questionnaire and the Patient Health Questionnaire-9. The central challenge is not simple score conversion, but defensible alignment of instruments that differ in item format, recall period, and cultural grounding in a longitudinal multi-cohort setting.</p>
-<p>The PHQ-9 is treated as the external benchmark for probable depression <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke, Spitzer, and Williams 2001</a>)</span>, while the SSQ contributes culturally grounded distress content that is relevant in Southern African settings <span class="citation" data-cites="Patel1997 Haney2014 chibanda2019ssq8">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>; <a href="#ref-Haney2014" role="doc-biblioref">Haney et al. 2014</a>; <a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. Objective 2 therefore treats harmonization as a staged psychometric program: item-set refinement, structural validation, invariance assessment, joint IRT calibration, and threshold comparison. In the finalized implementation, the theoretically derived SSQ-10 subset is retained as the main transportable SSQ configuration because it preserves the depressive core while avoiding non-specific distress items that weaken comparability with the PHQ benchmark <span class="citation" data-cites="putnick2016measurement woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
+<p>The PHQ-9 is treated as the external benchmark for probable depression <span class="citation" data-cites="Kroenke2001">(<a href="#ref-Kroenke2001" role="doc-biblioref">Kroenke et al. 2001</a>)</span>, while the SSQ contributes culturally grounded distress content that is relevant in Southern African settings <span class="citation" data-cites="Patel1997 Haney2014 chibanda2019ssq8">(<a href="#ref-Patel1997" role="doc-biblioref">Patel et al. 1997</a>; <a href="#ref-Haney2014" role="doc-biblioref">Haney et al. 2014</a>; <a href="#ref-chibanda2019ssq8" role="doc-biblioref"><span class="nocase">Chibanda et al.</span> 2019</a>)</span>. Objective 2 therefore treats harmonization as a staged psychometric program: item-set refinement, structural validation, invariance assessment, joint IRT calibration, and threshold comparison. In the finalized implementation, the theoretically derived SSQ-10 subset is retained as the main transportable SSQ configuration because it preserves the depressive core while avoiding non-specific distress items that weaken comparability with the PHQ benchmark <span class="citation" data-cites="putnick2016measurement woods2009empirical">(<a href="#ref-putnick2016measurement" role="doc-biblioref">Putnick and Bornstein 2016</a>; <a href="#ref-woods2009empirical" role="doc-biblioref">Woods 2009</a>)</span>.</p>
 </section>
 <section id="a3-objectives-and-estimands" class="level3">
 <h3 class="anchored" data-anchor-id="a3-objectives-and-estimands">A3 Objectives and Estimands</h3>
@@ -412,7 +411,7 @@ Y_i^{H} = \mathbb{1}\{\hat{\theta}_i \ge \tau^\ast\},
 </section>
 <section id="a5-structural-modeling-strategy" class="level3">
 <h3 class="anchored" data-anchor-id="a5-structural-modeling-strategy">A5 Structural Modeling Strategy</h3>
-<p>Objective 2 evaluates three candidate SSQ configurations: SSQ-14, the theoretical SSQ-10 depressive subset, and the SSQ-8 comparison subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref">Chibanda et al. 2019</a>)</span>. Structural validity begins with Monte Carlo split-sample EFA using polychoric correlation structures and categorical-data retention criteria, followed by hold-out CFA using WLSMV estimation <span class="citation" data-cites="holgado2010polychoric wu2016identification">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>; <a href="#ref-wu2016identification" role="doc-biblioref">Wu and Estabrook 2016</a>)</span>. Consensus item structures are identified across repeated split samples rather than from a single exploratory fit.</p>
+<p>Objective 2 evaluates three candidate SSQ configurations: SSQ-14, the theoretical SSQ-10 depressive subset, and the SSQ-8 comparison subset <span class="citation" data-cites="chibanda2019ssq8">(<a href="#ref-chibanda2019ssq8" role="doc-biblioref"><span class="nocase">Chibanda et al.</span> 2019</a>)</span>. Structural validity begins with Monte Carlo split-sample EFA using polychoric correlation structures and categorical-data retention criteria, followed by hold-out CFA using WLSMV estimation <span class="citation" data-cites="holgado2010polychoric wu2016identification">(<a href="#ref-holgado2010polychoric" role="doc-biblioref">Holgado–Tello et al. 2010</a>; <a href="#ref-wu2016identification" role="doc-biblioref">Wu and Estabrook 2016</a>)</span>. Consensus item structures are identified across repeated split samples rather than from a single exploratory fit.</p>
 <p>Let <span class="math inline">\(\mathbf{x}_i\)</span> denote the ordinal or binary symptom vector and <span class="math inline">\(\theta_i\)</span> the latent depression factor. The CFA measurement model is</p>
 <p><span class="math display">\[
 \mathbf{x}_i \sim f(\theta_i; \boldsymbol{\lambda}, \boldsymbol{\tau}),
@@ -508,8 +507,8 @@ Y_i^{H} = \mathbb{1}\{\hat{\theta}_i \ge \tau^\ast\},
 <h2 class="anchored" data-anchor-id="section-b-objective-3---social-determinant-trajectories-sap">Section B: Objective 3 - Social Determinant Trajectories SAP</h2>
 <section id="b1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="b1-background-and-rationale">B1 Background and Rationale</h3>
-<p>Objective 3 identifies developmental trajectories of childhood social determinants and evaluates how defensible those trajectories remain when longitudinal-information requirements are strengthened. This section therefore treats trajectory modeling as a scenario-comparison and reference-solution problem rather than as a search for a single intrinsically correct retained class solution <span class="citation" data-cites="muthen2004_growthMixtureChapter nagin2016_multitraj bauerCurran2003_overextraction">(<a href="#ref-muthen2004_growthMixtureChapter" role="doc-biblioref">Muthén 2004</a>; <a href="#ref-nagin2016_multitraj" role="doc-biblioref">Nagin et al. 2016</a>; <a href="#ref-bauerCurran2003_overextraction" role="doc-biblioref">Bauer and Curran 2003</a>)</span>.</p>
-<p>This framing follows the current harmonized trajectory workflow, which treats childhood social determinants as time-varying developmental processes and organizes them into early-childhood (0-5 years) and middle-late-childhood (6-12 years) windows <span class="citation" data-cites="hallPosel2019_fragmenting fortier2017_maelstrom simelane2025_sahr">(<a href="#ref-hallPosel2019_fragmenting" role="doc-biblioref">Hall and Posel 2019</a>; <a href="#ref-fortier2017_maelstrom" role="doc-biblioref">Isabel Fortier et al. 2017</a>; <a href="#ref-simelane2025_sahr" role="doc-biblioref">Simelane et al. 2025</a>)</span>. The scientific aim is to preserve developmental timing while distinguishing robust trajectory structures from those that change materially when stronger repeated-measures requirements are imposed. Distal outcomes, including the harmonized depression endpoint and mediator variables, are used primarily for downstream class profiling after defensible reference solutions have been selected.</p>
+<p>Objective 3 identifies developmental trajectories of childhood social determinants and evaluates how defensible those trajectories remain when longitudinal-information requirements are strengthened. This section therefore treats trajectory modeling as a scenario-comparison and reference-solution problem rather than as a search for a single intrinsically correct retained class solution <span class="citation" data-cites="muthen2004_growthMixtureChapter nagin2016_multitraj bauerCurran2003_overextraction">(<a href="#ref-muthen2004_growthMixtureChapter" role="doc-biblioref">Muthén 2004</a>; <a href="#ref-nagin2016_multitraj" role="doc-biblioref"><span class="nocase">Nagin et al.</span> 2016</a>; <a href="#ref-bauerCurran2003_overextraction" role="doc-biblioref">Bauer and Curran 2003</a>)</span>.</p>
+<p>This framing follows the current harmonized trajectory workflow, which treats childhood social determinants as time-varying developmental processes and organizes them into early-childhood (0-5 years) and middle-late-childhood (6-12 years) windows <span class="citation" data-cites="hallPosel2019_fragmenting fortier2017_maelstrom simelane2025_sahr">(<a href="#ref-hallPosel2019_fragmenting" role="doc-biblioref">Hall and Posel 2019</a>; <a href="#ref-fortier2017_maelstrom" role="doc-biblioref"><span class="nocase">Isabel Fortier et al.</span> 2017</a>; <a href="#ref-simelane2025_sahr" role="doc-biblioref"><span class="nocase">Simelane et al.</span> 2025</a>)</span>. The scientific aim is to preserve developmental timing while distinguishing robust trajectory structures from those that change materially when stronger repeated-measures requirements are imposed. Distal outcomes, including the harmonized depression endpoint and mediator variables, are used primarily for downstream class profiling after defensible reference solutions have been selected.</p>
 </section>
 <section id="b3-objectives-and-estimands" class="level3">
 <h3 class="anchored" data-anchor-id="b3-objectives-and-estimands">B3 Objectives and Estimands</h3>
@@ -601,7 +600,7 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 \Phi\left(\kappa_{tmk}-\eta_{cm}(\tau_t)\right),
 \qquad k=0,1.
 \]</span></p>
-<p>In joint models, a common latent class variable is shared across processes, but each process retains its own class-specific growth function. The <code>JPA</code> model combines maternal and paternal absence, whereas the <code>JMAES</code> model combines maternal absence and ordinal household socioeconomic status. Models are estimated in Mplus using <code>TYPE = MIXTURE</code>, <code>ESTIMATOR = MLR</code>, <code>ALGORITHM = INTEGRATION</code>, and <code>INTEGRATION = MONTECARLO</code> <span class="citation" data-cites="muthen2004_growthMixtureChapter nagin2016_multitraj">(<a href="#ref-muthen2004_growthMixtureChapter" role="doc-biblioref">Muthén 2004</a>; <a href="#ref-nagin2016_multitraj" role="doc-biblioref">Nagin et al. 2016</a>)</span>.</p>
+<p>In joint models, a common latent class variable is shared across processes, but each process retains its own class-specific growth function. The <code>JPA</code> model combines maternal and paternal absence, whereas the <code>JMAES</code> model combines maternal absence and ordinal household socioeconomic status. Models are estimated in Mplus using <code>TYPE = MIXTURE</code>, <code>ESTIMATOR = MLR</code>, <code>ALGORITHM = INTEGRATION</code>, and <code>INTEGRATION = MONTECARLO</code> <span class="citation" data-cites="muthen2004_growthMixtureChapter nagin2016_multitraj">(<a href="#ref-muthen2004_growthMixtureChapter" role="doc-biblioref">Muthén 2004</a>; <a href="#ref-nagin2016_multitraj" role="doc-biblioref"><span class="nocase">Nagin et al.</span> 2016</a>)</span>.</p>
 </section>
 <section id="b6-class-enumeration-and-model-selection" class="level3">
 <h3 class="anchored" data-anchor-id="b6-class-enumeration-and-model-selection">B6 Class Enumeration and Model Selection</h3>
@@ -611,10 +610,10 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 <li>minimum useful class size and posterior separation;</li>
 <li>substantive interpretability of class shapes;</li>
 <li>consistency of retained solutions across analytic restrictions;</li>
-<li>documentation against GRoLTS and SMART-LCA-aligned reporting standards <span class="citation" data-cites="nylund2007_classes masyn2013_mixture vanLissa2024_smartlca">(<a href="#ref-nylund2007_classes" role="doc-biblioref">Nylund, Asparouhov, and Muthén 2007</a>; <a href="#ref-masyn2013_mixture" role="doc-biblioref">Masyn 2013</a>; <a href="#ref-vanLissa2024_smartlca" role="doc-biblioref">Lissa, Garnier-Villarreal, and Anadria 2024</a>)</span>.</li>
+<li>documentation against GRoLTS and SMART-LCA-aligned reporting standards <span class="citation" data-cites="nylund2007_classes masyn2013_mixture vanLissa2024_smartlca">(<a href="#ref-nylund2007_classes" role="doc-biblioref">Nylund et al. 2007</a>; <a href="#ref-masyn2013_mixture" role="doc-biblioref">Masyn 2013</a>; <a href="#ref-vanLissa2024_smartlca" role="doc-biblioref">Lissa et al. 2024</a>)</span>.</li>
 </ul>
 <p>The default minimum class threshold is <span class="math inline">\(5\%\)</span> of the analytic sample for that model-window-scenario. When possible, the decision set includes the selected <span class="math inline">\(K\)</span> and adjacent <span class="math inline">\(K+1\)</span> solution for review, with lower adjacent solutions retained when <span class="math inline">\(K+1\)</span> is unavailable, collapses, or fails admissibility criteria.</p>
-<p>Because mixture solutions are sensitive to specification, local maxima, and sample restriction, retained solutions are also evaluated under structural sensitivity checks <span class="citation" data-cites="bauerCurran2003_overextraction bauer2007_observations hippBauer2006_local watson2022_lctmSpecification">(<a href="#ref-bauerCurran2003_overextraction" role="doc-biblioref">Bauer and Curran 2003</a>; <a href="#ref-bauer2007_observations" role="doc-biblioref">Bauer 2007</a>; <a href="#ref-hippBauer2006_local" role="doc-biblioref">Hipp and Bauer 2006</a>; <a href="#ref-watson2022_lctmSpecification" role="doc-biblioref">Watson et al. 2022</a>)</span>. The current structural-sensitivity profiles are:</p>
+<p>Because mixture solutions are sensitive to specification, local maxima, and sample restriction, retained solutions are also evaluated under structural sensitivity checks <span class="citation" data-cites="bauerCurran2003_overextraction bauer2007_observations hippBauer2006_local watson2022_lctmSpecification">(<a href="#ref-bauerCurran2003_overextraction" role="doc-biblioref">Bauer and Curran 2003</a>; <a href="#ref-bauer2007_observations" role="doc-biblioref">Bauer 2007</a>; <a href="#ref-hippBauer2006_local" role="doc-biblioref">Hipp and Bauer 2006</a>; <a href="#ref-watson2022_lctmSpecification" role="doc-biblioref"><span class="nocase">Watson et al.</span> 2022</a>)</span>. The current structural-sensitivity profiles are:</p>
 <ol type="1">
 <li>strict LCGA: all within-class growth-factor variances and covariances fixed to zero;</li>
 <li>free intercept and slope variances within class;</li>
@@ -639,7 +638,7 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 <li>joint: stricter restricted (<span class="math inline">\(\ge 3\)</span> complete occasions).</li>
 </ol>
 <p>The distal-outcome layer is descriptive by default. Planned class profiles include probable depression, mediator variables, and contextual descriptive variables where relevant. Where model outputs support BCH weighting, BCH-based distal summaries may be reported as secondary analyses for branch-ready reference solutions.</p>
-<p>Within each eligible scenario, repeated childhood outcomes are handled under the observed-data likelihood of the fitted mixture model. The restricted scenarios therefore change analytic eligibility rather than changing the missing-data model itself <span class="citation" data-cites="schaferGraham2002_missingData graham2009_missingData parsons2024_twoTimepoints">(<a href="#ref-schaferGraham2002_missingData" role="doc-biblioref">Schafer and Graham 2002</a>; <a href="#ref-graham2009_missingData" role="doc-biblioref">Graham 2009</a>; <a href="#ref-parsons2024_twoTimepoints" role="doc-biblioref">Parsons, McCormick, et al. 2024</a>)</span>.</p>
+<p>Within each eligible scenario, repeated childhood outcomes are handled under the observed-data likelihood of the fitted mixture model. The restricted scenarios therefore change analytic eligibility rather than changing the missing-data model itself <span class="citation" data-cites="schaferGraham2002_missingData graham2009_missingData parsons2024_twoTimepoints">(<a href="#ref-schaferGraham2002_missingData" role="doc-biblioref">Schafer and Graham 2002</a>; <a href="#ref-graham2009_missingData" role="doc-biblioref">Graham 2009</a>; <a href="#ref-parsons2024_twoTimepoints" role="doc-biblioref"><span class="nocase">Parsons et al.</span> 2024</a>)</span>.</p>
 </section>
 <section id="b8-planned-outputs-and-reporting" class="level3">
 <h3 class="anchored" data-anchor-id="b8-planned-outputs-and-reporting">B8 Planned Outputs and Reporting</h3>
@@ -729,7 +728,7 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 <section id="c1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="c1-background-and-rationale">C1 Background and Rationale</h3>
 <p>Objective 4 identifies and prioritizes adolescent behavioral and proximal social pathway variables linking childhood social determinants to adolescent depressive symptoms. This section defines Objective 4 as a pathway-screening and mediator-prioritization analysis. It is designed to decide which pathway domains should be carried forward into later mediation-focused work, while keeping the current inferential target distinct from formal direct-effect or indirect-effect decomposition. This distinction matters in a harmonized multi-cohort platform where pathway variables, endpoint timing, and contextual exposure history all vary across source studies <span class="citation" data-cites="JornsPresentati2021PLOS Jakobsson2024GMH Rossouw2024PLOS">(<a href="#ref-JornsPresentati2021PLOS" role="doc-biblioref">Jörns-Presentati et al. 2021</a>; <a href="#ref-Jakobsson2024GMH" role="doc-biblioref">Jakobsson et al. 2024</a>; <a href="#ref-Rossouw2024PLOS" role="doc-biblioref">Rossouw et al. 2024</a>)</span>.</p>
-<p>Objective 4 treats the adolescent pathway block as a constrained but policy-relevant subset of a broader locally grounded pathway ecology. Candidate domains include material deprivation, violence, school-related adversity, social connectedness, and sexual-risk behavior, all positioned after childhood exposure windows and before the harmonized depressive-symptom endpoint <span class="citation" data-cites="Mkhize2024Comppsych Partap2023FrontPsych Zimmerman2021BMJGH">(<a href="#ref-Mkhize2024Comppsych" role="doc-biblioref">M. Mkhize, Westhuizen, and Sorsdahl 2024</a>; <a href="#ref-Partap2023FrontPsych" role="doc-biblioref">Partap et al. 2023</a>; <a href="#ref-Zimmerman2021BMJGH" role="doc-biblioref">Zimmerman et al. 2021</a>)</span>.</p>
+<p>Objective 4 treats the adolescent pathway block as a constrained but policy-relevant subset of a broader locally grounded pathway ecology. Candidate domains include material deprivation, violence, school-related adversity, social connectedness, and sexual-risk behavior, all positioned after childhood exposure windows and before the harmonized depressive-symptom endpoint <span class="citation" data-cites="Mkhize2024Comppsych Partap2023FrontPsych Zimmerman2021BMJGH">(<a href="#ref-Mkhize2024Comppsych" role="doc-biblioref">Mkhize et al. 2024</a>; <a href="#ref-Partap2023FrontPsych" role="doc-biblioref">Partap et al. 2023</a>; <a href="#ref-Zimmerman2021BMJGH" role="doc-biblioref">Zimmerman et al. 2021</a>)</span>.</p>
 </section>
 <section id="c3-objectives-and-estimands" class="level3">
 <h3 class="anchored" data-anchor-id="c3-objectives-and-estimands">C3 Objectives and Estimands</h3>
@@ -761,7 +760,7 @@ O_{iwj}^{(joint)}=\sum_{t \in \mathcal{T}_w}\prod_{m \in \mathcal{M}_j} R_{itm},
 <li>low social support;</li>
 <li>school disengagement.</li>
 </ul>
-<p>These variables are treated as candidate pathway indicators rather than as already-identified formal mediators. They are harmonized from adolescent data collected after the childhood exposure windows and before the harmonized depression endpoint. Fixed covariate adjustment includes sex, adolescent age, rural residence, and calendar year of outcome measurement <span class="citation" data-cites="Marlow2023JAH Fortier2017 Chilver2023 Mthiyane2025IJPDS">(<a href="#ref-Marlow2023JAH" role="doc-biblioref">Marlow et al. 2023</a>; <a href="#ref-Fortier2017" role="doc-biblioref">I. Fortier et al. 2017</a>; <a href="#ref-Chilver2023" role="doc-biblioref">Chilver et al. 2023</a>; <a href="#ref-Mthiyane2025IJPDS" role="doc-biblioref">Mthiyane et al. 2025</a>)</span>.</p>
+<p>These variables are treated as candidate pathway indicators rather than as already-identified formal mediators. They are harmonized from adolescent data collected after the childhood exposure windows and before the harmonized depression endpoint. Fixed covariate adjustment includes sex, adolescent age, rural residence, and calendar year of outcome measurement <span class="citation" data-cites="Marlow2023JAH Fortier2017 Chilver2023 Mthiyane2025IJPDS">(<a href="#ref-Marlow2023JAH" role="doc-biblioref">Marlow et al. 2023</a>; <a href="#ref-Fortier2017" role="doc-biblioref"><span class="nocase">I. Fortier et al.</span> 2017</a>; <a href="#ref-Chilver2023" role="doc-biblioref">Chilver et al. 2023</a>; <a href="#ref-Mthiyane2025IJPDS" role="doc-biblioref">Mthiyane et al. 2025</a>)</span>.</p>
 </section>
 <section id="c5-modeling-strategy" class="level3">
 <h3 class="anchored" data-anchor-id="c5-modeling-strategy">C5 Modeling Strategy</h3>
@@ -802,7 +801,7 @@ P(S_{6-12})
 <li>attenuation under nested fixed-covariate adjustment;</li>
 <li>substantive plausibility in relation to the broader co-created pathway ecology.</li>
 </ul>
-<p>Within that framework, food insecurity is the clearest candidate pathway, with violence exposure also prioritized and ever having had sexual intercourse retained as a supporting pathway domain. Alcohol use, lack of government grant receipt, low social support, and school disengagement remain part of the full evaluated pathway block and are reported transparently as lower-priority or weakly supported domains rather than removed from the screening record <span class="citation" data-cites="Duby2022CAPMH Mkhize2022Food">(<a href="#ref-Duby2022CAPMH" role="doc-biblioref">Duby et al. 2022</a>; <a href="#ref-Mkhize2022Food" role="doc-biblioref">S. Mkhize et al. 2022</a>)</span>.</p>
+<p>Within that framework, food insecurity is the clearest candidate pathway, with violence exposure also prioritized and ever having had sexual intercourse retained as a supporting pathway domain. Alcohol use, lack of government grant receipt, low social support, and school disengagement remain part of the full evaluated pathway block and are reported transparently as lower-priority or weakly supported domains rather than removed from the screening record <span class="citation" data-cites="Duby2022CAPMH Mkhize2022Food">(<a href="#ref-Duby2022CAPMH" role="doc-biblioref">Duby et al. 2022</a>; <a href="#ref-Mkhize2022Food" role="doc-biblioref">Mkhize et al. 2022</a>)</span>.</p>
 </section>
 <section id="c7-sensitivity-and-robustness" class="level3">
 <h3 class="anchored" data-anchor-id="c7-sensitivity-and-robustness">C7 Sensitivity and Robustness</h3>
@@ -810,11 +809,11 @@ P(S_{6-12})
 <p>Additional robustness layers include:</p>
 <ul>
 <li>pathway ranking by pre-specified primary and secondary A-path hypothesis tiers rather than nominal significance alone <span class="citation" data-cites="benjamini1995">(<a href="#ref-benjamini1995" role="doc-biblioref">Benjamini and Hochberg 1995</a>)</span>;</li>
-<li>complete-case main analyses with a separate 20-imputation maternal-baseline diagnostic branch retained as supporting specification work <span class="citation" data-cites="White2011 Sterne2009">(<a href="#ref-White2011" role="doc-biblioref">White, Royston, and Wood 2011</a>; <a href="#ref-Sterne2009" role="doc-biblioref">Sterne et al. 2009</a>)</span>;</li>
+<li>complete-case main analyses with a separate 20-imputation maternal-baseline diagnostic branch retained as supporting specification work <span class="citation" data-cites="White2011 Sterne2009">(<a href="#ref-White2011" role="doc-biblioref">White et al. 2011</a>; <a href="#ref-Sterne2009" role="doc-biblioref">Sterne et al. 2009</a>)</span>;</li>
 <li>interaction reviews for selected pathway combinations, especially violence exposure with school disengagement;</li>
 <li>a contextual pathway inventory used to assess local relevance, partial measurement, and measurement gaps;</li>
 <li>a working mediation-specification DAG used to summarize how the screening outputs inform later mediation-focused modelling;</li>
-<li>reporting aligned to STROBE and AGReMA guidance <span class="citation" data-cites="vonelm2007 moreno-betancur2021">(<a href="#ref-vonelm2007" role="doc-biblioref">Elm et al. 2007</a>; <a href="#ref-moreno-betancur2021" role="doc-biblioref">Moreno-Betancur et al. 2021</a>)</span>.</li>
+<li>reporting aligned to STROBE and AGReMA guidance <span class="citation" data-cites="vonelm2007 moreno-betancur2021">(<a href="#ref-vonelm2007" role="doc-biblioref">Elm et al. 2007</a>; <a href="#ref-moreno-betancur2021" role="doc-biblioref"><span class="nocase">Moreno-Betancur et al.</span> 2021</a>)</span>.</li>
 </ul>
 <p>The maternal-baseline imputation branch and working DAG do not replace the main screening estimands. They provide supporting evidence for later mediation specification by distinguishing stronger imputed maternal base candidates from auxiliary imputation variables and by separating baseline covariates, fixed contextual covariates, screened pathway domains, and broader conceptual downstream structural nodes.</p>
 </section>
@@ -888,7 +887,7 @@ P(S_{6-12})
 <h2 class="anchored" data-anchor-id="section-d-objective-5---causal-mediation-sap">Section D: Objective 5 - Causal Mediation SAP</h2>
 <section id="d1-background-and-rationale" class="level3">
 <h3 class="anchored" data-anchor-id="d1-background-and-rationale">D1 Background and Rationale</h3>
-<p>Objective 5 carries forward the retained childhood exposure histories, the harmonized depressive-symptom endpoint, and the mediator shortlist from Objectives 2-4 into formal causal mediation analysis. The purpose is no longer pathway screening alone, but estimation of how much depressive-symptom burden is associated with selected childhood exposure histories overall, how much remains outside the selected adolescent pathways, and how much is carried through the retained mediator set <span class="citation" data-cites="pearl2001direct imai2010identification valeri2013mediation vanderweele2016">(<a href="#ref-pearl2001direct" role="doc-biblioref">Pearl 2001</a>; <a href="#ref-imai2010identification" role="doc-biblioref">Imai, Keele, and Yamamoto 2010</a>; <a href="#ref-valeri2013mediation" role="doc-biblioref">Valeri and VanderWeele 2013</a>; <a href="#ref-vanderweele2016" role="doc-biblioref">T. J. VanderWeele et al. 2016</a>)</span>.</p>
+<p>Objective 5 carries forward the retained childhood exposure histories, the harmonized depressive-symptom endpoint, and the mediator shortlist from Objectives 2-4 into formal causal mediation analysis. The purpose is no longer pathway screening alone, but estimation of how much depressive-symptom burden is associated with selected childhood exposure histories overall, how much remains outside the selected adolescent pathways, and how much is carried through the retained mediator set <span class="citation" data-cites="pearl2001direct imai2010identification valeri2013mediation vanderweele2016">(<a href="#ref-pearl2001direct" role="doc-biblioref">Pearl 2001</a>; <a href="#ref-imai2010identification" role="doc-biblioref">Imai et al. 2010</a>; <a href="#ref-valeri2013mediation" role="doc-biblioref">Valeri and VanderWeele 2013</a>; <a href="#ref-vanderweele2016" role="doc-biblioref">VanderWeele et al. 2016</a>)</span>.</p>
 <p>The finalized Objective 5 implementation is anchored on the strict joint-history branch requiring at least three observed childhood occasions per developmental window. The primary exposure is the joint maternal-absence plus household socioeconomic history because it preserves developmental ordering, represents co-occurring relational and material adversity, and yielded the richest defensible joint trajectory structure. Supportive univariate maternal-absence and household socioeconomic histories are analyzed within the same joint-history analytical sample.</p>
 </section>
 <section id="d2-objectives-and-estimands" class="level3">
@@ -959,7 +958,7 @@ P(S_{6-12})
 \Pr(Y_i=1 \mid H_i, M_{ij}, \mathbf{C}_i)
 \]</span></p>
 <p>through a corresponding logistic outcome model. Standardized counterfactual means are combined to obtain total effects, direct effects, and mediator-specific indirect effects on the risk-difference scale.</p>
-<p>For the combined three-mediator set, the joint mediator distribution is represented through sequential factorization rather than by summing separate indirect effects. This is necessary because mediator-specific indirect effects are not additive when mediators are correlated or represent overlapping components of the same adolescent pathway ecology <span class="citation" data-cites="vanderweele2016mediation">(<a href="#ref-vanderweele2016mediation" role="doc-biblioref">Tyler J. VanderWeele 2016</a>)</span>.</p>
+<p>For the combined three-mediator set, the joint mediator distribution is represented through sequential factorization rather than by summing separate indirect effects. This is necessary because mediator-specific indirect effects are not additive when mediators are correlated or represent overlapping components of the same adolescent pathway ecology <span class="citation" data-cites="vanderweele2016mediation">(<a href="#ref-vanderweele2016mediation" role="doc-biblioref">VanderWeele 2016</a>)</span>.</p>
 <p>The finalized pipeline used:</p>
 <ul>
 <li><code>300</code> coefficient simulation draws for total-effect uncertainty propagation;</li>
@@ -979,7 +978,7 @@ P(S_{6-12})
 </section>
 <section id="d7-robustness-and-interpretation-rules" class="level3">
 <h3 class="anchored" data-anchor-id="d7-robustness-and-interpretation-rules">D7 Robustness and Interpretation Rules</h3>
-<p>Objective 5 interpretation is intentionally conservative. Causal interpretation requires no unmeasured confounding of the exposure-outcome, exposure-mediator, and mediator-outcome relations after conditioning on the measured covariates <span class="citation" data-cites="imai2010identification vanderweele2016mediation">(<a href="#ref-imai2010identification" role="doc-biblioref">Imai, Keele, and Yamamoto 2010</a>; <a href="#ref-vanderweele2016mediation" role="doc-biblioref">Tyler J. VanderWeele 2016</a>)</span>. Because these assumptions are demanding in observational data, the SAP applies the following rules:</p>
+<p>Objective 5 interpretation is intentionally conservative. Causal interpretation requires no unmeasured confounding of the exposure-outcome, exposure-mediator, and mediator-outcome relations after conditioning on the measured covariates <span class="citation" data-cites="imai2010identification vanderweele2016mediation">(<a href="#ref-imai2010identification" role="doc-biblioref">Imai et al. 2010</a>; <a href="#ref-vanderweele2016mediation" role="doc-biblioref">VanderWeele 2016</a>)</span>. Because these assumptions are demanding in observational data, the SAP applies the following rules:</p>
 <ul>
 <li>positive total effects indicate higher depressive-symptom risk in the comparator history than in the reference history;</li>
 <li>indirect effects are treated as pathway-consistent evidence when directionally coherent with the hypothesized mediator pathway;</li>
@@ -1131,7 +1130,7 @@ P(S_{6-12})
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-AsparouhovMuthen2014" class="csl-entry" role="listitem">
 Asparouhov, Tihomir, and Bengt O. Muthén. 2014. <span>“Auxiliary Variables in Mixture Modeling: Three-Step Approaches Using <span>Mplus</span>.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em> 21 (3): 329–41. <a href="https://doi.org/10.1080/10705511.2014.915181">https://doi.org/10.1080/10705511.2014.915181</a>.
 </div>
@@ -1139,7 +1138,7 @@ Asparouhov, Tihomir, and Bengt O. Muthén. 2014. <span>“Auxiliary Variables in
 Bauer, Daniel J. 2007. <span>“Observations on the Use of Growth Mixture Models in Psychological Research.”</span> <em>Multivariate Behavioral Research</em>. <a href="https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/Bauer_2007.pdf">https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/Bauer_2007.pdf</a>.
 </div>
 <div id="ref-bauerCurran2003_overextraction" class="csl-entry" role="listitem">
-Bauer, Daniel J., and Patrick J. Curran. 2003. <span>“Distributional Assumptions of Growth Mixture Models: Implications for Overextraction of Latent Trajectory Classes.”</span> <em>Psychological Methods</em>. <a href="https://doi.org/10.1037/1082-989X.8.3.338">https://doi.org/10.1037/1082-989X.8.3.338</a>.
+Bauer, Daniel J., and Patrick J. Curran. 2003. <span>“Distributional Assumptions of Growth Mixture Models: Implications for Overextraction of Latent Trajectory Classes.”</span> <em>Psychological Methods</em>, ahead of print. <a href="https://doi.org/10.1037/1082-989X.8.3.338">https://doi.org/10.1037/1082-989X.8.3.338</a>.
 </div>
 <div id="ref-benjamini1995" class="csl-entry" role="listitem">
 Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing.”</span> <em>Journal of the Royal Statistical Society: Series B (Methodological)</em> 57 (1): 289–300. <a href="https://doi.org/10.1111/j.2517-6161.1995.tb02031.x">https://doi.org/10.1111/j.2517-6161.1995.tb02031.x</a>.
@@ -1148,13 +1147,13 @@ Benjamini, Yoav, and Yosef Hochberg. 1995. <span>“Controlling the False Discov
 Chalmers, R Philip. 2012. <span>“Mirt: A Multidimensional Item Response Theory Package for the r Environment.”</span> <em>Journal of Statistical Software</em> 48 (6): 1–29. <a href="https://doi.org/10.18637/jss.v048.i06">https://doi.org/10.18637/jss.v048.i06</a>.
 </div>
 <div id="ref-chibanda2019ssq8" class="csl-entry" role="listitem">
-Chibanda, Dixon et al. 2019. <span>“Validation of the 8-Item Shona Symptom Questionnaire (SSQ-8) in Zimbabwe.”</span> In <em>AIDSImpact 2019 Conference</em>. <a href="https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA">https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA</a>.
+<span class="nocase">Chibanda, Dixon et al.</span> 2019. <span>“Validation of the 8-Item Shona Symptom Questionnaire (SSQ-8) in Zimbabwe.”</span> <em>AIDSImpact 2019 Conference</em>. <a href="https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA">https://www.aidsimpact.com/abstracts/-KoQrAipsu5F2bWuNDBA</a>.
 </div>
 <div id="ref-Chilver2023" class="csl-entry" role="listitem">
 Chilver, M. R., R. A. Burns, F. Botha, and P. Butterworth. 2023. <span>“Comparing Estimates of Psychological Distress Using 7-Day and 30-Day Recall Periods: A Randomized Controlled Trial.”</span> <em>PLOS ONE</em> 18 (12): e0295535. <a href="https://doi.org/10.1371/journal.pone.0295535">https://doi.org/10.1371/journal.pone.0295535</a>.
 </div>
 <div id="ref-Duby2022CAPMH" class="csl-entry" role="listitem">
-Duby, Zoe, Brittany Bunce, Chantal Fowler, Kate Bergh, Kim Jonas, Janan Janine Dietrich, Darshini Govindasamy, Caroline Kuo, and Catherine Mathews. 2022. <span>“Intersections Between COVID-19 and Socio-Economic Mental Health Stressors in the Lives of South African Adolescent Girls and Young Women.”</span> <em>Child and Adolescent Psychiatry and Mental Health</em> 16 (1): 23. <a href="https://doi.org/10.1186/s13034-022-00457-y">https://doi.org/10.1186/s13034-022-00457-y</a>.
+Duby, Zoe, Brittany Bunce, Chantal Fowler, et al. 2022. <span>“Intersections Between COVID-19 and Socio-Economic Mental Health Stressors in the Lives of South African Adolescent Girls and Young Women.”</span> <em>Child and Adolescent Psychiatry and Mental Health</em> 16 (1): 23. <a href="https://doi.org/10.1186/s13034-022-00457-y">https://doi.org/10.1186/s13034-022-00457-y</a>.
 </div>
 <div id="ref-efron1994introduction" class="csl-entry" role="listitem">
 Efron, Bradley, and Robert J Tibshirani. 1994. <em>An Introduction to the Bootstrap</em>. CRC press. <a href="https://doi.org/10.1201/9780429246593">https://doi.org/10.1201/9780429246593</a>.
@@ -1163,10 +1162,10 @@ Efron, Bradley, and Robert J Tibshirani. 1994. <em>An Introduction to the Bootst
 Elm, Erik von, Douglas G. Altman, Matthias Egger, Stuart J. Pocock, Peter C. Gøtzsche, and Jan P. Vandenbroucke. 2007. <span>“The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) Statement: Guidelines for Reporting Observational Studies.”</span> <em>PLoS Medicine</em> 4 (10): e296. <a href="https://doi.org/10.1371/journal.pmed.0040296">https://doi.org/10.1371/journal.pmed.0040296</a>.
 </div>
 <div id="ref-Fortier2017" class="csl-entry" role="listitem">
-Fortier, I., P. Raina, E. R. Van den Heuvel, et al. 2017. <span>“Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.”</span> <em>International Journal of Epidemiology</em> 46 (1): 103–5. <a href="https://doi.org/10.1093/ije/dyw075">https://doi.org/10.1093/ije/dyw075</a>.
+<span class="nocase">Fortier, I., P. Raina, E. R. Van den Heuvel, et al.</span> 2017. <span>“Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.”</span> <em>International Journal of Epidemiology</em> 46 (1): 103–5. <a href="https://doi.org/10.1093/ije/dyw075">https://doi.org/10.1093/ije/dyw075</a>.
 </div>
 <div id="ref-fortier2017_maelstrom" class="csl-entry" role="listitem">
-Fortier, Isabel, Parminder Raina, Edwin R. van den Heuvel, Lauren E. Griffith, et al. 2017. <span>“Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.”</span> <em>International Journal of Epidemiology</em> 46 (1): 103–15. <a href="https://doi.org/10.1093/ije/dyw075">https://doi.org/10.1093/ije/dyw075</a>.
+<span class="nocase">Fortier, Isabel, Parminder Raina, Edwin R. van den Heuvel, Lauren E. Griffith, et al.</span> 2017. <span>“Maelstrom Research Guidelines for Rigorous Retrospective Data Harmonization.”</span> <em>International Journal of Epidemiology</em> 46 (1): 103–15. <a href="https://doi.org/10.1093/ije/dyw075">https://doi.org/10.1093/ije/dyw075</a>.
 </div>
 <div id="ref-graham2009_missingData" class="csl-entry" role="listitem">
 Graham, John W. 2009. <span>“Missing Data Analysis: Making It Work in the Real World.”</span> <em>Annual Review of Psychology</em> 60: 549–76. <a href="https://doi.org/10.1146/annurev.psych.58.110405.085530">https://doi.org/10.1146/annurev.psych.58.110405.085530</a>.
@@ -1175,7 +1174,7 @@ Graham, John W. 2009. <span>“Missing Data Analysis: Making It Work in the Real
 Hall, Katharine, and Dorrit Posel. 2019. <span>“Fragmenting the Family? The Complexity of Household Migration Strategies in Post-Apartheid South Africa.”</span> <em>IZA Journal of Development and Migration</em> 10 (4). <a href="https://doi.org/10.2478/izajodm-2019-0004">https://doi.org/10.2478/izajodm-2019-0004</a>.
 </div>
 <div id="ref-Haney2014" class="csl-entry" role="listitem">
-Haney, E, K Singh, C Nyamukapa, S Gregson, L Robertson, L Sherr, and T Hallett. 2014. <span>“One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.”</span> <em>Journal of Affective Disorders</em> 167: 358–67.
+Haney, E, K Singh, C Nyamukapa, et al. 2014. <span>“One Size Does Not Fit All: Psychometric Properties of the Shona Symptom Questionnaire (SSQ) Among Adolescents and Young Adults in Zimbabwe.”</span> <em>Journal of Affective Disorders</em> 167: 358–67.
 </div>
 <div id="ref-hippBauer2006_local" class="csl-entry" role="listitem">
 Hipp, John R., and Daniel J. Bauer. 2006. <span>“Local Solutions in the Estimation of Growth Mixture Models.”</span> <em>Psychological Methods</em>. <a href="https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/hipp-bauer-PM-2006.pdf">https://dbauer.web.unc.edu/wp-content/uploads/sites/7494/2014/08/hipp-bauer-PM-2006.pdf</a>.
@@ -1190,22 +1189,22 @@ Hu, Li-tze, and Peter M Bentler. 1999. <span>“Cutoff Criteria for Fit Indexes 
 Imai, K., L. Keele, and T. Yamamoto. 2010. <span>“Identification, Inference and Sensitivity Analysis for Causal Mediation Effects.”</span> <em>Statistical Science</em> 25 (1): 51–71. <a href="https://doi.org/10.1214/10-STS321">https://doi.org/10.1214/10-STS321</a>.
 </div>
 <div id="ref-Jakobsson2024GMH" class="csl-entry" role="listitem">
-Jakobsson, Cecilia E., Natalie E. Johnson, Brenda Ochuku, Rosine Baseke, Evelyn Wong, Christine W. Musyimi, David M. Ndetei, and Katherine E. Venturo-Conerly. 2024. <span>“Meta-Analysis: Prevalence of Youth Mental Disorders in Sub-Saharan Africa.”</span> <em>Cambridge Prisms: Global Mental Health</em> 11: e109. <a href="https://doi.org/10.1017/gmh.2024.82">https://doi.org/10.1017/gmh.2024.82</a>.
+Jakobsson, Cecilia E., Natalie E. Johnson, Brenda Ochuku, et al. 2024. <span>“Meta-Analysis: Prevalence of Youth Mental Disorders in Sub-Saharan Africa.”</span> <em>Cambridge Prisms: Global Mental Health</em> 11: e109. <a href="https://doi.org/10.1017/gmh.2024.82">https://doi.org/10.1017/gmh.2024.82</a>.
 </div>
 <div id="ref-JornsPresentati2021PLOS" class="csl-entry" role="listitem">
-Jörns-Presentati, Astrid, Ann-Kathrin Napp, Anja S. Dessauvagie, Dan J. Stein, Deborah Jonker, Elsie Breet, Weslin Charles, et al. 2021. <span>“The Prevalence of Mental Health Problems in Sub-Saharan Adolescents: A Systematic Review.”</span> <em>PLOS ONE</em> 16 (5): e0251689. <a href="https://doi.org/10.1371/journal.pone.0251689">https://doi.org/10.1371/journal.pone.0251689</a>.
+Jörns-Presentati, Astrid, Ann-Kathrin Napp, Anja S. Dessauvagie, et al. 2021. <span>“The Prevalence of Mental Health Problems in Sub-Saharan Adolescents: A Systematic Review.”</span> <em>PLOS ONE</em> 16 (5): e0251689. <a href="https://doi.org/10.1371/journal.pone.0251689">https://doi.org/10.1371/journal.pone.0251689</a>.
 </div>
 <div id="ref-Kroenke2001" class="csl-entry" role="listitem">
 Kroenke, K., R. L. Spitzer, and J. B. Williams. 2001. <span>“The PHQ-9: Validity of a Brief Depression Severity Measure.”</span> <em>Journal of General Internal Medicine</em> 16 (9): 606–13. <a href="https://doi.org/10.1046/j.1525-1497.2001.016009606.x">https://doi.org/10.1046/j.1525-1497.2001.016009606.x</a>.
 </div>
 <div id="ref-vanLissa2024_smartlca" class="csl-entry" role="listitem">
-Lissa, Caspar J. van, Mauricio Garnier-Villarreal, and Dan Anadria. 2024. <span>“Recommended Practices in Latent Class Analysis Using the Open-Source r-Package tidySEM.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em>. <a href="https://doi.org/10.1080/10705511.2023.2250920">https://doi.org/10.1080/10705511.2023.2250920</a>.
+Lissa, Caspar J. van, Mauricio Garnier-Villarreal, and Dan Anadria. 2024. <span>“Recommended Practices in Latent Class Analysis Using the Open-Source r-Package tidySEM.”</span> <em>Structural Equation Modeling: A Multidisciplinary Journal</em>, ahead of print. <a href="https://doi.org/10.1080/10705511.2023.2250920">https://doi.org/10.1080/10705511.2023.2250920</a>.
 </div>
 <div id="ref-maccallum2002practice" class="csl-entry" role="listitem">
 MacCallum, Robert C, Shaobo Zhang, Kristopher J Preacher, and Derek D Rucker. 2002. <span>“On the Practice of Dichotomization of Quantitative Variables.”</span> <em>Psychological Methods</em> 7 (1): 19. <a href="https://doi.org/10.1037/1082-989X.7.1.19">https://doi.org/10.1037/1082-989X.7.1.19</a>.
 </div>
 <div id="ref-Marlow2023JAH" class="csl-entry" role="listitem">
-Marlow, Marguerite, Sarah Skeen, Caitlin M. Grieve, Liliana Carvajal-Velez, Jill W. Åhs, Brandon A. Kohrt, Jennifer Requejo, et al. 2023. <span>“Detecting Depression and Anxiety Among Adolescents in South Africa: Validity of the Isi<span>X</span>hosa Patient Health Questionnaire-9 and Generalized Anxiety Disorder-7.”</span> <em>Journal of Adolescent Health</em> 72 (1 Suppl): S52–60. <a href="https://doi.org/10.1016/j.jadohealth.2022.09.013">https://doi.org/10.1016/j.jadohealth.2022.09.013</a>.
+Marlow, Marguerite, Sarah Skeen, Caitlin M. Grieve, et al. 2023. <span>“Detecting Depression and Anxiety Among Adolescents in South Africa: Validity of the Isi<span>X</span>hosa Patient Health Questionnaire-9 and Generalized Anxiety Disorder-7.”</span> <em>Journal of Adolescent Health</em> 72 (1 Suppl): S52–60. <a href="https://doi.org/10.1016/j.jadohealth.2022.09.013">https://doi.org/10.1016/j.jadohealth.2022.09.013</a>.
 </div>
 <div id="ref-masyn2013_mixture" class="csl-entry" role="listitem">
 Masyn, Katherine E. 2013. <span>“Latent Class Analysis and Finite Mixture Modeling.”</span> In <em>The Oxford Handbook of Quantitative Methods</em>. Oxford University Press. <a href="https://www.statmodel.com/download/Masyn_2013.pdf">https://www.statmodel.com/download/Masyn_2013.pdf</a>.
@@ -1217,31 +1216,31 @@ Mkhize, Mirriam, Claire van der Westhuizen, and Katherine Sorsdahl. 2024. <span>
 Mkhize, Siluleko, Elena Libhaber, Ronel Sewpaul, Priscilla Reddy, and Laurel Baldwin-Ragaven. 2022. <span>“Child and Adolescent Food Insecurity in South Africa: A Household-Level Analysis of Hunger.”</span> <em>PLOS ONE</em> 17 (12): e0278191. <a href="https://doi.org/10.1371/journal.pone.0278191">https://doi.org/10.1371/journal.pone.0278191</a>.
 </div>
 <div id="ref-moreno-betancur2021" class="csl-entry" role="listitem">
-Moreno-Betancur, M., J. B. Carlin, S. L. Brilleman, E. J. Williamson, L. Simonsen, V. Didelez, et al. 2021. <span>“A Guideline for Reporting Mediation Analyses of Randomized Trials and Observational Studies: The AGReMA Statement.”</span> <em>JAMA</em> 326 (11): 1045–56. <a href="https://doi.org/10.1001/jama.2021.14075">https://doi.org/10.1001/jama.2021.14075</a>.
+<span class="nocase">Moreno-Betancur, M., J. B. Carlin, S. L. Brilleman, et al.</span> 2021. <span>“A Guideline for Reporting Mediation Analyses of Randomized Trials and Observational Studies: The AGReMA Statement.”</span> <em>JAMA</em> 326 (11): 1045–56. <a href="https://doi.org/10.1001/jama.2021.14075">https://doi.org/10.1001/jama.2021.14075</a>.
 </div>
 <div id="ref-Mthiyane2025IJPDS" class="csl-entry" role="listitem">
-Mthiyane, Nondumiso, Edwin Mkwanazi, Patrick N. Mwangala, Debra Gareta, Sphiwe Dube, Kobus Herbst, Maryam Shahmanesh, Kathy Baisley, and Amina Abubakar. 2025. <span>“Data Resource Profile: Harmonisation of a Multimodal Dataset to Evaluate Adolescent Mental Health in Rural South Africa.”</span> <em>International Journal of Population Data Science</em> 8 (6): 3003. <a href="https://doi.org/10.23889/ijpds.v8i6.3003">https://doi.org/10.23889/ijpds.v8i6.3003</a>.
+Mthiyane, Nondumiso, Edwin Mkwanazi, Patrick N. Mwangala, et al. 2025. <span>“Data Resource Profile: Harmonisation of a Multimodal Dataset to Evaluate Adolescent Mental Health in Rural South Africa.”</span> <em>International Journal of Population Data Science</em> 8 (6): 3003. <a href="https://doi.org/10.23889/ijpds.v8i6.3003">https://doi.org/10.23889/ijpds.v8i6.3003</a>.
 </div>
 <div id="ref-muthen2004_growthMixtureChapter" class="csl-entry" role="listitem">
-Muthén, Bengt O. 2004. <span>“Latent Variable Analysis: Growth Mixture Modeling and Related Techniques for Longitudinal Data.”</span> <a href="https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf">https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf</a>.
+Muthén, Bengt O. 2004. <em>Latent Variable Analysis: Growth Mixture Modeling and Related Techniques for Longitudinal Data</em>. <a href="https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf">https://users.ugent.be/~wbeyers/workshop/lit/Muthen%202004%20LGMM.pdf</a>.
 </div>
 <div id="ref-nagin2016_multitraj" class="csl-entry" role="listitem">
-Nagin, Daniel S. et al. 2016. <span>“Group-Based Multi-Trajectory Modeling.”</span> <em>Statistical Methods in Medical Research</em>. <a href="https://doi.org/10.1177/0962280216673085">https://doi.org/10.1177/0962280216673085</a>.
+<span class="nocase">Nagin, Daniel S. et al.</span> 2016. <span>“Group-Based Multi-Trajectory Modeling.”</span> <em>Statistical Methods in Medical Research</em>, ahead of print. <a href="https://doi.org/10.1177/0962280216673085">https://doi.org/10.1177/0962280216673085</a>.
 </div>
 <div id="ref-nylund2007_classes" class="csl-entry" role="listitem">
-Nylund, Karen L., Tihomir Asparouhov, and Bengt O. Muthén. 2007. <span>“Deciding on the Number of Classes in Latent Class Analysis and Growth Mixture Modeling: A Monte Carlo Simulation Study.”</span> StatModel. <a href="https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf">https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf</a>.
+Nylund, Karen L., Tihomir Asparouhov, and Bengt O. Muthén. 2007. <em>Deciding on the Number of Classes in Latent Class Analysis and Growth Mixture Modeling: A Monte Carlo Simulation Study</em>. StatModel. <a href="https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf">https://www.statmodel.com/download/LCA_tech11_nylund_v83.pdf</a>.
 </div>
 <div id="ref-parsons2024_twoTimepoints" class="csl-entry" role="listitem">
-Parsons, C., E. McCormick, et al. 2024. <span>“Limitations of Two Time Point Data for Understanding Individual Differences in Longitudinal Modeling—What Can Difference Reveal about Change?”</span> <em>Developmental Cognitive Neuroscience</em>. <a href="https://www.sciencedirect.com/science/article/pii/S1878929324000148">https://www.sciencedirect.com/science/article/pii/S1878929324000148</a>.
+<span class="nocase">Parsons, C., E. McCormick, et al.</span> 2024. <span>“Limitations of Two Time Point Data for Understanding Individual Differences in Longitudinal Modeling—What Can Difference Reveal about Change?”</span> <em>Developmental Cognitive Neuroscience</em>. <a href="https://www.sciencedirect.com/science/article/pii/S1878929324000148">https://www.sciencedirect.com/science/article/pii/S1878929324000148</a>.
 </div>
 <div id="ref-Partap2023FrontPsych" class="csl-entry" role="listitem">
-Partap, Uttara P., Nega Assefa, Yemane Berhane, Ali Sie, David Guwatudde, Japhet K. Killewo, Ayoade Oduola, et al. 2023. <span>“The Influence of Depressive Symptoms and School-Going Status on Risky Behaviors: A Pooled Analysis Among Adolescents in Six Sub-Saharan African Countries.”</span> <em>Frontiers in Psychiatry</em> 14: 1171231. <a href="https://doi.org/10.3389/fpsyt.2023.1171231">https://doi.org/10.3389/fpsyt.2023.1171231</a>.
+Partap, Uttara P., Nega Assefa, Yemane Berhane, et al. 2023. <span>“The Influence of Depressive Symptoms and School-Going Status on Risky Behaviors: A Pooled Analysis Among Adolescents in Six Sub-Saharan African Countries.”</span> <em>Frontiers in Psychiatry</em> 14: 1171231. <a href="https://doi.org/10.3389/fpsyt.2023.1171231">https://doi.org/10.3389/fpsyt.2023.1171231</a>.
 </div>
 <div id="ref-Patel1997" class="csl-entry" role="listitem">
 Patel, Vikram, Essie Simunyu, Fungisai Gwanzura, Glyn Lewis, and Anthony H Mann. 1997. <span>“The Shona Symptom Questionnaire: The Development of an Indigenous Measure of Common Mental Disorders in Harare.”</span> <em>Acta Psychiatrica Scandinavica</em> 95 (6): 469–75.
 </div>
 <div id="ref-pearl2001direct" class="csl-entry" role="listitem">
-Pearl, Judea. 2001. <span>“Direct and Indirect Effects.”</span> In <em>Proceedings of the Seventeenth Conference on Uncertainty in Artificial Intelligence</em>, 411–20.
+Pearl, Judea. 2001. <span>“Direct and Indirect Effects.”</span> <em>Proceedings of the Seventeenth Conference on Uncertainty in Artificial Intelligence</em>, 411–20.
 </div>
 <div id="ref-putnick2016measurement" class="csl-entry" role="listitem">
 Putnick, Diane L, and Marc H Bornstein. 2016. <span>“Measurement Invariance Conventions and Reporting: The State of the Art and Future Directions for Psychological Research.”</span> <em>Developmental Review</em> 41: 71–90. <a href="https://doi.org/10.1016/j.dr.2016.06.004">https://doi.org/10.1016/j.dr.2016.06.004</a>.
@@ -1256,10 +1255,10 @@ Samejima, Fumiko. 1969. <span>“Estimation of Latent Ability Using a Response P
 Schafer, Joseph L., and John W. Graham. 2002. <span>“Missing Data: Our View of the State of the Art.”</span> <em>Psychological Methods</em>. <a href="https://stat.ethz.ch/education/semesters/ss2012/ams/paper/missing_data_1.pdf">https://stat.ethz.ch/education/semesters/ss2012/ams/paper/missing_data_1.pdf</a>.
 </div>
 <div id="ref-simelane2025_sahr" class="csl-entry" role="listitem">
-Simelane, S., J. Bantjes, S. Kleintjes, et al. 2025. <span>“Putting Child and Adolescent Mental Health at the Centre: Building an Ecosystem of Support.”</span> <em>South African Health Review</em> 27: 131–43. <a href="https://doi.org/10.61473/001c.142241">https://doi.org/10.61473/001c.142241</a>.
+<span class="nocase">Simelane, S., J. Bantjes, S. Kleintjes, et al.</span> 2025. <span>“Putting Child and Adolescent Mental Health at the Centre: Building an Ecosystem of Support.”</span> <em>South African Health Review</em> 27: 131–43. <a href="https://doi.org/10.61473/001c.142241">https://doi.org/10.61473/001c.142241</a>.
 </div>
 <div id="ref-Sterne2009" class="csl-entry" role="listitem">
-Sterne, Jonathan A. C., Ian R. White, John B. Carlin, Michael Spratt, Patrick Royston, Michael G. Kenward, Angela M. Wood, and James R. Carpenter. 2009. <span>“Multiple Imputation for Missing Data in Epidemiological and Clinical Research: Potential and Pitfalls.”</span> <em>BMJ</em> 338: b2393. <a href="https://doi.org/10.1136/bmj.b2393">https://doi.org/10.1136/bmj.b2393</a>.
+Sterne, Jonathan A. C., Ian R. White, John B. Carlin, et al. 2009. <span>“Multiple Imputation for Missing Data in Epidemiological and Clinical Research: Potential and Pitfalls.”</span> <em>BMJ</em> 338: b2393. <a href="https://doi.org/10.1136/bmj.b2393">https://doi.org/10.1136/bmj.b2393</a>.
 </div>
 <div id="ref-valeri2013mediation" class="csl-entry" role="listitem">
 Valeri, L., and T. J. VanderWeele. 2013. <span>“Mediation Analysis Allowing for Exposure-Mediator Interactions and Causal Interpretation: Theoretical Assumptions and Implementation with SAS and SPSS Macros.”</span> <em>Psychological Methods</em> 18 (2): 137–50. <a href="https://doi.org/10.1037/a0031034">https://doi.org/10.1037/a0031034</a>.
@@ -1277,7 +1276,7 @@ VanderWeele, Tyler J. 2016. <span>“Mediation Analysis: A Practitioner’s Guid
 Vermunt, Jeroen K. 2010. <span>“Latent Class Modeling with Covariates: Two Improved Three-Step Approaches.”</span> <em>Political Analysis</em> 18 (4): 450–69. <a href="https://doi.org/10.1093/pan/mpq025">https://doi.org/10.1093/pan/mpq025</a>.
 </div>
 <div id="ref-watson2022_lctmSpecification" class="csl-entry" role="listitem">
-Watson, C. et al. 2022. <span>“Latent Class Trajectory Modelling: Impact of Changes in Model Specification.”</span> <em>American Journal of Translational Research</em> 14 (10): 7593–7606. <a href="https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&amp;filePid=13170140970002346&amp;instCode=44SUR_INST">https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&amp;filePid=13170140970002346&amp;instCode=44SUR_INST</a>.
+<span class="nocase">Watson, C. et al.</span> 2022. <span>“Latent Class Trajectory Modelling: Impact of Changes in Model Specification.”</span> <em>American Journal of Translational Research</em> 14 (10): 7593–606. <a href="https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&amp;filePid=13170140970002346&amp;instCode=44SUR_INST">https://openresearch.surrey.ac.uk/view/pdfCoverPage?download=true&amp;filePid=13170140970002346&amp;instCode=44SUR_INST</a>.
 </div>
 <div id="ref-White2011" class="csl-entry" role="listitem">
 White, Ian R., Patrick Royston, and Angela M. Wood. 2011. <span>“Multiple Imputation Using Chained Equations: Issues and Guidance for Practice.”</span> <em>Statistics in Medicine</em> 30 (4): 377–99. <a href="https://doi.org/10.1002/sim.4067">https://doi.org/10.1002/sim.4067</a>.
@@ -1289,7 +1288,7 @@ Woods, Carol M. 2009. <span>“Empirical Histograms in Item Response Theory with
 Wu, Hao, and Ryne Estabrook. 2016. <span>“Identification of Confirmatory Factor Analysis Models of Different Levels of Invariance for Ordered Categorical Outcomes.”</span> <em>Psychometrika</em> 81: 1014–45. <a href="https://doi.org/10.1007/s11336-016-9506-0">https://doi.org/10.1007/s11336-016-9506-0</a>.
 </div>
 <div id="ref-Zimmerman2021BMJGH" class="csl-entry" role="listitem">
-Zimmerman, Annie, Emily Garman, Mauricio Avendano-Pabon, Ricardo Araya, Sara Evans-Lacko, David McDaid, A-La Park, et al. 2021. <span>“The Impact of Cash Transfers on Mental Health in Children and Young People in Low-Income and Middle-Income Countries: A Systematic Review and Meta-Analysis.”</span> <em>BMJ Global Health</em> 6 (4): e004661. <a href="https://doi.org/10.1136/bmjgh-2020-004661">https://doi.org/10.1136/bmjgh-2020-004661</a>.
+Zimmerman, Annie, Emily Garman, Mauricio Avendano-Pabon, et al. 2021. <span>“The Impact of Cash Transfers on Mental Health in Children and Young People in Low-Income and Middle-Income Countries: A Systematic Review and Meta-Analysis.”</span> <em>BMJ Global Health</em> 6 (4): e004661. <a href="https://doi.org/10.1136/bmjgh-2020-004661">https://doi.org/10.1136/bmjgh-2020-004661</a>.
 </div>
 </div>
 
@@ -1524,7 +1523,7 @@ document.addEventListener("DOMContentLoaded", function () {
     anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {
+        if (clz.startsWith('code-annotation-')) {                     
           return true;
         }
       }
@@ -1544,11 +1543,11 @@ document.addEventListener("DOMContentLoaded", function () {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
         button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button,
-          { trigger: "manual",
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
             offset: [0, -8]});
-        tooltip.show();
+        tooltip.show();    
       }
       setTimeout(function() {
         if (tooltip) {
@@ -1625,7 +1624,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (onUntriggerFn) {
         config.onUntrigger = onUntriggerFn;
       }
-      window.tippy(el, config);
+      window.tippy(el, config); 
     }
     const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
     for (var i=0; i<noterefs.length; i++) {
@@ -1700,7 +1699,7 @@ document.addEventListener("DOMContentLoaded", function () {
       tippyHover(xref, undefined, function(instance) {
         instance.disable();
         let url = xref.getAttribute('href');
-        let hash = undefined;
+        let hash = undefined; 
         if (url.startsWith('#')) {
           hash = url;
         } else {
@@ -1728,7 +1727,7 @@ document.addEventListener("DOMContentLoaded", function () {
               if (note !== null) {
                 const html = processXRef(id, note);
                 instance.setContent(html);
-              }
+              } 
             }).finally(() => {
               instance.enable();
               instance.show();
@@ -1752,7 +1751,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
               const html = processXRef(null, note);
               instance.setContent(html);
-            }
+            } 
           }).finally(() => {
             instance.enable();
             instance.show();
@@ -1792,7 +1791,7 @@ document.addEventListener("DOMContentLoaded", function () {
               height = bottom - top;
             }
             if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it
+              // cook up a div (if necessary) and position it 
               let div = window.document.getElementById("code-annotation-line-highlight");
               if (div === null) {
                 div = window.document.createElement("div");
@@ -1917,8 +1916,8 @@ document.addEventListener("DOMContentLoaded", function () {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><a href="../about.html">About</a> | <a href="../tabs/team.html">Team</a></p>
-</div>
+<p><a href="../about.html">About</a> | <a href="../tabs/team.html">Team</a> | <a href="../help.html">Help</a></p>
+</div>   
     <div class="nav-footer-center">
 <p><span class="footer-centerline">YOUTH MENTAL HEALTH AND SOCIAL STRESS EXPOSURES</span></p>
 </div>
