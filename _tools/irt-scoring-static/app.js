@@ -71,6 +71,319 @@ const dom = {
   gotoButtons: Array.from(document.querySelectorAll("[data-goto]"))
 };
 
+const toolHelpConfig = {
+  title: "IRT Scoring Workspace",
+  intro: "Use this help panel for orientation while scoring SSQ-10 records. Switch Guide on to reveal short hover notes on fields, buttons, tables, and output labels.",
+  sections: [
+    {
+      heading: "Recommended flow",
+      items: [
+        "Start in Overview to confirm the active engine, threshold scope, and expected input schema.",
+        "Use Manual Scoring for one participant or test profile before running a larger file.",
+        "Use Batch Scoring for a CSV cohort file, then review validation notes before downloading outputs.",
+        "Use Results and Documentation to confirm what the returned fields mean before sharing scored data."
+      ]
+    },
+    {
+      heading: "Before exporting",
+      items: [
+        "Confirm that the selected engine and threshold strategy match the intended analysis.",
+        "Check validation messages and the preview table before downloading a scored CSV.",
+        "Remember that the depression indicator is for harmonised research scoring, not standalone clinical diagnosis."
+      ]
+    },
+    {
+      heading: "Guide mode",
+      items: [
+        "Guide Off keeps the interface clean.",
+        "Guide On highlights supported labels and controls. Hover or focus them to see a short explanation.",
+        "Guide notes are interpretive aids; they do not change the scoring engine or exported data."
+      ]
+    }
+  ]
+};
+
+const guideState = {
+  enabled: false,
+  tooltip: null,
+  queued: false
+};
+
+const toolGuideDefinitions = new Map([
+  ["Browser-local scoring", "The scoring run happens in this browser session rather than on a remote server."],
+  ["No raw data retention", "Uploaded raw data are not written back to project storage by this browser tool."],
+  ["Open Batch Scoring", "Jump directly to the CSV upload workflow."],
+  ["Selected engine", "The packaged IRT engine currently used for scoring and threshold application."],
+  ["Current workspace", "The active tab or workspace section you are viewing."],
+  ["Latest run", "A short summary of the most recent successful manual or batch scoring run."],
+  ["Privacy mode", "A reminder that uploaded data remain in the active browser session unless you choose to download an output."],
+  ["Overview", "Orientation to the active engine, workflow, expected schema, and limitations."],
+  ["Manual Scoring", "Use this tab to score one participant profile at a time."],
+  ["Batch Scoring", "Use this tab to upload, validate, score, preview, and download a CSV file."],
+  ["Results", "Shows the latest scoring summary and a compact preview from the current browser session."],
+  ["Privacy", "Explains what the browser tool does and does not retain."],
+  ["Documentation", "Defines expected inputs, returned fields, abbreviations, and statistical terms."],
+  ["Threshold scope", "The grouping level used when applying the stored decision threshold."],
+  ["Threshold approach", "The rule used to select the threshold, such as sensitivity-oriented or specificity-oriented scoring."],
+  ["Overall sensitivity", "The proportion of reference-positive participants correctly identified in the packaging sample."],
+  ["Overall specificity", "The proportion of reference-negative participants correctly identified in the packaging sample."],
+  ["Overall accuracy", "The overall agreement between engine classification and reference classification in the packaging sample."],
+  ["Current selection", "The engine or result currently driving the visible output summary."],
+  ["Engine version", "Choose which packaged production-safe engine to apply."],
+  ["SEX (optional)", "Optional subgroup field used when the selected engine has sex-specific thresholds."],
+  ["AGE (optional)", "Optional age field used when the selected engine has age-specific thresholds."],
+  ["SSQ-10 items", "The ten binary SSQ item responses used by the scoring engine."],
+  ["Blank", "Missing response. Blank values are not counted as endorsed symptoms."],
+  ["0", "No or not endorsed."],
+  ["1", "Yes or endorsed."],
+  ["Score participant", "Run the selected engine on the current manual profile."],
+  ["View Latest Results", "Move to the Results tab for the current session summary."],
+  ["Reset", "Clear the manual scoring inputs and result preview."],
+  ["Upload CSV", "Choose a cohort CSV file with the required SSQ-10 item columns."],
+  ["Score uploaded file", "Validate and score the selected CSV in the browser."],
+  ["Download scored CSV", "Save the scored output from the current browser session."],
+  ["Download example CSV", "Download a small template file for testing the batch workflow."],
+  ["Rows scored", "Number of records successfully scored in the current run."],
+  ["Mean theta", "Average harmonised depression theta across the scored records."],
+  ["Depression prevalence", "Proportion of scored records classified as depression-positive by the selected threshold."],
+  ["Harmonized Theta", "The harmonised latent depression score returned by the IRT engine."],
+  ["Depression", "Binary research-use classification based on the applied threshold."],
+  ["Expected PHQ-9 Sum", "A PHQ-oriented score implied by the harmonised theta."],
+  ["Probability PHQ-9 >= 10", "Estimated probability of meeting or exceeding a PHQ-9 score of 10."],
+  ["Cutoff Target", "The subgroup or overall threshold actually applied to the record."],
+  ["Items Answered", "Number of SSQ-10 item responses available for scoring."],
+  ["Total SSQ-10 Score", "Observed raw sum of endorsed SSQ-10 items."]
+]);
+
+const toolGuideRules = [
+  { test: (label) => /sensitivity/i.test(label), text: "Sensitivity summarizes how well reference-positive cases are detected." },
+  { test: (label) => /specificity/i.test(label), text: "Specificity summarizes how well reference-negative cases are excluded." },
+  { test: (label) => /accuracy/i.test(label), text: "Accuracy is the overall proportion of correct classifications in the packaging sample." },
+  { test: (label) => /engine/i.test(label), text: "Engine labels identify the packaged scoring and threshold scenario being applied." },
+  { test: (label) => /threshold|cutoff/i.test(label), text: "Threshold fields describe the decision rule used to convert theta into a binary indicator." },
+  { test: (label) => /schema|required|expected values/i.test(label), text: "Schema fields describe what the uploaded data should contain before scoring." },
+  { test: (label) => /download/i.test(label), text: "Download buttons create local files from the current browser session." }
+];
+
+function makeToolText(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  element.textContent = text;
+  return element;
+}
+
+function normaliseGuideLabel(value) {
+  return String(value || "").replace(/\s+/g, " ").trim().replace(/:$/, "");
+}
+
+function guideForLabel(label) {
+  const cleanLabel = normaliseGuideLabel(label);
+  if (!cleanLabel) return "";
+  if (toolGuideDefinitions.has(cleanLabel)) return toolGuideDefinitions.get(cleanLabel);
+  for (const [key, text] of toolGuideDefinitions) {
+    if (cleanLabel.includes(key) || key.includes(cleanLabel)) return text;
+  }
+  const rule = toolGuideRules.find((item) => item.test(cleanLabel));
+  return rule ? rule.text : "";
+}
+
+function annotateToolGuides() {
+  const selector = [
+    "h1",
+    "h2",
+    "h3",
+    ".mini-label",
+    ".field-label",
+    ".tab-btn",
+    ".primary-btn",
+    ".secondary-btn",
+    ".ghost-btn",
+    ".status-pill",
+    ".workflow-step strong",
+    ".guide-card h3",
+    ".stat-card span",
+    ".choice-value",
+    ".choice-label",
+    "th"
+  ].join(",");
+
+  document.querySelectorAll(selector).forEach((element) => {
+    if (element.closest(".tool-help-root") || element.closest(".tool-help-panel")) return;
+    const guide = guideForLabel(element.textContent);
+    if (!guide) return;
+    element.classList.add("tool-guide-target");
+    element.dataset.toolGuideText = guide;
+    if (!element.hasAttribute("tabindex") && !/^(BUTTON|A|INPUT|SELECT|TEXTAREA)$/.test(element.tagName)) {
+      element.setAttribute("tabindex", "0");
+    }
+  });
+}
+
+function queueToolGuideAnnotation() {
+  if (guideState.queued) return;
+  guideState.queued = true;
+  window.requestAnimationFrame(() => {
+    guideState.queued = false;
+    annotateToolGuides();
+    updateToolGuide();
+  });
+}
+
+function updateToolGuide() {
+  document.documentElement.classList.toggle("tool-guide-on", guideState.enabled);
+  document.querySelectorAll("[data-tool-guide-switch]").forEach((control) => {
+    control.classList.toggle("is-active", guideState.enabled);
+    control.setAttribute("aria-pressed", guideState.enabled ? "true" : "false");
+  });
+  document.querySelectorAll("[data-tool-guide-label]").forEach((label) => {
+    label.textContent = guideState.enabled ? "On" : "Off";
+  });
+  if (!guideState.enabled) hideToolGuideTooltip();
+}
+
+function moveToolGuideTooltip(event) {
+  if (!guideState.tooltip) return;
+  const width = guideState.tooltip.offsetWidth || 300;
+  const height = guideState.tooltip.offsetHeight || 90;
+  const left = Math.min(window.innerWidth - width - 12, event.clientX + 14);
+  const top = Math.min(window.innerHeight - height - 12, event.clientY + 14);
+  guideState.tooltip.style.left = `${Math.max(12, left)}px`;
+  guideState.tooltip.style.top = `${Math.max(12, top)}px`;
+}
+
+function showToolGuideTooltip(target, event = null) {
+  if (!guideState.enabled || !target || !target.dataset.toolGuideText || !guideState.tooltip) return;
+  guideState.tooltip.textContent = target.dataset.toolGuideText;
+  guideState.tooltip.classList.add("is-visible");
+  if (event) {
+    moveToolGuideTooltip(event);
+  } else {
+    const rect = target.getBoundingClientRect();
+    moveToolGuideTooltip({ clientX: rect.left, clientY: rect.bottom });
+  }
+}
+
+function hideToolGuideTooltip() {
+  if (guideState.tooltip) guideState.tooltip.classList.remove("is-visible");
+}
+
+function initToolHelp() {
+  if (document.querySelector(".tool-help-root")) return;
+  const actions = document.querySelector(".topbar-actions");
+  if (!actions) return;
+
+  const root = document.createElement("div");
+  root.className = "tool-help-root";
+
+  const helpButton = document.createElement("button");
+  helpButton.className = "tool-help-button";
+  helpButton.type = "button";
+  helpButton.setAttribute("aria-expanded", "false");
+  helpButton.setAttribute("aria-label", `Open help for ${toolHelpConfig.title}`);
+  helpButton.append(makeToolText("span", "tool-help-button__icon", "?"), makeToolText("span", "", "Help"));
+
+  const guideButton = document.createElement("button");
+  guideButton.className = "tool-guide-button";
+  guideButton.type = "button";
+  guideButton.setAttribute("aria-pressed", "false");
+  guideButton.setAttribute("aria-label", "Toggle tool guide");
+  guideButton.setAttribute("data-tool-guide-switch", "");
+  guideButton.appendChild(makeToolText("span", "", "Guide"));
+  const guideLabel = makeToolText("b", "", "Off");
+  guideLabel.setAttribute("data-tool-guide-label", "");
+  guideButton.appendChild(guideLabel);
+
+  const panel = document.createElement("aside");
+  panel.className = "tool-help-panel";
+  panel.setAttribute("aria-label", `${toolHelpConfig.title} help`);
+
+  const handle = document.createElement("div");
+  handle.className = "tool-help-panel__handle";
+  const titleBlock = document.createElement("div");
+  titleBlock.append(makeToolText("p", "", "Tool help"), makeToolText("h3", "", toolHelpConfig.title));
+  const close = document.createElement("button");
+  close.className = "tool-help-close";
+  close.type = "button";
+  close.setAttribute("aria-label", "Close help");
+  close.textContent = "x";
+  handle.append(titleBlock, close);
+
+  const body = document.createElement("div");
+  body.className = "tool-help-panel__body";
+  body.appendChild(makeToolText("p", "tool-help-panel__intro", toolHelpConfig.intro));
+  toolHelpConfig.sections.forEach((section) => {
+    const block = document.createElement("section");
+    block.className = "tool-help-section";
+    block.appendChild(makeToolText("h4", "", section.heading));
+    const list = document.createElement("ul");
+    section.items.forEach((item) => {
+      list.appendChild(makeToolText("li", "", item));
+    });
+    block.appendChild(list);
+    body.appendChild(block);
+  });
+  panel.append(handle, body);
+
+  root.append(helpButton, guideButton);
+  actions.prepend(root);
+  document.body.appendChild(panel);
+
+  guideState.tooltip = document.createElement("div");
+  guideState.tooltip.className = "tool-guide-tooltip";
+  document.body.appendChild(guideState.tooltip);
+
+  helpButton.addEventListener("click", () => {
+    const open = !panel.classList.contains("is-open");
+    panel.classList.toggle("is-open", open);
+    helpButton.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  close.addEventListener("click", () => {
+    panel.classList.remove("is-open");
+    helpButton.setAttribute("aria-expanded", "false");
+  });
+
+  guideButton.addEventListener("click", () => {
+    guideState.enabled = !guideState.enabled;
+    annotateToolGuides();
+    updateToolGuide();
+  });
+
+  document.addEventListener("mouseover", (event) => {
+    const target = event.target.closest("[data-tool-guide-text]");
+    if (target) showToolGuideTooltip(target, event);
+  });
+  document.addEventListener("mousemove", (event) => {
+    if (guideState.tooltip?.classList.contains("is-visible")) moveToolGuideTooltip(event);
+  });
+  document.addEventListener("mouseout", (event) => {
+    if (event.target.closest("[data-tool-guide-text]")) hideToolGuideTooltip();
+  });
+  document.addEventListener("focusin", (event) => {
+    const target = event.target.closest("[data-tool-guide-text]");
+    if (target) showToolGuideTooltip(target);
+  });
+  document.addEventListener("focusout", (event) => {
+    if (event.target.closest("[data-tool-guide-text]")) hideToolGuideTooltip();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      panel.classList.remove("is-open");
+      helpButton.setAttribute("aria-expanded", "false");
+      hideToolGuideTooltip();
+    }
+  });
+
+  const appShell = document.querySelector(".app-shell");
+  if (appShell && "MutationObserver" in window) {
+    const observer = new MutationObserver(queueToolGuideAnnotation);
+    observer.observe(appShell, { childList: true, subtree: true });
+  }
+
+  annotateToolGuides();
+  updateToolGuide();
+}
+
 function fmtNumber(value, digits = 3) {
   if (value == null || Number.isNaN(value)) return DASH;
   return Number(value).toFixed(digits);
@@ -560,6 +873,8 @@ function downloadText(filename, text) {
 }
 
 function wireEvents() {
+  initToolHelp();
+
   dom.tabButtons.forEach((btn) => {
     btn.addEventListener("click", () => selectTab(btn.dataset.tabTarget));
   });

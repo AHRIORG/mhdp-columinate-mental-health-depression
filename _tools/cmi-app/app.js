@@ -553,6 +553,336 @@ const compareChangeNote = document.getElementById("compareChangeNote");
 const btnEditOriginal = document.getElementById("btnEditOriginal");
 const btnEditImproved = document.getElementById("btnEditImproved");
 
+const toolHelpConfig = {
+  title: "Mental Health Causal Chains",
+  intro: "Use this help panel for orientation while reviewing, building, approving, and exporting youth-informed causal pathways. Switch Guide on to reveal short hover notes on key controls and fields.",
+  sections: [
+    {
+      heading: "Recommended flow",
+      items: [
+        "Start in Overview to understand the current pathway library and active browser workspace.",
+        "Use Library to find an approved pathway by domain, wording, outcome direction, or narrative content.",
+        "Use Builder to capture study context, participant context, notes, transcript text, and pathway details before saving.",
+        "Use Review & Export to check approval status and download JSON, edge-list CSV, or summary CSV outputs."
+      ]
+    },
+    {
+      heading: "AI wording rule",
+      items: [
+        "AI-improved wording is intended to harmonize bridge steps across pathways.",
+        "Mental health outcome labels remain standardized and should not be rewritten as if they are new outcomes.",
+        "Keep the original and improved wording visible so reviewers can compare meaning before approval."
+      ]
+    },
+    {
+      heading: "Guide mode",
+      items: [
+        "Guide Off keeps the interface clean.",
+        "Guide On highlights supported labels and controls. Hover or focus them to see a short explanation.",
+        "Guide notes are orientation aids; they do not change saved pathways or exported files."
+      ]
+    }
+  ]
+};
+
+const guideState = {
+  enabled: false,
+  tooltip: null,
+  queued: false
+};
+
+const toolGuideDefinitions = new Map([
+  ["Internal tool", "This workspace is for internal review and preparation before public-facing release."],
+  ["Browser-saved session", "Edits are stored in this browser unless reset, replaced, or exported."],
+  ["Create New Pathway", "Start a blank pathway while preserving the current library in browser memory."],
+  ["Selected pathway", "The pathway currently loaded into the builder and summary banner."],
+  ["Review status", "Draft, reviewed, or approved status for the active pathway."],
+  ["Current sentence", "A readable sentence assembled from the active pathway nodes."],
+  ["Wording mode", "Switch between original wording and AI-improved bridge-harmonized wording."],
+  ["AI Improved", "Shows bridge-harmonized wording while keeping standardized mental health outcomes unchanged."],
+  ["Original", "Shows the pathway wording as it appeared in the original inventory or imported source."],
+  ["Overview", "Orientation to the workspace, pathway counts, workflow, and current selection."],
+  ["Library", "Search and filter the pathway inventory before opening a pathway for review."],
+  ["Builder", "Capture context, source notes, AI draft material, and pathway structure for one pathway at a time."],
+  ["Review & Export", "Review approval status, import prior work, and export structured pathway outputs."],
+  ["Pathways", "Total pathways currently loaded in the browser workspace."],
+  ["Domains", "Thematic groups used to browse and organize pathways."],
+  ["Draft", "Pathways that still need review before approval."],
+  ["Approved", "Pathways marked as ready for downstream use or reporting."],
+  ["Current selection", "The pathway currently selected for review or editing."],
+  ["Search pathways", "Search titles, domains, node labels, story notes, and pathway wording."],
+  ["All", "Show all pathways regardless of outcome direction."],
+  ["Poor mental health", "Filter pathways ending in the standardized poor mental health outcome."],
+  ["Positive mental health", "Filter pathways ending in the standardized positive mental health outcome."],
+  ["Saved Pathways", "Pathways currently available in the browser library."],
+  ["Study Context", "Study-level details needed when pathways are linked to source data collection."],
+  ["Study name", "Name of the study that produced the notes, transcript, or source material."],
+  ["Study ID", "Internal study identifier used for reproducibility and linkage."],
+  ["Wave or round", "Study wave, round, baseline, or follow-up label."],
+  ["Site", "Study site or setting associated with the pathway source."],
+  ["Collection date", "Date when the source note, transcript, or interview material was collected."],
+  ["Interviewer or collector", "Person or role responsible for collecting the source material."],
+  ["Instrument or module", "Interview guide, module, form, or instrument that produced the source material."],
+  ["Consent status", "Consent or assent status recorded for governance review."],
+  ["Participant and Visit Context", "Participant-level and visit-level details for linking the pathway to a study workflow."],
+  ["Participant ID", "Participant identifier from the source workflow. Use governance-approved identifiers only."],
+  ["Pseudonymous key", "De-identified key used when direct identifiers should not be exported."],
+  ["Visit or event label", "Visit, event, or encounter label linked to the source material."],
+  ["Age band", "Optional age grouping used for context without exposing exact age when not needed."],
+  ["Sex or gender field", "Optional demographic field retained only when appropriate for the study workflow."],
+  ["Linkage notes", "Short note about record linkage, provenance, or source-data constraints."],
+  ["Captured Notes and Audio", "Workspace for typed notes, uploaded text notes, transcript text, and audio file metadata."],
+  ["AI Draft Workspace", "Workspace for transforming source notes into a reviewable draft pathway."],
+  ["Resulting Pathway", "The pathway structure that will be saved, reviewed, approved, and exported."],
+  ["Chain Details", "Editable title, domain, polarity, place, and story-note fields for the active pathway."],
+  ["Original vs AI-Improved Wording", "Side-by-side comparison of the original and bridge-harmonized pathway sentences."],
+  ["Node Editor", "Edit, reorder, add, or remove pathway nodes while preserving the driver-to-outcome sequence."],
+  ["Save Draft", "Save the pathway as draft in the current browser workspace."],
+  ["Mark Reviewed", "Move the pathway to reviewed status after checking content and structure."],
+  ["Approve Pathway", "Mark the pathway approved for downstream use."],
+  ["Reset Changes", "Reload the active pathway from the browser library or reset a new draft."],
+  ["Export Workspace JSON", "Download the full browser workspace state for later import."],
+  ["Export Edge List CSV", "Download source-to-target pathway edges for graph or network use."],
+  ["Export Summary CSV", "Download one row per pathway with original and AI-improved wording for comparison."],
+  ["Import JSON or CSV", "Load a previous workspace export, summary CSV, or edge-list CSV."],
+  ["Reset Browser Workspace", "Clear browser-local edits and return to the packaged pathway library."]
+]);
+
+const toolGuideRules = [
+  { test: (label) => /domain/i.test(label), text: "Domains group pathways by broad social or contextual theme." },
+  { test: (label) => /status|draft|reviewed|approved/i.test(label), text: "Review status records whether a pathway still needs checking or is approved for use." },
+  { test: (label) => /export|download/i.test(label), text: "Export controls create local files from the current browser workspace." },
+  { test: (label) => /import|upload/i.test(label), text: "Import and upload controls load local source material into the browser workspace." },
+  { test: (label) => /note|transcript|audio/i.test(label), text: "Capture fields preserve source material and provenance for pathway drafting and review." },
+  { test: (label) => /driver|bridge|outcome|node/i.test(label), text: "Nodes encode the causal chain from upstream driver through bridge steps to the standardized mental health outcome." },
+  { test: (label) => /polarity|positive|poor/i.test(label), text: "Outcome direction determines whether the pathway ends in poor or positive mental health." },
+  { test: (label) => /ai|harmoni/i.test(label), text: "AI-improved wording should harmonize bridge phrasing while retaining the standardized outcome labels." }
+];
+
+function makeToolText(tag, className, text) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  element.textContent = text;
+  return element;
+}
+
+function normaliseGuideLabel(value) {
+  return String(value || "").replace(/\s+/g, " ").trim().replace(/:$/, "");
+}
+
+function guideForLabel(label) {
+  const cleanLabel = normaliseGuideLabel(label);
+  if (!cleanLabel) return "";
+  if (toolGuideDefinitions.has(cleanLabel)) return toolGuideDefinitions.get(cleanLabel);
+  for (const [key, text] of toolGuideDefinitions) {
+    if (cleanLabel.includes(key) || key.includes(cleanLabel)) return text;
+  }
+  const rule = toolGuideRules.find((item) => item.test(cleanLabel));
+  return rule ? rule.text : "";
+}
+
+function annotateToolGuides() {
+  const selector = [
+    "h1",
+    "h2",
+    "h3",
+    ".mini-label",
+    ".field-label",
+    ".tab-btn",
+    ".primary-btn",
+    ".secondary-btn",
+    ".ghost-btn",
+    ".chip",
+    ".status-pill",
+    ".workflow-step strong",
+    ".guide-card h3",
+    ".stat-card span",
+    ".queue-card span",
+    ".state-badge",
+    ".saved-state",
+    ".saved-harmonisation",
+    ".queue-state",
+    ".node-card strong",
+    "th"
+  ].join(",");
+
+  document.querySelectorAll(selector).forEach((element) => {
+    if (element.closest(".tool-help-root") || element.closest(".tool-help-panel")) return;
+    const guide = guideForLabel(element.textContent);
+    if (!guide) return;
+    element.classList.add("tool-guide-target");
+    element.dataset.toolGuideText = guide;
+    if (!element.hasAttribute("tabindex") && !/^(BUTTON|A|INPUT|SELECT|TEXTAREA)$/.test(element.tagName)) {
+      element.setAttribute("tabindex", "0");
+    }
+  });
+}
+
+function queueToolGuideAnnotation() {
+  if (guideState.queued) return;
+  guideState.queued = true;
+  window.requestAnimationFrame(() => {
+    guideState.queued = false;
+    annotateToolGuides();
+    updateToolGuide();
+  });
+}
+
+function updateToolGuide() {
+  document.documentElement.classList.toggle("tool-guide-on", guideState.enabled);
+  document.querySelectorAll("[data-tool-guide-switch]").forEach((control) => {
+    control.classList.toggle("is-active", guideState.enabled);
+    control.setAttribute("aria-pressed", guideState.enabled ? "true" : "false");
+  });
+  document.querySelectorAll("[data-tool-guide-label]").forEach((label) => {
+    label.textContent = guideState.enabled ? "On" : "Off";
+  });
+  if (!guideState.enabled) hideToolGuideTooltip();
+}
+
+function moveToolGuideTooltip(event) {
+  if (!guideState.tooltip) return;
+  const width = guideState.tooltip.offsetWidth || 300;
+  const height = guideState.tooltip.offsetHeight || 90;
+  const left = Math.min(window.innerWidth - width - 12, event.clientX + 14);
+  const top = Math.min(window.innerHeight - height - 12, event.clientY + 14);
+  guideState.tooltip.style.left = `${Math.max(12, left)}px`;
+  guideState.tooltip.style.top = `${Math.max(12, top)}px`;
+}
+
+function showToolGuideTooltip(target, event = null) {
+  if (!guideState.enabled || !target || !target.dataset.toolGuideText || !guideState.tooltip) return;
+  guideState.tooltip.textContent = target.dataset.toolGuideText;
+  guideState.tooltip.classList.add("is-visible");
+  if (event) {
+    moveToolGuideTooltip(event);
+  } else {
+    const rect = target.getBoundingClientRect();
+    moveToolGuideTooltip({ clientX: rect.left, clientY: rect.bottom });
+  }
+}
+
+function hideToolGuideTooltip() {
+  if (guideState.tooltip) guideState.tooltip.classList.remove("is-visible");
+}
+
+function initToolHelp() {
+  if (document.querySelector(".tool-help-root")) return;
+  const actions = document.querySelector(".topbar-actions");
+  if (!actions) return;
+
+  const root = document.createElement("div");
+  root.className = "tool-help-root";
+
+  const helpButton = document.createElement("button");
+  helpButton.className = "tool-help-button";
+  helpButton.type = "button";
+  helpButton.setAttribute("aria-expanded", "false");
+  helpButton.setAttribute("aria-label", `Open help for ${toolHelpConfig.title}`);
+  helpButton.append(makeToolText("span", "tool-help-button__icon", "?"), makeToolText("span", "", "Help"));
+
+  const guideButton = document.createElement("button");
+  guideButton.className = "tool-guide-button";
+  guideButton.type = "button";
+  guideButton.setAttribute("aria-pressed", "false");
+  guideButton.setAttribute("aria-label", "Toggle tool guide");
+  guideButton.setAttribute("data-tool-guide-switch", "");
+  guideButton.appendChild(makeToolText("span", "", "Guide"));
+  const guideLabel = makeToolText("b", "", "Off");
+  guideLabel.setAttribute("data-tool-guide-label", "");
+  guideButton.appendChild(guideLabel);
+
+  const panel = document.createElement("aside");
+  panel.className = "tool-help-panel";
+  panel.setAttribute("aria-label", `${toolHelpConfig.title} help`);
+
+  const handle = document.createElement("div");
+  handle.className = "tool-help-panel__handle";
+  const titleBlock = document.createElement("div");
+  titleBlock.append(makeToolText("p", "", "Tool help"), makeToolText("h3", "", toolHelpConfig.title));
+  const close = document.createElement("button");
+  close.className = "tool-help-close";
+  close.type = "button";
+  close.setAttribute("aria-label", "Close help");
+  close.textContent = "x";
+  handle.append(titleBlock, close);
+
+  const body = document.createElement("div");
+  body.className = "tool-help-panel__body";
+  body.appendChild(makeToolText("p", "tool-help-panel__intro", toolHelpConfig.intro));
+  toolHelpConfig.sections.forEach((section) => {
+    const block = document.createElement("section");
+    block.className = "tool-help-section";
+    block.appendChild(makeToolText("h4", "", section.heading));
+    const list = document.createElement("ul");
+    section.items.forEach((item) => {
+      list.appendChild(makeToolText("li", "", item));
+    });
+    block.appendChild(list);
+    body.appendChild(block);
+  });
+  panel.append(handle, body);
+
+  root.append(helpButton, guideButton);
+  actions.prepend(root);
+  document.body.appendChild(panel);
+
+  guideState.tooltip = document.createElement("div");
+  guideState.tooltip.className = "tool-guide-tooltip";
+  document.body.appendChild(guideState.tooltip);
+
+  helpButton.addEventListener("click", () => {
+    const open = !panel.classList.contains("is-open");
+    panel.classList.toggle("is-open", open);
+    helpButton.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  close.addEventListener("click", () => {
+    panel.classList.remove("is-open");
+    helpButton.setAttribute("aria-expanded", "false");
+  });
+
+  guideButton.addEventListener("click", () => {
+    guideState.enabled = !guideState.enabled;
+    annotateToolGuides();
+    updateToolGuide();
+  });
+
+  document.addEventListener("mouseover", (event) => {
+    const target = event.target.closest("[data-tool-guide-text]");
+    if (target) showToolGuideTooltip(target, event);
+  });
+  document.addEventListener("mousemove", (event) => {
+    if (guideState.tooltip?.classList.contains("is-visible")) moveToolGuideTooltip(event);
+  });
+  document.addEventListener("mouseout", (event) => {
+    if (event.target.closest("[data-tool-guide-text]")) hideToolGuideTooltip();
+  });
+  document.addEventListener("focusin", (event) => {
+    const target = event.target.closest("[data-tool-guide-text]");
+    if (target) showToolGuideTooltip(target);
+  });
+  document.addEventListener("focusout", (event) => {
+    if (event.target.closest("[data-tool-guide-text]")) hideToolGuideTooltip();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      panel.classList.remove("is-open");
+      helpButton.setAttribute("aria-expanded", "false");
+      hideToolGuideTooltip();
+    }
+  });
+
+  const appShell = document.querySelector(".app-shell");
+  if (appShell && "MutationObserver" in window) {
+    const observer = new MutationObserver(queueToolGuideAnnotation);
+    observer.observe(appShell, { childList: true, subtree: true });
+  }
+
+  annotateToolGuides();
+  updateToolGuide();
+}
+
 function slugify(value) {
   return String(value || "untitled")
     .toLowerCase()
@@ -1829,6 +2159,8 @@ function handleImportText(name, text) {
 }
 
 function bindFieldListeners() {
+  initToolHelp();
+
   document.querySelectorAll(".tab-btn").forEach((button) => {
     button.addEventListener("click", () => {
       state.activeTab = button.dataset.tab;
