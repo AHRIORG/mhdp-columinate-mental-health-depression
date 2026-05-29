@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Interpretation and maintenance guide for the module-by-module dashboard rebuild.">
+<meta name="description" content="Interpretation and maintenance guide for the module-by-module dashboard.">
 
 <title>Project Dashboard Guide – CO-LUMINATE</title>
 <style>
@@ -199,11 +199,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../updates_blog.html"> <i class="bi bi-journal-text" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -294,7 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Interpretation and maintenance guide for the module-by-module dashboard rebuild.
+    Interpretation and maintenance guide for the module-by-module dashboard.
   </div>
 </div>
 
@@ -313,12 +308,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="current-scope" class="level2">
 <h2 class="anchored" data-anchor-id="current-scope">Current Scope</h2>
-<p>The dashboard is being rebuilt module by module:</p>
+<p>The dashboard is organized module by module:</p>
 <ol type="1">
 <li>Study Overview &amp; Cohort Profile</li>
 <li>Childhood SDoH &amp; Trajectories</li>
 </ol>
-<p>The previous broad dashboard pass has been removed from the active dashboard surface. New modules should be added one at a time only after the preceding module is reviewed.</p>
+<p>Modules are maintained one at a time so each dashboard surface remains interpretable, tested, and aligned with the corresponding analytical outputs.</p>
 </section>
 <section id="interaction-model" class="level2">
 <h2 class="anchored" data-anchor-id="interaction-model">Interaction Model</h2>
@@ -348,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="childhood-sdoh-inputs" class="level2">
 <h2 class="anchored" data-anchor-id="childhood-sdoh-inputs">Childhood SDoH Inputs</h2>
-<p>The second module currently exposes a dashboard subset of the broader Objective 3 trajectory program. The full Objective 3 SAP now covers five active model families: <code>ULWOM</code>, <code>ULWOF</code>, <code>UHSES</code>, <code>JPA</code>, and <code>JMAES</code>. The current dashboard surface does not yet display all five families. It currently uses approved preferred-scenario trajectory products for maternal co-residence (<code>ULWOM</code>), household socioeconomic status (<code>UHSES</code>), and joint maternal absence plus household socioeconomic status (<code>JMAES</code>). The active object is:</p>
+<p>The second module focuses on approved preferred-scenario trajectory products from the broader Objective 3 trajectory program. The full Objective 3 SAP covers five active model families: <code>ULWOM</code>, <code>ULWOF</code>, <code>UHSES</code>, <code>JPA</code>, and <code>JMAES</code>. The dashboard surface presents maternal co-residence (<code>ULWOM</code>), household socioeconomic status (<code>UHSES</code>), and joint maternal absence plus household socioeconomic status (<code>JMAES</code>). The active object is:</p>
 <ul>
 <li><code>dashboard_sdoh_trajectories.rds</code></li>
 </ul>
@@ -395,18 +390,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
-  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
-  const header = document.getElementById("quarto-header");
-
-  if (header && !document.querySelector(".construction-banner")) {
-    const banner = document.createElement("div");
-    banner.className = "construction-banner";
-    banner.setAttribute("role", "status");
-    banner.textContent = constructionMessage;
-    header.insertBefore(banner, header.firstChild);
-    document.body.classList.add("has-construction-banner");
-  }
-
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -478,12 +461,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = url.pathname || "";
     const isExternal = url.origin !== window.location.origin;
-    const isStandaloneInternal =
+    const isStandaloneAsset =
       /^\/presentations\/.*\.html$/i.test(path) ||
       /^\/_tools\//i.test(path) ||
       /\.(pdf|svg)$/i.test(path);
 
-    if (isExternal || isStandaloneInternal) {
+    if (isExternal || isStandaloneAsset) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener");
     }

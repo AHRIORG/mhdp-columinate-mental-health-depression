@@ -298,22 +298,6 @@ body.quarto-dashboard #dashboard-collapse .nav-link {
   text-transform: uppercase;
 }
 
-.construction-banner {
-  align-items: center;
-  background: red !important;
-  color: #ffffff !important;
-  display: flex;
-  font-size: clamp(0.78rem, 1vw, 0.95rem);
-  font-weight: 900;
-  justify-content: center;
-  letter-spacing: 0.01em;
-  line-height: 1.35;
-  min-height: 2.05rem;
-  padding: 0.45rem clamp(1rem, 2.8vw, 2.8rem);
-  text-align: center;
-  text-wrap: balance;
-}
-
 .navbar .navbar-brand,
 .navbar .nav-link {
   color: #ffffff !important;

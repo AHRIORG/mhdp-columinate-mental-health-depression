@@ -1,13 +1,14 @@
-# CMI UI Prototype
+# Mental Health Causal Chains Workspace
 
-This folder contains the first user-interface prototype for the Causal Mapping and Interaction app.
+This folder contains the browser-based Mental Health Causal Chains
+workspace used by the CO-LUMINATE website.
 
 Purpose:
-- show the shape of the app before committing to a heavier build
-- test the pathway builder flow with real pathway examples
-- iterate on the experience with YCC and researcher feedback
+- review the approved pathway library
+- compare original and AI-improved bridge wording
+- export structured pathway outputs for downstream use
 
 Main files:
-- `index.html`: prototype shell
-- `styles.css`: prototype styling
-- `app.js`: sample pathways and simple UI behavior
+- `index.html`: workspace shell
+- `styles.css`: workspace styling
+- `app.js`: pathway library, browser state, and interaction logic

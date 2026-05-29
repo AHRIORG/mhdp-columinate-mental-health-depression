@@ -167,11 +167,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../updates_blog.html"> <i class="bi bi-journal-text" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -496,12 +491,12 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 <section id="workspace-purpose" class="level2">
 <h2 class="anchored" data-anchor-id="workspace-purpose">Workspace Purpose</h2>
-<p>The Mental Health Causal Chains workspace is an internal CO-LUMINATE tool for capturing, reviewing, standardizing, and exporting youth-informed explanations of how lived social conditions shape mental health. It is designed to keep causal stories readable while also producing structured outputs that can be reviewed, refined, and carried into downstream analytical or reporting workflows. Within the builder, AI-improved wording is used specifically to harmonize bridge steps while leaving standardized mental health outcomes unchanged.</p>
+<p>The Mental Health Causal Chains workspace is a CO-LUMINATE tool for capturing, reviewing, standardizing, and exporting youth-informed explanations of how lived social conditions shape mental health. It is designed to keep causal stories readable while also producing structured outputs that can be reviewed, refined, and carried into downstream analytical or reporting workflows. Within the builder, AI-improved wording is used specifically to harmonize bridge steps while leaving standardized mental health outcomes unchanged.</p>
 <div class="cmi-page-metrics">
   <section class="cmi-page-metric">
     <p class="cmi-page-metric__label">Pathway library</p>
     <p class="cmi-page-metric__value">45</p>
-    <p class="cmi-page-metric__detail">Approved pathways already loaded into the internal workspace.</p>
+    <p class="cmi-page-metric__detail">Approved pathways already loaded into the workspace.</p>
   </section>
   <section class="cmi-page-metric">
     <p class="cmi-page-metric__label">Thematic domains</p>
@@ -544,7 +539,7 @@ document.addEventListener("DOMContentLoaded", () => {
 <details class="cmi-page-details">
   <summary>Open embedded workspace</summary>
   <div class="cmi-page-embed-shell">
-    <iframe src="../_tools/cmi-app/index.html" title="Mental Health Causal Chains internal workspace" loading="lazy"></iframe>
+    <iframe src="../_tools/cmi-app/index.html" title="Mental Health Causal Chains workspace" loading="lazy"></iframe>
   </div>
 </details>
 </section>
@@ -657,7 +652,7 @@ Figure&nbsp;1
 </section>
 <section id="pathway-library-reference" class="level2">
 <h2 class="anchored" data-anchor-id="pathway-library-reference">Pathway Library Reference</h2>
-<p>The reference inventory below mirrors the pathway library used by the internal workspace. Expand any domain to inspect the current approved pathway set.</p>
+<p>The reference inventory below mirrors the pathway library used by the workspace. Expand any domain to inspect the current approved pathway set.</p>
 <div class="cmi-page-reference-shell">
   <details class="cmi-page-details">
     <summary>1. Socioeconomic Position, Poverty, and Economic Inequality</summary>
@@ -786,18 +781,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
-  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
-  const header = document.getElementById("quarto-header");
-
-  if (header && !document.querySelector(".construction-banner")) {
-    const banner = document.createElement("div");
-    banner.className = "construction-banner";
-    banner.setAttribute("role", "status");
-    banner.textContent = constructionMessage;
-    header.insertBefore(banner, header.firstChild);
-    document.body.classList.add("has-construction-banner");
-  }
-
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -869,12 +852,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = url.pathname || "";
     const isExternal = url.origin !== window.location.origin;
-    const isStandaloneInternal =
+    const isStandaloneAsset =
       /^\/presentations\/.*\.html$/i.test(path) ||
       /^\/_tools\//i.test(path) ||
       /\.(pdf|svg)$/i.test(path);
 
-    if (isExternal || isStandaloneInternal) {
+    if (isExternal || isStandaloneAsset) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener");
     }

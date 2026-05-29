@@ -1,4 +1,5 @@
-const STORAGE_KEY = "columinate-cmi-prototype-v6";
+const STORAGE_KEY = "columinate-cmi-workspace-v6";
+const LEGACY_STORAGE_KEYS = ["columinate-cmi-prototype-v6"];
 const AI_HARMONISATION_VERSION = 5;
 const ALL_DOMAINS = "__all_domains__";
 const WORDING_MODES = {
@@ -788,7 +789,7 @@ const guideState = {
 };
 
 const toolGuideDefinitions = new Map([
-  ["Internal tool", "This workspace is for internal review and preparation before public-facing release."],
+  ["Pathway workspace", "This workspace supports pathway review, bridge-wording harmonisation, and structured export."],
   ["Browser-saved session", "Edits are stored in this browser unless reset, replaced, or exported."],
   ["Create New Pathway", "Start a blank pathway while preserving the current library in browser memory."],
   ["Selected pathway", "The pathway currently loaded into the builder and summary banner."],
@@ -813,7 +814,7 @@ const toolGuideDefinitions = new Map([
   ["Saved Pathways", "Pathways currently available in the browser library."],
   ["Study Context", "Study-level details needed when pathways are linked to source data collection."],
   ["Study name", "Name of the study that produced the notes, transcript, or source material."],
-  ["Study ID", "Internal study identifier used for reproducibility and linkage."],
+  ["Study ID", "Study identifier used for reproducibility and linkage."],
   ["Wave or round", "Study wave, round, baseline, or follow-up label."],
   ["Site", "Study site or setting associated with the pathway source."],
   ["Collection date", "Date when the source note, transcript, or interview material was collected."],
@@ -1392,7 +1393,8 @@ function saveBrowserState() {
 
 function loadBrowserState() {
   try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
+    const raw = window.localStorage.getItem(STORAGE_KEY)
+      || LEGACY_STORAGE_KEYS.map((key) => window.localStorage.getItem(key)).find(Boolean);
     if (!raw) return;
     const parsed = JSON.parse(raw);
     const shouldRefreshHarmonisation = Number(parsed?.meta?.aiHarmonisationVersion || 0) < AI_HARMONISATION_VERSION;
@@ -1427,6 +1429,7 @@ function loadBrowserState() {
 function resetBrowserState() {
   try {
     window.localStorage.removeItem(STORAGE_KEY);
+    LEGACY_STORAGE_KEYS.forEach((key) => window.localStorage.removeItem(key));
   } catch (_error) {
     // no-op
   }

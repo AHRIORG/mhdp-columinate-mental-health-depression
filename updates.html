@@ -163,11 +163,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./updates_blog.html"> <i class="bi bi-journal-text" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -256,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The CO-LUMINATE updates area brings together website notices, public news, and other project communications. Content in this section is curated for public-facing release once each item has been reviewed and approved.</p>
+<p>The CO-LUMINATE updates area brings together website notes, public news, activities, and project communications for readers following the study and its outputs.</p>
 <div class="overview-card-grid updates-card-grid">
 <div class="overview-card overview-card--blue">
 <div class="overview-card__header">
@@ -266,7 +261,7 @@ Website
 </p>
 </div>
 <p class="overview-card__description">
-The CO-LUMINATE website is under active construction. The current version is intended for internal review, and the official public release date will be announced once the site has been finalized.
+Website notes record major additions to CO-LUMINATE documentation, deliverables, tools, activities, and navigation.
 </p>
 <p><a href="updates_website.html" class="overview-card__action">Open Website Updates</a></p>
 </div>
@@ -304,18 +299,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
-  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
-  const header = document.getElementById("quarto-header");
-
-  if (header && !document.querySelector(".construction-banner")) {
-    const banner = document.createElement("div");
-    banner.className = "construction-banner";
-    banner.setAttribute("role", "status");
-    banner.textContent = constructionMessage;
-    header.insertBefore(banner, header.firstChild);
-    document.body.classList.add("has-construction-banner");
-  }
-
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -387,12 +370,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = url.pathname || "";
     const isExternal = url.origin !== window.location.origin;
-    const isStandaloneInternal =
+    const isStandaloneAsset =
       /^\/presentations\/.*\.html$/i.test(path) ||
       /^\/_tools\//i.test(path) ||
       /\.(pdf|svg)$/i.test(path);
 
-    if (isExternal || isStandaloneInternal) {
+    if (isExternal || isStandaloneAsset) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener");
     }
