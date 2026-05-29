@@ -163,11 +163,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="./updates_blog.html"> <i class="bi bi-journal-text" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -242,7 +237,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#study-setting" id="toc-study-setting" class="nav-link" data-scroll-target="#study-setting">Study Setting</a></li>
   <li><a href="#current-website-objectives" id="toc-current-website-objectives" class="nav-link" data-scroll-target="#current-website-objectives">Current Website Objectives</a></li>
   <li><a href="#intended-contribution" id="toc-intended-contribution" class="nav-link" data-scroll-target="#intended-contribution">Intended Contribution</a></li>
-  <li><a href="#website-status" id="toc-website-status" class="nav-link" data-scroll-target="#website-status">Website Status</a></li>
+  <li><a href="#website-scope" id="toc-website-scope" class="nav-link" data-scroll-target="#website-scope">Website Scope</a></li>
   </ul>
 </nav>
     </div>
@@ -296,9 +291,9 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="intended-contribution">Intended Contribution</h2>
 <p>CO-LUMINATE aims to strengthen open, reproducible, and context-sensitive youth mental health research. Its outputs include a longitudinal linked dataset structure, technical documentation, analysis plans, objective-level deliverables, research tools, and dissemination products designed for scientific and policy audiences.</p>
 </section>
-<section id="website-status" class="level2">
-<h2 class="anchored" data-anchor-id="website-status">Website Status</h2>
-<p>This website is under active construction. Public-facing documents, deliverables, and tools are being reviewed and refined before official release.</p>
+<section id="website-scope" class="level2">
+<h2 class="anchored" data-anchor-id="website-scope">Website Scope</h2>
+<p>This website presents CO-LUMINATE’s project framing, technical documentation, objective-level deliverables, research tools, and dissemination materials in a single navigable resource.</p>
 
 
 </section>
@@ -309,18 +304,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
-  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
-  const header = document.getElementById("quarto-header");
-
-  if (header && !document.querySelector(".construction-banner")) {
-    const banner = document.createElement("div");
-    banner.className = "construction-banner";
-    banner.setAttribute("role", "status");
-    banner.textContent = constructionMessage;
-    header.insertBefore(banner, header.firstChild);
-    document.body.classList.add("has-construction-banner");
-  }
-
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -392,12 +375,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = url.pathname || "";
     const isExternal = url.origin !== window.location.origin;
-    const isStandaloneInternal =
+    const isStandaloneAsset =
       /^\/presentations\/.*\.html$/i.test(path) ||
       /^\/_tools\//i.test(path) ||
       /\.(pdf|svg)$/i.test(path);
 
-    if (isExternal || isStandaloneInternal) {
+    if (isExternal || isStandaloneAsset) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener");
     }

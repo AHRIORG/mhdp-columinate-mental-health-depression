@@ -164,11 +164,6 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../updates_blog.html"> <i class="bi bi-journal-text" role="img">
-</i> 
-<span class="menu-text">Blog</span></a>
-  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item dropdown ">
@@ -823,18 +818,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const here = window.location.href;
   const pathname = window.location.pathname || "";
   const currentFile = pathname.split("/").filter(Boolean).pop() || "";
-  const constructionMessage = "The CO-LUMINATE website is under active construction. This preview is for internal use; the official public release date will be announced.";
-  const header = document.getElementById("quarto-header");
-
-  if (header && !document.querySelector(".construction-banner")) {
-    const banner = document.createElement("div");
-    banner.className = "construction-banner";
-    banner.setAttribute("role", "status");
-    banner.textContent = constructionMessage;
-    header.insertBefore(banner, header.firstChild);
-    document.body.classList.add("has-construction-banner");
-  }
-
   const groupedPages = [
     {
       id: "technical-documentation",
@@ -906,12 +889,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const path = url.pathname || "";
     const isExternal = url.origin !== window.location.origin;
-    const isStandaloneInternal =
+    const isStandaloneAsset =
       /^\/presentations\/.*\.html$/i.test(path) ||
       /^\/_tools\//i.test(path) ||
       /\.(pdf|svg)$/i.test(path);
 
-    if (isExternal || isStandaloneInternal) {
+    if (isExternal || isStandaloneAsset) {
       link.setAttribute("target", "_blank");
       link.setAttribute("rel", "noopener");
     }
