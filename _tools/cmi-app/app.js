@@ -1,5 +1,5 @@
 const STORAGE_KEY = "columinate-cmi-prototype-v6";
-const AI_HARMONISATION_VERSION = 4;
+const AI_HARMONISATION_VERSION = 5;
 const ALL_DOMAINS = "__all_domains__";
 const WORDING_MODES = {
   improved: "AI improved",
@@ -308,6 +308,189 @@ const originalPathwaysById = {
   "church-rejection-shame": "Rejection by church when engaged in stigmatised behaviour -> loss of status -> feeling shunned -> emotional distress -> Poor mental health"
 };
 
+const improvedPathwayLibraryById = {
+  "poverty-food": {
+    pathway: "Poverty -> food insecurity and material scarcity -> chronic worry about survival and household provision -> psychological strain -> Poor mental health",
+    sharedBridge: "Material insecurity -> chronic stress"
+  },
+  "subsistence-loss-chaos": {
+    pathway: "Dependence on fragile subsistence livelihoods -> crop or income loss from theft, drought, floods, or other hazards -> household instability and pressure -> anger, conflict, and domestic violence -> trauma exposure and emotional distress -> Poor mental health",
+    sharedBridge: "Livelihood disruption -> household strain -> violence or conflict"
+  },
+  "poverty-home-frustration": {
+    pathway: "Poverty -> inability to repair, improve, or control one's living environment -> feelings of helplessness and frustration -> anxiety and mental strain -> Poor mental health",
+    sharedBridge: "Material constraint -> reduced agency -> emotional distress"
+  },
+  "hope-future": {
+    pathway: "Hope for the future -> motivation to endure current hardship -> reduced hopelessness and stronger sense of possibility -> positive outlook and emotional resilience -> Positive mental health",
+    sharedBridge: "Future orientation -> coping and resilience"
+  },
+  "school-fencing-risk": {
+    pathway: "Weak school safety and supervision -> learner absence and exposure to unsupervised or unsafe spaces -> substance use, risky sexual activity, and disrupted schooling -> emotional strain and reduced educational stability -> Poor mental health",
+    sharedBridge: "Unsafe environment -> risk exposure -> disrupted development"
+  },
+  "school-punishment-humiliation": {
+    pathway: "Physical punishment at school -> humiliation and fear -> suppressed emotions and damaged trust in authority -> anger, resentment, and emotional dysregulation -> Poor mental health",
+    sharedBridge: "Institutional harm -> shame and emotional suppression"
+  },
+  "mining-income": {
+    pathway: "Stable mining employment -> reliable income and household provision -> reduced financial worry and stronger sense of purpose -> improved well-being -> Positive mental health",
+    sharedBridge: "Economic security -> reduced stress and self-efficacy"
+  },
+  "mine-closure-stress": {
+    pathway: "Mine closure -> loss of employment and local income circulation -> increased dependence on grants and informal support -> community-wide financial pressure, uncertainty, and anxiety -> Poor mental health",
+    sharedBridge: "Livelihood disruption -> collective stress"
+  },
+  "financial-stress-substance": {
+    pathway: "Financial stress -> emotional pressure and coping difficulty -> harmful substance use as a maladaptive coping strategy -> family conflict and relationship breakdown -> emotional distress -> Poor mental health",
+    sharedBridge: "Economic strain -> maladaptive coping -> family conflict"
+  },
+  "unemployment-self-esteem": {
+    pathway: "Long-term unemployment -> reduced sense of purpose, status, and self-worth -> chronic stress and discouragement -> Poor mental health",
+    sharedBridge: "Exclusion from work -> reduced self-efficacy"
+  },
+  "grant-dependence-self-esteem": {
+    pathway: "Reliance on government grants without sufficient livelihood alternatives -> perceived loss of independence, dignity, or adult role fulfilment -> reduced self-esteem -> Poor mental health",
+    sharedBridge: "Economic dependence -> dignity loss -> emotional distress"
+  },
+  "water-hygiene-shame": {
+    pathway: "Lack of running water -> difficulty maintaining hygiene, cleanliness, and dignity -> bullying, embarrassment, or social judgement -> shame and emotional distress -> Poor mental health",
+    sharedBridge: "Basic service gap -> stigma and shame"
+  },
+  "poor-housing-strain": {
+    pathway: "Poor housing quality -> discomfort, insecurity, and inability to rest at home -> accumulated stress and reduced emotional recovery -> Poor mental health",
+    sharedBridge: "Unsafe or inadequate home environment -> chronic strain"
+  },
+  "early-learning-self-esteem": {
+    pathway: "Access to early learning centres -> stronger school readiness and later academic performance -> improved confidence, self-esteem, and reduced school-related stress -> Positive mental health",
+    sharedBridge: "Early opportunity -> competence and self-efficacy"
+  },
+  "early-learning-safety": {
+    pathway: "Access to early learning centres -> safe, supervised, and structured environments -> reduced exposure to neglect, violence, or unsafe community spaces -> emotional protection and stability -> Positive mental health",
+    sharedBridge: "Safe developmental setting -> reduced trauma exposure"
+  },
+  "migration-loneliness": {
+    pathway: "Work-related migration -> separation from family and familiar support systems -> loneliness, insecurity, and weakened daily support -> stress and anxiety -> Poor mental health",
+    sharedBridge: "Social separation -> reduced support -> emotional distress"
+  },
+  "church-guidance-peace": {
+    pathway: "Church counselling and spiritual guidance -> emotional support, moral reassurance, and meaning-making -> hope, peace, and strengthened coping -> Positive mental health",
+    sharedBridge: "Spiritual support -> meaning and emotional relief"
+  },
+  "sports-engagement-protection": {
+    pathway: "Access to sports grounds -> structured recreation and positive peer connection -> reduced exposure to harmful substance use and risky idle time -> belonging, discipline, and improved well-being -> Positive mental health",
+    sharedBridge: "Positive social engagement -> protective behaviour"
+  },
+  "bad-peers-conflict": {
+    pathway: "Association with harmful peer networks -> parental concern and disapproval -> family conflict and reduced trust -> emotional strain -> Poor mental health",
+    sharedBridge: "Risky social network -> family conflict"
+  },
+  "exclusion-decision-making": {
+    pathway: "Exclusion from family decision-making -> reduced voice, recognition, and agency within the household -> marginalisation and powerlessness -> Poor mental health",
+    sharedBridge: "Social exclusion -> reduced agency"
+  },
+  "community-social-capital": {
+    pathway: "Strong family and community social capital -> access to shared land, gardens, work opportunities, advice, and practical help -> material security, belonging, and emotional support -> improved well-being -> Positive mental health",
+    sharedBridge: "Social capital -> resource access and support"
+  },
+  "low-connectedness-exclusion": {
+    pathway: "Weak social connectedness and low community cohesion -> exclusion from shared resources, fear of judgement, and limited trusted support -> reduced help-seeking and greater exposure to abuse, conflict, or neglect -> stress and emotional distress -> Poor mental health",
+    sharedBridge: "Social exclusion -> reduced help-seeking -> harm exposure"
+  },
+  "pollution-fear": {
+    pathway: "Air and water pollution -> perceived or experienced physical illness -> fear about health, safety, and future harm -> worry and emotional distress -> Poor mental health",
+    sharedBridge: "Environmental health threat -> fear and worry"
+  },
+  "mine-land-grief": {
+    pathway: "Mining activity -> damage to land, livelihoods, and valued places -> grief, loss, and stress -> mental health deterioration -> Poor mental health",
+    sharedBridge: "Environmental loss -> grief and stress"
+  },
+  "dumping-site-avoidance": {
+    pathway: "Litter and dumping sites -> perceived danger, dirtiness, and environmental disorder -> avoidance of outdoor or natural spaces -> reduced relaxation, restoration, and well-being -> Poor mental health",
+    sharedBridge: "Environmental disorder -> avoidance -> reduced restoration"
+  },
+  "subsistence-agriculture-relief": {
+    pathway: "Subsistence agriculture -> household food production and reduced dependence on cash purchases -> lower financial pressure and improved sense of control -> Positive mental health",
+    sharedBridge: "Local livelihood resource -> material security"
+  },
+  "extreme-weather-loss": {
+    pathway: "Extreme weather events -> soil erosion, crop destruction, and disrupted subsistence production -> loss of food, income, and livelihood security -> mental distress -> Poor mental health",
+    sharedBridge: "Climate shock -> livelihood insecurity -> distress"
+  },
+  "water-scarcity-conflict": {
+    pathway: "Water scarcity -> difficult trade-offs between household, livestock, and crop needs -> guilt, conflict, and pressure over resource allocation -> emotional distress -> Poor mental health",
+    sharedBridge: "Resource scarcity -> impossible trade-offs -> distress"
+  },
+  "infrastructure-danger": {
+    pathway: "Neglected public infrastructure -> exposure to unsafe roads, bridges, buildings, or public spaces -> persistent worry, extra costs, and daily inconvenience -> Poor mental health",
+    sharedBridge: "Service neglect -> danger and compensatory burden"
+  },
+  "infrastructure-missed-opportunities": {
+    pathway: "Neglected public infrastructure -> reduced access to education, work, care, or public services -> missed opportunities and constrained mobility -> frustration and discouragement -> Poor mental health",
+    sharedBridge: "Service barrier -> opportunity loss"
+  },
+  "political-will-distress": {
+    pathway: "Low political will or weak service responsiveness -> persistent unmet basic needs -> perceived neglect, unfairness, and injustice -> emotional distress -> Poor mental health",
+    sharedBridge: "Institutional neglect -> injustice and distress"
+  },
+  "health-awareness-relief": {
+    pathway: "Improved health awareness -> reduced stigma and better understanding of care options -> easier treatment access and earlier help-seeking -> emotional relief and improved physical health -> Positive mental health",
+    sharedBridge: "Knowledge and stigma reduction -> care access -> relief"
+  },
+  "clinic-queues": {
+    pathway: "Long clinic queues -> delayed, inconvenient, or avoided care -> worsening uncertainty, anxiety, and discouragement -> Poor mental health",
+    sharedBridge: "Health service barrier -> delayed care -> anxiety"
+  },
+  "stigmatizing-treatment": {
+    pathway: "Stigmatising or disrespectful treatment from healthcare workers -> humiliation, fear, and loss of trust -> avoidance or delay of treatment -> worsening health and mental strain -> Poor mental health",
+    sharedBridge: "Stigma in services -> care avoidance -> health and emotional harm"
+  },
+  "no-nearby-hospital": {
+    pathway: "Lack of nearby hospital -> long travel time, transport costs, and delayed access to urgent or intensive care -> feeling physically and socially distant from needed support -> anxiety and poor well-being -> Poor mental health",
+    sharedBridge: "Geographic service barrier -> delayed care -> insecurity"
+  },
+  "domestic-violence-withdrawal": {
+    pathway: "Domestic violence -> financial dependence limits legal follow-through or safe exit options -> continued exposure to abuse, fear, and powerlessness -> ongoing distress -> Poor mental health",
+    sharedBridge: "Violence plus economic dependence -> constrained agency -> trauma"
+  },
+  "flooded-bridge-disruption": {
+    pathway: "Neglected bridges and flood-vulnerable infrastructure -> blocked mobility during heavy rains or floods -> missed school, work, income, and services -> frustration, insecurity, and stress -> Poor mental health",
+    sharedBridge: "Infrastructure failure -> mobility disruption -> opportunity loss"
+  },
+  "taverns-risk-violence": {
+    pathway: "Abandoned buildings and tavern concentration -> spaces that enable alcohol and drug use, crime, and risky behaviour -> community violence, fear, and insecurity -> emotional distress -> Poor mental health",
+    sharedBridge: "Unsafe built environment -> risky activity clustering -> fear and harm"
+  },
+  "substance-domestic-violence": {
+    pathway: "Drug and alcohol misuse -> impaired judgement, aggression, and household instability -> domestic violence and trauma exposure -> Poor mental health",
+    sharedBridge: "Substance misuse -> violence -> trauma"
+  },
+  "substance-debt-poverty": {
+    pathway: "Drug and alcohol misuse -> diversion of household income away from basic needs -> debt, poverty, and family strain -> stress and emotional distress -> Poor mental health",
+    sharedBridge: "Substance misuse -> economic depletion -> chronic stress"
+  },
+  "church-attendance-support": {
+    pathway: "Church attendance and pastoral counselling -> trusted support, conflict mediation, moral guidance, and belonging -> strengthened coping and emotional stability -> Positive mental health",
+    sharedBridge: "Faith community support -> belonging and coping"
+  },
+  "prayer-rituals-relief": {
+    pathway: "Prayer, ritual, and spiritual practice -> connection to God, ancestors, or sacred meaning systems -> reassurance, relief, and hope -> Positive mental health",
+    sharedBridge: "Spiritual meaning-making -> emotional relief"
+  },
+  "witchcraft-fear": {
+    pathway: "Fear of witchcraft or spiritual harm -> suspicion, worry, and distrust in relationships or community life -> persistent fear and mental distress -> Poor mental health",
+    sharedBridge: "Perceived spiritual threat -> distrust and anxiety"
+  },
+  "dual-belief-conflict": {
+    pathway: "Competing religious, cultural, or biomedical belief systems -> conflicting expectations about causes, treatment, morality, or responsibility -> internal conflict and uncertainty -> emotional strain -> Poor mental health",
+    sharedBridge: "Conflicting meaning systems -> uncertainty and emotional strain"
+  },
+  "church-rejection-shame": {
+    pathway: "Church rejection linked to stigmatised behaviour -> loss of belonging, moral status, and trusted support -> feeling shunned, ashamed, and isolated -> emotional distress -> Poor mental health",
+    sharedBridge: "Moral stigma -> social exclusion -> distress"
+  }
+};
+
 function defaultNodes(polarity) {
   return [
     { type: "driver", label: "New driver" },
@@ -324,6 +507,18 @@ function createWordingVersion(pathway, story, polarity) {
     story: String(story || normalizedPathway || "").trim(),
     nodes
   };
+}
+
+function sharedBridgeForId(id, fallback = "") {
+  return coalesceText(improvedPathwayLibraryById[id]?.sharedBridge, fallback);
+}
+
+function improvedVersionForId(id, originalVersion, polarity) {
+  const reference = improvedPathwayLibraryById[id];
+  if (reference?.pathway) {
+    return createWordingVersion(reference.pathway, reference.pathway, polarity);
+  }
+  return buildImprovedVersionFromBase(originalVersion, polarity);
 }
 
 function normalizeBridgeKey(label) {
@@ -453,7 +648,7 @@ function pathwaySample(spec, index) {
   const polarity = /positive mental health\.?$/i.test(sourcePathway) ? "positive" : "negative";
   const originalPathway = String(originalPathwaysById[spec.id] || sourcePathway).replace(/\s+/g, " ").trim();
   const originalVersion = createWordingVersion(originalPathway, spec.originalStory || originalPathway, polarity);
-  const improvedVersion = buildImprovedVersionFromBase(originalVersion, polarity);
+  const improvedVersion = improvedVersionForId(spec.id, originalVersion, polarity);
   const improvedLabels = improvedVersion.nodes.map((node) => node.label).filter(Boolean);
 
   return {
@@ -467,6 +662,7 @@ function pathwaySample(spec, index) {
     participantContext: defaultParticipantContext(),
     captureBundle: defaultCaptureBundle(),
     aiDraft: defaultAiDraft(spec.domain, spec.place || defaultPlaceForDomain(spec.domain), polarity),
+    sharedBridge: sharedBridgeForId(spec.id),
     wordingVersions: {
       improved: improvedVersion,
       original: originalVersion
@@ -990,7 +1186,8 @@ function prepareWordingVersions(chain) {
   const originalVersion = normalizeWordingVersion(chain.wordingVersions?.original, fallbackVersion, chain.polarity);
   const improvedVersion = chain.wordingVersions?.improved
     ? normalizeWordingVersion(chain.wordingVersions.improved, originalVersion, chain.polarity)
-    : buildImprovedVersionFromBase(originalVersion, chain.polarity);
+    : improvedVersionForId(chain.id, originalVersion, chain.polarity);
+  chain.sharedBridge = sharedBridgeForId(chain.id, chain.sharedBridge);
   chain.wordingVersions = {
     improved: improvedVersion,
     original: originalVersion
@@ -1036,8 +1233,10 @@ function harmonisationBadgeText(chain) {
 
 function harmonisationDetailText(chain, limit = 2) {
   const changes = bridgeHarmonisationChanges(chain);
+  const sharedBridge = sharedBridgeForId(chain.id, chain.sharedBridge);
+  const bridgePrefix = sharedBridge ? `Shared bridge: ${sharedBridge}. ` : "";
   if (changes.length === 0) {
-    return "No bridge wording changes were needed for this pathway.";
+    return `${bridgePrefix}No bridge wording changes were needed for this pathway.`;
   }
 
   const preview = changes
@@ -1045,7 +1244,7 @@ function harmonisationDetailText(chain, limit = 2) {
     .map(({ original, improved }) => `"${original}" -> "${improved}"`)
     .join("; ");
   const extra = changes.length > limit ? ` +${changes.length - limit} more.` : ".";
-  return `${changes.length} bridge ${changes.length === 1 ? "label was" : "labels were"} harmonised for cross-pathway consistency: ${preview}${extra}`;
+  return `${bridgePrefix}${changes.length} bridge ${changes.length === 1 ? "label was" : "labels were"} harmonised for cross-pathway consistency: ${preview}${extra}`;
 }
 
 function summaryFor(chain) {
@@ -1064,6 +1263,7 @@ function classifyNodeLabels(labels, polarity) {
 function normalizeSample(raw, index = 0) {
   const polarity = normalizePolarity(raw.polarity || raw.outcome || raw.outcome_polarity);
   const reviewStatus = normalizeReviewStatus(raw.reviewStatus || raw.review_status);
+  const id = slugify(raw.id || raw.chain_id || raw.title || raw.chain_title || `imported-${index + 1}`);
   let nodes = [];
 
   if (Array.isArray(raw.nodes) && raw.nodes.length > 0) {
@@ -1106,12 +1306,12 @@ function normalizeSample(raw, index = 0) {
   const originalVersion = normalizeWordingVersion(originalRawVersion, legacyVersion, polarity);
   const improvedVersion = improvedRawVersion
     ? normalizeWordingVersion(improvedRawVersion, originalVersion, polarity)
-    : buildImprovedVersionFromBase(originalVersion, polarity);
+    : improvedVersionForId(id, originalVersion, polarity);
   const domain = raw.domain || domainPriority[0];
   const place = raw.place || raw.location || "";
 
   return {
-    id: slugify(raw.id || raw.chain_id || raw.title || raw.chain_title || `imported-${index + 1}`),
+    id,
     domain,
     title: raw.title || raw.chain_title || `Imported pathway ${index + 1}`,
     place,
@@ -1121,6 +1321,7 @@ function normalizeSample(raw, index = 0) {
     participantContext: normalizeParticipantContext(raw),
     captureBundle: normalizeCaptureBundle(raw),
     aiDraft: normalizeAiDraft(raw, domain, place, polarity),
+    sharedBridge: sharedBridgeForId(id, raw.sharedBridge || raw.shared_bridge),
     wordingVersions: {
       improved: improvedVersion,
       original: originalVersion
@@ -1200,7 +1401,8 @@ function loadBrowserState() {
       if (shouldRefreshHarmonisation) {
         normalizedSamples.forEach((sample) => {
           prepareWordingVersions(sample);
-          sample.wordingVersions.improved = buildImprovedVersionFromBase(sample.wordingVersions.original, sample.polarity);
+          sample.wordingVersions.improved = improvedVersionForId(sample.id, sample.wordingVersions.original, sample.polarity);
+          sample.sharedBridge = sharedBridgeForId(sample.id, sample.sharedBridge);
         });
       }
       samples.splice(0, samples.length, ...normalizedSamples);
@@ -1211,7 +1413,8 @@ function loadBrowserState() {
         state.draft = normalizeSample(state.draft);
         if (shouldRefreshHarmonisation) {
           prepareWordingVersions(state.draft);
-          state.draft.wordingVersions.improved = buildImprovedVersionFromBase(state.draft.wordingVersions.original, state.draft.polarity);
+          state.draft.wordingVersions.improved = improvedVersionForId(state.draft.id, state.draft.wordingVersions.original, state.draft.polarity);
+          state.draft.sharedBridge = sharedBridgeForId(state.draft.id, state.draft.sharedBridge);
         }
       }
     }
@@ -1929,6 +2132,7 @@ function buildSummaryRows() {
     "display_pathway_sentence",
     "original_pathway_sentence",
     "ai_improved_pathway_sentence",
+    "shared_bridge",
     "display_story_note",
     "original_story_note",
     "ai_improved_story_note",
@@ -1971,6 +2175,7 @@ function buildSummaryRows() {
       sentenceFromNodes(displayVersion.nodes),
       sentenceFromNodes(originalVersion.nodes),
       sentenceFromNodes(improvedVersion.nodes),
+      sharedBridgeForId(sample.id, sample.sharedBridge),
       displayVersion.story,
       originalVersion.story,
       improvedVersion.story,
@@ -2196,7 +2401,8 @@ function bindFieldListeners() {
 
   document.getElementById("btnAiImprove").addEventListener("click", () => {
     prepareWordingVersions(state.draft);
-    state.draft.wordingVersions.improved = buildImprovedVersionFromBase(state.draft.wordingVersions.original, state.draft.polarity);
+    state.draft.wordingVersions.improved = improvedVersionForId(state.draft.id, state.draft.wordingVersions.original, state.draft.polarity);
+    state.draft.sharedBridge = sharedBridgeForId(state.draft.id, state.draft.sharedBridge);
     state.wordingMode = "improved";
     renderWorkspace();
     setStatus(`AI bridge harmonisation refreshed for ${state.draft.title}. Review the improved wording before approval.`);
