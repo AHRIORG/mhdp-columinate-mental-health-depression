@@ -631,7 +631,7 @@ const toolGuideDefinitions = new Map([
   ["Age band", "Optional age grouping used for context without exposing exact age when not needed."],
   ["Sex or gender field", "Optional demographic field retained only when appropriate for the study workflow."],
   ["Linkage notes", "Short note about record linkage, provenance, or source-data constraints."],
-  ["Captured Notes and Audio", "Workspace for typed notes, uploaded text notes, transcript text, and audio file metadata."],
+  ["Capture Inputs", "Workspace for typed notes, uploaded text notes, transcript text, and audio file metadata."],
   ["AI Draft Workspace", "Workspace for transforming source notes into a reviewable draft pathway."],
   ["Resulting Pathway", "The pathway structure that will be saved, reviewed, approved, and exported."],
   ["Chain Details", "Editable title, domain, polarity, place, and story-note fields for the active pathway."],
