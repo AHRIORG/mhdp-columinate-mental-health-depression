@@ -184,9 +184,13 @@
 
         <div class="builder-layout">
           <div class="builder-side">
-            <section class="panel builder-card">
-              <h3>Study Context</h3>
-              <p class="panel-copy">Capture the study, wave, and collection details needed if this workspace is used as part of a mental health data collection workflow.</p>
+            <details class="panel builder-card builder-card--collapsible">
+              <summary class="builder-card-summary">
+                <h3>Study Context</h3>
+                <span class="builder-card-summary__hint">Expand</span>
+              </summary>
+              <div class="builder-card__body">
+                <p class="panel-copy">Capture the study, wave, and collection details needed if this workspace is used as part of a mental health data collection workflow.</p>
               <div class="form-grid">
                 <label class="field-block" for="studyNameInput">
                   <span class="field-label">Study name</span>
@@ -227,11 +231,16 @@
                   </select>
                 </label>
               </div>
-            </section>
+              </div>
+            </details>
 
-            <section class="panel builder-card">
-              <h3>Participant and Visit Context</h3>
-              <p class="panel-copy">Capture participant identifiers and visit-level descriptors so notes, transcripts, and pathways can later be linked into a study workflow.</p>
+            <details class="panel builder-card builder-card--collapsible">
+              <summary class="builder-card-summary">
+                <h3>Participant and Visit Context</h3>
+                <span class="builder-card-summary__hint">Expand</span>
+              </summary>
+              <div class="builder-card__body">
+                <p class="panel-copy">Capture participant identifiers and visit-level descriptors so notes, transcripts, and pathways can later be linked into a study workflow.</p>
               <div class="form-grid">
                 <label class="field-block" for="participantIdInput">
                   <span class="field-label">Participant ID</span>
@@ -258,11 +267,16 @@
                   <input id="linkageNotesInput" type="text" placeholder="Key linkage detail or record note" />
                 </label>
               </div>
-            </section>
+              </div>
+            </details>
 
-            <section class="panel builder-card">
-              <h3>Capture Inputs</h3>
-              <p class="panel-copy">Add field notes, upload text notes, and register audio files. AI drafting uses the typed note and transcript text below; raw audio files are tracked as metadata only in this browser workspace and should be stored securely elsewhere.</p>
+            <details class="panel builder-card builder-card--collapsible">
+              <summary class="builder-card-summary">
+                <h3>Capture Inputs</h3>
+                <span class="builder-card-summary__hint">Expand</span>
+              </summary>
+              <div class="builder-card__body">
+                <p class="panel-copy">Add field notes, upload text notes, and register audio files. AI drafting uses the typed note and transcript text below; raw audio files are tracked as metadata only in this browser workspace and should be stored securely elsewhere.</p>
               <div class="capture-grid">
                 <div class="capture-column">
                   <label class="field-block" for="noteCaptureInput">
@@ -289,11 +303,16 @@
                   <div id="capturedAudioList" class="capture-list"></div>
                 </div>
               </div>
-            </section>
+              </div>
+            </details>
 
-            <section class="panel builder-card">
-              <h3>AI Draft Workspace</h3>
-              <p class="panel-copy">Use notes or transcript text to generate a structured draft pathway. Review and edit every suggestion before approval.</p>
+            <details class="panel builder-card builder-card--collapsible">
+              <summary class="builder-card-summary">
+                <h3>AI Draft Workspace</h3>
+                <span class="builder-card-summary__hint">Expand</span>
+              </summary>
+              <div class="builder-card__body">
+                <p class="panel-copy">Use notes or transcript text to generate a structured draft pathway. Review and edit every suggestion before approval.</p>
               <div class="builder-pill-row">
                 <button id="btnLoadLatestNote" class="ghost-btn" type="button">Load Latest Note</button>
                 <button id="btnLoadTranscript" class="ghost-btn" type="button">Load Transcript</button>
@@ -341,7 +360,8 @@
                 <button id="btnGenerateAiDraft" class="primary-btn" type="button">Generate AI Draft</button>
                 <button id="btnApplyAiDraft" class="secondary-btn" type="button">Approve AI Draft To Builder</button>
               </div>
-            </section>
+              </div>
+            </details>
 
             <section class="panel workspace-panel builder-card--result">
               <div class="panel-head">

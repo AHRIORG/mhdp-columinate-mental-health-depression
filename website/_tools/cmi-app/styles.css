@@ -319,6 +319,74 @@ h3 {
   align-content: start;
 }
 
+.builder-card--collapsible {
+  padding: 0;
+  overflow: hidden;
+}
+
+.builder-card--collapsible > .builder-card-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.builder-card--collapsible > .builder-card-summary::-webkit-details-marker {
+  display: none;
+}
+
+.builder-card--collapsible > .builder-card-summary::after {
+  content: "+";
+  display: inline-grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 800;
+}
+
+.builder-card--collapsible[open] > .builder-card-summary::after {
+  content: "-";
+  background: var(--brand);
+  color: #ffffff;
+}
+
+.builder-card--collapsible h3 {
+  margin: 0;
+}
+
+.builder-card-summary__hint {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.builder-card--collapsible[open] .builder-card-summary__hint {
+  color: var(--brand);
+}
+
+.builder-card--collapsible[open] .builder-card-summary__hint {
+  font-size: 0;
+}
+
+.builder-card--collapsible[open] .builder-card-summary__hint::before {
+  content: "Collapse";
+  font-size: 0.78rem;
+}
+
+.builder-card__body {
+  padding: 0 1rem 1rem;
+}
+
 .builder-card--result {
   border-color: rgba(0, 77, 130, 0.2);
   background: linear-gradient(180deg, rgba(237, 245, 251, 0.92) 0%, rgba(255, 255, 255, 0.96) 100%);
